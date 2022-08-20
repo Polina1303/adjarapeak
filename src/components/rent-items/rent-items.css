@@ -1,0 +1,22 @@
+.rent-items {
+  width: 30%;
+  margin-bottom: 50px;
+  background: #f5f5f5f5;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.rent-items_img {
+  width: 100%;
+  height: 100%;
+}
+
+.rent-items-day {
+  padding-left: 10px;
+}
+
+.rent-items-price {
+  padding-left: 15px;
+}

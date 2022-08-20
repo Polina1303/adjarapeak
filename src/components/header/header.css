@@ -1,0 +1,16 @@
+.header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.wrapper {
+  display: flex;
+  flex-grow: 1;
+}
+
+.cart {
+  justify-content: flex-end;
+}

@@ -1,0 +1,22 @@
+.btn {
+  color: black;
+  border: none;
+  font: inherit;
+  background-color: transparent;
+
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  color: #de682d;
+}
+.btn-secondary {
+  background-color: #db3e00;
+}
+.btn-small {
+  font-size: 45px;
+}
+.btn-medium {
+  font-size: 25px;
+}
