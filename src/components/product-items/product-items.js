@@ -7,7 +7,7 @@ export const ProductItems = ({ product }) => {
   return (
     <div className="product-items">
       <div className="product-items_details">
-        <img className="product-items_img" src={product.img} />
+        <img className="product-items_img" src={"./img/" + product.img} />
         <span lassName="product-items_title">{product.title}</span>
         <p>{product.desc}</p>
 
