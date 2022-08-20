@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/adjarapeak/static/css/main.719855a1.css",
+    "main.js": "/adjarapeak/static/js/main.f6d3cd4d.js",
+    "static/media/basic.jpg": "/adjarapeak/static/media/basic.f3a05f19b4974ca779fc.jpg",
+    "index.html": "/adjarapeak/index.html",
+    "main.719855a1.css.map": "/adjarapeak/static/css/main.719855a1.css.map",
+    "main.f6d3cd4d.js.map": "/adjarapeak/static/js/main.f6d3cd4d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.719855a1.css",
+    "static/js/main.f6d3cd4d.js"
+  ]
+}
