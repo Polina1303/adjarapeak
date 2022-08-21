@@ -8,7 +8,7 @@ export const Header = () => {
     <div className="header">
       <div className="wrapper">
         <Link to="/">
-          <img src={"./img/adjara.jpg"} alt="adjara peak" width={"130px"} />
+          <img src={"/adjara.jpg"} alt="adjara peak" width={"130px"} />
         </Link>
       </div>
       <div className="cart">

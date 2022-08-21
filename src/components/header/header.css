@@ -6,9 +6,18 @@
   margin-bottom: 10px;
 }
 
-.wrapper {
+/* .wrapper {
   display: flex;
   flex-grow: 1;
+} */
+
+.ttt {
+  /* margin: 10px 0; */
+  background: url("adjara.jpg");
+  /* height: 1070px;
+  width: 1030px; */
+  background-size: cover;
+  /* background-position: center; */
 }
 
 .cart {
