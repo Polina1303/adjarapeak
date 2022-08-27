@@ -7,7 +7,7 @@ const PRODUCT = [
   {
     id: 1,
     title: "ПАЛАТКА BTRACE VANG 3",
-    img: "/product/BTRACE-VANG3.png",
+    img: "/img/BTRACE-VANG3.png",
     desc: "3-х местная двухслойная палатка с двумя входами 340*220*120",
     category: "tent",
     price: 687,
@@ -15,7 +15,7 @@ const PRODUCT = [
   {
     id: 2,
     title: "ПАЛАТКА BTRACE TRAVEL 2",
-    img: "./product/BTRACE_TRAVEL2.jpg",
+    img: "/img/BTRACE_TRAVEL2.jpg",
     desc: "2-х местная двухслойная палатка с двумя входами 250*220*120",
     category: "tent",
     price: 841,
@@ -23,7 +23,7 @@ const PRODUCT = [
   {
     id: 3,
     title: "ПАЛАТКА BTRACE TRAVEL 3",
-    img: "/product/BTRACE_TRAVEL3.jpg",
+    img: "/img/BTRACE_TRAVEL3.jpg",
     desc: "3-х местная двухслойная палатка с двумя входами 320*220*120",
     category: "tent",
     price: 939,
@@ -31,7 +31,7 @@ const PRODUCT = [
   {
     id: 4,
     title: "ПАЛАТКА BTRACE CHALLENGE 2",
-    img: "/product/BTRACE_CHALLENGE2.webp",
+    img: "BTRACE_CHALLENGE2.webp",
     desc: "3-х местная двухслойная палатка с двумя входами 300*210*120",
     category: "tent",
     price: 1021,
@@ -39,7 +39,7 @@ const PRODUCT = [
   {
     id: 5,
     title: "СПАЛЬНЫЙ МЕШОК",
-    img: "/product/sleeping_bag_green.jpg",
+    img: "sleeping_bag_green.jpg",
     desc: "195*60см от +15 до 0",
     category: "sleeping bag",
     price: 90,
@@ -47,7 +47,7 @@ const PRODUCT = [
   {
     id: 6,
     title: "СПАЛЬНЫЙ МЕШОК",
-    img: "/product/sleeping_bag_red.jpg",
+    img: "sleeping_bag_red.jpg",
     desc: "Сampsor 210*66см от +10 до 0",
     category: "sleeping bag",
     price: 160,
@@ -55,7 +55,7 @@ const PRODUCT = [
   {
     id: 7,
     title: "СПАЛЬНЫЙ МЕШОК BTRACE MEGA ЛЕВЫЙ",
-    img: "/product/sleeping_bag_BTRACE_MEGA.webp",
+    img: "sleeping_bag_BTRACE_MEGA.webp",
     desc: "Утеплитель 195(+35)*100 от 0 до -21",
     category: "sleeping bag",
     price: 659,
@@ -63,7 +63,7 @@ const PRODUCT = [
   {
     id: 8,
     title: "СПАЛЬНЫЙ МЕШОК BTRACE ZERO L SIZE ПРАВЫЙ",
-    img: "/product/BTRACE_ZERO_L.png",
+    img: "BTRACE_ZERO_L.png",
     desc: "Супер лёгкий 220*90(55) от +15 до 0 ",
     category: "sleeping bag",
     price: 449,
@@ -71,7 +71,7 @@ const PRODUCT = [
   {
     id: 9,
     title: "СПАЛЬНЫЙ МЕШОК BTRACE ZERO S SIZE ПРАВЫЙ",
-    img: "/product/BTRACE_ZERO_S.png",
+    img: "BTRACE_ZERO_S.png",
     desc: "Супер лёгкий 190*80(50) от +15 до 0 ",
     category: "sleeping bag",
     price: 399,
@@ -79,7 +79,7 @@ const PRODUCT = [
   {
     id: 10,
     title: "РЮКЗАК ТУРИСТИЧЕСКИЙ",
-    img: "/product/Сampsor_blue.jpg",
+    img: "Сampsor_blue.jpg",
     desc: "75+10L Сampsor ",
     category: "backpack",
     price: 284,
@@ -87,7 +87,7 @@ const PRODUCT = [
   {
     id: 11,
     title: "РЮКЗАК ТУРИСТИЧЕСКИЙ",
-    img: "/product/Cakard_black_backpack.jpg",
+    img: "Cakard_black_backpack.jpg",
     desc: "95+10L Сakard ",
     category: "backpack",
     price: 210,
@@ -95,7 +95,7 @@ const PRODUCT = [
   {
     id: 12,
     title: "РЮКЗАК ТУРИСТИЧЕСКИЙ",
-    img: "/product/thenorthс_grin.webp",
+    img: "thenorthс_grin.webp",
     desc: "60L THE NORTH FACE(REPLICA) ",
     category: "backpack",
     price: 199,
@@ -103,7 +103,7 @@ const PRODUCT = [
   {
     id: 13,
     title: "РЮКЗАК ТУРИСТИЧЕСКИЙ",
-    img: "/product/THENORTHFACE_red.jpg",
+    img: "THENORTHFACE_red.jpg",
     desc: "55L THE NORTH FACE(REPLICA) ",
     category: "backpack",
     price: 182,
@@ -111,7 +111,7 @@ const PRODUCT = [
   {
     id: 14,
     title: "РЮКЗАК ТУРИСТИЧЕСКИЙ",
-    img: "/product/THENORTHFACE_blue.jpg",
+    img: "THENORTHFACE_blue.jpg",
     desc: "50L THE NORTH FACE(REPLICA) ",
     category: "backpack",
     price: 172,
@@ -119,7 +119,7 @@ const PRODUCT = [
   {
     id: 15,
     title: "ФОНАРИК НАЛОБНЫЙ",
-    img: "/product/lantern_blue.jpg",
+    img: "lantern_blue.jpg",
     desc: "X-BALOG BL-539 ",
     category: "lantern",
     price: 16,
@@ -127,7 +127,7 @@ const PRODUCT = [
   {
     id: 16,
     title: "ФОНАРИК НАЛОБНЫЙ",
-    img: "/product/lantern_green.jpg",
+    img: "lantern_green.jpg",
     desc: "УЗ=918 ",
     category: "lantern",
     price: 24,
@@ -135,7 +135,7 @@ const PRODUCT = [
   {
     id: 17,
     title: "ГАЗ ТУРИСТИЧЕСКИЙ",
-    img: "/product/gas450.jpg",
+    img: "gas450.jpg",
     desc: "Nurgaz 450GR ",
     category: "gas/burner",
     price: 52,
@@ -143,7 +143,7 @@ const PRODUCT = [
   {
     id: 18,
     title: "ГАЗ ТУРИСТИЧЕСКИЙ",
-    img: "/product/gas230.jpg",
+    img: "gas230.jpg",
     desc: "Nurgaz 230GR ",
     category: "gas/burner",
     price: 36,
@@ -151,7 +151,7 @@ const PRODUCT = [
   {
     id: 19,
     title: "ГАЗ ТУРИСТИЧЕСКИЙ",
-    img: "/product/gas80.jpg",
+    img: "gas80.jpg",
     desc: "Nurgaz 80GR ",
     category: "gas/burner",
     price: 28,
@@ -159,7 +159,7 @@ const PRODUCT = [
   {
     id: 20,
     title: "ГОРЕЛКА ТУРИСТИЧЕСКИЙ",
-    img: "/product/burner32.jpg",
+    img: "burner32.jpg",
     desc: "Nurgaz TS-5310 ",
     category: "gas/burner",
     price: 32,
@@ -167,7 +167,7 @@ const PRODUCT = [
   {
     id: 21,
     title: "ГОРЕЛКА ТУРИСТИЧЕСКИЙ",
-    img: "/product/Campsor_folding.jpg",
+    img: "Campsor_folding.jpg",
     desc: "Campsor (складная) ",
     category: "gas/burner",
     price: 49,
@@ -175,7 +175,7 @@ const PRODUCT = [
   {
     id: 22,
     title: "КОВРИК ПЕНКА (с чехлом)",
-    img: "/product/mat_with_case.jpg",
+    img: "mat_with_case.jpg",
     desc: "175*61*1см ",
     category: "mat",
     price: 54,
@@ -183,7 +183,7 @@ const PRODUCT = [
   {
     id: 24,
     title: "КОВРИК ДЛЯ ПОХОДОВ И СПОРТА",
-    img: "/product/mat40.jpg",
+    img: "mat40.jpg",
     desc: "173*61*0,7см ",
     category: "mat",
     price: 40,
@@ -191,7 +191,7 @@ const PRODUCT = [
   {
     id: 25,
     title: "КОВРИК С АЛЮМИНИЕВОЙ ФОЛЬГОЙ FORA",
-    img: "/product/mat_aluminum_foil_FORA.jpg",
+    img: "mat_aluminum_foil_FORA.jpg",
     desc: "180*60*0,6см ",
     category: "mat",
     price: 35,
@@ -199,7 +199,7 @@ const PRODUCT = [
   {
     id: 26,
     title: "ГЕРМОПАКЕТ BTRACE",
-    img: "/product/packageBTRACE.jpg",
+    img: "packageBTRACE.jpg",
     desc: "ПЛОСКИЙ ПВХ 20X13см",
     category: "accessories",
     price: 27,
@@ -207,7 +207,7 @@ const PRODUCT = [
   {
     id: 27,
     title: "ОГНИВО BTRACE Ø 8 ММ",
-    img: "/product/flintBTRACE8.png",
+    img: "flintBTRACE8.png",
     desc: "10х2,4х1,7см",
     category: "accessories",
     price: 39,
@@ -215,7 +215,7 @@ const PRODUCT = [
   {
     id: 28,
     title: "КОЛЫШКИ BTRACE АЛЮМИНИЙ (КОМПЛЕКТ 10 ШТ.)",
-    img: "/product/aluminum_pegs_btrace.png",
+    img: "aluminum_pegs_btrace.png",
     desc: "2шт-12₾",
     category: "accessories",
     price: 57,
@@ -223,7 +223,7 @@ const PRODUCT = [
   {
     id: 29,
     title: "ЧАЙНИК ПОХОДНЫЙ BTRACE 1,1Л",
-    img: "/product/teapot_BTRACE1.jpg",
+    img: "teapot_BTRACE1.jpg",
     desc: "Алюминий анодированный",
     category: "accessories",
     price: 114,
@@ -231,7 +231,7 @@ const PRODUCT = [
   {
     id: 30,
     title: "CИДЕНЬЕ ТУРИСТИЧЕСКОЕ DECATHLON",
-    img: "/product/sitting_DECATHLON.png",
+    img: "sitting_DECATHLON.png",
     desc: "Из пеноматериала с металлизированным слоем",
     category: "accessories",
     price: 16,
@@ -239,7 +239,7 @@ const PRODUCT = [
   {
     id: 31,
     title: "ТРЕКИНГОВЫЕ ПАЛКИ DECATHLON",
-    img: "/product/trekking_poles_DECATHLON.avif",
+    img: "trekking_poles_DECATHLON.avif",
     desc: "Комплекст из 2шт, алюминиевые ",
     category: "accessories",
     price: 80,
@@ -247,7 +247,7 @@ const PRODUCT = [
   {
     id: 32,
     title: "ДОЖДЕВИК EVA RAINCOAT",
-    img: "/product/raincoat.jpg",
+    img: "raincoat.jpg",
     desc: "С капюшоном 150см",
     category: "accessories",
     price: 19,
@@ -255,7 +255,7 @@ const PRODUCT = [
   {
     id: 33,
     title: "ПОДУШКА НАДУВНАЯ INTEX",
-    img: "/product/inflatable_pillow_INTEX.webp",
+    img: "inflatable_pillow_INTEX.webp",
     desc: "43*28*9см",
     category: "accessories",
     price: 20,
@@ -263,7 +263,7 @@ const PRODUCT = [
   {
     id: 34,
     title: "ПОДУШКА-ПОДГОЛОВНИК INTEX",
-    img: "/product/pillow_headrest.webp",
+    img: "pillow_headrest.webp",
     desc: "36*30*10см",
     category: "accessories",
     price: 22,
@@ -271,7 +271,7 @@ const PRODUCT = [
   {
     id: 35,
     title: "СТУЛ СКЛАДНОЙ ПОХОДНЫЙ",
-    img: "/product/folding_chair.jpg",
+    img: "/img/folding_chair.jpg",
     desc: "35*26см вес 0,510кг",
     category: "accessories",
     price: 22,
@@ -671,8 +671,8 @@ export const HomePage = () => {
       </div>
       <div className="title">АРЕНДА</div>
       <div className="home-page-product">
-        {RENT.map((item) => (
-          <RentItems key={item.id} rent={item} />
+        {RENT.map((rent) => (
+          <RentItems key={rent.id} rent={rent} />
         ))}
       </div>
     </div>
