@@ -7,6 +7,7 @@ import { ProductCover } from "../../components/product-cover";
 import { setItemInCart } from "../../redux/cart/reducer";
 import "./product-items.css";
 import { setCurrentProduct } from "../../redux/product/reducer";
+import { Buy } from "../buy/buy";
 
 export const ProductItems = ({ product }) => {
   // console.log(product);
@@ -14,10 +15,10 @@ export const ProductItems = ({ product }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handelClick = (e) => {
-    e.stopPropagation();
-    dispatch(setItemInCart(product));
-  };
+  // const handelClick = (e) => {
+  //   e.stopPropagation();
+  //   dispatch(setItemInCart(product));
+  // };
 
   const handelClickImg = () => {
     dispatch(setCurrentProduct(product));
@@ -29,15 +30,16 @@ export const ProductItems = ({ product }) => {
       <ProductCover img={product.img} />
 
       <div className="product-items_details">
-        <img className="product-items_img" src={product.img} />
+        {/* <img className="product-items_img" src={product.img} /> */}
         <span className="product-items_title">{product.title}</span>
         <p>{product.desc}</p>
-        <b className="product-items_price">{product.price}₾</b>
+        <Buy product={product} />
+        {/* <b className="product-items_price">{product.price}₾</b>
         <div className="add-to-cart">
           <Button onClick={handelClick} type="primary">
             <MdAddShoppingCart size={"25px"} />
           </Button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

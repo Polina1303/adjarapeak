@@ -5,48 +5,5 @@
   overflow: hidden;
   position: relative;
   padding-bottom: 10px;
-
   text-align: center;
 }
-
-/* .product-items_img {
-  width: 100%;
-
-} */
-
-.product-items_price {
-  padding-left: 7px;
-}
-
-/* .add-to-cart {
-  color: #de682d;
-
-  float: right;
-  position: relative;
-  cursor: pointer;
-  transition: color, transform 500ms ease;
-
-  padding-right: 20px;
-}
-
-.add-to-cart:hover {
-  color: #f75707;
-  transform: scale(1.5);
-} */
-/* ???????????????????? */
-/* 
-.add-to-cart {
-  position: absolute;
-  right: 0;
-  bottom: -10px;
-  right: 10px;
-} */
-
-.add-to-cart {
-}
-
-/* ????????????? */
-/* .product-items-button {
-  display: inline;
- 
-} */
