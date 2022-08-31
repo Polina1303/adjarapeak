@@ -1,1 +1,29 @@
+.product-page_content {
+  display: flex;
+}
 
+.product-page_left {
+  width: 70%;
+}
+
+.product-page_right {
+  width: 30%;
+}
+
+.column {
+  margin-top: 10px;
+  list-style-type: none;
+  line-height: 30px;
+}
+
+.product-page_price_buy {
+  display: flex;
+  justify-content: flex-end;
+
+  font-size: 25px;
+}
+
+.product-page_day {
+  margin-right: 10px;
+  margin-top: -1px;
+}

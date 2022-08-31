@@ -1,0 +1,26 @@
+.order-item {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.order-item_cover {
+  width: 200px;
+  margin-right: 30px;
+}
+
+.order-item_title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.order-item__price {
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: auto;
+}
+
+.cart-item_delete {
+  margin-left: 5px;
+  cursor: pointer;
+  color: #de682d;
+}

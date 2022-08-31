@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "../button";
 import { CartItem } from "../cart-item";
 import { calcTotalPrice } from "../utils";
 import "./cart-menu.css";
@@ -25,7 +26,9 @@ export const CartMenu = ({ items, onClick }) => {
           <div className="cart-menu_total-price">
             <span>Итого:</span> <span>{calcTotalPrice(items)}₾</span>
           </div>
-          Для оформления заказа свяжитесь с нами
+          <Button type="primary" size="m" onClick={onClick}>
+            Оформить заказ
+          </Button>
         </div>
       ) : null}
     </div>

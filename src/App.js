@@ -4,6 +4,8 @@ import { Routes, Route } from "react-router-dom";
 import { HomePage } from "./pages/home-page";
 import { Header } from "./components/header";
 import { ProductPage } from "./pages/product-page";
+import { RentPage } from "./pages/rent-page";
+import { OrderPage } from "./pages/order-page";
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
       <Routes>
         <Route exact path="/" element={<HomePage />} />
         <Route exact path="/app/:title" element={<ProductPage />} />
+        <Route exact path="/order" element={<OrderPage />} />
+        {/* <Route exact path="/app/:title" element={<RentPage />} /> */}
       </Routes>
     </div>
   );

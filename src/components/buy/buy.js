@@ -4,7 +4,7 @@ import { setItemInCart } from "../../redux/cart/reducer";
 import { MdAddShoppingCart } from "react-icons/md";
 import { Button } from "../../components/button";
 
-export const Buy = ({ product }) => {
+export const Buy = ({ product, rent }) => {
   const dispatch = useDispatch();
   const handelClick = (e) => {
     e.stopPropagation();
