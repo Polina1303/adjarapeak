@@ -16,7 +16,11 @@ export const RentItems = ({ rent }) => {
   return (
     <div className="rent-items" onClick={handelClickImg}>
       <div className="rent-items_details">
-        <img className="rent-items_img " src={rent.img} />
+        <img
+          className="rent-items_img "
+          src={process.env.PUBLIC_URL + "/img/" + rent.img}
+          alt={rent.title}
+        />
         <span className="rent-items_title">{rent.title}</span>
         <p>{rent.desc}</p>
         <Rent rent={rent} />

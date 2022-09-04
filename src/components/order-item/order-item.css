@@ -4,8 +4,12 @@
 }
 
 .order-item_cover {
-  width: 200px;
+  width: 100px;
   margin-right: 30px;
+}
+
+.order-items_img {
+  width: 140px;
 }
 
 .order-item_title {

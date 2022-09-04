@@ -6,6 +6,7 @@ import "./order-item.css";
 import { deletItemFromCart } from "../../redux/cart/reducer";
 
 export const OrderItem = ({ item }) => {
+  console.log("item.img", item.img);
   const dispatch = useDispatch();
 
   const handleClick = () => {
@@ -15,8 +16,11 @@ export const OrderItem = ({ item }) => {
   return (
     <div className="order-item">
       <div className="order-item_cover">
-        {/* <ProductCover img={product.img}/><RentCover/> картинки */}
-        pppp
+        <img
+          className="order-items_img"
+          src={process.env.PUBLIC_URL + "/img/" + item.img}
+          alt={item.title}
+        />
       </div>
       <div className="order-item_title">{item.title}</div>
       <div className="order-item__price">

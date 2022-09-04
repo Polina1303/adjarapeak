@@ -11,7 +11,7 @@ export const Header = () => {
   return (
     <div className="header">
       <div className="wrapper">
-        <Link to="/">
+        <Link to="/adjarapeak">
           <img src={adjara} alt="adjara peak" width={"130px"} />
         </Link>
       </div>

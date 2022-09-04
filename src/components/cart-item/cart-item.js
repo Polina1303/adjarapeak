@@ -5,6 +5,7 @@ import { deletItemFromCart } from "../../redux/cart/reducer";
 import "./cart-item.css";
 
 export const CartItem = ({ img, title, price, id }) => {
+  console.log("img", img);
   const dispatch = useDispatch();
 
   const handleClick = () => {
@@ -12,8 +13,11 @@ export const CartItem = ({ img, title, price, id }) => {
   };
   return (
     <div className="cart-item">
-      {/* <span>{img}</span> */}
-      {/* <img src={img} /> */}
+      <img
+        className="cart-item_img"
+        src={process.env.PUBLIC_URL + "/img/" + img}
+        alt={title}
+      ></img>
       <div className="cart-item_title">
         <span>{title}</span>
       </div>

@@ -528,7 +528,7 @@ const RENT = [
   {
     id: 36,
     title: "ПАЛАТКА ARTEN LIGHT 2",
-    img: "/product/arten_light2.png",
+    img: "arten_light2.png",
     desc: "2-х местная cамораскрывающаяся однослойная палатка 230*110*90",
     category: "rent",
     day: "будни",
@@ -553,7 +553,7 @@ const RENT = [
   {
     id: 37,
     title: "ПАЛАТКА ARTEN LIGHT 2",
-    img: "/product/arten_light2.png",
+    img: "arten_light2.png",
     desc: "2-х местная cамораскрывающаяся однослойная палатка 230*110*90",
     category: "rent",
     day: "выходные",
@@ -578,7 +578,7 @@ const RENT = [
   {
     id: 38,
     title: "ПАЛАТКА ARTEN SPACE",
-    img: "/product/ARTEN_SPACE.webp",
+    img: "ARTEN_SPACE.webp",
     desc: "2-х местная легкая однослойная палатка 210*150*120",
     category: "rent",
     day: "будни",
@@ -604,7 +604,7 @@ const RENT = [
   {
     id: 39,
     title: "ПАЛАТКА ARTEN SPACE",
-    img: "/product/ARTEN_SPACE.webp",
+    img: "ARTEN_SPACE.webp",
     desc: "2-х местная легкая однослойная палатка 210*150*120",
     category: "rent",
     day: "выходные",
@@ -630,7 +630,7 @@ const RENT = [
   {
     id: 40,
     title: "ПАЛАТКА DECATHLON",
-    img: "/product/DECATHLON2.avif",
+    img: "DECATHLON2ух.avif",
     desc: "2-х местная двухслойная палатка 130*210*107",
     category: "rent",
     day: "будни",
@@ -650,7 +650,7 @@ const RENT = [
   {
     id: 41,
     title: "ПАЛАТКА DECATHLON",
-    img: "/product/DECATHLON2.avif",
+    img: "DECATHLON2ух.avif",
     desc: "2-х местная двухслойная палатка 130*210*107",
     category: "rent",
     day: "выходные",
@@ -670,7 +670,7 @@ const RENT = [
   {
     id: 42,
     title: "ПАЛАТКА DECATHLON",
-    img: "/product/ПАЛАТКА DECATHLON2.avif",
+    img: "DECATHLON2ух.avif",
     desc: "3-х местная двухслойная палатка 130*210*107",
     category: "rent",
     day: "будни",
@@ -692,7 +692,7 @@ const RENT = [
   {
     id: 43,
     title: "ПАЛАТКА DECATHLON",
-    img: "/product/ПАЛАТКА DECATHLON2.avif",
+    img: "DECATHLON2ух.avif",
     desc: "3-х местная двухслойная палатка 130*210*107",
     category: "rent",
     day: "выходные",
@@ -714,7 +714,7 @@ const RENT = [
   {
     id: 44,
     title: "ПАЛАТКА BESTWAY PAVILLO COOLDOME",
-    img: "/product/bestwat_pavillo.jpg",
+    img: "bestwat_pavillo.jpg",
     desc: "3-х местная однослойная палатка 210*210*130",
     category: "rent",
     day: "будни",
@@ -738,7 +738,7 @@ const RENT = [
   {
     id: 45,
     title: "ПАЛАТКА BESTWAY PAVILLO COOLDOME",
-    img: "/product/bestwat_pavillo.jpg",
+    img: "bestwat_pavillo.jpg",
     desc: "3-х местная однослойная палатка 210*210*130",
     category: "rent",
     day: "выходные",
@@ -762,7 +762,7 @@ const RENT = [
   {
     id: 46,
     title: "ПАЛАТКА BESTWAY COOLMOUNT4",
-    img: "/img/COOLMOUNT4.jpg",
+    img: "COOLMOUNT4.jpg",
     desc: "4-х местная cамораскрывающаяся однослойная 240*210*100 см",
     category: "rent",
     day: "будни",
@@ -782,7 +782,7 @@ const RENT = [
   {
     id: 47,
     title: "ПАЛАТКА BESTWAY COOLMOUNT4",
-    img: "/img/COOLMOUNT4.jpg",
+    img: "COOLMOUNT4.jpg",
     desc: "4-х местная cамораскрывающаяся",
     category: "rent",
     day: "выходные",
@@ -802,7 +802,7 @@ const RENT = [
   {
     id: 48,
     title: "СПАЛЬНЫЙ МЕШОК BTRACE ZERO L SIZE ПРАВЫЙ",
-    img: "/product/BTRACE_ZERO_L.png",
+    img: "BTRACE_ZERO_L.png",
     desc: "Супер лёгкий 220*90(55) от +15 до 0 ",
     category: "rent",
     day: "будни",
@@ -825,7 +825,7 @@ const RENT = [
   {
     id: 49,
     title: "СПАЛЬНЫЙ МЕШОК BTRACE ZERO L SIZE ПРАВЫЙ",
-    img: "/product/BTRACE_ZERO_L.png",
+    img: "BTRACE_ZERO_L.png",
     desc: "Супер лёгкий 220*90(55) от +15 до 0 ",
     category: "rent",
     day: "выходные",
@@ -848,7 +848,7 @@ const RENT = [
   {
     id: 50,
     title: "СПАЛЬНЫЙ МЕШОК",
-    img: "/product/sleeping_bag_green.jpg",
+    img: "sleeping_bag_green.jpg",
     desc: "195*60см от +15 до 0",
     category: "rent",
     day: "будни/выходные",
@@ -858,7 +858,7 @@ const RENT = [
   {
     id: 51,
     title: "СПАЛЬНЫЙ МЕШОК",
-    img: "/product/sleeping_bag_red.jpg",
+    img: "sleeping_bag_red.jpg",
     desc: "Сampsor 210*66см от +10 до 0",
     category: "rent",
     day: "будни/выходные",
@@ -868,7 +868,7 @@ const RENT = [
   {
     id: 52,
     title: "РЮКЗАК ТУРИСТИЧЕСКИЙ ",
-    img: "/product/DECATHLON_pinc.avif",
+    img: "DECATHLON_pinc.avif",
     desc: "50L Forclaz",
     category: "rent",
     day: "будни",
@@ -887,7 +887,7 @@ const RENT = [
   {
     id: 53,
     title: "РЮКЗАК ТУРИСТИЧЕСКИЙ ",
-    img: "/product/DECATHLON_pinc.avif",
+    img: "DECATHLON_pinc.avif",
     desc: "50L Forclaz",
     category: "rent",
     day: "выходные",
@@ -906,7 +906,7 @@ const RENT = [
   {
     id: 54,
     title: "РЮКЗАК ТУРИСТИЧЕСКИЙ",
-    img: "/product/THENORTHFACE_blue.jpg",
+    img: "THENORTHFACE_blue.jpg",
     desc: "50L THE NORTH FACE(REPLICA) ",
     category: "rent",
     day: "будни",
@@ -918,7 +918,7 @@ const RENT = [
   {
     id: 55,
     title: "РЮКЗАК ТУРИСТИЧЕСКИЙ",
-    img: "/product/THENORTHFACE_blue.jpg",
+    img: "THENORTHFACE_blue.jpg",
     desc: "50L THE NORTH FACE(REPLICA) ",
     category: "rent",
     day: "выходные",
@@ -930,7 +930,7 @@ const RENT = [
   {
     id: 56,
     title: "ТРЕКИНГОВЫЕ ПАЛКИ DECATHLON",
-    img: "/product/trekking_poles_DECATHLON.avif",
+    img: "trekking_poles_DECATHLON.avif",
     desc: "Комплекст из 2шт, алюминиевые ",
     category: "rent",
     day: "будни",
@@ -950,7 +950,7 @@ const RENT = [
   {
     id: 57,
     title: "ТРЕКИНГОВЫЕ ПАЛКИ DECATHLON",
-    img: "/product/trekking_poles_DECATHLON.avif",
+    img: "trekking_poles_DECATHLON.avif",
     desc: "Комплекст из 2шт, алюминиевые ",
     category: "rent",
     day: "выходные",
@@ -970,7 +970,7 @@ const RENT = [
   {
     id: 58,
     title: "CИДЕНЬЕ ТУРИСТИЧЕСКОЕ DECATHLON",
-    img: "/product/sitting_DECATHLON.png",
+    img: "sitting_DECATHLON.png",
     desc: "Из пеноматериала с металлизированным слоем",
     category: "rent",
     day: "будни",
@@ -986,7 +986,7 @@ const RENT = [
   {
     id: 59,
     title: "CИДЕНЬЕ ТУРИСТИЧЕСКОЕ DECATHLON",
-    img: "/product/sitting_DECATHLON.png",
+    img: "sitting_DECATHLON.png",
     desc: "Из пеноматериала с металлизированным слоем",
     category: "rent",
     day: "выходные",
@@ -1002,7 +1002,7 @@ const RENT = [
   {
     id: 60,
     title: "КОВРИК ДЛЯ ПОХОДОВ И СПОРТА",
-    img: "/product/mat40.jpg",
+    img: "mat40.jpg",
     desc: "173*61*0,7см ",
     category: "rent",
     day: "будни/выходные",
@@ -1012,7 +1012,7 @@ const RENT = [
   {
     id: 61,
     title: "КОВРИК С АЛЮМИНИЕВОЙ ФОЛЬГОЙ FORA",
-    img: "/product/mat_aluminum_foil_FORA.jpg",
+    img: "mat_aluminum_foil_FORA.jpg",
     desc: "180*60*0,6см ",
     category: "rent",
     day: "будни/выходные",
@@ -1022,7 +1022,7 @@ const RENT = [
   {
     id: 62,
     title: "ГОРЕЛКА ТУРИСТИЧЕСКИЙ",
-    img: "/product/burner32.jpg",
+    img: "burner32.jpg",
     desc: "Nurgaz TS-5310 ",
     category: "rent",
     day: "будни",
@@ -1037,7 +1037,7 @@ const RENT = [
   {
     id: 63,
     title: "ГОРЕЛКА ТУРИСТИЧЕСКИЙ",
-    img: "/product/burner32.jpg",
+    img: "burner32.jpg",
     desc: "Nurgaz TS-5310 ",
     category: "rent",
     day: "выходные",
@@ -1052,7 +1052,7 @@ const RENT = [
   {
     id: 64,
     title: "ГЕРМОПАКЕТ BTRACE",
-    img: "/product/packageBTRACE.jpg",
+    img: "packageBTRACE.jpg",
     desc: "ПЛОСКИЙ ПВХ 20X13см",
     category: "rent",
     day: "будни",
@@ -1062,7 +1062,7 @@ const RENT = [
   {
     id: 65,
     title: "ГЕРМОПАКЕТ BTRACE",
-    img: "/product/packageBTRACE.jpg",
+    img: "packageBTRACE.jpg",
     desc: "ПЛОСКИЙ ПВХ 20X13см",
     category: "rent",
     day: "выходные",
@@ -1072,7 +1072,7 @@ const RENT = [
   {
     id: 66,
     title: "ЧАЙНИК ПОХОДНЫЙ BTRACE 1,1Л",
-    img: "/product/teapot_BTRACE1.jpg",
+    img: "teapot_BTRACE1.jpg",
     desc: "Алюминий анодированный",
     category: "rent",
     day: "будни",
@@ -1082,7 +1082,7 @@ const RENT = [
   {
     id: 67,
     title: "ЧАЙНИК ПОХОДНЫЙ BTRACE 1,1Л",
-    img: "/product/teapot_BTRACE1.jpg",
+    img: "teapot_BTRACE1.jpg",
     desc: "Алюминий анодированный",
     category: "rent",
     day: "выходные",
@@ -1092,7 +1092,7 @@ const RENT = [
   {
     id: 68,
     title: "ФОНАРИК НАЛОБНЫЙ",
-    img: "/product/lantern_blue.jpg",
+    img: "lantern_blue.jpg",
     desc: "X-BALOG BL-539 ",
     category: "rent",
     day: "будни",
@@ -1106,7 +1106,7 @@ const RENT = [
   {
     id: 69,
     title: "ФОНАРИК НАЛОБНЫЙ",
-    img: "/product/lantern_blue.jpg",
+    img: "lantern_blue.jpg",
     desc: "X-BALOG BL-539 ",
     category: "rent",
     day: "выходные",
@@ -1120,7 +1120,7 @@ const RENT = [
   {
     id: 70,
     title: "СТУЛ СКЛАДНОЙ ПОХОДНЫЙ",
-    img: "/product/folding_chair.jpg",
+    img: "folding_chair.jpg",
     desc: "35*26см вес 0,510кг",
     category: "rent",
     day: "будни",
@@ -1130,7 +1130,7 @@ const RENT = [
   {
     id: 71,
     title: "СТУЛ СКЛАДНОЙ ПОХОДНЫЙ",
-    img: "/product/folding_chair.jpg",
+    img: "folding_chair.jpg",
     desc: "35*26см вес 0,510кг",
     category: "rent",
     day: "выходные",
@@ -1140,7 +1140,7 @@ const RENT = [
   {
     id: 72,
     title: "ЗОНТ ПЛЯЖНЫЙ (СКЛАДНОЙ)",
-    img: "/product/umbrella.jpg",
+    img: "umbrella.jpg",
     desc: "35*26см вес 0,510кг",
     category: "rent",
     day: "будни",
@@ -1154,7 +1154,7 @@ const RENT = [
   {
     id: 73,
     title: "ЗОНТ ПЛЯЖНЫЙ (СКЛАДНОЙ)",
-    img: "/product/umbrella.jpg",
+    img: "umbrella.jpg",
     desc: "35*26см вес 0,510кг",
     category: "rent",
     day: "выходные",
@@ -1168,7 +1168,7 @@ const RENT = [
   {
     id: 74,
     title: "ТЕНТ ПОЛИЭСТЕР 4*4м",
-    img: "/product/awning.jpg",
+    img: "awning.jpg",
     desc: "35*26см вес 0,510кг",
     category: "rent",
     day: "будни",
@@ -1178,7 +1178,7 @@ const RENT = [
   {
     id: 75,
     title: "ТЕНТ ПОЛИЭСТЕР 4*4м",
-    img: "/product/awning.jpg",
+    img: "awning.jpg",
     desc: "35*26см вес 0,510кг",
     category: "rent",
     day: "выходные",
