@@ -1,6 +1,6 @@
 .home-page {
   margin: 10px 0;
-  background: url("basic.jpg");
+  background: url("hiker.jpg");
   width: 100%;
   height: 350px;
   background-size: cover;
@@ -13,8 +13,8 @@
 .home-page::after {
   content: "Туристическое снаряжение!";
   position: absolute;
-  top: 30px;
-  left: 50px;
+  top: 70px;
+  left: 800px;
   width: 200px;
   font-size: 35px;
   font-weight: 600;
@@ -22,10 +22,10 @@
 }
 
 .home-page::before {
-  content: "Покупупка и аренда";
+  content: "Продажа и аренда";
   position: absolute;
-  top: 130px;
-  left: 50px;
+  top: 170px;
+  left: 800px;
   width: 300px;
   font-size: 30px;
   font-weight: 500;

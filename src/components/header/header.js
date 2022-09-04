@@ -24,10 +24,10 @@ export const Header = () => {
       <a href="https://www.instagram.com/adjarapeak/?igshid=YmMyMTA2M2Y%3D">
         <BsInstagram className="instagram" />
       </a>
-      <a href="https://wa.me/995511147586">
+      <a href="https://t.me/shpaksn">
         <BsTelegram className="icon-telegram" />
       </a>
-      <a href="https://t.me/shpaksn">
+      <a href="https://wa.me/995511147586">
         <AiOutlineWhatsApp className="icon-whatsApp" />
       </a>
 

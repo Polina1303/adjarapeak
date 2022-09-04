@@ -13,9 +13,8 @@ function App() {
       <Header />
       <Routes>
         <Route exact path="/adjarapeak" element={<HomePage />} />
-        <Route exact path="/app/:title" element={<ProductPage />} />
+        <Route exact path="app/:title" element={<ProductPage />} />
         <Route exact path="/order" element={<OrderPage />} />
-        {/* <Route exact path="/app/:title" element={<RentPage />} /> */}
       </Routes>
     </div>
   );

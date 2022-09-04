@@ -17,8 +17,11 @@ export const ProductPage = () => {
         <div className="product-page_left">
           <p>{product.desc}</p>
           <p>{product.shortly}</p>
-          ppppp
-          <ProductCover />
+          <img
+            className="product-page_img"
+            src={process.env.PUBLIC_URL + "/img/" + product.img}
+            alt={product.title}
+          ></img>
         </div>
 
         <div className="product-page_right">
