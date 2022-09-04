@@ -7,3 +7,11 @@
   padding-bottom: 10px;
   text-align: center;
 }
+
+.product-items_img {
+  height: 300px;
+
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}

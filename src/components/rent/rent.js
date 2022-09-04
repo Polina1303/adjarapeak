@@ -6,7 +6,6 @@ import { Button } from "../button";
 import "./rent.css";
 
 export const Rent = ({ rent }) => {
-  console.log("day", rent.day);
   const dispatch = useDispatch();
 
   const handelClickWeekday = (e) => {

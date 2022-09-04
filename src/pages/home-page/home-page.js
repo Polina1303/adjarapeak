@@ -7,7 +7,7 @@ const PRODUCT = [
   {
     id: 1,
     title: "ПАЛАТКА BTRACE VANG 3",
-    img: "/img/BTRACE-VANG3.png",
+    img: "BTRACE-VANG3.png",
     desc: "3-х местная двухслойная палатка с двумя входами 340*220*120",
     category: "tent",
     price: 687,
@@ -36,7 +36,7 @@ const PRODUCT = [
   {
     id: 2,
     title: "ПАЛАТКА BTRACE TRAVEL 2",
-    img: "/img/BTRACE_TRAVEL2.jpg",
+    img: "BTRACE_TRAVEL2.jpg",
     desc: "2-х местная двухслойная палатка с двумя входами 250*220*120",
     category: "tent",
     price: 841,
@@ -67,7 +67,7 @@ const PRODUCT = [
   {
     id: 3,
     title: "ПАЛАТКА BTRACE TRAVEL 3",
-    img: "/img/BTRACE_TRAVEL3.jpg",
+    img: "BTRACE_TRAVEL3.jpg",
     desc: "3-х местная двухслойная палатка с двумя входами 320*220*120",
     category: "tent",
     price: 939,
@@ -213,7 +213,7 @@ const PRODUCT = [
   {
     id: 10,
     title: "РЮКЗАК ТУРИСТИЧЕСКИЙ ",
-    img: "/product/DECATHLON_pinc.avif",
+    img: "DECATHLON_pinc.avif",
     desc: "50L Forclaz",
     category: "rent",
     day: "будни",
@@ -516,7 +516,7 @@ const PRODUCT = [
   {
     id: 35,
     title: "СТУЛ СКЛАДНОЙ ПОХОДНЫЙ",
-    img: "/img/folding_chair.jpg",
+    img: "folding_chair.jpg",
     desc: "35*26 см вес 0,510 кг",
     category: "accessories",
     price: 22,

@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import "./order-page.css";
-import { calcTotalPrice } from "../../components/utils";
+import { calcTotalPrice, enumerate } from "../../components/utils";
 import { OrderItem } from "../../components/order-item";
 
 export const OrderPage = () => {
@@ -19,7 +19,10 @@ export const OrderPage = () => {
       <div className="order-page_right">
         <div className="order-page_totalprice">
           <span>
-            {items.length} товаров на сумму {calcTotalPrice(items)}₾
+            {/* {items.length} товаров на сумму {calcTotalPrice(items)}₾ */}
+            {items.length}{" "}
+            {enumerate(items.length, ["товар", "товара", "товаров"])} на сумму{" "}
+            {calcTotalPrice(items)}₾
           </span>
         </div>
       </div>
