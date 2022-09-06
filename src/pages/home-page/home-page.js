@@ -1,11 +1,12 @@
 import React from "react";
-import "./home-page.css";
 import { ProductItems } from "../../components/product-items";
 import { RentItems } from "../../components/rent-items";
+import "./home-page.css";
+import { v4 as uuid } from "uuid";
 
 const PRODUCT = [
   {
-    id: 1,
+    id: uuid(),
     title: "ПАЛАТКА BTRACE VANG 3",
     img: "BTRACE-VANG3.png",
     desc: "3-х местная двухслойная палатка с двумя входами 340*220*120",
@@ -34,7 +35,7 @@ const PRODUCT = [
     ],
   },
   {
-    id: 2,
+    id: uuid(),
     title: "ПАЛАТКА BTRACE TRAVEL 2",
     img: "BTRACE_TRAVEL2.jpg",
     desc: "2-х местная двухслойная палатка с двумя входами 250*220*120",
@@ -65,7 +66,7 @@ const PRODUCT = [
     ],
   },
   {
-    id: 3,
+    id: uuid(),
     title: "ПАЛАТКА BTRACE TRAVEL 3",
     img: "BTRACE_TRAVEL3.jpg",
     desc: "3-х местная двухслойная палатка с двумя входами 320*220*120",
@@ -96,7 +97,7 @@ const PRODUCT = [
     ],
   },
   {
-    id: 4,
+    id: uuid(),
     title: "ПАЛАТКА BTRACE CHALLENGE 2",
     img: "BTRACE_CHALLENGE2.webp",
     desc: "3-х местная двухслойная палатка с двумя входами 300*210*120",
@@ -127,7 +128,7 @@ const PRODUCT = [
     ],
   },
   {
-    id: 5,
+    id: uuid(),
     title: "СПАЛЬНЫЙ МЕШОК",
     img: "sleeping_bag_green.jpg",
     desc: "195*60см от +15 до 0",
@@ -136,7 +137,7 @@ const PRODUCT = [
     column: ["Вес: 960гр", "Размер внешний: 35*26см"],
   },
   {
-    id: 6,
+    id: uuid(),
     title: "СПАЛЬНЫЙ МЕШОК DECATHLON",
     img: "DECATHLON_slipping_bag.avif",
     desc: "190*72см от +20 до +15",
@@ -152,7 +153,7 @@ const PRODUCT = [
     ],
   },
   {
-    id: 7,
+    id: uuid(),
     title: "СПАЛЬНЫЙ МЕШОК",
     img: "sleeping_bag_red.jpg",
     desc: "Сampsor 210*66см от +10 до 0",
@@ -161,7 +162,7 @@ const PRODUCT = [
     column: ["Вес: 1300гр", "Размер внешний: 33*24см"],
   },
   {
-    id: 8,
+    id: uuid(),
     title: "СПАЛЬНЫЙ МЕШОК BTRACE MEGA ЛЕВЫЙ",
     img: "sleeping_bag_BTRACE_MEGA.webp",
     desc: "Утеплитель 195(+35)*100 от 0 до -21",
@@ -183,7 +184,7 @@ const PRODUCT = [
     ],
   },
   {
-    id: 9,
+    id: uuid(),
     title: "СПАЛЬНЫЙ МЕШОК BTRACE ZERO L SIZE ПРАВЫЙ",
     img: "BTRACE_ZERO_L.png",
     desc: "Супер лёгкий 220*90(55) от +15 до 0 ",
@@ -205,7 +206,7 @@ const PRODUCT = [
     ],
   },
   {
-    id: 10,
+    id: uuid(),
     title: "СПАЛЬНЫЙ МЕШОК BTRACE ZERO S SIZE ПРАВЫЙ",
     img: "BTRACE_ZERO_S.png",
     desc: "Супер лёгкий 190*80(50) от +15 до 0 ",
@@ -227,7 +228,7 @@ const PRODUCT = [
     ],
   },
   {
-    id: 11,
+    id: uuid(),
     title: "РЮКЗАК ТУРИСТИЧЕСКИЙ ",
     img: "DECATHLON_pinc.avif",
     desc: "50L Forclaz",
@@ -246,7 +247,7 @@ const PRODUCT = [
     ],
   },
   {
-    id: 12,
+    id: uuid(),
     title: "РЮКЗАК ТУРИСТИЧЕСКИЙ",
     img: "Сampsor_blue.jpg",
     desc: "75+10L Сampsor ",
@@ -255,7 +256,7 @@ const PRODUCT = [
     column: ["Объем: 75+10 л", "Цвет: Синий", "Материал: Нейлон"],
   },
   {
-    id: 13,
+    id: uuid(),
     title: "РЮКЗАК ТУРИСТИЧЕСКИЙ",
     img: "Cakard_black_backpack.jpg",
     desc: "95+10L Сakard ",
@@ -264,7 +265,7 @@ const PRODUCT = [
     column: ["Объем: 95+10 л"],
   },
   {
-    id: 14,
+    id: uuid(),
     title: "РЮКЗАК ТУРИСТИЧЕСКИЙ",
     img: "thenorthс_grin.webp",
     desc: "60L THE NORTH FACE(REPLICA) ",
@@ -275,7 +276,7 @@ const PRODUCT = [
     column: ["Объем: 60 л", "Длина: 70 см", "Глубина: 25 см"],
   },
   {
-    id: 15,
+    id: uuid(),
     title: "РЮКЗАК ТУРИСТИЧЕСКИЙ",
     img: "THENORTHFACE_red.jpg",
     desc: "55L THE NORTH FACE(REPLICA) ",
@@ -286,7 +287,7 @@ const PRODUCT = [
     column: ["Вес: 1.8 кг", "Материал: Нейлон"],
   },
   {
-    id: 16,
+    id: uuid(),
     title: "РЮКЗАК ТУРИСТИЧЕСКИЙ",
     img: "THENORTHFACE_blue.jpg",
     desc: "50L THE NORTH FACE(REPLICA) ",
@@ -297,7 +298,7 @@ const PRODUCT = [
     column: ["Объем: 50л", "Конструкция: Мягкий (без элементов жесткости)"],
   },
   {
-    id: 17,
+    id: uuid(),
     title: "ФОНАРИК НАЛОБНЫЙ",
     img: "lantern_blue.jpg",
     desc: "X-BALOG BL-539 ",
@@ -310,7 +311,7 @@ const PRODUCT = [
     ],
   },
   {
-    id: 18,
+    id: uuid(),
     title: "ФОНАРИК НАЛОБНЫЙ",
     img: "lantern_green.jpg",
     desc: "УЗ-918 ",
@@ -324,7 +325,7 @@ const PRODUCT = [
     ],
   },
   {
-    id: 19,
+    id: uuid(),
     title: "ГАЗ ТУРИСТИЧЕСКИЙ",
     img: "gas450.jpg",
     desc: "Nurgaz 450GR ",
@@ -339,7 +340,7 @@ const PRODUCT = [
     ],
   },
   {
-    id: 20,
+    id: uuid(),
     title: "ГАЗ ТУРИСТИЧЕСКИЙ",
     img: "gas230.jpg",
     desc: "Nurgaz 230GR ",
@@ -354,7 +355,7 @@ const PRODUCT = [
     ],
   },
   {
-    id: 21,
+    id: uuid(),
     title: "ГАЗ ТУРИСТИЧЕСКИЙ",
     img: "gas80.jpg",
     desc: "Nurgaz 80GR ",
@@ -369,7 +370,7 @@ const PRODUCT = [
     ],
   },
   {
-    id: 22,
+    id: uuid(),
     title: "ГОРЕЛКА ТУРИСТИЧЕСКИЙ",
     img: "burner32.jpg",
     desc: "Nurgaz TS-5310 ",
@@ -383,7 +384,7 @@ const PRODUCT = [
     ],
   },
   {
-    id: 23,
+    id: uuid(),
     title: "ГОРЕЛКА ТУРИСТИЧЕСКИЙ",
     img: "Campsor_folding.jpg",
     desc: "Campsor (складная) ",
@@ -392,7 +393,7 @@ const PRODUCT = [
     column: ["Материал: Алюминий", "Вес:150 гр", "Пьезоподжиг"],
   },
   {
-    id: 24,
+    id: uuid(),
     title: "КОВРИК ПЕНКА",
     img: "mat_with_case.jpg",
     desc: "175*61*1см ",
@@ -401,7 +402,7 @@ const PRODUCT = [
     column: ["Нескользящий", "Чехол в комплекте"],
   },
   {
-    id: 25,
+    id: uuid(),
     title: "КОВРИК ДЛЯ ПОХОДОВ И СПОРТА",
     img: "mat40.jpg",
     desc: "173*61*0,7см ",
@@ -410,7 +411,7 @@ const PRODUCT = [
     column: ["Материал: ЭВА"],
   },
   {
-    id: 26,
+    id: uuid(),
     title: "КОВРИК С АЛЮМИНИЕВОЙ ФОЛЬГОЙ FORA",
     img: "mat_aluminum_foil_FORA.jpg",
     desc: "180*60*0,6см ",
@@ -419,7 +420,7 @@ const PRODUCT = [
     column: ["Однослойный"],
   },
   {
-    id: 27,
+    id: uuid(),
     title: "ГЕРМОПАКЕТ BTRACE",
     img: "packageBTRACE.jpg",
     desc: "ПЛОСКИЙ ПВХ 20X13см",
@@ -428,7 +429,7 @@ const PRODUCT = [
     column: ["Материал: ПВХ"],
   },
   {
-    id: 28,
+    id: uuid(),
     title: "ОГНИВО BTRACE Ø 8 ММ",
     img: "flintBTRACE8.png",
     desc: "10х2,4х1,7см",
@@ -437,7 +438,7 @@ const PRODUCT = [
     column: ["Материал: Редкоземельный металл", "Диаметр (мм): 8"],
   },
   {
-    id: 29,
+    id: uuid(),
     title: "КОЛЫШКИ BTRACE АЛЮМИНИЙ (КОМПЛЕКТ 10 ШТ.)",
     img: "aluminum_pegs_btrace.png",
     desc: "2шт-12₾",
@@ -446,7 +447,7 @@ const PRODUCT = [
     column: ["Материал: Алюминий"],
   },
   {
-    id: 30,
+    id: uuid(),
     title: "ЧАЙНИК ПОХОДНЫЙ BTRACE 1,1Л",
     img: "teapot_BTRACE1.jpg",
     desc: "Алюминий анодированный",
@@ -455,7 +456,7 @@ const PRODUCT = [
     column: ["Вес (г): 215", "Объем (мл): 1100"],
   },
   {
-    id: 31,
+    id: uuid(),
     title: "CИДЕНЬЕ ТУРИСТИЧЕСКОЕ DECATHLON",
     img: "sitting_DECATHLON.png",
     desc: "Из пеноматериала с металлизированным слоем",
@@ -470,7 +471,7 @@ const PRODUCT = [
     ],
   },
   {
-    id: 32,
+    id: uuid(),
     title: "ТРЕКИНГОВЫЕ ПАЛКИ DECATHLON",
     img: "trekking_poles_DECATHLON.avif",
     desc: "Комплекст из 2шт, алюминиевые ",
@@ -489,7 +490,7 @@ const PRODUCT = [
     ],
   },
   {
-    id: 33,
+    id: uuid(),
     title: "ДОЖДЕВИК EVA RAINCOAT",
     img: "raincoat.jpg",
     desc: "С капюшоном 150см",
@@ -502,7 +503,7 @@ const PRODUCT = [
     ],
   },
   {
-    id: 34,
+    id: uuid(),
     title: "ПОДУШКА НАДУВНАЯ INTEX",
     img: "inflatable_pillow_INTEX.webp",
     desc: "43*28*9см",
@@ -515,7 +516,7 @@ const PRODUCT = [
     ],
   },
   {
-    id: 35,
+    id: uuid(),
     title: "ПОДУШКА-ПОДГОЛОВНИК INTEX",
     img: "pillow_headrest.webp",
     desc: "36*30*10см",
@@ -530,7 +531,7 @@ const PRODUCT = [
     ],
   },
   {
-    id: 36,
+    id: uuid(),
     title: "СТУЛ СКЛАДНОЙ ПОХОДНЫЙ",
     img: "folding_chair.jpg",
     desc: "35*26 см вес 0,510 кг",
@@ -542,7 +543,7 @@ const PRODUCT = [
 
 const RENT = [
   {
-    id: 37,
+    id: uuid(),
     title: "ПАЛАТКА ARTEN LIGHT 2",
     img: "arten_light2.png",
     desc: "2-х местная cамораскрывающаяся однослойная палатка 230*110*90",
@@ -567,7 +568,7 @@ const RENT = [
     ],
   },
   {
-    id: 38,
+    id: uuid(),
     title: "ПАЛАТКА ARTEN LIGHT 2",
     img: "arten_light2.png",
     desc: "2-х местная cамораскрывающаяся однослойная палатка 230*110*90",
@@ -592,7 +593,7 @@ const RENT = [
     ],
   },
   {
-    id: 39,
+    id: uuid(),
     title: "ПАЛАТКА ARTEN SPACE",
     img: "ARTEN_SPACE.webp",
     desc: "2-х местная легкая однослойная палатка 210*150*120",
@@ -618,7 +619,7 @@ const RENT = [
     ],
   },
   {
-    id: 40,
+    id: uuid(),
     title: "ПАЛАТКА ARTEN SPACE",
     img: "ARTEN_SPACE.webp",
     desc: "2-х местная легкая однослойная палатка 210*150*120",
@@ -644,7 +645,7 @@ const RENT = [
     ],
   },
   {
-    id: 41,
+    id: uuid(),
     title: "ПАЛАТКА DECATHLON",
     img: "DECATHLON2ух.avif",
     desc: "2-х местная двухслойная палатка 130*210*107",
@@ -664,7 +665,7 @@ const RENT = [
     ],
   },
   {
-    id: 42,
+    id: uuid(),
     title: "ПАЛАТКА DECATHLON",
     img: "DECATHLON2ух.avif",
     desc: "2-х местная двухслойная палатка 130*210*107",
@@ -684,7 +685,7 @@ const RENT = [
     ],
   },
   {
-    id: 43,
+    id: uuid(),
     title: "ПАЛАТКА DECATHLON",
     img: "DECATHLON2ух.avif",
     desc: "3-х местная двухслойная палатка 130*210*107",
@@ -706,7 +707,7 @@ const RENT = [
     ],
   },
   {
-    id: 44,
+    id: uuid(),
     title: "ПАЛАТКА DECATHLON",
     img: "DECATHLON2ух.avif",
     desc: "3-х местная двухслойная палатка 130*210*107",
@@ -728,7 +729,7 @@ const RENT = [
     ],
   },
   {
-    id: 45,
+    id: uuid(),
     title: "ПАЛАТКА BESTWAY PAVILLO COOLDOME",
     img: "bestwat_pavillo.jpg",
     desc: "3-х местная однослойная палатка 210*210*130",
@@ -752,7 +753,7 @@ const RENT = [
     ],
   },
   {
-    id: 46,
+    id: uuid(),
     title: "ПАЛАТКА BESTWAY PAVILLO COOLDOME",
     img: "bestwat_pavillo.jpg",
     desc: "3-х местная однослойная палатка 210*210*130",
@@ -776,7 +777,7 @@ const RENT = [
     ],
   },
   {
-    id: 47,
+    id: uuid(),
     title: "ПАЛАТКА BESTWAY COOLMOUNT4",
     img: "COOLMOUNT4.jpg",
     desc: "4-х местная cамораскрывающаяся однослойная 240*210*100 см",
@@ -796,7 +797,7 @@ const RENT = [
     ],
   },
   {
-    id: 48,
+    id: uuid(),
     title: "ПАЛАТКА BESTWAY COOLMOUNT4",
     img: "COOLMOUNT4.jpg",
     desc: "4-х местная cамораскрывающаяся",
@@ -816,7 +817,7 @@ const RENT = [
     ],
   },
   {
-    id: 49,
+    id: uuid(),
     title: "СПАЛЬНЫЙ МЕШОК BTRACE ZERO L SIZE ПРАВЫЙ",
     img: "BTRACE_ZERO_L.png",
     desc: "Супер лёгкий 220*90(55) от +15 до 0 ",
@@ -839,7 +840,7 @@ const RENT = [
     ],
   },
   {
-    id: 50,
+    id: uuid(),
     title: "СПАЛЬНЫЙ МЕШОК BTRACE ZERO L SIZE ПРАВЫЙ",
     img: "BTRACE_ZERO_L.png",
     desc: "Супер лёгкий 220*90(55) от +15 до 0 ",
@@ -862,7 +863,7 @@ const RENT = [
     ],
   },
   {
-    id: 51,
+    id: uuid(),
     title: "СПАЛЬНЫЙ МЕШОК",
     img: "sleeping_bag_green.jpg",
     desc: "195*60см от +15 до 0",
@@ -872,7 +873,7 @@ const RENT = [
     column: ["Вес: 960гр", "Размер внешний: 35*26см"],
   },
   {
-    id: 52,
+    id: uuid(),
     title: "СПАЛЬНЫЙ МЕШОК",
     img: "sleeping_bag_red.jpg",
     desc: "Сampsor 210*66см от +10 до 0",
@@ -882,7 +883,7 @@ const RENT = [
     column: ["Вес: 1300гр", "Размер внешний: 33*24см"],
   },
   {
-    id: 53,
+    id: uuid(),
     title: "РЮКЗАК ТУРИСТИЧЕСКИЙ ",
     img: "DECATHLON_pinc.avif",
     desc: "50L Forclaz",
@@ -901,7 +902,7 @@ const RENT = [
     ],
   },
   {
-    id: 54,
+    id: uuid(),
     title: "РЮКЗАК ТУРИСТИЧЕСКИЙ ",
     img: "DECATHLON_pinc.avif",
     desc: "50L Forclaz",
@@ -920,7 +921,7 @@ const RENT = [
     ],
   },
   {
-    id: 55,
+    id: uuid(),
     title: "РЮКЗАК ТУРИСТИЧЕСКИЙ",
     img: "THENORTHFACE_blue.jpg",
     desc: "50L THE NORTH FACE(REPLICA) ",
@@ -932,7 +933,7 @@ const RENT = [
     column: ["Объем: 50л", "Конструкция: Мягкий (без элементов жесткости)"],
   },
   {
-    id: 56,
+    id: uuid(),
     title: "РЮКЗАК ТУРИСТИЧЕСКИЙ",
     img: "THENORTHFACE_blue.jpg",
     desc: "50L THE NORTH FACE(REPLICA) ",
@@ -944,7 +945,7 @@ const RENT = [
     column: ["Объем: 50л", "Конструкция: Мягкий (без элементов жесткости)"],
   },
   {
-    id: 57,
+    id: uuid(),
     title: "ТРЕКИНГОВЫЕ ПАЛКИ DECATHLON",
     img: "trekking_poles_DECATHLON.avif",
     desc: "Комплекст из 2шт, алюминиевые ",
@@ -964,7 +965,7 @@ const RENT = [
     ],
   },
   {
-    id: 58,
+    id: uuid(),
     title: "ТРЕКИНГОВЫЕ ПАЛКИ DECATHLON",
     img: "trekking_poles_DECATHLON.avif",
     desc: "Комплекст из 2шт, алюминиевые ",
@@ -984,7 +985,7 @@ const RENT = [
     ],
   },
   {
-    id: 59,
+    id: uuid(),
     title: "CИДЕНЬЕ ТУРИСТИЧЕСКОЕ DECATHLON",
     img: "sitting_DECATHLON.png",
     desc: "Из пеноматериала с металлизированным слоем",
@@ -1000,7 +1001,7 @@ const RENT = [
     ],
   },
   {
-    id: 60,
+    id: uuid(),
     title: "CИДЕНЬЕ ТУРИСТИЧЕСКОЕ DECATHLON",
     img: "sitting_DECATHLON.png",
     desc: "Из пеноматериала с металлизированным слоем",
@@ -1016,7 +1017,7 @@ const RENT = [
     ],
   },
   {
-    id: 61,
+    id: uuid(),
     title: "КОВРИК ДЛЯ ПОХОДОВ И СПОРТА",
     img: "mat40.jpg",
     desc: "173*61*0,7см ",
@@ -1026,7 +1027,7 @@ const RENT = [
     column: ["Материал: ЭВА"],
   },
   {
-    id: 62,
+    id: uuid(),
     title: "КОВРИК С АЛЮМИНИЕВОЙ ФОЛЬГОЙ FORA",
     img: "mat_aluminum_foil_FORA.jpg",
     desc: "180*60*0,6см ",
@@ -1036,7 +1037,7 @@ const RENT = [
     column: ["Однослойный"],
   },
   {
-    id: 63,
+    id: uuid(),
     title: "ГОРЕЛКА ТУРИСТИЧЕСКИЙ",
     img: "burner32.jpg",
     desc: "Nurgaz TS-5310 ",
@@ -1051,7 +1052,7 @@ const RENT = [
     ],
   },
   {
-    id: 64,
+    id: uuid(),
     title: "ГОРЕЛКА ТУРИСТИЧЕСКИЙ",
     img: "burner32.jpg",
     desc: "Nurgaz TS-5310 ",
@@ -1066,7 +1067,7 @@ const RENT = [
     ],
   },
   {
-    id: 65,
+    id: uuid(),
     title: "ГЕРМОПАКЕТ BTRACE",
     img: "packageBTRACE.jpg",
     desc: "ПЛОСКИЙ ПВХ 20X13см",
@@ -1076,7 +1077,7 @@ const RENT = [
     column: ["Материал: ПВХ"],
   },
   {
-    id: 66,
+    id: uuid(),
     title: "ГЕРМОПАКЕТ BTRACE",
     img: "packageBTRACE.jpg",
     desc: "ПЛОСКИЙ ПВХ 20X13см",
@@ -1086,7 +1087,7 @@ const RENT = [
     column: ["Материал: ПВХ"],
   },
   {
-    id: 67,
+    id: uuid(),
     title: "ЧАЙНИК ПОХОДНЫЙ BTRACE 1,1Л",
     img: "teapot_BTRACE1.jpg",
     desc: "Алюминий анодированный",
@@ -1096,7 +1097,7 @@ const RENT = [
     column: ["Вес (г): 215", "Объем (мл): 1100"],
   },
   {
-    id: 68,
+    id: uuid(),
     title: "ЧАЙНИК ПОХОДНЫЙ BTRACE 1,1Л",
     img: "teapot_BTRACE1.jpg",
     desc: "Алюминий анодированный",
@@ -1106,7 +1107,7 @@ const RENT = [
     column: ["Вес (г): 215", "Объем (мл): 1100"],
   },
   {
-    id: 69,
+    id: uuid(),
     title: "ФОНАРИК НАЛОБНЫЙ",
     img: "lantern_blue.jpg",
     desc: "X-BALOG BL-539 ",
@@ -1120,7 +1121,7 @@ const RENT = [
     ],
   },
   {
-    id: 70,
+    id: uuid(),
     title: "ФОНАРИК НАЛОБНЫЙ",
     img: "lantern_blue.jpg",
     desc: "X-BALOG BL-539 ",
@@ -1134,7 +1135,7 @@ const RENT = [
     ],
   },
   {
-    id: 71,
+    id: uuid(),
     title: "СТУЛ СКЛАДНОЙ ПОХОДНЫЙ",
     img: "folding_chair.jpg",
     desc: "35*26см вес 0,510кг",
@@ -1144,7 +1145,7 @@ const RENT = [
     column: ["Размер в сложенном виде: 47*33 см"],
   },
   {
-    id: 72,
+    id: uuid(),
     title: "СТУЛ СКЛАДНОЙ ПОХОДНЫЙ",
     img: "folding_chair.jpg",
     desc: "35*26см вес 0,510кг",
@@ -1154,7 +1155,7 @@ const RENT = [
     column: ["Размер в сложенном виде: 47*33 см"],
   },
   {
-    id: 73,
+    id: uuid(),
     title: "ЗОНТ ПЛЯЖНЫЙ (СКЛАДНОЙ)",
     img: "umbrella.jpg",
     desc: "35*26см вес 0,510кг",
@@ -1168,7 +1169,7 @@ const RENT = [
     ],
   },
   {
-    id: 74,
+    id: uuid(),
     title: "ЗОНТ ПЛЯЖНЫЙ (СКЛАДНОЙ)",
     img: "umbrella.jpg",
     desc: "35*26см вес 0,510кг",
@@ -1182,7 +1183,7 @@ const RENT = [
     ],
   },
   {
-    id: 75,
+    id: uuid(),
     title: "ТЕНТ ПОЛИЭСТЕР 4*4м",
     img: "awning.jpg",
     desc: "35*26см вес 0,510кг",
@@ -1192,7 +1193,7 @@ const RENT = [
     column: ["Материал тента: Полиэстер с ПУ пропиткой"],
   },
   {
-    id: 76,
+    id: uuid(),
     title: "ТЕНТ ПОЛИЭСТЕР 4*4м",
     img: "awning.jpg",
     desc: "35*26см вес 0,510кг",
@@ -1205,7 +1206,7 @@ const RENT = [
 
 export const HomePage = () => {
   return (
-    <div>
+    <div className="home-page_container">
       <div className="home-page"></div>
       <div className="title">ПРОДАЖА</div>
       <div className="home-page-product">

@@ -24,10 +24,10 @@ export const OrderItem = ({ item }) => {
       </div>
       <div className="order-item_title">{item.title}</div>
       <div className="order-item__price">
-        <span>{item.price}₾</span>
+        <span>{item.price * item.count}₾</span>
         <TiDeleteOutline
           size={25}
-          className="cart-item_delete"
+          className="order-item_delete"
           onClick={handleClick}
         />
       </div>

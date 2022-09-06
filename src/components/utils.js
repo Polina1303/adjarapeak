@@ -1,5 +1,5 @@
 export const calcTotalPrice = (items) =>
-  items.reduce((acc, product) => (acc += product.price), 0);
+  items.reduce((acc, product) => (acc += product.price * product.count), 0);
 
 export const enumerate = (num, dec) => {
   if (num > 100) num = num % 100;

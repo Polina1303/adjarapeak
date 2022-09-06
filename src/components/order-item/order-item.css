@@ -23,8 +23,8 @@
   margin-left: auto;
 }
 
-.cart-item_delete {
+.order-item_delete {
   margin-left: 5px;
   cursor: pointer;
-  color: #de682d;
+  color: #9f9d9df5;
 }

@@ -18,12 +18,14 @@ export const OrderPage = () => {
       </div>
       <div className="order-page_right">
         <div className="order-page_totalprice">
-          <span>
-            {/* {items.length} товаров на сумму {calcTotalPrice(items)}₾ */}
+          <h4>
             {items.length}{" "}
             {enumerate(items.length, ["товар", "товара", "товаров"])} на сумму{" "}
             {calcTotalPrice(items)}₾
-          </span>
+          </h4>
+          <h3>
+            Для оформления заказа свяжитесь с нами по номеру +995 511 147 586
+          </h3>
         </div>
       </div>
     </div>

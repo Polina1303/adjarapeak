@@ -10,6 +10,12 @@
   width: 400px;
 }
 
+@media (max-width: 480px) {
+  .product-page_img {
+    width: 150px;
+  }
+}
+
 .product-page_right {
   width: 30%;
 }

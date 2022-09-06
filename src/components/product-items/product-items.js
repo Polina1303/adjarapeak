@@ -7,7 +7,6 @@ import { setCurrentProduct } from "../../redux/product/reducer";
 import { Buy } from "../buy/buy";
 
 export const ProductItems = ({ product }) => {
-  console.log(product.img);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -17,9 +16,7 @@ export const ProductItems = ({ product }) => {
   };
   return (
     <div className="product-items" onClick={handelClickImg}>
-      {/* <ProductCover img={product.img} /> */}
       <div className="product-items_details">
-        {/* <ProductCover img={product.img} /> */}
         <img
           className="product-items_img"
           src={process.env.PUBLIC_URL + "/img/" + product.img}

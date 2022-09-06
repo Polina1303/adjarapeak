@@ -5,7 +5,6 @@ import { calcTotalPrice } from "../utils";
 import "./cart-menu.css";
 
 export const CartMenu = ({ items, onClick }) => {
-  console.log("item", items);
   return (
     <div className="cart-menu">
       <div className="cart-menu_list">
@@ -17,6 +16,7 @@ export const CartMenu = ({ items, onClick }) => {
                 price={item.price}
                 title={item.title}
                 id={item.id}
+                count={item.count}
               />
             ))
           : "Карзина пуста"}

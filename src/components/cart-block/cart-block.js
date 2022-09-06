@@ -12,16 +12,19 @@ export const CartBlock = () => {
   const items = useSelector((state) => state.cart.itemsInCart);
   const navigate = useNavigate();
 
-  const totalPrice = calcTotalPrice(items);
-
   const handleClick = useCallback(() => {
     setIsCartMenuVisible(false);
     navigate("/order");
   }, [navigate]);
 
+  const totalPrice = calcTotalPrice(items);
+  const totalCount = items.reduce((acc, item) => acc + item.count, 0);
+
+  // export const calcTotalPrice = (items) =>
+  // items.reduce((acc, product) => (acc += product.price * product.count), 0);
   return (
     <div className="cart-block">
-      <ItemsInCart quantity={items.length} />
+      <ItemsInCart quantity={totalCount} />
       <BsCart3
         size={"25"}
         className="cart-icon"

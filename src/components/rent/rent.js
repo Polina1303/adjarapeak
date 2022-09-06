@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setItemInCart } from "../../redux/cart/reducer";
 import { MdAddShoppingCart } from "react-icons/md";
 import { Button } from "../button";
@@ -12,6 +12,13 @@ export const Rent = ({ rent }) => {
     e.stopPropagation();
     dispatch(setItemInCart(rent));
   };
+
+  const cartItem = useSelector((state) =>
+    state.cart.itemsInCart.find((item) => item.id === rent.id)
+  );
+
+  const addedCount = cartItem ? cartItem.count : 0;
+
   return (
     <div>
       <b className="rent-items-price">{rent.price}₾-сутки</b>
@@ -19,6 +26,7 @@ export const Rent = ({ rent }) => {
         <Button onClick={handelClickWeekday} type="primary">
           {rent.day}
           <MdAddShoppingCart className="md" size={"25px"} />
+          {addedCount > 0 && <i className="rent-items_count">{addedCount}</i>}
         </Button>
       </span>
     </div>
