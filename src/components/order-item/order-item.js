@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { TiDeleteOutline } from "react-icons/ti";
 import { deletItemFromCart } from "../../redux/cart/reducer";
 import "./order-item.css";
+import { Button } from "../button";
 
 export const OrderItem = ({ item }) => {
   const dispatch = useDispatch();
@@ -23,11 +24,13 @@ export const OrderItem = ({ item }) => {
       <div className="order-item_title">{item.title}</div>
       <div className="order-item__price">
         <span>{item.price * item.count}₾</span>
-        <TiDeleteOutline
-          size={25}
-          className="order-item_delete"
-          onClick={handleClick}
-        />
+        <Button>
+          <TiDeleteOutline
+            size={25}
+            className="order-item_delete"
+            onClick={handleClick}
+          />
+        </Button>
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import React, { useCallback, useState } from "react";
 import { BsCart3 } from "react-icons/bs";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { Button } from "../button";
 import { CartMenu } from "../cart-menu";
 import { ItemsInCart } from "../items-in-cart";
 import { calcTotalPrice } from "../utils";
@@ -23,11 +24,13 @@ export const CartBlock = () => {
   return (
     <div className="cart-block">
       <ItemsInCart quantity={totalCount} />
-      <BsCart3
-        size={"25"}
-        className="cart-icon"
-        onClick={() => setIsCartMenuVisible(!isCartMenuVisible)}
-      />
+      <Button>
+        <BsCart3
+          size={"25"}
+          className="cart-icon"
+          onClick={() => setIsCartMenuVisible(!isCartMenuVisible)}
+        />
+      </Button>
       {totalPrice > 0 ? <div className="cart-price">{totalPrice}₾</div> : null}
       {isCartMenuVisible && <CartMenu items={items} onClick={handleClick} />}
     </div>
