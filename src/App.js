@@ -3,7 +3,6 @@ import { Routes, Route } from "react-router-dom";
 import { HomePage } from "./pages/home-page";
 import { Header } from "./components/header";
 import { ProductPage } from "./pages/product-page";
-import { RentPage } from "./pages/rent-page";
 import { OrderPage } from "./pages/order-page";
 
 function App() {

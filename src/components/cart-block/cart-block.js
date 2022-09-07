@@ -20,8 +20,6 @@ export const CartBlock = () => {
   const totalPrice = calcTotalPrice(items);
   const totalCount = items.reduce((acc, item) => acc + item.count, 0);
 
-  // export const calcTotalPrice = (items) =>
-  // items.reduce((acc, product) => (acc += product.price * product.count), 0);
   return (
     <div className="cart-block">
       <ItemsInCart quantity={totalCount} />

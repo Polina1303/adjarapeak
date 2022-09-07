@@ -1,10 +1,9 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { ProductCover } from "../../components/product-cover";
-import "./product-items.css";
 import { setCurrentProduct } from "../../redux/product/reducer";
 import { Buy } from "../buy/buy";
+import "./product-items.css";
 
 export const ProductItems = ({ product }) => {
   const dispatch = useDispatch();
@@ -29,19 +28,3 @@ export const ProductItems = ({ product }) => {
     </div>
   );
 };
-
-{
-  //  <img
-  //         className="product-items_img"
-  //         src={process.env.PUBLIC_URL + "/img/" + product.img}
-  //         alt={product.title}
-  //       />
-}
-{
-  /* <img
-          className="product-items_img"
-          src={
-            "https://avatars.mds.yandex.net/get-mpic/4119563/img_id7875406929008198325.jpeg/orig"
-          }
-        /> */
-}

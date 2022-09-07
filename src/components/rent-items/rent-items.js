@@ -1,9 +1,9 @@
 import React from "react";
-import "./rent-items.css";
 import { Rent } from "../rent/rent";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setCurrentProduct } from "../../redux/product/reducer";
+import "./rent-items.css";
 
 export const RentItems = ({ rent }) => {
   const dispatch = useDispatch();

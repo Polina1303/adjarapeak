@@ -1,8 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { ProductCover } from "../../components/product-cover";
-import "./product-page.css";
 import { Buy } from "../../components/buy/buy";
+import "./product-page.css";
 
 export const ProductPage = () => {
   const product = useSelector((state) => state.products.currentProduct);

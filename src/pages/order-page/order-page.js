@@ -1,8 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import "./order-page.css";
 import { calcTotalPrice, enumerate } from "../../components/utils";
 import { OrderItem } from "../../components/order-item";
+import "./order-page.css";
 
 export const OrderPage = () => {
   const items = useSelector((state) => state.cart.itemsInCart);
@@ -24,7 +24,8 @@ export const OrderPage = () => {
             {calcTotalPrice(items)}₾
           </h4>
           <h3>
-            Для оформления заказа свяжитесь с нами по номеру +995 511 147 586
+            Для оформления заказа свяжитесь с нами по номеру +995 511 147 586. С
+            уважением Adjara Peak.
           </h3>
         </div>
       </div>

@@ -14,7 +14,7 @@
   .cart-menu {
     position: absolute;
     top: 30px;
-    right: -207px;
+    right: -250px;
     left: 10px;
     background-color: #ebe8e8f5;
     width: 400;
@@ -27,7 +27,7 @@
   .cart-menu {
     position: absolute;
     top: 30px;
-    right: -20px;
+    right: -10px;
     left: 0px;
     background-color: #ebe8e8f5;
     width: 400;
@@ -40,7 +40,7 @@
   .cart-menu {
     position: absolute;
     top: 30px;
-    right: -50px;
+    right: -35px;
     left: 0px;
     background-color: #ebe8e8f5;
     width: 400;

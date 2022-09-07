@@ -1,9 +1,9 @@
 import React from "react";
-import "./buy.css";
 import { useDispatch, useSelector } from "react-redux";
 import { setItemInCart } from "../../redux/cart/reducer";
 import { MdAddShoppingCart } from "react-icons/md";
 import { Button } from "../../components/button";
+import "./buy.css";
 
 export const Buy = ({ product, rent }) => {
   const dispatch = useDispatch();
@@ -24,7 +24,6 @@ export const Buy = ({ product, rent }) => {
       <div className="add-to-cart">
         <Button onClick={handelClick} type="primary">
           <MdAddShoppingCart size={"25px"} />
-
           {addedCount > 0 && (
             <i className="product-items_count">{addedCount}</i>
           )}

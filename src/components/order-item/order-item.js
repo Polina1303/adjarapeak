@@ -1,12 +1,10 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { ProductCover } from "../product-cover";
 import { TiDeleteOutline } from "react-icons/ti";
-import "./order-item.css";
 import { deletItemFromCart } from "../../redux/cart/reducer";
+import "./order-item.css";
 
 export const OrderItem = ({ item }) => {
-  console.log("item.img", item.img);
   const dispatch = useDispatch();
 
   const handleClick = () => {

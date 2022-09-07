@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { CartBlock } from "../cart-block";
-import "./header.css";
-import adjara from "../image/adjara.jpg";
 import { MdLocationPin } from "react-icons/md";
 import { BsInstagram, BsTelegram } from "react-icons/bs";
 import { AiOutlineWhatsApp } from "react-icons/ai";
+import adjara from "../image/adjara.jpg";
+import "./header.css";
 
 export const Header = () => {
   return (

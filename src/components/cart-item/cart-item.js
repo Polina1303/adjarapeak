@@ -1,23 +1,17 @@
 import React from "react";
 import { TiDeleteOutline } from "react-icons/ti";
-
 import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   deletItemFromCart,
   minusItem,
   plusItem,
 } from "../../redux/cart/reducer";
-import "./cart-item.css";
 import { Button } from "../button";
+import "./cart-item.css";
 
 export const CartItem = ({ img, title, price, id, count }) => {
-  // const { count } = useSelector((state) =>
-  //   state.cart.itemsInCart.find((item) => item.id === id)
-  // );
-  const items = useSelector((state) => state.cart.itemsInCart);
   const dispatch = useDispatch();
-
   const handleClick = () => {
     dispatch(deletItemFromCart(id));
   };

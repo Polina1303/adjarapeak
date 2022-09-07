@@ -1,6 +1,5 @@
 import classNames from "classnames";
 import React from "react";
-import { MdAddShoppingCart } from "react-icons/md";
 import "./button.css";
 
 export const Button = ({ onClick, type, children, size = "s" }) => {
