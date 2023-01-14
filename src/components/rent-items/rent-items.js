@@ -14,9 +14,9 @@ export const RentItems = ({ rent }) => {
     navigate(`/app/${rent.title}`);
   };
   return (
-    <div className="rent-items" onClick={handelClickImg}>
+    <div className="rent-items">
       <div className="rent-items_details">
-        <img
+        <img onClick={handelClickImg}
           className="rent-items_img "
           src={process.env.PUBLIC_URL + "/img/" + rent.img}
           alt={rent.title}

@@ -15,20 +15,20 @@
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     height: 120px;
+   
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .header {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 7fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 5px;
-    height: 330px;
+ display: flex;
+ flex-wrap:wrap;
+ justify-content: space-between ;
+padding-bottom: 10px;
   }
   .location {
-    margin-top: -70px;
+    margin-top: -40px;
   }
+ 
 }
 
 .wrapper {

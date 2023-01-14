@@ -14,9 +14,9 @@ export const ProductItems = ({ product }) => {
     navigate(`/app/${product.title}`);
   };
   return (
-    <div className="product-items" onClick={handelClickImg}>
+    <div className="product-items" >
       <div className="product-items_details">
-        <img
+        <img onClick={handelClickImg}
           className="product-items_img"
           src={process.env.PUBLIC_URL + "/img/" + product.img}
           alt={product.title}

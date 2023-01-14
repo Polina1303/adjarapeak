@@ -19,7 +19,7 @@ export const Header = () => {
         <MdLocationPin size={25} color={"#de682d"} />
         <span>Батуми ул.Тбел-Абусеридзе,38 (10:00-18:00)</span>
       </div>
-      <div className="number">+995 511 147 586</div>
+          <div className="number">+995 511 147 586</div>
       <a href="https://www.instagram.com/adjarapeak/?igshid=YmMyMTA2M2Y%3D">
         <BsInstagram className="instagram" />
       </a>
@@ -29,7 +29,6 @@ export const Header = () => {
       <a href="https://wa.me/995511147586">
         <AiOutlineWhatsApp className="icon-whatsApp" />
       </a>
-
       <div className="cart">
         <CartBlock />
       </div>
