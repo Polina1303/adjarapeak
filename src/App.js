@@ -4,6 +4,7 @@ import { HomePage } from "./pages/home-page";
 import { Header } from "./components/header";
 import { ProductPage } from "./pages/product-page";
 import { OrderPage } from "./pages/order-page";
+import { Footer } from "./components/footer";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route exact path="app/:title" element={<ProductPage />} />
         <Route exact path="/order" element={<OrderPage />} />
       </Routes>
+      <Footer/>
     </div>
   );
 }
