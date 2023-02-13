@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/adjarapeak/static/css/main.014b5371.css",
-    "main.js": "/adjarapeak/static/js/main.072d475c.js",
+    "main.css": "/adjarapeak/static/css/main.05e897c8.css",
+    "main.js": "/adjarapeak/static/js/main.c1ca44b3.js",
     "static/media/hiker.jpg": "/adjarapeak/static/media/hiker.1aa512d2dd134df8568f.jpg",
+    "static/media/certificate.jpg": "/adjarapeak/static/media/certificate.28c932b10cd698e1e4aa.jpg",
     "static/media/adjara.jpg": "/adjarapeak/static/media/adjara.443bef245fde3156441e.jpg",
     "index.html": "/adjarapeak/index.html",
-    "main.014b5371.css.map": "/adjarapeak/static/css/main.014b5371.css.map",
-    "main.072d475c.js.map": "/adjarapeak/static/js/main.072d475c.js.map"
+    "main.05e897c8.css.map": "/adjarapeak/static/css/main.05e897c8.css.map",
+    "main.c1ca44b3.js.map": "/adjarapeak/static/js/main.c1ca44b3.js.map"
   },
   "entrypoints": [
-    "static/css/main.014b5371.css",
-    "static/js/main.072d475c.js"
+    "static/css/main.05e897c8.css",
+    "static/js/main.c1ca44b3.js"
   ]
 }
