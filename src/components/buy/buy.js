@@ -1,4 +1,3 @@
-import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setItemInCart } from "../../redux/cart/reducer";
 import { MdAddShoppingCart } from "react-icons/md";
@@ -20,12 +19,12 @@ export const Buy = ({ product, rent }) => {
 
   return (
     <div>
-      <b className="product-items_price">{product.price}₾</b>
+      <b className="product-items__price">{product.price}₾</b>
       <div className="add-to-cart">
         <Button onClick={handelClick} type="primary">
           <MdAddShoppingCart size={"25px"} />
           {addedCount > 0 && (
-            <i className="product-items_count">{addedCount}</i>
+            <i className="product-items__count">{addedCount}</i>
           )}
         </Button>
       </div>

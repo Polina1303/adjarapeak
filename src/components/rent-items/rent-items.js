@@ -1,4 +1,3 @@
-import React from "react";
 import { Rent } from "../rent/rent";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -15,13 +14,14 @@ export const RentItems = ({ rent }) => {
   };
   return (
     <div className="rent-items">
-      <div className="rent-items_details">
-        <img onClick={handelClickImg}
-          className="rent-items_img "
+      <div className="rent-items__details">
+        <img
+          onClick={handelClickImg}
+          className="rent-items__img"
           src={process.env.PUBLIC_URL + "/img/" + rent.img}
           alt={rent.title}
         />
-        <span className="rent-items_title">{rent.title}</span>
+        <span className="rent-items__title">{rent.title}</span>
         <p>{rent.desc}</p>
         <Rent rent={rent} />
       </div>

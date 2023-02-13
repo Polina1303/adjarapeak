@@ -1,4 +1,3 @@
-import React from "react";
 import { TiDeleteOutline } from "react-icons/ti";
 import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
 import { useDispatch } from "react-redux";
@@ -24,33 +23,39 @@ export const CartItem = ({ img, title, price, id, count }) => {
   };
 
   return (
-    <div className="cart-item">
-      <img
-        className="cart-item_img"
-        src={process.env.PUBLIC_URL + "/img/" + img}
-        alt={title}
-      ></img>
-      <div className="cart-item_title">
-        <span>{title}</span>
-      </div>
-      <div className="cart-item_count_but">
-        <Button onClick={handleClickMinus}>
-          <AiOutlineMinusCircle className="cart-item_count" size={20} />
-        </Button>
-        {count}
-        <Button onClick={handleClickPlus}>
-          <AiOutlinePlusCircle className="cart-item_count" size={20} />
-        </Button>
-      </div>
-      <div className="cart-item_price">
-        <span>{price * count}₾</span>
-      </div>
-      <div>
-        <TiDeleteOutline
-          size={25}
-          className="cart-item_delete"
-          onClick={handleClick}
-        />
+    <div className="cover">
+      <div className="cart-item">
+        <img
+          className="cart-item__img"
+          src={process.env.PUBLIC_URL + "/img/" + img}
+          alt={title}
+        ></img>
+        <div className="cart-item__title">
+          <span>{title}</span>
+        </div>
+        {count >= 0 ? (
+          <div className="cart-item__count_but">
+            <Button onClick={handleClickMinus}>
+              <AiOutlineMinusCircle className="cart-item__count" size={20} />
+            </Button>
+            {count}
+            <Button onClick={handleClickPlus}>
+              <AiOutlinePlusCircle className="cart-item__count" size={20} />
+            </Button>
+          </div>
+        ) : (
+          handleClick()
+        )}
+        <div>
+          <span className="cart-item__price">{price * count}₾</span>
+        </div>
+        <div>
+          <TiDeleteOutline
+            size={25}
+            className="cart-item__delete"
+            onClick={handleClick}
+          />
+        </div>
       </div>
     </div>
   );

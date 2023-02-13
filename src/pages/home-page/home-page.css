@@ -49,6 +49,7 @@
     grid-row-gap: 0px;
   }
 }
+
 @media (max-width: 500px) {
   .home-page-product {
     display: grid;
@@ -58,6 +59,7 @@
     grid-row-gap: 0px;
   }
 }
+
 @media (max-width: 500px) {
   .home-page {
     margin: 10px 0;

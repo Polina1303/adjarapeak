@@ -1,22 +1,22 @@
-.product-page_content {
+.product-page__content {
   display: flex;
 }
 
-.product-page_left {
+.product-page__left {
   width: 70%;
 }
 
-.product-page_img {
+.product-page__img {
   width: 400px;
 }
 
 @media (max-width: 480px) {
-  .product-page_img {
+  .product-page__img {
     width: 150px;
   }
 }
 
-.product-page_right {
+.product-page__right {
   width: 30%;
 }
 
@@ -26,14 +26,14 @@
   line-height: 30px;
 }
 
-.product-page_price_buy {
+.product-page__price__buy {
   display: flex;
   justify-content: flex-end;
 
   font-size: 25px;
 }
 
-.product-page_day {
+.product-page__day {
   margin-right: 10px;
   margin-top: -1px;
 }

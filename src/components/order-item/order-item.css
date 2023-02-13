@@ -3,16 +3,16 @@
   margin-bottom: 30px;
 }
 
-.order-item_cover {
+.order-item__cover {
   width: 100px;
   margin-right: 30px;
 }
 
-.order-items_img {
+.order-items__img {
   width: 140px;
 }
 
-.order-item_title {
+.order-item__title {
   font-size: 24px;
   font-weight: bold;
 }
@@ -23,7 +23,7 @@
   margin-left: auto;
 }
 
-.order-item_delete {
+.order-item__delete {
   margin-left: 5px;
   cursor: pointer;
   color: #9f9d9df5;

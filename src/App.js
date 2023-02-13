@@ -1,4 +1,3 @@
-import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { HomePage } from "./pages/home-page";
 import { Header } from "./components/header";
@@ -15,7 +14,7 @@ function App() {
         <Route exact path="app/:title" element={<ProductPage />} />
         <Route exact path="/order" element={<OrderPage />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

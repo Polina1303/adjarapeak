@@ -1,5 +1,4 @@
 import classNames from "classnames";
-import React from "react";
 import "./button.css";
 
 export const Button = ({ onClick, type, children, size = "s" }) => {

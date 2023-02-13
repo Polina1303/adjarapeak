@@ -8,10 +8,19 @@
   text-align: center;
 }
 
-.product-items_img {
-  height: 340px;
+.product-items__img {
   width: 100%;
   background-size: cover;
   background-position: center;
   cursor: pointer;
+  transition: transform 500ms ease;
+}
+
+.product-items__img:hover {
+  transform: scale(1.1);
+}
+
+.product-items__title {
+  display: block;
+  margin-top: 15px;
 }

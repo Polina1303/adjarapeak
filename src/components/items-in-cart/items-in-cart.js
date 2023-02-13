@@ -1,4 +1,3 @@
-import React from "react";
 import "./items-in-cart.css";
 
 export const ItemsInCart = ({ quantity = 0 }) => {

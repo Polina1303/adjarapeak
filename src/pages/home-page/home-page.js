@@ -1,4 +1,3 @@
-import React from "react";
 import { ProductItems } from "../../components/product-items";
 import { RentItems } from "../../components/rent-items";
 import { PRODUCT } from "../../components/product-range/product";
@@ -7,7 +6,7 @@ import "./home-page.css";
 
 export const HomePage = () => {
   return (
-    <div className="home-page_container">
+    <div className="home-page__container">
       <div className="home-page"></div>
       <div className="title">ПРОДАЖА</div>
       <div className="home-page-product">
