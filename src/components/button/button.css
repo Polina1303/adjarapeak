@@ -1,0 +1,30 @@
+.btn {
+  color: black;
+  border: none;
+  font: inherit;
+  background-color: transparent;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  color: #de682d;
+  transition: transform 500ms ease;
+  padding-top: 10px;
+}
+
+.btn-primary:hover {
+  transform: scale(1.1);
+}
+
+.btn-secondary {
+  background-color: #db3e00;
+}
+
+.btn-small {
+  font-size: 45px;
+}
+
+.btn-medium {
+  font-size: 25px;
+}

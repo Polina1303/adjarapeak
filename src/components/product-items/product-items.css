@@ -1,0 +1,26 @@
+.product-items {
+  width: 100%;
+  margin-bottom: 50px;
+  background: #f5f5f5f5;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.product-items__img {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: transform 500ms ease;
+}
+
+.product-items__img:hover {
+  transform: scale(1.1);
+}
+
+.product-items__title {
+  display: block;
+  margin-top: 15px;
+}

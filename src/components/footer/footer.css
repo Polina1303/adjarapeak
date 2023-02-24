@@ -1,0 +1,28 @@
+.footer-container {
+  background-color: #ebe8e8f5;
+  margin-top: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+ul {
+  list-style-type: none;
+  margin: 40px;
+}
+
+li {
+  padding: 10px;
+  color: rgba(34, 34, 34, 0.788);
+}
+
+.certificate-container {
+  margin: 40px;
+}
+
+.certificate-title {
+  padding-bottom: 20px;
+}
+
+.image {
+  float: right;
+}

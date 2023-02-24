@@ -1,0 +1,11 @@
+.product-items__price {
+  padding-left: 7px;
+}
+
+.product-items__count {
+  border: 1px solid white;
+  color: #de682d;
+  border-radius: 40px;
+  background-color: white;
+  padding: 1px 5px;
+}
