@@ -1,0 +1,17 @@
+.container {
+  height: 30px;
+  background-color: #1c1b1a;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 1;
+}
+
+@media only screen and (max-width: 630px) {
+  .container {
+    display: none;
+  }
+}

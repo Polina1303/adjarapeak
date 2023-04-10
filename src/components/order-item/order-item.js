@@ -25,7 +25,7 @@ export const OrderItem = ({ item }) => {
         <span>{item.price * item.count}₾</span>
         <Button>
           <TiDeleteOutline
-            size={25}
+            size={35}
             className="order-item__delete"
             onClick={handleClick}
           />

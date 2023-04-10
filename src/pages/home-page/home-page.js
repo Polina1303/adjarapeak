@@ -1,25 +1,142 @@
+import { useState } from "react";
 import { ProductItems } from "../../components/product-items";
 import { RentItems } from "../../components/rent-items";
 import { PRODUCT } from "../../components/product-range/product";
 import { RENT } from "../../components/product-range/rent";
 import "./home-page.css";
+import { Slider } from "../../components/slider";
 
 export const HomePage = () => {
+  const [filter, setFilter] = useState(PRODUCT);
+  const [visibleRent, setVisibleRent] = useState(true);
+  const [visibleProduct, setVisibleProduct] = useState(true);
+
+  const showAll = () => {
+    setFilter(PRODUCT);
+    setVisibleRent(true);
+    setVisibleProduct(true);
+  };
+
+  const filterProduct = (category) => {
+    setVisibleProduct(true);
+    const upDateList = PRODUCT.filter((item) => item.category === category);
+    setFilter(upDateList);
+    setVisibleRent(false);
+  };
+
+  const filterRent = () => {
+    setVisibleRent(true);
+    setVisibleProduct(false);
+  };
+
   return (
     <div className="home-page__container">
-      <div className="home-page"></div>
-      <div className="title">ПРОДАЖА</div>
-      <div className="home-page-product">
-        {PRODUCT.map((product) => (
-          <ProductItems key={product.id} product={product} />
-        ))}
+      <Slider />
+      <div className="categories">
+        <button className="categories-item" onClick={() => showAll(PRODUCT)}>
+          Всё
+        </button>
+        <button className="categories-item" onClick={() => filterRent()}>
+          Аренда снаряжения
+        </button>
+        <button
+          className="categories-item"
+          onClick={() => filterProduct("tent")}
+        >
+          Палатки
+        </button>
+        <button
+          className="categories-item"
+          onClick={() => filterProduct("sleeping bag")}
+        >
+          Спальные мешки
+        </button>
+        <button
+          className="categories-item"
+          onClick={() => filterProduct("backpack")}
+        >
+          Рюкзаки
+        </button>
+        <button
+          className="categories-item"
+          onClick={() => filterProduct("lantern")}
+        >
+          Фонари
+        </button>
+        <button
+          className="categories-item"
+          onClick={() => filterProduct("gas/burner")}
+        >
+          Газ и горелки
+        </button>
+        <button
+          className="categories-item"
+          onClick={() => filterProduct("mat")}
+        >
+          Коврики / карематы
+        </button>
+        <button
+          className="categories-item"
+          onClick={() => filterProduct("trekking sticks")}
+        >
+          Треккинговые палки
+        </button>
+        <button
+          className="categories-item"
+          onClick={() => filterProduct("dishes")}
+        >
+          Посуда
+        </button>
+        <button
+          className="categories-item"
+          onClick={() => filterProduct("knife")}
+        >
+          Ножи
+        </button>
+        <button
+          className="categories-item"
+          onClick={() => filterProduct("chair")}
+        >
+          Стулья
+        </button>
+        <button
+          className="categories-item"
+          onClick={() => filterProduct("raincoat")}
+        >
+          Дождивики и чехлы
+        </button>
+        <button
+          className="categories-item"
+          onClick={() => filterProduct("accessories")}
+        >
+          Аксессуары
+        </button>
       </div>
-      <div className="title">АРЕНДА</div>
-      <div className="home-page-product">
-        {RENT.map((rent) => (
-          <RentItems key={rent.id} rent={rent} />
-        ))}
-      </div>
+      {visibleProduct && (
+        <div>
+          <div className="title" id="home-page-buy">
+            ПРОДАЖА
+          </div>
+          <div className="home-page-product">
+            {filter.map((product) => (
+              <ProductItems key={product.id} product={product} />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {visibleRent && (
+        <div>
+          <div className="title" id="home-page-rent">
+            АРЕНДА
+          </div>
+          <div className="home-page-product">
+            {RENT.map((rent) => (
+              <RentItems key={rent.id} rent={rent} />
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -38,7 +38,7 @@ export const CartItem = ({ img, title, price, id, count }) => {
             <Button onClick={handleClickMinus}>
               <AiOutlineMinusCircle className="cart-item__count" size={20} />
             </Button>
-            {count}
+            <span className="cart-item__text"> {count}</span>
             <Button onClick={handleClickPlus}>
               <AiOutlinePlusCircle className="cart-item__count" size={20} />
             </Button>
@@ -46,8 +46,8 @@ export const CartItem = ({ img, title, price, id, count }) => {
         ) : (
           handleClick()
         )}
-        <div>
-          <span className="cart-item__price">{price * count}₾</span>
+        <div className="cart-item__price">
+          <span>{price * count}₾</span>
         </div>
         <div>
           <TiDeleteOutline

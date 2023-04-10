@@ -14,20 +14,23 @@ export const Header = () => {
           <img src={adjara} alt="adjara peak" width={"130px"} />
         </Link>
       </div>
+
       <div className="location">
         <MdLocationPin size={25} color={"#de682d"} />
-        <span>Батуми ул.Тбел-Абусеридзе,38 (10:00-18:00)</span>
+        <span>Батуми ул.Тбел-Абусеридзе,38 (11:00-19:00)</span>
       </div>
       <div className="number">+995 511 147 586</div>
-      <a href="https://www.instagram.com/adjarapeak/?igshid=YmMyMTA2M2Y%3D">
-        <BsInstagram className="instagram" />
-      </a>
-      <a href="https://t.me/shpaksn">
-        <BsTelegram className="icon-telegram" />
-      </a>
-      <a href="https://wa.me/995511147586">
-        <AiOutlineWhatsApp className="icon-whatsApp" />
-      </a>
+      <div className="icon">
+        <a href="https://www.instagram.com/adjarapeak/?igshid=YmMyMTA2M2Y%3D">
+          <BsInstagram className="instagram" />
+        </a>
+        <a href="https://t.me/shpaksn">
+          <BsTelegram className="icon-telegram" />
+        </a>
+        <a href="https://wa.me/995511147586">
+          <AiOutlineWhatsApp className="icon-whatsApp" />
+        </a>
+      </div>
       <div className="cart">
         <CartBlock />
       </div>

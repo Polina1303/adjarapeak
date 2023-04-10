@@ -6,6 +6,7 @@
 }
 
 ul {
+  flex:1;
   list-style-type: none;
   margin: 40px;
 }
@@ -15,14 +16,11 @@ li {
   color: rgba(34, 34, 34, 0.788);
 }
 
-.certificate-container {
-  margin: 40px;
+.icon-footer{
+  width: 20%;
+  display: flex;
+  justify-content: space-between; 
 }
 
-.certificate-title {
-  padding-bottom: 20px;
-}
 
-.image {
-  float: right;
-}
+

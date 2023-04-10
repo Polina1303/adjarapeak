@@ -4,10 +4,12 @@ import { Header } from "./components/header";
 import { ProductPage } from "./pages/product-page";
 import { OrderPage } from "./pages/order-page";
 import { Footer } from "./components/footer";
+import { Announced } from "./components/announced";
 
 function App() {
   return (
     <div className="App">
+      <Announced />
       <Header />
       <Routes>
         <Route exact path="/adjarapeak" element={<HomePage />} />

@@ -1,11 +1,16 @@
 .order-item {
+  margin-right: 100px;
+  margin-left: 100px;
   display: flex;
-  margin-bottom: 30px;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.order-item__cover {
-  width: 100px;
-  margin-right: 30px;
+.order-item__price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
 }
 
 .order-items__img {
@@ -13,14 +18,7 @@
 }
 
 .order-item__title {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.order-item__price {
-  font-size: 24px;
-  font-weight: bold;
-  margin-left: auto;
+  font-size: 20px;
 }
 
 .order-item__delete {

@@ -2,6 +2,7 @@ import { Rent } from "../rent/rent";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setCurrentProduct } from "../../redux/product/reducer";
+import { BsSearch } from "react-icons/bs";
 import "./rent-items.css";
 
 export const RentItems = ({ rent }) => {
@@ -21,6 +22,11 @@ export const RentItems = ({ rent }) => {
           src={process.env.PUBLIC_URL + "/img/" + rent.img}
           alt={rent.title}
         />
+        <div className="icon-background" onClick={handelClickImg}>
+        <div className="icon-search">
+        <BsSearch/>
+        </div>
+        </div>
         <span className="rent-items__title">{rent.title}</span>
         <p>{rent.desc}</p>
         <Rent rent={rent} />

@@ -31,7 +31,11 @@ export const CartBlock = () => {
           onClick={() => setIsCartMenuVisible(!isCartMenuVisible)}
         />
       </Button>
-      {totalPrice > 0 ? <div className="cart-price">{totalPrice}₾</div> : null}
+      {totalPrice > 0 ? (
+        <div className="cart-price">{totalPrice}₾</div>
+      ) : (
+        <div className="cart-price"></div>
+      )}
       {isCartMenuVisible && <CartMenu items={items} onClick={handleClick} />}
     </div>
   );
