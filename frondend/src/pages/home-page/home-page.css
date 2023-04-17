@@ -1,0 +1,123 @@
+.home-page {
+  /* margin: 10px 0;
+  background: url("hiker.jpg");
+  width: 100%;
+  height: 350px;
+  background-size: cover;
+  background-position: center center;
+  background-blend-mode: multiply;
+  background-color: #bcbcbc;
+  position: relative; */
+}
+
+/* .home-page::after {
+  content: "Туристическое снаряжение!";
+  position: absolute;
+  top: 70px;
+  left: 40px;
+  width: 200px;
+  font-size: 35px;
+  font-weight: 600;
+  color: white;
+}
+
+.home-page::before {
+  content: "Продажа и аренда";
+  position: absolute;
+  top: 170px;
+  left: 40px;
+  width: 300px;
+  font-size: 30px;
+  font-weight: 500;
+  color: white;
+} */
+
+.home-page-product {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 0px;
+}
+
+@media (max-width: 900px) {
+  .home-page-product {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 0px;
+  }
+}
+
+@media (max-width: 500px) {
+  .home-page-product {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 0px;
+  }
+}
+
+/* @media (max-width: 500px) {
+  .home-page {
+    margin: 10px 0;
+    background: url("hiker.jpg");
+    width: 100%;
+    height: 250px;
+    background-size: cover;
+    background-position: center center;
+    background-blend-mode: multiply;
+    background-color: #bcbcbc;
+    position: relative;
+  }
+  .home-page::after {
+    content: "Туристическое снаряжение!";
+    position: absolute;
+    top: 10px;
+    left: 1px;
+    width: 200px;
+    font-size: 35px;
+    font-weight: 600;
+    color: white;
+  }
+  .home-page::before {
+    content: "Продажа и аренда";
+    position: absolute;
+    top: 120px;
+    left: 1px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+  }
+} */
+
+.title {
+  padding-top: 15px;
+  font-size: 25px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.categories-item {
+  background-color: #f5f5f5f5;
+  border: 2px solid #000;
+  margin-top: 20px;
+  margin-left: 10px;
+  padding: 10px 20px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.categories-item:hover {
+  border: 1px solid #f68632;
+  background-color: #fff;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
