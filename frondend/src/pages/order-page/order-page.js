@@ -44,7 +44,7 @@ export const OrderPage = () => {
             Для оформления заказа свяжитесь с нами по номеру +995 511 147 586. С
             уважением Adjara Peak.
           </h3> */}
-          <OrderInput />
+          <OrderInput items={items} />
         </div>
       </div>
     </div>

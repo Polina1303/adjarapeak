@@ -5,6 +5,7 @@ import { ProductPage } from "./pages/product-page";
 import { OrderPage } from "./pages/order-page";
 import { Footer } from "./components/footer";
 import { Announced } from "./components/announced";
+import { RulesPage } from "./pages/rules-page";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route exact path="/adjarapeak" element={<HomePage />} />
         <Route exact path="app/:title" element={<ProductPage />} />
         <Route exact path="/order" element={<OrderPage />} />
+        <Route exact path="/rules" element={<RulesPage />} />
       </Routes>
       <Footer />
     </div>

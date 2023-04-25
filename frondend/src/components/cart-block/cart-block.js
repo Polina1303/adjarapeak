@@ -16,7 +16,6 @@ export const CartBlock = () => {
 
   const handleClick = useCallback(() => {
     setIsCartMenuVisible(false);
-
     navigate("/order");
   }, [navigate]);
 

@@ -121,3 +121,13 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.button-rules {
+  background-color: #fff;
+  border: 1px solid #f68632;
+  margin-top: 20px;
+  margin-left: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}

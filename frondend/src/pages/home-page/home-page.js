@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ProductItems } from "../../components/product-items";
+import { useNavigate } from "react-router-dom";
 import { RentItems } from "../../components/rent-items";
 import { PRODUCT } from "../../components/product-range/product";
 import { RENT } from "../../components/product-range/rent";
@@ -7,6 +8,7 @@ import "./home-page.css";
 import { Slider } from "../../components/slider";
 
 export const HomePage = () => {
+  const navigate = useNavigate();
   const [filter, setFilter] = useState(PRODUCT);
   const [visibleRent, setVisibleRent] = useState(true);
   const [visibleProduct, setVisibleProduct] = useState(true);
@@ -89,6 +91,12 @@ export const HomePage = () => {
         </button>
         <button
           className="categories-item"
+          onClick={() => filterProduct("thermos")}
+        >
+          Термосы/кружки
+        </button>
+        <button
+          className="categories-item"
           onClick={() => filterProduct("knife")}
         >
           Ножи
@@ -101,9 +109,21 @@ export const HomePage = () => {
         </button>
         <button
           className="categories-item"
+          onClick={() => filterProduct("buff")}
+        >
+          Бафф/балаклава
+        </button>
+        <button
+          className="categories-item"
           onClick={() => filterProduct("raincoat")}
         >
           Дождивики и чехлы
+        </button>
+        <button
+          className="categories-item"
+          onClick={() => filterProduct("sunglasses")}
+        >
+          Солнцезащитные очки
         </button>
         <button
           className="categories-item"
@@ -129,6 +149,11 @@ export const HomePage = () => {
         <div>
           <div className="title" id="home-page-rent">
             АРЕНДА
+          </div>
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <button className="button-rules" onClick={() => navigate("/rules")}>
+              ОЗНАКОМИТЬСЯ С ПРАВИЛАМИ ПРОКАТА
+            </button>
           </div>
           <div className="home-page-product">
             {RENT.map((rent) => (
