@@ -1,39 +1,12 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import PhoneNumber from "libphonenumber-js";
-// import { GetContries, IpAddress, SendEmail } from "./API";
-// import InlineError from "./components/InlineError";
-// import Loading from "./components/Loading";
-// import {
-//   validateEmail,
-//   validateFullName,
-//   validateMessage,
-//   validatePhone,
-// } from "./components/Validation";
-// import { toast } from "react-toastify";
-// import Toast from "./components/Toast";
 import { SendEmail } from "../../API/index";
 import "./order-input.css";
 
-// const InputClass =
-//   "w-full py-4 placeholder:text-gray px-6 text-main border-2 mt-2 border-border rounded-md";
-
 export const OrderInput = (items) => {
-  // const [fullName, setFullName] = useState("");
-  // const [email, setEmail] = useState("");
-  // const [phone, setPhone] = useState();
-  // const [message, setMessage] = useState("");
-  // const [fullNameError, setFullNameError] = useState();
-  // const [emailError, setEmailError] = useState();
-  // const [phoneError, setPhoneError] = useState();
-  // const [messageError, setMessageError] = useState();
-  // const [loading, setLoading] = useState(true);
-  // const [ipData, setIpData] = useState();
-  // const [countries, setCountries] = useState();
-  // const [country, setCountry] = useState("Tanzania");
-  // const [buttonLoading, setButtonLoading] = useState(false);
-  // const [send, setSend] = useState();
   const [visible, setVisible] = useState(false);
+  const [orderSuccess, setOrderSuccess] = useState(false);
+  const [setSend] = useState();
   const {
     register,
     handleSubmit,
@@ -41,30 +14,52 @@ export const OrderInput = (items) => {
     reset,
   } = useForm();
 
-  // const submitHandler = (e) => {
-  //   e.preventDefault();
-  //   setButtonLoading(true);
-  //   // if (!fullNameError & !emailError & !phoneError & !messageError) {
-  //   SendEmail({ fullName, email, message, setSend }).then(() => {
-  //     setButtonLoading(false);
-  //   });
-  //   // }
-  // };
   const obj = items;
   const num = obj.items.map((item) => item.category.includes("rent"));
-  console.log(num);
-  console.log(num.includes(true));
 
   useEffect(() => {
     if (num.includes(true)) {
-      console.log("11");
       setVisible(true);
     }
   }, [num]);
 
-  console.log("ghggh", obj.items);
-  const onSubmit = (data) => {
-    console.log(data);
+  const prod = obj.items.map((item) => item.title).join(",");
+  const price = obj.items.map((item) => item.price).join(",");
+  const count = obj.items.map((item) => item.count).join(",");
+
+  const defaultValues = {
+    prod: prod,
+    price: price,
+    count: count,
+  };
+
+  const onSubmit = (data, e) => {
+    e.preventDefault();
+    const {
+      name,
+      phone,
+      telegram,
+      dateStart,
+      dateEnd,
+      comments,
+      prod,
+      count,
+      price,
+    } = data;
+    SendEmail({
+      name,
+      phone,
+      telegram,
+      dateStart,
+      dateEnd,
+      comments,
+      prod,
+      count,
+      price,
+      setSend,
+    }).then(() => {
+      setOrderSuccess(true);
+    });
     reset();
   };
 
@@ -162,10 +157,21 @@ export const OrderInput = (items) => {
             {...register("comments")}
           />
         </div>
+        <div style={{ display: "none" }}>
+          <input {...register("prod")} defaultValue={defaultValues.prod} />
+          <input {...register("price")} defaultValue={defaultValues.price} />
+          <input {...register("count")} defaultValue={defaultValues.count} />
+        </div>
         <div>
           <button className="button-form">ОФОРМИТЬ ЗАКАЗ</button>
         </div>
       </form>
+      {orderSuccess && (
+        <div className="successTitle">
+          Спасибо за заказа!
+          <br /> С уважением Adjara Peak.
+        </div>
+      )}
     </div>
   );
 };

@@ -2,7 +2,6 @@ import { useSelector } from "react-redux";
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
-import { Buy } from "../../components/buy/buy";
 import "./product-page.css";
 
 export const ProductPage = () => {
