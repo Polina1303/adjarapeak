@@ -25,9 +25,7 @@ export const OrderPage = () => {
       </button>
 
       <div className="order-page__left">
-        {items.map((item) => (
-          <OrderItem key={item.id} item={item} />
-        ))}
+        {items && items.map((item) => <OrderItem key={item.id} item={item} />)}
       </div>
       <div className="order-page__right">
         <div className="order-page__totalprice">
