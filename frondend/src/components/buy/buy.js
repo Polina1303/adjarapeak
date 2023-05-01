@@ -15,8 +15,13 @@ export const Buy = ({ product, rent }) => {
   const dispatch = useDispatch();
   const handelClick = (e) => {
     e.stopPropagation();
+    console.log("Before dispatch", product);
     dispatch(setItemInCart(product));
+    console.log("After dispatch", product);
   };
+
+  console.log("cartItem", cartItem);
+  console.log("addedCount", addedCount);
 
   return (
     <div>
