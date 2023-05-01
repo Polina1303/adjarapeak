@@ -18,6 +18,7 @@ export const Buy = ({ product, rent }) => {
     console.log("Before dispatch", product);
     dispatch(setItemInCart(product));
     console.log("After dispatch", product);
+    localStorage.setItem("testKey", "testValue");
   };
 
   console.log("cartItem", cartItem);
