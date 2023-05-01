@@ -19,6 +19,8 @@ export const Buy = ({ product, rent }) => {
     dispatch(setItemInCart(product));
     console.log("After dispatch", product);
     localStorage.setItem("testKey", "testValue");
+    localStorage.setItem("productInCart", "testValue");
+    console.log(localStorage.getItem("productInCart"));
   };
 
   console.log("cartItem", cartItem);
