@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/adjarapeak/static/css/main.7b9cec49.css",
-    "main.js": "/adjarapeak/static/js/main.11b38aa5.js",
+    "main.js": "/adjarapeak/static/js/main.2cfbbc3e.js",
     "static/media/rules.png": "/adjarapeak/static/media/rules.24a48dd4fce1f1a6ee87.png",
     "static/media/adjara.jpg": "/adjarapeak/static/media/adjara.443bef245fde3156441e.jpg",
     "index.html": "/adjarapeak/index.html",
     "main.7b9cec49.css.map": "/adjarapeak/static/css/main.7b9cec49.css.map",
-    "main.11b38aa5.js.map": "/adjarapeak/static/js/main.11b38aa5.js.map"
+    "main.2cfbbc3e.js.map": "/adjarapeak/static/js/main.2cfbbc3e.js.map"
   },
   "entrypoints": [
     "static/css/main.7b9cec49.css",
-    "static/js/main.11b38aa5.js"
+    "static/js/main.2cfbbc3e.js"
   ]
 }
