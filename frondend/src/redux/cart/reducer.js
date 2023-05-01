@@ -32,7 +32,7 @@ const cartSlice = createSlice({
       }
       localStorage.setItem(CART_KEY, JSON.stringify(state.itemsInCart));
     },
-    deleteItemFromCart: (state, action) => {
+    deletItemFromCart: (state, action) => {
       if (state && state.itemsInCart) {
         state.itemsInCart = state.itemsInCart.filter(
           (item) => item.id !== action.payload
@@ -62,13 +62,19 @@ const cartSlice = createSlice({
 });
 
 window.addEventListener("beforeunload", () => {
-  localStorage.setItem(CART_KEY, JSON.stringify(getLocalCartData()));
+  localStorage.setItem(
+    CART_KEY,
+    JSON.stringify(cartSlice.getState().itemsInCart)
+  );
 });
 
 window.addEventListener("unload", () => {
-  localStorage.setItem(CART_KEY, JSON.stringify(getLocalCartData()));
+  localStorage.setItem(
+    CART_KEY,
+    JSON.stringify(cartSlice.getState().itemsInCart)
+  );
 });
 
-export const { setItemInCart, deleteItemFromCart, minusItem, plusItem } =
+export const { setItemInCart, deletItemFromCart, minusItem, plusItem } =
   cartSlice.actions;
 export default cartSlice.reducer;
