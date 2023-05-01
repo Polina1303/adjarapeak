@@ -24,9 +24,9 @@ export const Buy = ({ product, rent }) => {
       <div className="add-to-cart">
         <Button onClick={handelClick} type="primary">
           <MdAddShoppingCart size={"25px"} />
-          {addedCount > 0 && (
+          {addedCount && addedCount > 0 ? (
             <i className="product-items__count">{addedCount}</i>
-          )}
+          ) : null}
         </Button>
       </div>
     </div>

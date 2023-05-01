@@ -22,13 +22,17 @@ const cartSlice = createSlice({
       if (findItem) {
         findItem.count++;
       } else {
-        state.itemsInCart.push({ ...action.payload, count: 1 });
+        if (state && state.itemsInCart) {
+          state.itemsInCart.push({ ...action.payload, count: 1 });
+        }
       }
     },
     deletItemFromCart: (state, action) => {
-      state.itemsInCart = state.itemsInCart.filter(
-        (item) => item.id !== action.payload
-      );
+      if (state && state.itemsInCart) {
+        state.itemsInCart = state.itemsInCart.filter(
+          (item) => item.id !== action.payload
+        );
+      }
     },
     plusItem: (state, action) => {
       const findItem =
