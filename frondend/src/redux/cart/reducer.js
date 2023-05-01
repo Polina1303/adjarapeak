@@ -67,6 +67,10 @@ const cartSlice = createSlice({
   },
 });
 
+window.addEventListener("beforeunload", () => {
+  localStorage.setItem("productInCart", JSON.stringify(getLocalCartData()));
+});
+
 export const { setItemInCart, deletItemFromCart, minusItem, plusItem } =
   cartSlice.actions;
 export default cartSlice.reducer;
