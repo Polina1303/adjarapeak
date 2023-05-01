@@ -20,7 +20,9 @@ export const CartBlock = () => {
   }, [navigate]);
 
   const totalPrice = calcTotalPrice(items);
-  const totalCount = items.reduce((acc, item) => acc + item.count, 0);
+  const totalCount = items
+    ? items.reduce((acc, item) => acc + item.count, 0)
+    : 0;
 
   useEffect(() => {
     localStorage.setItem("productInCart", JSON.stringify(items));

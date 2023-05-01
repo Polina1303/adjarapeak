@@ -42,12 +42,10 @@ export const Slider = () => {
               {item.id === 1 && (
                 <div className="infocontainer-cover">
                   <button className="infocontainer-button">
-                    {" "}
-                    <a href="#home-page-buy">КУПИТЬ</a>{" "}
+                    <a href="#home-page-buy">КУПИТЬ</a>
                   </button>
                   <button className="infocontainer-button">
-                    {" "}
-                    <a href="#home-page-rent">АРЕНДОВАТЬ</a>{" "}
+                    <a href="#home-page-rent">АРЕНДОВАТЬ</a>
                   </button>
                 </div>
               )}
