@@ -31,7 +31,7 @@ export const OrderPage = () => {
       </div>
       <div className="order-page__right">
         <div className="order-page__totalprice">
-          <h4>
+          {/* <h4>
             {items.length}
             {enumerate(items.length, [
               " " + "товар",
@@ -39,7 +39,7 @@ export const OrderPage = () => {
               " " + "товаров",
             ])}{" "}
             на сумму {calcTotalPrice(items)}₾
-          </h4>
+          </h4> */}
           {/* <h3>
             Для оформления заказа свяжитесь с нами по номеру +995 511 147 586. С
             уважением Adjara Peak.
