@@ -12,9 +12,29 @@ const PORT = process.env.PORT || 5000;
 
 app.post("/send", async (req, res) => {
   try {
-    const { fullName, email, message } = req.body;
+    const {
+      name,
+      phone,
+      telegram,
+      dateStart,
+      dateEnd,
+      comments,
+      prod,
+      count,
+      price,
+    } = req.body;
 
-    EmailSender({ fullName, email, message });
+    EmailSender({
+      name,
+      phone,
+      telegram,
+      dateStart,
+      dateEnd,
+      comments,
+      prod,
+      count,
+      price,
+    });
     res.json({ msg: "ok" });
   } catch (error) {
     res.status(404).json({ msg: "Error" });
