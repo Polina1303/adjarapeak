@@ -7,7 +7,7 @@ export const CartMenu = ({ items, onClick }) => {
   return (
     <div className="cart-menu">
       <div className="cart-menu__list">
-        {items.length > 0
+        {items && items.length > 0
           ? items.map((item) => (
               <CartItem
                 key={item.id}
