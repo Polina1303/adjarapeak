@@ -12,8 +12,10 @@ export const Rent = ({ rent }) => {
     dispatch(setItemInCart(rent));
   };
 
-  const cartItem = useSelector((state) =>
-    state.cart.itemsInCart.find((item) => item.id === rent.id)
+  const cartItem = useSelector(
+    (state) =>
+      state.cart.itemsInCart &&
+      state.cart.itemsInCart.find((item) => item.id === rent.id)
   );
 
   const addedCount = cartItem ? cartItem.count : 0;

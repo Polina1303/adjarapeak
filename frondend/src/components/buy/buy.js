@@ -5,8 +5,10 @@ import { Button } from "../button";
 import "./buy.css";
 
 export const Buy = ({ product, rent }) => {
-  const cartItem = useSelector((state) =>
-    state.cart.itemsInCart.find((item) => item.id === product.id)
+  const cartItem = useSelector(
+    (state) =>
+      state.cart.itemsInCart &&
+      state.cart.itemsInCart.find((item) => item.id === product.id)
   );
   const addedCount = cartItem ? cartItem.count : 0;
 
