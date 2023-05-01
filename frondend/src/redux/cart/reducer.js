@@ -22,7 +22,8 @@ const cartSlice = createSlice({
       if (findItem) {
         findItem.count++;
       } else {
-        state.itemsInCart.push({ ...action.payload, count: 1 });
+        state.itemsInCart &&
+          state.itemsInCart.push({ ...action.payload, count: 1 });
       }
     },
     deletItemFromCart: (state, action) => {
