@@ -59,12 +59,20 @@
 
 import { createSlice } from "@reduxjs/toolkit";
 
+// const getLocalCartData = () => {
+//   const localCartData = localStorage.getItem("productInCart");
+//   if (localCartData) {
+//     return JSON.parse(localCartData);
+//   } else {
+//     return [];
+//   }
+// };
 const getLocalCartData = () => {
-  const localCartData = localStorage.getItem("productInCart");
-  if (localCartData) {
-    return JSON.parse(localCartData);
-  } else {
+  let localCartData = localStorage.getItem("productInCart");
+  if (localCartData === []) {
     return [];
+  } else {
+    return JSON.parse(localCartData);
   }
 };
 

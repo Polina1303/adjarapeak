@@ -33,7 +33,7 @@ export const CartItem = ({ img, title, price, id, count }) => {
         <div className="cart-item__title">
           <span>{title}</span>
         </div>
-        {count >= 0 ? (
+        {count && count >= 0 ? (
           <div className="cart-item__count_but">
             <Button onClick={handleClickMinus}>
               <AiOutlineMinusCircle className="cart-item__count" size={20} />
