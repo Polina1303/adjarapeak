@@ -21,7 +21,7 @@ export const CartMenu = ({ items, onClick }) => {
           : "Карзина пуста"}
       </div>
 
-      {items.length > 0 ? (
+      {items && items.length > 0 ? (
         <div className="cart-menu__arranged">
           <div className="cart-menu__total-price">
             <span>Итого:</span> <span>{calcTotalPrice(items)}₾</span>
