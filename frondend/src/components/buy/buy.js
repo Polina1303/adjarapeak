@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setItemInCart } from "../../redux/cart/reducer";
 import { MdAddShoppingCart } from "react-icons/md";
@@ -13,24 +14,29 @@ export const Buy = ({ product, rent }) => {
   const addedCount = cartItem ? cartItem.count : 0;
 
   const dispatch = useDispatch();
-  const handelClick = (e) => {
+  const handleAddToCart = (e) => {
     e.stopPropagation();
-    console.log("Before dispatch", product);
     dispatch(setItemInCart(product));
-    console.log("After dispatch", product);
-    localStorage.setItem("testKey", "testValue");
-    localStorage.setItem("productInCart", "testValue");
-    console.log(localStorage.getItem("productInCart"));
   };
 
-  console.log("cartItem", cartItem);
-  console.log("addedCount", addedCount);
+  const [itemsInCart, setItemsInCart] = useState([]);
+
+  useEffect(() => {
+    const storedItemsInCart = JSON.parse(localStorage.getItem("productInCart"));
+    if (storedItemsInCart) {
+      setItemsInCart(storedItemsInCart);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("productInCart", JSON.stringify(itemsInCart));
+  }, [itemsInCart]);
 
   return (
     <div>
       <b className="product-items__price">{product.price}₾</b>
       <div className="add-to-cart">
-        <Button onClick={handelClick} type="primary">
+        <Button onClick={handleAddToCart} type="primary">
           <MdAddShoppingCart size={"25px"} />
           {addedCount && addedCount > 0 ? (
             <i className="product-items__count">{addedCount}</i>

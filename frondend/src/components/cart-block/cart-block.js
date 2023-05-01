@@ -8,6 +8,8 @@ import { ItemsInCart } from "../items-in-cart";
 import { calcTotalPrice } from "../utils";
 import "./cart-block.css";
 
+const CART_KEY = "productInCart";
+
 export const CartBlock = () => {
   const [isCartMenuVisible, setIsCartMenuVisible] = useState(false);
   const items = useSelector((state) => state.cart.itemsInCart);
@@ -25,8 +27,28 @@ export const CartBlock = () => {
     : 0;
 
   useEffect(() => {
-    localStorage.setItem("productInCart", JSON.stringify(items));
-  });
+    localStorage.setItem(CART_KEY, JSON.stringify(items));
+  }, [items]);
+
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      localStorage.setItem(CART_KEY, JSON.stringify(items));
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, [items]);
+
+  const localCartData = JSON.parse(localStorage.getItem(CART_KEY)) || [];
+
+  useEffect(() => {
+    if (items.length === 0 && localCartData.length > 0) {
+      localStorage.setItem(CART_KEY, JSON.stringify([]));
+    }
+  }, [items, localCartData]);
 
   return (
     <div className="cart-block">
