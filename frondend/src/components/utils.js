@@ -1,5 +1,4 @@
 export const calcTotalPrice = (items) => {
-  console.log(items);
   if (!items || items.length === 0) {
     return 0;
   }
