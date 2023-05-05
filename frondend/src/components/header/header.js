@@ -21,13 +21,17 @@ export const Header = () => {
       </div>
       <div className="number">+995 511 147 586</div>
       <div className="icon">
-        <a href="https://www.instagram.com/adjarapeak/?igshid=YmMyMTA2M2Y%3D">
+        <a
+          href="https://www.instagram.com/adjarapeak/?igshid=YmMyMTA2M2Y%3D"
+          target="_blank"
+          rel="noreferrer"
+        >
           <BsInstagram className="instagram" />
         </a>
-        <a href="https://t.me/shpaksn">
+        <a href="https://t.me/shpaksn" target="_blank" rel="noreferrer">
           <BsTelegram className="icon-telegram" />
         </a>
-        <a href="https://wa.me/995511147586">
+        <a href="https://wa.me/995511147586" target="_blank" rel="noreferrer">
           <AiOutlineWhatsApp className="icon-whatsApp" />
         </a>
       </div>

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, useMemo } from "react";
 import { BsCart3 } from "react-icons/bs";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -42,7 +42,9 @@ export const CartBlock = () => {
     };
   }, [items]);
 
-  const localCartData = JSON.parse(localStorage.getItem(CART_KEY)) || [];
+  const localCartData = useMemo(() => {
+    return JSON.parse(localStorage.getItem(CART_KEY)) || [];
+  }, []);
 
   useEffect(() => {
     if (items.length === 0 && localCartData.length > 0) {

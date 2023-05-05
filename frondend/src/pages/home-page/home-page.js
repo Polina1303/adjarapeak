@@ -117,7 +117,7 @@ export const HomePage = () => {
           className="categories-item"
           onClick={() => filterProduct("raincoat")}
         >
-          Дождивики и чехлы
+          Дождевики и чехлы
         </button>
         <button
           className="categories-item"

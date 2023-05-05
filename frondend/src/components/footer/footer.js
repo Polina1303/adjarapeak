@@ -8,9 +8,9 @@ export const Footer = () => {
     <>
       <div className="footer-container">
         <ul>
-          <li>Первый в Аджарии</li>
+          <li>Прокат без залога денежных средств и документов</li>
+          <li>Бронирование без предоплаты</li>
           <li>Продажа, прокат и доставка "под заказ"</li>
-          <li>Только качественное снаряжение</li>
           <li>
             <MdLocationPin size={25} color={"#de682d"} /> Батуми
             ул.Тбел-Абусеридзе,38 (11:00-19:00)
@@ -20,13 +20,21 @@ export const Footer = () => {
           </li>
           <li>
             <div className="icon-footer">
-              <a href="https://www.instagram.com/adjarapeak/?igshid=YmMyMTA2M2Y%3D">
+              <a
+                href="https://www.instagram.com/adjarapeak/?igshid=YmMyMTA2M2Y%3D"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <BsInstagram className="instagram" />
               </a>
-              <a href="https://t.me/shpaksn">
+              <a href="https://t.me/shpaksn" target="_blank" rel="noreferrer">
                 <BsTelegram className="icon-telegram" />
               </a>
-              <a href="https://wa.me/995511147586">
+              <a
+                href="https://wa.me/995511147586"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <AiOutlineWhatsApp className="icon-whatsApp" />
               </a>
             </div>
