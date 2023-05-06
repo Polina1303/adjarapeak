@@ -93,15 +93,18 @@
     font-size: 10px;
   }
   .cart-item__count_but {
-    width: 80px;
+    width: 60px;
     margin-left: -12px;
   }
+  .cart-item__text {
+    width: 10px;
+  }
   .cart-item__delete {
-    margin-left: -20px;
+    margin-left: -2px;
   }
   .cart-item__price {
     width: 50px;
-    margin-left: 5px;
+    margin-left: 18px;
   }
 }
 
@@ -111,11 +114,18 @@
     font-size: 10px;
   }
   .cart-item__count_but {
-    width: 70px;
+    width: 60px;
     margin-left: -12px;
   }
+  .cart-item__text {
+    width: 10px;
+  }
   .cart-item__delete {
-    margin-left: -10px;
+    margin-left: -2px;
+  }
+  .cart-item__price {
+    width: 50px;
+    margin-left: 18px;
   }
 }
 
