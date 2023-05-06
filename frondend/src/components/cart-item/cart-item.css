@@ -75,15 +75,25 @@
 
 @media (max-width: 460px) {
   .cart-item__title {
-    width: 80px;
-    font-size: 12px;
+    width: 75px;
+    font-size: 10px;
+  }
+  .cart-item__count_but {
+    width: 45px;
+    margin-left: -8px;
+  }
+  .cart-item__text {
+    width: 20px;
   }
   .cart-item__delete {
     margin-left: 2px;
   }
   .cart-item__price {
     width: 50px;
-    margin-left: 15px;
+    margin-left: 55px;
+  }
+  .cart-item__img {
+    margin-left: -13px;
   }
 }
 
