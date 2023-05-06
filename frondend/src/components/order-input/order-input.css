@@ -7,6 +7,35 @@
   margin-bottom: 70px;
   border-radius: 20px;
 }
+@media (min-width: 1180px) {
+  .container-form {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 470px;
+    background-color: #f2efef;
+    margin-bottom: 70px;
+  }
+  .input {
+    width: 400px;
+    padding: 5px 10px;
+    margin-top: 5px;
+    outline: none;
+    border: none;
+    border: solid 1px #848484;
+    border-radius: 20px;
+  }
+  .input-text {
+    padding-left: 10px;
+    padding-top: 5px;
+    width: 400px;
+    height: 120px;
+    outline: none;
+    border: none;
+    border: solid 1px #848484;
+    border-radius: 20px;
+  }
+}
 
 .form-item {
   margin-top: 15px;

@@ -92,6 +92,7 @@ span {
   background-color: #fff;
   margin-top: 20px;
   cursor: pointer;
+  color: #222;
 }
 
 @media only screen and (max-width: 610px) {
