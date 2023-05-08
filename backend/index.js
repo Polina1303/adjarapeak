@@ -41,30 +41,4 @@ app.post("/send", async (req, res) => {
   }
 });
 
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  next();
-});
-
-app.get("/api", (req, res) => {
-  request(
-    {
-      url: "https://script.google.com/macros/s/AKfycbwftACfpQ6dyJK79r_WSrzaRZvQP0X6-mwkbjGHhycTxOpgjyNOyOmrGaXi59oEArOktA/exec",
-    },
-    (error, response, body) => {
-      if (error || response.statusCode !== 200) {
-        return res.status(500).json({ type: "error", message: error.message });
-      }
-
-      res.json(JSON.parse(body));
-    }
-  );
-});
-
-app.get("/api", (req, res) => {
-  res.json({
-    message: "Helloo",
-  });
-});
-
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
