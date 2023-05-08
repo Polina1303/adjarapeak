@@ -5,7 +5,7 @@ import "./order-input.css";
 
 export const OrderInput = (items) => {
   const [visible, setVisible] = useState(false);
-  const [orderSuccess, setOrderSuccess] = useState(false);
+  const [orderSuccess, setOrderSuccess] = useState();
   const [setSend] = useState();
   const {
     register,
@@ -57,10 +57,9 @@ export const OrderInput = (items) => {
       count,
       price,
       setSend,
-    }).then(() => {
-      setOrderSuccess(true);
-    });
+    }).then(() => {});
     reset();
+    setOrderSuccess(true);
   };
 
   return (
