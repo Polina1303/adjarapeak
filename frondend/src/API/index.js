@@ -24,7 +24,7 @@ export const SendEmail = async ({
       count,
       price,
     };
-    let res = await axios.post(`http://localhost:5000/send`, datas);
+    let res = await axios.post(`https://adjarapeak-api.vercel.app/send`, datas);
     if (res) {
       setSend(res.data);
     }
