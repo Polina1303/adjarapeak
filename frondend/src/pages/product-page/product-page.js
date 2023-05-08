@@ -8,7 +8,7 @@ import "./product-page.css";
 export const ProductPage = () => {
   const navigate = useNavigate();
   const handleClick = useCallback(() => {
-    navigate("/adjarapeak");
+    navigate("/");
   }, [navigate]);
   const product = useSelector((state) => state.products.currentProduct);
   const column = useSelector((state) => state.products.currentProduct.column);

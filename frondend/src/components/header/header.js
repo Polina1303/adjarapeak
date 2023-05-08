@@ -10,7 +10,7 @@ export const Header = () => {
   return (
     <div className="header">
       <div className="wrapper">
-        <Link to="/adjarapeak">
+        <Link to="/">
           <img src={adjara} alt="adjara peak" width={"130px"} />
         </Link>
       </div>

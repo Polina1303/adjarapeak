@@ -5,7 +5,7 @@ import { IoIosArrowBack } from "react-icons/io";
 export const RulesPage = () => {
   const navigate = useNavigate();
   const handleClick = useCallback(() => {
-    navigate("/adjarapeak");
+    navigate("/");
   }, [navigate]);
   return (
     <>

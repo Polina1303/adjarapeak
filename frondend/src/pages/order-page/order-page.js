@@ -10,7 +10,7 @@ import "./order-page.css";
 export const OrderPage = () => {
   const navigate = useNavigate();
   const handleClick = useCallback(() => {
-    navigate("/adjarapeak");
+    navigate("/");
   }, [navigate]);
   const items = useSelector((state) => state.cart.itemsInCart);
 
