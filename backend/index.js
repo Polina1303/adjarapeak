@@ -3,13 +3,10 @@ dotenv.config();
 import express from "express";
 import cors from "cors";
 import { EmailSender } from "./sendEmail.js";
-
 const app = express();
 app.use(express.json());
 app.use(cors());
-
 const PORT = process.env.PORT || 5001;
-
 app.post("/send", async (req, res) => {
   try {
     const {
@@ -42,3 +39,4 @@ app.post("/send", async (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
+module.exports = app;
