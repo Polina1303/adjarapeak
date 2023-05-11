@@ -10,6 +10,10 @@ app.use(cors());
 
 const PORT = process.env.PORT || 5001;
 
+app.get("/ping", (req, res) => {
+  res.send("pong 🏓");
+});
+
 app.post("/send", async (req, res) => {
   try {
     const {
