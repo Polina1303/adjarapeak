@@ -41,5 +41,3 @@ app.post("/send", async (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
-
-module.exports = app;
