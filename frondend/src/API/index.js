@@ -25,7 +25,7 @@ export const SendEmail = async ({
       price,
     };
     let res = await axios.post(
-      `https://adjarapeak-api-production.up.railway.app//send`,
+      `https://adjarapeak-api-production.up.railway.app/send`,
       datas
     );
     if (res) {
