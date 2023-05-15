@@ -27,13 +27,14 @@ export const Slider = () => {
         }}
       >
         {sliderItem.map((item) => (
-          <div className="slide">
+          <div className="slide" key={item.id}>
             <div className="images-container">
               <img
                 className="slider-image"
                 src={process.env.PUBLIC_URL + "/img/" + item.img}
                 alt="viewTent"
                 width={"500px"}
+                loading="lazy"
               />
             </div>
             <div className="infocontainer">

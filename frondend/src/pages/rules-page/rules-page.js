@@ -15,7 +15,7 @@ export const RulesPage = () => {
         </button>
       </div>
 
-      <img src={rules} alt="Правила проката" />
+      <img src={rules} alt="Правила проката" loading="lazy" />
     </>
   );
 };

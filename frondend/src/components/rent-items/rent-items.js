@@ -1,5 +1,6 @@
 import { Rent } from "../rent/rent";
 import { useDispatch } from "react-redux";
+import { useInView } from "react-intersection-observer";
 import { useNavigate } from "react-router-dom";
 import { setCurrentProduct } from "../../redux/product/reducer";
 import { BsSearch } from "react-icons/bs";
@@ -13,19 +14,29 @@ export const RentItems = ({ rent }) => {
     dispatch(setCurrentProduct(rent));
     navigate(`/app/${rent.title}`);
   };
+
+  const { ref, inView } = useInView({
+    threshold: 0,
+    triggerOnce: true,
+  });
+
   return (
     <div className="rent-items">
-      <div className="rent-items__details">
-        <img
-          onClick={handelClickImg}
-          className="rent-items__img"
-          src={process.env.PUBLIC_URL + "/img/" + rent.img}
-          alt={rent.title}
-        />
+      <div ref={ref} className="rent-items__details">
+        {inView ? (
+          <img
+            onClick={handelClickImg}
+            className="rent-items__img"
+            src={process.env.PUBLIC_URL + "/img/" + rent.img}
+            alt={rent.title}
+          />
+        ) : (
+          <div className="product-items__img-unvisible"></div>
+        )}
         <div className="icon-background" onClick={handelClickImg}>
-        <div className="icon-search">
-        <BsSearch/>
-        </div>
+          <div className="icon-search">
+            <BsSearch />
+          </div>
         </div>
         <span className="rent-items__title">{rent.title}</span>
         <p>{rent.desc}</p>

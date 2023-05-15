@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { useInView } from "react-intersection-observer";
 import { setCurrentProduct } from "../../redux/product/reducer";
 import { BsSearch } from "react-icons/bs";
 import { Buy } from "../buy/buy";
@@ -13,15 +14,26 @@ export const ProductItems = ({ product }) => {
     dispatch(setCurrentProduct(product));
     navigate(`/app/${product.title}`);
   };
+
+  const { ref, inView } = useInView({
+    threshold: 0,
+    triggerOnce: true,
+  });
+
   return (
     <>
       <div className="product-items">
-        <div className="product-items__details">
-          <img
-            className="product-items__img"
-            src={process.env.PUBLIC_URL + "/img/" + product.img}
-            alt={product.title}
-          />
+        <div ref={ref} className="product-items__details">
+          {inView ? (
+            <img
+              className="product-items__img"
+              src={process.env.PUBLIC_URL + "/img/" + product.img}
+              alt={product.title}
+            />
+          ) : (
+            <div className="product-items__img-unvisible"></div>
+          )}
+
           <div className="icon-background" onClick={handelClickImg}>
             <div className="icon-search">
               <BsSearch />
