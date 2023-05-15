@@ -1,5 +1,6 @@
 import rules from "./rules.png";
 import { useCallback } from "react";
+import { useInView } from "react-intersection-observer";
 import { useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 export const RulesPage = () => {
@@ -7,6 +8,10 @@ export const RulesPage = () => {
   const handleClick = useCallback(() => {
     navigate("/");
   }, [navigate]);
+  const { ref, inView } = useInView({
+    threshold: 0,
+    triggerOnce: true,
+  });
   return (
     <>
       <div>
@@ -14,8 +19,11 @@ export const RulesPage = () => {
           <IoIosArrowBack size={"25px"} /> Назад
         </button>
       </div>
-
-      <img src={rules} alt="Правила проката" loading="lazy" />
+      {inView ? (
+        <img src={rules} ref={ref} alt="Правила проката" loading="lazy" />
+      ) : (
+        <div></div>
+      )}
     </>
   );
 };
