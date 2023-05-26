@@ -1,5 +1,6 @@
-import { useSelector } from "react-redux";
-import { useCallback } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useCallback, useEffect } from "react";
+import { setCurrentProduct } from "../../redux/product/reducer";
 import { useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import { Buy } from "../../components/buy/buy";
@@ -7,13 +8,24 @@ import "./product-page.css";
 
 export const ProductPage = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const handleClick = useCallback(() => {
     navigate("/");
   }, [navigate]);
   const product = useSelector((state) => state.products.currentProduct);
-  const column = useSelector((state) => state.products.currentProduct.column);
 
-  if (!product) return null;
+  useEffect(() => {
+    localStorage.setItem("currentProduct", JSON.stringify(product));
+  }, [product]);
+
+  useEffect(() => {
+    const savedProduct = localStorage.getItem("currentProduct");
+    const parsedProduct = savedProduct ? JSON.parse(savedProduct) : {};
+    dispatch(setCurrentProduct(parsedProduct));
+  }, [dispatch]);
+
+  if (!product || !product.column) return null;
+  const column = product.column;
 
   return (
     <div className="product-container">

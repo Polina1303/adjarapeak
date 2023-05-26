@@ -132,6 +132,9 @@ export const HomePage = () => {
           Аксессуары
         </button>
       </div>
+
+      <div className="searchInput_Container"></div>
+
       {visibleProduct && (
         <div>
           <div className="title" id="home-page-buy">
