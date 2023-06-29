@@ -78,6 +78,9 @@
   .add-to-cart {
     height: 35px;
   }
+  .product-items__count {
+    display: none;
+  }
 }
 @media only screen and (max-width: 510px) {
   .add-to-cart {
@@ -102,19 +105,11 @@
   .add-to-cart-icon {
     margin-bottom: 5px;
   }
-  .product-items__count {
-    padding: 1px 3px;
-    font-size: 9px;
-  }
 }
 @media only screen and (max-width: 416px) {
   .shopping-cart-icon {
     width: 15px;
     height: 15px;
-  }
-  .product-items__count {
-    padding: 1px 3px;
-    font-size: 9px;
   }
 }
 @media only screen and (max-width: 404px) {
@@ -123,9 +118,7 @@
     height: 25px;
     padding-top: 3px;
   }
-  .product-items__count {
-    display: none;
-  }
+
   .shopping-cart-icon {
     margin-left: -5px;
   }

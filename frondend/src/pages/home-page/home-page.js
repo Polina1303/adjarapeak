@@ -14,7 +14,7 @@ import backpack from "../../components/image/backpack11.jpg";
 import lantern from "../../components/image/lantern_black.jpg";
 import burnerGas from "../../components/image/burnerGas.jpg";
 import mat from "../../components/image/mat_with_case.jpg";
-import trekking from "../../components/image/trekking_poles_DECATHLON.avif";
+import trekking from "../../components/image/trekkingsticks1.jpg";
 import camping from "../../components/image/setForCamping.jpg";
 import thermose from "../../components/image/thermose9.jpg";
 import knife from "../../components/image/knife6.jpg";

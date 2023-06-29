@@ -28,3 +28,12 @@
 .btn-medium {
   font-size: 25px;
 }
+
+.btn {
+  color: black;
+  border: none;
+  font: inherit;
+  background-color: transparent;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
