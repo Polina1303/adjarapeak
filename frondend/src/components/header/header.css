@@ -116,7 +116,7 @@
   }
   .cart {
     position: absolute;
-    margin-right: 1px;
+    margin-right: -8px;
     margin-top: 10px;
   }
   .instagram {
