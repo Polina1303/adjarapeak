@@ -77,13 +77,13 @@
 @media (max-width: 773px) {
   .modal-content {
     margin-top: 50px;
-    height: 400px;
+    height: 600px;
     width: 90%;
     overflow: auto;
   }
 }
 @media (max-width: 610px) {
   .modal-content {
-    margin-top: 140px;
+    margin-top: 70px;
   }
 }
