@@ -158,22 +158,8 @@
     margin-right: 80px;
   }
 }
-@media only screen and (max-width: 378px) {
-  .instagram {
-    margin-left: -13px;
-  }
-  .icon-telegram {
-    margin-left: -13px;
-  }
-  .icon-whatsApp {
-    margin-left: -13px;
-  }
-  .icon {
-    margin-right: 75px;
-  }
-}
 
-@media only screen and (max-width: 374px) {
+@media only screen and (max-width: 380px) {
   .icon-telegram {
     display: none;
   }
