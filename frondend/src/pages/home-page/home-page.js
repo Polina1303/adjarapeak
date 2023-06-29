@@ -30,7 +30,7 @@ import mattress from "../../components/image/mattressIntex2.jpg";
 export const HomePage = () => {
   const navigate = useNavigate();
 
-  const { ref } = useInView({
+  const { ref, inView } = useInView({
     threshold: 0,
     triggerOnce: true,
   });

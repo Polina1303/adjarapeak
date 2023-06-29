@@ -44,7 +44,7 @@
   background-color: white;
   padding: 20px;
   border-radius: 8px;
-  width: 800px;
+  width: 90%;
 }
 
 .modal-button-cover {
@@ -72,4 +72,18 @@
   border: none;
   outline: none;
   background-color: #fff;
+}
+
+@media (max-width: 773px) {
+  .modal-content {
+    margin-top: 50px;
+    height: 400px;
+    width: 90%;
+    overflow: auto;
+  }
+}
+@media (max-width: 610px) {
+  .modal-content {
+    margin-top: 240px;
+  }
 }
