@@ -94,7 +94,7 @@
   }
 
   .cart-item__delete {
-    margin-left: 5px;
+    margin-left: 10px;
   }
 
   .cart-item__img {
@@ -110,11 +110,11 @@
     margin-left: -8px;
   }
   .cart-item__delete {
-    margin-left: 10px;
+    margin-left: 12px;
   }
   .cart-item__price {
     width: 30px;
-    margin-left: 82px;
+    margin-left: 90px;
   }
   .cart-item__img {
     margin-left: -13px;
