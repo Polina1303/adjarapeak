@@ -148,7 +148,7 @@
 }
 @media only screen and (max-width: 414px) {
   .product-items {
-    height: 295px;
+    height: 300px;
   }
   .product-items__title {
     font-size: 12px;
@@ -159,12 +159,12 @@
 }
 @media only screen and (max-width: 396px) {
   .product-items {
-    height: 285px;
+    height: 295px;
   }
 }
 @media only screen and (max-width: 370px) {
   .product-items {
-    height: 280px;
+    height: 285px;
   }
   .product-items__title {
     font-size: 11px;
@@ -176,6 +176,6 @@
 
 @media only screen and (max-width: 356px) {
   .product-items {
-    height: 270px;
+    height: 275px;
   }
 }
