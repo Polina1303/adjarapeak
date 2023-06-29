@@ -151,11 +151,10 @@
   .shopping-cart-icon {
     width: 11px;
     height: 11px;
-    margin-left: -8px;
+    margin-left: -3px;
   }
   .product-items__count {
-    padding: 1px 2px;
-    font-size: 5px;
+    display: none;
   }
   .product-items__price {
     font-size: 13px;
@@ -166,17 +165,5 @@
   .add-to-cart {
     height: 21px;
     font-size: 9px;
-  }
-  .product-items__count {
-    padding: 1px 2px;
-    font-size: 5px;
-  }
-  .shopping-cart-icon {
-    margin-left: -8px;
-  }
-}
-@media only screen and (max-width: 339px) {
-  .product-items__count {
-    display: none;
   }
 }
