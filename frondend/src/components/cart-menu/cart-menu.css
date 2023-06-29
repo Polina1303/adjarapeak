@@ -25,10 +25,10 @@
 }
 @media (max-width: 450px) {
   .cart-menu {
-    left: -310px;
+    left: -290px;
   }
   .cart-menu {
-    width: 360px;
+    width: 345px;
   }
 }
 @media (max-width: 408px) {
