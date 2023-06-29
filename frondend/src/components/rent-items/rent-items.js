@@ -12,7 +12,7 @@ export const RentItems = ({ rent }) => {
 
   const handelClickImg = () => {
     dispatch(setCurrentProduct(rent));
-    navigate(`/app/${rent.title}`);
+    navigate(`/app/${rent.id}`);
   };
 
   const { ref, inView } = useInView({
@@ -23,23 +23,25 @@ export const RentItems = ({ rent }) => {
   return (
     <div className="rent-items">
       <div ref={ref} className="rent-items__details">
-        {inView ? (
-          <img
-            onClick={handelClickImg}
-            className="rent-items__img"
-            src={process.env.PUBLIC_URL + "/img/" + rent.img}
-            alt={rent.title}
-          />
-        ) : (
-          <div className="product-items__img-unvisible"></div>
-        )}
+        <a href={`/app/${rent.id}`}>
+          {inView ? (
+            <img
+              onClick={handelClickImg}
+              className="rent-items__img"
+              src={process.env.PUBLIC_URL + "/img/" + rent.img}
+              alt={rent.title}
+            />
+          ) : (
+            <div className="product-items__img-unvisible"></div>
+          )}
+        </a>
         <div className="icon-background" onClick={handelClickImg}>
           <div className="icon-search">
             <BsSearch />
           </div>
         </div>
         <span className="rent-items__title">{rent.title}</span>
-        <p>{rent.desc}</p>
+        <p className="rent-items__desc">{rent.desc}</p>
         <Rent rent={rent} />
       </div>
     </div>

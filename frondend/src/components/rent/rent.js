@@ -21,15 +21,21 @@ export const Rent = ({ rent }) => {
   const addedCount = cartItem ? cartItem.count : 0;
 
   return (
-    <div>
-      <b className="rent-items-price">{rent.price}₾-сутки</b>
-      <span className="rent-items__button">
-        <Button onClick={handelClickWeekday} type="primary">
-          {rent.day}
-          <MdAddShoppingCart className="md" size={"25px"} />
-          {addedCount > 0 && <i className="rent-items__count">{addedCount}</i>}
-        </Button>
-      </span>
+    <div className="add-to-cart__rent" onClick={handelClickWeekday}>
+      <span className="rent-day"> {rent.day}</span>
+      <div className="add-to-cart-cover">
+        <div className="add-to-cart">
+          <b className="rent-items-price">{rent.price}₾-сутки</b>
+          <span className="rent-items__button">
+            <Button type="primary">
+              <MdAddShoppingCart className="shopping-cart-icon" />
+              {addedCount > 0 && (
+                <i className="product-items__count">{addedCount}</i>
+              )}
+            </Button>
+          </span>
+        </div>
+      </div>
     </div>
   );
 };

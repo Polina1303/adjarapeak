@@ -5,7 +5,7 @@ import { MdAddShoppingCart } from "react-icons/md";
 import { Button } from "../button";
 import "./buy.css";
 
-export const Buy = ({ product, rent }) => {
+export const Buy = ({ product, page }) => {
   const cartItem = useSelector(
     (state) =>
       state.cart.itemsInCart &&
@@ -33,15 +33,38 @@ export const Buy = ({ product, rent }) => {
   }, [itemsInCart]);
 
   return (
-    <div>
+    <div className="container-items-price" onClick={handleAddToCart}>
       <b className="product-items__price">{product.price}₾</b>
-      <div className="add-to-cart">
-        <Button onClick={handleAddToCart} type="primary">
-          <MdAddShoppingCart size={"25px"} />
-          {addedCount && addedCount > 0 ? (
-            <i className="product-items__count">{addedCount}</i>
-          ) : null}
-        </Button>
+      <div className="add-to-cart-cover">
+        {page ? (
+          <div className="add-to-cart-page">
+            <Button type="primary">
+              <div className="add-to-cart-title"> В корзину</div>
+              <div className="add-to-cart-icon">
+                <MdAddShoppingCart className="shopping-cart-icon" />
+              </div>
+
+              {addedCount && addedCount > 0 ? (
+                <i className="product-items__count">{addedCount}</i>
+              ) : null}
+            </Button>
+          </div>
+        ) : (
+          <div className="add-to-cart">
+            <Button type="primary">
+              <div className="add-to-cart-title"> В корзину</div>
+              <div className="add-to-cart-icon">
+                <MdAddShoppingCart className="shopping-cart-icon" />
+              </div>
+
+              {addedCount && addedCount > 0 ? (
+                <i className="product-items__count">{addedCount}</i>
+              ) : null}
+            </Button>
+          </div>
+        )}
+
+        {/* )} */}
       </div>
     </div>
   );

@@ -3,6 +3,13 @@
   height: 60px;
   display: flex;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 100;
+  width: 100%;
 }
 
 .icon {
@@ -11,68 +18,156 @@
   grid-gap: 20px;
 }
 
-@media only screen and (max-width: 820px) {
-  .header {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 80px;
+@media only screen and (max-width: 785px) {
+  .icon-odnoklassniki {
+    display: none;
   }
-}
-@media only screen and (max-width: 600px) {
-  .header {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 80px;
-  }
-  .location {
-    width: 100px;
-  }
-}
-@media only screen and (max-width: 450px) {
-  .header {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 120px;
-  }
-  .location {
-    width: 200px;
-  }
-}
-@media only screen and (max-width: 430px) {
-  .header {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 120px;
-  }
-  .location {
-    width: 30px;
-    font-size: 17px;
-  }
-}
-@media only screen and (max-width: 380px) {
-  .header {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 120px;
-  }
-  .location {
-    width: 100px;
-    font-size: 15px;
+  .icon-vk {
+    display: none;
   }
   .number {
-    margin-bottom: 5px;
+    width: 300px;
   }
-}
-@media only screen and (max-width: 324px) {
+  .cart {
+    margin-right: 20px;
+  }
   .header {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 190px;
+    height: 85px;
   }
 }
 
-.wrapper {
-  margin-top: -35px;
+@media only screen and (max-width: 730px) {
+  .icon {
+    margin-right: -41px;
+  }
+}
+@media only screen and (max-width: 696px) {
+  .location {
+    font-size: 15px;
+  }
+  .number {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 654px) {
+  .location {
+    font-size: 14px;
+  }
+  .number {
+    font-size: 14px;
+    margin-right: 25px;
+  }
+  .instagram {
+    margin-left: -13px;
+  }
+
+  .icon-telegram {
+    margin-left: -13px;
+  }
+  .icon-whatsApp {
+    margin-left: -13px;
+  }
+}
+@media only screen and (max-width: 615px) {
+  .wrapper {
+    position: absolute;
+    left: 10px;
+  }
+  .header {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100px;
+    justify-content: flex-end;
+  }
+  .location {
+    margin-left: 50px;
+    margin-right: 35px;
+    font-size: 12px;
+  }
+  .number {
+    margin-right: 2px;
+    font-size: 12px;
+  }
+  .icon {
+    margin-right: -15px;
+  }
+}
+@media only screen and (max-width: 579px) {
+  .number {
+    margin-right: -93px;
+  }
+}
+@media only screen and (max-width: 469px) {
+  .header {
+    display: flex;
+    flex-wrap: wrap;
+    height: 60px;
+  }
+  .location {
+    display: none;
+  }
+  .number {
+    display: none;
+  }
+  .icon {
+    margin-right: 100px;
+    margin-top: 10px;
+    z-index: 5;
+  }
+  .cart {
+    position: absolute;
+    margin-right: 1px;
+    margin-top: 10px;
+  }
+  .instagram {
+    margin-left: -5px;
+  }
+  .icon-telegram {
+    margin-left: -5px;
+  }
+  .icon-whatsApp {
+    margin-left: -5px;
+  }
+}
+@media only screen and (max-width: 453px) {
+  .instagram {
+    margin-left: -10px;
+  }
+  .icon-telegram {
+    margin-left: -10px;
+  }
+  .icon-whatsApp {
+    margin-left: -10px;
+  }
+  .icon {
+    margin-right: 70px;
+  }
+}
+@media only screen and (max-width: 378px) {
+  .instagram {
+    margin-left: -13px;
+  }
+  .icon-telegram {
+    margin-left: -13px;
+  }
+  .icon-whatsApp {
+    margin-left: -13px;
+  }
+  .icon {
+    margin-right: 60px;
+  }
+}
+
+@media only screen and (max-width: 351px) {
+  .icon-telegram {
+    display: none;
+  }
+  .icon-whatsApp {
+    display: none;
+  }
+  .icon {
+    display: none;
+  }
 }
 
 .number {
@@ -104,6 +199,24 @@
 }
 
 .icon-whatsApp {
+  color: white;
+  width: 28px;
+  height: 28px;
+  padding: 3px;
+  border-radius: 5px;
+  background-color: #f68632;
+  box-shadow: 0 0 10px rgba(125, 124, 124, 0.5);
+}
+.icon-odnoklassniki {
+  color: white;
+  width: 28px;
+  height: 28px;
+  padding: 3px;
+  border-radius: 5px;
+  background-color: #f68632;
+  box-shadow: 0 0 10px rgba(125, 124, 124, 0.5);
+}
+.icon-vk {
   color: white;
   width: 28px;
   height: 28px;

@@ -18,7 +18,7 @@ li {
 }
 
 .icon-footer {
-  width: 30%;
+  width: 50%;
   display: flex;
   justify-content: space-between;
 }
@@ -35,100 +35,158 @@ li {
   font-weight: 600;
 }
 
-@media (max-width: 800px) {
-  .footer-container {
-    font-size: 10px;
+.instagram-footer {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  text-align: center;
+  padding: 3px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 220px;
+  line-height: 250px;
+  vertical-align: middle;
+  background: #f68632;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);
+}
+
+.icon-telegram-footer {
+  color: #f68632;
+  width: 28px;
+  height: 28px;
+  padding: 3px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(125, 124, 124, 0.5);
+}
+
+.icon-whatsApp-footer {
+  color: white;
+  width: 28px;
+  height: 28px;
+  padding: 3px;
+  border-radius: 5px;
+  background-color: #f68632;
+  box-shadow: 0 0 10px rgba(125, 124, 124, 0.5);
+}
+.icon-odnoklassniki-footer {
+  color: white;
+  width: 28px;
+  height: 28px;
+  padding: 3px;
+  border-radius: 5px;
+  background-color: #f68632;
+  box-shadow: 0 0 10px rgba(125, 124, 124, 0.5);
+}
+.icon-vk-footer {
+  color: white;
+  width: 28px;
+  height: 28px;
+  padding: 3px;
+  border-radius: 5px;
+  background-color: #f68632;
+  box-shadow: 0 0 10px rgba(125, 124, 124, 0.5);
+}
+
+@media (max-width: 1050px) {
+  .footer-description {
+    margin: 20px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 962px) {
+  .footer-description {
+    font-size: 15px;
+    margin-bottom: 50px;
   }
   ul {
-    margin: 10px;
-  }
-  li {
-    padding: 5px;
-  }
-  .icon-footer {
-    width: 50%;
-  }
-  .footer-description {
-    flex: 1;
-    margin: 5px;
-
-    padding: 15px;
-  }
-}
-
-@media (max-width: 570px) {
-  .footer-container {
-    font-size: 10px;
-  }
-  ul {
-    margin-left: -25px;
-  }
-  li {
-    padding: 10px;
-    width: 150px;
-    margin-right: 10px;
-  }
-  .icon-footer {
-    width: 80%;
-  }
-
-  .footer-description {
-    width: 150px;
-    margin-left: -25px;
-  }
-}
-
-@media (max-width: 500px) {
-  .footer-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  li {
-    width: 300px;
-  }
-  .footer-description {
-    width: 300px;
-    margin-left: 10px;
-  }
-  .icon-footer {
-    width: 40%;
-  }
-}
-
-@media (max-width: 450px) {
-  .footer-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  li {
-    width: 250px;
-  }
-  .footer-description {
-    width: 250px;
-    margin-left: 10px;
+    margin-top: 30px;
+    margin-left: -20px;
+    margin-right: 5px;
   }
   .icon-footer {
     width: 60%;
   }
 }
-
-@media (max-width: 395px) {
-  .footer-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  li {
-    width: 220px;
-    padding-top: 1px;
-  }
-  .footer-description {
-    width: 220px;
-    margin-left: 10px;
-  }
+@media (max-width: 825px) {
   .icon-footer {
     width: 80%;
+  }
+  li {
+    font-size: 12px;
+    padding-top: 5px;
+  }
+  .footer-description-text {
+    font-size: 12px;
+  }
+  .footer-container {
+    margin-bottom: -30px;
+  }
+}
+@media (max-width: 825px) {
+  .icon-footer {
+    width: 80%;
+  }
+  li {
+    font-size: 12px;
+    padding-top: 5px;
+  }
+  .footer-description-text {
+    font-size: 12px;
+  }
+  .footer-container {
+    margin-bottom: -30px;
+  }
+}
+
+@media (max-width: 706px) {
+  .footer-container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .icon-footer {
+    width: 50%;
+  }
+  .footer-description {
+    margin-bottom: 10px;
+  }
+  ul {
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 541px) {
+  .icon-footer {
+    width: 70%;
+  }
+}
+@media (max-width: 429px) {
+  .icon-footer {
+    width: 60%;
+  }
+  li {
+    font-size: 11px;
+  }
+  .footer-description-text {
+    font-size: 11px;
+    margin-top: 5px;
+  }
+  .footer-description {
+    margin-top: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  ul {
+    margin-top: -5px;
+  }
+}
+@media (max-width: 400px) {
+  .icon-footer {
+    width: 80%;
+  }
+}
+@media (max-width: 340px) {
+  .icon-footer {
+    width: 90%;
   }
 }

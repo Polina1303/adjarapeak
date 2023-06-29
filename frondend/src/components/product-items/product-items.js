@@ -12,7 +12,7 @@ export const ProductItems = ({ product }) => {
 
   const handelClickImg = () => {
     dispatch(setCurrentProduct(product));
-    navigate(`/app/${product.title}`);
+    navigate(`/app/${product.id}`);
   };
 
   const { ref, inView } = useInView({
@@ -24,24 +24,27 @@ export const ProductItems = ({ product }) => {
     <>
       <div className="product-items">
         <div ref={ref} className="product-items__details">
-          {inView ? (
-            <img
-              className="product-items__img"
-              src={process.env.PUBLIC_URL + "/img/" + product.img}
-              alt={product.title}
-            />
-          ) : (
-            <div className="product-items__img-unvisible"></div>
-          )}
+          <a href={`/app/${product.id}`}>
+            {inView ? (
+              <img
+                className="product-items__img"
+                src={process.env.PUBLIC_URL + "/img/" + product.img}
+                alt={product.title}
+              />
+            ) : (
+              <div className="product-items__img-unvisible"></div>
+            )}
 
-          <div className="icon-background" onClick={handelClickImg}>
-            <div className="icon-search">
-              <BsSearch />
+            <div className="icon-background" onClick={handelClickImg}>
+              <div className="icon-search">
+                <BsSearch />
+              </div>
             </div>
-          </div>
+          </a>
 
           <span className="product-items__title">{product.title}</span>
-          <p>{product.desc}</p>
+
+          <p className="product-items__desc">{product.desc}</p>
           <Buy product={product} />
         </div>
       </div>

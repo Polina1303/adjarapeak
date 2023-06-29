@@ -26,7 +26,12 @@ export const CartMenu = ({ items, onClick }) => {
           <div className="cart-menu__total-price">
             <span>Итого:</span> <span>{calcTotalPrice(items)}₾</span>
           </div>
-          <Button type="primary" size="m" onClick={onClick}>
+          <Button
+            type="secondary"
+            size="m"
+            onClick={onClick}
+            style={{ color: "#f87736" }}
+          >
             Оформить заказ
           </Button>
         </div>

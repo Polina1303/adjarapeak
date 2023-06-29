@@ -1,18 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const getCurrentProduct = () => {
-  const currentProduct = localStorage.getItem("currentProduct");
-  if (currentProduct) {
-    return JSON.parse(currentProduct);
-  } else {
-    return [];
-  }
-};
+// const getCurrentProduct = () => {
+//   // const currentProduct = localStorage.getItem("currentProduct");
+//   // if (currentProduct) {
+//   //   return JSON.parse(currentProduct);
+//   // } else {
+//   //   return [];
+//   // }
+//   // currentProduct:[]
+// };
 
 const productsSlice = createSlice({
   name: "product",
   initialState: {
-    currentProduct: getCurrentProduct(),
+    currentProduct: [],
   },
   reducers: {
     setCurrentProduct: (state, action) => {

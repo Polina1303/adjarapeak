@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { calcTotalPrice, enumerate } from "../../components/utils";
 import { IoIosArrowBack } from "react-icons/io";
@@ -8,10 +7,8 @@ import { OrderInput } from "../../components/order-input/order-input";
 import "./order-page.css";
 
 export const OrderPage = () => {
-  const navigate = useNavigate();
-  const handleClick = useCallback(() => {
-    navigate("/");
-  }, [navigate]);
+  const history = useNavigate();
+
   const items = useSelector((state) => state.cart.itemsInCart);
 
   if (items && items.length < 1) {
@@ -20,7 +17,7 @@ export const OrderPage = () => {
 
   return (
     <div className="order-page">
-      <button className="back-button" onClick={() => handleClick()}>
+      <button className="back-button" onClick={() => history(-1)}>
         <IoIosArrowBack size={"25px"} /> Назад
       </button>
 

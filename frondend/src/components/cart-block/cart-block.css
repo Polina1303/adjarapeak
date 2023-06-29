@@ -5,7 +5,8 @@
 }
 
 .cart-price {
-  margin-left: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
   font-weight: 600;
   font-size: 17px;
   width: 60px;
@@ -14,4 +15,12 @@
 .cart-icon {
   cursor: pointer;
   position: relative;
+}
+
+@media only screen and (max-width: 512px) {
+  .cart-price {
+    margin-left: 3px;
+    font-size: 15px;
+    width: 60px;
+  }
 }

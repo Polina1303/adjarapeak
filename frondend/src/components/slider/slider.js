@@ -2,8 +2,10 @@ import "./slider.css";
 import { MdOutlineArrowLeft, MdArrowRight } from "react-icons/md";
 import { sliderItem } from "./data";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Slider = () => {
+  const navigate = useNavigate();
   const [sliderIndex, setSliderIndex] = useState(0);
   const handelClick = (direction) => {
     if (direction === "left") {
@@ -11,6 +13,13 @@ export const Slider = () => {
     } else {
       setSliderIndex(sliderIndex < 2 ? sliderIndex + 1 : 0);
     }
+  };
+
+  const handleClickSale = () => {
+    navigate("/sale");
+  };
+  const handleClickRent = () => {
+    navigate("/rent");
   };
 
   return (
@@ -38,15 +47,22 @@ export const Slider = () => {
               />
             </div>
             <div className="infocontainer">
-              <h1 className="infocontainer-title">{item.title}</h1>
+              <h1 className="infocontainer-title">{item.titleFirst}</h1>
+              <h1 className="infocontainer-title">{item.titleSecond}</h1>
               <p className="infocontainer-descripshion">{item.descripshion}</p>
               {item.id === 1 && (
                 <div className="infocontainer-cover">
-                  <button className="infocontainer-button">
-                    <a href="#home-page-buy">КУПИТЬ</a>
+                  <button
+                    className="infocontainer-button"
+                    onClick={handleClickSale}
+                  >
+                    КУПИТЬ
                   </button>
-                  <button className="infocontainer-button">
-                    <a href="#home-page-rent">АРЕНДОВАТЬ</a>
+                  <button
+                    className="infocontainer-button"
+                    onClick={handleClickRent}
+                  >
+                    АРЕНДОВАТЬ
                   </button>
                 </div>
               )}

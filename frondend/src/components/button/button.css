@@ -8,17 +8,17 @@
 }
 
 .btn-primary {
-  color: #de682d;
+  color: rgb(255, 255, 255);
   transition: transform 500ms ease;
   padding-top: 10px;
 }
 
-.btn-primary:hover {
+/* .btn-primary:hover {
   transform: scale(1.1);
-}
+} */
 
 .btn-secondary {
-  background-color: #db3e00;
+  color: #f87736;
 }
 
 .btn-small {

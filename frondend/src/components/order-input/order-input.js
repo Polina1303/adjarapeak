@@ -5,7 +5,7 @@ import "./order-input.css";
 
 export const OrderInput = (items) => {
   const [visible, setVisible] = useState(false);
-  const [orderSuccess, setOrderSuccess] = useState();
+  const [orderSuccess, setOrderSuccess] = useState(false);
   const [setSend] = useState();
   const {
     register,
@@ -161,16 +161,16 @@ export const OrderInput = (items) => {
           <input {...register("price")} defaultValue={defaultValues.price} />
           <input {...register("count")} defaultValue={defaultValues.count} />
         </div>
+        {orderSuccess && (
+          <div className="successTitle">
+            Спасибо за заказа!
+            <br /> С уважением Adjara Peak.
+          </div>
+        )}
         <div>
           <button className="button-form">ОФОРМИТЬ ЗАКАЗ</button>
         </div>
       </form>
-      {orderSuccess && (
-        <div className="successTitle">
-          Спасибо за заказа!
-          <br /> С уважением Adjara Peak.
-        </div>
-      )}
     </div>
   );
 };
