@@ -154,12 +154,6 @@
   }
 }
 @media only screen and (max-width: 400px) {
-  .icon {
-    margin-right: 80px;
-  }
-}
-
-@media only screen and (max-width: 380px) {
   .icon-telegram {
     display: none;
   }
