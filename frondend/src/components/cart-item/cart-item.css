@@ -94,12 +94,12 @@
   } */
 
   .cart-item__price {
-    width: 50px;
+    width: 40px;
     margin-left: 85px;
   }
 
   .cart-item__delete {
-    margin-left: 10px;
+    margin-left: 5px;
   }
 
   .cart-item__img {
@@ -126,7 +126,7 @@
     margin-left: 7px;
   }
   .cart-item__price {
-    width: 50px;
+    width: 30px;
     margin-left: 75px;
   }
   .cart-item__img {
@@ -148,7 +148,7 @@
     margin-left: 8px;
   }
   .cart-item__price {
-    width: 50px;
+    width: 30px;
     margin-left: 60px;
   }
   .cart-item__img {
