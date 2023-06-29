@@ -40,7 +40,10 @@ export const CartItem = ({ img, title, price, id, count }) => {
             </Button>
             <span className="cart-item__text"> {count}</span>
             <Button onClick={handleClickPlus}>
-              <AiOutlinePlusCircle className="cart-item__count" size={20} />
+              <AiOutlinePlusCircle
+                className="cart-item__count-left"
+                size={20}
+              />
             </Button>
           </div>
         ) : (
