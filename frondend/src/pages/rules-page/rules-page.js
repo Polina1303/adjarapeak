@@ -24,7 +24,7 @@ export const RulesPage = () => {
           <div className="modal-content">
             <div className="modal-button-cover">
               <button className="modal-button" onClick={handleCloseModal}>
-                <AiOutlineCloseCircle size={25} />
+                <AiOutlineCloseCircle size={25} color="black" />
               </button>
             </div>
             <div className="colimn_cover">
