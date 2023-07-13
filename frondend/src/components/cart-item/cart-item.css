@@ -1,5 +1,7 @@
 .cart-item {
   display: flex;
+  max-height: 400px;
+  overflow-y: auto;
 }
 
 .cart-item__img {
@@ -55,7 +57,7 @@
 .cart-item__delete {
   margin-top: -3px;
   color: #9f9d9df5;
-  margin-left: 15px;
+  margin-left: 10px;
   cursor: pointer;
   transition: all 500ms ease;
 }
