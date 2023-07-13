@@ -1798,7 +1798,7 @@ export const PRODUCT = [
   },
   {
     id: 1000108,
-    title: "СКЛАДНООЙ СТУЛ",
+    title: "СКЛАДНОЙ СТУЛ",
     img: "chair2.JPG",
     desc: "( ТАБУРЕТ )",
     category: "chair",

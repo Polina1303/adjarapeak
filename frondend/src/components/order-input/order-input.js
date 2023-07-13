@@ -24,11 +24,13 @@ export const OrderInput = (items) => {
   }, [num]);
 
   const prod = obj.items.map((item) => item.title).join(",");
+  const desc = obj.items.map((item) => item.desc).join(",");
   const price = obj.items.map((item) => item.price).join(",");
   const count = obj.items.map((item) => item.count).join(",");
 
   const defaultValues = {
     prod: prod,
+    desc: desc,
     price: price,
     count: count,
   };
@@ -43,6 +45,7 @@ export const OrderInput = (items) => {
       dateEnd,
       comments,
       prod,
+      desc,
       count,
       price,
     } = data;
@@ -54,6 +57,7 @@ export const OrderInput = (items) => {
       dateEnd,
       comments,
       prod,
+      desc,
       count,
       price,
       setSend,
@@ -158,6 +162,7 @@ export const OrderInput = (items) => {
         </div>
         <div style={{ display: "none" }}>
           <input {...register("prod")} defaultValue={defaultValues.prod} />
+          <input {...register("desc")} defaultValue={defaultValues.desc} />
           <input {...register("price")} defaultValue={defaultValues.price} />
           <input {...register("count")} defaultValue={defaultValues.count} />
         </div>

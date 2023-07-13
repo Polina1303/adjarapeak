@@ -8,6 +8,7 @@ export const SendEmail = async ({
   dateEnd,
   comments,
   prod,
+  desc,
   count,
   price,
   setSend,
@@ -21,6 +22,7 @@ export const SendEmail = async ({
       dateEnd,
       comments,
       prod,
+      desc,
       count,
       price,
     };
@@ -28,10 +30,13 @@ export const SendEmail = async ({
       `https://adjarapeak-api-production.up.railway.app/send`,
       datas
     );
-    if (res) {
+    console.log("Response:", res);
+    if (res && res.data) {
+      console.log("Data:", res.data);
       setSend(res.data);
     }
   } catch (error) {
+    console.error(error);
     alert(error.response.data.message);
   }
 };

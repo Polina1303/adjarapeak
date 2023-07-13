@@ -699,7 +699,7 @@ export const RENT = [
   {
     id: 200035,
     title: "РЮКЗАК-ПЕРЕНОСКА (ДО 25КГ)",
-    img: "kids.jpeg",
+    img: "deuterforchild.jpg",
     desc: "DEUTER KID KOMFORT",
     category: "rent",
     day: "будни/выходные",
