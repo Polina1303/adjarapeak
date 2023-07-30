@@ -4,7 +4,7 @@ import { sliderItem } from "./data";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export const Slider = () => {
+export const SliderMain = () => {
   const navigate = useNavigate();
   const [sliderIndex, setSliderIndex] = useState(0);
   const handelClick = (direction) => {
