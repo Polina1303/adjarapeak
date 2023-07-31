@@ -17,7 +17,7 @@ export const SublimatesPage = () => {
       <div className="home-page__container">
         <div>
           <div className="title" id="home-page-buy">
-            Сублиматы
+            Походная еда
           </div>
           <div className="home-page-product">
             {knife.map((product) => (

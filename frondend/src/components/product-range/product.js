@@ -2610,7 +2610,7 @@ export const PRODUCT = [
     id: 1000151,
     title: "BORSCH (Украинский борщ) Lazy Snark ",
     img: "Paper-Borscht.png",
-    desc: "Походная еда. Max pack +50%",
+    desc: "Max pack +50%",
     category: "sublimates",
     price: 18,
     column: [
@@ -2633,7 +2633,7 @@ export const PRODUCT = [
     id: 1000152,
     title: "BORSCH VEGAN (Украинский борщ, вегетарианский) Lazy Snark ",
     img: "Paper-Borscht.png",
-    desc: "Походная еда. Max pack +50%",
+    desc: "Max pack +50%",
     category: "sublimates",
     price: 16,
     column: [
@@ -2656,7 +2656,7 @@ export const PRODUCT = [
     id: 1000152,
     title: "TOMATO SOUP (Томатный суп) Lazy Snark ",
     img: "TOMATOSOUP.png",
-    desc: "Походная еда. Max pack +50%",
+    desc: "Max pack +50%",
     category: "sublimates",
     price: 18,
     column: [
@@ -2679,7 +2679,7 @@ export const PRODUCT = [
     id: 1000153,
     title: "BUCKWHEAT (Гречка) Lazy Snark ",
     img: "BUCKWHEAT.png",
-    desc: "Походная еда. Max pack +50%",
+    desc: "Max pack +50%",
     category: "sublimates",
     price: 18,
     column: [
@@ -2702,7 +2702,7 @@ export const PRODUCT = [
     id: 1000154,
     title: "BUCKWHEAT VEGAN (Гречка вегетарианская) Lazy Snark ",
     img: "BUCKWHEAT.png",
-    desc: "Походная еда. Max pack +50%",
+    desc: "Max pack +50%",
     category: "sublimates",
     price: 16,
     column: [
@@ -2725,7 +2725,7 @@ export const PRODUCT = [
     id: 1000155,
     title: "RIZOTTO (Ризотто) Lazy Snark ",
     img: "RIZOTTO.png",
-    desc: "Походная еда. Max pack +50%",
+    desc: "Max pack +50%",
     category: "sublimates",
     price: 18,
     column: [
@@ -2748,7 +2748,7 @@ export const PRODUCT = [
     id: 1000156,
     title: "BUCKWHEAT VEGAN (Ризотто вегетарианская) Lazy Snark ",
     img: "RIZOTTO.png",
-    desc: "Походная еда. Max pack +50%",
+    desc: "Max pack +50%",
     category: "sublimates",
     price: 16,
     column: [
@@ -2771,7 +2771,7 @@ export const PRODUCT = [
     id: 1000157,
     title: "CREAMY POTATO (Сливочный картофель) Lazy Snark ",
     img: "CREAMYPOTATO.png",
-    desc: "Походная еда. Max pack +50%",
+    desc: "Max pack +50%",
     category: "sublimates",
     price: 18,
     column: [
@@ -2795,7 +2795,7 @@ export const PRODUCT = [
     title:
       "CREAMY POTATO VEGAN (Сливочный картофель, вегетарианский) Lazy Snark ",
     img: "CREAMYPOTATO.png",
-    desc: "Походная еда. Max pack +50%",
+    desc: "Max pack +50%",
     category: "sublimates",
     price: 16,
     column: [
@@ -2818,7 +2818,7 @@ export const PRODUCT = [
     id: 1000159,
     title: "PASTA BOLOGNESE (Паста болоньезе) Lazy Snark ",
     img: "PASTABOLOGNESE.png",
-    desc: "Походная еда. Max pack +50%",
+    desc: "Max pack +50%",
     category: "sublimates",
     price: 18,
     column: [
@@ -2842,7 +2842,7 @@ export const PRODUCT = [
     title:
       "PASTA BOLOGNESE VEGAN (Паста болоньезе, вегетарианская) Lazy Snark ",
     img: "PASTABOLOGNESE.png",
-    desc: "Походная еда. Max pack +50%",
+    desc: "Max pack +50%",
     category: "sublimates",
     price: 16,
     column: [
@@ -2865,7 +2865,7 @@ export const PRODUCT = [
     id: 1000161,
     title: "LOBIO (Лобио) Lazy Snark ",
     img: "LOBIO.png",
-    desc: "Походная еда. Max pack +50%",
+    desc: "Max pack +50%",
     category: "sublimates",
     price: 18,
     column: [
@@ -2888,7 +2888,7 @@ export const PRODUCT = [
     id: 1000162,
     title: "BULGUR WITH CORN (Булгур с кукурузой) Lazy Snark ",
     img: "BULGURWITHCORN.png",
-    desc: "Походная еда. Max pack +50%",
+    desc: "Max pack +50%",
     category: "sublimates",
     price: 18,
     column: [
@@ -2912,7 +2912,7 @@ export const PRODUCT = [
     title:
       "BULGUR WITH CORN VEGAN (Булгур с кукурузой, вегетарианский) Lazy Snark ",
     img: "BULGURWITHCORN.png",
-    desc: "Походная еда. Max pack +50%",
+    desc: "Max pack +50%",
     category: "sublimates",
     price: 16,
     column: [
@@ -2935,7 +2935,7 @@ export const PRODUCT = [
     id: 1000164,
     title: "JERKY BEET (Вяленая говядина) Lazy Snark",
     img: "JERKYBEET.png",
-    desc: "Походная еда",
+    desc: "",
     category: "sublimates",
     price: 18,
     column: [
@@ -3072,6 +3072,31 @@ export const PRODUCT = [
     id: 1000170,
     title: "НАДУВНАЯ SUP-ДОСКА",
     img: "sup4.jpg",
+    desc: "Runeed Everest",
+    category: "supboard",
+    price: 829,
+    shortly: "КОМПЛЕКТАЦИЯ: ",
+    column: [
+      " -Водонепроницаемый мешок 5 литров - 1 шт",
+      "-1 съемный центральный киль - 1 шт.",
+      "-Съемный боковой киль - 2 шт.",
+      "Ручной насос высокого давления - 1 шт.",
+      "Водонепроницаемый мешок большой емкости из материала 600D - 1 шт",
+      "Алюминиевое весло - 1 шт.",
+      "1 ключ для ремонта (ключ/материал из ПВХ) - 1 шт.",
+      "Водонепроницаемый мешок - 1 шт.",
+      "Безопасный ремень - 1 шт.",
+      "Ширина:84см",
+      "Толщина: 15см",
+      "Длина: 350 см",
+      "Вес: 9.5 кг",
+      "Макс. нагрузка: 145 кг",
+    ],
+  },
+  {
+    id: 1000170,
+    title: "НАДУВНАЯ SUP-ДОСКА",
+    img: "sup5.jpg",
     desc: "Runeed Everest",
     category: "supboard",
     price: 829,

@@ -221,7 +221,7 @@ export const HomePage = () => {
                 className="categories-item-img"
               />
               <div className="categories-item-title">
-                <div className="categories-item-title_back">Сублиматы</div>
+                <div className="categories-item-title_back">Походная еда</div>
               </div>
             </a>
           </div>
