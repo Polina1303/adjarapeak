@@ -2525,7 +2525,7 @@ export const PRODUCT = [
     ],
   },
   {
-    id: 1000147,
+    id: 11000147,
     title: "ВОДОНЕПРОНИЦАЕМАЯ СУМКА",
     img: "su-sizdirmaz-silindir-canta-10l-turuncu-2.jpg",
     desc: "ГЕРМОМЕШОК 10 Л ITIWT",
@@ -2630,7 +2630,7 @@ export const PRODUCT = [
     ],
   },
   {
-    id: 1000152,
+    id: 11100152,
     title: "BORSCH VEGAN (Украинский борщ, вегетарианский) Lazy Snark ",
     img: "Paper-Borscht.png",
     desc: "Max pack +50%",
@@ -3020,7 +3020,7 @@ export const PRODUCT = [
   },
   {
     id: 1000168,
-    title: "НАДУВНАЯ SUP-ДОСКА",
+    title: "НАДУВНАЯ SUP-ДОСКА (ловец снов)",
     img: "sup2.jpg",
     desc: "Runeed Everest",
     category: "supboard",
@@ -3045,7 +3045,7 @@ export const PRODUCT = [
   },
   {
     id: 1000169,
-    title: "НАДУВНАЯ SUP-ДОСКА",
+    title: "НАДУВНАЯ SUP-ДОСКА (синий)",
     img: "sup3.jpg",
     desc: "Runeed Everest",
     category: "supboard",
@@ -3070,7 +3070,7 @@ export const PRODUCT = [
   },
   {
     id: 1000170,
-    title: "НАДУВНАЯ SUP-ДОСКА",
+    title: "НАДУВНАЯ SUP-ДОСКА (красный)",
     img: "sup4.jpg",
     desc: "Runeed Everest",
     category: "supboard",
@@ -3094,8 +3094,8 @@ export const PRODUCT = [
     ],
   },
   {
-    id: 1000170,
-    title: "НАДУВНАЯ SUP-ДОСКА",
+    id: 1000171,
+    title: "НАДУВНАЯ SUP-ДОСКА (шаман)",
     img: "sup5.jpg",
     desc: "Runeed Everest",
     category: "supboard",
