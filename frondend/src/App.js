@@ -26,8 +26,11 @@ import { BuffPage } from "./pages/buff-page";
 import { AccessoriesPage } from "./pages/accessories-page";
 import { RaincoatPage } from "./pages/raincoat-page";
 import { Footer } from "./components/footer";
-
+import { SublimatesPage } from "./pages/sublimates-page/sublimates-page";
 import { RulesPage } from "./pages/rules-page";
+import { HermeticBagsPage } from "./pages/hermetic-bags/hermetic-bags";
+import { TermoryukzakPage } from "./pages/termoryukzak";
+import { SupboardPage } from "./pages/supboard-page/supboard-pade";
 
 function App() {
   return (
@@ -59,6 +62,10 @@ function App() {
         <Route exact path="/lake" element={<LakeRoutePage />} />
         <Route exact path="/erge" element={<ErgeRoutePage />} />
         <Route exact path="/garden" element={<GardenRoutePage />} />
+        <Route exact path="/hermo" element={<HermeticBagsPage />} />
+        <Route exact path="/termoryukzak" element={<TermoryukzakPage />} />
+        <Route exact path="/sublimates" element={<SublimatesPage />} />
+        <Route exact path="/supboard" element={<SupboardPage />} />
         <Route exact path="*" element={<Error />} />
       </Routes>
       <Footer />
