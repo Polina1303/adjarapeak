@@ -23,7 +23,8 @@ export const Header = () => {
           target="_blank"
           rel="noreferrer"
         >
-          Батуми ул.Тбел-Абусеридзе,38 (12:00-18:00)
+          Батуми ул.Тбел-Абусеридзе, 38
+          <p className="work">понедельник, среда, пятница (10:00-19:00)</p>
         </a>
       </div>
       <div className="number">

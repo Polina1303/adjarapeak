@@ -220,3 +220,7 @@
   background-color: #f68632;
   box-shadow: 0 0 10px rgba(125, 124, 124, 0.5);
 }
+
+.work {
+  margin-top: -1px;
+}

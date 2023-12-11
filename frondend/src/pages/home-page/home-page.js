@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-// import { HitSales } from "../../components/hit-sales";
+import { HitSales } from "../../components/hit-sales";
 import { ChooseUs } from "../../components/chooseus";
 import { Routes } from "../../components/routes/routes";
 import { useNavigate } from "react-router-dom";
@@ -820,7 +820,7 @@ export const HomePage = () => {
       )}
 
       {/* </div> */}
-      {/* <HitSales /> */}
+      <HitSales />
       <Routes />
       <RulesPage />
       <ChooseUs />

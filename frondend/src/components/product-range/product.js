@@ -6,6 +6,8 @@ export const PRODUCT = [
     desc: "2-х местная двухслойная 150*275*110",
     category: "tent",
     price: 690,
+    oldPrice: 690,
+    newPrice: 554,
     shortly:
       "Ультралегкая двухместная палатка для пеших, водных и вело-походов. В просторный тамбур можно разместить пару рюкзаков внушительных размеров.",
     column: [
@@ -29,6 +31,8 @@ export const PRODUCT = [
     desc: "3-х местная двухслойная 180*300*110",
     category: "tent",
     price: 810,
+    oldPrice: 810,
+    newPrice: 691,
     shortly:
       "Ультралегкая двухместная палатка для пеших, водных и вело-походов. В просторный тамбур можно разместить пару рюкзаков внушительных размеров.",
     column: [
@@ -51,7 +55,7 @@ export const PRODUCT = [
     img: "naturehike_show_skirt.jpg",
     desc: "2-х местная двухслойная 150*275*110",
     category: "tent",
-    price: 799,
+    price: 591,
     shortly:
       "Ультралёгкая туристическая палатка с юбкой, рассчитанная на комфортное размещение 2 человек.",
     column: [
@@ -75,7 +79,7 @@ export const PRODUCT = [
     img: "20DGREYWITHSKIRT.webp",
     desc: "3-х местная двухслойная 180*300*110",
     category: "tent",
-    price: 891,
+    price: 691,
     shortly: "Ультралёгкая туристическая палатка с юбкой.",
     column: [
       "Тент изготовлен из силиконизированного нейлона 20D",
@@ -98,7 +102,7 @@ export const PRODUCT = [
     img: "clouduporange210T.jpg",
     desc: "1-местная двухслойная 120*295*110",
     category: "tent",
-    price: 559,
+    price: 459,
     shortly: "Ультралёгкая туристическая палатка с юбкой.",
     column: [
       "Внешний тент выполнен из тонкого и легкого полиэстера 210T с плетением RipStop и PU пропиткой",
@@ -120,6 +124,8 @@ export const PRODUCT = [
     desc: "2-х местная двухслойная 130*210*107",
     category: "tent",
     price: 270,
+    oldPrice: 270,
+    newPrice: 255,
     shortly:
       "Простая и легкая в установке, эта эко-палатка предназначена для ваших лагерей на 2 человек. Экологичная и недорогая палатка. Благодаря отдельно стоящей куполообразной конструкции вы можете перемещать палатку, чтобы выбрать наиболее подходящее для вас место для кемпинга.",
     column: [
@@ -229,7 +235,7 @@ export const PRODUCT = [
     img: "BTRACE_TRAVEL2.jpg",
     desc: "2-х местная двухслойная, 250*220*120",
     category: "tent",
-    price: 841,
+    price: 550,
     shortly:
       "Двухслойная палатка с двумя входами. Внешний тент палатки устойчив к ультрафиолетовому излучению .Внешний тент имеет пропитку, задерживающую распространение огня. Два вентиляционных клапана. Светоотражающие оттяжки и элементы на вентиляции. Все швы проклеены. Идеальна для туристических походов в весеннее, летнее и осеннее время.",
     column: [
@@ -260,7 +266,7 @@ export const PRODUCT = [
     img: "BTRACE_TRAVEL3.jpg",
     desc: "3-х местная двухслойная, 200*220*120",
     category: "tent",
-    price: 939,
+    price: 679,
     shortly:
       "Двухслойная палатка с двумя входами. Внешний тент палатки устойчив к ультрафиолетовому излучению. Внешний тент имеет пропитку, задерживающую распространение огня. Два вентиляционных клапана. Светоотражающие оттяжки и элементы на вентиляции. Все швы проклеены. Идеальна для туристических походов в весеннее, летнее и осеннее время.",
     column: [
@@ -292,6 +298,8 @@ export const PRODUCT = [
     desc: "3-х местная двухслойная, 300*210*120",
     category: "tent",
     price: 1021,
+    oldPrice: 1021,
+    newPrice: 859,
     shortly:
       "Двухслойная палатка с двумя входами. Внешний тент палатки устойчив к ультрафиолетовому излучению. Внешний тент имеет пропитку, задерживающую распространение огня. Большой вместительный тамбур. Два вентиляционных клапана. Светоотражающие оттяжки и элементы на вентиляции. Все швы проклеены. Идеальна для туристических походов в весеннее, летнее и осеннее время.",
     column: [
@@ -395,6 +403,8 @@ export const PRODUCT = [
     desc: "Утеплитель 195(+35)*100 от 0 до -21",
     category: "sleepingbag",
     price: 659,
+    oldPrice: 659,
+    newPrice: 399,
     shortly:
       "Утеплитель.В качестве утеплителя используется lzoShell 40.Разнонаправленные супертонкие полые волокна утеплителя lzoShell 4D создают множество микрополостей, где удерживается теплый воздух. Волокна утеплителя соединены между собой синтетической смолой, что делает утеплитель lzoShell 4D более воздушным, долговечным и неприхотливым в эксплуатации. Низкий коэффициент теплопроводности, высокие гидрофобные и потребительские качества делают утеплитель lzoShell 4D одним из лучших утеплителей для спальных мешков. Внешний материал верхней части спальника Polyester 190Т с плетением Rip Stop, специальная паропроницаемая ткань, которая позволяет выводить пар не конденсируя влагу внутри спальника. Внешний материал нижней части спальника Polyester 190Т с плетением Diamond Rip Stop со специальным водонепроницаемым покрытием PU 250 мм водяного столба, надёжно защищает спальник от повреждения и влаги. Внутренний материал Фланель 100% Cotton - шелковистая, мягкая и комфортная ткань.",
     column: [
@@ -417,6 +427,8 @@ export const PRODUCT = [
     desc: "Супер лёгкий 220*90(55) от +15 до 0 ",
     category: "sleepingbag",
     price: 449,
+    oldPrice: 449,
+    newPrice: 370,
     shortly:
       "Новинка сезона 2021 - супер лёгкий спальный мешок-кокон BTrace Zero. Он идеально подойдёт для небольших путешествий в теплую погоду. Занимая совсем мало места, этот спальный мешок позволит с комфортом переночевать в походных условиях. Как и другие спальные мешки-коконы этой серии, BTrace Zero имеет возможность состёгиваться. Также можно выбрать один из 2х размеров, чтоб сэкономить ещё места и веса, если рост позволяет пользоваться спальным мешком меньшего размера.",
     column: [
@@ -439,6 +451,8 @@ export const PRODUCT = [
     desc: "Супер лёгкий 190*80(50) от +15 до 0 ",
     category: "sleepingbag",
     price: 399,
+    oldPrice: 399,
+    newPrice: 320,
     shortly:
       "Новинка сезона 2021 - супер лёгкий спальный мешок-кокон BTrace Zero. Он идеально подойдёт для небольших путешествий в теплую погоду. Занимая совсем мало места, этот спальный мешок позволит с комфортом переночевать в походных условиях. Как и другие спальные мешки-коконы этой серии, BTrace Zero имеет возможность состёгиваться. Также можно выбрать один из 2х размеров, чтоб сэкономить ещё места и веса, если рост позволяет пользоваться спальным мешком меньшего размера.",
     column: [
@@ -476,6 +490,8 @@ export const PRODUCT = [
     desc: "95+10L Сakard ",
     category: "backpack",
     price: 210,
+    oldPrice: 210,
+    newPrice: 190,
     column: ["Объем: 95+10 л"],
   },
   {
@@ -485,6 +501,8 @@ export const PRODUCT = [
     desc: "55L THE NORTH FACE(REPLICA) ",
     category: "backpack",
     price: 195,
+    oldPrice: 195,
+    newPrice: 175,
     shortly:
       "Треккинговый рюкзак среднего объема TNF Terra 55 отлично подходит для путешествий. Лямкам рюкзак можно настроить под свои параметры.",
     column: ["Вес: 1.8 кг", "Материал: Нейлон"],
@@ -517,6 +535,8 @@ export const PRODUCT = [
     desc: "THE NORTH FACE 601",
     category: "backpack",
     price: 230,
+    oldPrice: 230,
+    newPrice: 210,
     shortly:
       "Предназначен для походов средней протяженности и изготовлен из прочного и износостойкого материала.",
     column: [
@@ -535,7 +555,7 @@ export const PRODUCT = [
     img: "backpack_65.jpg",
     desc: "65L (REPLICA). В комплекте дождевик.",
     category: "backpack",
-    price: 310,
+    price: 250,
     shortly:
       "Легкий, надежный и полностью регулируемый рюкзак для многодневных выходов и путешествий налегке.",
     column: ["Объем: 65л", "Вес:1,7кг"],
@@ -547,6 +567,8 @@ export const PRODUCT = [
     desc: "30L экологичный рюкзак, износостойкий ",
     category: "backpack",
     price: 125,
+    oldPrice: 125,
+    newPrice: 110,
     shortly:
       "Спинка и лямки с накладками, 2 опорные петли на ремнях, нагрудная лямка. Боковые компрессионные ремни для оптимального распределения нагрузки.",
     column: ["Объем: 30л", "Вес:0,62кг", "Размеры:50*26*20"],
@@ -569,6 +591,8 @@ export const PRODUCT = [
     desc: "Мягкая спинка и лямки",
     category: "backpack",
     price: 39,
+    oldPrice: 39,
+    newPrice: 27,
     shortly:
       "Рюкзак объемом 10 литров разработан таким образом, чтобы вы могли безопасно переносить предметы первой необходимости на всех тропах с пологими склонами.",
     column: ["Объем: 10л", "Вес: 0,145кг", "Размеры:39*21*12"],
@@ -579,7 +603,7 @@ export const PRODUCT = [
     img: "backpackBlack17L.jpg",
     desc: "NH ESCAPE 100",
     category: "backpack",
-    price: 67,
+    price: 47,
     shortly:
       "Экологичный 17-литровый рюкзак NH Escape 100 для случайных прогулок и перемещений",
     column: [
@@ -664,6 +688,8 @@ export const PRODUCT = [
     desc: "FORCIAZ",
     category: "backpack",
     price: 254,
+    oldPrice: 254,
+    newPrice: 234,
     shortly:
       "Рюкзак для всех Ваших первых приключений на воздухе, будь то горный поход или путешествие на край света",
     column: [
@@ -716,6 +742,8 @@ export const PRODUCT = [
     desc: "NATUREHIKE HIKING 55",
     category: "backpack",
     price: 529,
+    oldPrice: 529,
+    newPrice: 392,
     shortly:
       "Предназначен для походов средней протяженности и изготовлен из прочного и износостойкого материала.",
     column: [
@@ -782,6 +810,8 @@ export const PRODUCT = [
     desc: "Дальность  освещения: 25м (80 люмен).",
     category: "lantern",
     price: 46,
+    oldPrice: 46,
+    newPrice: 41,
     column: [
       "3 режима освещения: красный, эко-белый, яркий белый.",
       "Питание:3 шт ААА(в наборе)",
@@ -813,6 +843,7 @@ export const PRODUCT = [
     desc: "Дальность  освещения: 25м (120 люмен)",
     category: "lantern",
     price: 65,
+
     column: [
       "3 режима освещения: красный, эко-белый, яркий белый",
       "Питание: зарядка с помощью микро-USB",
@@ -829,7 +860,7 @@ export const PRODUCT = [
     img: "lantern_green.jpg",
     desc: "УЗ-918 ",
     category: "lantern",
-    price: 24,
+    price: 23,
     column: [
       "2 режима работы",
       "Питание от встроенной батареи",
@@ -843,7 +874,7 @@ export const PRODUCT = [
     img: "kamp-lambasi-100-lumen-kirmizi-bl100.jpg",
     desc: "QUECHUA BL100",
     category: "lantern",
-    price: 44,
+    price: 47,
     column: [
       "Красный режим: 20 лумен (яркость света)",
       "Белый режим: 50 лумен",
@@ -863,7 +894,7 @@ export const PRODUCT = [
     img: "gas-flame.jpg",
     desc: "FLAME GUN 915",
     category: "gas/burner",
-    price: 25,
+    price: 24,
     column: [
       "Включается в одно касание",
       "С помощью пьезоподжига длина пламени регулируется",
@@ -879,7 +910,7 @@ export const PRODUCT = [
     img: "orcamp227-gr-gaz.jpg",
     desc: "227GR ЦАНГОВЫЙ ",
     category: "gas/burner",
-    price: 8,
+    price: 7,
     column: [
       "Горит в среднем 2-2.5 часа",
       "Клапан мирового класс 7/16",
@@ -891,10 +922,10 @@ export const PRODUCT = [
   {
     id: 100046,
     title: "ГАЗ ТУРИСТИЧЕСКИЙ ",
-    img: "gas230.jpg",
+    img: "3256200_6.jpg",
     desc: "230GR РЕЗЬБОВОЙ",
     category: "gas/burner",
-    price: 29,
+    price: 23,
     column: [
       "Горит в среднем 2.5-3 часа",
       "Клапан мирового класс 7/16",
@@ -1015,7 +1046,7 @@ export const PRODUCT = [
     img: "mat40.jpg",
     desc: "173*61*1см ",
     category: "mat",
-    price: 47,
+    price: 48,
     column: ["Нескользящий"],
   },
   {
@@ -1024,7 +1055,7 @@ export const PRODUCT = [
     img: "mat_aluminum_foil_FORA.jpg",
     desc: "180*60*0,6см ",
     category: "mat",
-    price: 35,
+    price: 29,
     column: ["Однослойный"],
   },
   {
@@ -1033,7 +1064,7 @@ export const PRODUCT = [
     img: "matQuechua.jpg",
     desc: "180*50*0,7см ",
     category: "mat",
-    price: 41,
+    price: 35,
     column: [
       "Размеры: 180*50*0,7 см.",
       "Вес: 210 грамм",
@@ -1090,6 +1121,8 @@ export const PRODUCT = [
     desc: " 180 × 52 × 1 CM (L) MT500 AIR ",
     category: "mat",
     price: 255,
+    oldPrice: 255,
+    newPrice: 235,
     column: [
       "Вес: 510 г",
       "Объем: 1,7 литра",
@@ -1128,6 +1161,8 @@ export const PRODUCT = [
     desc: "FORGLAZ MT100 180*52*25 см",
     category: "mat",
     price: 209,
+    oldPrice: 209,
+    newPrice: 199,
     column: [
       "Вес: 820 грамм",
       "Объем: 7 литров",
@@ -1205,7 +1240,7 @@ export const PRODUCT = [
     img: "nordic_walking_sticks.jpg",
     desc: "Комплекст из 2шт, дюралюминий",
     category: "trekkingsticks",
-    price: 110,
+    price: 95,
     shortly: "Телескопические в три сложения , на рост от 100 см до 220 см.",
     column: [
       "Минимальная длина палки: 63см",
@@ -1262,7 +1297,7 @@ export const PRODUCT = [
     img: "teapot_BTRACE1.jpg",
     desc: "Алюминий анодированный",
     category: "dishes",
-    price: 114,
+    price: 80,
     column: ["Вес (г): 215", "Объем (мл): 1100"],
   },
   {
@@ -1281,11 +1316,13 @@ export const PRODUCT = [
   },
   {
     id: 100073,
-    title: "КЕМПИНГОВЫЙ ОБЕДЕННЫЙ НАБОР ДЛЯ 2 ЧЕЛОВЕК",
+    title: "КЕМПИНГОВЫЙ ОБЕДЕННЫЙ НАБОР",
     img: "setForCamping.jpg",
     desc: "1 кастрюля,2 глубокие тарелки, 2 столовых набора",
     category: "dishes",
     price: 109,
+    oldPrice: 109,
+    newPrice: 95,
     column: [
       "Объем: 1,6 л",
       "Вес:560 г",
@@ -1410,7 +1447,7 @@ export const PRODUCT = [
   {
     id: 100082,
     title: "ТЕРМОКРУЖКА ИЗ НЕРЖАВЕЮЩЕЙ СТАЛИ 0.38 Л ",
-    img: "termose1.jpg",
+    img: "mug.png",
     desc: "MH500 QUECHUA",
     category: "thermos",
     price: 55,
@@ -1457,7 +1494,7 @@ export const PRODUCT = [
     img: "thermose6.jpg",
     desc: " QUECHUA MH100 ИЗ НЕРЖАВЕЮЩЕЙ СТАЛИ",
     category: "thermos",
-    price: 69,
+    price: 39,
     column: [
       "Полностью нержавеющая фляга (корпус + крышка) с завинчивающейся крышкой и ручкой для переноски",
       "Размеры: диаметр 9 см × 28,3 см (с опущенной ручкой) / 31 см",
@@ -1470,7 +1507,7 @@ export const PRODUCT = [
     img: "thermose7.jpg",
     desc: "QUECHUA MH500 ИЗ АЛЮМИНИЯ",
     category: "thermos",
-    price: 52,
+    price: 41,
     column: [
       "Изделие на 72% состоит из переработанного алюминия для снижения воздействия на окружающую среду",
       "Быстрое открывание одной рукой, запираемая крышка с ручкой и встроенным фильтром.",
@@ -1504,6 +1541,8 @@ export const PRODUCT = [
     desc: "QUECHUA",
     category: "thermos",
     price: 28,
+    oldPrice: 28,
+    newPrice: 16,
     column: [
       "Быстродействующий затвор можно открыть всего одним поворотом",
       "Прозрачный и безвкусный пластик",
@@ -1520,6 +1559,8 @@ export const PRODUCT = [
     desc: "серый Quechua",
     category: "thermos",
     price: 118,
+    oldPrice: 118,
+    newPrice: 105,
     column: [
       "Двойные стенки из нерж. стали 18/8 (304), воздушная прослойка между стенками",
       "Легкость ухода благодаря крышке с резьбой. Внутренняя стенка из нерж. стали",
@@ -1551,6 +1592,8 @@ export const PRODUCT = [
     desc: "XINDA ИЗ НЕРЖАВЕЮЩЕЙ СТАЛИ",
     category: "thermos",
     price: 43,
+    oldPrice: 43,
+    newPrice: 33,
     column: [
       "Теплоизоляционная способность 12-24 часов",
       "Оснащен замком безопасности, двойное страхование",
@@ -1562,7 +1605,7 @@ export const PRODUCT = [
     img: "thermose13.jpg",
     desc: "QUECHUA ИЗ НЕРЖАВЕЮЩЕЙ СТАЛИ",
     category: "thermos",
-    price: 124,
+    price: 114,
     column: [
       "Чем более заполнен термос, тем лучше он держит температуру",
       "Легкость ухода благодаря крышке с резьбой. Внутренняя стенка из нерж. стали",
@@ -1579,6 +1622,8 @@ export const PRODUCT = [
     desc: "QUECHUA ИЗ НЕРЖАВЕЮЩЕЙ СТАЛИ MH500",
     category: "thermos",
     price: 112,
+    oldPrice: 112,
+    newPrice: 99,
     column: [
       "Начал. темп. 95°С: остывает до 74°C за 6 ч.",
       "Быстрое открывание одной рукой, запираемая крышка с ручкой.",
@@ -1595,7 +1640,7 @@ export const PRODUCT = [
     img: "TEPMOCSTANIEY.jpg",
     desc: "Vacuum Bottle",
     category: "thermos",
-    price: 203,
+    price: 172,
     column: [
       "Имеет прочный двухслойный корпус, вакуумную термоизоляцию, устойчив к ударам и падениям",
       "Оснащен складной ручкой, поэтому термос удобно держать в одной руке, а также наливать напитки",
@@ -1630,7 +1675,7 @@ export const PRODUCT = [
   },
   {
     id: 1110095,
-    title: "ТЕПЛОИЗОЛИРОВАННЫЙ ПИЩЕВОЙ КОНТЕЙНЕР",
+    title: "ТЕРМОБОКС",
     img: "thermos20.jpg",
     desc: "QUECHUA 0.5 Л",
     category: "thermos",
@@ -1652,7 +1697,7 @@ export const PRODUCT = [
     img: "termo21.jpg",
     desc: "QUECHUA MN500 0.8 Л",
     category: "thermos",
-    price: 99,
+    price: 114,
     column: [
       "Способность сохранять продукты горячими от 95°C до 61°C в течение 6 часов.",
       "Легко чистится благодаря широкому горлышку (8 см).",
@@ -1702,6 +1747,8 @@ export const PRODUCT = [
     desc: " SOLOGNAC AXIS 75 GRIP V2",
     category: "knife",
     price: 75,
+    oldPrice: 75,
+    newPrice: 65,
     column: [
       "Вес: 100 г.",
       "Mатериал: нержавещая сталь",
@@ -1720,7 +1767,7 @@ export const PRODUCT = [
     img: "knife4.jpg",
     desc: " SOLOGNAC AXIS 85 GRIP V2",
     category: "knife",
-    price: 89,
+    price: 93,
     column: [
       "Вес: 100 г.",
       "Mатериал: нержавещая сталь",
@@ -1739,7 +1786,7 @@ export const PRODUCT = [
     img: "opinel.jpeg",
     desc: "INOX OPINEL 9 CM",
     category: "knife",
-    price: 65,
+    price: 71,
     column: [
       "Вес: 57 г.",
       "Длина лезвия: 9 см",
@@ -1828,6 +1875,8 @@ export const PRODUCT = [
     desc: "до 110 кг",
     category: "chair",
     price: 72,
+    oldPrice: 72,
+    newPrice: 45,
     column: [
       "Вес:1кг",
       "Компактность в сложенном виде",
@@ -1842,7 +1891,7 @@ export const PRODUCT = [
     img: "chairBig.jpg",
     desc: "до 110 кг",
     category: "chair",
-    price: 169,
+    price: 99,
     column: [
       "Вес:1кг",
       "2 подлокотника | 1 подстаканник | Высота сиденья: 41 см",
@@ -1854,29 +1903,14 @@ export const PRODUCT = [
       "Максимальная нагрузка: 110 кг",
     ],
   },
-  {
-    id: 1000106,
-    title: "СКЛАДНОЙ СТУЛ С ПОДСТАКАННИКОМ ",
-    img: "chair.jpg",
-    desc: "до 110 кг",
-    category: "chair",
-    price: 89,
-    column: [
-      "Вес:1кг",
-      "2 подлокотника | 1 подстаканник | Высота сиденья: 40 см",
-      "Компактность в сложенном виде",
-      "Общий вес: 2,3 кг",
-      "В комплекте чехол для переноски",
-      "Максимальная нагрузка: 110 кг",
-    ],
-  },
+
   {
     id: 1000107,
     title: "СКЛАДНОЙ СТУЛ С ПОДСТАКАННИКОМ ",
     img: "chair.jpg",
     desc: "до 110 кг",
     category: "chair",
-    price: 89,
+    price: 55,
     column: [
       "Вес:1кг",
       "2 подлокотника | 1 подстаканник | Высота сиденья: 40 см",
@@ -1893,6 +1927,8 @@ export const PRODUCT = [
     desc: "( ТАБУРЕТ )",
     category: "chair",
     price: 17,
+    oldPrice: 17,
+    newPrice: 7,
     column: [],
   },
   {
@@ -1914,7 +1950,7 @@ export const PRODUCT = [
     img: "buff.jpg",
     desc: "VAN RESELL",
     category: "buff",
-    price: 36,
+    price: 25,
     column: [
       "Матовый флисовый компонент с внутренней стороны - сохраняет тепло, а снаружи - очень тонкий полиэстер, отводящий пот",
       "Его можно носить в разных вариантах, использовать в разных погодных условиях",
@@ -1957,6 +1993,8 @@ export const PRODUCT = [
     desc: "VAN RYSEI ROADR 100",
     category: "buff",
     price: 30,
+    oldPrice: 30,
+    newPrice: 25,
     column: [
       "Защиты от неблагоприятных условий (ветра, пыли) при велопоездке. Подходит также и для других видов спорта, например, для бега",
       "Быстросохнущий материал, обеспечивающий отвод пота",
@@ -2027,7 +2065,7 @@ export const PRODUCT = [
     img: "backpackcase.jpg",
     desc: "40-60 Л",
     category: "raincoat",
-    price: 32,
+    price: 36,
     column: [
       "Вес: 71 г.",
       "Крепится с помощью простой резинки, охватывающей Ваш рюкзак",
@@ -2041,7 +2079,7 @@ export const PRODUCT = [
     img: "backpackcase70-100.jpg",
     desc: "70-100 Л",
     category: "raincoat",
-    price: 36,
+    price: 46,
     column: [
       "Вес: 71 г.",
       "Крепится с помощью простой резинки, охватывающей Ваш рюкзак",
@@ -2056,6 +2094,8 @@ export const PRODUCT = [
     desc: "3-Й КАТЕГОРИИ QUECHUA MH940",
     category: "sunglasses",
     price: 91,
+    oldPrice: 91,
+    newPrice: 74,
     column: [
       "Особая форма: защищает глаза от ветра, брызг, плохой погоды",
       "Линзы категории 3 – фильтруют 100% УФ-лучей: идеальный выбор для солнечной погоды",
@@ -2166,7 +2206,7 @@ export const PRODUCT = [
   {
     id: 1100141,
     title: "ПОДУШКА ДЛЯ КЕМПИНГА",
-    img: "airbasic.jpg",
+    img: "podushka-comfort-dlya-kempingu.jpg",
     desc: "QUECHUA COMFORT",
     category: "air",
     price: 43,
@@ -2183,7 +2223,7 @@ export const PRODUCT = [
     img: "matQ.jpg",
     desc: "QUECHUA AIR BASIC",
     category: "air",
-    price: 219,
+    price: 150,
     column: [
       "Вес: 4 кг",
       "Размеры: 190 x 140 x 16 см",
@@ -2249,7 +2289,7 @@ export const PRODUCT = [
     img: "media.jpg",
     desc: "QUECHUA",
     category: "air",
-    price: 45,
+    price: 52,
     column: [
       "2,5 л воздуха за одно нажатие",
       "Вес: 822 г",
@@ -2265,7 +2305,7 @@ export const PRODUCT = [
     img: "packageBTRACE.jpg",
     desc: "ПЛОСКИЙ ПВХ 20X13см",
     category: "accessories",
-    price: 27,
+    price: 17,
     column: ["Материал: ПВХ"],
   },
   {
@@ -2283,49 +2323,24 @@ export const PRODUCT = [
     img: "aluminum_pegs_btrace.png",
     desc: "2шт-12₾",
     category: "accessories",
-    price: 57,
+    price: 32,
     column: ["Материал: Алюминий"],
   },
-  // {
-  //   id: 1000128,
-  //   title: "ПОДУШКА НАДУВНАЯ INTEX",
-  //   img: "inflatable_pillow_INTEX.webp",
-  //   desc: "43*28*9см",
-  //   category: "accessories",
-  //   price: 20,
-  //   column: [
-  //     "Страна производства: Китай",
-  //     "Производитель: Intex",
-  //     "Вес упаковки (кг): 0.164",
-  //   ],
-  // },
-  // {
-  //   id: 1000129,
-  //   title: "ПОДУШКА-ПОДГОЛОВНИК INTEX",
-  //   img: "pillow_headrest.webp",
-  //   desc: "36*30*10см",
-  //   category: "accessories",
-  //   price: 22,
-  //   shortly:
-  //     "Надувная подушка для шеи. Хорошо подходит для комфортного отдыха при дальних поездках или перелетах",
-  //   column: [
-  //     "Страна производства: Китай",
-  //     "Производитель: Intex",
-  //     "Вес упаковки (кг): 0.106",
-  //   ],
-  // },
   {
-    id: 1000130,
-    title: "СОЛНЦЕЗАЩИТНЫЕ ОЧКИ QUECHUA MH140",
-    img: "sunglasses.jpg",
-    desc: "Анти-УФ-линзы блокируют 100% вредных лучей",
+    id: 1000137,
+    title: "УГЛОВЫЕ СТЕРЖНИ (КОЛЫШКИ)",
+    img: "pegs.jpg",
+    desc: "QUECHUA - 10 ШТ",
     category: "accessories",
-    price: 79,
+    price: 37,
     column: [
-      "Вес: 26г",
-      "Линзы категории 3",
-      "Особая форма: защищает глаза от ветра, брызг, плохой погоды",
-      "Резиновые наконечники дужек: препятствуют соскальзыванию очков",
+      "v-образная форма",
+      "Подходят для влажных и рыхлых грунтов",
+      "Основной компонент - 100% сталь",
+      "Длина 23 см",
+      "Ширина : 20 мм",
+      "Вec: 50г",
+      "Подходит для всех типов палаток",
     ],
   },
   {
@@ -2334,7 +2349,7 @@ export const PRODUCT = [
     img: "binoculars.jpg",
     desc: "8-кратное приближение",
     category: "accessories",
-    price: 89,
+    price: 99,
     column: ["Вес: 202г", "Верхнее покрытие : 100% Силикон"],
   },
   {
@@ -2387,7 +2402,7 @@ export const PRODUCT = [
     img: "rescueBlanket.jpg",
     desc: "SIMOND",
     category: "accessories",
-    price: 28,
+    price: 22,
     column: [
       "Eго гибкий материал предотвращает зацепы и разрывы защищает от холода",
       "Отражая тепло тела может быть использовано повторно",
@@ -2402,7 +2417,7 @@ export const PRODUCT = [
     img: "safeBlanket.jpg",
     desc: "FORCIAZ 100",
     category: "accessories",
-    price: 22,
+    price: 28,
     column: [
       "Односпальное термоодеяло для одноразового использования, чтобы защитить Вас от холода или тепла, когда это необходимо.",
       "Предназначено для использования только один раз, занимая минимум места и веса в рюкзаке",
@@ -2411,23 +2426,6 @@ export const PRODUCT = [
       "Размеры: 160 x 210 см.",
       "Толщина: 0,012 мм",
       "Не накрывать голову – есть риск удушения. Не использовать в бурю, вблизи раскаленных веществ или при пользовании электрическими медицинскими аппаратами (например, аппаратом DSA). Не разрезать и не прокалывать. Хранить в сухом месте.",
-    ],
-  },
-  {
-    id: 1000137,
-    title: "УГЛОВЫЕ СТЕРЖНИ (КОЛЫШКИ)",
-    img: "pegs.jpg",
-    desc: "QUECHUA - 10 ШТ",
-    category: "accessories",
-    price: 37,
-    column: [
-      "v-образная форма",
-      "Подходят для влажных и рыхлых грунтов",
-      "Основной компонент - 100% сталь",
-      "Длина 23 см",
-      "Ширина : 20 мм",
-      "Вec: 50г",
-      "Подходит для всех типов палаток",
     ],
   },
   {
@@ -2479,9 +2477,9 @@ export const PRODUCT = [
     id: 1000144,
     title: "ВЕТРОЗАЩИТНЫЙ МЕХАНИЗМ",
     img: "save.jpg",
-    desc: "(ЭКРАН) FORCIAZ",
+    desc: "(ЭКРАН)",
     category: "accessories",
-    price: 59,
+    price: 45,
     column: [
       "Экран для защиты огня газовой горелки от ветра во время стоянок",
       "Вес: 200 г.",
@@ -2498,6 +2496,8 @@ export const PRODUCT = [
     desc: " WEDZE 500",
     category: "accessories",
     price: 65,
+    oldPrice: 65,
+    newPrice: 45,
     column: [
       "Водонепроницаемая мембрана и внешний материал с водоотталкивающей пропиткой",
       "Синтепон 200 г/м² (тыльн. ст.), 80 г/м² (ладонь), подклад., искус. мех. Манжеты.",
@@ -2579,7 +2579,7 @@ export const PRODUCT = [
   {
     id: 1000149,
     title: "ТРЕККИНГОВЫЙ ВОДОНЕПРОНИЦАЕМЫЙ МЕШОК",
-    img: "outdoor-trekking-su-gecirmez-kilif-20-litre-2.jpg",
+    img: "Pokrowiec1.png",
     desc: "20L FORCIAZ",
     category: "hermo",
     price: 49,
@@ -3024,7 +3024,7 @@ export const PRODUCT = [
     img: "sup2.jpg",
     desc: "Runeed Everest",
     category: "supboard",
-    price: 829,
+    price: 779,
     shortly: "КОМПЛЕКТАЦИЯ: ",
     column: [
       " -Водонепроницаемый мешок 5 литров - 1 шт",
@@ -3049,7 +3049,7 @@ export const PRODUCT = [
     img: "sup3.jpg",
     desc: "Runeed Everest",
     category: "supboard",
-    price: 829,
+    price: 779,
     shortly: "КОМПЛЕКТАЦИЯ: ",
     column: [
       " -Водонепроницаемый мешок 5 литров - 1 шт",
@@ -3074,7 +3074,7 @@ export const PRODUCT = [
     img: "sup4.jpg",
     desc: "Runeed Everest",
     category: "supboard",
-    price: 829,
+    price: 779,
     shortly: "КОМПЛЕКТАЦИЯ: ",
     column: [
       " -Водонепроницаемый мешок 5 литров - 1 шт",
@@ -3099,7 +3099,7 @@ export const PRODUCT = [
     img: "sup5.jpg",
     desc: "Runeed Everest",
     category: "supboard",
-    price: 829,
+    price: 779,
     shortly: "КОМПЛЕКТАЦИЯ: ",
     column: [
       " -Водонепроницаемый мешок 5 литров - 1 шт",
