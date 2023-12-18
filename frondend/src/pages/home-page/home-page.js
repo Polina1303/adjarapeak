@@ -383,7 +383,9 @@ export const HomePage = () => {
                 className="categories-item-img"
               />
               <div className="categories-item-title">
-                <div className="categories-item-title_back">Стулья</div>
+                <div className="categories-item-title_back">
+                  Кемпинговая мебель
+                </div>
               </div>
             </a>
           </div>
@@ -704,7 +706,9 @@ export const HomePage = () => {
                 className="categories-item-img"
               />
               <div className="categories-item-title">
-                <div className="categories-item-title_back">Стулья</div>
+                <div className="categories-item-title_back">
+                  Кемпинговая мебель
+                </div>
               </div>
             </a>
           </div>
@@ -773,7 +777,7 @@ export const HomePage = () => {
             </a>
           </div>
           <div ref={ref} className="categories-item" onClick={handleClickHermo}>
-            <a href="/air">
+            <a href="/hermo">
               <img
                 src={hermo}
                 alt="adjara peak"

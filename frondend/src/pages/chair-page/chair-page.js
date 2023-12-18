@@ -17,7 +17,7 @@ export const ChairPage = () => {
       <div className="home-page__container">
         <div>
           <div className="title" id="home-page-buy">
-            СТУЛЬЯ
+            КЕМПИНГОВАЯ МЕБЕЛЬ
           </div>
           <div className="home-page-product">
             {chair.map((product) => (
