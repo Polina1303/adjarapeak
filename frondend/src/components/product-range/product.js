@@ -263,7 +263,7 @@ export const PRODUCT = [
   {
     id: 100012,
     title: "ПАЛАТКА BTRACE TRAVEL 3",
-    img: "BTRACE_TRAVEL3.jpg",
+    img: "tent_travel3.png",
     desc: "3-х местная двухслойная, 200*220*120",
     category: "tent",
     price: 679,
@@ -294,7 +294,7 @@ export const PRODUCT = [
   {
     id: 100013,
     title: "ПАЛАТКА BTRACE CHALLENGE 2",
-    img: "BTRACE_CHALLENGE2.webp",
+    img: "tent20.png",
     desc: "3-х местная двухслойная, 300*210*120",
     category: "tent",
     price: 1021,
