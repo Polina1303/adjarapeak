@@ -6,11 +6,7 @@ import { EmailSender } from "./sendEmail.js";
 
 const app = express();
 app.use(express.json());
-app.use(
-  cors({
-    origin: "https://www.adjarapeak.ge",
-  })
-);
+app.use(cors());
 
 const PORT = process.env.PORT || 5001;
 app.post("/send", async (req, res) => {
@@ -41,10 +37,8 @@ app.post("/send", async (req, res) => {
       price,
     });
     res.json({ msg: "ok" });
-    console.log("poiuytd,", msg);
   } catch (error) {
     res.status(404).json({ msg: "Error" });
-    console.log("22222", msg);
   }
 });
 
