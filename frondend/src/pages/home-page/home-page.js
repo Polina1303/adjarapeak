@@ -824,7 +824,7 @@ export const HomePage = () => {
       )}
 
       {/* </div> */}
-      <HitSales />
+      {/* <HitSales /> */}
       <Routes />
       <RulesPage />
       <ChooseUs />

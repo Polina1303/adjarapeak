@@ -168,7 +168,7 @@ export const OrderInput = (items) => {
         </div>
         {orderSuccess && (
           <div className="successTitle">
-            Спасибо за заказа!
+            Спасибо за заказ!
             <br /> С уважением Adjara Peak.
           </div>
         )}
