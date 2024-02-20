@@ -6,7 +6,7 @@ import "./order-input.css";
 export const OrderInput = (items) => {
   const [visible, setVisible] = useState(false);
   const [orderSuccess, setOrderSuccess] = useState(false);
-  const [setSend] = useState();
+
   const {
     register,
     handleSubmit,
@@ -60,7 +60,6 @@ export const OrderInput = (items) => {
       desc,
       count,
       price,
-      setSend,
     }).then(() => {});
     reset();
     setOrderSuccess(true);

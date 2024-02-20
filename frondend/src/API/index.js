@@ -11,7 +11,6 @@ export const SendEmail = async ({
   desc,
   count,
   price,
-  setSend,
 }) => {
   try {
     const datas = {
@@ -33,7 +32,6 @@ export const SendEmail = async ({
     console.log("Response:", res);
     if (res && res.data) {
       console.log("Data:", res.data);
-      setSend(res.data);
     }
   } catch (error) {
     console.error(error);
