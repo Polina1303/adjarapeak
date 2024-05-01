@@ -17,11 +17,11 @@ export const ChooseUs = () => {
         </p>
         <div className="choose-item">
           <AiOutlineCheckCircle size={25} className="choose-checkin" />
-          <h5> ГИБКАЯ СИСТЕМА СКИДОК</h5>
+          <h5> СКИДКА 15%</h5>
         </div>
         <p className="choose-item-description">
-          У нас действует гибкая система скидок на прокат и продажу
-          туристического снаряжения. Скидки от 5% до 50%.
+        Всем подписчикам нашего <a href="https://t.me/adjarapeak/229" target="_blank" rel="noreferrer" style={{color:'rgba(0, 136, 204)'}}>Telegram-канал</a> предоставляется СКИДКА 15% на весь прокат снаряжения!
+
         </p>
         <div className="choose-item">
           <AiOutlineCheckCircle size={25} className="choose-checkin" />

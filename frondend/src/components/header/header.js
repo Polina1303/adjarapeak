@@ -44,7 +44,7 @@ export const Header = () => {
         <a href="https://wa.me/995511147586" target="_blank" rel="noreferrer">
           <AiOutlineWhatsApp className="icon-whatsApp" />
         </a>
-        <a href="https://vk.com/adjarapeak" target="_blank" rel="noreferrer">
+        {/* <a href="https://vk.com/adjarapeak" target="_blank" rel="noreferrer">
           <SlSocialVkontakte className="icon-vk" />
         </a>
         <a
@@ -53,7 +53,7 @@ export const Header = () => {
           rel="noreferrer"
         >
           <FaOdnoklassnikiSquare className="icon-odnoklassniki" />
-        </a>
+        </a> */}
       </div>
       <div className="cart">
         <CartBlock />

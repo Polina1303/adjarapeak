@@ -30,6 +30,8 @@ import hermo from "../../components/image/trekking-su-gecirmez-sikistirma-kilif-
 import termoryukzak from "../../components/image/kamp-esnek-sogutucu-10l.jpg";
 import sublimates from "../../components/image/sublimates.jpg";
 import supboard from "../../components/image/supruneed.jpg";
+import shoes from "../../components/image/shoes.png";
+
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -137,7 +139,10 @@ export const HomePage = () => {
     navigate("/sublimates");
   };
   const handleClickSupboard = () => {
-    navigate("/supboard ");
+    navigate("/supboard");
+  };
+  const handleClickShoes = () => {
+    navigate("/shoes");
   };
 
   const settings = {
@@ -209,22 +214,7 @@ export const HomePage = () => {
               </div>
             </a>
           </div>
-          <div
-            ref={ref}
-            className="categories-item"
-            onClick={handleClickSublimates}
-          >
-            <a href="/sublimates">
-              <img
-                src={sublimates}
-                alt="adjara peak"
-                className="categories-item-img"
-              />
-              <div className="categories-item-title">
-                <div className="categories-item-title_back">Походная еда</div>
-              </div>
-            </a>
-          </div>
+
           <div ref={ref} className="categories-item" onClick={handleClickTent}>
             <a href="/tent">
               <img
@@ -513,6 +503,22 @@ export const HomePage = () => {
                 <div className="categories-item-title_back">
                   Прокат снаряжения
                 </div>
+              </div>
+            </a>
+          </div>
+          <div
+            ref={ref}
+            className="categories-item"
+            onClick={handleClickShoes}
+          >
+            <a href="/shoes">
+              <img
+                src={shoes}
+                alt="adjara peak"
+                className="categories-item-img"
+              />
+              <div className="categories-item-title">
+                <div className="categories-item-title_back">Обувь</div>
               </div>
             </a>
           </div>

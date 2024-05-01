@@ -1,12 +1,17 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { SendEmail } from "../../API/index";
+import { useDispatch } from "react-redux";
+import {clearCart} from '../../redux/cart/reducer'
 import "./order-input.css";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 
-export const OrderInput = (items) => {
+
+
+export const OrderInput = (items,setOrderSuccess) => {
   const [visible, setVisible] = useState(false);
-  const [orderSuccess, setOrderSuccess] = useState(false);
-
+  // const [orderSuccess, setOrderSuccess] = useState(false);
+  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
@@ -16,6 +21,9 @@ export const OrderInput = (items) => {
 
   const obj = items;
   const num = obj.items.map((item) => item.category.includes("rent"));
+
+
+ 
 
   useEffect(() => {
     if (num.includes(true)) {
@@ -61,11 +69,13 @@ export const OrderInput = (items) => {
       count,
       price,
     }).then(() => {});
+    dispatch(clearCart())
     reset();
     setOrderSuccess(true);
   };
 
   return (
+    <>
     <div className="container-form">
       <p className="title-form">Bведите информацию для оформления заказа</p>
 
@@ -165,16 +175,16 @@ export const OrderInput = (items) => {
           <input {...register("price")} defaultValue={defaultValues.price} />
           <input {...register("count")} defaultValue={defaultValues.count} />
         </div>
-        {orderSuccess && (
-          <div className="successTitle">
-            Спасибо за заказ!
-            <br /> С уважением Adjara Peak.
-          </div>
-        )}
+      
+    
+          
+     
         <div>
           <button className="button-form">ОФОРМИТЬ ЗАКАЗ</button>
         </div>
       </form>
     </div>
+ 
+    </>
   );
 };

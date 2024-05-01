@@ -52,7 +52,7 @@ export const Footer = () => {
               >
                 <AiOutlineWhatsApp className="icon-whatsApp-footer" />
               </a>
-              <a
+              {/* <a
                 href="https://vk.com/adjarapeak"
                 target="_blank"
                 rel="noreferrer"
@@ -65,7 +65,7 @@ export const Footer = () => {
                 rel="noreferrer"
               >
                 <FaOdnoklassnikiSquare className="icon-odnoklassniki-footer" />
-              </a>
+              </a> */}
             </div>
           </li>
         </ul>
