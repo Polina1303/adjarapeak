@@ -169,6 +169,13 @@ export const HomePage = () => {
           slidesToScroll: 3,
         },
       },
+      {
+        breakpoint: 650,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
     ],
   };
 
@@ -184,6 +191,7 @@ export const HomePage = () => {
           style={{
             height: "100%",
             display: "flex",
+            width:'100%'
           }}
         >
           <div ref={ref} className="categories-item" onClick={handleClickSale}>
@@ -200,6 +208,7 @@ export const HomePage = () => {
               </div>
             </a>
           </div>
+
           <div ref={ref} className="categories-item" onClick={handleClickRent}>
             <a href="/rent">
               <img
@@ -211,6 +220,38 @@ export const HomePage = () => {
                 <div className="categories-item-title_back">
                   Прокат снаряжения
                 </div>
+              </div>
+            </a>
+          </div>
+          <div
+            ref={ref}
+            className="categories-item"
+            onClick={handleClickShoes}
+          >
+            <a href="/shoes">
+              <img
+                src={shoes}
+                alt="adjara peak"
+                className="categories-item-img"
+              />
+              <div className="categories-item-title">
+                <div className="categories-item-title_back">Обувь</div>
+              </div>
+            </a>
+          </div>
+          <div
+            ref={ref}
+            className="categories-item"
+            onClick={handleClickSublimates}
+          >
+            <a href="/sublimates">
+              <img
+                src={sublimates}
+                alt="adjara peak"
+                className="categories-item-img"
+              />
+              <div className="categories-item-title">
+                <div className="categories-item-title_back">Сублиматы</div>
               </div>
             </a>
           </div>
@@ -440,6 +481,18 @@ export const HomePage = () => {
                 <div className="categories-item-title_back">
                   Надувная продукция
                 </div>
+              </div>
+            </a>
+          </div>
+          <div ref={ref} className="categories-item" onClick={handleClickHermo}>
+            <a href="/hermo">
+              <img
+                src={hermo}
+                alt="adjara peak"
+                className="categories-item-img"
+              />
+              <div className="categories-item-title">
+                <div className="categories-item-title_back">Гермомешки</div>
               </div>
             </a>
           </div>
