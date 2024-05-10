@@ -30,17 +30,14 @@
   }
   .cart {
     margin-right: 20px;
+   
   }
   .header {
     height: 85px;
   }
 }
 
-@media only screen and (max-width: 730px) {
-  .icon {
-    margin-right: -41px;
-  }
-}
+
 @media only screen and (max-width: 696px) {
   .location {
     font-size: 15px;
@@ -88,9 +85,7 @@
     margin-right: 2px;
     font-size: 12px;
   }
-  .icon {
-    margin-right: -15px;
-  }
+ 
 }
 @media only screen and (max-width: 579px) {
   .number {

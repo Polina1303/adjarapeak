@@ -38,7 +38,7 @@ export const Buy = ({ product, page, discount }) => {
 
   return (
     <div className="container-items-price" onClick={handleAddToCart}>
-      <div>
+      {/* <div>
         {product.oldPrice ? (
           <b
             className={`product-items__oldPrice ${
@@ -47,15 +47,15 @@ export const Buy = ({ product, page, discount }) => {
           >
             {product.oldPrice}₾
           </b>
-        ) : (
+        ) : ( */}
           <b className="product-items__price">{product.price}₾</b>
-        )}{" "}
+        {/* )}{" "}
         {product.newPrice && (
           <b className={`product-items__price ${discount ? "discounted" : ""}`}>
             {product.newPrice}₾
           </b>
-        )}
-      </div>
+        )} */}
+      {/* </div> */}
       {/* <b className="product-items__price">{product.price}₾</b> */}
       <div className="add-to-cart-cover">
         {page ? (

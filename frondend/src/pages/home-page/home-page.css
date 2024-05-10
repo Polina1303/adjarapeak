@@ -73,6 +73,7 @@
 
 .home-page__container {
   margin-top: 20px;
+
 }
 
 .home-page__container-title {
@@ -81,17 +82,19 @@
   justify-content: space-between;
   margin-top: 15px;
   margin-bottom: -15px;
+
 }
 @media only screen and (max-width: 1104px) {
   .categories {
     display: flex;
     margin-bottom: 80px;
-    margin-left: -35px;
+    left: -35px;
     margin-top: 25px;
     overflow-x: auto;
     overflow-y: hidden;
     padding-bottom: 60px;
     height: 300px;
+    
   }
   .arrow-cover {
     overflow: hidden;

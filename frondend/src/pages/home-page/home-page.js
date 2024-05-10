@@ -191,7 +191,9 @@ export const HomePage = () => {
           style={{
             height: "100%",
             display: "flex",
-            width:'100%'
+            width:'100%',
+           
+            
           }}
         >
           <div ref={ref} className="categories-item" onClick={handleClickSale}>
