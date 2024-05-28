@@ -78,7 +78,7 @@
 
 .home-page__container-title {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   margin-top: 15px;
   margin-bottom: -15px;

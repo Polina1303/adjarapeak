@@ -31,6 +31,7 @@ import termoryukzak from "../../components/image/kamp-esnek-sogutucu-10l.jpg";
 import sublimates from "../../components/image/sublimates.jpg";
 import supboard from "../../components/image/supruneed.jpg";
 import shoes from "../../components/image/shoes.png";
+import { useSelector } from "react-redux";
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -54,6 +55,7 @@ const CustomNextArrow = (props) => {
 
 export const HomePage = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 630);
+  const languages = useSelector((state) => state.languages.currentLanguages);
 
   useEffect(() => {
     const handleResize = () => {
@@ -182,8 +184,11 @@ export const HomePage = () => {
   return (
     <div className="home-page__container">
       <SliderMain />
+
       <div className="home-page__container-title">
-        <h2>Основные категории</h2>
+      <h3 style={{top:50}}>Cайт обновляется, актуальные цены уточняйте в <a href="https://t.me/shpaksn" target="_blank" rel="noreferrer" style={{color:'rgba(0, 136, 204)'}}>Telegram</a> <a  href="https://www.instagram.com/adjarapeak/?igshid=YmMyMTA2M2Y%3D" target="_blank" rel="noreferrer" style={{color:'rgba(0, 136, 204)'}}>Instagram</a>  или по номеру телефона   <a href="tel:+995511147586">+995 511 147 586</a> </h3>
+
+        <h2>{languages==="RU"?'Основные категории':"Primary categories"} </h2>
       </div>
       {isMobile ? (
         <div
@@ -205,7 +210,7 @@ export const HomePage = () => {
               />
               <div className="categories-item-title">
                 <div className="categories-item-title_back">
-                  Продажа снаряжения
+                {languages==="RU"? 'Продажа снаряжения':"Sales equipment"}
                 </div>
               </div>
             </a>
@@ -217,10 +222,10 @@ export const HomePage = () => {
                 src={main}
                 alt="adjara peak"
                 className="categories-item-img"
-              />
+                />
               <div className="categories-item-title">
                 <div className="categories-item-title_back">
-                  Прокат снаряжения
+                {languages==="RU"? 'Прокат снаряжения':"Rental equipment"}    
                 </div>
               </div>
             </a>
@@ -237,7 +242,7 @@ export const HomePage = () => {
                 className="categories-item-img"
               />
               <div className="categories-item-title">
-                <div className="categories-item-title_back">Обувь</div>
+                <div className="categories-item-title_back">{languages==="RU"? 'Обувь':"Shoes"}</div>
               </div>
             </a>
           </div>
@@ -253,7 +258,7 @@ export const HomePage = () => {
                 className="categories-item-img"
               />
               <div className="categories-item-title">
-                <div className="categories-item-title_back">Сублиматы</div>
+                <div className="categories-item-title_back">{languages==="RU"? 'Сублиматы':"Freeze-dried food"}</div>
               </div>
             </a>
           </div>
@@ -266,7 +271,7 @@ export const HomePage = () => {
                 className="categories-item-img"
               />
               <div className="categories-item-title">
-                <div className="categories-item-title_back">Палатки</div>
+                <div className="categories-item-title_back">{languages==="RU"? 'Палатки':"Tents"}</div>
               </div>
             </a>
           </div>
@@ -282,7 +287,7 @@ export const HomePage = () => {
                 className="categories-item-img"
               />
               <div className="categories-item-title">
-                <div className="categories-item-title_back">Спальные мешки</div>
+                <div className="categories-item-title_back">{languages==="RU"? 'Спальные мешки':"Sleeping bags"}</div>
               </div>
             </a>
           </div>
@@ -298,7 +303,7 @@ export const HomePage = () => {
                 className="categories-item-img"
               />
               <div className="categories-item-title">
-                <div className="categories-item-title_back">Рюкзаки</div>
+                <div className="categories-item-title_back">{languages==="RU"? 'Рюкзаки':"Backpacks"}</div>
               </div>
             </a>
           </div>
@@ -314,7 +319,7 @@ export const HomePage = () => {
                 className="categories-item-img"
               />
               <div className="categories-item-title">
-                <div className="categories-item-title_back">Фонари</div>
+                <div className="categories-item-title_back">{languages==="RU"? 'Фонари':"Headlamps"}</div>
               </div>
             </a>
           </div>
@@ -326,7 +331,7 @@ export const HomePage = () => {
                 className="categories-item-img"
               />
               <div className="categories-item-title">
-                <div className="categories-item-title_back">Газ / горелки</div>
+                <div className="categories-item-title_back">{languages==="RU"? 'Газ / горелки':"Gas / burners"}</div>
               </div>
             </a>
           </div>
@@ -339,7 +344,7 @@ export const HomePage = () => {
               />
               <div className="categories-item-title">
                 <div className="categories-item-title_back">
-                  Коврики / карематы
+                {languages==="RU"? 'Коврики / карематы':"Mats"} 
                 </div>
               </div>
             </a>
@@ -357,7 +362,7 @@ export const HomePage = () => {
               />
               <div className="categories-item-title">
                 <div className="categories-item-title_back">
-                  Треккинговые палки
+                {languages==="RU"? 'Треккинговые палки':"Trekking poles"} 
                 </div>
               </div>
             </a>
@@ -374,7 +379,7 @@ export const HomePage = () => {
                 className="categories-item-img"
               />
               <div className="categories-item-title">
-                <div className="categories-item-title_back">Посуда</div>
+                <div className="categories-item-title_back">{languages==="RU"? 'Посуда':"Dishware"}</div>
               </div>
             </a>
           </div>
@@ -391,7 +396,25 @@ export const HomePage = () => {
               />
               <div className="categories-item-title">
                 <div className="categories-item-title_back">
-                  Термосы / кружки
+                {languages==="RU"? 'Термосы / кружки':"Thermos"}
+                </div>
+              </div>
+            </a>
+          </div>
+          <div
+            ref={ref}
+            className="categories-item"
+            onClick={handleClickThermos}
+          >
+            <a href="/thermos">
+              <img
+                src={thermose}
+                alt="adjara peak"
+                className="categories-item-img"
+              />
+              <div className="categories-item-title">
+                <div className="categories-item-title_back">
+                {languages==="RU"? 'Термосы / кружки':"Thermos"}
                 </div>
               </div>
             </a>
@@ -404,7 +427,7 @@ export const HomePage = () => {
                 className="categories-item-img"
               />
               <div className="categories-item-title">
-                <div className="categories-item-title_back">Ножи</div>
+                <div className="categories-item-title_back">{languages==="RU"? 'Ножи':"Knives"}</div>
               </div>
             </a>
           </div>
@@ -417,7 +440,7 @@ export const HomePage = () => {
               />
               <div className="categories-item-title">
                 <div className="categories-item-title_back">
-                  Кемпинговая мебель
+                {languages==="RU"? 'Кемпинговая мебель':"Camping furniture"}
                 </div>
               </div>
             </a>
@@ -431,7 +454,7 @@ export const HomePage = () => {
               />
               <div className="categories-item-title">
                 <div className="categories-item-title_back">
-                  Баффы / балаклавы
+                {languages==="RU"? 'Баффы / балаклавы':"Buffs / balaclavas"}    
                 </div>
               </div>
             </a>
@@ -449,7 +472,7 @@ export const HomePage = () => {
               />
               <div className="categories-item-title">
                 <div className="categories-item-title_back">
-                  Дождевики / чехлы
+                {languages==="RU"? 'Дождевики / чехлы':"Raincoats"} 
                 </div>
               </div>
             </a>
@@ -467,7 +490,7 @@ export const HomePage = () => {
               />
               <div className="categories-item-title">
                 <div className="categories-item-title_back">
-                  Солнцезащитные очки
+                {languages==="RU"? 'Солнцезащитные очки':"Sunglasses"}  
                 </div>
               </div>
             </a>
@@ -481,7 +504,7 @@ export const HomePage = () => {
               />
               <div className="categories-item-title">
                 <div className="categories-item-title_back">
-                  Надувная продукция
+                {languages==="RU"? 'Надувная продукция':"Inflatable product"} 
                 </div>
               </div>
             </a>
@@ -494,7 +517,7 @@ export const HomePage = () => {
                 className="categories-item-img"
               />
               <div className="categories-item-title">
-                <div className="categories-item-title_back">Гермомешки</div>
+                <div className="categories-item-title_back"> {languages==="RU"? 'Гермомешки':" Waterproof bags"}</div>
               </div>
             </a>
           </div>
@@ -510,7 +533,7 @@ export const HomePage = () => {
                 className="categories-item-img"
               />
               <div className="categories-item-title">
-                <div className="categories-item-title_back">Аксессуары</div>
+                <div className="categories-item-title_back">{languages==="RU"? 'Аксессуары':"Accessories"}</div>
               </div>
             </a>
           </div>
@@ -526,7 +549,7 @@ export const HomePage = () => {
                 className="categories-item-img"
               />
               <div className="categories-item-title">
-                <div className="categories-item-title_back">SUP-доски</div>
+                <div className="categories-item-title_back">{languages==="RU"? ' SUP-доски':"SUP Boards"}</div>
               </div>
             </a>
           </div>
@@ -542,7 +565,7 @@ export const HomePage = () => {
               />
               <div className="categories-item-title">
                 <div className="categories-item-title_back">
-                  Продажа снаряжения
+                {languages==="RU"? 'Продажа снаряжения':"Sales equipment"}
                 </div>
               </div>
             </a>
@@ -556,7 +579,7 @@ export const HomePage = () => {
               />
               <div className="categories-item-title">
                 <div className="categories-item-title_back">
-                  Прокат снаряжения
+                {languages==="RU"? 'Прокат снаряжения':"Rental equipment"}
                 </div>
               </div>
             </a>
@@ -573,7 +596,7 @@ export const HomePage = () => {
                 className="categories-item-img"
               />
               <div className="categories-item-title">
-                <div className="categories-item-title_back">Обувь</div>
+                <div className="categories-item-title_back">{languages==="RU"? 'Обувь':"Shoes"}</div>
               </div>
             </a>
           </div>
@@ -589,7 +612,7 @@ export const HomePage = () => {
                 className="categories-item-img"
               />
               <div className="categories-item-title">
-                <div className="categories-item-title_back">Сублиматы</div>
+                <div className="categories-item-title_back"> {languages==="RU"? 'Сублиматы':"Freeze-dried food"}</div>
               </div>
             </a>
           </div>
@@ -601,7 +624,7 @@ export const HomePage = () => {
                 className="categories-item-img"
               />
               <div className="categories-item-title">
-                <div className="categories-item-title_back">Палатки</div>
+                <div className="categories-item-title_back">{languages==="RU"? 'Палатки':"Tents"}</div>
               </div>
             </a>
           </div>
@@ -617,7 +640,7 @@ export const HomePage = () => {
                 className="categories-item-img"
               />
               <div className="categories-item-title">
-                <div className="categories-item-title_back">Спальные мешки</div>
+                <div className="categories-item-title_back">{languages==="RU"? 'Спальные мешки':"Sleeping bags"}</div>
               </div>
             </a>
           </div>
@@ -633,7 +656,7 @@ export const HomePage = () => {
                 className="categories-item-img"
               />
               <div className="categories-item-title">
-                <div className="categories-item-title_back">Рюкзаки</div>
+                <div className="categories-item-title_back">{languages==="RU"? 'Рюкзаки':"Backpacks"}</div>
               </div>
             </a>
           </div>
@@ -649,7 +672,7 @@ export const HomePage = () => {
                 className="categories-item-img"
               />
               <div className="categories-item-title">
-                <div className="categories-item-title_back">Фонари</div>
+                <div className="categories-item-title_back">{languages==="RU"? 'Фонари':"Headlamps"}</div>
               </div>
             </a>
           </div>
@@ -661,7 +684,7 @@ export const HomePage = () => {
                 className="categories-item-img"
               />
               <div className="categories-item-title">
-                <div className="categories-item-title_back">Газ / горелки</div>
+                <div className="categories-item-title_back">{languages==="RU"? 'Газ / горелки':"Gas / burners"}</div>
               </div>
             </a>
           </div>
@@ -674,7 +697,7 @@ export const HomePage = () => {
               />
               <div className="categories-item-title">
                 <div className="categories-item-title_back">
-                  Коврики / карематы
+                {languages==="RU"? 'Коврики / карематы':"Mats"} 
                 </div>
               </div>
             </a>
@@ -692,7 +715,7 @@ export const HomePage = () => {
               />
               <div className="categories-item-title">
                 <div className="categories-item-title_back">
-                  Треккинговые палки
+                {languages==="RU"? 'Треккинговые палки':"Trekking poles"} 
                 </div>
               </div>
             </a>
@@ -709,7 +732,7 @@ export const HomePage = () => {
                 className="categories-item-img"
               />
               <div className="categories-item-title">
-                <div className="categories-item-title_back">Посуда</div>
+                <div className="categories-item-title_back">{languages==="RU"? 'Посуда':"Dishware"}</div>
               </div>
             </a>
           </div>
@@ -726,7 +749,7 @@ export const HomePage = () => {
               />
               <div className="categories-item-title">
                 <div className="categories-item-title_back">
-                  Термосы / кружки
+                {languages==="RU"? 'Термосы / кружки':"Thermos"}
                 </div>
               </div>
             </a>
@@ -743,7 +766,7 @@ export const HomePage = () => {
                 className="categories-item-img"
               />
               <div className="categories-item-title">
-                <div className="categories-item-title_back">Терморюкзак</div>
+                <div className="categories-item-title_back"> {languages==="RU"? 'Терморюкзак':"Thermal backpack"}</div>
               </div>
             </a>
           </div>
@@ -755,7 +778,7 @@ export const HomePage = () => {
                 className="categories-item-img"
               />
               <div className="categories-item-title">
-                <div className="categories-item-title_back">Ножи</div>
+                <div className="categories-item-title_back">{languages==="RU"? 'Ножи':"Knives"}</div>
               </div>
             </a>
           </div>
@@ -768,7 +791,7 @@ export const HomePage = () => {
               />
               <div className="categories-item-title">
                 <div className="categories-item-title_back">
-                  Кемпинговая мебель
+                {languages==="RU"? 'Кемпинговая мебель':"Camping furniture"}    
                 </div>
               </div>
             </a>
@@ -782,7 +805,7 @@ export const HomePage = () => {
               />
               <div className="categories-item-title">
                 <div className="categories-item-title_back">
-                  Баффы / балаклавы
+                {languages==="RU"? 'Баффы / балаклавы':"Buffs / balaclavas"} 
                 </div>
               </div>
             </a>
@@ -800,7 +823,7 @@ export const HomePage = () => {
               />
               <div className="categories-item-title">
                 <div className="categories-item-title_back">
-                  Дождевики / чехлы
+                {languages==="RU"? 'Дождевики / чехлы':"Raincoats"}  
                 </div>
               </div>
             </a>
@@ -818,7 +841,7 @@ export const HomePage = () => {
               />
               <div className="categories-item-title">
                 <div className="categories-item-title_back">
-                  Солнцезащитные очки
+                {languages==="RU"? 'Солнцезащитные очки':"Sunglasses"}  
                 </div>
               </div>
             </a>
@@ -832,7 +855,7 @@ export const HomePage = () => {
               />
               <div className="categories-item-title">
                 <div className="categories-item-title_back">
-                  Надувная продукция
+                {languages==="RU"? 'Надувная продукция':"Inflatable product"}    
                 </div>
               </div>
             </a>
@@ -845,7 +868,7 @@ export const HomePage = () => {
                 className="categories-item-img"
               />
               <div className="categories-item-title">
-                <div className="categories-item-title_back">Гермомешки</div>
+                <div className="categories-item-title_back">{languages==="RU"? 'Гермомешки':" Waterproof bags"}</div>
               </div>
             </a>
           </div>
@@ -861,7 +884,7 @@ export const HomePage = () => {
                 className="categories-item-img"
               />
               <div className="categories-item-title">
-                <div className="categories-item-title_back">Аксессуары</div>
+                <div className="categories-item-title_back">{languages==="RU"? 'Аксессуары':"Accessories"}</div>
               </div>
             </a>
           </div>
@@ -877,7 +900,7 @@ export const HomePage = () => {
                 className="categories-item-img"
               />
               <div className="categories-item-title">
-                <div className="categories-item-title_back">SUP-доски</div>
+                <div className="categories-item-title_back">{languages==="RU"? ' SUP-доски':"SUP Boards"}</div>
               </div>
             </a>
           </div>

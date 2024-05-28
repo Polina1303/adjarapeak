@@ -6,9 +6,44 @@ import { SlSocialVkontakte } from "react-icons/sl";
 import { AiOutlineWhatsApp } from "react-icons/ai";
 import { FaOdnoklassnikiSquare } from "react-icons/fa";
 import adjara from "../image/adjara1.jpg";
+import { useSelector } from "react-redux";
 import "./header.css";
+import { useDispatch } from "react-redux";
+import {useEffect, useState} from 'react'
+import Switch from "react-switch";
+import {updateCurrentLanguages} from '../../redux/languages/reducer'
 
 export const Header = () => {
+  const dispatch = useDispatch();
+  const languages = useSelector((state) => state.languages.currentLanguages);
+  const [checked, setChecked] = useState(JSON.stringify(languages)===JSON.stringify('RU'));
+
+
+
+  const handleChange = (nextChecked) => {
+    setChecked(!checked);
+  };
+
+  useEffect(()=>{
+    if(JSON.stringify(languages)===JSON.stringify('RU')){
+      setChecked(true);
+    }else{
+      setChecked(false);
+    }
+  },[languages])
+
+ useEffect(()=>{
+
+  if (checked){
+    dispatch(updateCurrentLanguages('RU'))
+  }else{
+    dispatch(updateCurrentLanguages('ENG'))
+  }
+
+const a= localStorage.getItem('languages')
+
+ },[checked])
+
   return (
     <div className="header">
       <div className="wrapper">
@@ -23,8 +58,10 @@ export const Header = () => {
           target="_blank"
           rel="noreferrer"
         >
-          Батуми ул.Тбел-Абусеридзе, 38
-          <p className="work">понедельник-суббота (11:00-19:00)</p>
+         {languages==='RU'? <>Батуми ул.Тбел-Абусеридзе, 38
+          <p className="work">Понедельник-Суббота (11:00-19:00)</p></>:<>
+Batumi, Tbel-Abuseridze St., 38
+          <p className="work">Monday-Saturday (11:00-19:00)</p></>} 
         </a>
       </div>
       <div className="number">
@@ -54,11 +91,35 @@ export const Header = () => {
         >
           <FaOdnoklassnikiSquare className="icon-odnoklassniki" />
         </a> */}
+      {/* <div className="switch">
+      <label htmlFor="material-switch" id="switch-label">
+     {languages}  
+      </label>
+      <Switch
+        checked={checked}
+        onChange={handleChange}
+        onHandleColor="#fff"
+        handleDiameter={15}
+        uncheckedIcon={false}
+        checkedIcon={false}
+        boxShadow="#f68632"
+        activeBoxShadow="#f68632"
+        offColor="#f68632"
+        onColor="#f68632"
+        height={18}
+        width={40}
+        className="react-switch"
+        id="material-switch"
+        aria-labelledby="switch-label"
+      />
+    
+    </div> */}
       </div>
+
       <div className="cart">
         <CartBlock />
       </div>
     </div>
-    // </>
+
   );
 };

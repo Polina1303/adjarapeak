@@ -1,11 +1,15 @@
 import "./slider.css";
 import { MdOutlineArrowLeft, MdArrowRight } from "react-icons/md";
-import { sliderItem } from "./data";
+import { sliderItem,sliderItemEng } from "./data";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 
 export const SliderMain = () => {
   const navigate = useNavigate();
+  const languages = useSelector((state) => state.languages.currentLanguages);
+
   const [sliderIndex, setSliderIndex] = useState(0);
   const handelClick = (direction) => {
     if (direction === "left") {
@@ -22,6 +26,8 @@ export const SliderMain = () => {
     navigate("/rent");
   };
 
+  const slider=languages==="RU" ?sliderItem:sliderItemEng
+
   return (
     <div className="container-slider ">
       <div className="arrow-left" onClick={() => handelClick("left")}>
@@ -35,7 +41,7 @@ export const SliderMain = () => {
           transform: `translateX(${sliderIndex * -1250}px)`,
         }}
       >
-        {sliderItem.map((item) => (
+         { slider.map((item) => (
           <div className="slide" key={item.id}>
             <div className="images-container">
               <img
@@ -56,13 +62,13 @@ export const SliderMain = () => {
                     className="infocontainer-button"
                     onClick={handleClickSale}
                   >
-                    КУПИТЬ
+                   {languages==="RU"?  'КУПИТЬ': 'BUY'}
                   </button>
                   <button
                     className="infocontainer-button"
                     onClick={handleClickRent}
                   >
-                    АРЕНДОВАТЬ
+                  {languages==="RU"?  'АРЕНДОВАТЬ': 'RENT'}  
                   </button>
                 </div>
               )}

@@ -1,14 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// const getCurrentProduct = () => {
-//   // const currentProduct = localStorage.getItem("currentProduct");
-//   // if (currentProduct) {
-//   //   return JSON.parse(currentProduct);
-//   // } else {
-//   //   return [];
-//   // }
-//   // currentProduct:[]
-// };
+
 
 const productsSlice = createSlice({
   name: "product",
