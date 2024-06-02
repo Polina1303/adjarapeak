@@ -2138,13 +2138,21 @@ export const PRODUCT = [
       "Занимая мало места в рюкзаке (10 см в сложенном виде)",
       "Структурированный материал дна тарелки, предотвращающий распространение тепла от горячих жидкостей для удобства захвата",
     ],
+    columnEng:["Weight: 11 g",
+    "Large length (18.5 cm)",
+    "Dimensions when unfolded: 18.5 x 3.5 x 2 cm",
+    "Dimensions when folded: 10 x 3.5 x 3 cm",
+    "Takes up little space in the backpack (10 cm when folded)",
+    "Structured material at the bottom of the plate, preventing the spread of heat from hot liquids for easy handling"]
     
   },
   {
     id: 100081,
+    titleEng:'Clamp for pots, pans, and other items',
     title: "ЗАЖИМ ДЛЯ КАСТРЮЛИ И СКОВОРОДКИ И ПРОЧИХ ПРЕДМЕТОВ",
     img: "clip.jpg",
     desc: "ЧАПЕЛЬНИК",
+    descEng:'Pot holde',
     category: "dishes",
     price: 18,
     column: [
@@ -2152,10 +2160,14 @@ export const PRODUCT = [
       "Размер:  12,5*2,8*2,5 см",
       "Вес: 40 гр",
     ],
+    columnEng:["Lightweight aluminum pot holder ensures safe cooking on a gas burner or portable stove",
+    "Size: 12.5 x 2.8 x 2.5 cm",
+    "Weight: 40 g",]
   },
   {
     id: 100082,
     title: "ТЕРМОКРУЖКА ИЗ НЕРЖАВЕЮЩЕЙ СТАЛИ 0.38 Л ",
+    titleEng:'Stainless Steel Thermo Mug 0.38 L',
     img: "mug.png",
     desc: "MH500 QUECHUA",
     category: "thermos",
@@ -2165,10 +2177,14 @@ export const PRODUCT = [
       "Размеры: Ø 8,5 см x 11,2 см (ширина с ручкой 11 см)",
       "Вес: 255 г",
     ],
+    columnEng:["Double wall with an air layer helps maintain the temperature of the beverage",
+    "Dimensions: Ø 8.5 cm x 11.2 cm (width with handle 11 cm)",
+    "Weight: 255 g"]
   },
   {
     id: 100083,
     title: "КЕМПИНГОВАЯ ЧАШКА ИЗ НЕРЖАВЕЮЩЕЙ СТАЛИ",
+    titleEng:'Stainless Steel Camping Mug',
     img: "thermose2.jpg",
     desc: "QUECHUA",
     category: "thermos",
@@ -2179,16 +2195,23 @@ export const PRODUCT = [
       "Размеры: Ø 9 см x 8 см Объем: 0,45 литра (макс.) / 0,4 литра (полезный объем)",
       "Вес: 120 г",
     ],
+    columnEng:[
+      "2 handles. Measuring marks inside",
+"Made of ultra-durable stainless steel",
+"Dimensions: Ø 9 cm x 8 cm Capacity: 0.45 liters (max.) / 0.4 liters (useful volume)",
+"Weight: 120 g"]
   },
   {
     id: 100084,
     title: "СУБЛИМАЦИОННАЯ КРУЖКА С ВАШИМ ПРИНТОМ",
+    titleEng:'Sublimation Mug with Your Print',
     img: "cup2.jpg",
     desc: "Возможно нанесение любого принта",
+    descEng:'Customizable Sublimation Mug',
     category: "thermos",
     price: 44,
     column: [
-      "металлическая",
+      "Металлическая",
       "С карабином",
       "Рекомендовано мыть вручную",
       "Стоимость указана за готовую кружку с напечатанным изображением",
@@ -2196,12 +2219,22 @@ export const PRODUCT = [
       "Высота 9 см",
       "Объем 300 мл",
     ],
+    columnEng:[
+      "Metallic",
+"With carabiner",
+"Hand wash recommended",
+"Cost is for a mug with printed image",
+"Diameter: 7.5 cm",
+"Height: 9 cm",
+"Capacity: 300 ml"]
   },
   {
     id: 100085,
     title: "БУТЫЛКА 1,5 Л",
+    titleEng:'1.5 L Bottle',
     img: "thermose6.jpg",
-    desc: " QUECHUA MH100 ИЗ НЕРЖАВЕЮЩЕЙ СТАЛИ",
+    descEng:'QUECHUA  MH100 Stainless Steel',
+    desc: "QUECHUA MH100 ИЗ НЕРЖАВЕЮЩЕЙ СТАЛИ",
     category: "thermos",
     price: 39,
     column: [
@@ -2209,11 +2242,17 @@ export const PRODUCT = [
       "Размеры: диаметр 9 см × 28,3 см (с опущенной ручкой) / 31 см",
       "Вес: 297 г",
     ],
+    columnEng:[
+      "Fully stainless steel flask (body + lid) with screw cap and carrying handle",
+"Dimensions: diameter 9 cm × 28.3 cm (with handle down) / 31 cm",
+"Weight: 297 g"]
   },
   {
     id: 100086,
     title: "БУТЫЛКА 1 Л",
+    titleEng:'1 L Bottle',
     img: "thermose7.jpg",
+    descEng:'QUECHUA MH500 Made of Aluminum',
     desc: "QUECHUA MH500 ИЗ АЛЮМИНИЯ",
     category: "thermos",
     price: 41,
@@ -2225,10 +2264,18 @@ export const PRODUCT = [
       "Перед первым использованием трижды тщательно промыть изделие проточной водой",
       "Размеры: Ø 8 см x 27,8 см",
     ],
+    columnEng:[
+      "The product is made of 72% recycled aluminum to reduce environmental impact",
+"One-handed quick opening, lockable lid with handle and built-in filter",
+"Weight: 174 g (body 127 g / lid 47 g)",
+"Wide mouth for easy filling, handle for carrying",
+"Before first use, thoroughly rinse the product three times with running water",
+"Dimensions: Ø 8 cm x 27.8 cm"]
   },
   {
     id: 100087,
-    title: "БУТЫЛКА TRIBAN 0.650 Л",
+    title: "БУТЫЛКА TRIBAN 0.65 Л",
+    titleEng:'Bottle TRIBAN 0.65 L ',
     img: "botle.jpg",
     desc: "Фляга для велосипеда",
     category: "thermos",
