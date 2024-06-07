@@ -19,6 +19,7 @@
 .rent-items__title {
   display: block;
   margin-top: 15px;
+  text-transform: uppercase;
 }
 
 .rent-items-day {

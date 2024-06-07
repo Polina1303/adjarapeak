@@ -19,6 +19,7 @@
 .product-items__title {
   display: block;
   margin-top: 15px;
+  text-transform: uppercase;
 }
 
 .icon-search {

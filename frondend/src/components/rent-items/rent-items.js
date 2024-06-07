@@ -20,6 +20,8 @@ export const RentItems = ({ rent }) => {
     triggerOnce: true,
   });
 
+ 
+
   return (
     <div className="rent-items">
       <div ref={ref} className="rent-items__details">

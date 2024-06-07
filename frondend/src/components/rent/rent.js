@@ -22,7 +22,6 @@ export const Rent = ({ rent }) => {
 
   return (
     <div className="add-to-cart__rent" onClick={handelClickWeekday}>
-      <span className="rent-day"> {rent.day}</span>
       <div className="add-to-cart-cover">
         <div className="add-to-cart">
           <b className="rent-items-price">{rent.price}₾-сутки</b>
