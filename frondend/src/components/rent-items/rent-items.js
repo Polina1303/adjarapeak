@@ -44,6 +44,8 @@ export const RentItems = ({ rent }) => {
         </div>
         <span className="rent-items__title">{rent.title}</span>
         <p className="rent-items__desc">{rent.desc}</p>
+        <b className="product-items__price">{rent.price}₾-сутки</b>
+
         <Rent rent={rent} />
       </div>
     </div>

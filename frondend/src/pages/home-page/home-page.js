@@ -152,7 +152,7 @@ export const HomePage = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 6,
-    slidesToScroll: 1,
+    slidesToScroll: 4,
 
     prevArrow: <CustomNextArrow />,
     nextArrow: <CustomPrevArrow />,
@@ -197,8 +197,7 @@ export const HomePage = () => {
             height: "100%",
             display: "flex",
             width:'100%',
-           
-            
+
           }}
         >
           <div ref={ref} className="categories-item" onClick={handleClickSale}>
