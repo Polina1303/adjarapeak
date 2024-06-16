@@ -12,7 +12,7 @@ export const Footer = () => {
       <div className="footer-container">
         <ul className="footer-container-list">
           <li>{languages==="RU"? 'Прокат без залога денежных средств и документов':"Rental without a deposit or documents"} </li>
-          <li>{languages==="RU"? 'Бронирование без предоплаты':"Booking without prepayment"}</li>
+          {/* <li>{languages==="RU"? 'Бронирование без предоплаты':"Booking without prepayment"}</li> */}
           <li>{languages==="RU"? 'Продажа, прокат и доставка "под заказ"':"Sales, rental, and delivery 'on order'"}</li>
           <li>
             <MdLocationPin size={25} color={"#de682d"} />
@@ -34,6 +34,7 @@ export const Footer = () => {
               +995 511 147 586
             </a>
           </li>
+            <li>Соцсети Adjara Peak / Adjpeak:</li>
           <li>
             <div className="icon-footer">
               <a
@@ -70,12 +71,12 @@ export const Footer = () => {
             </div>
           </li>
         </ul>
-        <div className="footer-description">
+        {/* <div className="footer-description">
           <span className="footer-description-text">
-          {languages==="RU"? '  Adjara Peak - первый в Аджарии магазин/прокат туристического снаряжения. Мы начали свою деятельность 1 июля 2022 года, преследуя амбициозную цель - массовое знакомство туриста с горами Аджарии! За эти 9 месяцев мы удовлетворили запрос более 600 клиентов, собрали 86 положительных отзывов и около 1900 подписчиков в социальных сетях. Привезли мировые бренды - Quechua, Forclaz, Btrace, Naturehike, Stanley, Petzl, Campsor, и доросли до 100 позиций в продаже, и 45 в прокате! Мы постоянно растем, благодаря вам! Спасибо за ваше доверие!':"Adjara Peak - the first store/rental service for tourist equipment in Adjara. We began our activities on July 1, 2022, with the ambitious goal of introducing tourists to the mountains of Adjara on a large scale! In these 9 months, we have met the needs of more than 600 clients, received 86 positive reviews, and gained about 1900 followers on social media. We have brought in world-renowned brands such as Quechua, Forclaz, Btrace, Naturehike, Stanley, Petzl, and Campsor, and have grown to offer 100 items for sale and 45 for rent! We are constantly growing thanks to you! Thank you for your trust!"}
+          {languages==="RU"? '  Adjara Peak / Adjpeak':"Adjara Peak - the first store/rental service for tourist equipment in Adjara. We began our activities on July 1, 2022, with the ambitious goal of introducing tourists to the mountains of Adjara on a large scale! In these 9 months, we have met the needs of more than 600 clients, received 86 positive reviews, and gained about 1900 followers on social media. We have brought in world-renowned brands such as Quechua, Forclaz, Btrace, Naturehike, Stanley, Petzl, and Campsor, and have grown to offer 100 items for sale and 45 for rent! We are constantly growing thanks to you! Thank you for your trust!"}
           
           </span>
-        </div>
+        </div> */}
       </div>
     </>
   );

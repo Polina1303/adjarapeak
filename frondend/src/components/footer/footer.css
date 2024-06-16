@@ -18,9 +18,10 @@ li {
 }
 
 .icon-footer {
-  width: 40%;
+  width: 20%;
   display: flex;
   justify-content: space-between;
+padding-bottom: 20px;
 }
 
 .footer-description {

@@ -3767,7 +3767,7 @@ export const PRODUCT = [
   {
     id: 1000167,
     title: "НАДУВНАЯ SUP-ДОСКА",
-    img: "sup1.jpg",
+    img: "sup1.png",
     desc: "Runeed Everest",
     category: "supboard",
     price: 779,
