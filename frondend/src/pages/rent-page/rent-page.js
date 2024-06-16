@@ -46,7 +46,7 @@ if(currentItems.length===0){
           mode="horizontal"
           defaultSelectedKeys={['0']}
           items={items}
-          style={{ flex: 1, minWidth: 0 ,}}
+          style={{ flex: 1, minWidth: 0, }}
           onClick={handleClick}
      
         />

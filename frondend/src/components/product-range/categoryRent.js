@@ -46,12 +46,12 @@ export const CATEGORY_RENT=[
         id:9
     },
     {
-        title:'АЛЬПИНИСТСКОЕ СНАРЯЖЕНИЕ',
+        title:'ДЛЯ АЛЬПИНИЗМА',
         type:'rentCLIMBING',
         id:10
     },
     {
-        title:'САП-СЕРФИНГ И АКСЕССУАРЫ',
+        title:'САП-БОРДЫ И АКСЕССУАРЫ',
         type:'rentSUP',
         id:11
     },
