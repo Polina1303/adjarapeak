@@ -35,10 +35,16 @@ export const RulesPage = () => {
               <ul className="column">
                 <li className="column__list">
                   <span className="modal__column__text">
+                  {languages==="RU"? 'При бронировании снаряжения на выходные (сб-вс), клиент получает право забрать снаряжение в пятницу 14:00-19:00, а вернуть в понедельник 11:00-14:00, оплачивая лишь 2 суток проката, вместо 3.':
+"When booking equipment for the weekend (Sat-Sun), the client gets the right to pick up equipment on Friday 14:00-19:00, and return it on Monday 11:00-14:00, paying only 2 days of rental, instead of 3.."}               
+                  </span>
+                </li>
+                {/* <li className="column__list">
+                  <span className="modal__column__text">
                   {languages==="RU"? 'Для удобства клиентов, в прокате существует система бронирования, позволяющая клиенту заблаговременно заключить договор проката, указав лишь своё имя и номер телефона.':
 "For customer convenience, the rental has a reservation system that allows the customer to make a rental agreement in advance by providing only their name and phone number."}               
                   </span>
-                </li>
+                </li> */}
                 <li className="column__list">
                   <span className="modal__column__text">
                   {languages==="RU"? 'Оплата за прокат производится в день выдачи снаряжения.':"Payment for the rental is made on the day of equipment issuance."}

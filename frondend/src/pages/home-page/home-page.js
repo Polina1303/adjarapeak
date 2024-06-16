@@ -186,7 +186,7 @@ export const HomePage = () => {
       <SliderMain />
 
       <div className="home-page__container-title">
-      <h3 style={{top:50}}>Cайт обновляется, актуальные цены уточняйте в <a href="https://t.me/shpaksn" target="_blank" rel="noreferrer" style={{color:'rgba(0, 136, 204)'}}>Telegram</a> <a  href="https://www.instagram.com/adjarapeak/?igshid=YmMyMTA2M2Y%3D" target="_blank" rel="noreferrer" style={{color:'rgba(0, 136, 204)'}}>Instagram</a>  или по номеру телефона   <a href="tel:+995511147586">+995 511 147 586</a> </h3>
+      {/* <h3 style={{top:50}}>Cайт обновляется, актуальные цены уточняйте в <a href="https://t.me/shpaksn" target="_blank" rel="noreferrer" style={{color:'rgba(0, 136, 204)'}}>Telegram</a> <a  href="https://www.instagram.com/adjarapeak/?igshid=YmMyMTA2M2Y%3D" target="_blank" rel="noreferrer" style={{color:'rgba(0, 136, 204)'}}>Instagram</a>  или по номеру телефона   <a href="tel:+995511147586">+995 511 147 586</a> </h3> */}
 
         <h2>{languages==="RU"?'Основные категории':"Primary categories"} </h2>
       </div>
