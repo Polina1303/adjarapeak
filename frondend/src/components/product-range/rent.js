@@ -1217,9 +1217,9 @@ export const RENT = [
   },
   {
     id: 312009308293,
-    title: "Горелка для резьбовых/цанговых баллонов",
+    title: "Горелка - плитка для резьбовых баллонов",
     img: "burner32.jpg",
-    desc: "Nurgaz / Campsor	",
+    desc: "Nurgaz	",
     category: "rent",
     price: 4,
     type:'rentBURNER',
@@ -1312,7 +1312,7 @@ export const RENT = [
           id: 4367954308293,
           title: "Лопата складная",
           img: "4-min.png",
-          desc: "в чехле4",
+          desc: "в чехле",
           category: "rent",
           price: 5,
           type:'rentTOOLS',
@@ -1369,11 +1369,21 @@ export const RENT = [
       "With aluminum foil, which prevents abrasion and improves thermal conductivity",
       "For easy carrying, equipped with an elastic strap"]
         },
+        // {
+        //   id: 34200051,
+        //   title: "КОВРИК ДЛЯ ЙОГИ (ПЕНКА)",
+        //   img: "mat2.jpg",
+        //   desc: "175/180*60*1 см ",
+        //   category: "rent",
+        //   type:'rentHIKING',
+        //   price: 4,
+        //   column: ["Материал: ЭВА"],
+        // },
         {
           id: 34200051,
           title: "КОВРИК ДЛЯ ЙОГИ (ПЕНКА)",
-          img: "mat2.jpg",
-          desc: "175/180*60*1 см ",
+          img: "mat6.jpg",
+          desc: "180*59 см ",
           category: "rent",
           type:'rentHIKING',
           price: 4,
@@ -1417,7 +1427,7 @@ export const RENT = [
     id: 200049,
     title: "ФОНАРЬ НАЛОБНЫЙ 30 и 80 (с батарейкой)",
     img: "lantern_black.jpg",
-    desc: "1 режима освещения.",
+    desc: "1 режима освещения",
     category: "rent",
     type:'rentHIKING',
     price: 4,
@@ -1676,14 +1686,13 @@ export const RENT = [
     ],
   },
   {
-    id: 204001324,
+    id: 2040016324,
     title: "Портативный аккумулятор ",
-    img: "quechuabinoculars.jpg",
+    img: "xiaomi-redmi-fast-charge-power-bank-20000-mah-18w.png",
     desc: "Powerbank Xiaomi Redmi Fast Charge 20000 mAh 18W	",
     category: "rent",
     type:'rentTECHNICS',
     price: 4,
-
     column: [
       "Количество выходных разъемов USB Type-A: 2шт",
       'Входные разъемы на корпусе: USB Type-C, micro USB',
@@ -1701,7 +1710,6 @@ export const RENT = [
     category: "rent",
     type:'rentTECHNICS',
     price: 9,
-
     column: [
       'Baofeng BF-888S [2 Pack] – комплект из 2 миниатюрных раций с дальностью связи до 7 километров',
       'Каждое устройство оснащено емким аккумулятором 1500 мАч, что гарантирует до 10 часов автономной работы рации на одном заряде аккумулятора',

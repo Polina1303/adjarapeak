@@ -22,6 +22,8 @@ export const RentPage = () => {
 
   };
 
+  console.log('active',active)
+
   useEffect(() => {
     const currentItems=RENT.filter(item=>{
       return item.type===items[activeType].type
