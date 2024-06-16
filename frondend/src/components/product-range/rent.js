@@ -318,7 +318,7 @@ export const RENT = [
           {
             id: 200022909,
             type:'rentSleeping',
-            title: "СПАЛЬНЫЙ МЕШОК Rock Empire Cyklotour Regular",
+            title: "СПАЛЬНЫЙ МЕШОК Rock Empire",
             img: "ROCKEMPIRESLEEPINGBAG.jpg",
             desc: "комфорт от +4°C, предел -2°C, экстрим -18°C",
             category: "rent",
