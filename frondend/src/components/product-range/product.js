@@ -2095,7 +2095,7 @@ export const PRODUCT = [
     ],
   },
   {
-    id: 1000118,
+    id: 100044118,
     title: "ЧЕХОЛ ОТ ДОЖДЯ ДЛЯ РЮКЗАКА ",
     img: "backpackcase.jpg",
     desc: "40-60 Л",
@@ -2269,7 +2269,7 @@ export const PRODUCT = [
   },
 
   {
-    id: 100046,
+    id: 10033046,
     title: "Газовый баллон Kovea (до -23°C)",
     titleEng: "TOURIST GAS",
     img: "3256200_6.jpg",

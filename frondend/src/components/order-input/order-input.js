@@ -15,7 +15,7 @@ export const OrderInput = ({ items, setOrderSuccess }) => {
     formState: { errors },
     reset,
   } = useForm();
-
+console.log('items',items)
   const num = items.map((item) => item.category.includes("rent"));
 
   useEffect(() => {
