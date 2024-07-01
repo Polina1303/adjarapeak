@@ -118,9 +118,9 @@ export const HomePage = () => {
   const handleClickBuff = () => {
     navigate("/buff");
   };
-  const handleClickRaincoat = () => {
-    navigate("/raincoat");
-  };
+  // const handleClickRaincoat = () => {
+  //   navigate("/raincoat");
+  // };
   const handleClickSunglasses = () => {
     navigate("/sunglasses");
   };
@@ -458,7 +458,7 @@ export const HomePage = () => {
               </div>
             </a>
           </div>
-          <div
+          {/* <div
             ref={ref}
             className="categories-item"
             onClick={handleClickRaincoat}
@@ -475,7 +475,7 @@ export const HomePage = () => {
                 </div>
               </div>
             </a>
-          </div>
+          </div> */}
           <div
             ref={ref}
             className="categories-item"
@@ -516,7 +516,7 @@ export const HomePage = () => {
                 className="categories-item-img"
               />
               <div className="categories-item-title">
-                <div className="categories-item-title_back"> {languages==="RU"? 'Гермомешки':" Waterproof bags"}</div>
+                <div className="categories-item-title_back"> {languages==="RU"? 'Дождевики и гермомешки':" Waterproof bags"}</div>
               </div>
             </a>
           </div>
@@ -809,7 +809,7 @@ export const HomePage = () => {
               </div>
             </a>
           </div>
-          <div
+          {/* <div
             ref={ref}
             className="categories-item"
             onClick={handleClickRaincoat}
@@ -826,7 +826,7 @@ export const HomePage = () => {
                 </div>
               </div>
             </a>
-          </div>
+          </div> */}
           <div
             ref={ref}
             className="categories-item"
@@ -862,12 +862,12 @@ export const HomePage = () => {
           <div ref={ref} className="categories-item" onClick={handleClickHermo}>
             <a href="/hermo">
               <img
-                src={hermo}
+                src={poncho}
                 alt="adjara peak"
                 className="categories-item-img"
               />
               <div className="categories-item-title">
-                <div className="categories-item-title_back">{languages==="RU"? 'Гермомешки':" Waterproof bags"}</div>
+                <div className="categories-item-title_back">{languages==="RU"? 'Дождевики и гермомешки':" Waterproof bags"}</div>
               </div>
             </a>
           </div>

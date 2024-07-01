@@ -17,7 +17,7 @@ export const HermeticBagsPage = () => {
       <div className="home-page__container">
         <div>
           <div className="title" id="home-page-buy">
-            Гермомешки
+          ДОЖДЕВИКИ / ГЕРМОМЕШКИ
           </div>
           <div className="home-page-product">
             {knife.map((product) => (
