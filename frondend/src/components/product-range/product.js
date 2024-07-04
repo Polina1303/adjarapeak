@@ -104,7 +104,6 @@ export const PRODUCT = [
     descEng: "1-person, double-layer 120*295*110", 	
     desc: "1-х местная двухслойная 180*300*110",
     category: "tent",
-  
     price: 470,
     shortlyEng:'Ultralight backpacking tent with a skirt.',
     shortly: "Ультралегкая одноместная палатка Naturehike Cloud UP1 для пеших, водных и вело-походов. Полный вес 1,57 кг. Легкий вес, компактность в сложенном виде и просторность в разложенном - отличный выбор независимого одиночки.",
@@ -2244,29 +2243,7 @@ export const PRODUCT = [
     "30% propane / 70% butane",
     "Manufactured in Turkey"]
   },
-  {
-    id: 110047,
-    title: "ГОРЕЛКА СТРУЙНАЯ",
-    titleEng: "JET BURNER",
-    img: "gas-flame.jpg",
-    desc: "FLAME GUN 915",
-    category: "gas/burner",
-    price: 21,
-    column: [
-      "Включается в одно касание",
-      "С помощью пьезоподжига длина пламени регулируется",
-      "В течение первых двух минут горелка должна разогреться",
-      "о избежание вспышек газа на время разогрева не допускается отклонение горелки более чем на 75 градусов от вертикального положения",
-      "После прогрева можно работать с горелкой под лобым углом",
-      "Температура пламени достигает 1300°С",
-    ],
-    columnEng:["Turns on with a single touch",
-    "Flame length is adjustable using the piezoelectric igniter",
-    "For the first two minutes, the stove needs to warm up",
-    "To prevent gas flashes during warming up, the stove should not be tilted more than 75 degrees from the vertical position",
-    "After warming up, the stove can be operated at any angle",
-    "The flame temperature reaches 1300°C"]
-  },
+
 
   {
     id: 10033046,
@@ -2318,7 +2295,7 @@ export const PRODUCT = [
     id: 100045,
     title: "ГАЗ ТУРИСТИЧЕСКИЙ",
     titleEng: "TOURIST GAS",
-    img: "gas450.jpeg",
+    img: "IMG_9231.JPG",
     desc: "450GR РЕЗЬБОВОЙ",
     descEng: "450GR THREADED",
     category: "gas/burner",
@@ -2335,6 +2312,29 @@ export const PRODUCT = [
     "Double sealing system",
     "30% propane / 70% butane",
     "Manufactured in Turkey"]
+  },
+  {
+    id: 110047,
+    title: "ГОРЕЛКА СТРУЙНАЯ",
+    titleEng: "JET BURNER",
+    img: "gas-flame.jpg",
+    desc: "FLAME GUN 915",
+    category: "gas/burner",
+    price: 21,
+    column: [
+      "Включается в одно касание",
+      "С помощью пьезоподжига длина пламени регулируется",
+      "В течение первых двух минут горелка должна разогреться",
+      "о избежание вспышек газа на время разогрева не допускается отклонение горелки более чем на 75 градусов от вертикального положения",
+      "После прогрева можно работать с горелкой под лобым углом",
+      "Температура пламени достигает 1300°С",
+    ],
+    columnEng:["Turns on with a single touch",
+    "Flame length is adjustable using the piezoelectric igniter",
+    "For the first two minutes, the stove needs to warm up",
+    "To prevent gas flashes during warming up, the stove should not be tilted more than 75 degrees from the vertical position",
+    "After warming up, the stove can be operated at any angle",
+    "The flame temperature reaches 1300°C"]
   },
 
   // {
