@@ -1194,17 +1194,7 @@ export const RENT = [
     column: [
     ],
   },
-  {
-    id: 120004308293,
-    title: "Ветрозащитный экран для горелки",
-    img: "screen.jpg",
-    desc: "Highrock",
-    category: "rent",
-    price: 2,
-    type:'rentBURNER',
-    column: [
-    ],
-  },
+
   {
     id: 12009308293,
     title: "Комплект адаптера",
