@@ -130,6 +130,8 @@
     margin-left: -13px;
   }
 }
+
+
 @media only screen and (max-width: 615px) {
   .wrapper {
     position: absolute;

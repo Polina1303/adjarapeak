@@ -5,7 +5,7 @@ import { PRODUCT } from "../../components/product-range/product";
 
 export const ThermosPage = () => {
   const history = useNavigate();
-  const thermos = PRODUCT.filter((item) => item.category === "thermos");
+  const thermos = PRODUCT.filter((item) => item.category === "bottle");
 
   return (
     <>
@@ -17,7 +17,7 @@ export const ThermosPage = () => {
       <div className="home-page__container">
         <div>
           <div className="title" id="home-page-buy">
-            ТЕРМОСЫ / КРУЖКИ
+          Бутылки
           </div>
           <div className="home-page-product">
             {thermos.map((product) => (

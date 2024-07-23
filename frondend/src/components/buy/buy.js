@@ -38,7 +38,6 @@ export const Buy = ({ product, page, discount }) => {
 
   return (
     <div className="container-items-price" onClick={handleAddToCart}>
-     {product.order&& <p style={{fontSize:'13px',  color:' #9f9d9df5'}}>под заказ</p>}
       {/* <div>
         {product.oldPrice ? (
           <b
@@ -49,7 +48,10 @@ export const Buy = ({ product, page, discount }) => {
             {product.oldPrice}₾
           </b>
         ) : ( */}
+        <div style={{display:'flex',flexDirection:'row',alignItems:'center',justifyContent:'center'}}>
           <b className="product-items__price">{product.price}₾</b>
+          {product.order&& <p style={{fontSize:'13px', marginLeft:'20px',  color:' #9f9d9df5'}}>под заказ</p>}
+          </div>
         {/* )}{" "}
         {product.newPrice && (
           <b className={`product-items__price ${discount ? "discounted" : ""}`}>

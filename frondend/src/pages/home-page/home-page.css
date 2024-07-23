@@ -176,7 +176,7 @@
 }
 @media only screen and (max-width: 469px) {
   .home-page__container-title {
-    margin-top: 50px;
+    margin-top: 80px;
   }
 }
 
@@ -192,7 +192,8 @@
 }
 
 .back-button-cover {
-  margin-top: 50px;
+  margin-top: 65px;
+
 }
 @media only screen and (max-width: 785px) {
   .back-button-cover {
@@ -208,7 +209,7 @@
 }
 @media only screen and (max-width: 468px) {
   .back-button-cover {
-    margin-top: 45px;
+    margin-top: 85px;
     margin-bottom: 10px;
   }
 }

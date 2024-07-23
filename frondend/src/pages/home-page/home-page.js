@@ -16,7 +16,7 @@ import burnerGas from "../../components/image/burnerGas.jpg";
 import mat from "../../components/image/mat_with_case.jpg";
 import trekking from "../../components/image/trekkingsticks1.jpg";
 import camping from "../../components/image/setForCamping.jpg";
-import thermose from "../../components/image/thermose9.jpg";
+import thermose from "../../components/image/botle2.jpg";
 import knife from "../../components/image/knife6.jpg";
 import chair from "../../components/image/chairBig.jpg";
 import buff from "../../components/image/buff3.jpg";
@@ -107,7 +107,7 @@ export const HomePage = () => {
     navigate("/dishes");
   };
   const handleClickThermos = () => {
-    navigate("/thermos");
+    navigate("/bottle");
   };
   const handleClickKnife = () => {
     navigate("/knife");
@@ -387,7 +387,7 @@ export const HomePage = () => {
             className="categories-item"
             onClick={handleClickThermos}
           >
-            <a href="/thermos">
+            <a href="/bottle">
               <img
                 src={thermose}
                 alt="adjara peak"
@@ -395,12 +395,12 @@ export const HomePage = () => {
               />
               <div className="categories-item-title">
                 <div className="categories-item-title_back">
-                {languages==="RU"? 'Термосы / кружки':"Thermos"}
+                {languages==="RU"? 'Бутылки':"Bottles"}
                 </div>
               </div>
             </a>
           </div>
-          <div
+          {/* <div
             ref={ref}
             className="categories-item"
             onClick={handleClickThermos}
@@ -415,6 +415,22 @@ export const HomePage = () => {
                 <div className="categories-item-title_back">
                 {languages==="RU"? 'Термосы / кружки':"Thermos"}
                 </div>
+              </div>
+            </a>
+          </div> */}
+          <div
+            ref={ref}
+            className="categories-item"
+            onClick={handleClickTermoryukzak}
+          >
+            <a href="/termoryukzak">
+              <img
+                src={termoryukzak}
+                alt="adjara peak"
+                className="categories-item-img"
+              />
+              <div className="categories-item-title">
+                <div className="categories-item-title_back"> {languages==="RU"? 'Термос / Терморюкзак':"Thermal backpack"}</div>
               </div>
             </a>
           </div>
@@ -740,7 +756,7 @@ export const HomePage = () => {
             className="categories-item"
             onClick={handleClickThermos}
           >
-            <a href="/thermos">
+            <a href="/bottle">
               <img
                 src={thermose}
                 alt="adjara peak"
@@ -748,7 +764,7 @@ export const HomePage = () => {
               />
               <div className="categories-item-title">
                 <div className="categories-item-title_back">
-                {languages==="RU"? 'Термосы / кружки':"Thermos"}
+                {languages==="RU"? 'Бутылки':"Bottles"}
                 </div>
               </div>
             </a>
@@ -765,7 +781,7 @@ export const HomePage = () => {
                 className="categories-item-img"
               />
               <div className="categories-item-title">
-                <div className="categories-item-title_back"> {languages==="RU"? 'Терморюкзак':"Thermal backpack"}</div>
+                <div className="categories-item-title_back"> {languages==="RU"? 'Термос / Терморюкзак':"Thermal backpack"}</div>
               </div>
             </a>
           </div>

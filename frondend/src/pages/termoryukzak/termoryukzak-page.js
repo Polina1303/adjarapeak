@@ -17,7 +17,7 @@ export const TermoryukzakPage = () => {
       <div className="home-page__container">
         <div>
           <div className="title" id="home-page-buy">
-            Терморюкзак
+          Термос / Терморюкзак
           </div>
           <div className="home-page-product">
             {knife.map((product) => (

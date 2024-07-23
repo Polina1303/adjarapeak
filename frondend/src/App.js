@@ -48,7 +48,7 @@ function App() {
         <Route exact path="/lantern" element={<LanternPage />} />
         <Route exact path="/gas" element={<GasPage />} />
         <Route exact path="/mat" element={<MatPage />} />
-        <Route exact path="/thermos" element={<ThermosPage />} />
+        <Route exact path="/bottle" element={<ThermosPage />} />
         <Route exact path="/dishes" element={<DishesPage />} />
         <Route exact path="/buff" element={<BuffPage />} />
         <Route exact path="/raincoat" element={<RaincoatPage />} />

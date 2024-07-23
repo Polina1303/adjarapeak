@@ -18,7 +18,7 @@ export const ErgeRoutePage = () => {
   });
   return (
     <>
-      <div className="back-button-cover">
+      <div className="back-button-cover" >
         <button className="back-button" onClick={() => history(-1)}>
           <IoIosArrowBack size={"25px"} /> {languages==="RU"? 'Назад':"Back"} 
         </button>
