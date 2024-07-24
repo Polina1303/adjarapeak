@@ -3226,26 +3226,26 @@ export const PRODUCT = [
     "Weight: 340 g.",
     "Designed for all types of campfires, especially wood fires"]
   },
-  {
-    id: 100075,
-    titleEng:'PLASTIC PLATE QUECHUA НА 1L',
-    title: "ПЛАСТИКОВАЯ ТАРЕЛКА QUECHUA НА 1 Л",
-    img: "plasticPlate.webp",
-    descEng:'For hiking and picnicking',
-    desc: "Для похода и пикника",
-    category: "dishes",
-    price: 13,
-    column: [
-      "Вес: 69 г.",
-      "Размер: Ø 19 см x 3 см",
-      "Рельефное дно не дает тарелке перегреваться",
-      "Из ударопрочного и жаропрочного полипропилена (100°C)",
-    ],
-    columnEng:["Weight: 69 g.",
-    "Size: Ø 19 cm x 3 cm",
-    "The relief bottom prevents the plate from overheating",
-    "Made of shockproof and heat-resistant polypropylene (up to 100°C)"]
-  },
+  // {
+  //   id: 100075,
+  //   titleEng:'PLASTIC PLATE QUECHUA НА 1L',
+  //   title: "ПЛАСТИКОВАЯ ТАРЕЛКА QUECHUA НА 1 Л",
+  //   img: "plasticPlate.webp",
+  //   descEng:'For hiking and picnicking',
+  //   desc: "Для похода и пикника",
+  //   category: "dishes",
+  //   price: 13,
+  //   column: [
+  //     "Вес: 69 г.",
+  //     "Размер: Ø 19 см x 3 см",
+  //     "Рельефное дно не дает тарелке перегреваться",
+  //     "Из ударопрочного и жаропрочного полипропилена (100°C)",
+  //   ],
+  //   columnEng:["Weight: 69 g.",
+  //   "Size: Ø 19 cm x 3 cm",
+  //   "The relief bottom prevents the plate from overheating",
+  //   "Made of shockproof and heat-resistant polypropylene (up to 100°C)"]
+  // },
   {
     id: 100076,
     titleEng:'PLASTIC CAMPING SET - KNIFE, FORK, AND SPOON',
@@ -3354,6 +3354,43 @@ export const PRODUCT = [
 "Capacity: 300 ml"]
   },
   {
+    id: 100054084,
+    title: "Кружка с уникальной печатью и встроенным карабином",
+    titleEng:'Sublimation Mug with Your Print',
+    img: "IMG_0112.JPG",
+    desc: "нанесение любого принта",
+    descEng:'Customizable Sublimation Mug',
+    category: "dishes",
+    price: 35,
+    column: [
+      "Металлическая",
+      "Рекомендовано мыть вручную",
+      "Объем 300 мл",
+    ],
+    columnEng:[
+    ]
+  },
+  {
+    id: 14500077,
+    titleEng:'BOWL (0.45 L) QUECHUA',
+    title: "МИСКА (0,45 Л.) QUECHUA",
+    img: "1_org_zoom.jpg",
+    desc: "Легкая и прочная миска",
+    descEng:'Lightweight and durable bowl',
+    category: "dishes",
+    price: 13,
+    column: [
+      "Вес: 69 г.",
+      "16 см в диаметре x 4,5 см",
+      "Отверстие сбоку тарелки для легкой переноски снаружи рюкзака с помощью карабина",
+      "Структурированный материал дна тарелки, предотвращающий распространение тепла от горячих жидкостей для удобства захвата",
+    ],
+    columnEng:["Weight: 69 g.",
+    "19 cm in diameter x 5 cm",
+    "Side hole in the plate for easy attachment outside the backpack using a carabiner",
+    "Structured material at the bottom of the plate to prevent the spread of heat from hot liquids for ease of handling"]
+  },
+  {
     id: 100077,
     titleEng:'BOWL (0.5 L) QUECHUA',
     title: "МИСКА (0,5 Л.) QUECHUA",
@@ -3374,6 +3411,35 @@ export const PRODUCT = [
     "Structured material at the bottom of the plate to prevent the spread of heat from hot liquids for ease of handling"]
   },
   {
+    id: 10040777,
+    titleEng:'',
+    title: "Тарелка металлическая глубокая ",
+    img: "dish.jpg",
+    desc: "",
+    descEng:'',
+    category: "dishes",
+    price: 23,
+    column: [
+
+    ],
+    columnEng:[]
+  },
+  {
+    id: 100654077,
+    titleEng:'',
+    title: "Кувшин пластиковый",
+    img: "125157.png",
+    desc: "MH100 0,25L",
+    descEng:'',
+    category: "dishes",
+    price: 14,
+    column: [
+      'Ручка д/удобного захвата, вставляется в другие кружки, отверстие д/крючка. 36 г',
+      'Из ударопрочного и жаропрочного полипропилена (100°C)'
+    ],
+    columnEng:[]
+  },
+  {
     id: 100078,
     titleEng:'COOKWARE SET',
     title: "НАБОР ПОСУДЫ",
@@ -3381,7 +3447,8 @@ export const PRODUCT = [
     desc: "ДЛЯ КЕМПИНГА SY201",
     descEng:'FOR CAMPING SY201',
     category: "dishes",
-    price:65,
+    order:true,
+    price:0,
     column: [
       "Изготовлен из анодированного аломиния",
       "Предназначен для приготовления пищи на газовых, бениновых и других мультипливных горелках",
@@ -3401,7 +3468,8 @@ export const PRODUCT = [
     desc: "ДЛЯ КЕМПИНГА SY300",
     descEng:'FOR CAMPING SY300',
     category: "dishes",
-    price: 85,
+    order:true,
+    price:0,
     column: [
       "Ультралегкий алюминиевый сплав (анодированный алюминий)",
       "Пластик (тарелки)",
@@ -3590,13 +3658,28 @@ export const PRODUCT = [
   //   ],
   // },
   {
+    id: 110099,
+    title: "СКЛАДНОЙ НОЖ",
+    img: "opinel.jpeg",
+    desc: "INOX OPINEL 9 CM",
+    category: "knife",
+    price: 79,
+    column: [
+      "Вес: 57 г.",
+      "Длина лезвия: 9 см",
+      "Общая длина: 21 см",
+      "Тип стали: 12(27 SANDVIK) / Твердость: 57-58 HRC",
+      "Очень устойчиво к ржавчине",
+      "Этот нож относится к серии 'TRADITIONAL' и имеет номер N°09. Он был разработан Джозефом Опинелем в 1896 году и считается одним из первых ножей в этой серии.",
+    ],
+  },
+  {
     id: 100098,
     title: "СКЛАДНОЙ ОХОТНИЧИЙ НОЖ",
     img: "knife3.jpg",
     desc: "AXIS 75 GRIP V2",
     category: "knife",
     price: 75,
-order:true,
     column: [
       "Вес: 100 г.",
       "Mатериал: нержавещая сталь",
@@ -3616,7 +3699,6 @@ order:true,
     desc: "AXIS 85 GRIP V2",
     category: "knife",
     price: 86,
-    order:true,
     column: [
       "Вес: 100 г.",
       "Mатериал: нержавещая сталь",
@@ -3629,22 +3711,7 @@ order:true,
       "Угол 20°",
     ],
   },
-  {
-    id: 110099,
-    title: "СКЛАДНОЙ НОЖ",
-    img: "opinel.jpeg",
-    desc: "INOX OPINEL 9 CM",
-    category: "knife",
-    price: 79,
-    column: [
-      "Вес: 57 г.",
-      "Длина лезвия: 9 см",
-      "Общая длина: 21 см",
-      "Тип стали: 12(27 SANDVIK) / Твердость: 57-58 HRC",
-      "Очень устойчиво к ржавчине",
-      "Этот нож относится к серии 'TRADITIONAL' и имеет номер N°09. Он был разработан Джозефом Опинелем в 1896 году и считается одним из первых ножей в этой серии.",
-    ],
-  },
+
   {
     id: 1000100,
     title: "ШВЕЙЦАРСКИЙ АРМЕЙСКИЙ НОЖ",
@@ -3661,6 +3728,27 @@ order:true,
       "Лезвие: 100 % нержавеющая сталь",
       "Внешний корпус: 100 % акрилонитрилбутадиенстирол ",
       "Ручка: 100 % акрилонитрилбутадиенстирол (АБС)",
+    ],
+  },
+  {
+    id: 1076080100,
+    title: "Нож Victorinox Spartan Blue Trans",
+    img: "6955_big.jpg",
+    desc: "длина лезвия 91 мм",
+    category: "knife",
+    price: 130,
+    column: [
+      'Большое лезвие',
+      'Малое лезвие',
+      'Штопор',
+      'Консервный нож с: – Малой отвёрткой',
+      'Открывалка для бутылок с: – Отвёрткой – Инструментом для снятия изоляции',
+      'Шило, кернер',
+      'Кольцо для ключей',
+      'Пинцет',
+      'Зубочистка',
+      'Нож  надолго сохранит свои качества и характеристики, если регулярно:Удалять с него загрязнения. Промывать мыльным раствором. Просушивать пазы и лезвия.'
+     
     ],
   },
   {
@@ -3682,6 +3770,39 @@ order:true,
       "Cмажьте лезвие силиконовым маслом и храните в сухом месте",
     ],
   },
+  {
+    id: 100430101,
+    title: "Нож-Multitool Valkyrie",
+    img: "14.19.29.jpg",
+    desc: "черный",
+    category: "knife",
+    price: 94,
+    column: [
+      'Многофункциональный черный швейцарский карманный нож Valkyrie для кемпинга',
+    ],
+  },
+  // {
+  //   id: 10304330101,
+  //   title: "Нож-Multitool Caperlan",
+  //   img: "multifunctional-fishing-plier.png",
+  //   desc: "12 функций",
+  //   category: "knife",
+  //   price: 95,
+  //   column: [
+  //     'Многофункциональный черный швейцарский карманный нож Valkyrie для кемпинга',
+  //   ],
+  // },
+  // {
+  //   id: 10043101,
+  //   title: "Нож-Multitool Valkyrie",
+  //   img: "14.19.29.jpg",
+  //   desc: "черный",
+  //   category: "knife",
+  //   price: 94,
+  //   column: [
+  //     'Многофункциональный черный швейцарский карманный нож Valkyrie для кемпинга',
+  //   ],
+  // },
   // {
   //   id: 1000102,
   //   title: "ОХОТНИЧИЙ НОЖ",
@@ -4213,7 +4334,7 @@ order:true,
     img: "basic.jpeg",
     desc: "до 220 кг (двухместный)",
     category: "accessories",
-    price:'-',
+    price:0,
     order:true,
     column: [
       'Двухместный гамак',
