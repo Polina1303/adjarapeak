@@ -16,7 +16,7 @@ export const ChooseUs = () => {
           <h5> {languages==="RU"? 'ОТСУТСТВИЕ ЗАЛОГА':"NO DEPOSIT REQUIRED"} </h5>
         </div>
         <p className="choose-item-description">
-        {languages==="RU"? ' Для заключения договора нужен только паспорт. Для бронирования нужно указать лишь своё имя и номер телефона.':"Only a passport is required to sign the contract. For booking, you just need to provide your name and phone number."}
+        {languages==="RU"? 'Для заключения договора нужен только паспорт. Бронирование по предоплате. Предоплата не возвращается в случае отмены заказа клиентом.':"Only a passport is required to sign the contract. For booking, you just need to provide your name and phone number."}
          
         </p>
         <div className="choose-item">
