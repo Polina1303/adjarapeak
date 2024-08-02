@@ -39,6 +39,12 @@ export const RulesPage = () => {
 "When booking equipment for the weekend (Sat-Sun), the client gets the right to pick up equipment on Friday 14:00-19:00, and return it on Monday 11:00-14:00, paying only 2 days of rental, instead of 3.."}               
                   </span>
                 </li>
+                <li className="column__list">
+                  <span className="modal__column__text">
+                  {languages==="RU"? 'Бронирование по предоплате. Предоплата не возвращается в случае отмены заказа клиентом.':
+""}               
+                  </span>
+                </li>
                 {/* <li className="column__list">
                   <span className="modal__column__text">
                   {languages==="RU"? 'Для удобства клиентов, в прокате существует система бронирования, позволяющая клиенту заблаговременно заключить договор проката, указав лишь своё имя и номер телефона.':
