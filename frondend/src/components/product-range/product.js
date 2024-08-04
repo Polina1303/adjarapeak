@@ -2148,7 +2148,7 @@ export const PRODUCT = [
   {
     id: 1000146,
     title: "ГЕРМОМЕШОК ЧЕХОЛ ДЛЯ ТЕЛЕФОНА",
-    img: "su-sizdirmaz-telefon-kilifi-ipx8.jpg",
+    img: "23.11.48.jpg",
     desc: "ITIWT IPX8",
     category: "hermo",
     price: 24,
