@@ -59,7 +59,7 @@ const a= localStorage.getItem('languages')
           rel="noreferrer"
         >
          {languages==='RU'? <>Батуми ул.Тбел-Абусеридзе, 38
-          <p className="work">Понедельник-Суббота (11:00-19:00)</p></>:<>
+          <p className="work">Ежедневно (11:00-19:00)</p></>:<>
 Batumi, Tbel-Abuseridze St., 38
           <p className="work">Monday-Saturday (11:00-19:00)</p></>} 
         </a>
