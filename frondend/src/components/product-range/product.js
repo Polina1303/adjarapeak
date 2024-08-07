@@ -58,6 +58,7 @@ export const PRODUCT = [
     desc: "3-х местная двухслойная 130*210*107",
     category: "tent",
     price: 310,
+    order:true,
     shortlyEng:"Simple and easy to set up, this eco-friendly tent is designed for your 3-person camping trips. With a freestanding dome structure, you can move the tent to choose the most suitable camping spot for you.",
     shortly:
       "Простая и легкая в установке, эта эко-палатка предназначена для ваших лагерей на 3 человека. Благодаря отдельно стоящей куполообразной конструкции вы можете перемещать палатку, чтобы выбрать наиболее подходящее для вас место для кемпинга.",
@@ -222,6 +223,7 @@ export const PRODUCT = [
     descEng: "1-person, double-layer 120*295*110", 	
     desc: "1-х местная двухслойная 180*300*110",
     category: "tent",
+    order:true,
     price: 470,
     shortlyEng:'Ultralight backpacking tent with a skirt.',
     shortly: "Ультралегкая одноместная палатка Naturehike Cloud UP1 для пеших, водных и вело-походов. Полный вес 1,57 кг. Легкий вес, компактность в сложенном виде и просторность в разложенном - отличный выбор независимого одиночки.",
@@ -364,10 +366,10 @@ export const PRODUCT = [
   },
   {
     id: 1200941,
-    title: "ПАЛАТКА NATUREHIKE CLOUD UP 2 20D Navy (тёмная)",
+    title: "ПАЛАТКА NATUREHIKE CLOUD UP 2 20D",
     titleEng: "TENT NATUREHIKE CLOUD UP 2 20D",
     img: "tent18.png",
-    desc: "2-х местная двухслойная 125*210*100",
+    desc: "2-х местная двухслойная",
     descEng: "2-person, double-layer 150*275*110",
     category: "tent",
     price: 580,
@@ -403,12 +405,13 @@ export const PRODUCT = [
   },
   {
     id: 1204091,
-    title: "ПАЛАТКА NATUREHIKE CLOUD UP 2 20D Mustard (салатовая)",
+    title: "ПАЛАТКА NATUREHIKE CLOUD UP 2 20D",
     titleEng: "TENT NATUREHIKE CLOUD UP 2 20D",
     img: "tent209.png",
-    desc: "2-х местная двухслойная 125*210*100",
+    desc: "2-х местная двухслойная",
     descEng: "2-person, double-layer 150*275*110",
     category: "tent",
+    order:true,
     price: 580,
     shortlyEng:'Ultralight two-person tent for hiking, water, and biking trips. The spacious vestibule can accommodate a couple of large-sized backpacks.',
     shortly:
@@ -449,7 +452,7 @@ export const PRODUCT = [
     desc: "1-местная двухслойная 120*295*110",
     category: "tent",
     price: 390,
-    order:true,
+ 
     shortlyEng:'Ultralight backpacking tent with a skirt.',
     shortly: "Ультралёгкая туристическая палатка с юбкой.",
     column: [
@@ -704,6 +707,7 @@ export const PRODUCT = [
     img: "10-steel-tent-pegs-various-terrains-quechua-1163836.jpg",
     desc: "Круглые ( 10 ШТ )",
     category: "accessories",
+    order:true,
     price: 28,
     column: [
       "Для всех кемпинговых палаток на различных рельефах",
@@ -712,6 +716,19 @@ export const PRODUCT = [
       "Чтобы продлить срок службы изделия, мы рекомендуем хранить его вместе с остальным туристическим снаряжением. Вдали от влаги, не подвергая его воздействию ультрафиолета.",
       "Вec: 44г",
       "Длина: 18 см",
+    ],
+  },
+  {
+    id: 1000415437,
+    title: "Колышки из алюминиевого сплава",
+    img: "S545914f908.jpg",
+    desc: "треугольные ( 1 ШТ )",
+    category: "accessories",
+
+    price: 3,
+    column: [
+   'Для песка',
+'Вес: 13 г'
     ],
   },
   {
@@ -2775,16 +2792,7 @@ export const PRODUCT = [
 
 
     ],
-    // columnEng:["Red mode: 20 lumens (light brightness)",
-    // "White mode: 50 lumens",
-    // "Bright white mode: 100 lumens",
-    // "Height: 12 cm",
-    // "Diameter: 8 cm",
-    // "Weight: 240 g",
-    // "The lamp operates on 4 AA-IR6 batteries",
-    // "26 hours of operation at maximum brightness (100 lumens)",
-    // "60 hours of operation in white mode (50 lumens)",
-    // "130 hours of operation in red mode (20 lumens)"]
+
   },
   
   {
