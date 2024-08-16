@@ -5,7 +5,7 @@ import { BsInstagram, BsTelegram } from "react-icons/bs";
 import { SlSocialVkontakte } from "react-icons/sl";
 import { AiOutlineWhatsApp } from "react-icons/ai";
 import { FaOdnoklassnikiSquare } from "react-icons/fa";
-import adjara from "../image/adjara1.jpg";
+import adjara from "../image/adjara2.png";
 import { useSelector } from "react-redux";
 import "./header.css";
 import { useDispatch } from "react-redux";
