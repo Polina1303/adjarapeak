@@ -732,6 +732,20 @@ export const PRODUCT = [
     ],
   },
   {
+    id: 100430415437,
+    title: "Комплект из 2 стяжек",
+    img: "1749019.jpg",
+    desc: "по 10 метров",
+    category: "accessories",
+    price: 27,
+    column: [
+   'Подходит для любых палаток',
+'Длина: 2 x 10 м ',
+'Стяжка на каждом конце',
+'возможна установка 4 оттяжек.'
+    ],
+  },
+  {
     id: 190014,
     title: "СПАЛЬНЫЙ МЕШОК",
     titleEng: "SLEEPING BAG",
@@ -982,6 +996,33 @@ export const PRODUCT = [
     "Packaging: Fabric bag"]
   },
   {
+    id: 1030020,
+    titleEng: "",
+    title: "Спальный мешок HUSKY GALA",
+    img: "4p08zIUAdqqO9xgzppAV6jjjaNcXAt.jpg",
+    descEng:'',
+    desc: "комфорт 14, лимит 10, экстрим 0",
+    category: "sleepingbag",
+    price: 224,
+    shortlyEng:"",
+    shortly:'',
+    column: [
+      "Утеплитель: 1 x 165 g/m2, 4-х канальное полое волокно",
+      'Ткань внутренняя: Polycotton',
+      'Ткань внешняя: 70D 190T Nylon Taffeta',
+      'Вес: 1650 г',
+      'Размер: 220 х 90 см',
+      'Размер упаковки: 39 x Ø21 см',
+      'Рекомендованный рост: max 195 см',
+      'Аксессуары: Компрессионный мешок',
+      'Т комфорта: +6°С',
+      'Т лимит комфорта: +2°С',
+      'Т экстремальная: 0°С'
+
+    ],
+    columnEng:[]
+  },
+  {
     id: 100035,
     titleEng: "CLIMBING BACKPACK 20L",
     title: "FOLDING BACKPACK 10 L",
@@ -1005,6 +1046,26 @@ export const PRODUCT = [
     "Reinforced straps.",
     "The backpack folds into itself for storage, taking up as little space as possible.",
     "1 large main compartment + 1 zippered pocket."]
+  },
+  {
+    id: 1004035,
+    titleEng: "",
+    title: "Сумка поясная складная",
+    img: "compact-2-litre-travel-bum.png",
+    descEng:'',
+    desc: " 2 L",
+    category: "backpack",
+    price: 24,
+    shortlyEng:"",
+    shortly:
+      "",
+    column: [
+      "Банан весит 45 г в пустом виде.",
+      "Сумка складывается сама в себя, чтобы занимать как можно меньше места.",
+      "1 большое основное отделение + 1 внешний карман на молнии.",
+
+    ],
+    columnEng:[""]
   },
   {
     id: 100033,
@@ -1144,6 +1205,7 @@ export const PRODUCT = [
     desc: "Easyfit MT100 FORCLAZ",
     category: "backpack",
     price: 355,
+    order:true,
     column: [
       "Объем: 50 л",
       "Вес: 1,6 кг",
@@ -1196,6 +1258,7 @@ export const PRODUCT = [
     desc: "55L THE NORTH FACE(REPLICA)",
     category: "backpack",
     price: 175,
+    order:true,
     shortlyEng:"The TNF Terra 55 medium-volume trekking backpack is perfect for travel. The straps can be adjusted to fit your specifications.",
     shortly:
       "Треккинговый рюкзак среднего объема TNF Terra 55 отлично подходит для путешествий. Лямкам рюкзак можно настроить под свои параметры.",
@@ -1211,6 +1274,7 @@ export const PRODUCT = [
     desc: "THE NORTH FACE 60",
     category: "backpack",
     price: 195,
+    order:true,
     shortlyEng:"It is designed for medium-length hikes and is made of durable and wear-resistant material.",
     shortly:
       "Предназначен для походов средней протяженности и изготовлен из прочного и износостойкого материала.",
@@ -1255,7 +1319,6 @@ export const PRODUCT = [
     descEng:"95+10L Сakard",
     category: "backpack",
     price: 185,
-    order:true,
     column: ["Объем: 95+10 л"],
     columnEng:["Volume: 95+10 L",]
   },
@@ -1502,6 +1565,7 @@ export const PRODUCT = [
     img: "2024-06-16.png",
     desc: "Gregory Arrio",
     category: "backpack",
+    order:true,
     price: 399,
     column: [
       'Gregory Arrio 30 – рюкзак объемом 30 л для однодневных пешеходных, горных или велосипедных походов, экскурсий, активного отдыха на природе',
@@ -1604,6 +1668,7 @@ export const PRODUCT = [
       descEng:"180*60*1 сm",
       category: "mat",
       price: 56,
+      order:true,
       column: ["Верхняя поверхность из полиэтилена предотвращает скольжение и впитывает пот.",
        
       ],
@@ -1734,7 +1799,7 @@ export const PRODUCT = [
       descEng:'180 × 52 × 1 CM (L) MT500 AIR',
       category: "mat",
       price: 256,
-      order:true,
+     
       column: [
         "Вес: 510 г",
         "Объем: 1,7 литра",
@@ -1758,6 +1823,65 @@ export const PRODUCT = [
       "Ideal mattress for temperatures > 8°C",
       "10 cm x Ø 22 cm"]
     },
+    {
+      id: 100332061,
+      title: "Надувной коврик HUSKY SLEEPING MAT FLITE",
+      titleEng:'',
+      img: "7e84840386d2875c3f3c518ed9af5197.webp",
+      desc: "blue 180 × 50 × 5 cm",
+      descEng:'',
+      category: "mat",
+      price: 230,
+     
+      column: [
+    'Слой утеплителя толщиной 5 см  для защиты от неровностей местности и холода.',
+    'Вес: 320 г',
+    'Размеры (в упаковке):  16 × 9 см',
+    'Легкий и компактный',
+    'Изготовлен из  нейлона'
+      ],
+      columnEng:[]
+    },
+    { 
+      id: 120320332061,
+      title: "Надувной коврик HUSKY SLEEPING MAT FEEZY",
+      titleEng:'',
+      img: "xWRuFmnKxogIpQmUB7cQfFgCwb0yVT.jpg",
+      desc: "GREEN 180 × 61 × 6 cm",
+      descEng:'',
+      category: "mat",
+      price: 175,
+     
+      column: [
+    'Слой утеплителя толщиной 6 см  для защиты от неровностей местности и холода.',
+    'Вес: 400 г',
+    'Размеры (в упаковке): 26 × 10 см',
+    'Легкий и компактный',
+    'Изготовлен из  нейлона',
+    'Умный клапан  облегчает надувание и упаковку.'
+      ],
+      columnEng:[]
+    },
+    { 
+      id: 1200332061,
+      title: "Надувной коврик HUSKY SLEEPING MAT FURY ",
+      titleEng:'',
+      img: "16.03.40.png",
+      desc: "187 × 55 × 5 cm",
+      descEng:'',
+      category: "mat",
+      price: 260,
+     
+      column: [
+    'Слой утеплителя толщиной 6 см  для защиты от неровностей местности и холода.',
+    'Вес: 410 г',
+    'Размеры (в упаковке): 22 × 10 см',
+    'Легкий и компактный',
+    'Изготовлен из  нейлона',
+    'Умный клапан  облегчает надувание и упаковку.'
+      ],
+      columnEng:[]
+    },
 
     {
       id: 100064,
@@ -1767,8 +1891,8 @@ export const PRODUCT = [
       descEng:'Set of 2, aluminum',
       desc: "Комплекст из 2шт, алюминиевые",
       category: "trekkingsticks",
-      price: 70,
-      order:true,
+      price: 80,
+     
       shortlyEng:"Trekking poles are designed to help you maintain balance and evenly distribute weight between your arms and legs.",
       shortly:
         "Треккинговые палки редназначены для того, чтобы помочь вам сохранить равновесие и правильно распределить нагрузку между руками и ногами.",
@@ -1885,7 +2009,7 @@ export const PRODUCT = [
       descEng:'Set of 2, aluminum with tungsten tips',
       desc: "Комплекст из 2шт",
       category: "trekkingsticks",
-      price: 159,
+      price: 162,
       column: [
        'Легкая эргономичная рукоятка из комбинации пробки и синтетической пены EVA',
        'Трехсекционное древко из высококачественного алюминиевого сплава 7075 с бамбуковым волокном',
@@ -1908,6 +2032,7 @@ export const PRODUCT = [
       desc: "Комплекст из 2шт",
       category: "trekkingsticks",
       price: 135,
+      order:true,
       column: [
         'Легкая эргономичная рукоятка из синтетической пены EVA',
         'Система быстрой фиксации Fast Lock',
@@ -1919,6 +2044,46 @@ export const PRODUCT = [
         'Вес (г / шт): 250',
         'Длина (см): 65-135 регулируемая',
         'Производство: Польша',
+      ],
+    },
+    {
+      id: 105605609866,
+      title: "Палки треккинговые VIKING Shiva ",
+      titleEng:'',
+      img: "6.16.56.jpg",
+      descEng:'',
+      desc: "Комплекст из 2шт",
+      category: "trekkingsticks",
+      price: 155,
+  
+      column: [
+      'Размеры: 4 x 15 x 69 см',
+      'Основной материал Алюминий',
+
+      ],
+    },
+    {
+      id: 105600329866,
+      title: "Палки треккинговые VIKING Kettera Pro Long Grip",
+      titleEng:'',
+      img: "k97OD73I9ZmJtAL7K4rzwJyCn8dgge.jpg",
+      descEng:'',
+      desc: "Комплекст из 2шт",
+      category: "trekkingsticks",
+      price: 210,
+  
+      column: [
+      'Материал полюса: алюминий 7075.',
+      '5 складных секций',
+      'Диаметр 18/16/14 мм',
+      'Удлиненная ручка (ручка) из пены ЭВА.',
+      'Вес одного шеста – 243 г.',
+      'Регулировка высоты 37-135 см.',
+      'Регулируемый ремешок из полиэстера.',
+      'Система быстрой блокировки',
+      'Сменные насадки'
+
+
       ],
     },
     {
