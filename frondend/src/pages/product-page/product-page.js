@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import { setCurrentProduct } from "../../redux/product/reducer";
 import { useNavigate, useParams } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
@@ -8,11 +8,12 @@ import { PRODUCT } from "../../components/product-range/product";
 import "./product-page.css";
 import { RENT } from "../../components/product-range/rent";
 
+
 export const ProductPage = () => {
   const history = useNavigate();
   const dispatch = useDispatch();
   const params = useParams();
-  console.log(params);
+
 
   const product = useSelector((state) => state.products.currentProduct);
   console.log(product);
@@ -41,6 +42,7 @@ export const ProductPage = () => {
           <IoIosArrowBack size={"25px"} /> Назад
         </button>
       </div>
+  
       <div className="product-container">
         <div className="product-page__wrapper">
           <div className="image-container">

@@ -12,6 +12,7 @@ const items = CATEGORY_RENT.map((item, index) => ({
   label: item.title,
   type:item.type
 }));
+
 export const RentPage = () => {
   const history = useNavigate();
   const [activeType, setActiveType] = useState(0);
@@ -22,7 +23,6 @@ export const RentPage = () => {
 
   };
 
-  console.log('active',active)
 
   useEffect(() => {
     const currentItems=RENT.filter(item=>{
