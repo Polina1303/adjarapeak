@@ -701,6 +701,7 @@ export const PRODUCT = [
       "Подходит для всех типов палаток",
     ],
   },
+
   {
     id: 100015437,
     title: "Комплект стальных колышек",
@@ -724,11 +725,32 @@ export const PRODUCT = [
     img: "S545914f908.jpg",
     desc: "треугольные ( 1 ШТ )",
     category: "accessories",
-
     price: 3,
     column: [
    'Для песка',
 'Вес: 13 г'
+    ],
+  },
+  {
+    id: 1054040415437,
+    title: "Колышки из алюминиевого сплава",
+    img: "23e514t.jpg_640x640.webp",
+    desc: "круглые ( 1 ШТ )",
+    category: "accessories",
+    price: 4,
+    column: [
+'18 см'
+    ],
+  },
+  {
+    id: 105400415437,
+    title: "Колышки из алюминиевого сплава",
+    img: "97F.jpg_640x640.webp",
+    desc: "круглые ( 10 ШТ )",
+    category: "accessories",
+    price: 29,
+    column: [
+'18 см'
     ],
   },
   {
@@ -812,6 +834,7 @@ export const PRODUCT = [
     desc: "комфорт 0/ лимит -5",
     descEng:'210*66cm from +10 to 0°C',
     category: "sleepingbag",
+    order:true,
     price: 395,
     column: ["Комфортная темп.: 0°C / пред. темп.: -5°C.",
        "Наполнитель из синтетической ваты",
@@ -895,6 +918,7 @@ export const PRODUCT = [
     descEng:'210*66cm from +10 to 0°C',
     category: "sleepingbag",
     price: 140,
+    order:true,
     column: ["Вес: 1300гр", "Размер внешний: 33*24см"],
     columnEng:["Weight: 1300g",
     "External size: 33*24cm."]
@@ -934,6 +958,7 @@ export const PRODUCT = [
     desc: "Супер лёгкий 220*90(55) от +15  до +5",
     category: "sleepingbag",
     price: 269,
+    order:true,
     shortlyEng:"The 2021 season novelty - the super lightweight BTrace Zero mummy sleeping bag. It is perfect for short trips in warm weather. Taking up very little space, this sleeping bag allows for a comfortable overnight stay in camping conditions. Like other mummy sleeping bags in this series, the BTrace Zero can be zipped together with another bag. Additionally, you can choose one of two sizes to save even more space and weight if your height allows for using a smaller sleeping bag.",
     shortly:
       "Новинка сезона 2021 - супер лёгкий спальный мешок-кокон BTrace Zero. Он идеально подойдёт для небольших путешествий в теплую погоду. Занимая совсем мало места, этот спальный мешок позволит с комфортом переночевать в походных условиях. Как и другие спальные мешки-коконы этой серии, BTrace Zero имеет возможность состёгиваться. Также можно выбрать один из 2х размеров, чтоб сэкономить ещё места и веса, если рост позволяет пользоваться спальным мешком меньшего размера.",
@@ -1318,6 +1343,7 @@ export const PRODUCT = [
     desc: "95+10L Сakard ",
     descEng:"95+10L Сakard",
     category: "backpack",
+    order:true,
     price: 185,
     column: ["Объем: 95+10 л"],
     columnEng:["Volume: 95+10 L",]
@@ -1415,6 +1441,7 @@ export const PRODUCT = [
     img: "backpackNaturehike60.jpg",
     desc: "NATUREHIKE ROCK 60+51",
     category: "backpack",
+    order:true,
     price: 350,
     shortlyEng:"Ultra-lightweight hiking backpack with a 60-liter capacity and a rigid frame weighing only 1.16 kg.",
     shortly:
@@ -1578,10 +1605,12 @@ export const PRODUCT = [
 'Максимальная нагрузка: 9.1 кг'
     ],
     columnEng:[]  },
+
     {
       id: 100059,
       titleEng:'OUTDOOR FOAM SEAT',
-      title: "CИДЕНЬЕ ТУРИСТИЧЕСКОЕ DECATHLON",
+      title: "CИДЕНЬЕ ТУРИСТИЧЕСКОЕ",
+      order:true,
       img: "sitting_DECATHLON.png",
       descEng:'Made of foam with a metallized layer',
       desc: "Из пеноматериала с металлизированным слоем",
@@ -1604,12 +1633,24 @@ export const PRODUCT = [
       title: "СКЛАДНАЯ СИДУШКА (ПЕНКА)",
       titleEng:'FOLDING SEAT PAD (FOAM)',
       img: "folding_mat.jpg",
-      descEng:'29*9.5*4.5 cm, folds into 4 sections',
-      desc: "29*9.5*4.5см, складывается в 4 раза",
+      descEng:' folds into 4 sections',
+      desc: " складывается в 4 раза",
       category: "mat",
       price: 29,
       column: ["Вес:60г"],
       columnEng:["Weight: 60 g"]
+    },
+    {
+      id: 1050062,
+      title: "СКЛАДНАЯ СИДУШКА (ПЕНКА)",
+      titleEng:'',
+      img: "1711867476757-d3ed42d5f24d41a79a261670a709e7d1-goods.webp",
+      descEng:'',
+      desc: " 27,5 Х 39, складывается в 4 раза",
+      category: "mat",
+      price: 12,
+      column: [],
+      columnEng:[]
     },
     {
       id: 100057,
@@ -1954,7 +1995,6 @@ export const PRODUCT = [
       descEng:'Set of 2, aluminum with tungsten tips',
       desc: "Комплекст из 2шт",
       category: "trekkingsticks",
-      order:true,
       price: 119,
       shortlyEng:"Simple push-pin adjustment system (with buttons) 110/115/120/125/130 cm.",
       shortly:
@@ -2236,11 +2276,34 @@ export const PRODUCT = [
     desc: "Caperlan 100",
     category:'hermo',
     price: 45,
-    order:true,
     column: [
       "Складной сложенный размер в собственном кармане: 20*18*3 см",
       "Вес: 350 г",
       "Водонепроницаемый компонент EVA защищает от 30 см сильного дождя (большого шторма) в течение 3 часов",
+    ],
+  },
+  {
+    id: 104500115,
+    title: "Пончо Forclaz 10L",
+    img: "media-600x600.jpg",
+    desc: "Gri - MT 50",
+    category:'hermo',
+    price: 49,
+    column: [
+      "Ткань ПВХ 100% водонепроницаемая. Герметичные швы.",
+      "Внутренний объем позволяет защищать рюкзак до 10 литров.",
+      "Имеет собственный чехол для хранения.",
+    ],
+  },
+  {
+    id: 10450045115,
+    title: "Дождевик-тент-плащ палатка ",
+    img: "6_1000x1000.png",
+    desc: "3 В 1 ",
+    category:'hermo',
+    price: 37,
+    column: [
+    
     ],
   },
   {
@@ -2284,11 +2347,26 @@ export const PRODUCT = [
   //   ],
   // },
   {
+    id: 104500118,
+    title: "ЧЕХОЛ ОТ ДОЖДЯ ДЛЯ РЮКЗАКА ",
+    img: "backpackcase.jpg",
+    desc: "10-20 Л",
+    category:'hermo',
+    price: 29,
+    column: [
+      "Ткань с покрытием для защиты рюкзака от дождя.",
+      "Подходит для всех туристических рюкзаков объемом от 10 до 20 л.",
+      "2 эластичные ленты с крючками для крепления к лямкам рюкзака.",
+      "Компактность при хранении в чехле.",
+      "Легкий вес, всего 60 г.",
+      "Ручная стирка. Дайте высохнуть перед хранением. Машинная стирка запрещена."
+    ],
+  },
+  {
     id: 1000118,
     title: "ЧЕХОЛ ОТ ДОЖДЯ ДЛЯ РЮКЗАКА ",
     img: "backpackcase.jpg",
     desc: "20-40 Л",
-    order:true,
     category:'hermo',
     price: 34,
     column: [
@@ -2319,7 +2397,7 @@ export const PRODUCT = [
     img: "backpackcase70-100.jpg",
     desc: "70-100 Л",
     category:'hermo',
-    price: 40,
+    price: 46,
     column: [
       "Вес: 71 г.",
       "Крепится с помощью простой резинки, охватывающей Ваш рюкзак",
@@ -2364,6 +2442,7 @@ export const PRODUCT = [
     img: "su-sizdirmaz-silindir-canta-10l-turuncu-2.jpg",
     desc: "ГЕРМОМЕШОК 10 Л ITIWT",
     category: "hermo",
+    order:true,
     price: 79,
     column: [
       "Новая двойная полиэфирная ткань с ПВХ-покрытием для большей износостойкости",
@@ -2519,6 +2598,27 @@ export const PRODUCT = [
     "Manufactured in Turkey"]
   },
   {
+    id: 10043045,
+    title: "Газовый баллон резьбовой",
+    titleEng: "",
+    img: "large_06834_msr.jpg",
+    desc: "MSR 227 gr ",
+    descEng: "",
+    category: "gas/burner",
+    price: 40,
+    column: [
+     'Вес(кг):227 г',
+     'Топливо: Isobutane/ Propane Mixture',
+     'Встроенный поплавковый датчик для определения остатка количества топлива',
+     'Высокая производительность при низких температурах',
+     'Обеспечение поддержания горения до полного окончания топливного остатка',
+
+
+
+    ],
+    columnEng:[]
+  },
+  {
     id: 120004308293,
     title: "Ветрозащитный экран для горелки",
     img: "screen.jpg",
@@ -2528,6 +2628,19 @@ export const PRODUCT = [
     price: 27,
     type:'rentBURNER',
     column: [
+    ],
+  },
+  {
+    id: 12000434308293,
+    title: "Ветрозащитный экран",
+    img: "ff0e256f2223e3c576d5f5953acfea92.webp",
+    desc: "24 X 8,5 см",
+    category: "gas/burner",
+
+    price: 39,
+    type:'rentBURNER',
+    column: [
+      'Основной материал: Алюминиевый сплав'
     ],
   },
   {
@@ -2555,7 +2668,7 @@ export const PRODUCT = [
   },
   {
     id: 100051,
-    title: "ГАЗОВАЯ ГОРЕЛКА - ПЛИТА",
+    title: "Горелка - плита с пьезоподжигом",
     titleEng: "GAS BURNER - STOVE",
     img: "burner44.jpg",
     desc: "ДЛЯ ЦАНГОВЫХ БАЛЛОНОВ",
@@ -2650,6 +2763,7 @@ export const PRODUCT = [
     desc: "УЗ-918",
     descEng: "UZ-918",
     category: "lantern",
+    order:true,
     price: 23,
     column: [
       "2 режима работы",
@@ -2695,6 +2809,7 @@ export const PRODUCT = [
     desc: "Дальность  освещения: 15м (30 люмен). 1 режима освещения.",
     descEng: "Illumination range: 15m (30 lumens). Single lighting mode.",
     category: "lantern",
+    order:true,
     price: 25,
     column: [
       "Питание:2 шт ААА(в наборе)",
@@ -2712,6 +2827,24 @@ export const PRODUCT = [
     "Protection against splashes and shocks"]
   },
   {
+    id: 10032042,
+    title: "Фонарь налобный ",
+    titleEng: "",
+    img: "2573021.png",
+    desc: "3ААА 80 Lümen ONNIGHT 100 (3 режима)",
+    descEng: "",
+    category: "lantern",
+    price: 42,
+    column: [
+      "Широкий световой луч дальностью 25 м (80 лм): идеален для походов и на стоянке",
+      "30 ч в эко режиме.10 ч в интенсивном режиме. Для работы 3 бат.LR03-AAA (в комп)",
+      "3 режима освещения: красный, белый энергосберегающий, белый интенсивный",
+      "Устойчив к брызгам воды (IPX4) и ударам",
+      "Вес: 80 г",
+    ],
+    columnEng:[]
+  },
+  {
     id: 100043,
     title: "USB-ФОНАРЬ НАЛОБНЫЙ FORCLAZ HL100",
     titleEng: "USB-HEADLAMP FORCLAZ HL100",
@@ -2719,7 +2852,7 @@ export const PRODUCT = [
     descEng: "Illumination range: 25m (120 lumens)",
     desc: "Дальность  освещения: 25м (120 люмен)",
     category: "lantern",
-    price: 65,
+    price: 69,
     column: [
       "3 режима освещения: красный, эко-белый, яркий белый",
       "Питание: зарядка с помощью микро-USB",
