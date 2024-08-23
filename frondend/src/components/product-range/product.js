@@ -58,7 +58,6 @@ export const PRODUCT = [
     desc: "3-х местная двухслойная 130*210*107",
     category: "tent",
     price: 310,
-    order:true,
     shortlyEng:"Simple and easy to set up, this eco-friendly tent is designed for your 3-person camping trips. With a freestanding dome structure, you can move the tent to choose the most suitable camping spot for you.",
     shortly:
       "Простая и легкая в установке, эта эко-палатка предназначена для ваших лагерей на 3 человека. Благодаря отдельно стоящей куполообразной конструкции вы можете перемещать палатку, чтобы выбрать наиболее подходящее для вас место для кемпинга.",
@@ -91,8 +90,8 @@ export const PRODUCT = [
     descEng: "2-person, double-layer 130*210*106",
     desc: "2-х местная двухслойная 130*210*106",
     category: "tent",
-    price: 355,
-    order:true,
+    price: 389,
+ 
     shortlyEng:"The Fresh&Black two-person tent, which is easy and quick to set up. Thanks to its freestanding dome structure, it can be moved to a better location after setup.",
     shortly:
       "Двухместную палатку Fresh&Black, которую легко и просто установить. Благодаря отдельно стоящей купольной конструкции его можно переместить в лучшее место после установки.",
