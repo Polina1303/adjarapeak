@@ -76,7 +76,7 @@ export const RENT = [
     img: "14.41.19.jpg",
     desc: "2-х местная (1 слой)",
     category: "rent",
-    price: 15,
+    price: 14,
 
     column: [
       "Размер палатки: 205 Х 145 Х100 см",

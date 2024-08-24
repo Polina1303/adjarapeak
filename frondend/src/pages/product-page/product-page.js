@@ -54,7 +54,7 @@ export const ProductPage = () => {
           </div>
 
           <div className="product-info-container">
-            <h1 className="product-page__title">{product.title}</h1>
+            <h1 className="product-page__title">{product.title.toUpperCase()}</h1>
             <p className="product-text">{product.desc}</p>
             <p className="product-text">{product.shortly}</p>
             <ul className="column">
