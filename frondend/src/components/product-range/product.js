@@ -5,7 +5,7 @@ export const PRODUCT = [
     title: "Палатка",
     img: "ed3b9.png",
     descEng: "2-person, double-layer 130*210*106",
-    desc: "2-х местная двухслойная 140*200",
+    desc: "2-х местная 140*200",
     category: "tent",
     price: 95,
     shortlyEng:"",
@@ -5940,6 +5940,17 @@ order:true,
     desc: "",
     category: "sublimates",
     price: 16,
+    column: [
+
+    ],
+  },
+  {
+    id: 10001649836409,
+    title: "Харчо | Chiken soup kharcho",
+    img: "23.41.04.jpg",
+    desc: "",
+    category: "sublimates",
+    price: 24,
     column: [
 
     ],
