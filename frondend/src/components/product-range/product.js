@@ -249,6 +249,7 @@ export const PRODUCT = [
     descEng: "3-person, double-layer 180*300*110",
     desc: "3-х местная двухслойная 180*300*110",
     category: "tent",
+    order:true,
     price: 565,
     shortlyEng:'Ultralight two-person tent for hiking, water, and biking trips. The spacious vestibule can accommodate a couple of large-sized backpacks.',
     shortly:
@@ -372,6 +373,7 @@ export const PRODUCT = [
     descEng: "2-person, double-layer 150*275*110",
     category: "tent",
     price: 580,
+    order:true,
     shortlyEng:'Ultralight two-person tent for hiking, water, and biking trips. The spacious vestibule can accommodate a couple of large-sized backpacks.',
     shortly:
       "Ультралегкая двухместная палатка для пеших, водных и вело-походов. В просторный тамбур можно разместить пару рюкзаков внушительных размеров.",
@@ -673,6 +675,7 @@ export const PRODUCT = [
     id: 1000134,
     title: "Тент нижний, ДЛЯ ПАЛАТКИ И ТАМБУРА",
     img: "kovrik.jpg",
+    order:true,
     desc: "2 x 2,5 метра",
     category: "accessories",
     price: 59,
@@ -1229,7 +1232,6 @@ export const PRODUCT = [
     desc: "Easyfit MT100 FORCLAZ",
     category: "backpack",
     price: 355,
-    order:true,
     column: [
       "Объем: 50 л",
       "Вес: 1,6 кг",
@@ -2271,7 +2273,7 @@ export const PRODUCT = [
     img: "raincoat.jpg",
     desc: "цвета в ассортименте",
     category:'hermo',
-    price: 16,
+    price: 12,
     column: [
       "Имеет универсальный размер",
       "Быстро сохнет",
@@ -2297,6 +2299,7 @@ export const PRODUCT = [
     desc: "Caperlan 100",
     category:'hermo',
     price: 45,
+    order:true,
     column: [
       "Складной сложенный размер в собственном кармане: 20*18*3 см",
       "Вес: 350 г",
@@ -2715,6 +2718,7 @@ export const PRODUCT = [
     desc: " ",
     category: "gas/burner",
     price: 29,
+    order:true,
     columnEng:["Powerful stainless steel burner",
     "World-class 7/16 valve",
     "Durable brass tap",
@@ -2836,7 +2840,7 @@ export const PRODUCT = [
     desc: "Дальность  освещения: 15м (30 люмен). 1 режима освещения.",
     descEng: "Illumination range: 15m (30 lumens). Single lighting mode.",
     category: "lantern",
-    order:true,
+  
     price: 25,
     column: [
       "Питание:2 шт ААА(в наборе)",
@@ -3149,7 +3153,7 @@ export const PRODUCT = [
     desc: "3-Й КАТЕГОРИИ Julbo Sherpa Matt Black",
     category: "sunglasses",
     price: 219,
-order:true,
+
     column: [
 'лёгкие классические альпинистские очки с кожаными боковыми вставками',
 'стальной оправой и линзами из поликарбоната Spectron 3+',
@@ -3603,7 +3607,6 @@ order:true,
     desc: "QUECHUA",
     category: "bottle",
     price: 19,
-    order:true,
     column: [
       "Быстродействующий затвор можно открыть всего одним поворотом",
       "Прозрачный и безвкусный пластик",
@@ -4237,7 +4240,6 @@ order:true,
     desc: "INOX OPINEL 9 CM",
     category: "knife",
     price: 79,
-    order:true,
     column: [
       "Вес: 57 г.",
       "Длина лезвия: 9 см",
@@ -4573,7 +4575,7 @@ order:true,
     img: "7.19.44.jpg",
     desc: "до 110 кг",
     category: "chair",
-    price: 104,
+    price: 139,
     column: [
  'в чехле 64 Х 50 Х 59 см',
  'вес: 950 гр '
@@ -4974,6 +4976,7 @@ order:true,
     img: "mattressIntex2.jpg",
     desc: "INTEX 203х152х25 см",
     category: "air",
+    order:true,
     price: 80,
     column: [
       "Размеры: 203х152х25 см",
@@ -4989,6 +4992,7 @@ order:true,
     img: "mattressIntex2.jpg",
     desc: "INTEX 203х183х25 см",
     category: "air",
+    order:true,
     price: 89,
     column: [
       "Размеры: 203х183х25 см",
@@ -5153,7 +5157,7 @@ order:true,
     img: "4886c6b7bbc4.jpg",
     desc: "для бинокля",
     category: "accessories",
-    price: 98,
+    price: 52,
     shortly:'',
     column: [
       'Эта эластичная сбруя — удобная альтернатива ношению бинокля на шее.',
