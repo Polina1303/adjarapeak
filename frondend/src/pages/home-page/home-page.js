@@ -31,6 +31,7 @@ import termoryukzak from "../../components/image/kamp-esnek-sogutucu-10l.jpg";
 import sublimates from "../../components/image/sublimates.jpg";
 import supboard from "../../components/image/supruneed.jpg";
 import shoes from "../../components/image/shoes.png";
+import drip from '../../components/image/drip.png'
 import { useSelector } from "react-redux";
 
 import Slider from "react-slick";
@@ -139,6 +140,9 @@ export const HomePage = () => {
   };
   const handleClickSublimates = () => {
     navigate("/sublimates");
+  };
+  const handleClickCoffee = () => {
+    navigate("/coffee");
   };
   const handleClickSupboard = () => {
     navigate("/supboard");
@@ -258,6 +262,22 @@ export const HomePage = () => {
               />
               <div className="categories-item-title">
                 <div className="categories-item-title_back">{languages==="RU"? 'Сублиматы':"Freeze-dried food"}</div>
+              </div>
+            </a>
+          </div>
+          <div
+            ref={ref}
+            className="categories-item"
+            onClick={handleClickCoffee}
+          >
+            <a href="/coffee">
+              <img
+                src={drip}
+                alt="adjara peak"
+                className="categories-item-img"
+              />
+              <div className="categories-item-title">
+                <div className="categories-item-title_back">{languages==="RU"? 'Кофе дрип':"Coffee"}</div>
               </div>
             </a>
           </div>
@@ -628,6 +648,22 @@ export const HomePage = () => {
               />
               <div className="categories-item-title">
                 <div className="categories-item-title_back"> {languages==="RU"? 'Сублиматы':"Freeze-dried food"}</div>
+              </div>
+            </a>
+          </div>
+          <div
+            ref={ref}
+            className="categories-item"
+            onClick={handleClickCoffee}
+          >
+            <a href="/coffee">
+              <img
+                src={drip}
+                alt="adjara peak"
+                className="categories-item-img"
+              />
+              <div className="categories-item-title">
+                <div className="categories-item-title_back">{languages==="RU"? 'Кофе дрип':"Coffee"}</div>
               </div>
             </a>
           </div>

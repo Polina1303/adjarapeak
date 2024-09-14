@@ -32,6 +32,7 @@ import { HermeticBagsPage } from "./pages/hermetic-bags/hermetic-bags";
 import { TermoryukzakPage } from "./pages/termoryukzak";
 import { SupboardPage } from "./pages/supboard-page/supboard-pade";
 import { ShoesPage } from "./pages/shoes-page/shoes-page";
+import { CoffeePage } from "./pages/coffee-page";
 
 
 function App() {
@@ -67,6 +68,7 @@ function App() {
         <Route exact path="/hermo" element={<HermeticBagsPage />} />
         <Route exact path="/termoryukzak" element={<TermoryukzakPage />} />
         <Route exact path="/sublimates" element={<SublimatesPage />} />
+        <Route exact path="/coffee" element={<CoffeePage />} />
         <Route exact path="/shoes" element={<ShoesPage />} />
         <Route exact path="/supboard" element={<SupboardPage />} />
         <Route exact path="*" element={<Error />} />
