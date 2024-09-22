@@ -29,7 +29,7 @@ console.log(' orderSuccess',orderSuccess)
           rel="noreferrer"
         >
           Батуми ул.Тбел-Абусеридзе, 38
-          ежедневно (11:00-19:00)
+          Понедельник, среда, четверг, пятница (11:00-19:00)
         </a>
        <div style={{marginTop:10}}>  Всем подписчикам нашего   <a href="https://t.me/adjarapeak" target="_blank" rel="noreferrer" style={{color:'rgba(0, 136, 204)'}}>Telegram-канал</a>  предоставляется СКИДКА 15% на весь прокат снаряжения</div> <div>Покажите подписку в своем телефоне при получении снаряжения и путешествуйте выгодно!
 </div> <br/> </div>:<h1 style={{marginTop:100}}>Ваша корзина пуста!</h1>

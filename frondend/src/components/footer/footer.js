@@ -22,7 +22,7 @@ export const Footer = () => {
               rel="noreferrer"
               style={{ color: "rgba(34, 34, 34, 0.788)" }}
             >
-         {languages==="RU"? 'Батуми ул.Тбел-Абусеридзе, 38. ежедневно (11:00-19:00)':"Batumi, 38 Tbel-Abuseridze Street. Monday-Saturday (11:00-19:00)"}   
+         {languages==="RU"? 'Батуми ул.Тбел-Абусеридзе, 38. Понедельник, среда, четверг, пятница (11:00-19:00)':"Batumi, 38 Tbel-Abuseridze Street. Monday-Saturday (11:00-19:00)"}   
             </a>
           </li>
           <li>
