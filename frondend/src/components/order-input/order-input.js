@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { clearCart } from '../../redux/cart/reducer';
 import "./order-input.css";
 import { AiOutlineCloseCircle } from "react-icons/ai";
+import {calcTotalPrice} from '../../components/utils'
 
 export const OrderInput = ({ items, setOrderSuccess }) => {
   const [visible, setVisible] = useState(false);
@@ -24,16 +25,18 @@ console.log('items',items)
     }
   }, [num]);
 
-  const prod = items.map((item) => item.title).join(",");
+  const prod = items.map((item,index) => `${index+1}) ${item.title} ${item.desc} цена:${item.price}  количество:${item.count} `).join(".<br>");
   const desc = items.map((item) => item.desc).join(",");
-  const price = items.map((item) => item.price).join(",");
+ 
+  const price = calcTotalPrice(items);
+  // console.log('calcTotalPrice(items)',calcTotalPrice(items))
   const count = items.map((item) => item.count).join(",");
 
   const defaultValues = {
     prod: prod,
-    desc: desc,
+    desc: '',
     price: price,
-    count: count,
+    count: '',
   };
 
   const onSubmit = (data, e) => {

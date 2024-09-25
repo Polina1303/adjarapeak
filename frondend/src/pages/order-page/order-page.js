@@ -50,9 +50,9 @@ console.log(' orderSuccess',orderSuccess)
           <h4>
             {items.length}
             {enumerate(items && items.length, [
-              ` товар`,
-              ` товара`,
-              ` товаров`,
+              ` товар `,
+              ` товара `,
+              ` товаров `,
             ])}
             на сумму {calcTotalPrice(items)}₾
           </h4>
