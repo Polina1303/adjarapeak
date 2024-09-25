@@ -32,6 +32,7 @@ import sublimates from "../../components/image/sublimates.jpg";
 import supboard from "../../components/image/supruneed.jpg";
 import shoes from "../../components/image/shoes.png";
 import drip from '../../components/image/drip.png'
+import socks from '../../components/image/8641380-produ.jpg'
 import { useSelector } from "react-redux";
 
 import Slider from "react-slick";
@@ -118,6 +119,9 @@ export const HomePage = () => {
   };
   const handleClickBuff = () => {
     navigate("/buff");
+  };
+  const handleClickSocks = () => {
+    navigate("/socks");
   };
   // const handleClickRaincoat = () => {
   //   navigate("/raincoat");
@@ -494,6 +498,20 @@ export const HomePage = () => {
               </div>
             </a>
           </div>
+          <div ref={ref} className="categories-item" onClick={handleClickSocks}>
+            <a href="/socks">
+              <img
+                src={socks}
+                alt="adjara peak"
+                className="categories-item-img"
+              />
+              <div className="categories-item-title">
+                <div className="categories-item-title_back">
+                {languages==="RU"? 'Носки':"Socks"}    
+                </div>
+              </div>
+            </a>
+          </div>
           {/* <div
             ref={ref}
             className="categories-item"
@@ -857,6 +875,20 @@ export const HomePage = () => {
               <div className="categories-item-title">
                 <div className="categories-item-title_back">
                 {languages==="RU"? 'Баффы / балаклавы':"Buffs / balaclavas"} 
+                </div>
+              </div>
+            </a>
+          </div>
+          <div ref={ref} className="categories-item" onClick={handleClickSocks}>
+            <a href="/socks">
+              <img
+                src={socks}
+                alt="adjara peak"
+                className="categories-item-img"
+              />
+              <div className="categories-item-title">
+                <div className="categories-item-title_back">
+                {languages==="RU"? 'Носки':"Socks"}    
                 </div>
               </div>
             </a>
