@@ -41,7 +41,7 @@ export const LycianWayPage = () => {
 Хотите следить за нашим маршрутом в реальном времени? Мы организовали онлайн-трансляцию с отображением нашего передвижения на карте! Это позволит вам увидеть, какой путь мы прошли, где остановились. Такой формат даст вам возможность буквально «идти» вместе с нами и наблюдать, как мы преодолеваем трудности Ликийской тропы.
 </span>
 <br/>
-<a href="https://eur-share.explore.garmin.com/ew1em" target="_blank" rel="noopener noreferrer">
+<a href="https://eur-share.explore.garmin.com/adjarapeak" target="_blank" rel="noopener noreferrer">
 
 <span  style={{
   backgroundColor: '#f9c74f', /* светло-оранжевый фон */
