@@ -43,7 +43,21 @@ export const LycianWayPage = () => {
 <br/>
 <a href="https://eur-share.explore.garmin.com/ew1em" target="_blank" rel="noopener noreferrer">
 
-<p className="routes-item-page" style={{ color: 'orange' }}>Следить за перемещениями </p></a>
+<span  style={{
+  backgroundColor: '#f9c74f', /* светло-оранжевый фон */
+  color: '#333', /* темный цвет текста */
+  padding: '5px 10px', /* внутренние отступы */
+  borderRadius: '5px', /* закругленные углы */
+  fontWeight: 'bold', /* жирный шрифт */
+
+}} >Следить за перемещениями </span>
+
+
+</a>
+<p className="routes-item-page" style={{ color: 'orange',marginTop:'10px' }}>
+  Пароль для входа: LyciawithAdjpeak
+</p>
+
 <p>Наша цель — вдохновить больше людей отправляться на природу, открывать для себя новые маршруты и понимать, насколько важно качественное снаряжение. Мы приглашаем вас в это виртуальное путешествие вместе с Adjarapeak, и если наш опыт поможет вам собрать свой рюкзак и отправиться в дорогу, значит, мы достигли своей цели!</p>
 <p>Увидимся на Ликийской тропе!</p>
       </>
