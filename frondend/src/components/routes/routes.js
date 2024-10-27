@@ -14,6 +14,7 @@ export const Routes = () => {
     threshold: 0,
     triggerOnce: true,
   });
+  const navigate = useNavigate();
 
   const handleClickLake = () => {
     navigate("/lake");
@@ -24,7 +25,6 @@ export const Routes = () => {
   const handleClickGarden = () => {
     navigate("/garden");
   };
-  const navigate = useNavigate();
   return (
     <div>
       <h2 className="routes-title"> {languages==="RU"? 'Вокруг Батуми: Удивительные маршруты':"Around Batumi: Amazing routes"}</h2>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { HitSales } from "../../components/hit-sales";
+import { LycianWay } from '../../components/lycian-way'
 import { ChooseUs } from "../../components/chooseus";
 import { Routes } from "../../components/routes/routes";
 import { useNavigate } from "react-router-dom";
@@ -992,6 +993,7 @@ export const HomePage = () => {
 
       {/* </div> */}
       {/* <HitSales /> */}
+<LycianWay/>
       <Routes />
       <RulesPage />
       <ChooseUs />

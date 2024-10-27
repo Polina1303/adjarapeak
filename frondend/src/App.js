@@ -34,6 +34,7 @@ import { SupboardPage } from "./pages/supboard-page/supboard-pade";
 import { ShoesPage } from "./pages/shoes-page/shoes-page";
 import { CoffeePage } from "./pages/coffee-page";
 import { SocksPage } from "./pages/socks-page";
+import { LycianWayPage } from './pages/lycianWay-page'
 
 
 function App() {
@@ -63,6 +64,7 @@ function App() {
         <Route exact path="app/:id" element={<ProductPage />} />
         <Route exact path="/order" element={<OrderPage />} />
         <Route exact path="/rules" element={<RulesPage />} />
+        <Route exact path="/lycian" element={<LycianWayPage />} />
         <Route exact path="/lake" element={<LakeRoutePage />} />
         <Route exact path="/erge" element={<ErgeRoutePage />} />
         <Route exact path="/garden" element={<GardenRoutePage />} />
