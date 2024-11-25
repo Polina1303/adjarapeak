@@ -17,7 +17,7 @@ export const GasPage = () => {
       <div className="home-page__container">
         <div>
           <div className="title" id="home-page-buy">
-            ГАЗ / ГАРЕЛКИ
+            ГАЗ / ГОРЕЛКИ
           </div>
           <div className="home-page-product">
             {gas.map((product) => (

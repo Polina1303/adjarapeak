@@ -87,7 +87,7 @@
 @media only screen and (max-width: 1104px) {
   .categories {
     display: flex;
-    margin-bottom: 80px;
+    margin-bottom: -20px;
     left: -35px;
     margin-top: 25px;
     overflow-x: auto;

@@ -40,7 +40,7 @@ export const CATEGORY_PRODUCT=[
        
     },
     {
-        title:'ГАЗ / ГАРЕЛКИ',
+        title:'ГАЗ / ГОРЕЛКИ',
         type:"gas/burner",
        
     },

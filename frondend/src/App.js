@@ -35,6 +35,7 @@ import { ShoesPage } from "./pages/shoes-page/shoes-page";
 import { CoffeePage } from "./pages/coffee-page";
 import { SocksPage } from "./pages/socks-page";
 import { LycianWayPage } from './pages/lycianWay-page'
+import { RockClimbingPage } from "./pages/rock-climbing-page";
 
 
 function App() {
@@ -65,6 +66,7 @@ function App() {
         <Route exact path="/order" element={<OrderPage />} />
         <Route exact path="/rules" element={<RulesPage />} />
         <Route exact path="/lycian" element={<LycianWayPage />} />
+        <Route exact path="/rockClimbing" element={<RockClimbingPage />} />
         <Route exact path="/lake" element={<LakeRoutePage />} />
         <Route exact path="/erge" element={<ErgeRoutePage />} />
         <Route exact path="/garden" element={<GardenRoutePage />} />
