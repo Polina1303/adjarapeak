@@ -29,6 +29,7 @@ return(
         controls={false}
         muted
         loop
+        playsinline
         className="climbing-video"
       />
  
