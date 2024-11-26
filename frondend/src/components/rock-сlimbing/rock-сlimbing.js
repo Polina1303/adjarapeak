@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 import  lycian  from '../image/lycian.webp'
 import ReactPlayer from 'react-player';
-import videoFile from './mov.MP4'; 
+import videoFile from './mov1.mp4'; 
 import './rock-сlimbing.css'
 
 export const RockClimbing = () => {
@@ -30,6 +30,13 @@ return(
         muted
         loop
         playsinline
+        config={{
+          file: {
+            attributes: {
+              preload: 'metadata',
+            },
+          },
+        }}
         className="climbing-video"
       />
  
