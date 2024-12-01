@@ -20,6 +20,11 @@ export const CATEGORY_PRODUCT=[
        
     },
     {
+        title:'ОБУВЬ',
+        type:"shoes",
+       
+    },
+    {
         title:'РЮКЗАКИ',
         type:"backpack",
        
@@ -55,12 +60,12 @@ export const CATEGORY_PRODUCT=[
        
     },
     {
-        title:'Термос / Терморюкзак',
+        title:'ТЕРМОС / ТЕРМОРЮКЗАК',
         type:"termoryukzak",
        
     },
     {
-        title:'Бутылки',
+        title:'БУТЫЛКИ',
         type:"bottle",
        
     },
@@ -91,26 +96,18 @@ export const CATEGORY_PRODUCT=[
        
     },
     {
-        title:'Походная еда',
+        title:'ПОХОДНАЯ ЕДА',
         type:"sublimates",
        
     },
  
     {
-        title:'SUP-доски',
+        title:'SUP-ДОСКИ',
         type:"supboard",
        
     },
-    {
-        title:'Обувь',
-        type:"shoes",
-       
-    },
-    {
-        title:'SUP-доски',
-        type:"supboard",
-       
-    },
+  
+  
  
  
     

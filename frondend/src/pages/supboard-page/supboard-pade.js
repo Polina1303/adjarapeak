@@ -17,7 +17,7 @@ export const SupboardPage = () => {
       <div className="home-page__container">
         <div>
           <div className="title" id="home-page-buy">
-            SUP-доски
+          SUP-ДОСКИ
           </div>
           <div className="home-page-product">
             {knife.map((product) => (

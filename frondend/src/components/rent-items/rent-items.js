@@ -9,7 +9,7 @@ import "./rent-items.css";
 export const RentItems = ({ rent }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+console.log(' rent', rent.id)
   const handelClickImg = () => {
     dispatch(setCurrentProduct(rent));
     navigate(`/app/${rent.id}`);

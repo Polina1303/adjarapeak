@@ -17,7 +17,7 @@ export const ThermosPage = () => {
       <div className="home-page__container">
         <div>
           <div className="title" id="home-page-buy">
-          Бутылки
+          БУТЫЛКИ
           </div>
           <div className="home-page-product">
             {thermos.map((product) => (

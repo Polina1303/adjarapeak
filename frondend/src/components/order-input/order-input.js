@@ -16,8 +16,7 @@ export const OrderInput = ({ items, setOrderSuccess }) => {
     formState: { errors },
     reset,
   } = useForm();
-console.log('items',items)
-  const num = items.map((item) => item.category.includes("rent"));
+    const num = items.map((item) => item.category.includes("rent"));
 
   useEffect(() => {
     if (num.includes(true)) {
@@ -29,7 +28,6 @@ console.log('items',items)
   const desc = items.map((item) => item.desc).join(",");
  
   const price = calcTotalPrice(items);
-  // console.log('calcTotalPrice(items)',calcTotalPrice(items))
   const count = items.map((item) => item.count).join(",");
 
   const defaultValues = {

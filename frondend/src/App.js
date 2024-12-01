@@ -36,6 +36,7 @@ import { CoffeePage } from "./pages/coffee-page";
 import { SocksPage } from "./pages/socks-page";
 import { LycianWayPage } from './pages/lycianWay-page'
 import { RockClimbingPage } from "./pages/rock-climbing-page";
+import { RentSkyPage} from './pages/rent-sky-page'
 
 
 function App() {
@@ -46,7 +47,8 @@ function App() {
         <Route exact path="/" element={<HomePage />} />
         <Route exact path="/sale" element={<SalePage />} />
         <Route exact path="/rent" element={<RentPage />} />
-        <Route exact path="/tent" element={<TentPage />} />
+        <Route exact path="/rent_sky" element={<RentSkyPage />} />
+        {/* <Route exact path="/tent" element={<TentPage />} />
         <Route exact path="/sleepingbag" element={<SleepingbagPage />} />
         <Route exact path="/backpack" element={<BackpackPage />} />
         <Route exact path="/lantern" element={<LanternPage />} />
@@ -61,7 +63,14 @@ function App() {
         <Route exact path="/sunglasses" element={<SunglassesPage />} />
         <Route exact path="/air" element={<AirProductPage />} />
         <Route exact path="/accessories" element={<AccessoriesPage />} />
-        <Route exact path="/trekkingsticks" element={<TrekkingsticksPage />} />
+        <Route exact path="/trekkingsticks" element={<TrekkingsticksPage />} /> */}
+        {/* <Route exact path="/hermo" element={<HermeticBagsPage />} /> */}
+        {/* <Route exact path="/coffee" element={<CoffeePage />} /> */}
+        {/* <Route exact path="/termoryukzak" element={<TermoryukzakPage />} />
+        <Route exact path="/sublimates" element={<SublimatesPage />} />
+        <Route exact path="/shoes" element={<ShoesPage />} />
+        <Route exact path="/supboard" element={<SupboardPage />} />
+        <Route exact path="/socks" element={<SocksPage />} /> */}
         <Route exact path="app/:id" element={<ProductPage />} />
         <Route exact path="/order" element={<OrderPage />} />
         <Route exact path="/rules" element={<RulesPage />} />
@@ -70,13 +79,6 @@ function App() {
         <Route exact path="/lake" element={<LakeRoutePage />} />
         <Route exact path="/erge" element={<ErgeRoutePage />} />
         <Route exact path="/garden" element={<GardenRoutePage />} />
-        <Route exact path="/hermo" element={<HermeticBagsPage />} />
-        <Route exact path="/termoryukzak" element={<TermoryukzakPage />} />
-        <Route exact path="/sublimates" element={<SublimatesPage />} />
-        <Route exact path="/coffee" element={<CoffeePage />} />
-        <Route exact path="/shoes" element={<ShoesPage />} />
-        <Route exact path="/supboard" element={<SupboardPage />} />
-        <Route exact path="/socks" element={<SocksPage />} />
         <Route exact path="*" element={<Error />} />
       </Routes>
       <Footer />

@@ -20,10 +20,22 @@ export const SalePage = () => {
   const [activeType, setActiveType] = useState(0);
   const [active,setActive]=useState(PRODUCT)
 
-  const handleClick = (e) => {
-    setActiveType(Number(e.key));
+  useEffect(() => {
+    const storedActiveType = localStorage.getItem('activeTypeSale');
+    if (storedActiveType) {
+      setActiveType(Number(storedActiveType));
+    }
+  }, []);
 
+  const overflowedIndicator = <span>показать больше...</span>;
+
+
+  const handleClick = (e) => {
+    const newActiveType = Number(e.key);
+    setActiveType(newActiveType);
+    localStorage.setItem('activeTypeSale', newActiveType);
   };
+
   useEffect(() => {
     const currentItems=PRODUCT.filter(item=>{
       return item.category===items[activeType].type
@@ -45,16 +57,18 @@ if(currentItems.length===0){
       </div>
       <Menu
           mode="horizontal"
-          defaultSelectedKeys={['0']}
+        selectedKeys={[`${activeType}`]} 
           items={items}
           style={{ flex: 1, minWidth: 0, }}
           onClick={handleClick}
+          overflowedIndicator={overflowedIndicator}
+
      
         />
       <div className="home-page__container-product">
         <div>
           <div className="title" id="home-page-buy">
-            ПРОДАЖА СНАРЯЖЕНИЯ
+            ПРОДАЖА ТУРИСТИЧЕСКОГО СНАРЯЖЕНИЯ
           </div>
           <div className="home-page-product">
             {active.map((product) => (

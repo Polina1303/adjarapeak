@@ -17,7 +17,7 @@ export const ShoesPage = () => {
       <div className="home-page__container">
         <div>
           <div className="title" id="home-page-buy">
-          Обувь
+          ОБУВЬ
           </div>
           <div className="home-page-product">
             {knife.map((product) => (

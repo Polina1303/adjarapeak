@@ -25,7 +25,9 @@ import buff from "../../components/image/buff3.jpg";
 import poncho from "../../components/image/raincoutBlack.jpg";
 import sunglasses from "../../components/image/sunglasses.jpg";
 import binokl from "../../components/image/binokl3.jpg";
-import main from "../../components/image/main1.jpg";
+import sky from "../../components/image/sky.png";
+import eq from "../../components/image/eq (1).png";
+import eq2 from "../../components/image/eq3.png";
 import rent from "../../components/image/rent.jpg";
 import mattress from "../../components/image/mattressIntex2.jpg";
 import hermo from "../../components/image/trekking-su-gecirmez-sikistirma-kilif-25-litre.jpg";
@@ -62,6 +64,9 @@ export const HomePage = () => {
   const languages = useSelector((state) => state.languages.currentLanguages);
 
   useEffect(() => {
+    localStorage.setItem('activeType', 0);
+    localStorage.setItem('activeTypeSale', 0);
+
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 630);
     };
@@ -86,76 +91,79 @@ export const HomePage = () => {
   const handleClickRent = () => {
     navigate("/rent");
   };
-  const handleClickTent = () => {
-    navigate("/tent");
+  const handleClickRentSky = () => {
+    navigate("/rent_sky");
   };
-  const handleClickSleepingbag = () => {
-    navigate("/sleepingbag");
-  };
-  const handleClickBackpack = () => {
-    navigate("/backpack");
-  };
-  const handleClickLantern = () => {
-    navigate("/lantern");
-  };
-  const handleClickGas = () => {
-    navigate("/gas");
-  };
-  const handleClickMat = () => {
-    navigate("/mat");
-  };
-  const handleClickTrekkingsticks = () => {
-    navigate("/trekkingsticks");
-  };
-  const handleClickDishes = () => {
-    navigate("/dishes");
-  };
-  const handleClickThermos = () => {
-    navigate("/bottle");
-  };
-  const handleClickKnife = () => {
-    navigate("/knife");
-  };
-  const handleClickChair = () => {
-    navigate("/chair");
-  };
-  const handleClickBuff = () => {
-    navigate("/buff");
-  };
-  const handleClickSocks = () => {
-    navigate("/socks");
-  };
+  // const handleClickTent = () => {
+  //   navigate("/tent");
+  // };
+  // const handleClickSleepingbag = () => {
+  //   navigate("/sleepingbag");
+  // };
+  // const handleClickBackpack = () => {
+  //   navigate("/backpack");
+  // };
+  // const handleClickLantern = () => {
+  //   navigate("/lantern");
+  // };
+  // const handleClickGas = () => {
+  //   navigate("/gas");
+  // };
+  // const handleClickMat = () => {
+  //   navigate("/mat");
+  // };
+  // const handleClickTrekkingsticks = () => {
+  //   navigate("/trekkingsticks");
+  // };
+  // const handleClickDishes = () => {
+  //   navigate("/dishes");
+  // };
+  // const handleClickThermos = () => {
+  //   navigate("/bottle");
+  // };
+  // const handleClickKnife = () => {
+  //   navigate("/knife");
+  // };
+  // const handleClickChair = () => {
+  //   navigate("/chair");
+  // };
+  // const handleClickBuff = () => {
+  //   navigate("/buff");
+  // };
+  // const handleClickSocks = () => {
+  //   navigate("/socks");
+  // };
   // const handleClickRaincoat = () => {
   //   navigate("/raincoat");
   // };
-  const handleClickSunglasses = () => {
-    navigate("/sunglasses");
-  };
-  const handleClickAir = () => {
-    navigate("/air");
-  };
-  const handleClickHermo = () => {
-    navigate("/hermo");
-  };
-  const handleClickAccessories = () => {
-    navigate("/accessories");
-  };
+  // const handleClickSunglasses = () => {
+  //   navigate("/sunglasses");
+  // };
+  // const handleClickAir = () => {
+  //   navigate("/air");
+  // };
+  // const handleClickHermo = () => {
+  //   navigate("/hermo");
+  // };
+  // const handleClickAccessories = () => {
+  //   navigate("/accessories");
+  // };
 
-  const handleClickTermoryukzak = () => {
-    navigate("/termoryukzak");
-  };
-  const handleClickSublimates = () => {
-    navigate("/sublimates");
-  };
-  const handleClickCoffee = () => {
-    navigate("/coffee");
-  };
-  const handleClickSupboard = () => {
-    navigate("/supboard");
-  };
-  const handleClickShoes = () => {
-    navigate("/shoes");
-  };
+  // const handleClickTermoryukzak = () => {
+  //   navigate("/termoryukzak");
+  // };
+  // const handleClickSublimates = () => {
+  //   navigate("/sublimates");
+  // };
+  // const handleClickCoffee = () => {
+  //   navigate("/coffee");
+  // };
+  // const handleClickSupboard = () => {
+  //   navigate("/supboard");
+  // };
+  // const handleClickShoes = () => {
+  //   navigate("/shoes");
+  // };
 
   const settings = {
     dots: true,
@@ -193,14 +201,21 @@ export const HomePage = () => {
 
   return (
     <div className="home-page__container">
-      <SliderMain />
-
+      {/* <SliderMain /> */}
+      <div class="header-section-alt">
+    <h2 class="rental-name" >AdjaraPeak</h2> 
+    <h1 class="main-title-alt">
+        <span class="orange-line">  Туристическое</span> <span class="orange-box">и</span> <span class="orange-line"> горнолыжное </span>     <span class="orange-line" >снаряжение</span>
+    </h1>
+    <p class="sub-title-alt">
+        <span class="highlight-alt">Сезон проката 2024–2025: </span>  
+        <span class="orange-box">  всё для активного отдыха!</span>
+    </p>
+</div>
       <div className="home-page__container-title">
-      {/* <h3 style={{top:50}}>Cайт обновляется, актуальные цены уточняйте в <a href="https://t.me/shpaksn" target="_blank" rel="noreferrer" style={{color:'rgba(0, 136, 204)'}}>Telegram</a> <a  href="https://www.instagram.com/adjarapeak/?igshid=YmMyMTA2M2Y%3D" target="_blank" rel="noreferrer" style={{color:'rgba(0, 136, 204)'}}>Instagram</a>  или по номеру телефона   <a href="tel:+995511147586">+995 511 147 586</a> </h3> */}
-
-        <h2>{languages==="RU"?'Основные категории':"Primary categories"} </h2>
+        <h2>ЗАБРОНИРУЙ, пока не расхватали!</h2>
       </div>
-      {isMobile ? (
+      {/* {isMobile ? (
         <div
           className="categories"
           style={{
@@ -209,37 +224,88 @@ export const HomePage = () => {
             width:'100%',
 
           }}
-        >
-          <div ref={ref} className="categories-item" onClick={handleClickSale}>
+        > */}
+
+
+
+          {/* <div ref={ref}  onClick={handleClickSale}>
             <a href="/sale">
               <img
-                src={rent}
+                   src={sky}
                 alt="adjara peak"
-                className="categories-item-img"
+             
               />
-              <div className="categories-item-title">
-                <div className="categories-item-title_back">
-                {languages==="RU"? 'Продажа снаряжения':"Sales equipment"}
+              <div >
+                <div >
+                 Продажа горнолыжного снаряжения
+                </div>
+              </div>
+            </a>
+          </div>
+          <div ref={ref}  onClick={handleClickSale}>
+            <a href="/sale">
+              <img
+                src={sky}
+                alt="adjara peak"
+           
+              />
+              <div >
+                <div >
+                 Продажа туристического снаряжения
                 </div>
               </div>
             </a>
           </div>
 
-          <div ref={ref} className="categories-item" onClick={handleClickRent}>
+          <div ref={ref}  onClick={handleClickRent}>
             <a href="/rent">
               <img
-                src={main}
+                src={sky}
                 alt="adjara peak"
-                className="categories-item-img"
+                
                 />
-              <div className="categories-item-title">
-                <div className="categories-item-title_back">
-                {languages==="RU"? 'Прокат снаряжения':"Rental equipment"}    
+              <div >
+                <div >
+               Прокат туристического снаряжения 
                 </div>
               </div>
             </a>
-          </div>
-          <div
+          </div> */}
+
+
+
+<div class="sale-container">
+<div ref={ref} onClick={handleClickSale} class="sale-item">
+    <a href="/sale">
+      <img src={eq} alt="adjara peak" class="sale-img"/>
+      <div class="sale-info">
+        <div class="sale-title"> <span class="highlight-rent">Продажа</span> туристического снаряжения  </div>
+      </div>
+    </a>
+  </div>
+
+  <div ref={ref} onClick={handleClickRentSky} class="sale-item">
+    <a href="/rent_sky">
+      <img src={sky} alt="adjara peak" class="sale-img"/>
+      <div class="sale-info">
+        <div class="sale-title"> <span  class="highlight-sale">Прокат</span> горнолыжного снаряжения</div>
+      </div>
+    </a>
+  </div>
+
+ 
+
+  <div ref={ref} onClick={handleClickRent} class="sale-item">
+    <a href="/rent">
+      <img src={eq2} alt="adjara peak" class="sale-img"/>
+      <div class="sale-info">
+        <div class="sale-title"><span class="highlight-rent">Прокат</span> туристического снаряжения</div>
+      </div>
+    </a>
+  </div>
+</div>
+
+          {/* <div
             ref={ref}
             className="categories-item"
             onClick={handleClickShoes}
@@ -425,7 +491,7 @@ export const HomePage = () => {
                 </div>
               </div>
             </a>
-          </div>
+          </div> */}
           {/* <div
             ref={ref}
             className="categories-item"
@@ -444,7 +510,7 @@ export const HomePage = () => {
               </div>
             </a>
           </div> */}
-          <div
+          {/* <div
             ref={ref}
             className="categories-item"
             onClick={handleClickTermoryukzak}
@@ -513,7 +579,7 @@ export const HomePage = () => {
                 </div>
               </div>
             </a>
-          </div>
+          </div> */}
           {/* <div
             ref={ref}
             className="categories-item"
@@ -532,7 +598,7 @@ export const HomePage = () => {
               </div>
             </a>
           </div> */}
-          <div
+          {/* <div
             ref={ref}
             className="categories-item"
             onClick={handleClickSunglasses}
@@ -913,7 +979,7 @@ export const HomePage = () => {
               </div>
             </a>
           </div> */}
-          <div
+          {/* <div
             ref={ref}
             className="categories-item"
             onClick={handleClickSunglasses}
@@ -988,9 +1054,9 @@ export const HomePage = () => {
                 <div className="categories-item-title_back">{languages==="RU"? ' SUP-доски':"SUP Boards"}</div>
               </div>
             </a>
-          </div>
-        </Slider>
-      )}
+          </div> */}
+        {/* </Slider> */}
+       {/* )}  */}
 
       {/* </div> */}
       {/* <HitSales /> */}

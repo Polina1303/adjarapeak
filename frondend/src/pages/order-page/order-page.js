@@ -13,7 +13,6 @@ export const OrderPage = () => {
   const history = useNavigate();
   const [orderSuccess, setOrderSuccess] = useState(false);
   const items = useSelector((state) => state.cart.itemsInCart);
-console.log(' orderSuccess',orderSuccess)
   if (items && items.length < 1) {
     return (
  orderSuccess?<div style={{marginTop:100}} >

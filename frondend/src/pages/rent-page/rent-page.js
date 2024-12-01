@@ -3,39 +3,42 @@ import { useNavigate } from "react-router-dom";
 import { RENT } from "../../components/product-range/rent";
 import { IoIosArrowBack } from "react-icons/io";
 import { CATEGORY_RENT } from "../../components/product-range/categoryRent";
-import { Menu} from 'antd';
+import { Menu } from 'antd';
 import { useState, useEffect } from "react";
-
 
 const items = CATEGORY_RENT.map((item, index) => ({
   key: index,
   label: item.title,
-  type:item.type
+  type: item.type
 }));
+
 
 export const RentPage = () => {
   const history = useNavigate();
   const [activeType, setActiveType] = useState(0);
-  const [active,setActive]=useState(RENT)
-
-  const handleClick = (e) => {
-    setActiveType(Number(e.key));
-
-  };
-
+  const [active, setActive] = useState(RENT);
 
   useEffect(() => {
-    const currentItems=RENT.filter(item=>{
-      return item.type===items[activeType].type
-    })
-if(currentItems.length===0){
-  setActive(RENT)
+    const storedActiveType = localStorage.getItem('activeType');
+    if (storedActiveType) {
+      setActiveType(Number(storedActiveType));
+    }
+  }, []);
 
-}else{
-  setActive(currentItems)
-}
-    // console.log('Current active type:', activeType);
+  const handleClick = (e) => {
+    const newActiveType = Number(e.key);
+    setActiveType(newActiveType);
+    localStorage.setItem('activeType', newActiveType);
+  };
+
+  const overflowedIndicator = <span>показать больше...</span>;
+
+  useEffect(() => {
+    const currentItems = RENT.filter(item => item.type === items[activeType].type);
+    setActive(currentItems.length === 0 ? RENT : currentItems);
+    console.log('Current active type:', activeType);
   }, [activeType]);
+
   return (
     <>
       <div className="back-button-cover">
@@ -44,19 +47,19 @@ if(currentItems.length===0){
         </button>
       </div>
 
-           <Menu
-          mode="horizontal"
-          defaultSelectedKeys={['0']}
-          items={items}
-          style={{ flex: 1, minWidth: 0, }}
-          onClick={handleClick}
-     
-        />
-     
+      <Menu
+        mode="horizontal"
+        selectedKeys={[`${activeType}`]} 
+        items={items}
+        style={{ flex: 1, minWidth: 0 }}
+        onClick={handleClick}
+        overflowedIndicator={overflowedIndicator}
+      />
+
       <div className="home-page__container">
         <div>
           <div className="title" id="home-page-rent">
-            ПРОКАТ СНАРЯЖЕНИЯ
+            ПРОКАТ ТУРИСТИЧЕСКОГО СНАРЯЖЕНИЯ
           </div>
           <div className="home-page-product">
             {active.map((rent) => (
