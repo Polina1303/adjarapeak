@@ -208,8 +208,8 @@ export const HomePage = () => {
         <span class="orange-line">  Туристическое</span> <span class="orange-box">и</span> <span class="orange-line"> горнолыжное </span>     <span class="orange-line" >снаряжение</span>
     </h1>
     <p class="sub-title-alt">
-        <span class="highlight-alt">Сезон проката 2024–2025: </span>  
-        <span class="orange-box">  всё для активного отдыха!</span>
+        <span class="highlight-alt">Горнолыжный сезон 2024–2025 </span>  
+        <span class="orange-box">  открыт!</span>
     </p>
 </div>
       <div className="home-page__container-title">

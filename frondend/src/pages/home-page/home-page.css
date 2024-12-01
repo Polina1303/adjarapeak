@@ -113,7 +113,7 @@
     padding: 10px 2px;
   }
 }
-@media (max-width: 385px) {
+@media (max-width: 392px) {
 
   .sale-title {
     font-size: 8px;
@@ -173,7 +173,7 @@
 
 
 .highlight-alt {
-  font-weight: 600;
+  font-weight: 300;
 }
 
 
@@ -204,6 +204,7 @@
 
   .sub-title-alt {
     font-size: 14px; 
+    /* display: flex; */
   }
 
   .orange-line {
