@@ -204,9 +204,9 @@ export const HomePage = () => {
       {/* <SliderMain /> */}
       <div class="header-section-alt">
     <h2 class="rental-name" >AdjaraPeak</h2> 
-    <h1 class="main-title-alt">
+    <p class="main-title-alt">
         <span class="orange-line">  Туристическое</span> <span class="orange-box">и</span> <span class="orange-line"> горнолыжное </span>     <span class="orange-line" >снаряжение</span>
-    </h1>
+    </p>
     <p class="sub-title-alt">
         <span class="highlight-alt">Горнолыжный сезон 2024–2025 </span>  
         <span class="orange-box">  открыт!</span>

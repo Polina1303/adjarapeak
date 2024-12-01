@@ -116,7 +116,7 @@
 @media (max-width: 392px) {
 
   .sale-title {
-    font-size: 10px;
+    font-size: 12px;
   }
   .sale-info {
     padding: 10px 0px;
@@ -174,7 +174,7 @@
 
 .highlight-alt {
   font-weight: 300;
-  font-size: 18px;
+ 
 }
 
 
@@ -184,11 +184,11 @@
   }
 
   .sub-title-alt {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .orange-line {
-    font-size: 18px; 
+    font-size: 16px; 
     padding: 0 2px; 
   }
 
@@ -200,20 +200,21 @@
 
 @media (max-width: 480px) {
   .main-title-alt {
-    font-size: 32px; 
+    font-size: 28px; 
   }
 
   .sub-title-alt {
-    font-size: 18px; 
+    font-size: 14px; 
     /* display: flex; */
   }
 
   .orange-line {
-    font-size: 18px; 
+    font-size: 15px; 
+    
   }
 
   .orange-box {
-    font-size: 18px; 
+    font-size: 12px; 
   }
 }
 
