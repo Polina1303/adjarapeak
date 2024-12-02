@@ -92,7 +92,7 @@ export const HomePage = () => {
     navigate("/rent");
   };
   const handleClickRentSky = () => {
-    navigate("/rent_sky");
+    navigate("/rent_ski");
   };
   // const handleClickTent = () => {
   //   navigate("/tent");
@@ -285,7 +285,7 @@ export const HomePage = () => {
   </div>
 
   <div ref={ref} onClick={handleClickRentSky} class="sale-item">
-    <a href="/rent_sky">
+    <a href="/rent_ski">
       <img src={sky} alt="adjara peak" class="sale-img"/>
       <div class="sale-info">
         <div class="sale-title"> <span  class="highlight-sale">Прокат</span> горнолыжного снаряжения</div>
