@@ -38,28 +38,18 @@ export const Buy = ({ product, page, discount }) => {
 
   return (
     <div className="container-items-price" onClick={handleAddToCart}>
-      {/* <div>
-        {product.oldPrice ? (
-          <b
-            className={`product-items__oldPrice ${
-              discount ? "discounted" : ""
-            }`}
-          >
-            {product.oldPrice}₾
-          </b>
-        ) : ( */}
-        <div style={{display:'flex',flexDirection:'row',alignItems:'center',justifyContent:'center'}}>
+  
+        <div style={{ display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'flex-end', 
+    justifyContent: 'center',}}>
           <b className="product-items__price">{product.price}₾</b>
-          {product.order&& <p style={{fontSize:'13px', marginLeft:'20px',  color:' #9f9d9df5'}}>под заказ</p>}
+          <p style={{ margin: '0 0 0 20px', color: '#9f9d9df5', lineHeight: '1', position: 'relative', top: '-2px' }}>
+  под заказ
+</p>
+
           </div>
-        {/* )}{" "}
-        {product.newPrice && (
-          <b className={`product-items__price ${discount ? "discounted" : ""}`}>
-            {product.newPrice}₾
-          </b>
-        )} */}
-      {/* </div> */}
-      {/* <b className="product-items__price">{product.price}₾</b> */}
+      
       <div className="add-to-cart-cover">
         {page ? (
           <div className="add-to-cart-page">
