@@ -44,9 +44,9 @@ export const Buy = ({ product, page, discount }) => {
     alignItems: 'flex-end', 
     justifyContent: 'center',}}>
           <b className="product-items__price">{product.price}₾</b>
-          <p style={{ margin: '0 0 0 20px', color: '#9f9d9df5', lineHeight: '1', position: 'relative', top: '-2px' }}>
+         {product.order&& <p style={{ margin: '0 0 0 20px', color: '#9f9d9df5', lineHeight: '1', position: 'relative', top: '-2px' }}>
   под заказ
-</p>
+</p>}
 
           </div>
       
