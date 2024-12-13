@@ -275,7 +275,7 @@ export const RENT_SKY = [
     {
       id: 3000156,
       title: "Защита спины",
-      img: "IMG_5908.JPG",
+      img: "ezgif-2-bbe929db9a.jpg",
       desc: "",
       category: "rent_sky",
       type:'protection',
