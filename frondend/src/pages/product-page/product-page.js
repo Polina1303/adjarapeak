@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 import { setCurrentProduct } from "../../redux/product/reducer";
 import { useNavigate, useParams } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
@@ -9,28 +9,26 @@ import "./product-page.css";
 import { RENT } from "../../components/product-range/rent";
 import { RENT_SKY } from "../../components/product-range/rent-sky";
 
-
 export const ProductPage = () => {
   const history = useNavigate();
   const dispatch = useDispatch();
   const params = useParams();
 
-
   const product = useSelector((state) => state.products.currentProduct);
-  console.log(product);
 
   useEffect(() => {
     const parsedProduct = PRODUCT.filter(
       (item) => item.id === Number(params.id)
     );
     const parsedRent = RENT.filter((item) => item.id === Number(params.id));
-    const parsedRentSky = RENT_SKY.filter((item) => item.id === Number(params.id));
+    const parsedRentSky = RENT_SKY.filter(
+      (item) => item.id === Number(params.id)
+    );
 
     if (parsedProduct.length > 0) {
       dispatch(setCurrentProduct(parsedProduct[0]));
     } else if (parsedRent.length > 0) {
       dispatch(setCurrentProduct(parsedRent[0]));
-    
     } else if (parsedRentSky.length > 0) {
       dispatch(setCurrentProduct(parsedRentSky[0]));
     } else {
@@ -48,7 +46,7 @@ export const ProductPage = () => {
           <IoIosArrowBack size={"25px"} /> Назад
         </button>
       </div>
-  
+
       <div className="product-container">
         <div className="product-page__wrapper">
           <div className="image-container">
@@ -60,7 +58,9 @@ export const ProductPage = () => {
           </div>
 
           <div className="product-info-container">
-            <h1 className="product-page__title">{product.title.toUpperCase()}</h1>
+            <h1 className="product-page__title">
+              {product.title.toUpperCase()}
+            </h1>
             <p className="product-text">{product.desc}</p>
             <p className="product-text">{product.shortly}</p>
             <ul className="column">

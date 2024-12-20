@@ -9,7 +9,6 @@ import "./rent-items.css";
 export const RentItems = ({ rent }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-console.log(' rent', rent.id)
   const handelClickImg = () => {
     dispatch(setCurrentProduct(rent));
     navigate(`/app/${rent.id}`);
@@ -19,8 +18,6 @@ console.log(' rent', rent.id)
     threshold: 0,
     triggerOnce: true,
   });
-
- 
 
   return (
     <div className="rent-items">
@@ -44,12 +41,9 @@ console.log(' rent', rent.id)
         </div>
         <span className="rent-items__title">{rent.title}</span>
         <p className="rent-items__desc">{rent.desc}</p>
-      
       </div>
-  
-<Rent rent={rent} />
 
+      <Rent rent={rent} />
     </div>
-    
   );
 };

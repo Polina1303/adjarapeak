@@ -1,26 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const localStorageLanguages = JSON.parse(localStorage.getItem('languages'))||'RU';
+const localStorageLanguages =
+  JSON.parse(localStorage.getItem("languages")) || "RU";
 
-console.log('localStorageLanguages',localStorageLanguages)
+// console.log('localStorageLanguages',localStorageLanguages)
 const getLocalCartData = () => {
-  const localCartData = localStorage.getItem('languages');
-  if (localCartData===JSON.stringify('ENG')) {
-    return 'ENG';
+  const localCartData = localStorage.getItem("languages");
+  if (localCartData === JSON.stringify("ENG")) {
+    return "ENG";
   } else {
-  
     return "RU";
   }
 };
 
-
 const languagesSlice = createSlice({
   name: "languages",
-  initialState:{currentLanguages:getLocalCartData ()},
+  initialState: { currentLanguages: getLocalCartData() },
   reducers: {
     updateCurrentLanguages: (state, action) => {
       state.currentLanguages = action.payload;
-      localStorage.setItem('languages', JSON.stringify(state.currentLanguages));
+      localStorage.setItem("languages", JSON.stringify(state.currentLanguages));
     },
   },
 });
