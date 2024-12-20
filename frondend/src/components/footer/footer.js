@@ -11,9 +11,17 @@ export const Footer = () => {
     <>
       <div className="footer-container">
         <ul className="footer-container-list">
-          <li>{languages==="RU"? 'Прокат без залога денежных средств и документов':"Rental without a deposit or documents"} </li>
+          <li>
+            {languages === "RU"
+              ? "Прокат без залога денежных средств и документов"
+              : "Rental without a deposit or documents"}{" "}
+          </li>
           {/* <li>{languages==="RU"? 'Бронирование без предоплаты':"Booking without prepayment"}</li> */}
-          <li>{languages==="RU"? 'Продажа, прокат и доставка "под заказ"':"Sales, rental, and delivery 'on order'"}</li>
+          <li>
+            {languages === "RU"
+              ? 'Продажа, прокат и доставка "под заказ"'
+              : "Sales, rental, and delivery 'on order'"}
+          </li>
           <li>
             <MdLocationPin size={25} color={"#de682d"} />
             <a
@@ -22,7 +30,9 @@ export const Footer = () => {
               rel="noreferrer"
               style={{ color: "rgba(34, 34, 34, 0.788)" }}
             >
-         {languages==="RU"? 'Батуми ул.Тбел-Абусеридзе, 38. (11:00-19:00)':"Batumi, 38 Tbel-Abuseridze Street. Monday-Saturday (11:00-19:00)"}   
+              {languages === "RU"
+                ? "Батуми ул.Тбел-Абусеридзе, 38. (11:00-20:00)"
+                : "Batumi, 38 Tbel-Abuseridze Street. Monday-Saturday (11:00-20:00)"}
             </a>
           </li>
           <li>
@@ -34,7 +44,7 @@ export const Footer = () => {
               +995 511 147 586
             </a>
           </li>
-            <li>Соцсети Adjara Peak / Adjpeak:</li>
+          <li>Соцсети Adjara Peak / Adjpeak:</li>
           <li>
             <div className="icon-footer">
               <a

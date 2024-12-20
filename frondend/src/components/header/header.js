@@ -9,40 +9,38 @@ import adjara from "../image/adjara2.png";
 import { useSelector } from "react-redux";
 import "./header.css";
 import { useDispatch } from "react-redux";
-import {useEffect, useState} from 'react'
+import { useEffect, useState } from "react";
 import Switch from "react-switch";
-import {updateCurrentLanguages} from '../../redux/languages/reducer'
+import { updateCurrentLanguages } from "../../redux/languages/reducer";
 
 export const Header = () => {
   const dispatch = useDispatch();
   const languages = useSelector((state) => state.languages.currentLanguages);
-  const [checked, setChecked] = useState(JSON.stringify(languages)===JSON.stringify('RU'));
-
-
+  const [checked, setChecked] = useState(
+    JSON.stringify(languages) === JSON.stringify("RU")
+  );
 
   const handleChange = (nextChecked) => {
     setChecked(!checked);
   };
 
-  useEffect(()=>{
-    if(JSON.stringify(languages)===JSON.stringify('RU')){
+  useEffect(() => {
+    if (JSON.stringify(languages) === JSON.stringify("RU")) {
       setChecked(true);
-    }else{
+    } else {
       setChecked(false);
     }
-  },[languages])
+  }, [languages]);
 
- useEffect(()=>{
+  useEffect(() => {
+    if (checked) {
+      dispatch(updateCurrentLanguages("RU"));
+    } else {
+      dispatch(updateCurrentLanguages("ENG"));
+    }
 
-  if (checked){
-    dispatch(updateCurrentLanguages('RU'))
-  }else{
-    dispatch(updateCurrentLanguages('ENG'))
-  }
-
-const a= localStorage.getItem('languages')
-
- },[checked])
+    const a = localStorage.getItem("languages");
+  }, [checked]);
 
   return (
     <div className="header">
@@ -58,10 +56,17 @@ const a= localStorage.getItem('languages')
           target="_blank"
           rel="noreferrer"
         >
-         {languages==='RU'? <>Батуми ул.Тбел-Абусеридзе, 38
-          <p className="work">(11:00-19:00)</p></>:<>
-Batumi, Tbel-Abuseridze St., 38
-          <p className="work">Monday-Saturday (11:00-19:00)</p></>} 
+          {languages === "RU" ? (
+            <>
+              Батуми ул.Тбел-Абусеридзе, 38
+              <p className="work">(11:00-20:00)</p>
+            </>
+          ) : (
+            <>
+              Batumi, Tbel-Abuseridze St., 38
+              <p className="work">Monday-Saturday (11:00-20:00)</p>
+            </>
+          )}
         </a>
       </div>
       <div className="number">
@@ -91,7 +96,7 @@ Batumi, Tbel-Abuseridze St., 38
         >
           <FaOdnoklassnikiSquare className="icon-odnoklassniki" />
         </a> */}
-      {/* <div className="switch">
+        {/* <div className="switch">
       <label htmlFor="material-switch" id="switch-label">
      {languages}  
       </label>
@@ -120,6 +125,5 @@ Batumi, Tbel-Abuseridze St., 38
         <CartBlock />
       </div>
     </div>
-
   );
 };

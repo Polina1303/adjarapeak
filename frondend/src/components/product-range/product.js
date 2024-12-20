@@ -5,7 +5,7 @@ export const PRODUCT = [
     img: "IMG_6870.JPG",
     desc: "Shark Fit",
     category: "skigoggles",
-    price: 55,
+    price: 70,
     column: [
       "Размер: Универсальный",
       "Вид линзы: Одинарные",
@@ -22,7 +22,7 @@ export const PRODUCT = [
     img: "IMG_6872.JPG",
     desc: "Shark Fit",
     category: "skigoggles",
-    price: 55,
+    price: 70,
     column: [
       "Размер: Универсальный",
       "Вид линзы: Одинарные",
@@ -39,7 +39,7 @@ export const PRODUCT = [
     img: "IMG_6873.JPG",
     desc: "Shark Fit",
     category: "skigoggles",
-    price: 55,
+    price: 70,
     column: [
       "Размер: Универсальный",
       "Вид линзы: Одинарные",
@@ -56,7 +56,7 @@ export const PRODUCT = [
     img: "IMG_6874.JPG",
     desc: "Shark Fit",
     category: "skigoggles",
-    price: 55,
+    price: 70,
     column: [
       "Размер: Универсальный",
       "Вид линзы: Одинарные",
