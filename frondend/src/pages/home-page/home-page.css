@@ -16,7 +16,7 @@
   background-color: #fff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  width: calc(25% - 20px); 
+  width: calc(25% - 5px); 
   cursor: pointer;
   transition: transform 0.3s ease;
 }
@@ -70,7 +70,7 @@
 /* Для планшетов и больших экранов: 3 элемента в ряд */
 @media (max-width: 1024px) {
   .sale-item {
-    width: calc(50% - 20px); 
+    width: calc(50% - 10px); 
   }
 }
 
@@ -109,18 +109,18 @@
   .sale-title {
     font-size: 10px;
   }
-  .sale-info {
-    padding: 10px 2px;
-  }
+  /* .sale-info {
+    padding: 20px 5px;
+  } */
 }
 @media (max-width: 392px) {
 
-  .sale-title {
+  /* .sale-title {
     font-size: 12px;
   }
   .sale-info {
     padding: 10px 0px;
-  }
+  } */
 }
 
 
