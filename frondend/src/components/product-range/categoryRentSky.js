@@ -8,7 +8,7 @@ export const CATEGORY_RENT_SKY = [
     type: "set",
   },
   {
-    title: "ЛЫЖЫ",
+    title: "ЛЫЖИ",
     type: "sky",
   },
   {
@@ -20,7 +20,7 @@ export const CATEGORY_RENT_SKY = [
     type: "jacket",
   },
   {
-    title: "КОМБИНЕЗОН",
+    title: "КОМБИНЕЗОНЫ",
     type: "overall",
   },
   {
