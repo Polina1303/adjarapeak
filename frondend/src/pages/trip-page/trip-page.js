@@ -2,7 +2,33 @@ import React from "react";
 import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import "./trip-page.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
+import { Navigation, Pagination } from "swiper/modules";
+import photo1 from "./imagegoderdi/IMG_4170.jpg";
+import photo2 from "./imagegoderdi/IMG_4187.jpg";
+import photo3 from "./imagegoderdi/IMG_4198.jpg";
+import photo4 from "./imagegoderdi/IMG_6602.jpg";
+import photo5 from "./imagegoderdi/IMG_6990.jpg";
+import photo6 from "./imagegoderdi/IMG_7019.jpg";
+import photo7 from "./imagegoderdi/IMG_7021.jpg";
+import photo8 from "./imagegoderdi/IMG_7054.jpg";
+import photo9 from "./imagegoderdi/IMG_7064.JPG";
+
+const photos = [
+  photo5,
+  photo4,
+  photo6,
+  photo3,
+  photo9,
+  photo8,
+  photo7,
+  photo1,
+  photo2,
+];
 export const TripPage = () => {
   const history = useNavigate();
 
@@ -12,7 +38,68 @@ export const TripPage = () => {
         <IoIosArrowBack size={"25px"} /> Назад
       </button>
       <h1>ГОДЕРДЗИ С ADJARA PEAK</h1>
+
       <div class="point">
+        <div
+          style={{
+            maxWidth: "1200px",
+            margin: "0 auto",
+            padding: "20px",
+            boxSizing: "border-box",
+          }}
+        >
+          <Swiper
+            modules={[Navigation, Pagination]}
+            navigation
+            pagination={{ clickable: true }}
+            spaceBetween={10}
+            slidesPerView={3} // По умолчанию показываем 3 фото
+            breakpoints={{
+              // Адаптивные настройки
+              0: {
+                // Для маленьких экранов
+                slidesPerView: 1,
+              },
+              768: {
+                // Для планшетов
+                slidesPerView: 2,
+              },
+              1024: {
+                // Для больших экранов
+                slidesPerView: 3,
+              },
+            }}
+            style={{ width: "100%" }}
+          >
+            {photos.map((photo, index) => (
+              <SwiperSlide key={index}>
+                <div
+                  style={{
+                    width: "100%",
+                    height: "350px", // Устанавливаем фиксированную высоту для слайдов
+                    overflow: "hidden",
+                    borderRadius: "8px",
+                    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    backgroundColor: "#f0f0f0", // Фон для пустого пространства
+                  }}
+                >
+                  <img
+                    src={photo}
+                    alt={`Photo ${index + 1}`}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover", // Можно заменить на 'contain', если хотите видеть всю фотографию
+                    }}
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
         <h2>🎿Что включено?</h2>
         <ul>
           <li>

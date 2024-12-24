@@ -16,7 +16,7 @@
   background-color: #fff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  width: calc(25% - 5px); 
+  width: calc(24% - 5px); 
   cursor: pointer;
   transition: transform 0.3s ease;
 }
@@ -71,6 +71,9 @@
 @media (max-width: 1024px) {
   .sale-item {
     width: calc(50% - 10px); 
+  }
+  .sale-item:hover {
+    transform: 0;
   }
 }
 
