@@ -4,12 +4,24 @@ export const CATEGORY_PRODUCT = [
     // type:'all',
   },
   {
-    title: "ОЧКИ ГОРНОЛЫЖНЫЕ",
+    title: "МАСКА/ШЛЕМ ГОРНОЛЫЖНЫЕ",
     type: "skigoggles",
+  },
+  {
+    title: "ТЕРМОБЕЛЬЕ",
+    type: "thermalUnderwear",
   },
   {
     title: "БАФФЫ / БАЛАКЛАВЫ",
     type: "buff",
+  },
+  {
+    title: "ПЕРЧАТКИ",
+    type: "gloves",
+  },
+  {
+    title: "НОСКИ",
+    type: "socks",
   },
   {
     title: "ПАЛАТКИ",
