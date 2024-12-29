@@ -246,6 +246,34 @@ export const PRODUCT = [
     ],
   },
   {
+    id: 100999953334414100,
+    title: "Термобелье женское",
+    img: "gCEXMm7YJAle16EPmlI0ZGtmM14tfX.jpg",
+    desc: "S, M, L",
+    category: "thermalUnderwear",
+    price: 165,
+    column: [
+      "Нижнее белье Viking Base Layer ilsa Lady Set black имеет полоски от пота и усиления на коленях и локтях, которые защищают их от ударов.",
+      "Техническое и эластичное термоактивное белье гарантирует хороший отвод влаги и правильное сохранение тепла в холодные и морозные дни.",
+      "Его можно использовать как дополнительный слой или как самостоятельную одежду для различных занятий.",
+      "Бесшовная структура позволяет нижнему белью идеально прилегать к телу и не сминаться.",
+    ],
+  },
+  {
+    id: 93334414100,
+    title: "Термобелье женское",
+    img: "nqhspqU6Qytpx1xvIBTu4ycpUqkhTV.jpg",
+    desc: "S, M, L",
+    category: "thermalUnderwear",
+    price: 165,
+    column: [
+      "Нижнее белье Viking Ilsa имеет полоски от пота и усиления на коленях и локтях, которые защищают их от ударов.",
+      "Техническое и эластичное термоактивное белье гарантирует хороший отвод влаги и правильное сохранение тепла в холодные и морозные дни.",
+      "Его можно использовать как дополнительный слой или как самостоятельную одежду для различных занятий.",
+      "Бесшовная структура позволяет нижнему белью идеально прилегать к телу и не сминаться.",
+    ],
+  },
+  {
     id: 100053234110,
     title: "БАФФ",
     img: "picture.png",
@@ -371,6 +399,7 @@ export const PRODUCT = [
     descEng: "2-person, double-layer 130*210*107",
     desc: "2-х местная двухслойная 130*210*107",
     category: "tent",
+    order: true,
     price: 230,
     shortlyEng:
       "Simple and easy to set up, this eco-friendly tent is designed for your camping trips for 2 people. An environmentally friendly and affordable tent. Thanks to the freestanding dome-shaped structure, you can move the tent to choose the most suitable camping spot for you.",
@@ -1083,6 +1112,7 @@ export const PRODUCT = [
     img: "S545914f908.jpg",
     desc: "треугольные ( 1 ШТ )",
     category: "accessories",
+    order: true,
     price: 3,
     column: ["Для песка", "Вес: 13 г"],
   },
@@ -1102,6 +1132,7 @@ export const PRODUCT = [
     desc: "круглые ( 10 ШТ )",
     category: "accessories",
     price: 29,
+    order: true,
     column: ["18 см"],
   },
   {
@@ -1194,6 +1225,24 @@ export const PRODUCT = [
       "Size: 190*72 cm | Zipper from the neck",
       "Volume: 9 liters",
       "Filler: 100% polyester.",
+    ],
+  },
+  {
+    id: 1030016,
+    title: "СПАЛЬНЫЙ МЕШОК QUECHUA ARPENAZ",
+    titleEng: "SLEEPING BAG QUECHUA ARPENAZ",
+    img: "260654.png",
+    descEng: "190*72cm from +5 to +10°C",
+    desc: "190*72см от +5 до +10",
+    category: "sleepingbag",
+    price: 140,
+    shortly:
+      "Этот эко-спальный мешок предназначен для пользователей, которые хотят комфортно спать при температуре до 15°C во время кемпинга.",
+    column: [
+      "Вес: 1300гр",
+      "Размер: 190*72 см | Молния от шеи",
+      "Объем: 15 л",
+      "Наполнитель: 100% полиэстер",
     ],
   },
   {
@@ -1571,7 +1620,6 @@ export const PRODUCT = [
     desc: "экологичный рюкзак",
     category: "backpack",
     price: 115,
-    order: true,
     shortlyEng:
       "The back panel and straps with overlays, 2 support loops on the straps, a chest strap. Side compression straps for optimal load distribution.",
     shortly:
@@ -1605,6 +1653,7 @@ export const PRODUCT = [
     img: "backpack10.jpg",
     desc: "Travel100 FORCLAZ",
     category: "backpack",
+    order: true,
     price: 294,
     shortlyEng:
       "A backpack for all your first outdoor adventures, whether it's a mountain hike or a journey to the ends of the earth.",
@@ -1640,6 +1689,7 @@ export const PRODUCT = [
     img: "ryukzak-fit-50-l.jpg",
     desc: "Easyfit MT100 FORCLAZ",
     category: "backpack",
+    order: true,
     price: 355,
     column: [
       "Объем: 50 л",
@@ -1774,6 +1824,7 @@ export const PRODUCT = [
     descEng: "75+10L, includes rain cover",
     desc: "75+10L В комплекте дождевик",
     category: "backpack",
+    order: true,
     price: 310,
     column: [
       "Объем: 75+10 л",
@@ -2092,7 +2143,6 @@ export const PRODUCT = [
     descEng: "180*50*0,7сm",
     category: "mat",
     price: 35,
-    order: true,
     column: [
       "Размеры: 180*50*0,7 см.",
       "Вес: 210 грамм",
@@ -2117,7 +2167,6 @@ export const PRODUCT = [
     descEng: "180*60*1 сm",
     category: "mat",
     price: 44,
-    order: true,
     column: [
       "Размеры: 180*60*0,7 см.",
       "Вес: 230 грамм",
@@ -2312,7 +2361,7 @@ export const PRODUCT = [
     descEng: "",
     category: "mat",
     price: 230,
-
+    order: true,
     column: [
       "Слой утеплителя толщиной 5 см  для защиты от неровностей местности и холода.",
       "Вес: 320 г",
@@ -2331,7 +2380,7 @@ export const PRODUCT = [
     descEng: "",
     category: "mat",
     price: 175,
-
+    order: true,
     column: [
       "Слой утеплителя толщиной 6 см  для защиты от неровностей местности и холода.",
       "Вес: 400 г",
@@ -2438,6 +2487,7 @@ export const PRODUCT = [
     desc: "Комплекст из 2шт",
     category: "trekkingsticks",
     price: 119,
+    order: true,
     shortlyEng:
       "Simple push-pin adjustment system (with buttons) 110/115/120/125/130 cm.",
     shortly:
@@ -2472,7 +2522,7 @@ export const PRODUCT = [
     desc: "Комплекст из 2шт",
     category: "trekkingsticks",
     price: 96,
-
+    order: true,
     column: [
       "Трехсекционное древко из качественного алюминиевого сплава 6061",
       "Эргономичная рукоятка из резины",
@@ -2572,7 +2622,7 @@ export const PRODUCT = [
     descEng: "Set of 2, made of duralumin",
     desc: "Комплекст из 2шт",
     category: "trekkingsticks",
-    price: 120,
+    price: 125,
     shortly: "",
     column: [
       "Вес (г / шт): 250",
@@ -2595,6 +2645,7 @@ export const PRODUCT = [
     desc: "FORCIAZ (KOMПЛЕКТ ИЗ 2 ШТ)",
     descEng: '"FORCIAZ, Set of 2',
     category: "trekkingsticks",
+    order: true,
     price: 16,
     column: [
       "Основной компонент - 95% резина синтетическая, 5% сталь",
@@ -2747,6 +2798,7 @@ export const PRODUCT = [
     img: "media-600x600.jpg",
     desc: "Gri - MT 50",
     category: "hermo",
+    order: true,
     price: 49,
     column: [
       "Ткань ПВХ 100% водонепроницаемая. Герметичные швы.",
@@ -3201,7 +3253,6 @@ export const PRODUCT = [
     descEng: "Campsor (folding)",
     category: "gas/burner",
     price: 49,
-    order: true,
     column: ["Материал: Алюминий", "Вес: 150 гр", "Пьезоподжиг"],
     columnEng: ["Material: Aluminum", "Weight: 150 g", "Piezo ignition"],
   },
@@ -3545,6 +3596,7 @@ export const PRODUCT = [
     img: "IMG_9941.JPG",
     desc: "300 люмен",
     category: "lantern",
+    order: true,
     price: 114,
     column: [
       "Световой поток: до 300 люмен",
@@ -3788,12 +3840,28 @@ export const PRODUCT = [
   //   ],
   // },
   {
+    id: 1003433094,
+    title: "Термокружка STANLEY 0,9L",
+    img: "2024-12-29.png",
+    desc: "черный, синий, розовый, оранжевый",
+    category: "termoryukzak",
+    price: 136,
+    column: [
+      "Двойные стенки стакана Flip Straw Tumbler сохраняют содержимое полностью прохладным в течение нескольких часов и предотвращают протекание бутылки.",
+      "V-образная форма бутылки позволяет поместить ее в любой большой подстаканник, что делает ее идеальной для питья в машине и в тренажерном зале. Складная ручка делает работу еще проще, ведь ее можно легко переносить с места на место.",
+      "Что делает эту бутылку совершенно уникальной, так это то, что стакан для соломинок IceFlow™ изготовлен из переработанного пластика, добытого в океане.",
+      "Нержавеющая сталь 18/8, без BPA.",
+      "Непротекающая соломинка",
+    ],
+  },
+  {
     id: 10033094,
     title: "TEPMOC STANLEY CLASSIC - 1 Л",
     img: "TEPMOCSTANIEY.jpg",
     desc: "Vacuum Bottle",
     category: "termoryukzak",
     price: 159,
+    order: true,
     column: [
       "Имеет прочный двухслойный корпус, вакуумную термоизоляцию, устойчив к ударам и падениям",
       "Оснащен складной ручкой, поэтому термос удобно держать в одной руке, а также наливать напитки",
@@ -4003,6 +4071,7 @@ export const PRODUCT = [
     img: "kamp-esnek-sogutucu-10l.jpg",
     desc: "QUECHUA 10L",
     category: "termoryukzak",
+    order: true,
     price: 59,
     column: [
       "Сохраняет продукты холодными в течение 6 часов без лотка для льда и до 6 часов с льдом (вес льда - 600 г).",
@@ -4084,6 +4153,7 @@ export const PRODUCT = [
     descEng: "1 pot, 2 deep plates, 2 sets of cutlery",
     desc: "для 2 человек",
     category: "dishes",
+    order: true,
     price: 109,
     column: [
       "Объем: 1,6 л",
@@ -4317,6 +4387,7 @@ export const PRODUCT = [
     img: "s-l960.webp",
     desc: "нержавеющая сталь",
     category: "dishes",
+    order: true,
     price: 19,
     column: [],
     columnEng: [],
@@ -4329,7 +4400,6 @@ export const PRODUCT = [
     desc: "QUECHUA 0,4 литра ",
     category: "dishes",
     price: 32,
-    order: true,
     column: [
       "2 ручки. Мерные деления внутри",
       "Выполнена из сверхпрочной нержавеющей стали",
@@ -4700,6 +4770,22 @@ export const PRODUCT = [
       "Этот нож относится к серии 'TRADITIONAL' и имеет номер N°09. Он был разработан Джозефом Опинелем в 1896 году и считается одним из первых ножей в этой серии.",
     ],
   },
+  // {
+  //   id: 11430099,
+  //   title: "СКЛАДНОЙ НОЖ",
+  //   img: "opinel.jpeg",
+  //   desc: "INOX OPINEL 7/8 CM",
+  //   category: "knife",
+  //   price: 70,
+  //   column: [
+  //     "Вес: 57 г.",
+  //     "Длина лезвия: 9 см",
+  //     "Общая длина: 21 см",
+  //     "Тип стали: 12(27 SANDVIK) / Твердость: 57-58 HRC",
+  //     "Очень устойчиво к ржавчине",
+  //     "Этот нож относится к серии 'TRADITIONAL' и имеет номер N°09. Он был разработан Джозефом Опинелем в 1896 году и считается одним из первых ножей в этой серии.",
+  //   ],
+  // },
   {
     id: 100098,
     title: "СКЛАДНОЙ ОХОТНИЧИЙ НОЖ",
@@ -4835,6 +4921,7 @@ export const PRODUCT = [
     title: "Карманный швейцарский нож",
     img: "1_org_zoom.png",
     desc: "7 функций",
+    order: true,
     category: "knife",
     price: 52,
     column: [""],
@@ -5541,6 +5628,34 @@ export const PRODUCT = [
       "Эта эластичная сбруя — удобная альтернатива ношению бинокля на шее.",
       "Состав материала/ингредиенты: Тесьма 50% синтетический каучук, 50% полиэтилентерефталат (ПЭТ)",
       "",
+    ],
+  },
+  {
+    id: 198040900132,
+    title: "Портативный бинокль",
+    img: "f48b5fe5.png",
+    desc: "с объективом 21 мм и призмой 8х21",
+    category: "accessories",
+    price: 59,
+    shortly: "",
+    column: [
+      "Увеличение бинокля 8x",
+      "Диаметр объектива, мм 21",
+      "Реальный угол зрения, 8.2",
+    ],
+  },
+  {
+    id: 19804094300132,
+    title: "Портативный бинокль",
+    img: "269979ik.png",
+    desc: "с объективом 30 мм и призмой 10х22",
+    category: "accessories",
+    price: 65,
+    shortly: "",
+    column: [
+      "Увеличение бинокля 8x",
+      "Диаметр объектива, мм 21",
+      "Реальный угол зрения, 8.2",
     ],
   },
   // {
