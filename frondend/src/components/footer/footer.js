@@ -4,6 +4,7 @@ import { BsInstagram, BsTelegram } from "react-icons/bs";
 import { AiOutlineWhatsApp, AiOutlinePhone } from "react-icons/ai";
 
 import { useSelector } from "react-redux";
+import { GoogleMapComponent } from "../footer/googlemaps";
 
 export const Footer = () => {
   const languages = useSelector((state) => state.languages.currentLanguages);
@@ -64,28 +65,11 @@ export const Footer = () => {
               >
                 <AiOutlineWhatsApp className="icon-whatsApp-footer" />
               </a>
-              {/* <a
-                href="https://vk.com/adjarapeak"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <SlSocialVkontakte className="icon-vk-footer" />
-              </a>
-              <a
-                href="https://ok.ru/group/70000002578399"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FaOdnoklassnikiSquare className="icon-odnoklassniki-footer" />
-              </a> */}
             </div>
           </li>
         </ul>
         {/* <div className="footer-description">
-          <span className="footer-description-text">
-          {languages==="RU"? '  Adjara Peak / Adjpeak':"Adjara Peak - the first store/rental service for tourist equipment in Adjara. We began our activities on July 1, 2022, with the ambitious goal of introducing tourists to the mountains of Adjara on a large scale! In these 9 months, we have met the needs of more than 600 clients, received 86 positive reviews, and gained about 1900 followers on social media. We have brought in world-renowned brands such as Quechua, Forclaz, Btrace, Naturehike, Stanley, Petzl, and Campsor, and have grown to offer 100 items for sale and 45 for rent! We are constantly growing thanks to you! Thank you for your trust!"}
-          
-          </span>
+          <GoogleMapComponent />
         </div> */}
       </div>
     </>

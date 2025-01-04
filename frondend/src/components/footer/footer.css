@@ -191,3 +191,10 @@ padding-bottom: 20px;
     width: 80%;
   }
 }
+
+
+.google-map-container {
+  margin: 0 auto;
+  width: 80%;
+  height: 400px;
+}
