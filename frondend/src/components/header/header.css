@@ -1,8 +1,9 @@
 .header {
-  padding-top: 10px;
-  height: 60px;
+  /* padding: 10px 20px; */
+  height: auto;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
@@ -10,227 +11,102 @@
   background-color: #fff;
   z-index: 100;
   width: 100%;
+  flex-wrap: wrap;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-
-
-.instagram {
-  display: inline-block;
-  width: 28px;
-  height: 28px;
-  text-align: center;
-  padding: 3px;
-  border-radius: 5px;
-  color: #fff;
-  font-size: 220px;
-  line-height: 250px;
-  vertical-align: middle;
-  background: #f68632;
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);
-}
-
-.icon-telegram {
-  color: #f68632;
-  width: 28px;
-  height: 28px;
-  padding: 3px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(125, 124, 124, 0.5);
-}
-
-.icon-whatsApp {
-  color: white;
-  width: 28px;
-  height: 28px;
-  padding: 3px;
-  border-radius: 5px;
-  background-color: #f68632;
-  box-shadow: 0 0 10px rgba(125, 124, 124, 0.5);
-}
-.icon-odnoklassniki {
-  color: white;
-  width: 28px;
-  height: 28px;
-  padding: 3px;
-  border-radius: 5px;
-  background-color: #f68632;
-  box-shadow: 0 0 10px rgba(125, 124, 124, 0.5);
-}
-.icon-vk {
-  color: white;
-  width: 28px;
-  height: 28px;
-  padding: 3px;
-  border-radius: 5px;
-  background-color: #f68632;
-  box-shadow: 0 0 10px rgba(125, 124, 124, 0.5);
-}
-
-.work {
-  margin-top: -1px;
-}
-
-
-.switch{
-  display:flex;
+.wrapper {
+  display: flex;
   align-items: center;
-  margin-bottom: 15px;
+}
+
+.location,
+.number {
+  font-size: 14px;
+  margin: 5px 10px;
+  text-align: center;
 }
 
 .icon {
   display: flex;
-  justify-content: space-around;
-  grid-gap: 20px;
+  gap: 15px;
+}
+
+.instagram,
+.icon-telegram,
+.icon-whatsApp {
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+  border-radius: 5px;
+  font-size: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+color: white;
+  background-color: #f68632;
+  box-shadow: 0 0 10px rgba(125, 124, 124, 0.5);
+}
+
+.icon-telegram {
+  color: #f68632;
+  background: transparent;
+}
+
+.cart {
+  margin: 0 10px;
 }
 
 @media only screen and (max-width: 785px) {
-  .icon-odnoklassniki {
-    display: none;
-  }
-  .icon-vk {
-    display: none;
-  }
-  .number {
-    width: 300px;
-  }
-  .cart {
-    margin-right: 20px;
-   
-  }
   .header {
-    height: 85px;
-  }
-}
-
-
-@media only screen and (max-width: 696px) {
-  .location {
-    font-size: 15px;
+    flex-wrap: wrap;
+    padding: 10px;
   }
   .number {
-    font-size: 15px;
+    flex: 1 1 100%;
+    text-align: right;
   }
 }
+
 @media only screen and (max-width: 654px) {
   .location {
-    font-size: 14px;
+    font-size: 12px;
   }
   .number {
-    font-size: 14px;
-    margin-right: 25px;
-  }
-  .instagram {
-    margin-left: -13px;
-  }
-
-  .icon-telegram {
-    margin-left: -13px;
-  }
-  .icon-whatsApp {
-    margin-left: -13px;
+    font-size: 12px;
   }
 }
 
-
-@media only screen and (max-width: 615px) {
+/* @media only screen and (max-width: 615px) {
   .wrapper {
-    position: absolute;
-    left: 10px;
+    flex: 1 1 100%;
+    justify-content: center;
   }
   .header {
-    display: flex;
-    flex-wrap: wrap;
-    height: 100px;
-    justify-content: flex-end;
-  }
-  .location {
-    margin-left: 50px;
-    margin-right: 35px;
-    font-size: 12px;
-  }
-  .number {
-    margin-right: 2px;
-    font-size: 12px;
-  }
- 
-}
-@media only screen and (max-width: 579px) {
-  .number {
-    margin-right: -93px;
-  }
-}
-@media only screen and (max-width: 510px) {
-  .number {
-    margin-right: -193px;
-  }
-}
-@media only screen and (max-width: 469px) {
-  .header {
-    display: flex;
-    flex-wrap: wrap;
-    height: 60px;
-  }
-  .location {
-    display: none;
-  }
-  .number {
-    display: none;
+    flex-direction: column;
+    align-items: center;
   }
   .icon {
-    margin-right: 120px;
-    margin-top: 10px;
-    z-index: 5;
-  }
-  .cart {
-    position: absolute;
-    margin-right: -18px;
-    margin-top: 10px;
-  }
-  .instagram {
-    margin-left: -15px;
-  }
-  .icon-telegram {
-    margin-left: -15px;
-  }
-  .icon-whatsApp {
-    margin-left: -15px;
-  }
-   .switch{
-    margin-left: -15px;
-  } 
-}
-/* @media only screen and (max-width: 453px) {
-  .icon {
-    margin-right: 140px;
-  }
-  .instagram {
-    margin-left: -10px;
-  }
-  .icon-telegram {
-    margin-left: -10px;
-  }
-  .icon-whatsApp {
-    margin-left: -10px;
+    gap: 10px;
   }
 } */
 
-@media only screen and (max-width: 450px) {
-  .instagram {
-   display: none;
-  }
-  .icon-telegram {
+@media only screen and (max-width: 615px) {
+  .location {
     display: none;
   }
-  .icon-whatsApp {
+  .number {
     display: none;
   }
-  .switch{
-    margin-left: 70px;
+  .cart {
+    position: relative;
   }
 }
 
-.number {
-  margin-top: 8px;
+@media only screen and (max-width: 450px) {
+  .icon {
+    display: none;
+  }
 }
 
 

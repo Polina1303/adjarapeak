@@ -55,7 +55,11 @@ export const Footer = () => {
               >
                 <BsInstagram className="instagram-footer" />
               </a>
-              <a href="https://t.me/shpaksn" target="_blank" rel="noreferrer">
+              <a
+                href="https://t.me/adjarapeak/229"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <BsTelegram className="icon-telegram-footer" />
               </a>
               <a
