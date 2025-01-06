@@ -46,7 +46,7 @@ export const PRODUCT = [
     ],
   },
   {
-    id: 10304032343110,
+    id: 1030403237743110,
     title: "Маска",
     img: "4181e24a-ebc3-4f13-a857-f9b67a82568e.webp",
     desc: "",

@@ -295,8 +295,8 @@
 }
 
 .home-page__container {
-  margin-top: 20px;
-
+  /* margin-top: 10px; */
+margin-bottom: 10px;
 }
 
 .home-page__container-title {
@@ -484,3 +484,4 @@
     color: #f68632;
     font-weight: bold;
 }
+
