@@ -73,7 +73,7 @@ export const RentPage = () => {
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           style={{
-            width: "99%",
+            width: "95%",
             padding: "10px",
             fontSize: "16px",
             border: "1px solid #ccc",
