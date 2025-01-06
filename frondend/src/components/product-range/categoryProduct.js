@@ -8,7 +8,7 @@ export const CATEGORY_PRODUCT = [
     type: "skigoggles",
   },
   {
-    title: "ТЕРМОБЕЛЬЕ",
+    title: "ТЕРМОБЕЛЬЕ/ЗАЩИТА",
     type: "thermalUnderwear",
   },
   {
