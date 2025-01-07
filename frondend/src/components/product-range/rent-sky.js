@@ -177,7 +177,6 @@ export const RENT_SKY = [
     column: [
       "Black Fire 110 см",
       "Raisign 130 см",
-      "Stunt CrazzyCreek 140 см",
       "Oxygen Fascination 144 см",
       "Division23 147 см",
       "Palmer 150 см",
@@ -227,7 +226,6 @@ export const RENT_SKY = [
       "Размер ботинок: 34, 35, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47",
       "Black Fire 110 см",
       "Raisign 130 см",
-      "Stunt CrazzyCreek 140 см",
       "Oxygen Fascination 144 см",
       "Division23 147 см",
       "Palmer 150 см",
@@ -268,7 +266,6 @@ export const RENT_SKY = [
       "Сноуборды:",
       "Black Fire 110 см",
       "Raisign 130 см",
-      "Stunt CrazzyCreek 140 см",
       "Oxygen Fascination 144 см",
       "Division23 147 см",
       "Palmer 150 см",

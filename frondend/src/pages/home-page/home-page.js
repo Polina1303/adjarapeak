@@ -63,7 +63,7 @@ export const HomePage = () => {
   return (
     <div className="home-page__container">
       <div class="header-section-alt">
-        <h2 class="rental-name">AdjaraPeak</h2>
+        <h2 class="rental-name">Adjara Peak</h2>
         <p class="main-title-alt">
           <span class="orange-line"> Туристическое</span>{" "}
           <span class="orange-box">и</span>{" "}
@@ -86,7 +86,7 @@ export const HomePage = () => {
             <div class="sale-info">
               <div class="sale-title">
                 <span class="highlight-sale">Горнолыжные</span>
-                <br /> выезды с AdjaraPeak
+                <br /> выезды с Adjara Peak
               </div>
             </div>
           </a>

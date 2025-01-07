@@ -23,26 +23,29 @@ import { RentSkyPage } from "./pages/rent-sky-page";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Routes>
-        <Route exact path="/" element={<HomePage />} />
-        <Route exact path="/sale" element={<SalePage />} />
-        <Route exact path="/rent" element={<RentPage />} />
-        <Route exact path="/rent_ski" element={<RentSkyPage />} />
-        <Route exact path="/trip" element={<TripPage />} />
-        <Route exact path="app/:id" element={<ProductPage />} />
-        <Route exact path="/order" element={<OrderPage />} />
-        <Route exact path="/rules" element={<RulesPage />} />
-        <Route exact path="/lycian" element={<LycianWayPage />} />
-        <Route exact path="/rockClimbing" element={<RockClimbingPage />} />
-        <Route exact path="/lake" element={<LakeRoutePage />} />
-        <Route exact path="/erge" element={<ErgeRoutePage />} />
-        <Route exact path="/garden" element={<GardenRoutePage />} />
-        <Route exact path="*" element={<Error />} />
-      </Routes>
+    <>
+      <div className="App">
+        <Header />
+
+        <Routes>
+          <Route exact path="/" element={<HomePage />} />
+          <Route exact path="/sale" element={<SalePage />} />
+          <Route exact path="/rent" element={<RentPage />} />
+          <Route exact path="/rent_ski" element={<RentSkyPage />} />
+          <Route exact path="/trip" element={<TripPage />} />
+          <Route exact path="app/:id" element={<ProductPage />} />
+          <Route exact path="/order" element={<OrderPage />} />
+          <Route exact path="/rules" element={<RulesPage />} />
+          <Route exact path="/lycian" element={<LycianWayPage />} />
+          <Route exact path="/rockClimbing" element={<RockClimbingPage />} />
+          <Route exact path="/lake" element={<LakeRoutePage />} />
+          <Route exact path="/erge" element={<ErgeRoutePage />} />
+          <Route exact path="/garden" element={<GardenRoutePage />} />
+          <Route exact path="*" element={<Error />} />
+        </Routes>
+      </div>
       <Footer />
-    </div>
+    </>
   );
 }
 
