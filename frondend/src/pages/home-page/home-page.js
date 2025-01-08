@@ -14,6 +14,8 @@ import sky from "../../components/image/sky.png";
 import eq from "../../components/image/eq (1).png";
 import eq2 from "../../components/image/eq3.png";
 import del from "../../components/image/del.png";
+import img1 from "./IMG_7669.JPG";
+import img2 from "./IMG_7671.JPG";
 
 import { useSelector } from "react-redux";
 
@@ -58,6 +60,12 @@ export const HomePage = () => {
   };
   const handleClickTrip = () => {
     navigate("/trip");
+  };
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsOpen(!isOpen);
   };
 
   return (
@@ -126,6 +134,60 @@ export const HomePage = () => {
           </a>
         </div>
       </div>
+      <section className="service-section">
+        <h2 className="routes-title">Сервисное обслуживание</h2>
+        <table className="service-table">
+          <thead>
+            <tr>
+              <th>Услуга</th>
+
+              <th>Цена</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Комплексное обслуживание - заточка кантов, чистка скользящей
+                поверхности, снятие старого парафина, нанесение нового (парафины
+                от +3 до -20, с шагом 6 градусов)
+              </td>
+
+              <td>~ 80 лари</td>
+            </tr>
+            <tr>
+              <td>Заточка кантов</td>
+
+              <td>~ 40 лари</td>
+            </tr>
+            <tr>
+              <td>Консервация</td>
+
+              <td>~ 35 лари</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <button className="rent-rules-button" onClick={toggleModal}>
+          <h3 className="rent-rules-title">ПОСМОТРЕТЬ ФОТО РАБОТЫ</h3>
+        </button>
+
+        {isOpen && (
+          <div className="modal-overlay" onClick={toggleModal}>
+            <div
+              className="modal-content"
+              onClick={(e) => e.stopPropagation()} // Чтобы клик внутри окна не закрывал его
+            >
+              <button className="close-button" onClick={toggleModal}>
+                ×
+              </button>
+              <div className="images-container">
+                <img src={img2} alt="Image 1" className="modal-image" />
+                <img src={img1} alt="Image 2" className="modal-image" />
+              </div>
+            </div>
+          </div>
+        )}
+      </section>
 
       {/* <HitSales /> */}
       {/* <LycianWay/> */}

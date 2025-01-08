@@ -17,6 +17,7 @@ import photo6 from "./imagegoderdi/IMG_7019.jpg";
 import photo7 from "./imagegoderdi/IMG_7021.jpg";
 import photo8 from "./imagegoderdi/IMG_7054.jpg";
 import photo9 from "./imagegoderdi/IMG_7064.JPG";
+import { useInView } from "react-intersection-observer";
 
 const photos = [
   photo5,
@@ -31,7 +32,10 @@ const photos = [
 ];
 export const TripPage = () => {
   const history = useNavigate();
-
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0,
+  });
   return (
     <div className="back-button-cover">
       <button className="back-button" onClick={() => history(-1)}>
@@ -87,12 +91,13 @@ export const TripPage = () => {
                   }}
                 >
                   <img
+                    ref={ref}
                     src={photo}
                     alt={`Photo ${index + 1}`}
                     style={{
                       width: "100%",
                       height: "100%",
-                      objectFit: "cover", // Можно заменить на 'contain', если хотите видеть всю фотографию
+                      objectFit: "cover",
                     }}
                   />
                 </div>

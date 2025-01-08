@@ -10,12 +10,18 @@ import img5 from "./IMG_5464.JPG";
 import img6 from "./IMG_5465.JPG";
 import al from "./al.JPG";
 import eg from "./eg.JPG";
+import { useInView } from "react-intersection-observer";
 
 // import videoFile from './mov.mov'; // Импортируем файл как модуль
 
 export const RockClimbingPage = () => {
   const languages = useSelector((state) => state.languages.currentLanguages);
   const history = useNavigate();
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0,
+  });
+
   return (
     <>
       <div className="back-button-cover">
@@ -81,12 +87,12 @@ export const RockClimbingPage = () => {
           <li>Скальные туфли - для лучшего удержания на скале.</li>
         </ul>
         <div class="image-gallery">
-          <img src={img1} alt="Снаряжение 1" class="gallery-image" />
-          <img src={img2} alt="Снаряжение 2" class="gallery-image" />
-          <img src={img5} alt="Снаряжение 5" class="gallery-image" />
-          <img src={img3} alt="Снаряжение 3" class="gallery-image" />
-          <img src={img4} alt="Снаряжение 4" class="gallery-image" />
-          <img src={img6} alt="Снаряжение 6" class="gallery-image" />
+          <img ref={ref} src={img1} alt="Снаряжение 1" class="gallery-image" />
+          <img ref={ref} src={img2} alt="Снаряжение 2" class="gallery-image" />
+          <img ref={ref} src={img5} alt="Снаряжение 5" class="gallery-image" />
+          <img ref={ref} src={img3} alt="Снаряжение 3" class="gallery-image" />
+          <img ref={ref} src={img4} alt="Снаряжение 4" class="gallery-image" />
+          <img ref={ref} src={img6} alt="Снаряжение 6" class="gallery-image" />
         </div>
       </section>
 
