@@ -215,7 +215,7 @@ padding-bottom: 20px;
 }
 
 .footer-info {
-  max-width: 600px;
+  max-width: 500px;
   flex: 1 1 100%;
 }
 
@@ -260,7 +260,7 @@ padding-bottom: 20px;
 .footer-socials {
   flex: 1 1 100%; /* занимает всю ширину на мобилке */
   /* margin-top: 10px; */
-  margin-top:-30px
+  margin-top:-20px
 }
 
 .footer-socials .social-icons {
@@ -307,14 +307,14 @@ padding-bottom: 20px;
   }
 
   .footer-socials .social-icons {
-    justify-content: center; /* Центруем иконки соцсетей на мобилке */
+    justify-content: center; 
     gap: 10px;
   }
 }
 
 @media (max-width: 480px) {
   .footer-container {
-    padding: 15px; /* Ещё меньший padding для компактности */
+    padding: 10px; 
   }
 
   .footer-info h4,
