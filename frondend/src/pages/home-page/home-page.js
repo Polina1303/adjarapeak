@@ -73,18 +73,40 @@ export const HomePage = () => {
       <div class="header-section-alt">
         <h2 class="rental-name">Adjara Peak</h2>
         <p class="main-title-alt">
-          <span class="orange-line"> Туристическое</span>{" "}
-          <span class="orange-box">и</span>{" "}
-          <span class="orange-line"> горнолыжное </span>{" "}
-          <span class="orange-line">снаряжение</span>
+          {languages === "RU" ? (
+            <>
+              <span class="orange-line"> Туристическое </span>{" "}
+              <span class="orange-box">и</span>{" "}
+              <span class="orange-line"> горнолыжное </span>{" "}
+              <span class="orange-line">снаряжение</span>
+            </>
+          ) : (
+            <>
+              <span class="orange-line"> Tourist</span>{" "}
+              <span class="orange-box">and</span>{" "}
+              <span class="orange-line"> ski</span>{" "}
+              <span class="orange-line">equipment</span>
+            </>
+          )}
         </p>
         <p class="sub-title-alt">
-          <span class="highlight-alt">Горнолыжный сезон 2024–2025 </span>
-          <span class="orange-box"> открыт!</span>
+          <span class="highlight-alt">
+            {languages === "RU"
+              ? "Горнолыжный сезон 2024–2025"
+              : "The 2024–2025 Ski Season is"}{" "}
+          </span>
+          <span class="orange-box">
+            {" "}
+            {languages === "RU" ? "открыт!" : "open!"}
+          </span>
         </p>
       </div>
       <div className="home-page__container-title">
-        <h2>ЗАБРОНИРУЙ, пока не расхватали!</h2>
+        <h2>
+          {languages === "RU"
+            ? "ЗАБРОНИРУЙ, пока не расхватали!"
+            : "BOOK NOW Before It's Gone!"}
+        </h2>
       </div>
 
       <div class="sale-container">
@@ -93,8 +115,13 @@ export const HomePage = () => {
             <img src={del} alt="adjara peak" class="sale-img" />
             <div class="sale-info">
               <div class="sale-title">
-                <span class="highlight-sale">Горнолыжные</span>
-                <br /> выезды с Adjara Peak
+                <span class="highlight-sale">
+                  {languages === "RU" ? "Горнолыжные" : "Ski Trips"}
+                </span>
+                <br />{" "}
+                {languages === "RU"
+                  ? "выезды с Adjara Peak"
+                  : " with Adjara Peak"}
               </div>
             </div>
           </a>
@@ -104,8 +131,16 @@ export const HomePage = () => {
             <img src={sky} alt="adjara peak" class="sale-img" />
             <div class="sale-info">
               <div class="sale-title">
-                <span class="highlight-sale">Прокат</span>горнолыжного
-                снаряжения
+                <span class="highlight-sale">
+                  {languages === "RU" ? "Прокат" : "Rental"}
+                </span>
+                {languages === "RU" ? (
+                  "горнолыжного снаряжения"
+                ) : (
+                  <>
+                    <br /> ski equipment
+                  </>
+                )}
               </div>
             </div>
           </a>
@@ -116,8 +151,10 @@ export const HomePage = () => {
             <img src={eq} alt="adjara peak" class="sale-img" />
             <div class="sale-info">
               <div class="sale-title">
-                <span class="highlight-rent">Продажа</span>
-                <br /> снаряжения{" "}
+                <span class="highlight-rent">
+                  {languages === "RU" ? "Продажа" : "Sales"}
+                </span>
+                <br /> {languages === "RU" ? "снаряжения" : "equipment"}{" "}
               </div>
             </div>
           </a>
@@ -127,42 +164,56 @@ export const HomePage = () => {
             <img src={eq2} alt="adjara peak" class="sale-img" />
             <div class="sale-info">
               <div class="sale-title">
-                <span class="highlight-rent">Прокат</span>туристического
-                снаряжения
+                <span class="highlight-rent">
+                  {" "}
+                  {languages === "RU" ? "Продажа" : "Sales"}
+                </span>
+                {languages === "RU" ? (
+                  "туристического снаряжения"
+                ) : (
+                  <>
+                    <br />
+                    tourist equipment
+                  </>
+                )}
               </div>
             </div>
           </a>
         </div>
       </div>
       <section className="service-section">
-        <h2 className="routes-title">Сервисное обслуживание</h2>
+        <h2 className="routes-title">
+          {languages === "RU"
+            ? "Сервисное обслуживание"
+            : "Maintenance service"}
+        </h2>
         <table className="service-table">
           <thead>
             <tr>
-              <th>Услуга</th>
+              <th>{languages === "RU" ? "Услуга" : "Service"}</th>
 
-              <th>Цена</th>
+              <th>{languages === "RU" ? "Цена" : "Price"}</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>
-                Комплексное обслуживание - заточка кантов, чистка скользящей
-                поверхности, снятие старого парафина, нанесение нового (парафины
-                от +3 до -20, с шагом 6 градусов)
+                {languages === "RU"
+                  ? "Комплексное обслуживание - заточка кантов, чистка скользящей поверхности, снятие старого парафина, нанесение нового (парафины от +3 до -20, с шагом 6 градусов)"
+                  : "Comprehensive Service - Edge sharpening, base cleaning, old wax removal, and new wax application (wax range from +3°C to -20°C, in 6-degree increments)."}{" "}
               </td>
 
-              <td>~ 80 лари</td>
+              <td>~ 80 {languages === "RU" ? "лари" : "gel"}</td>
             </tr>
             <tr>
               <td>Заточка кантов</td>
 
-              <td>~ 40 лари</td>
+              <td>~ 40 {languages === "RU" ? "лари" : "gel"}</td>
             </tr>
             <tr>
               <td>Консервация</td>
 
-              <td>~ 35 лари</td>
+              <td>~ 35 {languages === "RU" ? "лари" : "gel"}</td>
             </tr>
           </tbody>
         </table>

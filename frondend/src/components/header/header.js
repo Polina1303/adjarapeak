@@ -1,21 +1,39 @@
-import adjara from "../image/adjara2.png";
-
 import { Link } from "react-router-dom";
 import { CartBlock } from "../cart-block";
 import { MdLocationPin } from "react-icons/md";
 import { BsInstagram, BsTelegram } from "react-icons/bs";
-import { SlSocialVkontakte } from "react-icons/sl";
 import { AiOutlineWhatsApp } from "react-icons/ai";
-import { FaOdnoklassnikiSquare } from "react-icons/fa";
-
-import { useSelector } from "react-redux";
-import "./header.css";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import Switch from "react-switch";
 import { updateCurrentLanguages } from "../../redux/languages/reducer";
-
+import "./header.css";
+import adjara from "../image/adjara2.png";
 export const Header = () => {
+  const dispatch = useDispatch();
+  const languages = useSelector((state) => state.languages.currentLanguages);
+
+  // Initialize `checked` first
+  const [checked, setChecked] = useState(
+    JSON.stringify(languages) === JSON.stringify("RU")
+  );
+
+  useEffect(() => {
+    if (checked) {
+      dispatch(updateCurrentLanguages("RU"));
+    } else {
+      dispatch(updateCurrentLanguages("ENG"));
+    }
+  }, [checked, dispatch]);
+
+  useEffect(() => {
+    setChecked(JSON.stringify(languages) === JSON.stringify("RU"));
+  }, [languages]);
+
+  const handleChange = () => {
+    setChecked((prevChecked) => !prevChecked);
+  };
+
   return (
     <div className="header">
       <div className="wrapper">
@@ -30,7 +48,9 @@ export const Header = () => {
           target="_blank"
           rel="noreferrer"
         >
-          Батуми ул.Тбел-Абусеридзе, 38
+          {languages === "RU"
+            ? "Батуми ул.Тбел-Абусеридзе, 38."
+            : "Batumi, 38 Tbel-Abuseridze St."}
           <p className="work">(11:00-20:00)</p>
         </a>
       </div>
@@ -52,64 +72,31 @@ export const Header = () => {
           <AiOutlineWhatsApp className="icon-whatsApp" />
         </a>
       </div>
-
+      {/* <div className="switch">
+        <label htmlFor="material-switch" id="switch-label">
+          {languages}
+        </label>
+        <Switch
+          checked={checked}
+          onChange={handleChange}
+          onHandleColor="#fff"
+          handleDiameter={15}
+          uncheckedIcon={false}
+          checkedIcon={false}
+          boxShadow="#f68632"
+          activeBoxShadow="#f68632"
+          offColor="#f68632"
+          onColor="#f68632"
+          height={18}
+          width={40}
+          className="react-switch"
+          id="material-switch"
+          aria-labelledby="switch-label"
+        />
+      </div> */}
       <div className="cart">
         <CartBlock />
       </div>
     </div>
   );
 };
-
-{
-  /* <div className="switch">
-      <label htmlFor="material-switch" id="switch-label">
-     {languages}  
-      </label>
-      <Switch
-        checked={checked}
-        onChange={handleChange}
-        onHandleColor="#fff"
-        handleDiameter={15}
-        uncheckedIcon={false}
-        checkedIcon={false}
-        boxShadow="#f68632"
-        activeBoxShadow="#f68632"
-        offColor="#f68632"
-        onColor="#f68632"
-        height={18}
-        width={40}
-        className="react-switch"
-        id="material-switch"
-        aria-labelledby="switch-label"
-      />
-    
-    </div> */
-}
-
-// useEffect(() => {
-//   if (checked) {
-//     dispatch(updateCurrentLanguages("RU"));
-//   } else {
-//     dispatch(updateCurrentLanguages("ENG"));
-//   }
-
-//   const a = localStorage.getItem("languages");
-// }, [checked]);
-
-// const dispatch = useDispatch();
-// const languages = useSelector((state) => state.languages.currentLanguages);
-// const [checked, setChecked] = useState(
-//   JSON.stringify(languages) === JSON.stringify("RU")
-// );
-
-// const handleChange = (nextChecked) => {
-//   setChecked(!checked);
-// };
-
-// useEffect(() => {
-//   if (JSON.stringify(languages) === JSON.stringify("RU")) {
-//     setChecked(true);
-//   } else {
-//     setChecked(false);
-//   }
-// }, [languages]);

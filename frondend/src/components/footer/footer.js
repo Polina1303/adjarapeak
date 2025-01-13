@@ -119,7 +119,9 @@ export const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Оставь отзыв в Google
+                {languages === "RU"
+                  ? "Оставь отзыв в Google"
+                  : "Leave a review on Google"}
               </a>
             </p>
             <p>
@@ -128,7 +130,9 @@ export const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Оставь отзыв в Яндекс
+                {languages === "RU"
+                  ? "Оставь отзыв в Яндекс"
+                  : "Leave a review on Yandex"}
               </a>
             </p>
           </div>
