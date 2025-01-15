@@ -26,7 +26,6 @@ function App() {
     <>
       <div className="App">
         <Header />
-
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route exact path="/sale" element={<SalePage />} />
