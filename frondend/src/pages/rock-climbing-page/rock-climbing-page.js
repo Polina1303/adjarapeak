@@ -130,7 +130,7 @@ export const RockClimbingPage = () => {
         <p class="price">Стоимость тренировки: 49 лари</p>
 
         <div class="session">
-          <span class="group-time">1 группа — 11:00</span>
+          <span class="group-time">1 группа — 12:00</span>
         </div>
         <div class="session">
           <span class="group-time">2 группа — 15:00</span>
@@ -149,7 +149,7 @@ export const RockClimbingPage = () => {
         <p class="price">Стоимость тренировки: 49 лари</p>
 
         <div class="session">
-          <span class="group-time">1 группа — 11:00</span>
+          <span class="group-time">1 группа — 12:00</span>
         </div>
         <div class="session">
           <span class="group-time">2 группа — 15:00</span>
