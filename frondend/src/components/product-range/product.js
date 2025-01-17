@@ -5337,13 +5337,12 @@ export const PRODUCT = [
     ],
   },
   {
-    id: 1023034109,
-    title: "Cтол складной TONAR",
+    id: 10234034109,
+    title: "Стол складной TONAR",
     img: "37464yxxvkwj.jpg",
     desc: "высота 60 см",
     category: "chair",
     price: 172,
-
     column: [
       "Размер: 50х70 см",
       "Высота: 60 см",

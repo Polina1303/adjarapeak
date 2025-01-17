@@ -56,17 +56,16 @@ export const RentSkyPage = () => {
           <IoIosArrowBack size={"25px"} /> Назад
         </button>
       </div>
-
-      <Menu
-        mode="horizontal"
-        selectedKeys={[`${activeType}`]}
-        items={items}
-        style={{ flex: 1, minWidth: 0 }}
-        onClick={handleClick}
-        overflowedIndicator={overflowedIndicator}
-      />
-
       <div className="search-container" style={{ margin: "20px 0" }}>
+        <Menu
+          mode="horizontal"
+          selectedKeys={[`${activeType}`]}
+          items={items}
+          style={{ flex: 1, minWidth: 0 }}
+          onClick={handleClick}
+          overflowedIndicator={overflowedIndicator}
+        />
+
         <input
           type="text"
           placeholder="Поиск..."
