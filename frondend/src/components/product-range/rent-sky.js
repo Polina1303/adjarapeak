@@ -389,6 +389,16 @@ export const RENT_SKY = [
     column: ["Размеры:S, L"],
   },
   {
+    id: 30440045,
+    title: "комбинезон",
+    img: "ezgif-4-f35c20e8f8.jpg",
+    desc: "детский | подростковый ",
+    category: "rent_sky",
+    type: "overall",
+    price: 15,
+    column: [""],
+  },
+  {
     id: 30006,
     title: "Горнолыжные перчатки",
     img: "IMG_586.png",

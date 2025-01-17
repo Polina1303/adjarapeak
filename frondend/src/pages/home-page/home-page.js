@@ -166,7 +166,7 @@ export const HomePage = () => {
               <div class="sale-title">
                 <span class="highlight-rent">
                   {" "}
-                  {languages === "RU" ? "Продажа" : "Sales"}
+                  {languages === "RU" ? "Прокат" : "Rental"}
                 </span>
                 {languages === "RU" ? (
                   "туристического снаряжения"
