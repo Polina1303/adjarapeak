@@ -63,7 +63,7 @@ export const CartBlock = () => {
         />
       </Button>
       {totalPrice > 0 ? (
-        <div className="cart-price">{totalPrice}₾</div>
+        <div className="cart-price">{totalPrice}.00₾</div>
       ) : (
         <div className="cart-price"></div>
       )}

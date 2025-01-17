@@ -22,23 +22,19 @@ export const Rent = ({ rent }) => {
 
   return (
     <div className="add-to-cart__rent" onClick={handelClickWeekday}>
-            <b className="product-items__price">{rent.price}₾-сутки</b>
+      <b className="product-items__price">{rent.price}.00₾-сутки</b>
 
       <div className="add-to-cart-cover">
         <div className="add-to-cart">
-            <Button type="primary">
-            <div
-                className={`add-to-cart-title`}
-              >
-                В корзину
-              </div>
-              <div className="add-to-cart-icon">
-              <MdAddShoppingCart  className="shopping-cart-icon" />
+          <Button type="primary">
+            <div className={`add-to-cart-title`}>В корзину</div>
+            <div className="add-to-cart-icon">
+              <MdAddShoppingCart className="shopping-cart-icon" />
               {addedCount > 0 && (
                 <i className="product-items__count">{addedCount}</i>
-              )} 
+              )}
             </div>
-            </Button>
+          </Button>
         </div>
       </div>
     </div>

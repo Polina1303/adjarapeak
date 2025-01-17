@@ -36,20 +36,48 @@ export const Buy = ({ product, page, discount }) => {
   //   `container-items-price ${discount ? "discounted" : ""}`;
   // }
 
+  // const yes =product.newPrice?
+
   return (
     <div className="container-items-price" onClick={handleAddToCart}>
-  
-        <div style={{ display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'flex-end', 
-    justifyContent: 'center',}}>
-          <b className="product-items__price">{product.price}₾</b>
-         {product.order&& <p style={{ margin: '0 0 0 20px', color: '#9f9d9df5', lineHeight: '1', position: 'relative', top: '-2px' }}>
-  под заказ
-</p>}
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "flex-end",
+          justifyContent: "center",
+        }}
+      >
+        {product.newPrice && (
+          <>
+            <b
+              className={`product-items__price ${
+                discount ? "discounted-price" : ""
+              }`}
+            >
+              {product.newPrice}.00₾
+            </b>
+            <s className="product-items__old-price"> {product.price}.00₾</s>
+          </>
+        )}
+        {!product.newPrice && (
+          <b className="product-items__price">{product.price}.00₾</b>
+        )}
+        {product.order && (
+          <p
+            style={{
+              margin: "0 0 0 20px",
+              color: "#9f9d9df5",
+              lineHeight: "1",
+              position: "relative",
+              top: "-2px",
+            }}
+          >
+            под заказ
+          </p>
+        )}
+      </div>
 
-          </div>
-      
       <div className="add-to-cart-cover">
         {page ? (
           <div className="add-to-cart-page">
@@ -80,9 +108,9 @@ export const Buy = ({ product, page, discount }) => {
                 />
               </div>
 
-              {addedCount && addedCount > 0 ? (
+              {/* {addedCount && addedCount > 0 ? (
                 <i className="product-items__count">{addedCount}</i>
-              ) : null}
+              ) : null} */}
             </Button>
           </div>
         )}

@@ -249,8 +249,20 @@ export const PRODUCT = [
     ],
   },
   {
-    id: 100032333441100,
+    id: 109932333441100,
     title: "Термобелье мужское",
+    img: "5dbd5040c34.png",
+    desc: "S, M, L, XL, XXL",
+    category: "thermalUnderwear",
+    price: 58,
+    column: [
+      "94% Полиэстер,6% Эластан",
+      "Машинная стирка, не подвергать химчистке",
+    ],
+  },
+  {
+    id: 100032333441100,
+    title: "Термобелье мужское Viking",
     img: " 21.04.10.jpg",
     desc: "S, L",
     category: "thermalUnderwear",
@@ -265,7 +277,7 @@ export const PRODUCT = [
   },
   {
     id: 1000323334414100,
-    title: "Термобелье мужское",
+    title: "Термобелье мужское Viking",
     img: "2024-12000.png",
     desc: "M, L, XL",
     category: "thermalUnderwear",
@@ -279,7 +291,7 @@ export const PRODUCT = [
   },
   {
     id: 100999953334414100,
-    title: "Термобелье женское",
+    title: "Термобелье женское Viking",
     img: "gCEXMm7YJAle16EPmlI0ZGtmM14tfX.jpg",
     desc: "S, M, L",
     category: "thermalUnderwear",
@@ -293,7 +305,7 @@ export const PRODUCT = [
   },
   {
     id: 93334414100,
-    title: "Термобелье женское",
+    title: "Термобелье женское Viking",
     img: "nqhspqU6Qytpx1xvIBTu4ycpUqkhTV.jpg",
     desc: "S, M, L",
     category: "thermalUnderwear",
@@ -307,7 +319,7 @@ export const PRODUCT = [
   },
   {
     id: 933344414100,
-    title: "Термобелье женское",
+    title: "Термобелье женское Viking",
     img: "0.57.36.jpg",
     desc: "M, L, XL",
     category: "thermalUnderwear",
@@ -327,7 +339,8 @@ export const PRODUCT = [
     img: "18.38.22.jpg",
     desc: "S-XXL",
     category: "thermalUnderwear",
-    price: 92,
+    price: 118,
+    newPrice: 88,
     column: [
       "Защита копчика",
       "Трикотажная ткань из микрофибры, высокая эластичность",
@@ -421,7 +434,7 @@ export const PRODUCT = [
   {
     id: 104300110,
     title: "Бафф KIPRUN",
-    img: "buff2.png",
+    img: "890f111c9e23173ec90d287f054bc.png",
     desc: "трикотаж",
     category: "buff",
     price: 25,
@@ -5467,6 +5480,15 @@ export const PRODUCT = [
   //   ],
   // },
   {
+    id: 100044141,
+    title: "Тюбинг",
+    img: "09491dd5-4982-448d-8ed7-d424eb2b2545.webp",
+    desc: "QUECHUA AIR BASIC ",
+    category: "air",
+    price: 80,
+    column: ["Сверхпрочный надувной тюбинг", ""],
+  },
+  {
     id: 1000141,
     title: "НАДУВНАЯ ПОДУШКА ДЛЯ КЕМПИНГА",
     img: "airbasic.jpg",
@@ -7019,6 +7041,20 @@ export const PRODUCT = [
     ],
   },
   {
+    id: 9110304397659,
+    title: "Носки для сноуборда Wedze 100",
+    img: "owboard-corabi-mavi-100.png",
+    desc: "розовые, синие, малиновые",
+    category: "socks",
+    price: 35,
+    column: [
+      "Подошва носка на 41% состоит из шерсти.(18% от общего носка).",
+      "Носки СРЕДНЕЙ толщины для узких или средних лыжных ботинок.",
+      "Полностью эластичные носки плотно прилегают к ноге",
+      "Синтетическое волокно эффективно отводит пот наружу.",
+    ],
+  },
+  {
     id: 91103097659,
     title: "НОСКИ",
     img: "8dc21759-279b-4ee9-9e34-1e87742ddb92.webp",
@@ -7026,6 +7062,18 @@ export const PRODUCT = [
     category: "socks",
     price: 18,
     column: ["Состав:75% Хлопок,25% Акрил"],
+  },
+  {
+    id: 9110304497659,
+    title: "НОСКИ",
+    img: "19.45.17.jpg",
+    desc: "розовые, оранжевые, черные, белые",
+    category: "socks",
+    price: 28,
+    column: [
+      "Состав:80% Полиамид,20% Полиэстер",
+      "компрессионные носки для занятий спортом ",
+    ],
   },
   {
     id: 1038003263454331109,

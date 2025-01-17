@@ -50,7 +50,7 @@ export const CartItem = ({ img, title, price, id, count }) => {
           handleClick()
         )}
         <div className="cart-item__price">
-          <span>{price * count}₾</span>
+          <span>{price * count}.00₾</span>
         </div>
         <div>
           <TiDeleteOutline

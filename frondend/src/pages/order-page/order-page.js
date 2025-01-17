@@ -76,7 +76,7 @@ export const OrderPage = () => {
               ` товара `,
               ` товаров `,
             ])}
-            на сумму {calcTotalPrice(items)}₾
+            на сумму {calcTotalPrice(items)}.00₾
           </h4>
 
           <OrderInput setOrderSuccess={setOrderSuccess} items={items} />

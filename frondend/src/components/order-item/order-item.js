@@ -23,7 +23,7 @@ export const OrderItem = ({ item }) => {
       <div className="order-item__title">{item.title}</div>
       <div className="order-item__title">{item.count}</div>
       <div className="order-item__price">
-        <span>{item.price * item.count}₾</span>
+        <span>{item.price * item.count}.00₾</span>
         <Button>
           <TiDeleteOutline
             size={35}

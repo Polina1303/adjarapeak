@@ -42,7 +42,9 @@ export const ProductItems = ({ product }) => {
             </div>
           </a>
 
-          <span className="product-items__title">{product.title.toUpperCase()}</span>
+          <span className="product-items__title">
+            {product.title.toUpperCase()}
+          </span>
 
           <p className="product-items__desc">{product.desc}</p>
           <Buy product={product} />
