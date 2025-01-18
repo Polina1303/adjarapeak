@@ -146,7 +146,7 @@ export const PRODUCT = [
     id: 1032300382344110,
     title: "перчатки",
     img: "001405-2-yinhe.png_468x468Q75.jpg_.avif",
-    desc: "Gosk",
+    desc: "Goski",
     category: "gloves",
     price: 42,
     column: [
@@ -162,7 +162,7 @@ export const PRODUCT = [
     id: 10323003892344110,
     title: "перчатки",
     img: "IMG_7228.png",
-    desc: "Gosk",
+    desc: "Goski",
     category: "gloves",
     price: 42,
     column: [
@@ -224,8 +224,8 @@ export const PRODUCT = [
   },
   {
     id: 199903233341100,
-    title: "Балаклавы",
-    img: "9.50.37.jpg",
+    title: "Балаклава",
+    img: "21.11.34.jpg",
     desc: "cалатовая, оранжевая, синяя, черная",
     category: "buff",
     price: 45,
