@@ -28,9 +28,11 @@ export const HomePage = () => {
   const languages = useSelector((state) => state.languages.currentLanguages);
 
   useEffect(() => {
-    localStorage.setItem("activeType", 0);
-    localStorage.setItem("activeTypeSale", 0);
-
+    // localStorage.setItem("activeType", 0);
+    // localStorage.setItem("activeTypeSale", 0);
+    localStorage.removeItem("activeType");
+    localStorage.removeItem("activeTypeSale");
+    localStorage.removeItem("searchQuery");
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 630);
     };

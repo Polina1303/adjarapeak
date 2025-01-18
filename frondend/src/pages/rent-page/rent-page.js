@@ -13,17 +13,24 @@ const items = CATEGORY_RENT.map((item, index) => ({
 }));
 
 export const RentPage = () => {
-  const history = useNavigate();
-  const [activeType, setActiveType] = useState(0);
+  const navigate = useNavigate();
+  const [activeType, setActiveType] = useState(() => {
+    const savedActiveType = localStorage.getItem("activeType");
+    return savedActiveType ? Number(savedActiveType) : 0;
+  });
+  const [searchQuery, setSearchQuery] = useState(() => {
+    return localStorage.getItem("searchQuery") || "";
+  });
   const [active, setActive] = useState(RENT);
-  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    const storedActiveType = localStorage.getItem("activeType");
-    if (storedActiveType) {
-      setActiveType(Number(storedActiveType));
-    }
-  }, []);
+    const currentItems = RENT.filter(
+      (item) =>
+        item.title.toLowerCase().includes(searchQuery.toLowerCase()) &&
+        (items[activeType]?.type ? item.type === items[activeType].type : true)
+    );
+    setActive(currentItems);
+  }, [searchQuery, activeType]);
 
   const handleClick = (e) => {
     const newActiveType = Number(e.key);
@@ -31,28 +38,16 @@ export const RentPage = () => {
     localStorage.setItem("activeType", newActiveType);
   };
 
-  const overflowedIndicator = <span>показать больше...</span>;
-
-  useEffect(() => {
-    const currentItems = RENT.filter(
-      (item) => item.type === items[activeType].type
-    );
-    setActive(currentItems.length === 0 ? RENT : currentItems);
-  }, [activeType]);
-
-  useEffect(() => {
-    const filteredItems = RENT.filter(
-      (item) =>
-        item.title.toLowerCase().includes(searchQuery.toLowerCase()) &&
-        (items[activeType]?.type ? item.type === items[activeType].type : true)
-    );
-    setActive(filteredItems);
-  }, [searchQuery, activeType]);
+  const handleSearchChange = (e) => {
+    const query = e.target.value;
+    setSearchQuery(query);
+    localStorage.setItem("searchQuery", query);
+  };
 
   return (
     <>
       <div className="back-button-cover">
-        <button className="back-button" onClick={() => history(-1)}>
+        <button className="back-button" onClick={() => navigate(-1)}>
           <IoIosArrowBack size={"25px"} /> Назад
         </button>
       </div>
@@ -63,14 +58,14 @@ export const RentPage = () => {
           items={items}
           style={{ flex: 1, minWidth: 0 }}
           onClick={handleClick}
-          overflowedIndicator={overflowedIndicator}
+          overflowedIndicator={<span>показать больше...</span>}
         />
 
         <input
           type="text"
           placeholder="Поиск..."
           value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
+          onChange={handleSearchChange}
           style={{
             width: "95%",
             padding: "10px",
@@ -93,7 +88,6 @@ export const RentPage = () => {
             ) : (
               <div className="not-found">
                 <p>К сожалению, ничего не найдено.</p>
-
                 <p>Попробуйте изменить запрос или выбрать другую категорию.</p>
               </div>
             )}

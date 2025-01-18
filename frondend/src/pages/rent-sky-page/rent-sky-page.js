@@ -16,8 +16,9 @@ export const RentSkyPage = () => {
   const history = useNavigate();
   const [activeType, setActiveType] = useState(0);
   const [active, setActive] = useState(RENT_SKY);
-  const [searchQuery, setSearchQuery] = useState("");
-
+  const [searchQuery, setSearchQuery] = useState(() => {
+    return localStorage.getItem("searchQuery") || "";
+  });
   useEffect(() => {
     const storedActiveType = localStorage.getItem("activeType");
     if (storedActiveType) {
@@ -32,6 +33,11 @@ export const RentSkyPage = () => {
   };
 
   const overflowedIndicator = <span>показать больше...</span>;
+  const handleSearchChange = (e) => {
+    const query = e.target.value;
+    setSearchQuery(query);
+    localStorage.setItem("searchQuery", query);
+  };
 
   useEffect(() => {
     const currentItems = RENT_SKY.filter(
@@ -70,7 +76,7 @@ export const RentSkyPage = () => {
           type="text"
           placeholder="Поиск..."
           value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
+          onChange={handleSearchChange}
           style={{
             width: "95%",
             padding: "10px",

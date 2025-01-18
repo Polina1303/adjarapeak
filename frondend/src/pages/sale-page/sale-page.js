@@ -17,7 +17,9 @@ export const SalePage = () => {
   const history = useNavigate();
   const [activeType, setActiveType] = useState(0);
   const [active, setActive] = useState(PRODUCT);
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState(() => {
+    return localStorage.getItem("searchQuery") || "";
+  });
 
   useEffect(() => {
     const storedActiveType = localStorage.getItem("activeTypeSale");
@@ -32,6 +34,12 @@ export const SalePage = () => {
     const newActiveType = Number(e.key);
     setActiveType(newActiveType);
     localStorage.setItem("activeTypeSale", newActiveType);
+  };
+
+  const handleSearchChange = (e) => {
+    const query = e.target.value;
+    setSearchQuery(query);
+    localStorage.setItem("searchQuery", query);
   };
 
   useEffect(() => {
@@ -72,7 +80,7 @@ export const SalePage = () => {
           type="text"
           placeholder="Поиск..."
           value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
+          onChange={handleSearchChange}
           style={{
             width: "95%",
             padding: "10px",
