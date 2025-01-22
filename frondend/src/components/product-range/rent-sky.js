@@ -28,7 +28,7 @@ export const RENT_SKY = [
     category: "rent_sky",
     type: "sky",
     price: 45,
-    column: ["KASTLE FX 95", "DUAL RISE 173"],
+    column: ["KASTLE FX 95"],
   },
   {
     id: 30009,
