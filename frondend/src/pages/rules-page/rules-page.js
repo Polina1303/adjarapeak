@@ -2,6 +2,7 @@ import "./rules-page.css";
 import { useState } from "react";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { useSelector } from "react-redux";
+import Pdf from "./Adjara-Peak.pdf";
 
 export const RulesPage = () => {
   const languages = useSelector((state) => state.languages.currentLanguages);
@@ -14,6 +15,10 @@ export const RulesPage = () => {
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
+  };
+
+  const onResumeClick = () => {
+    window.open(Pdf);
   };
 
   return (
@@ -34,6 +39,32 @@ export const RulesPage = () => {
             </div>
             <div className="colimn_cover">
               <ul className="column">
+                <li className="column__list">
+                  <span className="modal__column__text">
+                    {languages === "RU" && (
+                      <>
+                        Ознакомьтесь с{" "}
+                        <a
+                          onClick={onResumeClick}
+                          target="_blank"
+                          // onClick={handleOpenDoc}
+                          style={{ color: "blue", cursor: "pointer" }}
+                        >
+                          договором аренды
+                        </a>
+                        {/* <a
+                          href={"./Adjara-Peak.pdf"}
+                          target="_blank"
+                          // onClick={handleOpenDoc}
+                          style={{ color: "blue", cursor: "pointer" }}
+                        >
+                          договором аренды
+                        </a> */}
+                      </>
+                    )}
+                  </span>
+                </li>
+
                 <li className="column__list">
                   <span className="modal__column__text">
                     {languages === "RU"

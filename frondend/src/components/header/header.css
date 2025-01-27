@@ -26,31 +26,8 @@
   text-align: center;
 }
 
-.icon {
-  display: flex;
-  gap: 15px;
-}
 
-.instagram,
-.icon-telegram,
-.icon-whatsApp {
-  width: 32px;
-  height: 32px;
-  padding: 4px;
-  border-radius: 5px;
-  font-size: 28px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-color: white;
-  background-color: #f68632;
-  box-shadow: 0 0 10px rgba(125, 124, 124, 0.5);
-}
 
-.icon-telegram {
-  color: #f68632;
-  background: transparent;
-}
 
 .cart {
   margin: 0 10px;

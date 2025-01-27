@@ -51,27 +51,47 @@ export const Header = () => {
           {languages === "RU"
             ? "Батуми ул.Тбел-Абусеридзе, 38."
             : "Batumi, 38 Tbel-Abuseridze St."}
-          <p className="work">(11:00-20:00)</p>
+          <p className="work">
+            (11:00-20:00),{" "}
+            {languages === "RU" ? "выходной — воскресенье" : "closed on Sunday"}
+          </p>
         </a>
       </div>
       <div className="number">
         <a href="tel:+995511147586">+995 511 147 586</a>
       </div>
       <div className="icon">
-        <a
-          href="https://www.instagram.com/adjarapeak/?igshid=YmMyMTA2M2Y%3D"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <BsInstagram className="instagram" />
-        </a>
-        <a href="https://t.me/adjarapeak/229" target="_blank" rel="noreferrer">
-          <BsTelegram className="icon-telegram" />
-        </a>
-        <a href="https://wa.me/995511147586" target="_blank" rel="noreferrer">
-          <AiOutlineWhatsApp className="icon-whatsApp" />
-        </a>
+        <div className="social-icons">
+          <a
+            href="https://www.instagram.com/adjarapeak/?igshid=YmMyMTA2M2Y%3D"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Instagram"
+            style={{ marginRight: "10px" }} // расстояние между иконками
+          >
+            <BsInstagram style={{ fontSize: "28px" }} /> {/* размер иконки */}
+          </a>
+          <a
+            href="https://t.me/adjarapeak/229"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Telegram"
+            style={{ marginRight: "10px" }} // расстояние между иконками
+          >
+            <BsTelegram style={{ fontSize: "28px" }} /> {/* размер иконки */}
+          </a>
+          <a
+            href="https://wa.me/995511147586"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="WhatsApp"
+          >
+            <AiOutlineWhatsApp style={{ fontSize: "28px" }} />{" "}
+            {/* размер иконки */}
+          </a>
+        </div>
       </div>
+
       {/* <div className="switch">
         <label htmlFor="material-switch" id="switch-label">
           {languages}

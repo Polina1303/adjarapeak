@@ -47,11 +47,6 @@
   width: 90%;
 }
 
-.modal-button-cover {
-  display: flex;
-  justify-content: flex-end;
-  cursor: pointer;
-}
 
 .modal__column__text {
   font-size: 13px;
@@ -68,11 +63,36 @@
   justify-content: flex-end;
 }
 
+
+
+.modal-button-cover {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%; /* или подходящий размер */
+  padding: 10px; /* для наглядности */
+}
+
 .modal-button {
   border: none;
   outline: none;
   background-color: #fff;
+  cursor: pointer;
 }
+
+
+
+.highlighted-link {
+  color: #007bff; /* Синий цвет для привлечения внимания */
+  text-decoration: underline;
+  font-weight: bold;
+  cursor: pointer; /* Указывает, что это кликабельный элемент */
+}
+
+.highlighted-link:hover {
+  color: #0056b3; /* Более темный синий цвет при наведении */
+  text-decoration: none; /* Убираем подчеркивание при наведении */
+}
+
 
 @media (max-width: 773px) {
   .modal-content {

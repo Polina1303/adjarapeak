@@ -1,6 +1,6 @@
 import "./error-page.css";
 import { useNavigate } from "react-router-dom";
-import adjara from "../../components/image/adjara1.jpg";
+import adjara from "../../components/image/adjara2.png";
 
 export const Error = () => {
   const navigate = useNavigate();
