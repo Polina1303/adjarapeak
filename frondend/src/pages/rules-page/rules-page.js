@@ -52,14 +52,6 @@ export const RulesPage = () => {
                         >
                           договором аренды
                         </a>
-                        {/* <a
-                          href={"./Adjara-Peak.pdf"}
-                          target="_blank"
-                          // onClick={handleOpenDoc}
-                          style={{ color: "blue", cursor: "pointer" }}
-                        >
-                          договором аренды
-                        </a> */}
                       </>
                     )}
                   </span>

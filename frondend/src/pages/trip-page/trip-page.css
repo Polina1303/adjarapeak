@@ -1,57 +1,36 @@
-body {
-    color: #333;
-    margin: 0;
-    padding: 0;
-    background-color: #fdfdfd;
+.container {
+    margin:20px 0 70px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    padding: 16px;
+    background: linear-gradient(135deg, #f0f4ff, #f68732ba); /* Градиентный фон */
+    border-radius: 16px; /* Закругление углов контейнера */
   }
   
-  .container {
-    /* max-width: 600px; */
-    /* margin: 20px auto; */
-    /* padding: 20px; */
-    line-height: 1.6;
+  .tour-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
   }
   
-  h1 {
-    /* text-align: center; */
-    color: #f68632;
-    font-size: 2rem;
-    /* margin-bottom: 20px; */
-  }
-  
-  .section h2 {
-    color: #f68632;
-    font-size: 1.2rem;
-  }
-  
-  ul {
-    padding-left: 20px;
-    /* list-style: square; */
-  }
-/*   
-  ul li {
-    margin-bottom: 10px;
-  } */
-  
-  ul li span {
-    font-size: 0.9rem;
-  }
-  
-  .price {
-    /* text-align: center; */
-    font-size: 1.1rem;
-    margin-top: 20px;
-    color: #333;
-  }
-  
-  .price strong {
-    color: #f68632;
-  }
-  
-
-  .swiper-slide img {
+  .tour-image-vertical {
     width: 100%;
     height: auto;
-    border-radius: 8px;
+    max-width: 300px;
+    max-height: 360px;
+    object-fit: cover;
+    border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 12px;
   }
+  
+  .tour-text {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin: 0;
+  }
+  

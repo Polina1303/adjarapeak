@@ -1,147 +1,87 @@
 import React from "react";
-import { IoIosArrowBack } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
 import "./trip-page.css";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import { useNavigate } from "react-router-dom";
+import { IoIosArrowBack } from "react-icons/io";
+import photo1 from "./IMG_8516.JPG";
+import photo2 from "./IMG_8526.JPG";
+import photo3 from "./IMG_8178.jpg";
 
-import { Navigation, Pagination } from "swiper/modules";
-import photo1 from "./imagegoderdi/IMG_4170.jpg";
-import photo2 from "./imagegoderdi/IMG_4187.jpg";
-import photo3 from "./imagegoderdi/IMG_4198.jpg";
-import photo4 from "./imagegoderdi/IMG_6602.jpg";
-import photo5 from "./imagegoderdi/IMG_6990.jpg";
-import photo6 from "./imagegoderdi/IMG_7019.jpg";
-import photo7 from "./imagegoderdi/IMG_7021.jpg";
-import photo8 from "./imagegoderdi/IMG_7054.jpg";
-import photo9 from "./imagegoderdi/IMG_7064.JPG";
-import { useInView } from "react-intersection-observer";
-
-const photos = [
-  photo5,
-  photo4,
-  photo6,
-  photo3,
-  photo9,
-  photo8,
-  photo7,
-  photo1,
-  photo2,
-];
 export const TripPage = () => {
   const history = useNavigate();
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0,
-  });
+  const navigate = useNavigate();
+
+  const handleClickOneDayTrip = () => {
+    navigate("/one_day_trip");
+  };
+  const handleClickTwoDayTrip = () => {
+    navigate("/two_day_trip");
+  };
+  const handleClickTransfer = () => {
+    navigate("/transfer");
+  };
   return (
     <div className="back-button-cover">
       <button className="back-button" onClick={() => history(-1)}>
         <IoIosArrowBack size={"25px"} /> Назад
       </button>
-      <h1>ГОДЕРДЗИ С ADJARA PEAK</h1>
-
-      <div class="point">
-        <div
-          style={{
-            maxWidth: "1200px",
-            margin: "0 auto",
-            padding: "20px",
-            boxSizing: "border-box",
-          }}
-        >
-          <Swiper
-            modules={[Navigation, Pagination]}
-            navigation
-            pagination={{ clickable: true }}
-            spaceBetween={10}
-            slidesPerView={3} // По умолчанию показываем 3 фото
-            breakpoints={{
-              // Адаптивные настройки
-              0: {
-                // Для маленьких экранов
-                slidesPerView: 1,
-              },
-              768: {
-                // Для планшетов
-                slidesPerView: 2,
-              },
-              1024: {
-                // Для больших экранов
-                slidesPerView: 3,
-              },
-            }}
-            style={{ width: "100%" }}
+      <div className="container">
+        {/* Первый блок */}
+        <div className="tour-option">
+          <img
+            onClick={handleClickOneDayTrip}
+            src={photo1}
+            alt="Однодневный выезд"
+            className="tour-image-vertical"
+          />
+          <p className="tour-text">
+            Однодневный выезд в Гадердзи (каждую субботу)
+          </p>
+          <p
+            onClick={handleClickOneDayTrip}
+            style={{ marginTop: 10 }}
+            className="routes-item-page"
           >
-            {photos.map((photo, index) => (
-              <SwiperSlide key={index}>
-                <div
-                  style={{
-                    width: "100%",
-                    height: "350px", // Устанавливаем фиксированную высоту для слайдов
-                    overflow: "hidden",
-                    borderRadius: "8px",
-                    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    backgroundColor: "#f0f0f0", // Фон для пустого пространства
-                  }}
-                >
-                  <img
-                    ref={ref}
-                    src={photo}
-                    alt={`Photo ${index + 1}`}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
-                  />
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+            Узнать подробнее
+          </p>
         </div>
-        <h2>🎿Что включено?</h2>
-        <ul>
-          <li>
-            Помощь в подборе снаряжения и одежды (забронируем все в чт или пт)
-          </li>
-          <li>Загрузка/разгрузка вашего и прокатного снаряжения</li>
-          <li>
-            Трансфер в две стороны
-            <br />
-            (едем только с опытными водителями, в которых уверены на 100% и
-            которые работают с нами второй год. Авто Mitsubishi Delica, 6 и 7
-            пассажирских мест)
-          </li>
-          <li>Вода и мандарины в дороге</li>
-          <li>И конечно же, впечатляющие природные панорамы!</li>
-        </ul>
 
-        <div class="section">
-          <h2>🎿Детали и тайминг</h2>
-          <ul>
-            <li>
-              В 7:00 сбор у проката, 10:00-11:00 прибытие, прямо к подъемникам.
-            </li>
-            <li>Каталка до 16:00-16:30 (17:00 выезд обратно)</li>
-            <li>20:00-21:00 возвращение в Батуми</li>
-          </ul>
-        </div>
-        <div class="section">
-          <h2>🎿Стоимость - 130 лари. Выезды каждую субботу! </h2>
-          <a
-            href="https://t.me/shpaksn"
-            target="_blank"
-            rel="noreferrer"
-            class="register-button"
+        {/* Второй блок */}
+        <div className="tour-option">
+          <img
+            onClick={handleClickTwoDayTrip}
+            src={photo2}
+            alt="Двудневный выезд"
+            className="tour-image-vertical"
+          />
+          <p className="tour-text">
+            Двудневный выезд в Гадердзи (каждую субботу-воскресенье)
+          </p>
+          <p
+            onClick={handleClickTwoDayTrip}
+            style={{ marginTop: 10 }}
+            className="routes-item-page"
           >
-            Записаться
-          </a>
+            Узнать подробнее
+          </p>
+        </div>
+        <div className="tour-option">
+          <img
+            onClick={handleClickTransfer}
+            src={photo3}
+            alt="Двудневный выезд"
+            className="tour-image-vertical"
+          />
+          <p className="tour-text">
+            Предоставляем трансфер для поездок в удобное время!
+          </p>
+
+          <p
+            style={{ marginTop: 10 }}
+            onClick={handleClickTransfer}
+            className="routes-item-page"
+          >
+            Узнать подробнее
+          </p>
         </div>
       </div>
     </div>

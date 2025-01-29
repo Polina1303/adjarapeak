@@ -4,6 +4,9 @@ import { SalePage } from "./pages/sale-page";
 import { RentPage } from "./pages/rent-page";
 import { Header } from "./components/header";
 import { ProductPage } from "./pages/product-page";
+import { TripPageOneDay } from "./pages/trip-page-one-day/trip-page-one-day";
+import { TripPageTwoDay } from "./pages/trip-page-two-day/trip-page-two-day";
+import { Transfer } from "./pages/transfer/transfer";
 import { TripPage } from "./pages/trip-page/trip-page";
 import { LakeRoutePage } from "./pages/lake-route-page";
 import { GardenRoutePage } from "./pages/garden-route-page";
@@ -31,6 +34,9 @@ function App() {
           <Route exact path="/sale" element={<SalePage />} />
           <Route exact path="/rent" element={<RentPage />} />
           <Route exact path="/rent_ski" element={<RentSkyPage />} />
+          <Route exact path="/one_day_trip" element={<TripPageOneDay />} />
+          <Route exact path="/two_day_trip" element={<TripPageTwoDay />} />
+          <Route exact path="/transfer" element={<Transfer />} />
           <Route exact path="/trip" element={<TripPage />} />
           <Route exact path="app/:id" element={<ProductPage />} />
           <Route exact path="/order" element={<OrderPage />} />

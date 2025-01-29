@@ -61,7 +61,7 @@ export const HomePage = () => {
     navigate("/rent_ski");
   };
   const handleClickTrip = () => {
-    navigate("/trip");
+    navigate("/");
   };
 
   const [isOpen, setIsOpen] = useState(false);
