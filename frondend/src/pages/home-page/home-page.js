@@ -13,7 +13,7 @@ import "./home-page.css";
 import sky from "../../components/image/sky.png";
 import eq from "../../components/image/eq (1).png";
 import eq2 from "../../components/image/eq3.png";
-import del from "../../components/image/del.png";
+import del from "./adj.webp";
 import img1 from "./IMG_7669.JPG";
 import img2 from "./IMG_7671.JPG";
 
@@ -118,12 +118,12 @@ export const HomePage = () => {
             <div class="sale-info">
               <div class="sale-title">
                 <span class="highlight-sale">
-                  {languages === "RU" ? "Горнолыжные" : "Ski Trips"}
+                  {languages === "RU" ? "Расписание" : "Schedule"}
                 </span>
                 <br />{" "}
                 {languages === "RU"
-                  ? "выезды с Adjara Peak"
-                  : " with Adjara Peak"}
+                  ? "мероприятий"
+                  : "of Events with Adjara Peak"}
               </div>
             </div>
           </a>

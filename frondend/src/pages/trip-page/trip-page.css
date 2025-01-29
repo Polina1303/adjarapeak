@@ -1,11 +1,11 @@
-.container {
+/* .container {
     margin:20px 0 70px 0;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 24px;
     padding: 16px;
-    background: linear-gradient(135deg, #f0f4ff, #f68732ba); /* Градиентный фон */
-    border-radius: 16px; /* Закругление углов контейнера */
+    background: linear-gradient(135deg, #f0f4ff, #f68732ba); 
+    border-radius: 16px; 
   }
   
   .tour-option {
@@ -32,5 +32,101 @@
     color: #333;
     text-align: center;
     margin: 0;
+  }
+   */
+
+
+   .event-schedule-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0px 20px 50px 0;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  .event-schedule-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 24px;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  @media (min-width: 768px) {
+    .card-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  .card-item {
+    box-shadow: 0 4px 12px rgba(247, 112, 45, 0.933);
+    border-radius: 12px;
+    padding: 16px;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  .card-description {
+    color: #4a4a4a;
+    margin: 8px 0;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  .card-price {
+    font-weight: 600;
+    color: #333;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  .card-buttons {
+    margin-top: 16px;
+    display: flex;
+    gap: 12px;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+
+  .custom-button {
+    background-color: #f68632;
+    border-color: #f68632;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  .custom-button:hover {
+    background-color: #e0772a;
+    border-color: #e0772a;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  .card-image {
+    width: 100%;          /* Make sure it takes up full width of its container */
+    max-width: 100px;     /* Limit the width to 300px */
+    height: 110px;         /* Maintain the aspect ratio */
+    border-radius: 8px;   /* Rounded corners */
+    margin-bottom: 16px;  /* Space below the image */
+
+  }
+  .card-header {
+    display: flex;
+    align-items: center;  /* Vertically center the items */
+    gap: 16px;            /* Space between the image and title */
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  .button{
+    font-family: "Montserrat", sans-serif;
+
   }
   
