@@ -47,7 +47,7 @@ export const TripPageTwoDay = () => {
         <IoIosArrowBack size={"25px"} /> Назад
       </button>
       <h1>ГОДЕРДЗИ С ADJARA PEAK</h1>
-      <h2>Двудневный выезд ~ 1 ночь</h2>
+      <h2>Двухдневный выезд ~ 1 ночь</h2>
 
       <div class="point">
         <div

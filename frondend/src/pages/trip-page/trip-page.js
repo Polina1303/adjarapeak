@@ -50,11 +50,11 @@
 //           <img
 //             onClick={handleClickTwoDayTrip}
 //             src={photo2}
-//             alt="Двудневный выезд"
+//             alt="Двухдневный выезд"
 //             className="tour-image-vertical"
 //           />
 //           <p className="tour-text">
-//             Двудневный выезд в Гадердзи (каждую субботу-воскресенье)
+//             Двухдневный выезд в Гадердзи (каждую субботу-воскресенье)
 //           </p>
 //           <p
 //             onClick={handleClickTwoDayTrip}
@@ -68,7 +68,7 @@
 //           <img
 //             onClick={handleClickTransfer}
 //             src={photo3}
-//             alt="Двудневный выезд"
+//             alt="Двухдневный выезд"
 //             className="tour-image-vertical"
 //           />
 //           <p className="tour-text">
@@ -97,6 +97,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import goder from "./image/IMG_8516.JPG";
 import rock from "./image/rock.jpg";
 import goder2 from "./image/IMG_8526.JPG";
+import { useInView } from "react-intersection-observer";
 
 const events = [
   {
@@ -119,7 +120,7 @@ const events = [
   },
   {
     date: "1-2 февраля",
-    title: "Двудневный выезд в Годердзи",
+    title: "Двухдневный выезд в Годердзи",
     description:
       "Проживание в отеле Forest Villa завтрак и сауна включены. Сопровождение на курорте.",
     price: "350",
@@ -155,7 +156,7 @@ const events = [
   },
   {
     date: "8-9 февраля",
-    title: "Двудневный выезд в Годердзи",
+    title: "Двухдневный выезд в Годердзи",
     description:
       "Проживание в отеле Forest Villa завтрак и сауна включены. Сопровождение на курорте.",
     price: "350",
@@ -191,7 +192,7 @@ const events = [
   },
   {
     date: "15-16 февраля",
-    title: "Двудневный выезд в Годердзи",
+    title: "Двухдневный выезд в Годердзи",
     description:
       "Проживание в отеле Forest Villa завтрак и сауна включены. Сопровождение на курорте.",
     price: "350",
@@ -227,7 +228,7 @@ const events = [
   },
   {
     date: "22-23 февраля",
-    title: "Двудневный выезд в Годердзи",
+    title: "Двухдневный выезд в Годердзи",
     description:
       "Проживание в отеле Forest Villa завтрак и сауна включены. Сопровождение на курорте.",
     price: "350",
@@ -251,6 +252,11 @@ export const TripPage = () => {
   const handleLearnMoreClick = (link) => {
     navigate(link); // Navigate to the event-specific page
   };
+  const { ref, inView } = useInView({
+    threshold: 0,
+    triggerOnce: true,
+  });
+
   return (
     <div className="back-button-cover">
       <button className="back-button" onClick={() => history(-1)}>
@@ -274,7 +280,12 @@ export const TripPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card title={event.date} bordered={false} className="card-item">
+              <Card
+                ref={ref}
+                title={event.date}
+                bordered={false}
+                className="card-item"
+              >
                 <div className="card-header">
                   <img
                     src={event.image}
