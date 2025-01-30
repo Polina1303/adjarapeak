@@ -95,7 +95,8 @@ import "./trip-page.css";
 import { useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import goder from "./image/IMG_8516.JPG";
-import rock from "./image/rock.jpg";
+import rock1 from "./image/rock1.WEBP";
+import rock2 from "./image/rock2.JPG";
 import goder2 from "./image/IMG_8526.JPG";
 import { useInView } from "react-intersection-observer";
 
@@ -104,7 +105,7 @@ const events = [
     date: "1 февраля",
     title: "Однодневный выезд в Годердзи",
     description:
-      "Ищете способ провести день в снегу, бюджетно и без ночевки? Мы подготовили решение",
+      "Ищете способ провести день в снегу, бюджетно и без ночевки? Мы подготовили решение.",
     price: "130",
     image: goder,
     link: "/one_day_trip",
@@ -115,7 +116,7 @@ const events = [
     description:
       "Тренировки и маршруты для любого уровня – от новичков до любителей.",
     price: "49",
-    image: rock,
+    image: rock1,
     link: "/rockClimbing",
   },
   {
@@ -133,14 +134,14 @@ const events = [
     description:
       "Тренировки и маршруты для любого уровня – от новичков до любителей.",
     price: "49",
-    image: rock,
+    image: rock2,
     link: "/rockClimbing",
   },
   {
     date: "8 февраля",
     title: "Однодневный выезд в Годердзи",
     description:
-      "Ищете способ провести день в снегу, бюджетно и без ночевки? Мы подготовили решение",
+      "Ищете способ провести день в снегу, бюджетно и без ночевки? Мы подготовили решение.",
     price: "130",
     image: goder,
     link: "/one_day_trip",
@@ -151,7 +152,7 @@ const events = [
     description:
       "Тренировки и маршруты для любого уровня – от новичков до любителей.",
     price: "49",
-    image: rock,
+    image: rock1,
     link: "/rockClimbing",
   },
   {
@@ -169,14 +170,14 @@ const events = [
     description:
       "Тренировки и маршруты для любого уровня – от новичков до любителей.",
     price: "49",
-    image: rock,
+    image: rock2,
     link: "/rockClimbing",
   },
   {
     date: "15 февраля",
     title: "Однодневный выезд в Годердзи",
     description:
-      "Ищете способ провести день в снегу, бюджетно и без ночевки? Мы подготовили решение",
+      "Ищете способ провести день в снегу, бюджетно и без ночевки? Мы подготовили решение.",
     price: "130",
     image: goder,
     link: "/one_day_trip",
@@ -187,7 +188,7 @@ const events = [
     description:
       "Тренировки и маршруты для любого уровня – от новичков до любителей.",
     price: "49",
-    image: rock,
+    image: rock1,
     link: "/rockClimbing",
   },
   {
@@ -205,14 +206,14 @@ const events = [
     description:
       "Тренировки и маршруты для любого уровня – от новичков до любителей.",
     price: "49",
-    image: rock,
+    image: rock2,
     link: "/rockClimbing",
   },
   {
     date: "22 февраля",
     title: "Однодневный выезд в Годердзи",
     description:
-      "Ищете способ провести день в снегу, бюджетно и без ночевки? Мы подготовили решение",
+      "Ищете способ провести день в снегу, бюджетно и без ночевки? Мы подготовили решение.",
     price: "130",
     image: goder,
     link: "/one_day_trip",
@@ -223,7 +224,7 @@ const events = [
     description:
       "Тренировки и маршруты для любого уровня – от новичков до любителей.",
     price: "49",
-    image: rock,
+    image: rock1,
     link: "/rockClimbing",
   },
   {
@@ -241,7 +242,7 @@ const events = [
     description:
       "Тренировки и маршруты для любого уровня – от новичков до любителей.",
     price: "49",
-    image: rock,
+    image: rock2,
     link: "/rockClimbing",
   },
 ];
@@ -282,7 +283,7 @@ export const TripPage = () => {
             >
               <Card
                 ref={ref}
-                title={event.date}
+                title={`${event.date}`} // Combining date and title
                 bordered={false}
                 className="card-item"
               >
@@ -295,6 +296,7 @@ export const TripPage = () => {
                   <h3 className="card-title">{event.title}</h3>
                 </div>
                 <p className="card-description">{event.description}</p>
+
                 <p className="card-price">Цена: {event.price} лари</p>
                 <div className="card-buttons">
                   <Button
