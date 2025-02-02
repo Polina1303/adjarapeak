@@ -101,42 +101,42 @@ import goder2 from "./image/IMG_8526.JPG";
 import { useInView } from "react-intersection-observer";
 
 const events = [
-  {
-    date: "1 февраля",
-    title: "Однодневный выезд в Годердзи",
-    description:
-      "Ищете способ провести день в снегу, бюджетно и без ночевки? Мы подготовили решение.",
-    price: "130",
-    image: goder,
-    link: "/one_day_trip",
-  },
-  {
-    date: "1 февраля",
-    title: "Скалолазание",
-    description:
-      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-    price: "49",
-    image: rock1,
-    link: "/rockClimbing",
-  },
-  {
-    date: "1-2 февраля",
-    title: "Двухдневный выезд в Годердзи",
-    description:
-      "Проживание в отеле Forest Villa завтрак и сауна включены. Сопровождение на курорте.",
-    price: "350",
-    image: goder2,
-    link: "/two_day_trip",
-  },
-  {
-    date: "2 февраля",
-    title: "Скалолазание",
-    description:
-      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-    price: "49",
-    image: rock2,
-    link: "/rockClimbing",
-  },
+  // {
+  //   date: "1 февраля",
+  //   title: "Однодневный выезд в Годердзи",
+  //   description:
+  //     "Ищете способ провести день в снегу, бюджетно и без ночевки? Мы подготовили решение.",
+  //   price: "130",
+  //   image: goder,
+  //   link: "/one_day_trip",
+  // },
+  // {
+  //   date: "1 февраля",
+  //   title: "Скалолазание",
+  //   description:
+  //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+  //   price: "49",
+  //   image: rock1,
+  //   link: "/rockClimbing",
+  // },
+  // {
+  //   date: "1-2 февраля",
+  //   title: "Двухдневный выезд в Годердзи",
+  //   description:
+  //     "Проживание в отеле Forest Villa завтрак и сауна включены. Сопровождение на курорте.",
+  //   price: "350",
+  //   image: goder2,
+  //   link: "/two_day_trip",
+  // },
+  // {
+  //   date: "2 февраля",
+  //   title: "Скалолазание",
+  //   description:
+  //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+  //   price: "49",
+  //   image: rock2,
+  //   link: "/rockClimbing",
+  // },
   {
     date: "8 февраля",
     title: "Однодневный выезд в Годердзи",
@@ -268,10 +268,10 @@ export const TripPage = () => {
           Расписание мероприятий на Февраль
         </h2> */}
         <h2 className="event-schedule-title">
-          <span class="orange-line"> Расписание </span>{" "}
-          <span class="orange-line"> мероприятий </span>{" "}
-          <span class="orange-box">на</span>{" "}
-          <span class="orange-line">Февраль</span>
+          <span className="orange-line"> Расписание </span>{" "}
+          <span className="orange-line"> мероприятий </span>{" "}
+          <span className="orange-box">на</span>{" "}
+          <span className="orange-line">Февраль</span>
         </h2>
         <div className="card-grid">
           {events.map((event, index) => (

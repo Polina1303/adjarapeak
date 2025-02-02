@@ -49,7 +49,7 @@ export const TripPageTwoDay = () => {
       <h1>ГОДЕРДЗИ С ADJARA PEAK</h1>
       <h2>Двухдневный выезд ~ 1 ночь</h2>
 
-      <div class="point">
+      <div className="point">
         <div
           style={{
             maxWidth: "1200px",
@@ -200,7 +200,7 @@ export const TripPageTwoDay = () => {
           </li>
         </ul>
 
-        <div class="section">
+        <div className="section">
           <h2>🎿Детали и тайминг</h2>
           <ul>
             <li>
@@ -214,7 +214,7 @@ export const TripPageTwoDay = () => {
             </li>
           </ul>
         </div>
-        <div class="section">
+        <div className="section">
           <h2>🎿Стоимость - 350 лари. Выезды каждую субботу-воскресенье! </h2>
           <p>
             Для новичков, готовых начать обучение вместе с нами:
@@ -225,7 +225,7 @@ export const TripPageTwoDay = () => {
             href="https://t.me/shpaksn"
             target="_blank"
             rel="noreferrer"
-            class="register-button"
+            className="register-button"
           >
             Записаться
           </a>

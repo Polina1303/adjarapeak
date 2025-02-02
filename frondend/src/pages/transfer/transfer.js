@@ -17,7 +17,7 @@ export const Transfer = () => {
       </button>
       <h1>Трансфер</h1>
 
-      <div class="point">
+      <div className="point">
         <ul>
           <li>
             Если вы предпочитаете путешествовать самостоятельно, без
@@ -32,14 +32,14 @@ export const Transfer = () => {
           </li>
         </ul>
 
-        <div class="section">
+        <div className="section">
           <h2>🎿Стоимость расчитываеться индивидуально</h2>
 
           <a
             href="https://t.me/shpaksn"
             target="_blank"
             rel="noreferrer"
-            class="register-button"
+            className="register-button"
           >
             Записаться
           </a>

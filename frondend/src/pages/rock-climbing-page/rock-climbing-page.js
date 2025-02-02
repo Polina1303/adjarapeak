@@ -50,12 +50,12 @@ export const RockClimbingPage = () => {
       </span>
 
       <h2>🧗🏻‍♂️Инструкторы и безопасность</h2>
-      {/* <h3 class="main-title-rock">ТЫ НЕ ПОВЕРИШЬ, НО СКАЛОЛАЗАНИЕ БЕЗОПАСНО!</h3>
-  <p class="intro">Расскажем подробнее, правда ли скалы с нами так безопасны.</p> */}
+      {/* <h3 className="main-title-rock">ТЫ НЕ ПОВЕРИШЬ, НО СКАЛОЛАЗАНИЕ БЕЗОПАСНО!</h3>
+  <p className="intro">Расскажем подробнее, правда ли скалы с нами так безопасны.</p> */}
 
-      <section class="point">
-        <h4 class="point-title">ПУНКТ 1 (СНАРЯЖЕНИЕ)</h4>
-        <ul class="point-list">
+      <section className="point">
+        <h4 className="point-title">ПУНКТ 1 (СНАРЯЖЕНИЕ)</h4>
+        <ul className="point-list">
           <li>
             Мы используем только качественное снаряжение от всеми известных и
             надежных брендов.
@@ -67,8 +67,8 @@ export const RockClimbingPage = () => {
             страховочная система, магнезия, скальные туфли)
           </li>
         </ul>
-        <p class="details-title">Подробнее:</p>
-        <ul class="details-list">
+        <p className="details-title">Подробнее:</p>
+        <ul className="details-list">
           <li>Верёвка динамическая - удержание на разрыв 22кН (2200 кг).</li>
           <li>
             Каска - выдерживает прямой вертикальный удар силой 50 Дж = 5 кг
@@ -86,19 +86,49 @@ export const RockClimbingPage = () => {
           <li>Магнезия - поглощает влагу и усиливает сцепление со скалой.</li>
           <li>Скальные туфли - для лучшего удержания на скале.</li>
         </ul>
-        <div class="image-gallery">
-          <img ref={ref} src={img1} alt="Снаряжение 1" class="gallery-image" />
-          <img ref={ref} src={img2} alt="Снаряжение 2" class="gallery-image" />
-          <img ref={ref} src={img5} alt="Снаряжение 5" class="gallery-image" />
-          <img ref={ref} src={img3} alt="Снаряжение 3" class="gallery-image" />
-          <img ref={ref} src={img4} alt="Снаряжение 4" class="gallery-image" />
-          <img ref={ref} src={img6} alt="Снаряжение 6" class="gallery-image" />
+        <div className="image-gallery">
+          <img
+            ref={ref}
+            src={img1}
+            alt="Снаряжение 1"
+            className="gallery-image"
+          />
+          <img
+            ref={ref}
+            src={img2}
+            alt="Снаряжение 2"
+            className="gallery-image"
+          />
+          <img
+            ref={ref}
+            src={img5}
+            alt="Снаряжение 5"
+            className="gallery-image"
+          />
+          <img
+            ref={ref}
+            src={img3}
+            alt="Снаряжение 3"
+            className="gallery-image"
+          />
+          <img
+            ref={ref}
+            src={img4}
+            alt="Снаряжение 4"
+            className="gallery-image"
+          />
+          <img
+            ref={ref}
+            src={img6}
+            alt="Снаряжение 6"
+            className="gallery-image"
+          />
         </div>
       </section>
 
-      <section class="point">
-        <h4 class="point-title">ПУНКТ 2 (ДОСТУПНОСТЬ)</h4>
-        <p class="point-description">
+      <section className="point">
+        <h4 className="point-title">ПУНКТ 2 (ДОСТУПНОСТЬ)</h4>
+        <p className="point-description">
           Мы проводим инструктаж перед каждой тренировкой, для новеньких мы
           подробно объясняем чего делать не стоит, этих пунктов всего парочку (и
           они есть в прошлых постах). Мы лазаем с верхней страховкой, там где
@@ -111,54 +141,62 @@ export const RockClimbingPage = () => {
         </p>
       </section>
 
-      <section class="point">
-        <h4 class="point-title">ПУНКТ 3 (ОПЫТ)</h4>
-        <p class="point-description">
+      <section className="point">
+        <h4 className="point-title">ПУНКТ 3 (ОПЫТ)</h4>
+        <p className="point-description">
           Наша команда (Саша и Егор) имеет колоссальный опыт работы на этом
           рельефе и огромный запас знаний и сил, чтобы заботиться о вас во время
           тренировки. Да, скалы - это нелегко и не для всех, но с нашей командой
           у вас точно получится! Слушайте инструктора и наслаждайтесь!
         </p>
-        <div class="image-gallery">
-          <img src={al} alt="Снаряжение 1" class="gallery-image-instructor" />
-          <img src={eg} alt="Снаряжение 2" class="gallery-image-instructor" />
+        <div className="image-gallery">
+          <img
+            src={al}
+            alt="Снаряжение 1"
+            className="gallery-image-instructor"
+          />
+          <img
+            src={eg}
+            alt="Снаряжение 2"
+            className="gallery-image-instructor"
+          />
         </div>
       </section>
       <h2>🧗🏻‍♂️График и расписание</h2>
-      <div class="day-card">
-        <h5 class="day-title">Суббота</h5>
-        <p class="price">Стоимость тренировки: 49 лари</p>
+      <div className="day-card">
+        <h5 className="day-title">Суббота</h5>
+        <p className="price">Стоимость тренировки: 49 лари</p>
 
-        <div class="session">
-          <span class="group-time">1 группа — 12:00</span>
+        <div className="session">
+          <span className="group-time">1 группа — 12:00</span>
         </div>
-        <div class="session">
-          <span class="group-time">2 группа — 15:00</span>
+        <div className="session">
+          <span className="group-time">2 группа — 15:00</span>
         </div>
         <a
           href="https://t.me/shpaksn"
           target="_blank"
           rel="noreferrer"
-          class="register-button"
+          className="register-button"
         >
           Записаться
         </a>
       </div>
-      <div class="day-card">
-        <h5 class="day-title">Воскресенье</h5>
-        <p class="price">Стоимость тренировки: 49 лари</p>
+      <div className="day-card">
+        <h5 className="day-title">Воскресенье</h5>
+        <p className="price">Стоимость тренировки: 49 лари</p>
 
-        <div class="session">
-          <span class="group-time">1 группа — 12:00</span>
+        <div className="session">
+          <span className="group-time">1 группа — 12:00</span>
         </div>
-        <div class="session">
-          <span class="group-time">2 группа — 15:00</span>
+        <div className="session">
+          <span className="group-time">2 группа — 15:00</span>
         </div>
         <a
           href="https://t.me/shpaksn"
           target="_blank"
           rel="noreferrer"
-          class="register-button"
+          className="register-button"
         >
           Записаться
         </a>

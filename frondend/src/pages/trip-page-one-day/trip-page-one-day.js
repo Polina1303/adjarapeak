@@ -46,7 +46,7 @@ export const TripPageOneDay = () => {
       <h1>ГОДЕРДЗИ С ADJARA PEAK</h1>
       <h2>Однодневный выезд</h2>
 
-      <div class="point">
+      <div className="point">
         <div
           style={{
             maxWidth: "1200px",
@@ -125,7 +125,7 @@ export const TripPageOneDay = () => {
           <li>И конечно же, впечатляющие природные панорамы!</li>
         </ul>
 
-        <div class="section">
+        <div className="section">
           <h2>🎿Детали и тайминг</h2>
           <ul>
             <li>
@@ -135,7 +135,7 @@ export const TripPageOneDay = () => {
             <li>20:00-21:00 возвращение в Батуми</li>
           </ul>
         </div>
-        <div class="section">
+        <div className="section">
           <h2>🎿Стоимость - 130 лари. Выезды каждую субботу! </h2>
           <p>
             Для новичков, готовых начать обучение вместе с нами:
@@ -146,7 +146,7 @@ export const TripPageOneDay = () => {
             href="https://t.me/shpaksn"
             target="_blank"
             rel="noreferrer"
-            class="register-button"
+            className="register-button"
           >
             Записаться
           </a>
