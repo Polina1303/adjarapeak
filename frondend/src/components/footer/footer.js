@@ -54,39 +54,39 @@ export const Footer = () => {
                 </a>
               </p>
             </div>
-          </div>
 
-          <div className="footer-socials">
-            <h4 className="footer-heading">
-              {languages === "RU"
-                ? "Соцсети Adjara Peak"
-                : "Follow Adjara Peak"}
-            </h4>
-            <div className="social-icons">
-              <a
-                href="https://www.instagram.com/adjarapeak/?igshid=YmMyMTA2M2Y%3D"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Instagram"
-              >
-                <BsInstagram />
-              </a>
-              <a
-                href="https://t.me/adjarapeak/229"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Telegram"
-              >
-                <BsTelegram />
-              </a>
-              <a
-                href="https://wa.me/995511147586"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="WhatsApp"
-              >
-                <AiOutlineWhatsApp />
-              </a>
+            <div className="footer-socials">
+              <h4 className="footer-heading">
+                {languages === "RU"
+                  ? "Соцсети Adjara Peak"
+                  : "Follow Adjara Peak"}
+              </h4>
+              <div className="social-icons">
+                <a
+                  href="https://www.instagram.com/adjarapeak/?igshid=YmMyMTA2M2Y%3D"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Instagram"
+                >
+                  <BsInstagram />
+                </a>
+                <a
+                  href="https://t.me/adjarapeak/229"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Telegram"
+                >
+                  <BsTelegram />
+                </a>
+                <a
+                  href="https://wa.me/995511147586"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="WhatsApp"
+                >
+                  <AiOutlineWhatsApp />
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -97,8 +97,8 @@ export const Footer = () => {
           scrolling="no"
           marginHeight="0"
           marginWidth="0"
-          sandbox="allow-scripts allow-same-origin"
-          referrerPolicy="no-referrer"
+          // sandbox="allow-scripts allow-same-origin allow-popups"
+          // referrerPolicy="no-referrer"
           src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=Adjara%20Peak+(Adjara%20Peak)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
         >
           <a href="https://www.gps.ie/">gps vehicle tracker</a>
