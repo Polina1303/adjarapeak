@@ -32,6 +32,10 @@ export const CATEGORY_PRODUCT = [
     type: "accessories",
   },
   {
+    title: "БИНОКЛЬ",
+    type: "binoculars",
+  },
+  {
     title: "СПАЛЬНЫЕ МЕШКИ",
     type: "sleepingbag",
   },
@@ -63,6 +67,7 @@ export const CATEGORY_PRODUCT = [
     title: "ФОНАРИ",
     type: "lantern",
   },
+
   {
     title: "СОЛНЦЕЗАЩИТНЫЕ ОЧКИ",
     type: "sunglasses",
