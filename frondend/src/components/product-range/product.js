@@ -1,7 +1,7 @@
 export const PRODUCT = [
   {
     id: 103003426034311060,
-    title: "Шлем",
+    title: "Шлем MOON",
     img: "19.18.34.png",
     desc: "синий и оранжевый",
     category: "skigoggles",
@@ -16,7 +16,7 @@ export const PRODUCT = [
   },
   {
     id: 10300342634311060,
-    title: "Шлем",
+    title: "Шлем MOON",
     img: "9.10.09.jpg",
     desc: "регулируемым размер",
     category: "skigoggles",
@@ -78,7 +78,7 @@ export const PRODUCT = [
     id: 1030403237743110,
     title: "Маска",
     img: "4181e24a-ebc3-4f13-a857-f9b67a82568e.webp",
-    desc: "",
+    desc: "ONE SKI GOGGLES",
     category: "skigoggles",
     price: 85,
     column: [
@@ -92,7 +92,7 @@ export const PRODUCT = [
     id: 10304032343110,
     title: "Маска",
     img: "snowboard-maskesi.png",
-    desc: "",
+    desc: "Wedze",
     category: "skigoggles",
     price: 85,
     column: [
@@ -155,19 +155,42 @@ export const PRODUCT = [
       "Поляризация",
     ],
   },
-  // {
-  //   id: 10323003234110,
-  //   title: "Маска",
-  //   img: "IMG_6873.JPG",
-  //   desc: "",
-  //   category: "skigoggles",
-  //   price: 116,
-  //   column: [
-  //     'Легкая, что позволяет носить их без давления',
-  //     'Двухслойные линзы эффективно предотвращают запотевание'
-
-  //   ],
-  // },
+  {
+    id: 10323003234110,
+    title: "Маска",
+    img: "IMG_8841.PNG",
+    desc: "YUEDIO",
+    category: "skigoggles",
+    price: 116,
+    column: [
+      "Легкая, что позволяет носить их без давления",
+      "Двухслойные линзы эффективно предотвращают запотевание",
+    ],
+  },
+  {
+    id: 10323003234110,
+    title: "Маска",
+    img: "IMG_8843.PNG",
+    desc: "YUEDIO",
+    category: "skigoggles",
+    price: 116,
+    column: [
+      "Легкая, что позволяет носить их без давления",
+      "Двухслойные линзы эффективно предотвращают запотевание",
+    ],
+  },
+  {
+    id: 10323003234110,
+    title: "Маска",
+    img: "IMG_8842.PNG",
+    desc: "YUEDIO",
+    category: "skigoggles",
+    price: 116,
+    column: [
+      "Легкая, что позволяет носить их без давления",
+      "Двухслойные линзы эффективно предотвращают запотевание",
+    ],
+  },
   {
     id: 103230032344110,
     title: "Маска",
