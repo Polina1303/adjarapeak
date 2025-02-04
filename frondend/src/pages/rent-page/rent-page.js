@@ -36,6 +36,8 @@ export const RentPage = () => {
     const newActiveType = Number(e.key);
     setActiveType(newActiveType);
     localStorage.setItem("activeType", newActiveType);
+    setSearchQuery("");
+    localStorage.removeItem("searchQuery", searchQuery);
   };
 
   const handleSearchChange = (e) => {

@@ -101,6 +101,10 @@ export const CATEGORY_PRODUCT = [
     title: "ПОХОДНАЯ ЕДА",
     type: "sublimates",
   },
+  {
+    title: "КОФЕ",
+    type: "coffee",
+  },
 
   {
     title: "SUP-ДОСКИ",

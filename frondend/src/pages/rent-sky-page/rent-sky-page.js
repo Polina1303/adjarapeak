@@ -30,6 +30,8 @@ export const RentSkyPage = () => {
     const newActiveType = Number(e.key);
     setActiveType(newActiveType);
     localStorage.setItem("activeType", newActiveType);
+    setSearchQuery("");
+    localStorage.removeItem("searchQuery", searchQuery);
   };
 
   const overflowedIndicator = <span>показать больше...</span>;

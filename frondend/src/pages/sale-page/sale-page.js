@@ -34,6 +34,9 @@ export const SalePage = () => {
     const newActiveType = Number(e.key);
     setActiveType(newActiveType);
     localStorage.setItem("activeTypeSale", newActiveType);
+
+    setSearchQuery("");
+    localStorage.removeItem("searchQuery", searchQuery);
   };
 
   const handleSearchChange = (e) => {
