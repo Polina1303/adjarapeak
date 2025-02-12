@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { SendEmail } from "../../API/index";
 import { useDispatch } from "react-redux";
-import { clearCart } from '../../redux/cart/reducer';
+import { clearCart } from "../../redux/cart/reducer";
 import "./order-input.css";
 import { AiOutlineCloseCircle } from "react-icons/ai";
-import {calcTotalPrice} from '../../components/utils'
+import { calcTotalPrice } from "../../components/utils";
 
 export const OrderInput = ({ items, setOrderSuccess }) => {
   const [visible, setVisible] = useState(false);
@@ -16,7 +16,7 @@ export const OrderInput = ({ items, setOrderSuccess }) => {
     formState: { errors },
     reset,
   } = useForm();
-    const num = items.map((item) => item.category.includes("rent"));
+  const num = items.map((item) => item.category.includes("rent"));
 
   useEffect(() => {
     if (num.includes(true)) {
@@ -24,17 +24,24 @@ export const OrderInput = ({ items, setOrderSuccess }) => {
     }
   }, [num]);
 
-  const prod = items.map((item,index) => `${index+1}) ${item.title} ${item.desc} цена:${item.price}  количество:${item.count} `).join(".<br>");
+  const prod = items
+    .map(
+      (item, index) =>
+        `${index + 1}) ${item.title} ${item.desc} цена:${
+          item.price
+        }  количество:${item.count} `
+    )
+    .join(".<br>");
   const desc = items.map((item) => item.desc).join(",");
- 
+
   const price = calcTotalPrice(items);
   const count = items.map((item) => item.count).join(",");
 
   const defaultValues = {
     prod: prod,
-    desc: '',
+    desc: "",
     price: price,
-    count: '',
+    count: "",
   };
 
   const onSubmit = (data, e) => {

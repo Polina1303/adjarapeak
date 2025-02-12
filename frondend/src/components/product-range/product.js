@@ -131,6 +131,7 @@ export const PRODUCT = [
     desc: "Wedze",
     category: "skigoggles",
     price: 85,
+    order: true,
     column: [
       "На 100% анти-УФ. Желтая линза S1 для тумана и снегопада.",
       "Антизапотевающее покрытие ESSENTIEL, двойная линза с антизапотевающим покрытием.",
@@ -146,6 +147,7 @@ export const PRODUCT = [
     img: "IMG_6872.JPG",
     desc: "Shark Fit",
     category: "skigoggles",
+    order: true,
     price: 70,
     column: [
       "Размер: Универсальный",
@@ -216,6 +218,7 @@ export const PRODUCT = [
     img: "IMG_6874.JPG",
     desc: "Shark Fit",
     category: "skigoggles",
+    order: true,
     price: 70,
     column: [
       "Размер: Универсальный",
