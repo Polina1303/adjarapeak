@@ -11,6 +11,7 @@ import rock1 from "./image/rock1.WEBP";
 import rock2 from "./image/rock2.JPG";
 import auto from "./image/auto.jpg";
 import goder2 from "./image/IMG_8526.JPG";
+import end from "./image/end.jpg";
 import svan from "./image/svan.jpg";
 import { useInView } from "react-intersection-observer";
 
@@ -172,7 +173,7 @@ const events = [
     description:
       "В партнерстве с другими организаторами! 3 дня! Первые 50 билетов со скидкой! Полноценный анонс позже.",
     price: "-",
-    image: rock2,
+    image: end,
     link: "/end-season",
   },
 ];
