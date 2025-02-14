@@ -1,91 +1,3 @@
-// import React from "react";
-// import "./trip-page.css";
-// import { useNavigate } from "react-router-dom";
-// import { IoIosArrowBack } from "react-icons/io";
-// import photo1 from "./IMG_8516.JPG";
-// import photo2 from "./IMG_8526.JPG";
-// import photo3 from "./IMG_8178.jpg";
-
-// export const TripPage = () => {
-//   const history = useNavigate();
-//   const navigate = useNavigate();
-
-//   const handleClickOneDayTrip = () => {
-//     navigate("/one_day_trip");
-//   };
-//   const handleClickTwoDayTrip = () => {
-//     navigate("/two_day_trip");
-//   };
-//   const handleClickTransfer = () => {
-//     navigate("/transfer");
-//   };
-//   return (
-//     <div className="back-button-cover">
-//       <button className="back-button" onClick={() => history(-1)}>
-//         <IoIosArrowBack size={"25px"} /> Назад
-//       </button>
-//       <div className="container">
-//         {/* Первый блок */}
-//         <div className="tour-option">
-//           <img
-//             onClick={handleClickOneDayTrip}
-//             src={photo1}
-//             alt="Однодневный выезд"
-//             className="tour-image-vertical"
-//           />
-//           <p className="tour-text">
-//             Однодневный выезд в Гадердзи (каждую субботу)
-//           </p>
-//           <p
-//             onClick={handleClickOneDayTrip}
-//             style={{ marginTop: 10 }}
-//             className="routes-item-page"
-//           >
-//             Узнать подробнее
-//           </p>
-//         </div>
-
-//         {/* Второй блок */}
-//         <div className="tour-option">
-//           <img
-//             onClick={handleClickTwoDayTrip}
-//             src={photo2}
-//             alt="Двухдневный выезд"
-//             className="tour-image-vertical"
-//           />
-//           <p className="tour-text">
-//             Двухдневный выезд в Гадердзи (каждую субботу-воскресенье)
-//           </p>
-//           <p
-//             onClick={handleClickTwoDayTrip}
-//             style={{ marginTop: 10 }}
-//             className="routes-item-page"
-//           >
-//             Узнать подробнее
-//           </p>
-//         </div>
-//         <div className="tour-option">
-//           <img
-//             onClick={handleClickTransfer}
-//             src={photo3}
-//             alt="Двухдневный выезд"
-//             className="tour-image-vertical"
-//           />
-//           <p className="tour-text">
-//             Предоставляем трансфер для поездок в удобное время!
-//           </p>
-
-//           <p
-//             style={{ marginTop: 10 }}
-//             onClick={handleClickTransfer}
-//             className="routes-item-page"
-//           >
-//             Узнать подробнее
-//           </p>
-//         </div>
-//       </div>
-//     </div>
-//   );
 // };
 
 import React from "react";
@@ -97,85 +9,24 @@ import { IoIosArrowBack } from "react-icons/io";
 import goder from "./image/IMG_8516.JPG";
 import rock1 from "./image/rock1.WEBP";
 import rock2 from "./image/rock2.JPG";
+import auto from "./image/auto.jpg";
 import goder2 from "./image/IMG_8526.JPG";
+import svan from "./image/svan.jpg";
 import { useInView } from "react-intersection-observer";
 
 const events = [
-  // {
-  //   date: "1 февраля",
-  //   title: "Однодневный выезд в Годердзи",
-  //   description:
-  //     "Ищете способ провести день в снегу, бюджетно и без ночевки? Мы подготовили решение.",
-  //   price: "130",
-  //   image: goder,
-  //   link: "/one_day_trip",
-  // },
-  // {
-  //   date: "1 февраля",
-  //   title: "Скалолазание",
-  //   description:
-  //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-  //   price: "49",
-  //   image: rock1,
-  //   link: "/rockClimbing",
-  // },
-  // {
-  //   date: "1-2 февраля",
-  //   title: "Двухдневный выезд в Годердзи",
-  //   description:
-  //     "Проживание в отеле Forest Villa завтрак и сауна включены. Сопровождение на курорте.",
-  //   price: "350",
-  //   image: goder2,
-  //   link: "/two_day_trip",
-  // },
-  // {
-  //   date: "2 февраля",
-  //   title: "Скалолазание",
-  //   description:
-  //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-  //   price: "49",
-  //   image: rock2,
-  //   link: "/rockClimbing",
-  // },
   {
-    date: "8 февраля",
-    title: "Однодневный выезд в Годердзи",
+    date: "Ежедневно",
+    title: "Трансфер",
     description:
-      "Ищете способ провести день в снегу, бюджетно и без ночевки? Мы подготовили решение.",
-    price: "130",
-    image: goder,
-    link: "/one_day_trip",
-  },
-  {
-    date: "8 февраля",
-    title: "Скалолазание",
-    description:
-      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-    price: "49",
-    image: rock1,
-    link: "/rockClimbing",
-  },
-  {
-    date: "8-9 февраля",
-    title: "Двухдневный выезд в Годердзи",
-    description:
-      "Проживание в отеле Forest Villa завтрак и сауна включены. Сопровождение на курорте.",
-    price: "350",
-    image: goder2,
-    link: "/two_day_trip",
-  },
-  {
-    date: "9 февраля",
-    title: "Скалолазание",
-    description:
-      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-    price: "49",
-    image: rock2,
-    link: "/rockClimbing",
+      "Если вы предпочитаете путешествовать самостоятельно, мы с радостью предоставим услугу трансфера!",
+    price: "-",
+    image: auto,
+    link: "/transfer",
   },
   {
     date: "15 февраля",
-    title: "Однодневный выезд в Годердзи",
+    title: "Однодневный выезд в Годердзи. Cвободно 4/28 мест",
     description:
       "Ищете способ провести день в снегу, бюджетно и без ночевки? Мы подготовили решение.",
     price: "130",
@@ -193,7 +44,7 @@ const events = [
   },
   {
     date: "15-16 февраля",
-    title: "Двухдневный выезд в Годердзи",
+    title: "Двухдневный выезд в Годердзи. МЕСТ НЕТ",
     description:
       "Проживание в отеле Forest Villa завтрак и сауна включены. Сопровождение на курорте.",
     price: "350",
@@ -211,7 +62,7 @@ const events = [
   },
   {
     date: "22 февраля",
-    title: "Однодневный выезд в Годердзи",
+    title: "Однодневный выезд в Годердзи. Cвободно 14/35 мест",
     description:
       "Ищете способ провести день в снегу, бюджетно и без ночевки? Мы подготовили решение.",
     price: "130",
@@ -228,7 +79,7 @@ const events = [
     link: "/rockClimbing",
   },
   {
-    date: "22-23 февраля",
+    date: "22-23 февраля. НЕТ МЕСТ",
     title: "Двухдневный выезд в Годердзи",
     description:
       "Проживание в отеле Forest Villa завтрак и сауна включены. Сопровождение на курорте.",
@@ -244,6 +95,85 @@ const events = [
     price: "49",
     image: rock2,
     link: "/rockClimbing",
+  },
+  {
+    date: "28 февраля-02 марта",
+    title: "Сванети на 2 ночи",
+    description: "В разработке",
+    price: "-",
+    image: svan,
+    link: "/",
+  },
+  {
+    date: "1 марта",
+    title: "Скалолазание",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock1,
+    link: "/rockClimbing",
+  },
+  {
+    date: "2 марта",
+    title: "Скалолазание",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock2,
+    link: "/rockClimbing",
+  },
+  {
+    date: "7-09 марта",
+    title: "Сванети на 2 ночи",
+    description: "В разработке",
+    price: "",
+    image: svan,
+    link: "/",
+  },
+  {
+    date: "8 марта",
+    title: "Скалолазание",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock1,
+    link: "/rockClimbing",
+  },
+  {
+    date: "9 марта",
+    title: "Скалолазание",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock2,
+    link: "/rockClimbing",
+  },
+  {
+    date: "15 марта",
+    title: "Скалолазание",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock1,
+    link: "/rockClimbing",
+  },
+  {
+    date: "16 марта",
+    title: "Скалолазание",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock2,
+    link: "/rockClimbing",
+  },
+  {
+    date: "14-16 марта ИЛИ 21-23 марта",
+    title: "Масштабное закрытие сезона на 150 человек",
+    description:
+      "В партнерстве с другими организаторами! 3 дня! Первые 50 билетов со скидкой! Полноценный анонс позже.",
+    price: "-",
+    image: rock2,
+    link: "/end-season",
   },
 ];
 
@@ -271,7 +201,7 @@ export const TripPage = () => {
           <span className="orange-line"> Расписание </span>{" "}
           <span className="orange-line"> мероприятий </span>{" "}
           <span className="orange-box">на</span>{" "}
-          <span className="orange-line">Февраль</span>
+          <span className="orange-line">февраль и март</span>
         </h2>
         <div className="card-grid">
           {events.map((event, index) => (
@@ -296,15 +226,19 @@ export const TripPage = () => {
                   <h3 className="card-title">{event.title}</h3>
                 </div>
                 <p className="card-description">{event.description}</p>
+                {event.price !== "-" && (
+                  <p className="card-price">Цена: {event.price} лари</p>
+                )}
 
-                <p className="card-price">Цена: {event.price} лари</p>
                 <div className="card-buttons">
-                  <Button
-                    className="button"
-                    onClick={() => handleLearnMoreClick(event.link)}
-                  >
-                    Узнать больше
-                  </Button>
+                  {event.link !== "/" && (
+                    <Button
+                      className="button"
+                      onClick={() => handleLearnMoreClick(event.link)}
+                    >
+                      Узнать больше
+                    </Button>
+                  )}
                   <Button className="custom-button">
                     <a
                       href="https://t.me/shpaksn"
