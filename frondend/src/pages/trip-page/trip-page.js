@@ -11,7 +11,7 @@ import rock1 from "./image/rock1.WEBP";
 import rock2 from "./image/rock2.JPG";
 import auto from "./image/auto.jpg";
 import goder2 from "./image/IMG_8526.JPG";
-import end from "./image/end.jpg";
+import end from "./image/photo_2024-04-01_15-31-09.jpg";
 import svan from "./image/svan.jpg";
 import { useInView } from "react-intersection-observer";
 

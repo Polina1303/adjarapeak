@@ -28,7 +28,7 @@ import photo7 from "./imageEndSeason/DVV_0927.jpg";
 
 import { useInView } from "react-intersection-observer";
 
-const photos = [photo5, photo4, photo6, photo3, photo7, photo1, photo2];
+const photos = [photo4, photo1, photo6, photo3, photo7, photo2, photo5];
 export const EndSeason = () => {
   const history = useNavigate();
   const { ref, inView } = useInView({
@@ -53,6 +53,67 @@ export const EndSeason = () => {
             Записаться
           </a>
         </Button>
+        <div
+          style={{
+            maxWidth: "1200px",
+            margin: "0 auto",
+            padding: "20px",
+            boxSizing: "border-box",
+          }}
+        >
+          <Swiper
+            modules={[Navigation, Pagination]}
+            navigation
+            pagination={{ clickable: true }}
+            spaceBetween={10}
+            slidesPerView={3} // По умолчанию показываем 3 фото
+            breakpoints={{
+              // Адаптивные настройки
+              0: {
+                // Для маленьких экранов
+                slidesPerView: 1,
+              },
+              768: {
+                // Для планшетов
+                slidesPerView: 2,
+              },
+              1024: {
+                // Для больших экранов
+                slidesPerView: 3,
+              },
+            }}
+            style={{ width: "100%" }}
+          >
+            {photos.map((photo, index) => (
+              <SwiperSlide key={index}>
+                <div
+                  style={{
+                    width: "100%",
+                    height: "350px", // Устанавливаем фиксированную высоту для слайдов
+                    overflow: "hidden",
+                    borderRadius: "8px",
+                    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    backgroundColor: "#f0f0f0", // Фон для пустого пространства
+                  }}
+                >
+                  <img
+                    ref={ref}
+                    src={photo}
+                    alt={`Photo ${index + 1}`}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
         <section className="event-section zoom-in">
           <h2>
             <FaHotel /> ПРОЖИВАНИЕ
@@ -168,67 +229,6 @@ export const EndSeason = () => {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
-          <div
-            style={{
-              maxWidth: "1200px",
-              margin: "0 auto",
-              padding: "20px",
-              boxSizing: "border-box",
-            }}
-          >
-            <Swiper
-              modules={[Navigation, Pagination]}
-              navigation
-              pagination={{ clickable: true }}
-              spaceBetween={10}
-              slidesPerView={3} // По умолчанию показываем 3 фото
-              breakpoints={{
-                // Адаптивные настройки
-                0: {
-                  // Для маленьких экранов
-                  slidesPerView: 1,
-                },
-                768: {
-                  // Для планшетов
-                  slidesPerView: 2,
-                },
-                1024: {
-                  // Для больших экранов
-                  slidesPerView: 3,
-                },
-              }}
-              style={{ width: "100%" }}
-            >
-              {photos.map((photo, index) => (
-                <SwiperSlide key={index}>
-                  <div
-                    style={{
-                      width: "100%",
-                      height: "350px", // Устанавливаем фиксированную высоту для слайдов
-                      overflow: "hidden",
-                      borderRadius: "8px",
-                      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      backgroundColor: "#f0f0f0", // Фон для пустого пространства
-                    }}
-                  >
-                    <img
-                      ref={ref}
-                      src={photo}
-                      alt={`Photo ${index + 1}`}
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                      }}
-                    />
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
         </div>
       </div>
     </div>
