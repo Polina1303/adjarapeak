@@ -375,7 +375,7 @@ export const RENT_SKY = [
     category: "rent_sky",
     type: "jacket",
     price: 15,
-    column: ["Размер:XS, S, M, L, XL"],
+    column: ["Размер:XS, S, M, L, XL, XXL"],
   },
   {
     id: 30004,
@@ -399,7 +399,7 @@ export const RENT_SKY = [
     type: "pants",
     price: 10,
     column: [
-      "Размер:S, M, L",
+      "Размер:S, M, L, XL, XXL",
       "Большинство штанов в нейтральных цветах и подходят для парней и девушек одновременно",
     ],
   },
@@ -447,7 +447,7 @@ export const RENT_SKY = [
     category: "rent_sky",
     type: "gloves",
     price: 5,
-    column: ["Размер:XS, S, M, L", ""],
+    column: ["Размер:XS, S, M, L"],
   },
   {
     id: 30007,
@@ -457,7 +457,7 @@ export const RENT_SKY = [
     category: "rent_sky",
     type: "helmet",
     price: 15,
-    column: ["Размер:S, M, L", ""],
+    column: ["Размер:S, M, L"],
   },
   {
     id: 30008,

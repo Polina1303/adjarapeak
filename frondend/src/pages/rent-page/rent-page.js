@@ -26,7 +26,7 @@ export const RentPage = () => {
   useEffect(() => {
     const currentItems = RENT.filter(
       (item) =>
-        item.title.toLowerCase().includes(searchQuery.toLowerCase()) &&
+        item.title.toLowerCase().includes(searchQuery.trim().toLowerCase()) &&
         (items[activeType]?.type ? item.type === items[activeType].type : true)
     );
     setActive(currentItems);

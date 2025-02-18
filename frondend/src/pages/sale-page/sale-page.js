@@ -55,10 +55,8 @@ export const SalePage = () => {
   useEffect(() => {
     const filteredItems = PRODUCT.filter(
       (item) =>
-        item.title.toLowerCase().includes(searchQuery.toLowerCase()) &&
-        (items[activeType]?.type
-          ? item.category === items[activeType].type
-          : true)
+        item.title.toLowerCase().includes(searchQuery.trim().toLowerCase()) &&
+        (items[activeType]?.type ? item.type === items[activeType].type : true)
     );
     setActive(filteredItems);
   }, [searchQuery, activeType]);
