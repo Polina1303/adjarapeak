@@ -56,7 +56,9 @@ export const SalePage = () => {
     const filteredItems = PRODUCT.filter(
       (item) =>
         item.title.toLowerCase().includes(searchQuery.trim().toLowerCase()) &&
-        (items[activeType]?.type ? item.type === items[activeType].type : true)
+        (items[activeType]?.type
+          ? item.category === items[activeType].type
+          : true)
     );
     setActive(filteredItems);
   }, [searchQuery, activeType]);
