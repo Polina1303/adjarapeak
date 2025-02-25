@@ -61,50 +61,43 @@ const events = [
   //   image: rock2,
   //   link: "/rockClimbing",
   // },
-  {
-    date: "22 февраля",
-    title: "Однодневный выезд в Годердзи. Cвободно 12/35 мест",
-    description:
-      "Ищете способ провести день в снегу, бюджетно и без ночевки? Последний выезд в Годердзи на 1 день в этом сезоне.",
-    price: "130",
-    image: goder,
-    link: "/one_day_trip",
-  },
-  {
-    date: "22 февраля",
-    title: "Скалолазание в Гонио",
-    description:
-      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-    price: "49",
-    image: rock1,
-    link: "/rockClimbing",
-  },
-  {
-    date: "22-23 февраля. НЕТ МЕСТ",
-    title: "Двухдневный выезд в Годердзи",
-    description:
-      "Проживание в отеле Forest Villa завтрак и сауна включены. Сопровождение на курорте.",
-    price: "350",
-    image: goder2,
-    link: "/two_day_trip",
-  },
-  {
-    date: "23 февраля",
-    title: "Скалолазание в Гонио",
-    description:
-      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-    price: "49",
-    image: rock2,
-    link: "/rockClimbing",
-  },
-  {
-    date: "28 февраля-02 марта",
-    title: "Сванети на 2 ночи",
-    description: "В разработке",
-    price: "-",
-    image: svan,
-    link: "/",
-  },
+  // {
+  //   date: "22 февраля",
+  //   title: "Однодневный выезд в Годердзи. Cвободно 12/35 мест",
+  //   description:
+  //     "Ищете способ провести день в снегу, бюджетно и без ночевки? Последний выезд в Годердзи на 1 день в этом сезоне.",
+  //   price: "130",
+  //   image: goder,
+  //   link: "/one_day_trip",
+  // },
+  // {
+  //   date: "22 февраля",
+  //   title: "Скалолазание в Гонио",
+  //   description:
+  //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+  //   price: "49",
+  //   image: rock1,
+  //   link: "/rockClimbing",
+  // },
+  // {
+  //   date: "22-23 февраля. НЕТ МЕСТ",
+  //   title: "Двухдневный выезд в Годердзи",
+  //   description:
+  //     "Проживание в отеле Forest Villa завтрак и сауна включены. Сопровождение на курорте.",
+  //   price: "350",
+  //   image: goder2,
+  //   link: "/two_day_trip",
+  // },
+  // {
+  //   date: "23 февраля",
+  //   title: "Скалолазание в Гонио",
+  //   description:
+  //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+  //   price: "49",
+  //   image: rock2,
+  //   link: "/rockClimbing",
+  // },
+
   {
     date: "1 марта",
     title: "Скалолазание в Гонио",
@@ -148,6 +141,14 @@ const events = [
     price: "49",
     image: rock2,
     link: "/rockClimbing",
+  },
+  {
+    date: "14-16 марта",
+    title: "Сванети на 2 ночи",
+    description: "В разработке",
+    price: "-",
+    image: svan,
+    link: "/",
   },
   {
     date: "15 марта",
@@ -202,7 +203,7 @@ export const TripPage = () => {
           <span className="orange-line"> Расписание </span>{" "}
           <span className="orange-line"> мероприятий </span>{" "}
           <span className="orange-box">на</span>{" "}
-          <span className="orange-line">февраль и март</span>
+          <span className="orange-line">март</span>
         </h2>
         <div className="card-grid">
           {events.map((event, index) => (
