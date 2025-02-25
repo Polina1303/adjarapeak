@@ -117,7 +117,7 @@ const events = [
     link: "/rockClimbing",
   },
   {
-    date: "7-09 марта",
+    date: "7-9 марта",
     title: "Сванети на 2 ночи",
     description: "В разработке",
     price: "",
