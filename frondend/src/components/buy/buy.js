@@ -44,8 +44,8 @@ export const Buy = ({ product, page, discount }) => {
         style={{
           display: "flex",
           flexDirection: "row",
-          alignItems: "flex-end",
-          justifyContent: "center",
+          // alignItems: "flex-end",
+          // justifyContent: "center",
         }}
       >
         {product.newPrice && (
