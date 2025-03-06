@@ -43,7 +43,9 @@ export const EndSeason = () => {
       </button>
 
       <div className="event-container">
-        <h1 className="fade-in">Фестиваль закрытия горнолыжного сезона</h1>
+        <h1 className="fade-in">
+          Фестиваль закрытия горнолыжного сезона. 21-23{" "}
+        </h1>
         <p className="event-description slide-in">
           Масштабное событие на закрытие сезона, с кучей активностей и толпой
           вдохновлённых ребят
@@ -217,7 +219,11 @@ export const EndSeason = () => {
             </ul>
           </div>
         </section>
-
+        <p class="info-text">
+          <a href="https://goderdzifest.com/" className="info-link">
+            и ещё больше информации
+          </a>
+        </p>
         <div className="video-container">
           <h3>Как это было год назад</h3>
           <iframe

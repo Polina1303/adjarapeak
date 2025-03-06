@@ -92,3 +92,19 @@ ul {
   text-decoration: none;
   color: inherit;
 }
+
+.info-text {
+  text-align: center;
+  font-size: 1.125rem; /* Equivalent to text-lg */
+  font-weight: 600;    /* Equivalent to font-semibold */
+  margin-top: 1rem;    /* Equivalent to mt-4 */
+}
+
+.info-link {
+  color: #3b82f6;  /* Equivalent to text-blue-500 */
+  transition: color 0.2s ease-in-out;
+}
+
+.info-link:hover {
+  color: #1d4ed8;  /* Equivalent to text-blue-700 */
+}

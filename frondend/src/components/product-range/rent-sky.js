@@ -329,7 +329,7 @@ export const RENT_SKY = [
     desc: "от 95 см до 166 см",
     category: "rent_sky",
     type: "set",
-    price: 65,
+    price: 70,
     column: [
       "Размер шлема: S, M, L",
       "Размер маски: S, M, L ",
