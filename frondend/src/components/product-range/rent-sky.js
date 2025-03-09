@@ -228,6 +228,7 @@ export const RENT_SKY = [
       "Nidecker 95 см",
       "Black Fire 110 см",
       "Raisign 130 см",
+      "Nidecker Mini Angel 139 см",
       "Morrow wildflower 140 см",
       "Oxygen Fascination 144 см",
       "Ride OMG 144 см",
@@ -287,6 +288,7 @@ export const RENT_SKY = [
       "Nidecker 95 см",
       "Black Fire 110 см",
       "Raisign 130 см",
+      "Nidecker Mini Angel 139 см",
       "Morrow wildflower 140 см",
       "Ride OMG 144 см",
 
@@ -338,6 +340,7 @@ export const RENT_SKY = [
       "Nidecker 95 см",
       "Black Fire 110 см",
       "Raisign 130 см",
+      "Nidecker Mini Angel 139 см",
       "Morrow wildflower 140 см",
       "Ride OMG 144 см",
       "Oxygen Fascination 144 см",
