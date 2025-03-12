@@ -168,7 +168,7 @@ export const RockClimbingPage = () => {
         <p className="price">Стоимость тренировки: 49 лари</p>
 
         <div className="session">
-          <span className="group-time">1 группа — 12:00</span>
+          <span className="group-time">1 группа — 11:00</span>
         </div>
         <div className="session">
           <span className="group-time">2 группа — 15:00</span>
@@ -187,7 +187,7 @@ export const RockClimbingPage = () => {
         <p className="price">Стоимость тренировки: 49 лари</p>
 
         <div className="session">
-          {/* <span className="group-time">1 группа — 12:00</span> */}
+          <span className="group-time">1 группа — 11:00</span>
         </div>
         <div className="session">
           <span className="group-time">15:00</span>
@@ -220,7 +220,7 @@ export const RockClimbingPage = () => {
         </li>
         <li>Не забывайте о запасах воды и питания. В некоторых частях тропы нет воды и магазинов, так что возьмите фильтры и сушеную еду.</li>
        </ol> */}
-      {/* 
+      {/*
        <h2 >Онлайн-трансляция нашего путешествия       </h2>
        <span>
 Хотите следить за нашим маршрутом в реальном времени? Мы организовали онлайн-трансляцию с отображением нашего передвижения на карте! Это позволит вам увидеть, какой путь мы прошли, где остановились. Такой формат даст вам возможность буквально «идти» вместе с нами и наблюдать, как мы преодолеваем трудности Ликийской тропы.
@@ -232,7 +232,7 @@ export const RockClimbingPage = () => {
   backgroundColor: '#f9c74f',
   color: '#333',
   padding: '5px 10px',
-  borderRadius: '5px', 
+  borderRadius: '5px',
   fontWeight: 'bold',
 
 }} >Следить за перемещениями </span>

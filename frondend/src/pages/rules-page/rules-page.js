@@ -74,7 +74,7 @@ export const RulesPage = () => {
                 {/* <li className="column__list">
                   <span className="modal__column__text">
                   {languages==="RU"? 'Для удобства клиентов, в прокате существует система бронирования, позволяющая клиенту заблаговременно заключить договор проката, указав лишь своё имя и номер телефона.':
-"For customer convenience, the rental has a reservation system that allows the customer to make a rental agreement in advance by providing only their name and phone number."}               
+"For customer convenience, the rental has a reservation system that allows the customer to make a rental agreement in advance by providing only their name and phone number."}
                   </span>
                 </li> */}
                 <li className="column__list">

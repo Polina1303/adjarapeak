@@ -46,7 +46,7 @@ export const RockClimbing = () => {
             </p>
             <p className="climbing-text">
               Тренировки проходят 4 раза в неделю: в субботу и воскресенье
-              (12:00 и 15:00). Всё необходимое снаряжение предоставим, включая
+              (11:00 и 15:00). Всё необходимое снаряжение предоставим, включая
               скальные туфли. Стоимость — 49 лари.
             </p>
             <a href="/rockClimbing" className="climbing-button">
@@ -67,10 +67,10 @@ export const RockClimbing = () => {
       {/* <div  style={{ display: 'flex'}}>
     <ReactPlayer
   url={videoFile}
-  playing={true} 
-  controls={false} 
-  muted={true} 
-  loop={true} 
+  playing={true}
+  controls={false}
+  muted={true}
+  loop={true}
       width="460px"
         height="355px"
         style={{display:'flex',marginLeft:'-130px'}}
@@ -99,8 +99,8 @@ export const RockClimbing = () => {
   }}>
     Тренировки проходят 4 раза в неделю: в субботу и воскресенье (11:00 и 15:00). Всё необходимое снаряжение предоставим, включая скальные туфли. Стоимость — 49 лари.
   </p>
-  <a 
-    href="/rockClimbing" 
+  <a
+    href="/rockClimbing"
     style={{
         display: 'inline-block',
         backgroundColor: '#c35b28',
@@ -118,10 +118,10 @@ export const RockClimbing = () => {
   >
     Узнать больше
   </a>
-  <a 
-    href="https://t.me/shpaksn" 
-    target="_blank" 
-    rel="noreferrer" 
+  <a
+    href="https://t.me/shpaksn"
+    target="_blank"
+    rel="noreferrer"
     style={{
         fontSize: '16px',
         color: '#c35b28',

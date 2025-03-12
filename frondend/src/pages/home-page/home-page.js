@@ -215,7 +215,7 @@ export const HomePage = () => {
             <tr>
               <td>Консервация</td>
 
-              <td>~ 35 {languages === "RU" ? "лари" : "gel"}</td>
+              <td>~ 40 {languages === "RU" ? "лари" : "gel"}</td>
             </tr>
           </tbody>
         </table>
