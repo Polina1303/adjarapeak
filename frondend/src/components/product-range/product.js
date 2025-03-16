@@ -4455,6 +4455,7 @@ export const PRODUCT = [
     img: "TEPMOCSTANIEY.jpg",
     desc: "Vacuum Bottle",
     category: "termoryukzak",
+    order: true,
     price: 159,
     column: [
       "Имеет прочный двухслойный корпус, вакуумную термоизоляцию, устойчив к ударам и падениям",
@@ -4475,6 +4476,7 @@ export const PRODUCT = [
     img: "s-l960.png",
     desc: "Vacuum Bottle",
     category: "termoryukzak",
+    order: true,
     price: 175,
     column: [
       "Имеет прочный двухслойный корпус, вакуумную термоизоляцию, устойчив к ударам и падениям",

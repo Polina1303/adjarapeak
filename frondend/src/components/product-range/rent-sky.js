@@ -262,6 +262,7 @@ export const RENT_SKY = [
       "Technine 161 см",
       "Forum 163 см",
       "Black Fire (BF) 166 см",
+      "Nitro Option redline 166",
     ],
   },
   {
@@ -324,6 +325,7 @@ export const RENT_SKY = [
       "Technine 161 см",
       "Forum 163 см",
       "Black Fire (BF) 166 см",
+      "Nitro Option redline 166",
     ],
   },
   {
@@ -375,6 +377,7 @@ export const RENT_SKY = [
       "Technine 161 см",
       "Forum 163 см",
       "Black Fire (BF) 166 см",
+      "Nitro Option redline 166",
     ],
   },
   {
