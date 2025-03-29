@@ -104,10 +104,23 @@ export const HomePage = () => {
         </p>
       </div>
       <div className="home-page__container-title">
-        <h2>
+        {/* <h2>
           {languages === "RU"
             ? "ЗАБРОНИРУЙ, пока не расхватали!"
             : "BOOK NOW Before It's Gone!"}
+        </h2> */}
+        <h2
+          style={{
+            backgroundColor: "#f68632",
+            padding: 20,
+            borderRadius: 12,
+            color: "white",
+          }}
+        >
+          <strong>
+            Мы временно закрыты — переезжаем в новое место! Вернёмся к работе с
+            15 апреля. Спасибо за понимание!
+          </strong>
         </h2>
       </div>
 

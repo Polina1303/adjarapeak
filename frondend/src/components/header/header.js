@@ -42,19 +42,28 @@ export const Header = () => {
         </Link>
       </div>
       <div className="location">
-        <MdLocationPin size={25} color="#de682d" />
+        {/* <MdLocationPin size={25} color="#de682d" /> */}
         <a
           href="https://www.google.com/maps/place/Adjara+Peak/@41.6330328,41.6130369,15z/data=!4m6!3m5!1s0x4067858105d2e915:0x5a619f050a0a9584!8m2!3d41.6330328!4d41.6130369!16s%2Fg%2F11t40_rjr5?entry=ttu"
           target="_blank"
           rel="noreferrer"
         >
           {languages === "RU"
+            ? "Мы временно закрыты — переезжаем в новое место!"
+            : "Batumi, 38 Tbel-Abuseridze St."}
+          <p className="work">
+            {/* (11:00-20:00),{" "} */}
+            {languages === "RU"
+              ? "Вернёмся к работе с 15 апреля."
+              : "closed on Sunday"}
+          </p>
+          {/* {languages === "RU"
             ? "Батуми ул.Тбел-Абусеридзе, 38."
             : "Batumi, 38 Tbel-Abuseridze St."}
           <p className="work">
             (11:00-20:00),{" "}
             {languages === "RU" ? "выходной — воскресенье" : "closed on Sunday"}
-          </p>
+          </p> */}
         </a>
       </div>
       <div className="number">

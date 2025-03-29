@@ -22,8 +22,11 @@ export const Footer = () => {
                 rel="noreferrer"
               >
                 {languages === "RU"
-                  ? "Батуми ул.Тбел-Абусеридзе, 38. (11:00-20:00), выходной — воскресенье"
+                  ? "Мы временно закрыты — переезжаем в новое место! Вернёмся к работе с 15 апреля."
                   : "Batumi, 38 Tbel-Abuseridze Street. (11:00-20:00), closed on Sunday"}
+                {/* {languages === "RU"
+                  ? "Батуми ул.Тбел-Абусеридзе, 38. (11:00-20:00), выходной — воскресенье"
+                  : "Batumi, 38 Tbel-Abuseridze Street. (11:00-20:00), closed on Sunday"} */}
               </a>
             </div>
             <div className="footer-phone">
