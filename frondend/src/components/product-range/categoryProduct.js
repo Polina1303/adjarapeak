@@ -3,49 +3,22 @@ export const CATEGORY_PRODUCT = [
     title: "ВСЁ",
     // type:'all',
   },
-  {
-    title: "МАСКА/ШЛЕМ ГОРНОЛЫЖНЫЕ",
-    type: "skigoggles",
-  },
-  {
-    title: "ТЕРМОБЕЛЬЕ/ЗАЩИТА",
-    type: "thermalUnderwear",
-  },
-  {
-    title: "БАФФЫ / БАЛАКЛАВЫ",
-    type: "buff",
-  },
-  {
-    title: "ПЕРЧАТКИ",
-    type: "gloves",
-  },
-  {
-    title: "НОСКИ",
-    type: "socks",
-  },
+
   {
     title: "ПАЛАТКИ",
     type: "tent",
   },
   {
-    title: "АКСЕССУАРЫ",
-    type: "accessories",
-  },
-  {
-    title: "БИНОКЛЬ",
-    type: "binoculars",
-  },
-  {
-    title: "СПАЛЬНЫЕ МЕШКИ",
-    type: "sleepingbag",
+    title: "РЮКЗАКИ",
+    type: "backpack",
   },
   {
     title: "ОБУВЬ",
     type: "shoes",
   },
   {
-    title: "РЮКЗАКИ",
-    type: "backpack",
+    title: "СПАЛЬНЫЕ МЕШКИ",
+    type: "sleepingbag",
   },
   {
     title: "КОВРИКИ / КАРЕМАТЫ",
@@ -62,6 +35,26 @@ export const CATEGORY_PRODUCT = [
   {
     title: "ГАЗ / ГОРЕЛКИ",
     type: "gas/burner",
+  },
+  {
+    title: "БАФФЫ / БАЛАКЛАВЫ",
+    type: "buff",
+  },
+  {
+    title: "АКСЕССУАРЫ",
+    type: "accessories",
+  },
+  {
+    title: "БИНОКЛЬ",
+    type: "binoculars",
+  },
+  {
+    title: "ПЕРЧАТКИ",
+    type: "gloves",
+  },
+  {
+    title: "НОСКИ",
+    type: "socks",
   },
   {
     title: "ФОНАРИ",
@@ -109,5 +102,13 @@ export const CATEGORY_PRODUCT = [
   {
     title: "SUP-ДОСКИ",
     type: "supboard",
+  },
+  {
+    title: "МАСКА/ШЛЕМ ГОРНОЛЫЖНЫЕ",
+    type: "skigoggles",
+  },
+  {
+    title: "ТЕРМОБЕЛЬЕ/ЗАЩИТА",
+    type: "thermalUnderwear",
   },
 ];
