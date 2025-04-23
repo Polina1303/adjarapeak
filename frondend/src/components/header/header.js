@@ -49,13 +49,11 @@ export const Header = () => {
           rel="noreferrer"
         >
           {languages === "RU"
-            ? "Мы временно закрыты — переезжаем в новое место!"
+            ? "Батуми, Аслана Абашидзе, 19"
             : "Batumi, 38 Tbel-Abuseridze St."}
           <p className="work">
-            {/* (11:00-20:00),{" "} */}
-            {languages === "RU"
-              ? "Вернёмся к работе с 15 апреля."
-              : "closed on Sunday"}
+            (11:00-20:00){" "}
+            {languages === "RU" ? "без выходных" : "closed on Sunday"}
           </p>
           {/* {languages === "RU"
             ? "Батуми ул.Тбел-Абусеридзе, 38."

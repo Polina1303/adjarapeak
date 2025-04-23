@@ -22,11 +22,11 @@ export const Footer = () => {
                 rel="noreferrer"
               >
                 {languages === "RU"
-                  ? "Мы временно закрыты — переезжаем в новое место! Вернёмся к работе с 15 апреля."
+                  ? "Батуми, Аслана Абашидзе, 19"
                   : "Batumi, 38 Tbel-Abuseridze Street. (11:00-20:00), closed on Sunday"}
-                {/* {languages === "RU"
-                  ? "Батуми ул.Тбел-Абусеридзе, 38. (11:00-20:00), выходной — воскресенье"
-                  : "Batumi, 38 Tbel-Abuseridze Street. (11:00-20:00), closed on Sunday"} */}
+                {languages === "RU"
+                  ? " ( 11:00-20:00 ), без выходных"
+                  : "Batumi, 38 Tbel-Abuseridze Street. (11:00-20:00), closed on Sunday"}
               </a>
             </div>
             <div className="footer-phone">
@@ -102,7 +102,7 @@ export const Footer = () => {
           marginWidth="0"
           // sandbox="allow-scripts allow-same-origin allow-popups"
           // referrerPolicy="no-referrer"
-          src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=Adjara%20Peak+(Adjara%20Peak)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+          src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=19%20Gen.%20A.%20Abashidze%20St+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
         >
           <a href="https://www.gps.ie/">gps vehicle tracker</a>
         </iframe>

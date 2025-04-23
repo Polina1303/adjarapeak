@@ -112,15 +112,36 @@ export const HomePage = () => {
         <h2
           style={{
             backgroundColor: "#f68632",
-            padding: 20,
+            paddingTop: 20,
+            paddingBottom: 20,
+            paddingLeft: 24,
+            paddingRight: 24,
             borderRadius: 12,
-            color: "white",
+            fontSize: 16,
+            color: "#fff",
+            maxWidth: 600,
+            margin: "20px auto",
+            boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
           }}
         >
-          <strong>
-            Мы временно закрыты — переезжаем в новое место! Вернёмся к работе с
-            15 апреля. Спасибо за понимание!
+          <strong
+            style={{
+              fontSize: 18,
+              color: "#fff",
+              display: "block",
+            }}
+          >
+            📍 Мы переехали!
           </strong>
+          <span
+            style={{
+              fontSize: 18,
+              color: "#fff",
+              display: "block",
+            }}
+          >
+            Новый адрес — <strong>Аслана Абашидзе, 19</strong>
+          </span>
         </h2>
       </div>
 
