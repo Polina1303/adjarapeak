@@ -77,9 +77,10 @@ export const HomePage = () => {
         <p className="main-title-alt">
           {languages === "RU" ? (
             <>
-              <span className="orange-line"> Туристическое </span>{" "}
-              <span className="orange-box">и</span>{" "}
+              <span className="orange-line"> Туристическое, </span>{" "}
               <span className="orange-line"> горнолыжное </span>{" "}
+              <span className="orange-box">и</span>{" "}
+              <span className="orange-line"> спортивное</span>{" "}
               <span className="orange-line">снаряжение</span>
             </>
           ) : (
@@ -94,7 +95,7 @@ export const HomePage = () => {
         <p className="sub-title-alt">
           <span className="highlight-alt">
             {languages === "RU"
-              ? "Горнолыжный сезон 2024–2025"
+              ? "Сезон походов"
               : "The 2024–2025 Ski Season is"}{" "}
           </span>
           <span className="orange-box">
@@ -133,6 +134,7 @@ export const HomePage = () => {
           >
             📍 Мы переехали!
           </strong>
+          <br />
           <span
             style={{
               fontSize: 18,
@@ -140,13 +142,13 @@ export const HomePage = () => {
               display: "block",
             }}
           >
-            Новый адрес — <strong>Аслана Абашидзе, 19</strong>
+            Новый адрес — <strong>Аслана Абашидзе 19</strong>
           </span>
         </h2>
       </div>
 
       <div className="sale-container">
-        <div ref={ref} onClick={handleClickTrip} className="sale-item">
+        {/* <div ref={ref} onClick={handleClickTrip} className="sale-item">
           <a href="/trip">
             <img src={del} alt="adjara peak" className="sale-img" />
             <div className="sale-info">
@@ -161,26 +163,7 @@ export const HomePage = () => {
               </div>
             </div>
           </a>
-        </div>
-        <div ref={ref} onClick={handleClickRentSky} className="sale-item">
-          <a href="/rent_ski">
-            <img src={sky} alt="adjara peak" className="sale-img" />
-            <div className="sale-info">
-              <div className="sale-title">
-                <span className="highlight-sale">
-                  {languages === "RU" ? "Прокат" : "Rental"}
-                </span>
-                {languages === "RU" ? (
-                  "горнолыжного снаряжения"
-                ) : (
-                  <>
-                    <br /> ski equipment
-                  </>
-                )}
-              </div>
-            </div>
-          </a>
-        </div>
+        </div> */}
 
         <div ref={ref} onClick={handleClickSale} className="sale-item">
           <a href="/sale">
@@ -216,8 +199,27 @@ export const HomePage = () => {
             </div>
           </a>
         </div>
+        <div ref={ref} onClick={handleClickRentSky} className="sale-item">
+          <a href="/rent_ski">
+            <img src={sky} alt="adjara peak" className="sale-img" />
+            <div className="sale-info">
+              <div className="sale-title">
+                <span className="highlight-sale">
+                  {languages === "RU" ? "Прокат" : "Rental"}
+                </span>
+                {languages === "RU" ? (
+                  "горнолыжного снаряжения"
+                ) : (
+                  <>
+                    <br /> ski equipment
+                  </>
+                )}
+              </div>
+            </div>
+          </a>
+        </div>
       </div>
-      <section className="service-section">
+      {/* <section className="service-section">
         <h2 className="routes-title">
           {languages === "RU"
             ? "Сервисное обслуживание"
@@ -274,7 +276,7 @@ export const HomePage = () => {
             </div>
           </div>
         )}
-      </section>
+      </section> */}
 
       {/* <HitSales /> */}
       {/* <LycianWay/> */}

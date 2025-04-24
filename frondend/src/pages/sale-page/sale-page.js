@@ -96,7 +96,7 @@ export const SalePage = () => {
       <div className="home-page__container-product">
         <div>
           <div className="title" id="home-page-buy">
-            ПРОДАЖА ТУРИСТИЧЕСКОГО И ГОРНОЛЫЖНОГО СНАРЯЖЕНИЯ
+            ПРОДАЖА ТУРИСТИЧЕСКОГО, ГОРНОЛЫЖНОГО И СПОРТИВНОГО СНАРЯЖЕНИЯ
           </div>
           <>
             <div className="home-page-product">
