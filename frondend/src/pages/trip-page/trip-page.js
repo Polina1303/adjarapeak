@@ -16,15 +16,15 @@ import svan from "./image/svan.jpg";
 import { useInView } from "react-intersection-observer";
 
 const events = [
-  {
-    date: "Ежедневно",
-    title: "Трансфер",
-    description:
-      "Если вы предпочитаете путешествовать самостоятельно, мы с радостью предоставим услугу трансфера!",
-    price: "-",
-    image: auto,
-    link: "/transfer",
-  },
+  // {
+  //   date: "Ежедневно",
+  //   title: "Трансфер",
+  //   description:
+  //     "Если вы предпочитаете путешествовать самостоятельно, мы с радостью предоставим услугу трансфера!",
+  //   price: "-",
+  //   image: auto,
+  //   link: "/transfer",
+  // },
   // {
   //   date: "15 февраля",
   //   title: "Однодневный выезд в Годердзи. НЕТ МЕСТ",
@@ -107,7 +107,7 @@ const events = [
   //   link: "/",
   // },
   {
-    date: "8 марта",
+    date: "3 мая",
     title: "Скалолазание в Гонио",
     description:
       "Тренировки и маршруты для любого уровня – от новичков до любителей.",
@@ -116,7 +116,7 @@ const events = [
     link: "/rockClimbing",
   },
   {
-    date: "9 марта",
+    date: "4 мая",
     title: "Скалолазание в Гонио",
     description:
       "Тренировки и маршруты для любого уровня – от новичков до любителей.",
@@ -124,16 +124,9 @@ const events = [
     image: rock2,
     link: "/rockClimbing",
   },
+
   {
-    date: "14-16 марта",
-    title: "Сванети на 2 ночи",
-    description: "В разработке",
-    price: "-",
-    image: svan,
-    link: "/",
-  },
-  {
-    date: "15 марта",
+    date: "10 мая",
     title: "Скалолазание в Гонио",
     description:
       "Тренировки и маршруты для любого уровня – от новичков до любителей.",
@@ -142,7 +135,7 @@ const events = [
     link: "/rockClimbing",
   },
   {
-    date: "16 марта",
+    date: "11 мая",
     title: "Скалолазание в Гонио",
     description:
       "Тренировки и маршруты для любого уровня – от новичков до любителей.",
@@ -150,15 +143,51 @@ const events = [
     image: rock2,
     link: "/rockClimbing",
   },
-  // {
-  //   date: "21-23 марта",
-  //   title: "Масштабное закрытие сезона на 150 человек",
-  //   description:
-  //     "В партнерстве с другими организаторами! 3 дня! Первые 50 билетов со скидкой! Полноценный анонс позже.",
-  //   price: "-",
-  //   image: end,
-  //   link: "/end-season",
-  // },
+  {
+    date: "17 мая",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock1,
+    link: "/rockClimbing",
+  },
+  {
+    date: "18 мая",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock2,
+    link: "/rockClimbing",
+  },
+  {
+    date: "24 мая",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock1,
+    link: "/rockClimbing",
+  },
+  {
+    date: "25 мая",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock2,
+    link: "/rockClimbing",
+  },
+  {
+    date: "31 мая",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock1,
+    link: "/rockClimbing",
+  },
 ];
 
 export const TripPage = () => {
@@ -185,7 +214,7 @@ export const TripPage = () => {
           <span className="orange-line"> Расписание </span>{" "}
           <span className="orange-line"> мероприятий </span>{" "}
           <span className="orange-box">на</span>{" "}
-          <span className="orange-line">март</span>
+          <span className="orange-line">май</span>
         </h2>
         <div className="card-grid">
           {events.map((event, index) => (

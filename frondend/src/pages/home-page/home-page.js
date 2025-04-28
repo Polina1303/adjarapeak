@@ -10,10 +10,10 @@ import { MdOutlineArrowLeft, MdArrowRight } from "react-icons/md";
 import { RulesPage } from "../rules-page";
 import "./home-page.css";
 
-import sky from "../../components/image/sky.png";
-import eq from "../../components/image/eq (1).png";
-import eq2 from "../../components/image/eq3.png";
-import del from "./adj.webp";
+import sky from "./444.png";
+import eq from "./1111.png";
+import eq2 from "./222.png";
+import del from "./987.png";
 import img1 from "./IMG_7669.JPG";
 import img2 from "./IMG_7671.JPG";
 
@@ -28,47 +28,28 @@ export const HomePage = () => {
   const languages = useSelector((state) => state.languages.currentLanguages);
 
   useEffect(() => {
-    // localStorage.setItem("activeType", 0);
-    // localStorage.setItem("activeTypeSale", 0);
     localStorage.removeItem("activeType");
     localStorage.removeItem("activeTypeSale");
     localStorage.removeItem("searchQuery");
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 630);
     };
-
     window.addEventListener("resize", handleResize);
-
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   const navigate = useNavigate();
+  const { ref, inView } = useInView({ threshold: 0, triggerOnce: true });
 
-  const { ref, inView } = useInView({
-    threshold: 0,
-    triggerOnce: true,
-  });
-
-  const handleClickSale = () => {
-    navigate("/sale");
-  };
-  const handleClickRent = () => {
-    navigate("/rent");
-  };
-  const handleClickRentSky = () => {
-    navigate("/rent_ski");
-  };
-  const handleClickTrip = () => {
-    navigate("/");
-  };
+  const handleClickSale = () => navigate("/sale");
+  const handleClickRent = () => navigate("/rent");
+  const handleClickRentSky = () => navigate("/rent_ski");
+  const handleClickTrip = () => navigate("/");
 
   const [isOpen, setIsOpen] = useState(false);
-
-  const toggleModal = () => {
-    setIsOpen(!isOpen);
-  };
+  const toggleModal = () => setIsOpen(!isOpen);
 
   return (
     <div className="home-page__container">
@@ -77,39 +58,34 @@ export const HomePage = () => {
         <p className="main-title-alt">
           {languages === "RU" ? (
             <>
-              <span className="orange-line"> Туристическое, </span>{" "}
-              <span className="orange-line"> горнолыжное </span>{" "}
-              <span className="orange-box">и</span>{" "}
-              <span className="orange-line"> спортивное</span>{" "}
+              <span className="orange-line">Туристическое, </span>
+              <span className="orange-line">горнолыжное </span>
+              <span className="orange-box">и</span>
+              <span className="orange-line"> спортивное</span>
               <span className="orange-line">снаряжение</span>
             </>
           ) : (
             <>
-              <span className="orange-line"> Tourist</span>{" "}
-              <span className="orange-box">and</span>{" "}
-              <span className="orange-line"> ski</span>{" "}
+              <span className="orange-line">Tourist, </span>
+              <span className="orange-line">ski, </span>
+              <span className="orange-box">and</span>
+              <span className="orange-line"> sports</span>
               <span className="orange-line">equipment</span>
             </>
           )}
         </p>
+
         <p className="sub-title-alt">
           <span className="highlight-alt">
-            {languages === "RU"
-              ? "Сезон походов"
-              : "The 2024–2025 Ski Season is"}{" "}
+            {languages === "RU" ? "Сезон походов " : "The hiking season "}
           </span>
           <span className="orange-box">
-            {" "}
-            {languages === "RU" ? "открыт!" : "open!"}
+            {languages === "RU" ? "открыт!" : "is open!"}
           </span>
         </p>
       </div>
+
       <div className="home-page__container-title">
-        {/* <h2>
-          {languages === "RU"
-            ? "ЗАБРОНИРУЙ, пока не расхватали!"
-            : "BOOK NOW Before It's Gone!"}
-        </h2> */}
         <h2
           style={{
             backgroundColor: "#f68632",
@@ -132,7 +108,7 @@ export const HomePage = () => {
               display: "block",
             }}
           >
-            📍 Мы переехали!
+            {languages === "RU" ? "📍 Мы переехали!" : "📍 We have moved!"}
           </strong>
           <br />
           <span
@@ -142,13 +118,21 @@ export const HomePage = () => {
               display: "block",
             }}
           >
-            Новый адрес — <strong>Аслана Абашидзе 19</strong>
+            {languages === "RU" ? (
+              <>
+                Новый адрес — <strong>Аслана Абашидзе 19</strong>
+              </>
+            ) : (
+              <>
+                New address — <strong>Aslan Abashidze 19</strong>
+              </>
+            )}
           </span>
         </h2>
       </div>
 
       <div className="sale-container">
-        {/* <div ref={ref} onClick={handleClickTrip} className="sale-item">
+        <div ref={ref} onClick={handleClickTrip} className="sale-item">
           <a href="/trip">
             <img src={del} alt="adjara peak" className="sale-img" />
             <div className="sale-info">
@@ -156,14 +140,12 @@ export const HomePage = () => {
                 <span className="highlight-sale">
                   {languages === "RU" ? "Расписание" : "Schedule"}
                 </span>
-                <br />{" "}
-                {languages === "RU"
-                  ? "мероприятий"
-                  : "of Events with Adjara Peak"}
+                <br />
+                {languages === "RU" ? "мероприятий" : "of events"}
               </div>
             </div>
           </a>
-        </div> */}
+        </div>
 
         <div ref={ref} onClick={handleClickSale} className="sale-item">
           <a href="/sale">
@@ -171,34 +153,32 @@ export const HomePage = () => {
             <div className="sale-info">
               <div className="sale-title">
                 <span className="highlight-rent">
-                  {languages === "RU" ? "Продажа" : "Sales"}
+                  {languages === "RU" ? "Продажа" : "Sale"}
                 </span>
-                <br /> {languages === "RU" ? "снаряжения" : "equipment"}{" "}
+                <br />
+                {languages === "RU" ? "снаряжения" : "of equipment"}
               </div>
             </div>
           </a>
         </div>
+
         <div ref={ref} onClick={handleClickRent} className="sale-item">
           <a href="/rent">
             <img src={eq2} alt="adjara peak" className="sale-img" />
             <div className="sale-info">
               <div className="sale-title">
                 <span className="highlight-rent">
-                  {" "}
                   {languages === "RU" ? "Прокат" : "Rental"}
                 </span>
-                {languages === "RU" ? (
-                  "туристического снаряжения"
-                ) : (
-                  <>
-                    <br />
-                    tourist equipment
-                  </>
-                )}
+                <br />
+                {languages === "RU"
+                  ? "туристического снаряжения"
+                  : "of tourist equipment"}
               </div>
             </div>
           </a>
         </div>
+
         <div ref={ref} onClick={handleClickRentSky} className="sale-item">
           <a href="/rent_ski">
             <img src={sky} alt="adjara peak" className="sale-img" />
@@ -207,19 +187,26 @@ export const HomePage = () => {
                 <span className="highlight-sale">
                   {languages === "RU" ? "Прокат" : "Rental"}
                 </span>
-                {languages === "RU" ? (
-                  "горнолыжного снаряжения"
-                ) : (
-                  <>
-                    <br /> ski equipment
-                  </>
-                )}
+                <br />
+                {languages === "RU"
+                  ? "горнолыжного снаряжения"
+                  : "of ski equipment"}
               </div>
             </div>
           </a>
         </div>
       </div>
-      {/* <section className="service-section">
+
+      <RockClimbing />
+      <Routes />
+      <RulesPage />
+      <ChooseUs />
+    </div>
+  );
+};
+
+{
+  /* <section className="service-section">
         <h2 className="routes-title">
           {languages === "RU"
             ? "Сервисное обслуживание"
@@ -276,14 +263,12 @@ export const HomePage = () => {
             </div>
           </div>
         )}
-      </section> */}
+      </section> */
+}
 
-      {/* <HitSales /> */}
-      {/* <LycianWay/> */}
-      <RockClimbing />
-      <Routes />
-      <RulesPage />
-      <ChooseUs />
-    </div>
-  );
-};
+{
+  /* <HitSales /> */
+}
+{
+  /* <LycianWay/> */
+}
