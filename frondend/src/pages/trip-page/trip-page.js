@@ -13,6 +13,7 @@ import auto from "./image/auto.jpg";
 import goder2 from "./image/IMG_8526.JPG";
 import end from "./image/photo_2024-04-01_15-31-09.jpg";
 import svan from "./image/svan.jpg";
+import TEA from "./image/TEA.jpg";
 import { useInView } from "react-intersection-observer";
 
 const events = [
@@ -106,6 +107,15 @@ const events = [
   //   image: svan,
   //   link: "/",
   // },
+  {
+    date: "3 мая",
+    title: "День чая в грах Гурии",
+    description:
+      "Большая дегустация редких сортов премиального чая. Мастер-класс по изготовлению чая. *все включено (для детей 15% скидка) ",
+    price: "200",
+    image: TEA,
+    link: "/",
+  },
   {
     date: "3 мая",
     title: "Скалолазание в Гонио",
