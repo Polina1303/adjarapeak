@@ -12,6 +12,7 @@ import { TripPage } from "./pages/trip-page/trip-page";
 import { LakeRoutePage } from "./pages/lake-route-page";
 import { GardenRoutePage } from "./pages/garden-route-page";
 import { ErgeRoutePage } from "./pages/erge-route-page";
+import { SportSalePage } from "./pages/sport-sale-page";
 
 import { OrderPage } from "./pages/order-page";
 
@@ -33,6 +34,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route exact path="/sale" element={<SalePage />} />
+          <Route exact path="/sport_sale" element={<SportSalePage />} />
           <Route exact path="/rent" element={<RentPage />} />
           <Route exact path="/rent_ski" element={<RentSkyPage />} />
           <Route exact path="/one_day_trip" element={<TripPageOneDay />} />

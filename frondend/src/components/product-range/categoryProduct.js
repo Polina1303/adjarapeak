@@ -44,10 +44,10 @@ export const CATEGORY_PRODUCT = [
     title: "АКСЕССУАРЫ",
     type: "accessories",
   },
-  {
-    title: "ВОДНЫЙ СПОРТ",
-    type: "watersport",
-  },
+  // {
+  //   title: "ВОДНЫЙ СПОРТ",
+  //   type: "watersport",
+  // },
   {
     title: "БИНОКЛЬ",
     type: "binoculars",

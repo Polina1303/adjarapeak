@@ -10,9 +10,10 @@ import { MdOutlineArrowLeft, MdArrowRight } from "react-icons/md";
 import { RulesPage } from "../rules-page";
 import "./home-page.css";
 
+import sport from "./sport.png";
 import sky from "./444.png";
 import eq from "./1111.png";
-import eq2 from "./222.png";
+import eq2 from "./peak.png";
 import del from "./987.png";
 import img1 from "./IMG_7669.JPG";
 import img2 from "./IMG_7671.JPG";
@@ -44,6 +45,7 @@ export const HomePage = () => {
   const { ref, inView } = useInView({ threshold: 0, triggerOnce: true });
 
   const handleClickSale = () => navigate("/sale");
+  const handleClickSportSale = () => navigate("/sport_sale");
   const handleClickRent = () => navigate("/rent");
   const handleClickRentSky = () => navigate("/rent_ski");
   const handleClickTrip = () => navigate("/");
@@ -137,6 +139,7 @@ export const HomePage = () => {
             <img src={del} alt="adjara peak" className="sale-img" />
             <div className="sale-info">
               <div className="sale-title">
+                <br />
                 <span className="highlight-sale">
                   {languages === "RU" ? "Расписание" : "Schedule"}
                 </span>
@@ -156,7 +159,23 @@ export const HomePage = () => {
                   {languages === "RU" ? "Продажа" : "Sale"}
                 </span>
                 <br />
-                {languages === "RU" ? "снаряжения" : "of equipment"}
+                {languages === "RU"
+                  ? "туристического снаряжения"
+                  : "of tourist equipment"}
+              </div>
+            </div>
+          </a>
+        </div>
+        <div ref={ref} onClick={handleClickSportSale} className="sale-item">
+          <a href="/sport_sale">
+            <img src={sport} alt="adjara peak" className="sale-img" />
+            <div className="sale-info">
+              <div className="sale-title">
+                <span className="highlight-rent">
+                  {languages === "RU" ? "Продажа" : "Sale"}
+                </span>
+                <br />
+                {languages === "RU" ? "спортивного снаряжения" : "of equipment"}
               </div>
             </div>
           </a>

@@ -1,60 +1,17 @@
-/* Контейнер для карточек */
-.sale-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
-   margin-top: 10px;
-}
-
-.sale-item {
-  display: flex;
-  flex-direction: column;
-
-  align-items: center;
-  justify-content: center;
-  background-color: #fff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  width: calc(25% - 15px); 
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.sale-item:hover {
-  transform: translateY(-5px);
-}
-
-.sale-img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-bottom: 2px solid #f2f2f2;
-}
-
-.sale-info {
-  padding: 20px;
-  text-align: center;
-}
-
 .sale-title {
   font-size: 18px;
   font-weight: 600;
   color: #333;
   margin: 0;
   line-height: 1.4;
- 
 }
 
 .highlight-sale {
-
   color: #3285a8;
   font-weight: 700;
-  background-color: #e6f2f9;
+  background-color: #fff4e0;
   padding: 2px 8px;
   border-radius: 4px;
-
- 
 }
 
 .highlight-rent {
@@ -65,91 +22,27 @@
   border-radius: 4px;
 }
 
-/* Адаптивность для мобильных устройств */
-
-/* Для планшетов и больших экранов: 3 элемента в ряд */
-@media (max-width: 1024px) {
-  .sale-item {
-    width: calc(50% - 10px); 
-  }
-  .sale-item:hover {
-    transform: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .sale-item {
-    margin-bottom: 20px; 
-  }
-  .sale-title {
-    font-size: 14px;
-  }
-  .sale-info {
-    padding: 10px;
-
-  }
-}
-@media (max-width: 714px) {
-
-  .sale-info {
-    padding: 25px;
-  }
-}
-@media (max-width: 579px) {
-
-  .sale-info {
-    padding: 10px;
-  }
-}
-@media (max-width: 520px) {
-
-  .sale-title {
-    font-size: 12px;
-  }
-}
-@media (max-width: 470px) {
-
-  .sale-title {
-    font-size: 10px;
-  }
-  /* .sale-info {
-    padding: 20px 5px;
-  } */
-}
-@media (max-width: 392px) {
-
-  /* .sale-title {
-    font-size: 12px;
-  }
-  .sale-info {
-    padding: 10px 0px;
-  } */
-}
-
-
-
 .header-section-alt {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin: 80px 20px 0px 40px ;
+  margin: 80px 20px 0px 40px;
 }
 
 .main-title-alt {
   font-size: 40px;
   font-weight: 700;
-  color: #333; 
+  color: #333;
   margin: 0;
   line-height: 1.4;
 }
 
-
 .orange-line {
   font-weight: 700;
   display: inline-block;
-  border-bottom: 4px solid #f68632; 
+  border-bottom: 4px solid #f68632;
   padding: 0 4px;
 }
 .rental-name {
@@ -157,7 +50,6 @@
   font-weight: 600;
   margin: 10px 0;
   letter-spacing: 1px;
-  
 }
 
 .orange-box {
@@ -174,12 +66,9 @@
   line-height: 1.6;
 }
 
-
 .highlight-alt {
   font-weight: 300;
- 
 }
-
 
 @media (max-width: 768px) {
   .main-title-alt {
@@ -191,33 +80,32 @@
   }
 
   .orange-line {
-    font-size: 16px; 
-    padding: 0 2px; 
+    font-size: 16px;
+    padding: 0 2px;
   }
 
   .orange-box {
-    font-size: 14px; 
-    padding: 2px 4px; 
+    font-size: 14px;
+    padding: 2px 4px;
   }
 }
 
 @media (max-width: 480px) {
   .main-title-alt {
-    font-size: 28px; 
+    font-size: 28px;
   }
 
   .sub-title-alt {
-    font-size: 14px; 
+    font-size: 14px;
     /* display: flex; */
   }
 
   .orange-line {
-    font-size: 15px; 
-    
+    font-size: 15px;
   }
 
   .orange-box {
-    font-size: 12px; 
+    font-size: 12px;
   }
 }
 
@@ -296,7 +184,7 @@
 
 .home-page__container {
   /* margin-top: 10px; */
-margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .home-page__container-title {
@@ -305,7 +193,6 @@ margin-bottom: 10px;
   justify-content: space-between;
   /* margin-top: 15px;
   margin-bottom: -15px; */
-
 }
 @media only screen and (max-width: 1104px) {
   .categories {
@@ -317,7 +204,6 @@ margin-bottom: 10px;
     overflow-y: hidden;
     padding-bottom: 60px;
     height: 300px;
-    
   }
   .arrow-cover {
     overflow: hidden;
@@ -416,7 +302,6 @@ margin-bottom: 10px;
 
 .back-button-cover {
   margin-top: 65px;
-
 }
 @media only screen and (max-width: 785px) {
   .back-button-cover {
@@ -453,23 +338,22 @@ margin-bottom: 10px;
   right: 50px;
 } */
 
-
 /* Общий стиль для секции */
 .header-section {
-    text-align: center;
-    margin-top: 50px;
-    font-family: 'Arial', sans-serif;
+  text-align: center;
+  margin-top: 50px;
+  font-family: "Arial", sans-serif;
 }
 
 /* Основной заголовок */
 .main-title {
-    font-size: 48px;
-    font-weight: bold;
-    color: #f68632;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin: 0;
+  font-size: 48px;
+  font-weight: bold;
+  color: #f68632;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
 }
 
 /* Общий фон для модального окна */
@@ -517,7 +401,6 @@ margin-bottom: 10px;
   gap: 10px;
   margin-top: 20px;
   width: 100%;
-  
 }
 
 /* Изображения */
@@ -599,5 +482,60 @@ margin-bottom: 10px;
     width: 80%; /* Adjust image width on mobile */
     height: auto; /* Ensure the height adjusts proportionally */
     margin-bottom: 10px; /* Add margin between images */
+  }
+}
+
+.sale-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px;
+}
+
+.sale-item {
+  flex: 1 1 calc(100% / 2 - 20px); /* по 2 на ряд на мобилке */
+  max-width: 220px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  background: #fff;
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.sale-item:hover {
+  transform: translateY(-5px);
+}
+
+.sale-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.sale-info {
+  padding: 12px;
+}
+
+.sale-title {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.highlight-sale,
+.highlight-rent {
+  font-weight: bold;
+  color: #f68632;
+}
+@media (min-width: 768px) {
+  .sale-item {
+    flex: 1 1 calc(100% / 3 - 20px); /* по 3 на ряд на планшетах */
+  }
+}
+
+@media (min-width: 1024px) {
+  .sale-item {
+    flex: 1 1 calc(100% / 5 - 20px); /* по 5 на десктопах */
   }
 }

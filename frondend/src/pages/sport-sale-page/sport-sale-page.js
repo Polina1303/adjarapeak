@@ -1,22 +1,22 @@
 import { ProductItems } from "../../components/product-items";
-import { PRODUCT } from "../../components/product-range/product";
+import { SPORT_PRODUCT } from "../../components/product-range/sportProduct";
 import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
-import "./sale-page.css";
+import "./sport-sale-page.css";
 import { Menu } from "antd";
-import { CATEGORY_PRODUCT } from "../../components/product-range/categoryProduct";
+import { CATEGORY_SPORT_PRODUCT } from "../../components/product-range/categorySportProduct";
 import { useEffect, useState } from "react";
 
-const items = CATEGORY_PRODUCT.map((item, index) => ({
+const items = CATEGORY_SPORT_PRODUCT.map((item, index) => ({
   key: index,
   label: item.title,
   type: item.type,
 }));
 
-export const SalePage = () => {
+export const SportSalePage = () => {
   const history = useNavigate();
   const [activeType, setActiveType] = useState(0);
-  const [active, setActive] = useState(PRODUCT);
+  const [active, setActive] = useState(SPORT_PRODUCT);
   const [searchQuery, setSearchQuery] = useState(() => {
     return localStorage.getItem("searchQuery") || "";
   });
@@ -46,14 +46,14 @@ export const SalePage = () => {
   };
 
   useEffect(() => {
-    const currentItems = PRODUCT.filter((item) => {
+    const currentItems = SPORT_PRODUCT.filter((item) => {
       return item.category === items[activeType].type;
     });
-    setActive(currentItems.length === 0 ? PRODUCT : currentItems);
+    setActive(currentItems.length === 0 ? SPORT_PRODUCT : currentItems);
   }, [activeType]);
 
   useEffect(() => {
-    const filteredItems = PRODUCT.filter(
+    const filteredItems = SPORT_PRODUCT.filter(
       (item) =>
         item.title.toLowerCase().includes(searchQuery.trim().toLowerCase()) &&
         (items[activeType]?.type
@@ -96,7 +96,7 @@ export const SalePage = () => {
       <div className="home-page__container-product">
         <div>
           <div className="title" id="home-page-buy">
-            ПРОДАЖА ТУРИСТИЧЕСКОГО, ГОРНОЛЫЖНОГО СНАРЯЖЕНИЯ
+            ПРОДАЖА СПОРТИВНОГО СНАРЯЖЕНИЯ
           </div>
           <>
             <div className="home-page-product">
