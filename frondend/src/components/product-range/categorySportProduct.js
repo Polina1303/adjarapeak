@@ -17,6 +17,10 @@ export const CATEGORY_SPORT_PRODUCT = [
     title: "СПОРТИВНЫЕ ТОВАРЫ",
     type: "sporting",
   },
+  //   {
+  //     title: "МЯЧИ",
+  //     type: "balls",
+  //   },
   {
     title: "ВОДНЫЙ СПОРТ",
     type: "watersport",
