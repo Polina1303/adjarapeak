@@ -41,6 +41,10 @@ export const CATEGORY_PRODUCT = [
     type: "buff",
   },
   {
+    title: "ГОЛОВНЫЕ УБОРЫ",
+    type: "hat",
+  },
+  {
     title: "АКСЕССУАРЫ",
     type: "accessories",
   },
