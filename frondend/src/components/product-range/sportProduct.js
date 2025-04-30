@@ -324,7 +324,7 @@ export const SPORT_PRODUCT = [
     ],
   },
   {
-    id: 2440954909549990494,
+    id: 24409549095499907878494,
     title: "Мяч футбольный",
     img: "images8780.jpeg",
     desc: "детский First Kick 4 ",
@@ -338,7 +338,7 @@ export const SPORT_PRODUCT = [
     ],
   },
   {
-    id: 2440954909549990494,
+    id: 2440954554909549990494,
     title: "Мяч футбольный",
     img: "8676296.jpg",
     desc: "детский First Kick 3 ",
@@ -350,7 +350,7 @@ export const SPORT_PRODUCT = [
     ],
   },
   {
-    id: 2440954909549990494,
+    id: 24409549509549990494,
     title: "Мяч для мини-футбола Sunny 300 1",
     img: "open-uri20240628-2483388-scidbd.jpeg",
     desc: "розовый и бирюзовый",
@@ -363,7 +363,7 @@ export const SPORT_PRODUCT = [
     ],
   },
   {
-    id: 2440954909549990494,
+    id: 24440954909549990494,
     title: "Мяч баскетбольный",
     img: "764335.webp",
     desc: "TARMAK R100 7 ",
@@ -376,7 +376,7 @@ export const SPORT_PRODUCT = [
     ],
   },
   {
-    id: 24409549095499904949,
+    id: 244409549095499904949,
     title: "Мяч баскетбольный",
     img: "765888.webp",
     desc: "TARMAK R100 5 ",
