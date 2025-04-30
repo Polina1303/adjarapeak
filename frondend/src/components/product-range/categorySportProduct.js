@@ -21,10 +21,10 @@ export const CATEGORY_SPORT_PRODUCT = [
     title: "МЯЧИ",
     type: "balls",
   },
-  //   {
-  //     title: "РОЛИКИ",
-  //     type: "roller",
-  //   },
+  {
+    title: "РОЛИКИ",
+    type: "roller",
+  },
   {
     title: "ВОДНЫЙ СПОРТ",
     type: "watersport",
