@@ -6,7 +6,6 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background: #fff;
-
 }
 
 .title-form {
@@ -31,18 +30,17 @@ label {
 /* input {
   padding: 10px;
   width: 100%;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 } */
 
-
-.input, .input-text {
+.input,
+.input-text {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 14px;
   width: 100%;
-  box-sizing: border-box; 
- 
+  box-sizing: border-box;
 }
 
 .input-text {
@@ -72,6 +70,17 @@ label {
   background: #f99447;
 }
 
+.comment-note {
+  background-color: #fff3cd; /* мягкий желтый фон */
+  color: #856404; /* тёмно-жёлтый текст */
+  padding: 10px 12px;
+  border-left: 4px solid #ffc107;
+  border-radius: 4px;
+  font-size: 14px;
+  margin: 12px 0;
+  line-height: 1.5;
+}
+
 @media (max-width: 480px) {
   .container-form {
     padding: 16px;
@@ -81,5 +90,3 @@ label {
     font-size: 14px;
   }
 }
-
-

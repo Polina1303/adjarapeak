@@ -17,7 +17,7 @@ export const Footer = () => {
               <MdLocationPin size={20} color="#de682d" className="icon" />
 
               <a
-                href="https://www.google.com/maps/place/Adjara+Peak/@41.6330328,41.6130369,15z/data=!4m6!3m5!1s0x4067858105d2e915:0x5a619f050a0a9584!8m2!3d41.6330328!4d41.6130369!16s%2Fg%2F11t40_rjr5?entry=ttu"
+                href="https://www.google.com/maps/place/Adjara+Peak+%7C+Sport,+Hiking,+Ski+%26+Outdoor+Equipment+-+rental+and+sales/@41.6333914,41.6150928,84m/data=!3m1!1e3!4m14!1m7!3m6!1s0x4067858105d2e915:0x5a619f050a0a9584!2sAdjara+Peak+%7C+Sport,+Hiking,+Ski+%26+Outdoor+Equipment+-+rental+and+sales!8m2!3d41.6333992!4d41.615391!16s%2Fg%2F11t40_rjr5!3m5!1s0x4067858105d2e915:0x5a619f050a0a9584!8m2!3d41.6333992!4d41.615391!16s%2Fg%2F11t40_rjr5?entry=ttu&g_ep=EgoyMDI1MDQyNy4xIKXMDSoASAFQAw%3D%3D"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -102,7 +102,7 @@ export const Footer = () => {
           marginWidth="0"
           // sandbox="allow-scripts allow-same-origin allow-popups"
           // referrerPolicy="no-referrer"
-          src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=19%20Gen.%20A.%20Abashidze%20St+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+          src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=41.63342805662303,%2041.61548271005293+(Adjara%20Peak%20%7C%20Sport,%20Hiking,%20Ski%20&amp;%20Outdoor%20Equipment%20-%20rental%20and%20sales)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
         >
           <a href="https://www.gps.ie/">gps vehicle tracker</a>
         </iframe>

@@ -161,12 +161,20 @@ export const OrderInput = ({ items, setOrderSuccess }) => {
             </>
           )}
           <div className="form-item">
+            {/* <p className="comment-hint">
+              *Укажите, пожалуйста: самовывоз или доставка, адрес доставки и
+              желаемую дату.
+            </p> */}
             <label>Комментарий:</label>
             <textarea
               className="input-text"
               placeholder="Комментарий"
               {...register("comments")}
             />
+            <p className="comment-note">
+              *Укажите, пожалуйста: самовывоз или доставка, адрес доставки и
+              желаемую дату. <br /> После оформления заказа с вами свяжутся.
+            </p>
           </div>
           <div style={{ display: "none" }}>
             <input {...register("prod")} defaultValue={defaultValues.prod} />

@@ -1,4 +1,42 @@
+.delivery-strip {
+  background-color: #000;
+  color: #fff;
+  padding: 4px 10px;
+  font-size: 14px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 110;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* По умолчанию — без движения */
+.delivery-text {
+  text-align: center;
+}
+
+/* Для маленьких экранов — анимация бегущей строки */
+@media (max-width: 767px) {
+  .delivery-text {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll-left 15s linear infinite;
+  }
+
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+}
+
 .header {
+  margin-top: 25px;
   height: auto;
   display: flex;
   justify-content: space-between;
@@ -25,9 +63,6 @@
   margin: 5px 10px;
   text-align: center;
 }
-
-
-
 
 .cart {
   margin: 0 10px;
@@ -84,5 +119,3 @@
     display: none;
   }
 }
-
-

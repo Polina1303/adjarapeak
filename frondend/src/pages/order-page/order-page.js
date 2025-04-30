@@ -15,23 +15,30 @@ export const OrderPage = () => {
   const items = useSelector((state) => state.cart.itemsInCart);
   if (items && items.length < 1) {
     return orderSuccess ? (
-      <div style={{ marginTop: 100 }}>
-        Благодарим за оформление заказа!
-        <br /> В ближайшее время наш представитель свяжется с вами.
-        <br />
-        Окончательная бронь заказа происходит по предоплате и предоплата не
-        возвращается в случае отмены заказа клиентом
-        <br /> С уважением, Adjara Peak.
+      <div style={{ marginTop: 120 }}>
+        <p className="rental-warning">
+          ⚠️ <strong>Бронь проката</strong> подтверждается только после
+          предоплаты. <br />
+          <strong>Предоплата не возвращается</strong> в случае отмены заказа
+          клиентом.
+        </p>
+        Доставка по Батуми — 10 лари, от 300 лари — бесплатно. Доставка по
+        Грузии от 20 лари.
         <br />
         Cамовывоз по адресу:
         <MdLocationPin size={25} color={"#de682d"} />
         <a
-          href="https://www.google.com/maps/place/Adjara+Peak/@41.6330328,41.6130369,15z/data=!4m6!3m5!1s0x4067858105d2e915:0x5a619f050a0a9584!8m2!3d41.6330328!4d41.6130369!16s%2Fg%2F11t40_rjr5?entry=ttu"
+          href="https://www.google.com/maps/place/Adjara+Peak+%7C+Sport,+Hiking,+Ski+%26+Outdoor+Equipment+-+rental+and+sales/@41.6333505,41.614659,177m/data=!3m1!1e3!4m14!1m7!3m6!1s0x4067858105d2e915:0x5a619f050a0a9584!2sAdjara+Peak+%7C+Sport,+Hiking,+Ski+%26+Outdoor+Equipment+-+rental+and+sales!8m2!3d41.6333992!4d41.615391!16s%2Fg%2F11t40_rjr5!3m5!1s0x4067858105d2e915:0x5a619f050a0a9584!8m2!3d41.6333992!4d41.615391!16s%2Fg%2F11t40_rjr5?entry=ttu&g_ep=EgoyMDI1MDQyNy4xIKXMDSoASAFQAw%3D%3D"
           target="_blank"
           rel="noreferrer"
         >
           Батуми ул.Аслана Абашидзе, 19 (11:00-20:00)
         </a>
+        <p>
+          Благодарим за оформление заказа!
+          <br /> В ближайшее время наш представитель свяжется с вами.
+          <br /> С уважением, Adjara Peak.
+        </p>
         <div style={{ marginTop: 10 }}>
           {" "}
           Всем подписчикам нашего{" "}
