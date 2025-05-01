@@ -24,8 +24,9 @@ export const Footer = () => {
                 {languages === "RU"
                   ? "Батуми, Аслана Абашидзе, 19"
                   : "Batumi, 38 Tbel-Abuseridze Street. (11:00-20:00), closed on Sunday"}
+                <br />
                 {languages === "RU"
-                  ? " ( 11:00-20:00 ), без выходных"
+                  ? "11:00-20:00, без выходных"
                   : "Batumi, 38 Tbel-Abuseridze Street. (11:00-20:00), closed on Sunday"}
               </a>
             </div>
