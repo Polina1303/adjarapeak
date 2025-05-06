@@ -5,6 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import { Buy } from "../../components/buy/buy";
 import { PRODUCT } from "../../components/product-range/product";
+import { SPORT_PRODUCT } from "../../components/product-range/sportProduct";
 import "./product-page.css";
 import { RENT } from "../../components/product-range/rent";
 import { RENT_SKY } from "../../components/product-range/rent-sky";
@@ -15,9 +16,12 @@ export const ProductPage = () => {
   const params = useParams();
 
   const product = useSelector((state) => state.products.currentProduct);
-
+  console.log("product!!!!! ", product);
   useEffect(() => {
     const parsedProduct = PRODUCT.filter(
+      (item) => item.id === Number(params.id)
+    );
+    const parsedSportProduct = SPORT_PRODUCT.filter(
       (item) => item.id === Number(params.id)
     );
     const parsedRent = RENT.filter((item) => item.id === Number(params.id));
@@ -31,6 +35,8 @@ export const ProductPage = () => {
       dispatch(setCurrentProduct(parsedRent[0]));
     } else if (parsedRentSky.length > 0) {
       dispatch(setCurrentProduct(parsedRentSky[0]));
+    } else if (parsedSportProduct.length > 0) {
+      dispatch(setCurrentProduct(parsedSportProduct[0]));
     } else {
       history("/error");
     }

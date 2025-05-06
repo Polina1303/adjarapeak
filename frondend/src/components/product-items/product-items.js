@@ -9,7 +9,6 @@ import "./product-items.css";
 export const ProductItems = ({ product }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
   const handelClickImg = () => {
     dispatch(setCurrentProduct(product));
     navigate(`/app/${product.id}`);
@@ -19,7 +18,6 @@ export const ProductItems = ({ product }) => {
     threshold: 0,
     triggerOnce: true,
   });
-
   return (
     <>
       <div className="product-items">
