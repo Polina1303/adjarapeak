@@ -18,7 +18,7 @@ export const CartMenu = ({ items, onClick }) => {
                 count={item.count}
               />
             ))
-          : "Карзина пуста"}
+          : "Корзина пуста"}
       </div>
 
       {items && items.length > 0 ? (
