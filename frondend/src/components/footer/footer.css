@@ -1,27 +1,21 @@
-
-
 .footer-container {
   background-color: #ecececfa;
   color: #222;
-  padding: 0px 0 20px 0px; 
+  padding: 0px 0 20px 0px;
   width: 100%;
   font-family: "Montserrat", sans-serif;
- 
 }
 
 .footer-content {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  align-items: center;
+  /* align-items: center; */
   gap: 20px;
   font-family: "Montserrat", sans-serif;
- margin-left: 20px;
+  margin-left: 20px;
+  margin-top: 10px;
 }
-
-
-
-
 
 .footer-info {
   max-width: 500px;
@@ -33,7 +27,6 @@
   font-size: 16px; /* При необходимости уменьшает шрифт */
   line-height: 1.8; /* Уменьшает высоту строки */
 }
-
 
 .footer-info h4,
 .footer-socials h4 {
@@ -103,12 +96,9 @@
   .footer-content {
     flex-direction: column; /* Колонки становятся вертикальными */
     gap: 10px;
-    padding: 20px 0 20px 0px; 
-
+    padding: 20px 0 20px 0px;
   }
 
-
-  
   .footer-socials {
     text-align: center;
   }
@@ -119,14 +109,14 @@
   }
 
   .footer-socials .social-icons {
-    justify-content: center; 
+    justify-content: center;
     gap: 10px;
   }
 }
 
 @media (max-width: 480px) {
   .footer-container {
-    padding: 10px; 
+    padding: 10px;
   }
 
   .footer-info h4,
@@ -156,7 +146,7 @@
 
 .reviews-text a {
   font-size: 14px;
-  color: #007BFF; /* Цвет ссылки */
+  color: #007bff; /* Цвет ссылки */
   text-decoration: underline;
   transition: color 0.3s ease;
 }
@@ -165,10 +155,9 @@
   color: #0056b3; /* Цвет при наведении */
 }
 
-
 .footer-content-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr  ;
+  grid-template-columns: 1fr 1fr;
   gap: 16px;
 }
 
@@ -180,7 +169,6 @@
 
 @media (max-width: 768px) {
   .footer-content-wrapper {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
   }
-  
 }

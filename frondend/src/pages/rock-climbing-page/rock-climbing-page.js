@@ -43,6 +43,15 @@ export const RockClimbingPage = () => {
 
       <p style={{ paddingLeft: "20px", marginTop: "-0px", fontSize: "12px" }}>
         Координаты: 41.553927, 41.564936
+        <br />
+        <a
+          href="https://g.co/kgs/p37JKUC"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: "#de682d" }}
+        >
+          Подробнее на Google Картах
+        </a>
       </p>
 
       <span>
@@ -190,7 +199,7 @@ export const RockClimbingPage = () => {
           <span className="group-time">1 группа — 11:00</span>
         </div>
         <div className="session">
-          <span className="group-time">15:00</span>
+          <span className="group-time">2 группа - 15:00</span>
         </div>
         <a
           href="https://t.me/shpaksn"

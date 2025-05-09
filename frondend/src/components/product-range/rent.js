@@ -181,6 +181,17 @@ export const RENT = [
     column: ["Размер палатки: 210 Х 140 Х 110 см"],
   },
   {
+    id: 2203043433324013,
+    type: "rentTent",
+    title: "Палатка Clostnature Crux ",
+    img: "71qjTH1z8QL._AC_SL1500_.jpg",
+    desc: "1-х местная 3-сезонная  (2 слой)",
+    category: "rent",
+    price: 15,
+
+    column: ["Размер палатки: 221 Х 81 Х 91 см"],
+  },
+  {
     id: 200443013,
     type: "rentTent",
     title: "Палатка Easy Life (с тамбуром)",
@@ -291,7 +302,7 @@ export const RENT = [
     ],
   },
   {
-    id: 1200941,
+    id: 12009433341,
     title: "ПАЛАТКА NATUREHIKE CLOUD UP 2 20D",
     titleEng: "TENT NATUREHIKE CLOUD UP 2 20D",
     img: "tent18.png",

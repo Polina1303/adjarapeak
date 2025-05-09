@@ -134,22 +134,6 @@ export const HomePage = () => {
       </div>
 
       <div className="sale-container">
-        <div ref={ref} onClick={handleClickTrip} className="sale-item">
-          <a href="/trip">
-            <img src={del} alt="adjara peak" className="sale-img" />
-            <div className="sale-info">
-              <div className="sale-title">
-                <br />
-                <span className="highlight-sale">
-                  {languages === "RU" ? "Расписание" : "Schedule"}
-                </span>
-                <br />
-                {languages === "RU" ? "мероприятий" : "of events"}
-              </div>
-            </div>
-          </a>
-        </div>
-
         <div ref={ref} onClick={handleClickSale} className="sale-item">
           <a href="/sale">
             <img src={eq} alt="adjara peak" className="sale-img" />
@@ -210,6 +194,23 @@ export const HomePage = () => {
                 {languages === "RU"
                   ? "горнолыжного снаряжения"
                   : "of ski equipment"}
+              </div>
+            </div>
+          </a>
+        </div>
+        <div ref={ref} onClick={handleClickTrip} className="sale-item">
+          <a href="/trip">
+            <img src={del} alt="adjara peak" className="sale-img" />
+            <div className="sale-info">
+              <div className="sale-title">
+                <br />
+                <span className="highlight-sale">
+                  {languages === "RU" ? "Расписание" : "Schedule"}
+                </span>
+                <br />
+                {languages === "RU" ? "мероприятий" : "of events"}
+                <br />
+                {languages === "RU" ? "с Adjara Peak" : "with Adjara Peak"}
               </div>
             </div>
           </a>
