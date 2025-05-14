@@ -22,7 +22,7 @@ export const Footer = () => {
                 rel="noreferrer"
               >
                 {languages === "RU"
-                  ? "Батуми, Аслана Абашидзе, 19"
+                  ? "Батуми, ул. Ген. Аслана Абашидзе, 19"
                   : "Batumi, 38 Tbel-Abuseridze Street. (11:00-20:00), closed on Sunday"}
                 <br />
                 {languages === "RU"

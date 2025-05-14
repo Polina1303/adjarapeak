@@ -57,7 +57,7 @@ export const Header = () => {
             rel="noreferrer"
           >
             {languages === "RU"
-              ? "Батуми, Аслана Абашидзе, 19"
+              ? "Батуми, ул. Ген. Аслана Абашидзе, 19"
               : "Batumi, 38 Tbel-Abuseridze St."}
             <p className="work">
               (11:00-20:00){" "}

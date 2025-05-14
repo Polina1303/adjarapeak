@@ -122,7 +122,7 @@ export const HomePage = () => {
           >
             {languages === "RU" ? (
               <>
-                Новый адрес — <strong>Аслана Абашидзе 19</strong>
+                Новый адрес — <strong>ул. Ген. Аслана Абашидзе 19</strong>
               </>
             ) : (
               <>

@@ -2453,7 +2453,7 @@ export const PRODUCT = [
     titleEng: " NORDIC WALKING POLES",
     img: "Kije-Nordic-Walking-Viking-Kube-Pro-66-135-cm.jpeg",
     descEng: "Set of 2, made of duralumin",
-    desc: "Комплекст из 2шт",
+    desc: "Комплект из 2шт",
     category: "trekkingsticks",
     price: 125,
     shortly: "",
@@ -5234,7 +5234,7 @@ export const PRODUCT = [
     ],
   },
   {
-    id: 109822227981030,
+    id: 10982222732981030,
     title: "Топор Deli 800 грамм",
     img: "13.23.12.jpg",
     desc: "фиберглассовая рукоять ",
