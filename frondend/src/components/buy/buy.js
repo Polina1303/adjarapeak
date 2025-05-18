@@ -73,7 +73,7 @@ export const Buy = ({ product, page, discount }) => {
               top: "-2px",
             }}
           >
-            под заказ
+            скоро в наличии
           </p>
         )}
       </div>

@@ -14,6 +14,10 @@ import goder2 from "./image/IMG_8526.JPG";
 import end from "./image/photo_2024-04-01_15-31-09.jpg";
 import svan from "./image/svan.jpg";
 import TEA from "./image/TEA.jpg";
+import lake from "./image/lake.JPG";
+import kazbek from "./image/kazbek.JPG";
+import see from "./image/see.JPG";
+import Sairme from "./image/Sairme.JPG";
 import { useInView } from "react-intersection-observer";
 
 const events = [
@@ -108,7 +112,7 @@ const events = [
   //   link: "/",
   // },
   {
-    date: "3 мая",
+    date: "В любой из дней по запросу",
     title: "День чая в горах Гурии",
     description:
       "Большая дегустация редких сортов премиального чая. Мастер-класс по изготовлению чая. *все включено (для детей 15% скидка) ",
@@ -117,51 +121,14 @@ const events = [
     link: "/",
   },
   {
-    date: "3 мая",
-    title: "Скалолазание в Гонио",
-    description:
-      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-    price: "49",
-    image: rock1,
-    link: "/rockClimbing",
-  },
-  {
-    date: "4 мая",
-    title: "Скалолазание в Гонио",
-    description:
-      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-    price: "49",
-    image: rock2,
-    link: "/rockClimbing",
+    date: "В любой из дней по запросу",
+    title: "Морское приключение на парусной яхте",
+    description: "3 часа вокруг Батуми",
+    price: "550",
+    image: see,
+    link: "/",
   },
 
-  {
-    date: "10 мая",
-    title: "Скалолазание в Гонио",
-    description:
-      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-    price: "49",
-    image: rock1,
-    link: "/rockClimbing",
-  },
-  {
-    date: "11 мая",
-    title: "Скалолазание в Гонио",
-    description:
-      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-    price: "49",
-    image: rock2,
-    link: "/rockClimbing",
-  },
-  {
-    date: "17 мая",
-    title: "Скалолазание в Гонио",
-    description:
-      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-    price: "49",
-    image: rock1,
-    link: "/rockClimbing",
-  },
   {
     date: "18 мая",
     title: "Скалолазание в Гонио",
@@ -191,12 +158,83 @@ const events = [
   },
   {
     date: "31 мая",
+    title: "Саирме + Вани",
+    description:
+      "Трек к Sairme Pillars (столбам) — около 3 часов, с классными видами и небольшим набором — 386 метров. Расстояние 5 км, уровень легкий. После хайка – горячие источники и купание в Вани",
+    price: "110",
+    image: Sairme,
+    link: "/",
+  },
+  {
+    date: "31 мая",
     title: "Скалолазание в Гонио",
     description:
       "Тренировки и маршруты для любого уровня – от новичков до любителей.",
     price: "49",
     image: rock1,
     link: "/rockClimbing",
+  },
+  {
+    date: "1 июня",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock1,
+    link: "/rockClimbing",
+  },
+  {
+    date: "7 июня",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock2,
+    link: "/rockClimbing",
+  },
+
+  {
+    date: "8 июня",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock1,
+    link: "/rockClimbing",
+  },
+  {
+    date: "14 июня",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock2,
+    link: "/rockClimbing",
+  },
+  {
+    date: "15 июня",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock2,
+    link: "/rockClimbing",
+  },
+  {
+    date: "2 августа - 11 августа",
+    title: "Восхождение на Казбек",
+    description: "Идёт подготовка тура. Предзапись уже открыта.",
+    price: "-",
+    image: kazbek,
+    link: "/",
+  },
+  {
+    date: "23 август -24 августа",
+    title: "Озеро Тбикели (1 ночь)",
+    description: "Идёт подготовка тура. Предзапись уже открыта.",
+    price: "-",
+    image: lake,
+    link: "/",
   },
 ];
 
@@ -217,14 +255,11 @@ export const TripPage = () => {
         <IoIosArrowBack size={"25px"} /> Назад
       </button>
       <div className="event-schedule-container">
-        {/* <h2 className="event-schedule-title">
-          Расписание мероприятий на Февраль
-        </h2> */}
         <h2 className="event-schedule-title">
           <span className="orange-line"> Расписание </span>{" "}
           <span className="orange-line"> мероприятий </span>{" "}
           <span className="orange-box">на</span>{" "}
-          <span className="orange-line">май</span>
+          <span className="orange-line">сезон</span>
         </h2>
         <div className="card-grid">
           {events.map((event, index) => (
@@ -236,7 +271,7 @@ export const TripPage = () => {
             >
               <Card
                 ref={ref}
-                title={`${event.date}`} // Combining date and title
+                title={`${event.date}`}
                 bordered={false}
                 className="card-item"
               >

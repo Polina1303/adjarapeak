@@ -87,52 +87,6 @@ export const HomePage = () => {
         </p>
       </div>
 
-      <div className="home-page__container-title">
-        <h2
-          style={{
-            backgroundColor: "#f68632",
-            paddingTop: 20,
-            paddingBottom: 20,
-            paddingLeft: 24,
-            paddingRight: 24,
-            borderRadius: 12,
-            fontSize: 16,
-            color: "#fff",
-            maxWidth: 600,
-            margin: "20px auto",
-            boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
-          }}
-        >
-          <strong
-            style={{
-              fontSize: 18,
-              color: "#fff",
-              display: "block",
-            }}
-          >
-            {languages === "RU" ? "📍 Мы переехали!" : "📍 We have moved!"}
-          </strong>
-          <br />
-          <span
-            style={{
-              fontSize: 18,
-              color: "#fff",
-              display: "block",
-            }}
-          >
-            {languages === "RU" ? (
-              <>
-                Новый адрес — <strong>ул. Ген. Аслана Абашидзе 19</strong>
-              </>
-            ) : (
-              <>
-                New address — <strong>Aslan Abashidze 19</strong>
-              </>
-            )}
-          </span>
-        </h2>
-      </div>
-
       <div className="sale-container">
         <div ref={ref} onClick={handleClickSale} className="sale-item">
           <a href="/sale">
@@ -216,7 +170,6 @@ export const HomePage = () => {
           </a>
         </div>
       </div>
-
       <RockClimbing />
       <Routes />
       <RulesPage />

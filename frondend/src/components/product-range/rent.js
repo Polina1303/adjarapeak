@@ -1118,16 +1118,7 @@ export const RENT = [
     price: 6,
     column: ["C повышенным комфортом"],
   },
-  {
-    id: 100440108,
-    title: "СКЛАДНОЙ СТУЛ",
-    img: "chair2.JPG",
-    desc: "( ТАБУРЕТ )",
-    category: "rent",
-    type: "rentFURNITURE",
-    price: 2,
-    column: [],
-  },
+
   {
     id: 200036,
     title: "СКЛАДНОЙ СТОЛ С ПОДСТАКАННИКОМ ",
@@ -1952,7 +1943,7 @@ export const RENT = [
     titleEng: "TREKKING POLES",
     img: "trekkingsticks1.jpg",
     descEng: "Set of 2, aluminum",
-    desc: "Комплекст из 2шт, алюминиевые",
+    desc: "Комплект из 2шт, алюминиевые",
     category: "rent",
     type: "rentHIKING",
     price: 4,
