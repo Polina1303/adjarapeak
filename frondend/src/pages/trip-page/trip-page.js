@@ -18,6 +18,7 @@ import lake from "./image/lake.JPG";
 import kazbek from "./image/kazbek.JPG";
 import see from "./image/see.JPG";
 import Sairme from "./image/Sairme.JPG";
+import kappadokia from "./image/kappadokia.jpeg";
 import { useInView } from "react-intersection-observer";
 
 const events = [
@@ -128,16 +129,6 @@ const events = [
     image: see,
     link: "/",
   },
-
-  {
-    date: "18 мая",
-    title: "Скалолазание в Гонио",
-    description:
-      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-    price: "49",
-    image: rock2,
-    link: "/rockClimbing",
-  },
   {
     date: "24 мая",
     title: "Скалолазание в Гонио",
@@ -234,6 +225,14 @@ const events = [
     description: "Идёт подготовка тура. Предзапись уже открыта.",
     price: "-",
     image: lake,
+    link: "/",
+  },
+  {
+    date: "Октябрь",
+    title: "Каппадокия",
+    description: "Идёт подготовка тура. Предзапись уже открыта.",
+    price: "-",
+    image: kappadokia,
     link: "/",
   },
 ];
