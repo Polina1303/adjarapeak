@@ -1425,7 +1425,7 @@ export const PRODUCT = [
     columnEng: ["Volume: 30L", "Weight: 0.62 kg", "Dimensions: 50*26*20"],
   },
   {
-    id: 10003337,
+    id: 1000334437,
     title: "Рюкзак Quechua MH100 20L",
     titleEng: "BACKPACK 50L",
     img: "pictureback.png",
