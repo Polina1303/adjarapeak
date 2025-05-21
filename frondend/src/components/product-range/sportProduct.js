@@ -835,8 +835,8 @@ export const SPORT_PRODUCT = [
   },
   {
     id: 100322045171,
-    title: "Сап-борд (голубой)",
-    img: "sup8.jpg",
+    title: "Сап-борд (синий)",
+    img: "sup9.jpg",
     desc: "Hello Plus",
     category: "supboard",
     price: 770,
