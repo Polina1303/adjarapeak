@@ -13,6 +13,13 @@ import auto from "./image/auto.jpg";
 import goder2 from "./image/IMG_8526.JPG";
 import end from "./image/photo_2024-04-01_15-31-09.jpg";
 import svan from "./image/svan.jpg";
+import astro from "./image/astro.jpg";
+import martvili from "./image/martvili.jpeg";
+import gomismta from "./image/gomismta.jpg";
+import latevra from "./image/latevra.jpg";
+import nardevan from "./image/nardevan.jpg";
+import vashlovani from "./image/vashlovani.jpg";
+import beshumi from "./image/beshumi.jpg";
 import TEA from "./image/TEA.jpg";
 import lake from "./image/lake.JPG";
 import kazbek from "./image/kazbek.JPG";
@@ -130,24 +137,6 @@ const events = [
     link: "/",
   },
   {
-    date: "24 мая",
-    title: "Скалолазание в Гонио",
-    description:
-      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-    price: "49",
-    image: rock1,
-    link: "/rockClimbing",
-  },
-  {
-    date: "25 мая",
-    title: "Скалолазание в Гонио",
-    description:
-      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-    price: "49",
-    image: rock2,
-    link: "/rockClimbing",
-  },
-  {
     date: "31 мая",
     title: "Саирме + Вани",
     description:
@@ -212,6 +201,41 @@ const events = [
     link: "/rockClimbing",
   },
   {
+    date: "19 июня-20 июня",
+    title: "Астровыезд",
+    description: "Идёт подготовка тура. Предзапись уже открыта. Гид Юлия.",
+    price: "-",
+    image: astro,
+    link: "/",
+  },
+  {
+    date: "21 июня",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock1,
+    link: "/rockClimbing",
+  },
+  {
+    date: "22 июня",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock2,
+    link: "/rockClimbing",
+  },
+  {
+    date: "2 августа - 3 августа",
+    title: "Шуамтоба в Бешуми + хайк с ночевкой или на один день",
+    description:
+      "В высокогорном селе Бешуми в Аджарии проходит народный праздник «Шуамтоба», символизирующий завершение полевых работ и подъем в горы на летние пастбища. Праздник сопровождается песнями, танцами, традиционными угощениями и спортивными состязаниями, включая скачки. Идёт подготовка тура. Предзапись уже открыта. Гид Юлия.",
+    price: "-",
+    image: beshumi,
+    link: "/",
+  },
+  {
     date: "2 августа - 11 августа",
     title: "Восхождение на Казбек",
     description: "Идёт подготовка тура. Предзапись уже открыта.",
@@ -220,11 +244,62 @@ const events = [
     link: "/",
   },
   {
+    date: "9 августа - 10 августа",
+    title: "Каньон Мартивили (водопады Тоби и Ориони)",
+    description:
+      "С ночевкой или без. Идёт подготовка тура. Предзапись уже открыта. Гид Юлия.",
+    price: "-",
+    image: martvili,
+    link: "/",
+  },
+  {
+    date: "16 августа",
+    title: "Гомис Мта",
+    description: "Идёт подготовка тура. Предзапись уже открыта. Гид Юлия.",
+    price: "-",
+    image: gomismta,
+    link: "/",
+  },
+  {
     date: "23 август -24 августа",
     title: "Озеро Тбикели (1 ночь)",
     description: "Идёт подготовка тура. Предзапись уже открыта.",
     price: "-",
     image: lake,
+    link: "/",
+  },
+  // {
+  //   date: "6 сентября - 7 сентября",
+  //   title: "Гомис Мта",
+  //   description: "Идёт подготовка тура. Предзапись уже открыта. Гид Юлия.",
+  //   price: "-",
+  //   image: gomismta,
+  //   link: "/",
+  // },
+  {
+    date: "13 сентября",
+    title: "Латевра (Гобронети) 1320м",
+    description: "Идёт подготовка тура. Предзапись уже открыта. Гид Юлия.",
+    price: "-",
+    image: latevra,
+    link: "/",
+  },
+  {
+    date: "20 сентября",
+    title: "Крепость Нардевани",
+    description:
+      "2360 км, длина маршрута: 14 км. Идёт подготовка тура. Предзапись уже открыта. Гид Юлия.",
+    price: "-",
+    image: nardevan,
+    link: "/",
+  },
+  {
+    date: "4 октября - 5 октября",
+    title: "Вашловани",
+    description:
+      "Выезд из Тбилиси в субботу и возвращение в воскресенье в Тбилиси. Идёт подготовка тура. Предзапись уже открыта. Гид Юлия.",
+    price: "-",
+    image: vashlovani,
     link: "/",
   },
   {
