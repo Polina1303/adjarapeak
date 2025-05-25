@@ -86,7 +86,7 @@ export const CATEGORY_PRODUCT = [
     type: "dishes",
   },
   {
-    title: "НОЖИ",
+    title: "НОЖИ И ИНСТРУМЕНТ",
     type: "knife",
   },
   {

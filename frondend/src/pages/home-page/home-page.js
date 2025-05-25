@@ -157,7 +157,6 @@ export const HomePage = () => {
             <img src={del} alt="adjara peak" className="sale-img" />
             <div className="sale-info">
               <div className="sale-title">
-                <br />
                 <span className="highlight-sale">
                   {languages === "RU" ? "Расписание" : "Schedule"}
                 </span>

@@ -17,7 +17,7 @@ export const KnifePage = () => {
       <div className="home-page__container">
         <div>
           <div className="title" id="home-page-buy">
-            НОЖИ
+            НОЖИ И ИНСТРУМЕНТ
           </div>
           <div className="home-page-product">
             {knife.map((product) => (
