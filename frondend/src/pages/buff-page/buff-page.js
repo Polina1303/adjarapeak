@@ -17,7 +17,7 @@ export const BuffPage = () => {
       <div className="home-page__container">
         <div>
           <div className="title" id="home-page-buy">
-            БАФФЫ / БАЛАКЛАВЫ
+            БАФФЫ · БАЛАКЛАВЫ · ПЕРЧАТКИ
           </div>
           <div className="home-page-product">
             {buff.map((product) => (

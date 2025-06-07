@@ -37,16 +37,12 @@ export const CATEGORY_PRODUCT = [
     type: "gas/burner",
   },
   {
-    title: "БАФФЫ / БАЛАКЛАВЫ",
+    title: "БАФФЫ · БАЛАКЛАВЫ · ПЕРЧАТКИ",
     type: "buff",
   },
   {
     title: "ГОЛОВНЫЕ УБОРЫ",
     type: "hat",
-  },
-  {
-    title: "АКСЕССУАРЫ",
-    type: "accessories",
   },
   // {
   //   title: "ВОДНЫЙ СПОРТ",
@@ -70,7 +66,7 @@ export const CATEGORY_PRODUCT = [
   },
 
   {
-    title: "СОЛНЦЕЗАЩИТНЫЕ ОЧКИ",
+    title: "ОЧКИ И АКСЕССУАРЫ",
     type: "sunglasses",
   },
   {
@@ -99,6 +95,14 @@ export const CATEGORY_PRODUCT = [
     type: "air",
   },
   {
+    title: "СПРЕИ И ОТПУГИВАТЕЛИ",
+    type: "spray",
+  },
+  {
+    title: "ИНОЕ",
+    type: "accessories",
+  },
+  {
     title: "ПОХОДНАЯ ЕДА",
     type: "sublimates",
   },
@@ -107,10 +111,10 @@ export const CATEGORY_PRODUCT = [
     type: "coffee",
   },
 
-  {
-    title: "SUP-ДОСКИ",
-    type: "supboard",
-  },
+  // {
+  //   title: "SUP-ДОСКИ",
+  //   type: "supboard",
+  // },
   {
     title: "МАСКА/ШЛЕМ ГОРНОЛЫЖНЫЕ",
     type: "skigoggles",

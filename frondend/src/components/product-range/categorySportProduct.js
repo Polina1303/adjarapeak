@@ -3,7 +3,10 @@ export const CATEGORY_SPORT_PRODUCT = [
     title: "ВСЁ",
     // type:'all',
   },
-
+  {
+    title: "РОЛИКИ",
+    type: "roller",
+  },
   {
     title: "СКАКАЛКИ",
     type: "jumprope",
@@ -21,10 +24,7 @@ export const CATEGORY_SPORT_PRODUCT = [
     title: "МЯЧИ",
     type: "balls",
   },
-  {
-    title: "РОЛИКИ",
-    type: "roller",
-  },
+
   {
     title: "ВОДНЫЙ СПОРТ",
     type: "watersport",
