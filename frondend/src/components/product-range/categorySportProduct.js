@@ -4,34 +4,63 @@ export const CATEGORY_SPORT_PRODUCT = [
     // type:'all',
   },
   {
-    title: "РОЛИКИ",
+    title: "🛼РОЛИКИ",
     type: "roller",
   },
   {
-    title: "СКАКАЛКИ",
+    title: "🎾ТЕННИС",
+    type: "tennis",
+  },
+  // {
+  //   title: "🎾ПАДДЕЛ",
+  //   type: "padel",
+  // },
+  // {
+  //   title: "🏓ПИН-ПОНГ, МИНИ-ТЕННИС",
+  //   type: "mini",
+  // },
+  // {
+  //   title: "БАДМИНТОН",
+  //   type: "badminton",
+  // },
+  // {
+  //   title: "⚾БЕЙСБОЛ",
+  //   type: "baseball",
+  // },
+  // {
+  //   title: "🥏ФРИЗБИ",
+  //   type: "frisbee",
+  // },
+  {
+    title: "⚽МЯЧИ",
+    type: "balls",
+  },
+  {
+    title: "🌀НАСОСЫ",
+    type: "pump",
+  },
+
+  {
+    title: "🤸СКАКАЛКИ",
     type: "jumprope",
   },
 
   {
-    title: "РЕЗИНКИ, ЖГУТЫ",
+    title: "🧘‍♂️РЕЗИНКИ, ЖГУТЫ",
     type: "elasticbands",
   },
   {
-    title: "СПОРТИВНЫЕ ТОВАРЫ",
-    type: "sporting",
-  },
-  {
-    title: "МЯЧИ",
-    type: "balls",
+    title: "🏋️СПОРТИВНЫЕ ТОВАРЫ",
+    type: "sportings",
   },
 
   {
-    title: "ВОДНЫЙ СПОРТ",
+    title: "🌊ВОДНЫЙ СПОРТ",
     type: "watersport",
   },
 
   {
-    title: "SUP-ДОСКИ",
+    title: "🏄SUP-ДОСКИ",
     type: "supboard",
   },
 ];
