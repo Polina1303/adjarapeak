@@ -47,7 +47,6 @@
   width: 90%;
 }
 
-
 .modal__column__text {
   font-size: 13px;
 }
@@ -63,8 +62,6 @@
   justify-content: flex-end;
 }
 
-
-
 .modal-button-cover {
   display: flex;
   justify-content: flex-end;
@@ -79,8 +76,6 @@
   cursor: pointer;
 }
 
-
-
 .highlighted-link {
   color: #007bff; /* Синий цвет для привлечения внимания */
   text-decoration: underline;
@@ -92,7 +87,6 @@
   color: #0056b3; /* Более темный синий цвет при наведении */
   text-decoration: none; /* Убираем подчеркивание при наведении */
 }
-
 
 @media (max-width: 773px) {
   .modal-content {
