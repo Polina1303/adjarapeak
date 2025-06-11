@@ -34,6 +34,10 @@ export const Footer = () => {
               <AiOutlinePhone size={20} color="#de682d" className="icon" />
               <a href="tel:+995511147586">+995 511 147 586</a>
             </div>
+            <div className="footer-phone">
+              <AiOutlinePhone size={20} color="#de682d" className="icon" />
+              <a href="tel:+995551132803">+995 551 132 803</a>
+            </div>
             <div className="reviews-text">
               <p>
                 <a

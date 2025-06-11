@@ -11,10 +11,10 @@ import { RulesPage } from "../rules-page";
 import "./home-page.css";
 
 import sport from "./sport.png";
-import sky from "./444.png";
-import eq from "./1111.png";
+import sky from "./snow.JPG";
+import eq from "./sale.png";
 import eq2 from "./rent.JPG";
-import del from "./987.png";
+import del from "./tour.JPG";
 import img1 from "./IMG_7669.JPG";
 import img2 from "./IMG_7671.JPG";
 
@@ -79,10 +79,14 @@ export const HomePage = () => {
 
         <p className="sub-title-alt">
           <span className="highlight-alt">
-            {languages === "RU" ? "Сезон походов " : "The hiking season "}
+            {languages === "RU"
+              ? "Всё для гор — в одном месте. "
+              : "The hiking season "}
           </span>
           <span className="orange-box">
-            {languages === "RU" ? "открыт!" : "is open!"}
+            {languages === "RU"
+              ? "Магазин, прокат, походы, скалолазание."
+              : "is open!"}
           </span>
         </p>
       </div>
@@ -95,6 +99,23 @@ export const HomePage = () => {
               <div className="sale-title">
                 <span className="highlight-rent">
                   {languages === "RU" ? "Продажа" : "Sale"}
+                </span>
+                <br />
+                {languages === "RU"
+                  ? "туристического снаряжения"
+                  : "of tourist equipment"}
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div ref={ref} onClick={handleClickRent} className="sale-item">
+          <a href="/rent">
+            <img src={eq2} alt="adjara peak" className="sale-img" />
+            <div className="sale-info">
+              <div className="sale-title">
+                <span className="highlight-rent">
+                  {languages === "RU" ? "Прокат" : "Rental"}
                 </span>
                 <br />
                 {languages === "RU"
@@ -118,19 +139,18 @@ export const HomePage = () => {
             </div>
           </a>
         </div>
-
-        <div ref={ref} onClick={handleClickRent} className="sale-item">
-          <a href="/rent">
-            <img src={eq2} alt="adjara peak" className="sale-img" />
+        <div ref={ref} onClick={handleClickTrip} className="sale-item">
+          <a href="/trip">
+            <img src={del} alt="adjara peak" className="sale-img" />
             <div className="sale-info">
               <div className="sale-title">
-                <span className="highlight-rent">
-                  {languages === "RU" ? "Прокат" : "Rental"}
+                <span className="highlight-sale">
+                  {languages === "RU" ? "Расписание" : "Schedule"}
                 </span>
                 <br />
-                {languages === "RU"
-                  ? "туристического снаряжения"
-                  : "of tourist equipment"}
+                {languages === "RU" ? "мероприятий" : "of events"}
+                <br />
+                {languages === "RU" ? "с Adjara Peak" : "with Adjara Peak"}
               </div>
             </div>
           </a>
@@ -148,22 +168,6 @@ export const HomePage = () => {
                 {languages === "RU"
                   ? "горнолыжного снаряжения"
                   : "of ski equipment"}
-              </div>
-            </div>
-          </a>
-        </div>
-        <div ref={ref} onClick={handleClickTrip} className="sale-item">
-          <a href="/trip">
-            <img src={del} alt="adjara peak" className="sale-img" />
-            <div className="sale-info">
-              <div className="sale-title">
-                <span className="highlight-sale">
-                  {languages === "RU" ? "Расписание" : "Schedule"}
-                </span>
-                <br />
-                {languages === "RU" ? "мероприятий" : "of events"}
-                <br />
-                {languages === "RU" ? "с Adjara Peak" : "with Adjara Peak"}
               </div>
             </div>
           </a>
