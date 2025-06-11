@@ -887,7 +887,7 @@ export const SPORT_PRODUCT = [
     ],
   },
   {
-    id: 940979943256,
+    id: 9409799432568,
     title: "Лямки для штанги",
     img: "896dfaa3-d811-4053-8c8a-da77279f1baf.webp",
     desc: "SKDK ",
