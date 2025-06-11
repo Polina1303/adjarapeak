@@ -389,7 +389,7 @@ export const SPORT_PRODUCT = [
     title: "Ракетка для мини-тенниса",
     img: "small-indoor-table-tennis-set-ppr-100-with-2-bats-and-3-balls.avif",
     desc: "PONGORI PPR 100",
-    category: "sportings",
+    category: "mini",
     price: 55,
     column: [
       "Эти компактные ракетки разработаны для лучшего контроля мяча при игре на маленьком столе.",
