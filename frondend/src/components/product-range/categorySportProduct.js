@@ -11,26 +11,26 @@ export const CATEGORY_SPORT_PRODUCT = [
     title: "🎾ТЕННИС",
     type: "tennis",
   },
-  // {
-  //   title: "🎾ПАДДЕЛ",
-  //   type: "padel",
-  // },
-  // {
-  //   title: "🏓ПИН-ПОНГ, МИНИ-ТЕННИС",
-  //   type: "mini",
-  // },
-  // {
-  //   title: "БАДМИНТОН",
-  //   type: "badminton",
-  // },
+  {
+    title: "🎾ПАДДЕЛ",
+    type: "padel",
+  },
+  {
+    title: "🏓ПИН-ПОНГ, МИНИ-ТЕННИС",
+    type: "mini",
+  },
+  {
+    title: "🏸БАДМИНТОН",
+    type: "badminton",
+  },
   // {
   //   title: "⚾БЕЙСБОЛ",
   //   type: "baseball",
   // },
-  // {
-  //   title: "🥏ФРИЗБИ",
-  //   type: "frisbee",
-  // },
+  {
+    title: "🥏ФРИЗБИ",
+    type: "frisbee",
+  },
   {
     title: "⚽МЯЧИ",
     type: "balls",
@@ -38,6 +38,10 @@ export const CATEGORY_SPORT_PRODUCT = [
   {
     title: "🌀НАСОСЫ",
     type: "pump",
+  },
+  {
+    title: "💪ТРЕНАЖЕРНЫЙ ЗАЛ | ФИТНЕС",
+    type: "fitness",
   },
 
   {
