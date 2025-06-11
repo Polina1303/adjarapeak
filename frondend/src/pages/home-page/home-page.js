@@ -13,7 +13,7 @@ import "./home-page.css";
 import sport from "./sport.png";
 import sky from "./444.png";
 import eq from "./1111.png";
-import eq2 from "./peak.png";
+import eq2 from "./rent.JPG";
 import del from "./987.png";
 import img1 from "./IMG_7669.JPG";
 import img2 from "./IMG_7671.JPG";

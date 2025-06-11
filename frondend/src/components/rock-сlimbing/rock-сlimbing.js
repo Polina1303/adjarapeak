@@ -18,7 +18,6 @@ export const RockClimbing = () => {
   });
   return (
     <>
-      <h2 className="routes-title">Cкалолазаниe</h2>
       <div className="climbing-container">
         <div className="climbing-content">
           <ReactPlayer
@@ -39,6 +38,7 @@ export const RockClimbing = () => {
           />
 
           <div className="climbing-details">
+            <h2 className="routes-title">Cкалолазаниe</h2>
             <p className="climbing-text">
               Приглашаем на тренировки по скалолазанию на естественном рельефе в
               живописном месте Гонио-Квариати! Подходит как новичкам, так и
@@ -46,7 +46,7 @@ export const RockClimbing = () => {
             </p>
             <p className="climbing-text">
               Тренировки проходят 4 раза в неделю: в субботу и воскресенье
-              (11:00 и 15:00). Всё необходимое снаряжение предоставим, включая
+              (10:00 и 15:00). Всё необходимое снаряжение предоставим, включая
               скальные туфли. Стоимость — 49 лари.
             </p>
             <a href="/rockClimbing" className="climbing-button">

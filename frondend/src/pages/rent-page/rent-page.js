@@ -5,6 +5,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { CATEGORY_RENT } from "../../components/product-range/categoryRent";
 import { Menu } from "antd";
 import { useState, useEffect } from "react";
+import { RulesPage } from "../../pages/rules-page";
 
 const items = CATEGORY_RENT.map((item, index) => ({
   key: index,
@@ -53,6 +54,7 @@ export const RentPage = () => {
           <IoIosArrowBack size={"25px"} /> Назад
         </button>
       </div>
+
       <div className="search-container" style={{ margin: "20px 0" }}>
         <Menu
           mode="horizontal"
@@ -83,7 +85,7 @@ export const RentPage = () => {
           <div className="title" id="home-page-rent">
             ПРОКАТ ТУРИСТИЧЕСКОГО СНАРЯЖЕНИЯ
           </div>
-
+          {/* <RulesPage /> */}
           <div className="home-page-product">
             {active.length > 0 ? (
               active.map((rent) => <RentItems key={rent.id} rent={rent} />)
