@@ -38,7 +38,7 @@ export const RockClimbing = () => {
           />
 
           <div className="climbing-details">
-            <h2 className="routes-title">Cкалолазаниe</h2>
+            <h2 className="routes-title-text">Cкалолазаниe</h2>
             <p className="climbing-text">
               Приглашаем на тренировки по скалолазанию на естественном рельефе в
               живописном месте Гонио-Квариати! Подходит как новичкам, так и

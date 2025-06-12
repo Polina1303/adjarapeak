@@ -62,7 +62,7 @@ export const HomePage = () => {
             <>
               <span className="orange-line">Туристическое, </span>
               <span className="orange-line">горнолыжное </span>
-              <span className="orange-box">и</span>
+              <span className="orange-box"> и </span>
               <span className="orange-line"> спортивное</span>
               <span className="orange-line">снаряжение</span>
             </>
@@ -80,13 +80,11 @@ export const HomePage = () => {
         <p className="sub-title-alt">
           <span className="highlight-alt">
             {languages === "RU"
-              ? "Всё для гор — в одном месте. "
+              ? "Центр твоих приключений. "
               : "The hiking season "}
           </span>
-          <span className="orange-box">
-            {languages === "RU"
-              ? "Магазин, прокат, походы, скалолазание."
-              : "is open!"}
+          <span>
+            {languages === "RU" ? "Всё для спорта и туризма" : "is open!"}
           </span>
         </p>
       </div>

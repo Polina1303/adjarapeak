@@ -59,17 +59,11 @@ export const Header = () => {
             {languages === "RU"
               ? "Батуми, ул. Ген. Аслана Абашидзе, 19"
               : "Batumi, 38 Tbel-Abuseridze St."}
-            <p className="work">
+            <br />
+            <span className="work">
               (11:00-20:00){" "}
               {languages === "RU" ? "без выходных" : "closed on Sunday"}
-            </p>
-            {/* {languages === "RU"
-            ? "Батуми ул.Тбел-Абусеридзе, 38."
-            : "Batumi, 38 Tbel-Abuseridze St."}
-          <p className="work">
-            (11:00-20:00),{" "}
-            {languages === "RU" ? "выходной — воскресенье" : "closed on Sunday"}
-          </p> */}
+            </span>
           </a>
         </div>
         <div className="number">

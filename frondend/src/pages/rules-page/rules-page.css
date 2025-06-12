@@ -33,6 +33,7 @@
   left: 0;
   right: 0;
   bottom: 0;
+
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
@@ -45,6 +46,8 @@
   padding: 20px;
   border-radius: 8px;
   width: 90%;
+  max-height: 60vh; /* ограничиваем высоту окна 80% от высоты экрана */
+  overflow-y: auto; /* добавляем вертикальный скролл при необходимости */
 }
 
 .modal__column__text {

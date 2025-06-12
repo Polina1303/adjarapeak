@@ -1,6 +1,6 @@
 // };
 
-import React from "react";
+import React, { useState } from "react";
 import { Card, Button } from "antd";
 import { motion } from "framer-motion";
 import "./trip-page.css";
@@ -37,6 +37,7 @@ const events = [
     price: "200",
     image: TEA,
     link: "/",
+    type: "individual",
   },
   {
     date: "В любой из дней по запросу",
@@ -45,8 +46,19 @@ const events = [
     price: "550",
     image: see,
     link: "/",
+    type: "individual",
   },
 
+  {
+    date: "14 июня",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock2,
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
   {
     date: "15 июня",
     title: "Скалолазание в Гонио",
@@ -55,6 +67,7 @@ const events = [
     price: "49",
     image: rock2,
     link: "/rockClimbing",
+    type: "rockClimbing",
   },
   {
     date: "19 июня-20 июня",
@@ -63,6 +76,7 @@ const events = [
     price: "-",
     image: astro,
     link: "/",
+    type: "group",
   },
   {
     date: "21 июня",
@@ -72,6 +86,7 @@ const events = [
     price: "49",
     image: rock1,
     link: "/rockClimbing",
+    type: "rockClimbing",
   },
   {
     date: "22 июня",
@@ -81,6 +96,7 @@ const events = [
     price: "49",
     image: rock2,
     link: "/rockClimbing",
+    type: "rockClimbing",
   },
   {
     date: "28 июня",
@@ -90,6 +106,7 @@ const events = [
     price: "49",
     image: rock1,
     link: "/rockClimbing",
+    type: "rockClimbing",
   },
   {
     date: "29 июня",
@@ -99,6 +116,7 @@ const events = [
     price: "49",
     image: rock2,
     link: "/rockClimbing",
+    type: "rockClimbing",
   },
   {
     date: "2 августа - 3 августа",
@@ -108,6 +126,7 @@ const events = [
     price: "-",
     image: beshumi,
     link: "/",
+    type: "group",
   },
   {
     date: "2 августа - 11 августа",
@@ -116,6 +135,7 @@ const events = [
     price: "-",
     image: kazbek,
     link: "/",
+    type: "group",
   },
   {
     date: "9 августа - 10 августа",
@@ -125,6 +145,7 @@ const events = [
     price: "-",
     image: martvili,
     link: "/",
+    type: "group",
   },
   {
     date: "16 августа",
@@ -133,6 +154,7 @@ const events = [
     price: "-",
     image: gomismta,
     link: "/",
+    type: "group",
   },
   {
     date: "23 август -24 августа",
@@ -141,6 +163,7 @@ const events = [
     price: "-",
     image: lake,
     link: "/",
+    type: "group",
   },
 
   {
@@ -150,6 +173,7 @@ const events = [
     price: "-",
     image: latevra,
     link: "/",
+    type: "group",
   },
   {
     date: "20 сентября",
@@ -159,6 +183,7 @@ const events = [
     price: "-",
     image: nardevan,
     link: "/",
+    type: "group",
   },
   {
     date: "4 октября - 5 октября",
@@ -168,6 +193,7 @@ const events = [
     price: "-",
     image: vashlovani,
     link: "/",
+    type: "group",
   },
   {
     date: "Октябрь",
@@ -176,34 +202,73 @@ const events = [
     price: "-",
     image: kappadokia,
     link: "/",
+    type: "group",
   },
 ];
 
 export const TripPage = () => {
-  const history = useNavigate();
   const navigate = useNavigate();
-  const handleLearnMoreClick = (link) => {
-    navigate(link); // Navigate to the event-specific page
-  };
   const { ref, inView } = useInView({
     threshold: 0,
     triggerOnce: true,
   });
 
+  const [filter, setFilter] = useState("all");
+
+  const handleFilter = (type) => {
+    setFilter(type);
+  };
+
+  const filteredEvents =
+    filter === "all" ? events : events.filter((event) => event.type === filter);
+
   return (
     <div className="back-button-cover">
-      <button className="back-button" onClick={() => history(-1)}>
+      <button className="back-button" onClick={() => navigate(-1)}>
         <IoIosArrowBack size={"25px"} /> Назад
       </button>
+
       <div className="event-schedule-container">
         <h2 className="event-schedule-title">
-          <span className="orange-line"> Расписание </span>{" "}
-          <span className="orange-line"> мероприятий </span>{" "}
-          <span className="orange-box">на</span>{" "}
-          <span className="orange-line">сезон</span>
+          <span className="tripe-text"> Расписание </span>{" "}
+          <span className="tripe-text"> мероприятий </span>{" "}
+          <span className="tripe-text">на</span>{" "}
+          <span className="tripe-text">сезон</span>
         </h2>
+
+        <div className="filter-buttons">
+          <button
+            className={`filter-button ${filter === "all" ? "active" : ""}`}
+            onClick={() => handleFilter("all")}
+          >
+            Все туры
+          </button>
+          <button
+            className={`filter-button ${
+              filter === "individual" ? "active" : ""
+            }`}
+            onClick={() => handleFilter("individual")}
+          >
+            Индивидуальные
+          </button>
+          <button
+            className={`filter-button ${filter === "group" ? "active" : ""}`}
+            onClick={() => handleFilter("group")}
+          >
+            Групповые
+          </button>
+          <button
+            className={`filter-button ${
+              filter === "rockClimbing" ? "active" : ""
+            }`}
+            onClick={() => handleFilter("rockClimbing")}
+          >
+            Скалолазание
+          </button>
+        </div>
+
         <div className="card-grid">
-          {events.map((event, index) => (
+          {filteredEvents.map((event, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -233,7 +298,7 @@ export const TripPage = () => {
                   {event.link !== "/" && (
                     <Button
                       className="button"
-                      onClick={() => handleLearnMoreClick(event.link)}
+                      onClick={() => navigate(event.link)}
                     >
                       Узнать больше
                     </Button>

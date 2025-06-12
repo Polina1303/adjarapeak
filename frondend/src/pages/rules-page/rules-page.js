@@ -30,8 +30,8 @@ export const RulesPage = () => {
       </button>
 
       {isModalOpen && (
-        <div className="modal">
-          <div className="modal-content">
+        <div className="modal" onClick={handleCloseModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <div className="modal-button-cover">
               <button className="modal-button" onClick={handleCloseModal}>
                 <AiOutlineCloseCircle size={25} color="black" />
@@ -85,12 +85,6 @@ export const RulesPage = () => {
                       : ""}
                   </span>
                 </li>
-                {/* <li className="column__list">
-                  <span className="modal__column__text">
-                  {languages==="RU"? 'Для удобства клиентов, в прокате существует система бронирования, позволяющая клиенту заблаговременно заключить договор проката, указав лишь своё имя и номер телефона.':
-"For customer convenience, the rental has a reservation system that allows the customer to make a rental agreement in advance by providing only their name and phone number."}
-                  </span>
-                </li> */}
                 <li className="column__list">
                   <span className="modal__column__text">
                     {languages === "RU"

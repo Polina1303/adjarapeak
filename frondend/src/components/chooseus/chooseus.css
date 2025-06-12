@@ -18,8 +18,6 @@ h5 {
 
 .choose-item-description {
   margin-top: -10px;
-  /* width: 570px; */
-
   font-weight: 600;
   color: rgba(34, 34, 34, 0.788);
   font-size: 15px;
@@ -30,6 +28,17 @@ h5 {
   margin-right: 10px;
 }
 
+/* новые стили для двух колонок */
+.choose-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.choose-column {
+  flex: 1;
+}
+
 @media (max-width: 707px) {
   .choose-cover {
     display: flex;
@@ -37,6 +46,9 @@ h5 {
   }
   .choose-cover-advice {
     width: 95%;
+  }
+  .choose-columns {
+    flex-direction: column;
   }
   .choose-item-description {
     font-size: 12px;
