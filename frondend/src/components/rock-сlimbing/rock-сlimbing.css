@@ -89,6 +89,9 @@
 /* Адаптивность для мобильных устройств */
 /* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
+  .routes-title-text {
+    justify-content: center;
+  }
   .climbing-container {
     display: flex;
     flex-direction: column;

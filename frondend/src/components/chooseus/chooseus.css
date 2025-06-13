@@ -9,6 +9,7 @@
 
 .choose-item {
   display: flex;
+  margin-top: -10px;
 }
 
 h5 {
@@ -17,7 +18,7 @@ h5 {
 }
 
 .choose-item-description {
-  margin-top: -10px;
+  margin-top: -15px;
   font-weight: 600;
   color: rgba(34, 34, 34, 0.788);
   font-size: 15px;

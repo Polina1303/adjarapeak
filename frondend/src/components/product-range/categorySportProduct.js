@@ -8,6 +8,14 @@ export const CATEGORY_SPORT_PRODUCT = [
     type: "roller",
   },
   {
+    title: "ЗАЩИТА",
+    type: "protection",
+  },
+  {
+    title: "ШЛЕМЫ",
+    type: "helmet",
+  },
+  {
     title: "🎾ТЕННИС",
     type: "tennis",
   },
@@ -43,6 +51,14 @@ export const CATEGORY_SPORT_PRODUCT = [
     title: "💪ТРЕНАЖЕРНЫЙ ЗАЛ | ФИТНЕС",
     type: "fitness",
   },
+  {
+    title: "ШЕЙКЕР",
+    type: "shaker",
+  },
+  {
+    title: "ЭСПАНДЕР",
+    type: "extender",
+  },
 
   {
     title: "🤸СКАКАЛКИ",
@@ -52,6 +68,18 @@ export const CATEGORY_SPORT_PRODUCT = [
   {
     title: "🧘‍♂️РЕЗИНКИ, ЖГУТЫ",
     type: "elasticbands",
+  },
+  {
+    title: "🧘‍♂️КОВРИКИ ДЛЯ СПОРТА И ЙОГИ",
+    type: "mats",
+  },
+  {
+    title: "МАССАЖНЫЙ МЯЧ | РОЛ | ОБРУЧ",
+    type: "hoop",
+  },
+  {
+    title: "НАКОЛЕННИКИ, НАЛОКОТНИКИ",
+    type: "kneePads",
   },
   {
     title: "🏋️СПОРТИВНЫЕ ТОВАРЫ",
