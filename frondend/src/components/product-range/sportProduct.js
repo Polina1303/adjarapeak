@@ -225,7 +225,7 @@ export const SPORT_PRODUCT = [
   //   ],
   // },
   {
-    id: 2440764376743341313,
+    id: 244076437674334131351,
     title: "Шлем регулируемый Gudook",
     img: "3df0404c-6656-471a-a89c-7a13e24d7bc0.webp",
     desc: "для роликов и скейтборда",
@@ -259,7 +259,7 @@ export const SPORT_PRODUCT = [
     ],
   },
   {
-    id: 244076437674334131312,
+    id: 2440764376743341313120,
     title: "Шлем регулируемый Gudook",
     img: "d48b7823-4677-447c-a533-50e6338f0741.webp",
     desc: "для роликов и скейтборда",
@@ -306,7 +306,7 @@ export const SPORT_PRODUCT = [
   //   ],
   // },
   {
-    id: 244076437674334131,
+    id: 2440764376743341310,
     title: "Шлем OXELO B100",
     img: "kids-inline-skates-skateboard-scooter-helmet-b100-pastel-blue-oxelo.png",
     desc: " 47-52, 52-54, светло-голубой, персиковый",
@@ -321,7 +321,7 @@ export const SPORT_PRODUCT = [
     ],
   },
   {
-    id: 2440764376743341312,
+    id: 324407643765743341312,
     title: "Шлем OXELO MF500",
     img: "picturekids.png",
     desc: "52-55, 55-59, 59-62 серый, черный, белый, светло-розовый",
@@ -338,7 +338,7 @@ export const SPORT_PRODUCT = [
     ],
   },
   {
-    id: 24407643767433413122,
+    id: 244076543767433413122,
     title: "Шлем взрослый Kayak",
     img: "80aa7952-5e42-4da5-932c.png",
     desc: "(зеленый, желтый) ",
