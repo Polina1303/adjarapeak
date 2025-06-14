@@ -8,11 +8,11 @@ export const CATEGORY_SPORT_PRODUCT = [
     type: "roller",
   },
   {
-    title: "ЗАЩИТА",
+    title: "🛡️ЗАЩИТА",
     type: "protection",
   },
   {
-    title: "ШЛЕМЫ",
+    title: "⛑️ШЛЕМЫ",
     type: "helmet",
   },
   {
@@ -31,10 +31,10 @@ export const CATEGORY_SPORT_PRODUCT = [
     title: "🏸БАДМИНТОН",
     type: "badminton",
   },
-  // {
-  //   title: "⚾БЕЙСБОЛ",
-  //   type: "baseball",
-  // },
+  {
+    title: "⚾БЕЙСБОЛ",
+    type: "baseball",
+  },
   {
     title: "🥏ФРИЗБИ",
     type: "frisbee",
@@ -52,11 +52,11 @@ export const CATEGORY_SPORT_PRODUCT = [
     type: "fitness",
   },
   {
-    title: "ШЕЙКЕР",
+    title: "🥤ШЕЙКЕР",
     type: "shaker",
   },
   {
-    title: "ЭСПАНДЕР",
+    title: "💪ЭСПАНДЕР",
     type: "extender",
   },
 
@@ -74,17 +74,17 @@ export const CATEGORY_SPORT_PRODUCT = [
     type: "mats",
   },
   {
-    title: "МАССАЖНЫЙ МЯЧ | РОЛ | ОБРУЧ",
+    title: "🔵МАССАЖНЫЙ МЯЧ | РОЛ | ОБРУЧ",
     type: "hoop",
   },
   {
-    title: "НАКОЛЕННИКИ, НАЛОКОТНИКИ",
+    title: "🦵НАКОЛЕННИКИ, НАЛОКОТНИКИ",
     type: "kneePads",
   },
-  {
-    title: "🏋️СПОРТИВНЫЕ ТОВАРЫ",
-    type: "sportings",
-  },
+  // {
+  //   title: "🏋️СПОРТИВНЫЕ ТОВАРЫ",
+  //   type: "sportings",
+  // },
 
   {
     title: "🌊ВОДНЫЙ СПОРТ",
