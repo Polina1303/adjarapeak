@@ -21,18 +21,14 @@ export const CATEGORY_SEA = [
     title: "ЛАСТЫ",
     type: "flippers",
   },
-  //   {
-  //     title: "САПБОРДЫ",
-  //     type: "tent",
-  //   },
-  //   {
-  //     title: "ВЕСЛА",
-  //     type: "tent",
-  //   },
-  //   {
-  //     title: "ПЛАВНИКИ",
-  //     type: "tent",
-  //   },
+  {
+    title: "ВЕСЛА",
+    type: "oar",
+  },
+  {
+    title: "ПЛАВНИКИ",
+    type: "fin",
+  },
   //   {
   //     title: "ЖИЛЕТЫ",
   //     type: "tent",
