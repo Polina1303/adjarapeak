@@ -5,7 +5,7 @@ export const CATEGORY_SEA = [
   },
 
   {
-    title: "МАСКИ ДЛЯ НЫРЯНИЯ",
+    title: "МАСКИ И ОЧКИ",
     type: "mask",
   },
   {
