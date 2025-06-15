@@ -9,6 +9,7 @@ import { SPORT_PRODUCT } from "../../components/product-range/sportProduct";
 import "./product-page.css";
 import { RENT } from "../../components/product-range/rent";
 import { RENT_SKY } from "../../components/product-range/rent-sky";
+import { SEA_PRODUCT } from "../../components/product-range/sea-product";
 
 export const ProductPage = () => {
   const history = useNavigate();
@@ -16,7 +17,6 @@ export const ProductPage = () => {
   const params = useParams();
 
   const product = useSelector((state) => state.products.currentProduct);
-  console.log("product!!!!! ", product);
   useEffect(() => {
     const parsedProduct = PRODUCT.filter(
       (item) => item.id === Number(params.id)
@@ -28,6 +28,9 @@ export const ProductPage = () => {
     const parsedRentSky = RENT_SKY.filter(
       (item) => item.id === Number(params.id)
     );
+    const parsedSea = SEA_PRODUCT.filter(
+      (item) => item.id === Number(params.id)
+    );
 
     if (parsedProduct.length > 0) {
       dispatch(setCurrentProduct(parsedProduct[0]));
@@ -37,6 +40,8 @@ export const ProductPage = () => {
       dispatch(setCurrentProduct(parsedRentSky[0]));
     } else if (parsedSportProduct.length > 0) {
       dispatch(setCurrentProduct(parsedSportProduct[0]));
+    } else if (parsedSea.length > 0) {
+      dispatch(setCurrentProduct(parsedSea[0]));
     } else {
       history("/error");
     }

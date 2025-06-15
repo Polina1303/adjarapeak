@@ -8,6 +8,10 @@ export const CATEGORY_SEA = [
     title: "МАСКИ ДЛЯ НЫРЯНИЯ",
     type: "mask",
   },
+  {
+    title: "САПБОРДЫ",
+    type: "supboard",
+  },
   //   {
   //     title: "ОЧКИ ДЛЯ ПЛАВАНИЯ",
   //     type: "tent",
