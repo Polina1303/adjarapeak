@@ -10,11 +10,12 @@ import { MdOutlineArrowLeft, MdArrowRight } from "react-icons/md";
 import { RulesPage } from "../rules-page";
 import "./home-page.css";
 
-import sport from "./sport.png";
-import sky from "./snow.JPG";
+import sport from "./sport.webp";
+import sea from "./sea.webp";
+import sky from "./snow.webp";
 import eq from "./sale.png";
-import eq2 from "./rent.JPG";
-import del from "./tour.JPG";
+import eq2 from "./rent.webp";
+import del from "./tour.webp";
 import img1 from "./IMG_7669.JPG";
 import img2 from "./IMG_7671.JPG";
 
@@ -45,6 +46,7 @@ export const HomePage = () => {
   const { ref, inView } = useInView({ threshold: 0, triggerOnce: true });
 
   const handleClickSale = () => navigate("/sale");
+  const handleClickSaleSea = () => navigate("/sale_sea");
   const handleClickSportSale = () => navigate("/sport_sale");
   const handleClickRent = () => navigate("/rent");
   const handleClickRentSky = () => navigate("/rent_ski");
@@ -119,6 +121,22 @@ export const HomePage = () => {
                 {languages === "RU"
                   ? "туристического снаряжения"
                   : "of tourist equipment"}
+              </div>
+            </div>
+          </a>
+        </div>
+        <div ref={ref} onClick={handleClickSaleSea} className="sale-item">
+          <a href="/sale_sea">
+            <img src={sea} alt="adjara peak" className="sale-img" />
+            <div className="sale-info">
+              <div className="sale-title">
+                <span className="highlight-rent">
+                  {languages === "RU" ? "Продажа" : "Sale"}
+                </span>
+                <br />
+                {languages === "RU"
+                  ? "водного и пляжного снаряжения"
+                  : "of equipment"}
               </div>
             </div>
           </a>
