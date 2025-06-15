@@ -17,10 +17,10 @@ export const CATEGORY_SEA = [
     title: "ШАПКА ДЛЯ ПЛАВАНИЯ",
     type: "hat",
   },
-  //   {
-  //     title: "ЛАСТЫ",
-  //     type: "tent",
-  //   },
+  {
+    title: "ЛАСТЫ",
+    type: "flippers",
+  },
   //   {
   //     title: "САПБОРДЫ",
   //     type: "tent",
