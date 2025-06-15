@@ -12,14 +12,11 @@ export const CATEGORY_SEA = [
     title: "САПБОРДЫ",
     type: "supboard",
   },
-  //   {
-  //     title: "ОЧКИ ДЛЯ ПЛАВАНИЯ",
-  //     type: "tent",
-  //   },
-  //   {
-  //     title: "ШАПКА ДЛЯ ПЛАВАНИЯ",
-  //     type: "tent",
-  //   },
+
+  {
+    title: "ШАПКА ДЛЯ ПЛАВАНИЯ",
+    type: "hat",
+  },
   //   {
   //     title: "ЛАСТЫ",
   //     type: "tent",
