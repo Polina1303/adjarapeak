@@ -537,7 +537,7 @@ export const SEA_PRODUCT = [
     title: "Жилет спасательный",
     img: "Most-Popular-EPE-Foam-Life-Jacket-Full-Size-for-Adult-and-Children.avif",
     desc: "Hello Plus взрослый ",
-    category: "fin",
+    category: "vest",
     price: 65,
     column: [
       "Наполнитель жилета- пена",
@@ -550,7 +550,7 @@ export const SEA_PRODUCT = [
     title: "Жилет спасательный",
     img: "Most-Popular-EPE-Foam-Life-Jacket-Full-Size-for-Adult-and-Children.avif",
     desc: "Hello Plus детский",
-    category: "fin",
+    category: "vest",
     price: 55,
     column: [
       "Наполнитель жилета- пена",
@@ -563,7 +563,7 @@ export const SEA_PRODUCT = [
     title: "Жилет для водных видов спорта",
     img: "IMG_0666.JPG",
     desc: "и сапа",
-    category: "fin",
+    category: "vest",
     price: 99,
     column: [
       "Наполнитель жилета- пена",
