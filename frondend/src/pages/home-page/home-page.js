@@ -86,7 +86,7 @@ export const HomePage = () => {
               : "The hiking season "}
           </span>
           <span>
-            {languages === "RU" ? "Всё для спорта и туризма" : "is open!"}
+            {languages === "RU" ? "Всё для спорта и туризма." : "is open!"}
           </span>
         </p>
       </div>
@@ -134,9 +134,7 @@ export const HomePage = () => {
                   {languages === "RU" ? "Продажа" : "Sale"}
                 </span>
                 <br />
-                {languages === "RU"
-                  ? "водного и пляжного снаряжения"
-                  : "of equipment"}
+                {languages === "RU" ? "водного снаряжения" : "of equipment"}
               </div>
             </div>
           </a>
