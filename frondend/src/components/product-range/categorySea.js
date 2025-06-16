@@ -29,10 +29,10 @@ export const CATEGORY_SEA = [
     title: "ПЛАВНИКИ",
     type: "fin",
   },
-  //   {
-  //     title: "ЖИЛЕТЫ",
-  //     type: "tent",
-  //   },
+  {
+    title: "ЖИЛЕТЫ",
+    type: "vest",
+  },
   //   {
   //     title: "КОМПЛЕКТУЮЩИЕ САПБОРД",
   //     type: "tent",
