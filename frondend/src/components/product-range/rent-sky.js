@@ -1,5 +1,6 @@
 export const RENT_SKY = [
   {
+    order: true,
     id: 300509,
     title: "Комплект: 2 радиостанций Baofeng BF-888s	",
     img: "raciya_baofeng_bf-888s_komplekt_2.png",
@@ -21,6 +22,7 @@ export const RENT_SKY = [
     ],
   },
   {
+    order: true,
     id: 30087509,
     title: "ЛЫЖИ ",
     img: "5.45.27.jpg",
@@ -31,6 +33,7 @@ export const RENT_SKY = [
     column: ["KASTLE FX 95 DUAL RISE 173"],
   },
   {
+    order: true,
     id: 30009,
     title: "Лыжи",
     img: "19.08.22.jpg",
@@ -74,6 +77,7 @@ export const RENT_SKY = [
     ],
   },
   {
+    order: true,
     id: 300039,
     title: "Ботинки лыжные",
     img: "19.39.01.png",
@@ -86,6 +90,7 @@ export const RENT_SKY = [
     ],
   },
   {
+    order: true,
     id: 3040035,
     title: "Ботинки + лыжи",
     img: "19.45.11.jpg",
@@ -130,6 +135,7 @@ export const RENT_SKY = [
     ],
   },
   {
+    order: true,
     id: 3000354,
     title: "Лыжи + ботинки + палки",
     img: "2.37.20.jpg",
@@ -174,6 +180,7 @@ export const RENT_SKY = [
     ],
   },
   {
+    order: true,
     id: 30003544,
     title: "Лыжи + ботинки + маска + шлем",
     img: "22.52.19.jpg",
@@ -221,6 +228,7 @@ export const RENT_SKY = [
     ],
   },
   {
+    order: true,
     id: 300010,
     title: "Сноуборд",
     img: "19.52.32.jpg",
@@ -271,6 +279,7 @@ export const RENT_SKY = [
     ],
   },
   {
+    order: true,
     id: 300011,
     title: "Ботинки сноубордические",
     img: "19.19.03.jpg",
@@ -283,6 +292,7 @@ export const RENT_SKY = [
     ],
   },
   {
+    order: true,
     id: 300035,
     title: "Сноуборд + ботинки",
     img: "9.54.26.jpg",
@@ -334,6 +344,7 @@ export const RENT_SKY = [
     ],
   },
   {
+    order: true,
     id: 3000398,
     title: "Сноуборд + ботинки + маска + шлем",
     img: "22.58.51.jpg",
@@ -388,6 +399,7 @@ export const RENT_SKY = [
     ],
   },
   {
+    order: true,
     id: 30001,
     title: "Куртка горнолыжная",
     img: "IMG_5871.JPG",
@@ -398,6 +410,7 @@ export const RENT_SKY = [
     column: ["Размер:XS, S, M, L, XL, XXL"],
   },
   {
+    order: true,
     id: 30002,
     title: "Куртка горнолыжная",
     img: "IMG_5888.JPG",
@@ -408,6 +421,7 @@ export const RENT_SKY = [
     column: ["Размер:XS, S, M, L, XL, XXL"],
   },
   {
+    order: true,
     id: 30004,
     title: "Штаны горнолыжные",
     img: "IMG_5870.JPG",
@@ -421,6 +435,7 @@ export const RENT_SKY = [
     ],
   },
   {
+    order: true,
     id: 304005,
     title: "Штаны горнолыжные",
     img: "9.31.40.png",
@@ -434,6 +449,7 @@ export const RENT_SKY = [
     ],
   },
   {
+    order: true,
     id: 30005,
     title: "Куртка + штаны",
     img: "23.03.31.jpg",
@@ -450,6 +466,7 @@ export const RENT_SKY = [
     ],
   },
   {
+    order: true,
     id: 300045,
     title: "Комбинезон",
     img: "IMG_5903.PNG",
@@ -460,6 +477,7 @@ export const RENT_SKY = [
     column: ["Размеры:S, L"],
   },
   {
+    order: true,
     id: 30440045,
     title: "комбинезон",
     img: "ezgif-4-f35c20e8f8.jpg",
@@ -470,6 +488,7 @@ export const RENT_SKY = [
     column: [""],
   },
   {
+    order: true,
     id: 30006,
     title: "Горнолыжные перчатки",
     img: "IMG_586.png",
@@ -480,6 +499,7 @@ export const RENT_SKY = [
     column: ["Размер:XS, S, M, L"],
   },
   {
+    order: true,
     id: 30007,
     title: "Шлем защитный",
     img: "IMG_58.png",
@@ -490,6 +510,7 @@ export const RENT_SKY = [
     column: ["Размер:S, M, L"],
   },
   {
+    order: true,
     id: 30008,
     title: "Маска горнолыжная",
     img: "IMG_5865-.png",
@@ -503,6 +524,7 @@ export const RENT_SKY = [
     ],
   },
   {
+    order: true,
     id: 300082,
     title: "Тюбинг",
     img: "Gn31w.jpg",
@@ -513,6 +535,7 @@ export const RENT_SKY = [
     column: [],
   },
   {
+    order: true,
     id: 30033082,
     title: "Пластиковые санки",
     img: "s1.webp",
@@ -528,6 +551,7 @@ export const RENT_SKY = [
     ],
   },
   {
+    order: true,
     id: 300333082,
     title: "Пластиковые санки",
     img: "S1-14.webp",
@@ -538,6 +562,7 @@ export const RENT_SKY = [
     column: ["Длина:	127 см"],
   },
   {
+    order: true,
     id: 300015,
     title: "Защита копчика",
     img: "19.24.57.jpg",
@@ -549,6 +574,7 @@ export const RENT_SKY = [
   },
 
   {
+    order: true,
     id: 3000156,
     title: "Защита спины",
     img: "ezgif-2-bbe929db9a.jpg",
@@ -559,6 +585,7 @@ export const RENT_SKY = [
     column: [],
   },
   {
+    order: true,
     id: 3000157,
     title: "Защита коленей, локтей, запястья",
     img: "19.28.22.jpg",

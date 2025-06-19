@@ -63,7 +63,7 @@ export const Buy = ({ product, page, discount }) => {
         {!product.newPrice && (
           <b className="product-items__price">{product.price}.00₾</b>
         )}
-        {product.order && (
+        {!product.order && (
           <p
             style={{
               margin: "0 0 0 20px",

@@ -1,5 +1,6 @@
 export const SEA_PRODUCT = [
   {
+    order: true,
     id: 107799995137,
     title: "Маска для ныряния",
     img: "diving-mask-100-grey-subea-8491466.jpg",
@@ -12,6 +13,7 @@ export const SEA_PRODUCT = [
     ],
   },
   {
+    order: true,
     id: 10779999435137,
     title: "Маска для ныряния",
     img: "diving-mask-100-grey-subea-8491466.jpg",
@@ -24,6 +26,7 @@ export const SEA_PRODUCT = [
     ],
   },
   {
+    order: true,
     id: 10779909035137,
     title: "Маска для ныряния",
     img: "021f8f66-6850-43a1-85a5-9717095d2bcb.webp",
@@ -35,6 +38,7 @@ export const SEA_PRODUCT = [
     ],
   },
   {
+    order: true,
     id: 107799099891370,
     title: "Маска закрытая",
     img: "easybreath-540-freetalk.png",
@@ -50,6 +54,7 @@ export const SEA_PRODUCT = [
     ],
   },
   {
+    order: true,
     id: 1077990998913704,
     title: "Трубка для ныряния",
     img: "cover535.png",
@@ -65,6 +70,7 @@ export const SEA_PRODUCT = [
     ],
   },
   {
+    order: true,
     id: 10909891370,
     title: "Силиконовая маска",
     img: "6d8acb8a-c826.png",
@@ -77,6 +83,7 @@ export const SEA_PRODUCT = [
   },
 
   {
+    order: true,
     id: 999009081370,
     title: "Очки для плавания",
     img: "swimming-goggles-ready-one-size-clear-lenses-grey-nabaiji-8616684.jpg",
@@ -91,6 +98,7 @@ export const SEA_PRODUCT = [
     ],
   },
   {
+    order: true,
     id: 99944998913730,
     title: "Очки для плавания",
     img: "xbase-100-adult-swimming-goggles-clear-lenses-black-nabaiji-8669830.avif",
@@ -106,6 +114,7 @@ export const SEA_PRODUCT = [
     ],
   },
   {
+    order: true,
     id: 9994499891398730,
     title: "плавательные очки",
     img: "fa8b.png",
@@ -118,6 +127,7 @@ export const SEA_PRODUCT = [
     ],
   },
   {
+    order: true,
     id: 3092439876730,
     title: "Детские очки",
     img: "e00ba9e4-ba61-4990-a272-51e358b1ccdb.webp",
@@ -130,6 +140,7 @@ export const SEA_PRODUCT = [
     ],
   },
   {
+    order: true,
     id: 140909891370,
     title: "чехол для маски",
     img: "72092b3b-c785-460e-875f-69e816.png",
@@ -147,6 +158,7 @@ export const SEA_PRODUCT = [
     ],
   },
   {
+    order: true,
     id: 98798327330,
     title: "Антифог",
     img: "scd-anti-fog-.png",
@@ -159,6 +171,7 @@ export const SEA_PRODUCT = [
     ],
   },
   {
+    order: true,
     id: 100001679,
     title: "Сап-борд",
     img: "729607464.png",
@@ -174,6 +187,7 @@ export const SEA_PRODUCT = [
     ],
   },
   {
+    order: true,
     id: 10043001679,
     title: "Сап-борд",
     img: "5515.48.40.jpg",
@@ -200,6 +214,7 @@ export const SEA_PRODUCT = [
   },
 
   {
+    order: true,
     id: 100045171,
     title: "Сап-борд (жираф)",
     img: "sup6.png",
@@ -225,6 +240,7 @@ export const SEA_PRODUCT = [
     ],
   },
   {
+    order: true,
     id: 10004345171,
     title: "Сап-борд (бело-оранжевый)",
     img: "sup7.jpg",
@@ -250,7 +266,8 @@ export const SEA_PRODUCT = [
     ],
   },
   // {
-  //   id: 1400322045171,
+  // order:true,//
+  // id: 1400322045171,
   //   title: "Сап-борд ",
   //   img: "4215.52.33.jpg",
   //   desc: "Hello Plus black&blue",
@@ -275,6 +292,7 @@ export const SEA_PRODUCT = [
   //   ],
   // },
   {
+    order: true,
     id: 1400322045171,
     title: "Сап-борд ",
     img: "4215.52.33.jpg",
@@ -300,6 +318,7 @@ export const SEA_PRODUCT = [
     ],
   },
   {
+    order: true,
     id: 1003220451714,
     title: "Сап-борд ",
     img: "IMG_3451.png",
@@ -320,6 +339,7 @@ export const SEA_PRODUCT = [
   },
 
   {
+    order: true,
     id: 3092436598730,
     title: "Силиковая шапка",
     img: "silicone-swim-cap.png",
@@ -332,6 +352,7 @@ export const SEA_PRODUCT = [
     ],
   },
   {
+    order: true,
     id: 3092438798730,
     title: "Тканевая шапочка",
     img: "mesh-swim-cap-plain-fabric-pink-nabaiji-8277368.jpg",
@@ -344,6 +365,7 @@ export const SEA_PRODUCT = [
     ],
   },
   {
+    order: true,
     id: 3092434879832730,
     title: "Силиковая шапка NABAIJI",
     img: "mesh-swim-cap-printed-fabric-size.png",
@@ -356,6 +378,7 @@ export const SEA_PRODUCT = [
     ],
   },
   {
+    order: true,
     id: 3092438798327330,
     title: "Тканевая детская шапочка NABAIJI",
     img: "mesh-swimming-cap-plain-fabric.png",
@@ -368,6 +391,7 @@ export const SEA_PRODUCT = [
     ],
   },
   {
+    order: true,
     id: 9879832733044,
     title: "Силиковая шапочка",
     img: "picture999.png",
@@ -381,6 +405,7 @@ export const SEA_PRODUCT = [
   },
 
   {
+    order: true,
     id: 9879832734330,
     title: "Ласты",
     img: "picture8989.png",
@@ -396,6 +421,7 @@ export const SEA_PRODUCT = [
     ],
   },
   {
+    order: true,
     id: 987983273433035,
     title: "Ласты регулируемые",
     img: "a89a-248e7004f0a1.webp",
@@ -415,6 +441,7 @@ export const SEA_PRODUCT = [
     ],
   },
   {
+    order: true,
     id: 10032204517145,
     title: "Весло черное",
     img: "sup_veslo_allyuminij_gladiator_lt.webp",
@@ -425,6 +452,7 @@ export const SEA_PRODUCT = [
     column: [],
   },
   {
+    order: true,
     id: 100322045171455,
     title: "Весло оранжевое",
     img: "wf19.47.13.jpg",
@@ -435,6 +463,7 @@ export const SEA_PRODUCT = [
     column: ["170 - 210 см"],
   },
   {
+    order: true,
     id: 1003220451714554,
     title: "Весло KOETSU",
     img: "3419.52.13.jpg",
@@ -453,6 +482,7 @@ export const SEA_PRODUCT = [
     ],
   },
   {
+    order: true,
     id: 10203220451714554,
     title: "Весло ITIWIT",
     img: "6685964327.jpg",
@@ -463,6 +493,7 @@ export const SEA_PRODUCT = [
     column: [],
   },
   {
+    order: true,
     id: 1034434301679,
     title: "Плавник Slide-in",
     img: "73684021.png",
@@ -472,6 +503,7 @@ export const SEA_PRODUCT = [
     column: [],
   },
   {
+    order: true,
     id: 10004343016799,
     title: "Плавник Slide-in",
     img: "6dfe3692-d029-4c1e-b416-81a82232afad.webp",
@@ -484,6 +516,7 @@ export const SEA_PRODUCT = [
     ],
   },
   {
+    order: true,
     id: 1000434301679,
     title: "Плавник SLIDE IN KOETSU",
     img: "4320.12.06.jpg",
@@ -493,6 +526,7 @@ export const SEA_PRODUCT = [
     column: [],
   },
   {
+    order: true,
     id: 10004343016795,
     title: "Плавник US BOX",
     img: "736c40c6-26fb-44bc-a974.png",
@@ -502,6 +536,7 @@ export const SEA_PRODUCT = [
     column: [],
   },
   {
+    order: true,
     id: 1000434301679539,
     title: "Фиксатор ФИНА | ПЛАВНИКА ",
     img: "fin.webp",
@@ -518,6 +553,7 @@ export const SEA_PRODUCT = [
     ],
   },
   {
+    order: true,
     id: 100043430167953,
     title: "Винт (крепление) плавника",
     img: "7abaa3e6-902e-401d-a2df-deb194aba48c.webp",
@@ -533,6 +569,7 @@ export const SEA_PRODUCT = [
     ],
   },
   {
+    order: true,
     id: 144343016795347,
     title: "Жилет спасательный",
     img: "Most-Popular-EPE-Foam-Life-Jacket-Full-Size-for-Adult-and-Children.avif",
@@ -546,6 +583,7 @@ export const SEA_PRODUCT = [
     ],
   },
   {
+    order: true,
     id: 10400434301679534,
     title: "Жилет спасательный",
     img: "Most-Popular-EPE-Foam-Life-Jacket-Full-Size-for-Adult-and-Children.avif",
@@ -559,6 +597,7 @@ export const SEA_PRODUCT = [
     ],
   },
   {
+    order: true,
     id: 140090434301679534,
     title: "Жилет для водных видов спорта",
     img: "IMG_0666.JPG",
