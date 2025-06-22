@@ -33,20 +33,20 @@ export const CATEGORY_SEA = [
     title: "ЖИЛЕТЫ",
     type: "vest",
   },
-  //   {
-  //     title: "КОМПЛЕКТУЮЩИЕ САПБОРД",
-  //     type: "tent",
-  //   },
-  //   {
-  //     title: "ГЕРМОМЕШКИ",
-  //     type: "tent",
-  //   },
-  //   {
-  //     title: "ПЛЯЖНАЯ ОБУВЬ",
-  //     type: "tent",
-  //   },
-  //   {
-  //     title: "МЕБЕЛЬ ДЛЯ ПЛЯЖА",
-  //     type: "tent",
-  //   },
+  {
+    title: "КОМПЛЕКТУЮЩИЕ САПБОРД",
+    type: "sup_accessories",
+  },
+  {
+    title: "ГЕРМОМЕШКИ",
+    type: "hermo",
+  },
+  {
+    title: "ПЛЯЖНАЯ ОБУВЬ",
+    type: "shoes",
+  },
+  {
+    title: "МЕБЕЛЬ ДЛЯ ПЛЯЖА",
+    type: "beach",
+  },
 ];
