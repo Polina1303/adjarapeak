@@ -540,7 +540,7 @@ export const SEA_PRODUCT = [
     id: 1000434301679539,
     title: "Фиксатор ФИНА | ПЛАВНИКА ",
     img: "fin.webp",
-    desc: "",
+    desc: "крепление",
     category: "fin",
     price: 10,
     column: [
@@ -719,7 +719,7 @@ export const SEA_PRODUCT = [
     id: 104300146,
     title: "Гермопакет для телефона",
     img: "s-l1600.png",
-    desc: "",
+    desc: "защита телефона",
     category: "hermo",
     price: 19,
     order: false,

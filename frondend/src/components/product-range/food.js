@@ -406,7 +406,7 @@ export const FOOD = [
     id: 1000164,
     title: "JERKY BEET (Вяленая говядина)",
     img: "jerky-beef-front.png",
-    desc: "",
+    desc: "60 грамм",
     category: "lazy_snark",
     price: 18,
     column: [
@@ -432,9 +432,9 @@ export const FOOD = [
   {
     order: true,
     id: 10030164980,
-    title: "Granola Chocolate with bananes (Гранола шоколадная)",
+    title: "Granola Chocolate with bananes (Гранола)",
     img: "chocolate-granola-front.png",
-    desc: "",
+    desc: "шоколадная",
     category: "lazy_snark",
     price: 12,
     column: [
@@ -447,7 +447,7 @@ export const FOOD = [
     id: 10400164980,
     title: "Granola Apple + Banana (Гранола яблоко+банан)",
     img: "chocolate-granola-front.png",
-    desc: "",
+    desc: "яблоко+банан",
     category: "lazy_snark",
     price: 12,
     column: [
@@ -458,9 +458,9 @@ export const FOOD = [
   {
     order: true,
     id: 10900164980,
-    title: "Granola Orange (Гранола апельсиновая)",
+    title: "Granola Orange (Гранола)",
     img: "chocolate-granola-front.png",
-    desc: "",
+    desc: "апельсиновая",
     category: "lazy_snark",
     price: 12,
     column: [
@@ -471,9 +471,9 @@ export const FOOD = [
   {
     order: true,
     id: 10600164909009,
-    title: "Украинский борщ веган | Borscht",
+    title: "Украинский борщ веган",
     img: "Izy__Meal-Borscht-Web-Thumbnail.jpg",
-    desc: "",
+    desc: "Borscht",
     category: "sublimates",
     price: 16,
     column: [
@@ -483,9 +483,9 @@ export const FOOD = [
   {
     order: true,
     id: 1000164983409,
-    title: "Тыквенный суп веганский | Pumpkin soup",
+    title: "Тыквенный суп веганский",
     img: "23.56.48.jpg",
-    desc: "",
+    desc: "Pumpkin soup",
     category: "izy",
     price: 16,
     column: [],
@@ -494,9 +494,9 @@ export const FOOD = [
   {
     order: true,
     id: 1000164982109,
-    title: "Лобио веган | Mashed Beans with herbs",
+    title: "Лобио веган",
     img: "23.51.25.jpg",
-    desc: "",
+    desc: "Mashed Beans with herbs",
     category: "izy",
     price: 17,
     column: [
@@ -506,9 +506,9 @@ export const FOOD = [
   {
     order: true,
     id: 10001649821098,
-    title: "Пюре сулугуни вегетарианское | Puree with smoked sulguni",
+    title: "Пюре сулугуни вегетарианское",
     img: "Izy__Meal-Puree-Web-Thumbnail.jpg",
-    desc: "",
+    desc: "Puree with smoked sulguni",
     category: "izy",
     price: 17,
     column: [
@@ -518,9 +518,9 @@ export const FOOD = [
   {
     order: true,
     id: 10001649836409,
-    title: "Харчо | Chiken soup kharcho",
+    title: "Харчо",
     img: "23.41.04.jpg",
-    desc: "",
+    desc: "Chiken soup kharcho",
     category: "izy",
     price: 24,
     column: [],
@@ -528,9 +528,9 @@ export const FOOD = [
   {
     order: true,
     id: 10300164982109817,
-    title: "Cублимированные абрикос | Apricots",
+    title: "Cублимированные абрикос",
     img: "67441f06af0f7ef9e0d09955_Izy__Apricots-small.png",
-    desc: "",
+    desc: "Apricots",
     category: "izy",
     price: 10,
     column: [],
@@ -538,9 +538,9 @@ export const FOOD = [
   {
     order: true,
     id: 10001649821098136,
-    title: "Cублимированные клубника | Strawberries",
+    title: "Cублимированные клубника",
     img: "6748c170457a94e8c61a30dd_Izy__Strawberries-small.png",
-    desc: "",
+    desc: "Strawberries",
     category: "izy",
     price: 10,
     column: [],
@@ -548,9 +548,9 @@ export const FOOD = [
   {
     order: true,
     id: 109001649821098135,
-    title: "Cублимированные дыня | Cantaloupes",
+    title: "Cублимированные дыня",
     img: "6748c0134409e73d369a01fe_Izy__Cantaloupe-smal.png",
-    desc: "",
+    desc: "Cantaloupes",
     category: "izy",
     price: 10,
     column: [],
@@ -558,9 +558,9 @@ export const FOOD = [
   {
     order: true,
     id: 100201649821098134,
-    title: "Cублимированные фейхоа | Feijoas",
+    title: "Cублимированные фейхоа",
     img: "6748bd0b3865454921878fcc_Izy__Feijoa-small__Front-min.png",
-    desc: "",
+    desc: "Feijoas",
     category: "izy",
     price: 10,
     column: [],
@@ -568,9 +568,9 @@ export const FOOD = [
   {
     order: true,
     id: 100301649821098133,
-    title: "Cублимированные персик | Peachs",
+    title: "Cублимированные персик",
     img: "6748bf97622f36c7b8776249_Izy__Peaches-small.png",
-    desc: "",
+    desc: "Peachs",
     category: "izy",
     price: 10,
     column: [],
@@ -578,9 +578,9 @@ export const FOOD = [
   {
     order: true,
     id: 100401649821098132,
-    title: "Cублимированные слива | Plums",
+    title: "Cублимированные слива",
     img: "6744312e8726e6f95f85b1ad_Izy__Plum-smal.png",
-    desc: "",
+    desc: "Plums",
     category: "izy",
     price: 10,
     column: [],
@@ -588,9 +588,9 @@ export const FOOD = [
   {
     order: true,
     id: 10001649821098131,
-    title: "Cублимированные инжир | Figs",
+    title: "Cублимированные инжир",
     img: "6748bda752df4674f7c0b351_Izy__Figs-small.png",
-    desc: "",
+    desc: "Figs",
     category: "izy",
     price: 10,
     column: [],
@@ -648,9 +648,9 @@ export const FOOD = [
   {
     order: true,
     id: 1000169498210988,
-    title: "Кофе Peru Lazy Snark",
+    title: "Кофе Peru",
     img: "coffee-peru-front.png",
-    desc: "",
+    desc: "Lazy Snark",
     category: "coffee",
     price: 6,
     column: ["Грейпфрут, слива, апельсин"],
@@ -658,9 +658,9 @@ export const FOOD = [
   {
     order: true,
     id: 10001694982109880,
-    title: "Кофе Burundi Lazy Snark",
+    title: "Кофе Burundi",
     img: "coffee-burundi-front.png",
-    desc: "",
+    desc: "Lazy Snark",
     category: "coffee",
     price: 6,
     column: ["Клубника, Черника, Карамель"],
@@ -668,9 +668,9 @@ export const FOOD = [
   {
     order: true,
     id: 100016949898210988,
-    title: "Кофе Rwanda Lazy Snark",
+    title: "Кофе Rwanda",
     img: "coffee-rwanda-front.png",
-    desc: "",
+    desc: "Lazy Snark",
     category: "coffee",
     price: 6,
     column: ["Апельсин, папайя, киви, цветы"],
@@ -678,7 +678,7 @@ export const FOOD = [
   {
     order: true,
     id: 9100016949898210988,
-    title: "Tasty Coffee Кения Маунт",
+    title: "Tasty кофе Кения Маунт",
     img: "drip-coffee-kenya-maunt-new-768.png",
     desc: "1 дрип",
     category: "coffee",
@@ -688,7 +688,7 @@ export const FOOD = [
   {
     order: true,
     id: 9100016949887980210988,
-    title: "Tasty Coffee Бэрри",
+    title: "Tasty кофе Бэрри",
     img: "169-Barry_10-768.png",
     desc: "1 дрип",
     category: "coffee",
@@ -701,7 +701,7 @@ export const FOOD = [
   {
     order: true,
     id: 910001694989802109889,
-    title: "Tasty Coffee Эфиопия Сидамо",
+    title: "Tasty кофе Эфиопия Сидамо",
     img: "drip-coffee-ethiopia-sidamo-new-768.png",
     desc: "1 дрип",
     category: "coffee",
