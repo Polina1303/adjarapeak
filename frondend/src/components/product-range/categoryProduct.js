@@ -104,14 +104,14 @@ export const CATEGORY_PRODUCT = [
     title: "🧼УХОД ЗА ОБУВЬЮ И ОДЕЖДОЙ",
     type: "care",
   },
-  {
-    title: "🍲ПОХОДНАЯ ЕДА",
-    type: "sublimates",
-  },
-  {
-    title: "☕КОФЕ",
-    type: "coffee",
-  },
+  // {
+  //   title: "🍲ПОХОДНАЯ ЕДА",
+  //   type: "sublimates",
+  // },
+  // {
+  //   title: "☕КОФЕ",
+  //   type: "coffee",
+  // },
   {
     title: "🎿МАСКА/ШЛЕМ ГОРНОЛЫЖНЫЕ",
     type: "skigoggles",

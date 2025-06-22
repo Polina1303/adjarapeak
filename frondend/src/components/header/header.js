@@ -39,7 +39,7 @@ export const Header = () => {
       <div className="delivery-strip">
         <div className="delivery-text">
           Доставка по Батуми — 10 лари, бесплатно от 300. По Грузии — от 20
-          лари, бесплатно от 500.
+          лари, бесплатно от 500.❗️Не распространяется на аренду.
         </div>
       </div>
 

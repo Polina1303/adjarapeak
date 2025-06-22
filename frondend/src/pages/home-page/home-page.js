@@ -13,9 +13,10 @@ import "./home-page.css";
 import sport from "./sport.webp";
 import sea from "./sea.webp";
 import sky from "./snow.webp";
-import eq from "./sale.png";
+import eq from "./sale.webp";
 import eq2 from "./rent.webp";
 import del from "./tour.webp";
+import food from "./food.webp";
 import img1 from "./IMG_7669.JPG";
 import img2 from "./IMG_7671.JPG";
 
@@ -45,6 +46,7 @@ export const HomePage = () => {
   const navigate = useNavigate();
   const { ref, inView } = useInView({ threshold: 0, triggerOnce: true });
 
+  const handleClickSaleFood = () => navigate("/sale_food");
   const handleClickSale = () => navigate("/sale");
   const handleClickSaleSea = () => navigate("/sale_sea");
   const handleClickSportSale = () => navigate("/sport_sale");
@@ -149,6 +151,20 @@ export const HomePage = () => {
                 </span>
                 <br />
                 {languages === "RU" ? "спортивного снаряжения" : "of equipment"}
+              </div>
+            </div>
+          </a>
+        </div>
+        <div ref={ref} onClick={handleClickSaleFood} className="sale-item">
+          <a href="/sale_food">
+            <img src={food} alt="adjara peak" className="sale-img" />
+            <div className="sale-info">
+              <div className="sale-title">
+                <span className="highlight-rent">
+                  {languages === "RU" ? "Продажа" : "Sale"}
+                </span>
+                <br />
+                {languages === "RU" ? "походной еды и кофе" : ""}
               </div>
             </div>
           </a>
