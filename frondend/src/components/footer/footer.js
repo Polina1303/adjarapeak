@@ -2,12 +2,17 @@ import "./footer.css";
 import { MdLocationPin } from "react-icons/md";
 import { BsInstagram, BsTelegram } from "react-icons/bs";
 import { AiOutlineWhatsApp, AiOutlinePhone } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 import { useSelector } from "react-redux";
 
 export const Footer = () => {
   const languages = useSelector((state) => state.languages.currentLanguages);
+  const navigate = useNavigate();
 
+  const handleClick = () => {
+    navigate("/return_policy");
+  };
   return (
     <footer className="footer-container">
       <div className="footer-content-wrapper">
@@ -62,7 +67,6 @@ export const Footer = () => {
                 </a>
               </p>
             </div>
-
             <div className="footer-socials">
               <h4 className="footer-heading">
                 {languages === "RU"
@@ -95,6 +99,10 @@ export const Footer = () => {
                   <AiOutlineWhatsApp />
                 </a>
               </div>
+            </div>
+            return_policy
+            <div onClick={handleClick} className="footer-return">
+              Правила возврата товар
             </div>
           </div>
         </div>

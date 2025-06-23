@@ -172,3 +172,11 @@
     grid-template-columns: 1fr;
   }
 }
+
+.footer-return {
+  font-size: 14px;
+  color: #666;
+  /* text-align: center; */
+  padding: 8px 0;
+  cursor: pointer; /* если кликабельно */
+}
