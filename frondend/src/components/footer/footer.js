@@ -100,7 +100,6 @@ export const Footer = () => {
                 </a>
               </div>
             </div>
-            return_policy
             <div onClick={handleClick} className="footer-return">
               Правила возврата товар
             </div>
