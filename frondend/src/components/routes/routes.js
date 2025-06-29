@@ -6,7 +6,6 @@ import "./routes.css";
 import { useInView } from "react-intersection-observer";
 import { useSelector } from "react-redux";
 
-
 export const Routes = () => {
   const languages = useSelector((state) => state.languages.currentLanguages);
 
@@ -27,14 +26,25 @@ export const Routes = () => {
   };
   return (
     <div>
-      <h2 className="routes-title"> {languages==="RU"? 'Вокруг Батуми: Удивительные маршруты':"Around Batumi: Amazing routes"}</h2>
+      <h2 className="routes-title">
+        {" "}
+        {languages === "RU"
+          ? "Вокруг Батуми: Удивительные маршруты"
+          : "Around Batumi: Amazing routes"}
+      </h2>
       <div className="cover-routes">
         <div className="routes-cover-block" onClick={handleClickLake}>
           <a href="/lake">
             <img ref={ref} src={lake} alt="lake" className="routes-image" />
             <div className="routes-cover-title">
-              <p>{languages==="RU"? 'Батуми - Хуло - Таго - пеший маршрут к озеру':"Batumi - Khulo - Tago - hiking route to the lake"}</p>
-              <p className="routes-item-page">{languages==="RU"? 'Исследуйте сейчас':"Explore now"}</p>
+              <p>
+                {languages === "RU"
+                  ? "Батуми - Хуло - Таго - пеший маршрут к озеру"
+                  : "Batumi - Khulo - Tago - hiking route to the lake"}
+              </p>
+              <p className="routes-item-page">
+                {languages === "RU" ? "Исследуйте сейчас" : "Explore now"}
+              </p>
             </div>
           </a>
         </div>
@@ -42,8 +52,12 @@ export const Routes = () => {
           <a href="/erge">
             <img ref={ref} src={erge} alt="lake" className="routes-image" />
             <div className="routes-cover-title">
-              <p>{languages==="RU"? 'Вершина Эрге':"The top of the Erge"}</p>
-              <p className="routes-item-page">{languages==="RU"? 'Исследуйте сейчас':"Explore now"}</p>
+              <p>
+                {languages === "RU" ? "Вершина Эрге" : "The top of the Erge"}
+              </p>
+              <p className="routes-item-page">
+                {languages === "RU" ? "Исследуйте сейчас" : "Explore now"}
+              </p>
             </div>
           </a>
         </div>
@@ -51,13 +65,38 @@ export const Routes = () => {
           <a href="/garden">
             <img ref={ref} src={garden} alt="lake" className="routes-image" />
             <div className="routes-cover-title">
-              <p>{languages==="RU"? 'Ботанический сад':"The Botanical Garden"}</p>
-              <p className="routes-item-page">{languages==="RU"? 'Исследуйте сейчас':"Explore now"}</p>
+              <p>
+                {languages === "RU"
+                  ? "Ботанический сад"
+                  : "The Botanical Garden"}
+              </p>
+              <p className="routes-item-page">
+                {languages === "RU" ? "Исследуйте сейчас" : "Explore now"}
+              </p>
             </div>
           </a>
         </div>
+        {/* <div className="routes-cover-block" onClick={handleClickGarden}>
+          <a href="/garden">
+            <img ref={ref} src={garden} alt="lake" className="routes-image" />
+            <div className="routes-cover-title">
+              <p>
+                {languages === "RU"
+                  ? "Водопады Махунцет"
+                  : "The Botanical Garden"}
+              </p>
+              <p className="routes-item-page">
+                {languages === "RU" ? "Исследуйте сейчас" : "Explore now"}
+              </p>
+            </div>
+          </a>
+        </div> */}
       </div>
-      <p className="routes-cover-summary">{languages==="RU"? 'Откройте для себя любовь к природе':"Discover your love for natures"}</p>
+      <p className="routes-cover-summary">
+        {languages === "RU"
+          ? "Откройте для себя любовь к природе"
+          : "Discover your love for natures"}
+      </p>
     </div>
   );
 };
