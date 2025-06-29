@@ -581,9 +581,9 @@
     flex: 1 1 calc(50% - 16px); /* 2 на ряд */
   }
 }
-
+/*
 @media (max-width: 480px) {
   .sale-item {
-    flex: 1 1 100%; /* 1 на ряд */
+    flex: 1 1 100%;
   }
-}
+} */

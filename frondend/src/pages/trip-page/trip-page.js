@@ -6,27 +6,27 @@ import { motion } from "framer-motion";
 import "./trip-page.css";
 import { useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
-import goder from "./image/IMG_8516.JPG";
 import rock1 from "./image/rock1.WEBP";
 import rock2 from "./image/rock2.JPG";
-import auto from "./image/auto.jpg";
-import goder2 from "./image/IMG_8526.JPG";
-import end from "./image/photo_2024-04-01_15-31-09.jpg";
-import svan from "./image/svan.jpg";
-import astro from "./image/astro.jpg";
 import martvili from "./image/martvili.jpeg";
 import gomismta from "./image/gomismta.jpg";
 import latevra from "./image/latevra.jpg";
 import nardevan from "./image/nardevan.jpg";
 import vashlovani from "./image/vashlovani.jpg";
 import beshumi from "./image/beshumi.jpg";
+import tobo from "./image/tobo.webp";
+import Hihani from "./image/Hihani.JPG";
+import uchkho from "./image/uchkho.JPG";
+import tago from "./image/tago.webp";
+import bakhmaro from "./image/bakhmaro.JPG";
+import tbikeli from "./image/tbikeli.JPG";
 import TEA from "./image/TEA.jpg";
 import lake from "./image/lake.JPG";
 import kazbek from "./image/kazbek.JPG";
 import see from "./image/see.JPG";
-import Sairme from "./image/Sairme.JPG";
 import kappadokia from "./image/kappadokia.jpeg";
 import { useInView } from "react-intersection-observer";
+import { GuidesSection } from "./guides-section/GuidesSection";
 
 const events = [
   {
@@ -51,6 +51,29 @@ const events = [
 
   {
     date: "5 июля",
+    title: "Хихани и озёра Шуамта",
+    description:
+      "Однодневная прогулка к старинным крепостям и к высокогорным озёрам Шуамта (к ним уже по желанию). 👣 Маршрут | 14 км, 850 набора и сброса высоты (5 км и 500 набора и сброса высоты, если идти только на крепость). Гид Лео.",
+    price: "95",
+    image: Hihani,
+    link: "/",
+    type: "group",
+    leo: true,
+  },
+  {
+    date: "6 июля",
+    title: "ГомисМта + пикник + поход на гору ДидиВаке",
+    description:
+      "Однодневный выезд с походом и пикником в горную деревню на высоте более 2 тысяч метров, закат в море  облаков. 👣 Маршрут | 10 км, 350 набора и сброса высоты. Гид Лео.",
+    price: "95",
+    image: gomismta,
+    link: "/",
+    type: "group",
+    leo: true,
+  },
+
+  {
+    date: "5 июля",
     title: "Скалолазание в Гонио",
     description:
       "Тренировки и маршруты для любого уровня – от новичков до любителей.",
@@ -69,7 +92,17 @@ const events = [
     link: "/rockClimbing",
     type: "rockClimbing",
   },
-
+  {
+    date: "12–13 июля",
+    title: " Таго – глемпинг с комфортными условиями и ночевкой в палатках",
+    description:
+      "Двухдневный выезд с палатками, в оборудованном кемпинге с цивилизованным душем, туалетом и инфраструктурой.👣 Маршрут | Озеро Оцинари и хребет с панорамными видами на кавказский хребет (12 км и 650 набора и сброса высоты). Гид Лео.",
+    price: "190",
+    image: tago,
+    link: "/",
+    type: "group",
+    leo: true,
+  },
   {
     date: "12 июля",
     title: "Скалолазание в Гонио",
@@ -92,6 +125,27 @@ const events = [
   },
   {
     date: "19 июля",
+    title: "Бахмаро + пикник + гора Гадрекили",
+    description:
+      "Однодневная хайкинг-поездка с пикником в высокогорную деревню на высоте более 2000 метров, известную своим чистым и целебным воздухом.👣 Маршрут | 8 км, 550 набора и сброса высоты. Гид Лео.",
+    price: "95",
+    image: bakhmaro,
+    link: "/",
+    type: "group",
+    leo: true,
+  },
+  {
+    date: "19 июля",
+    title: "Каньон Балда, водопады Тоба и Ониоре.",
+    description:
+      "Невероятный хайк на границе Рачи, Имерети и Самегрело. 👣Протяженность 12 км в одну сторону | 24 км с возвращением на место старта, 690 м набора и сброса высоты. Пикник с красивейшим видом на горных хребет. Гид Юля.",
+    price: "140",
+    image: tobo,
+    link: "/",
+    type: "group",
+  },
+  {
+    date: "19 июля",
     title: "Скалолазание в Гонио",
     description:
       "Тренировки и маршруты для любого уровня – от новичков до любителей.",
@@ -102,6 +156,17 @@ const events = [
   },
   {
     date: "20 июля",
+    title: "Учхо",
+    description:
+      "Высокогорное, тайное озеро на высоте 1700+ метров с живописной природой и местной фауной. 👣 Маршрут | 18 км, 1200 м набора и сброса высоты. Гид Лео.",
+    price: "80",
+    image: uchkho,
+    link: "/",
+    type: "group",
+    leo: true,
+  },
+  {
+    date: "20 июля",
     title: "Скалолазание в Гонио",
     description:
       "Тренировки и маршруты для любого уровня – от новичков до любителей.",
@@ -109,6 +174,17 @@ const events = [
     image: rock2,
     link: "/rockClimbing",
     type: "rockClimbing",
+  },
+  {
+    date: "26–27 июля",
+    title: "Озеро Тбикели с палатками",
+    description:
+      "Двухдневный поход и ночёвка на озере Тбикели со стартом маршрута из Джвариминдори — оборудованный кемпинг на высоте более двух тысяч метров с панорамными видами. 👣 Маршрут | 30 км, 1300 набора и сброса высоты . Гид Лео.",
+    price: "290",
+    image: tbikeli,
+    link: "/",
+    type: "group",
+    leo: true,
   },
   {
     date: "2 августа - 3 августа",
@@ -296,13 +372,23 @@ export const TripPage = () => {
                     </Button>
                   )}
                   <Button className="custom-button">
-                    <a
-                      href="https://t.me/shpaksn"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Записаться
-                    </a>
+                    {event.leo ? (
+                      <a
+                        href="https://t.me/molmeena"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Записаться
+                      </a>
+                    ) : (
+                      <a
+                        href="https://t.me/shpaksn"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Записаться
+                      </a>
+                    )}
                   </Button>
                 </div>
               </Card>
@@ -310,6 +396,7 @@ export const TripPage = () => {
           ))}
         </div>
       </div>
+      <GuidesSection />
     </div>
   );
 };

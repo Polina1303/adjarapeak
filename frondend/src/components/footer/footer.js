@@ -43,6 +43,7 @@ export const Footer = () => {
               <AiOutlinePhone size={20} color="#de682d" className="icon" />
               <a href="tel:+995551132803">+995 551 132 803</a>
             </div>
+
             <div className="reviews-text">
               <p>
                 <a
@@ -66,6 +67,9 @@ export const Footer = () => {
                     : "Leave a review on Yandex"}
                 </a>
               </p>
+            </div>
+            <div onClick={handleClick} className="footer-return">
+              Правила возврата товар
             </div>
             <div className="footer-socials">
               <h4 className="footer-heading">
@@ -99,9 +103,6 @@ export const Footer = () => {
                   <AiOutlineWhatsApp />
                 </a>
               </div>
-            </div>
-            <div onClick={handleClick} className="footer-return">
-              Правила возврата товар
             </div>
           </div>
         </div>
