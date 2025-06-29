@@ -16,7 +16,7 @@ import sky from "./snow.webp";
 import eq from "./sale.webp";
 import eq2 from "./rent.webp";
 import del from "./tour.webp";
-import food from "./food.webp";
+import food from "./food2.webp";
 import img1 from "./IMG_7669.JPG";
 import img2 from "./IMG_7671.JPG";
 
