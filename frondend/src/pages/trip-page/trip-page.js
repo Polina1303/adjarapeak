@@ -48,7 +48,16 @@ const events = [
     link: "/",
     type: "individual",
   },
-
+  {
+    date: "5 июля",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock2,
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
   {
     date: "5 июля",
     title: "Хихани и озёра Шуамта",
@@ -72,6 +81,16 @@ const events = [
     leo: true,
   },
   {
+    date: "6 июля",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock2,
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
+  {
     date: "12–13 июля",
     title: " Таго – глемпинг с комфортными условиями и ночевкой в палатках",
     description:
@@ -82,7 +101,26 @@ const events = [
     type: "group",
     leo: true,
   },
-
+  {
+    date: "12 июля",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock1,
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
+  {
+    date: "13 июля",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock2,
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
   {
     date: "19 июля",
     title: "Бахмаро + пикник + гора Гадрекили",
@@ -104,6 +142,16 @@ const events = [
     link: "/",
     type: "group",
   },
+  {
+    date: "19 июля",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock1,
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
 
   {
     date: "20 июля",
@@ -116,7 +164,16 @@ const events = [
     type: "group",
     leo: true,
   },
-
+  {
+    date: "20 июля",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock2,
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
   {
     date: "26–27 июля",
     title: "Озеро Тбикели с палатками",
@@ -230,7 +287,9 @@ export const TripPage = () => {
   };
 
   const filteredEvents =
-    filter === "all" ? events : events.filter((event) => event.type === filter);
+    filter === "all"
+      ? events.filter((event) => event.type !== "rockClimbing")
+      : events.filter((event) => event.type === filter);
 
   return (
     <div className="back-button-cover">
@@ -266,6 +325,16 @@ export const TripPage = () => {
             onClick={() => handleFilter("group")}
           >
             Групповые
+          </button>
+          <button
+            commentMore
+            actions
+            className={`filter-button ${
+              filter === "rockClimbing" ? "active" : ""
+            }`}
+            onClick={() => handleFilter("rockClimbing")}
+          >
+            Скалолазание
           </button>
         </div>
 

@@ -186,7 +186,7 @@ export const HomePage = () => {
           </a>
         </div>
 
-        <div ref={ref} onClick={handleClickRentSky} className="sale-item">
+        {/* <div ref={ref} onClick={handleClickRentSky} className="sale-item">
           <a href="/rent_ski">
             <img src={sky} alt="adjara peak" className="sale-img" />
             <div className="sale-info">
@@ -201,7 +201,7 @@ export const HomePage = () => {
               </div>
             </div>
           </a>
-        </div>
+        </div> */}
       </div>
       <RockClimbing />
       <Routes />
