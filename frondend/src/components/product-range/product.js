@@ -324,7 +324,7 @@ export const PRODUCT = [
     id: 20302,
     titleEng: "Палатка Naturehike Cloud Up 1 Tent 20D",
     title: "Палатка Naturehike Cloud Up 1 Ultralight 20D",
-    img: "Cloud_Up_1_20D__синий_.jpg",
+    img: "Cloud_Up.jpg",
     descEng: "1-person, double-layer 180*300*110",
     desc: "1 местная двухслойная 180*300*110",
     category: "tent",
@@ -443,7 +443,7 @@ export const PRODUCT = [
     desc: "2-х местная двухслойная 215*135*110",
     category: "tent",
     order: true,
-    price: 390,
+    price: 399,
     column: [
       "2-местная палатка Star River 2 — надёжный выбор для треккинга и отдыха на природе",
       "Вес — всего 2.33 кг, в комплекте дополнительный пол (футпринт, 260 г)",
