@@ -873,7 +873,7 @@ export const SEA_PRODUCT = [
     id: 1043001489,
     title: "Обувь для пляжа",
     img: "f868cd79-546c-4990-957f-e60263f80295.webp",
-    desc: "39,41,41,44,46",
+    desc: "39,41,,44,46",
     category: "shoes",
     price: 74,
     column: [],

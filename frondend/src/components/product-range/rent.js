@@ -1287,7 +1287,7 @@ export const RENT = [
   {
     order: true,
     id: 1004334107,
-    title: "Cтол складной Quechua",
+    title: "Стол складной Quechua",
     img: "2579643.png",
     desc: "42 x 64 см, высота 30 см	",
     category: "rent",
@@ -1305,7 +1305,7 @@ export const RENT = [
   {
     order: true,
     id: 10230433324109,
-    title: "Cтол складной TONAR",
+    title: "Стол складной TONAR",
     img: "37464yxxvkwj.jpg",
     desc: "высота 60 см",
     category: "rent",
