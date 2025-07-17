@@ -23,7 +23,7 @@ export const HikhaniTripPage = () => {
       <button className="back-button" onClick={() => history(-1)}>
         <IoIosArrowBack size={"25px"} /> Назад
       </button>
-      <h1 className="trip-title">5 июля | КРЕПОСТЬ ХИХАНИ и озёра ШУАМТА</h1>
+      <h1 className="trip-title">КРЕПОСТЬ ХИХАНИ и озёра ШУАМТА</h1>
       <p className="trip-subtitle">
         Старинная крепость с панорамными видами на кавказский хребет +
         высокогорные живописные озёра Шуамта.
