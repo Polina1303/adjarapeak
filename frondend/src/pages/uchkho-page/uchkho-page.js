@@ -17,6 +17,9 @@ export const UchkhoTripPage = () => {
   });
   return (
     <div className="uchkho-container">
+      <button className="back-button" onClick={() => history(-1)}>
+        <IoIosArrowBack size={"25px"} /> Назад
+      </button>
       <h1>ОЗЕРО УЧХО — поход к одному из самых высокогорных озёр Аджарии</h1>
       <div
         style={{
