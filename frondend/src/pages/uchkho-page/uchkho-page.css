@@ -7,13 +7,13 @@
   background-color: #ffffff;
 }
 
-h1 {
+.title-uch {
   font-size: 1.8rem;
   margin-bottom: 1rem;
   color: #134e4a;
 }
 
-h2 {
+.subtitle-uch {
   font-size: 1.3rem;
   margin-top: 1.5rem;
   color: #0f766e;

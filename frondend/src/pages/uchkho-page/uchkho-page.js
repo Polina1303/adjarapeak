@@ -20,7 +20,9 @@ export const UchkhoTripPage = () => {
       <button className="back-button" onClick={() => history(-1)}>
         <IoIosArrowBack size={"25px"} /> Назад
       </button>
-      <h1>ОЗЕРО УЧХО — поход к одному из самых высокогорных озёр Аджарии</h1>
+      <h1 className="title-uch">
+        ОЗЕРО УЧХО — поход к одному из самых высокогорных озёр Аджарии
+      </h1>
       <div
         style={{
           maxWidth: "1200px",
@@ -102,7 +104,7 @@ export const UchkhoTripPage = () => {
       <hr />
 
       <section className="included">
-        <h2>Что включено ❓</h2>
+        <h2 className="subtitle-uch">Что включено ❓</h2>
         <ul>
           <li>• Трансфер с ожиданием: Батуми — село Учхо — Батуми</li>
           <li>• Сопровождение гида (2 гида при группе 10+ участников)</li>
@@ -129,7 +131,7 @@ export const UchkhoTripPage = () => {
       <hr />
 
       <section className="checklist">
-        <h2>⚠️ Что взять с собой:</h2>
+        <h2 className="subtitle-uch">⚠️ Что взять с собой:</h2>
         <ul>
           <li>• Удобную треккинговую обувь</li>
           <li>• Воду (1.5 л), лёгкий перекус</li>
