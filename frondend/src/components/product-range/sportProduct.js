@@ -1228,7 +1228,7 @@ export const SPORT_PRODUCT = [
     img: "18.40.32.png",
     desc: "для тренировок и игр",
     category: "balls",
-    price: 55,
+    price: 85,
     column: [],
   },
   {

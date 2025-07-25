@@ -15,6 +15,7 @@ import { LakeRoutePage } from "./pages/lake-route-page";
 import { GardenRoutePage } from "./pages/garden-route-page";
 import { ErgeRoutePage } from "./pages/erge-route-page";
 import { SportSalePage } from "./pages/sport-sale-page";
+import { KazbegPage } from "./pages/kazbeg-page";
 
 import { OrderPage } from "./pages/order-page";
 
@@ -57,6 +58,7 @@ function App() {
           <Route exact path="/lake" element={<LakeRoutePage />} />
           <Route exact path="/erge" element={<ErgeRoutePage />} />
           <Route exact path="/garden" element={<GardenRoutePage />} />
+          <Route exact path="/kazbeg" element={<KazbegPage />} />
           <Route exact path="/hikhani" element={<HikhaniTripPage />} />
           <Route exact path="/uchkho" element={<UchkhoTripPage />} />
           <Route exact path="*" element={<Error />} />
