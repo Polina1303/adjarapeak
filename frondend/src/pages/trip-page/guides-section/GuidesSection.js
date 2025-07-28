@@ -1,8 +1,8 @@
 import React from "react";
 import "./index.css";
-import julia from "./IMG_3101.webp";
-import leo from "./IMG_1711.JPG";
-import evgeni from "./photo_3_2025-05-28_19-32-35.jpg";
+import julia from "./IMG_3095.JPG";
+import leo from "./IMG_5570.JPG";
+import evgeni from "./IMG_5919.JPG";
 
 const guides = [
   {

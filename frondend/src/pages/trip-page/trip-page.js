@@ -14,7 +14,9 @@ import latevra from "./image/latevra.jpg";
 import nardevan from "./image/nardevan.jpg";
 import vashlovani from "./image/vashlovani.jpg";
 import beshumi from "./image/beshumi.jpg";
+import greenlake from "./image/greenlake.jpeg";
 import tobo from "./image/tobo.webp";
+import mu from "./image/mu.jpg";
 import Hihani from "./image/Hihani.JPG";
 import uchkho from "./image/uchkho.JPG";
 import tago from "./image/tago.webp";
@@ -22,6 +24,7 @@ import bakhmaro from "./image/bakhmaro.JPG";
 import tbikeli from "./image/tbikeli.JPG";
 import TEA from "./image/TEA.jpg";
 import lake from "./image/lake.JPG";
+import balda_canyon from "./image/balda_canyon.jpg";
 import kazbek from "./image/kazbek.JPG";
 import maga from "./image/maga.webp";
 import astro from "./image/astro.jpg";
@@ -117,17 +120,28 @@ const events = [
   //   type: "group",
   //   leo: true,
   // },
-  {
-    date: "26 июля",
-    title: "Хихани и озёра Шуамта",
-    description:
-      "Однодневная прогулка к старинным крепостям и к высокогорным озёрам Шуамта (к ним уже по желанию). Маршрут | 14 км, 850 набора и сброса высоты (5 км и 500 набора и сброса высоты, если идти только на крепость). Гид Лео.",
-    price: "90",
-    image: Hihani,
-    link: "/hikhani",
-    type: "group",
-    leo: true,
-  },
+  // {
+  //   date: "26 июля",
+  //   title: "Хихани и озёра Шуамта",
+  //   description:
+  //     "Однодневная прогулка к старинным крепостям и к высокогорным озёрам Шуамта (к ним уже по желанию). Маршрут | 14 км, 850 набора и сброса высоты (5 км и 500 набора и сброса высоты, если идти только на крепость). Гид Лео.",
+  //   price: "90",
+  //   image: Hihani,
+  //   link: "/hikhani",
+  //   type: "group",
+  //   leo: true,
+  // },
+  // {
+  //   date: "27 июля",
+  //   title: "БАХМАРО и вершина ГАДРЕКИЛИ — к хребту, откуда виден Эльбрус",
+  //   description:
+  //     "Однодневная хайкинг-поездка с пикником в высокогорную деревню на высоте более 2000 метров, известную своим чистым и целебным воздухом Маршрут | 8 км, 550 набора и сброса высоты. Гид Лео.",
+  //   price: "90",
+  //   image: bakhmaro,
+  //   link: "/",
+  //   type: "group",
+  //   leo: true,
+  // },
   {
     date: "26 июля",
     title: "Скалолазание в Гонио",
@@ -137,17 +151,6 @@ const events = [
     image: rock1,
     link: "/rockClimbing",
     type: "rockClimbing",
-  },
-  {
-    date: "27 июля",
-    title: "БАХМАРО и вершина ГАДРЕКИЛИ — к хребту, откуда виден Эльбрус",
-    description:
-      "Однодневная хайкинг-поездка с пикником в высокогорную деревню на высоте более 2000 метров, известную своим чистым и целебным воздухом Маршрут | 8 км, 550 набора и сброса высоты. Гид Лео.",
-    price: "90",
-    image: bakhmaro,
-    link: "/",
-    type: "group",
-    leo: true,
   },
   {
     date: "27 июля",
@@ -190,6 +193,7 @@ const events = [
     image: djava,
     link: "/",
     type: "group",
+    leo: true,
   },
   // {
   //   date: "2 августа - 3 августа",
@@ -252,6 +256,7 @@ const events = [
     image: gomismta,
     link: "/",
     type: "group",
+    leo: true,
   },
 
   {
@@ -265,6 +270,48 @@ const events = [
     type: "group",
     leo: true,
   },
+  {
+    date: "16 августа (сб) ",
+    title: "Ущелье Балда и водопады",
+    description:
+      "Живописный маршрут к водопадам и каньону с тёплой водой окруженной лесами.",
+    price: "-",
+    image: balda_canyon,
+    link: "/",
+    type: "group",
+  },
+  {
+    date: "17 августа (вс)",
+    title: "Гора Мухелта (Годердзи)",
+    description:
+      "Живописный поход по лесам и хребтам с выходом на вершину горы Мухелта с панорамными и живописными видами. Маршрут | 12 км, 700 м набора и сброса ",
+    price: "100",
+    image: mu,
+    link: "/",
+    type: "group",
+    leo: true,
+  },
+  {
+    date: "23 августа (сб)",
+    title: "Зелёное озеро (опции: 1 день или с ночёвкой)",
+    description:
+      "Поездка к высокогорному альпийскому Зелёному озеру в Годердзи с походом к озеру Сабанела. Для тех, кто остаётся на ночь — вечер у костра с шашлыком под звёздным небом, а утром — новый трек к Чёрному озеру.  Маршрут | 14 км. 100 лари (1 день) / 160 лари (с ночёвкой) ",
+    price: "100",
+    image: greenlake,
+    link: "/",
+    type: "group",
+    leo: true,
+  },
+  // {
+  //   date: "23 августа (сб)",
+  //   title: "Таго – озеро Оцинари",
+  //   description:
+  //     "Живописный однодневный маршрут с выходом к малоизвестному высокогорному озеру Оцинари.",
+  //   price: "-",
+  //   image: mu,
+  //   link: "/",
+  //   type: "group",
+  // },
   // {
   //   date: "23 август -24 августа",
   //   title: "Озеро Тбикели (1 ночь)",
