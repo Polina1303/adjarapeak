@@ -144,26 +144,6 @@ const events = [
   //   type: "group",
   //   leo: true,
   // },
-  // {
-  //   date: "26 июля",
-  //   title: "Скалолазание в Гонио",
-  //   description:
-  //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-  //   price: "49",
-  //   image: rock1,
-  //   link: "/rockClimbing",
-  //   type: "rockClimbing",
-  // },
-  // {
-  //   date: "27 июля",
-  //   title: "Скалолазание в Гонио",
-  //   description:
-  //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-  //   price: "49",
-  //   image: rock2,
-  //   link: "/rockClimbing",
-  //   type: "rockClimbing",
-  // },
 
   {
     date: "2 августа (сб)",
@@ -187,7 +167,18 @@ const events = [
     type: "group",
   },
   {
-    date: "10 августа (вс)",
+    date: "2 августа (сб)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock1,
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
+
+  {
+    date: "3 августа (вс)",
     title: "Гомисмта с закатом и морем облаков",
     description:
       "Единственный выезд в августе к «морю облаков» и в лёгкий поход на вершину Диди Ваке. Маршрут | 10 км, 350 м набора.",
@@ -196,6 +187,16 @@ const events = [
     link: "/",
     type: "group",
     leo: true,
+  },
+  {
+    date: "3 августа (вс)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock2,
+    link: "/rockClimbing",
+    type: "rockClimbing",
   },
   // {
   //   date: "3 августа (вс)",
@@ -228,6 +229,7 @@ const events = [
     link: "/kazbeg",
     type: "group",
   },
+
   {
     date: "9 августа (сб) ",
     title: "Крепость Хихани",
@@ -250,6 +252,16 @@ const events = [
     type: "group",
   },
   {
+    date: "9 августа (сб)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock1,
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
+  {
     date: "10 августа (вс)",
     title: "Джвариминдори – гора Тагинаури и альпийские луга",
     description:
@@ -259,6 +271,16 @@ const events = [
     link: "/",
     type: "group",
     leo: true,
+  },
+  {
+    date: "10 августа (вс)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock1,
+    link: "/rockClimbing",
+    type: "rockClimbing",
   },
   // {
   //   date: "9 августа - 10 августа",
@@ -294,6 +316,16 @@ const events = [
     leo: true,
   },
   {
+    date: "16 августа (сб)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock1,
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
+  {
     date: "16 августа (сб) ",
     title: "Ущелье Балда и водопады",
     description:
@@ -313,6 +345,16 @@ const events = [
     link: "/",
     type: "group",
     leo: true,
+  },
+  {
+    date: "17 августа (вс)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock1,
+    link: "/rockClimbing",
+    type: "rockClimbing",
   },
   {
     date: "23 августа (сб)",
@@ -336,6 +378,16 @@ const events = [
     type: "group",
   },
   {
+    date: "23 августа (сб)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock1,
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
+  {
     date: "24 августа (вс)",
     title: "Бахмаро – Гора Гадрекили.",
     description:
@@ -345,6 +397,16 @@ const events = [
     link: "/",
     type: "group",
     leo: true,
+  },
+  {
+    date: "24 августа (вс)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock1,
+    link: "/rockClimbing",
+    type: "rockClimbing",
   },
   {
     date: "29–31 августа (пт–вс) ",

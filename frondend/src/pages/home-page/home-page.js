@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { HitSales } from "../../components/hit-sales";
 import { LycianWay } from "../../components/lycian-way";
 import { RockClimbing } from "../../components/rock-сlimbing/rock-сlimbing";
+import { CertificatesSection } from "../../components/сertificates-section/сertificates-section";
 import { ChooseUs } from "../../components/chooseus";
 import { Routes } from "../../components/routes/routes";
 import { useNavigate } from "react-router-dom";
@@ -185,8 +186,18 @@ export const HomePage = () => {
             </div>
           </a>
         </div>
+      </div>
+      {/* <CertificatesSection /> */}
+      <RockClimbing />
+      <Routes />
+      <RulesPage />
+      <ChooseUs />
+    </div>
+  );
+};
 
-        {/* <div ref={ref} onClick={handleClickRentSky} className="sale-item">
+{
+  /* <div ref={ref} onClick={handleClickRentSky} className="sale-item">
           <a href="/rent_ski">
             <img src={sky} alt="adjara peak" className="sale-img" />
             <div className="sale-info">
@@ -201,15 +212,8 @@ export const HomePage = () => {
               </div>
             </div>
           </a>
-        </div> */}
-      </div>
-      <RockClimbing />
-      <Routes />
-      <RulesPage />
-      <ChooseUs />
-    </div>
-  );
-};
+        </div> */
+}
 
 {
   /* <section className="service-section">
