@@ -9,26 +9,28 @@ import { IoIosArrowBack } from "react-icons/io";
 import rock1 from "./image/rock1.WEBP";
 import rock2 from "./image/rock2.JPG";
 import martvili from "./image/martvili.jpeg";
+import udziro from "./image/udziro.jpg";
 import gomismta from "./image/gomismta.jpg";
 import latevra from "./image/latevra.jpg";
 import nardevan from "./image/nardevan.jpg";
 import vashlovani from "./image/vashlovani.jpg";
 import beshumi from "./image/beshumi.jpg";
-import greenlake from "./image/greenlake.jpeg";
+import greenlake from "./image/greenlake.jpg";
+import tago from "./image/tago.jpg";
 import tobo from "./image/tobo.webp";
 import mu from "./image/mu.jpg";
 import Hihani from "./image/Hihani.JPG";
 import uchkho from "./image/uchkho.JPG";
-import tago from "./image/tago.webp";
+// import tago from "./image/tago.webp";
 import bakhmaro from "./image/bakhmaro.JPG";
-import tbikeli from "./image/tbikeli.JPG";
+import tbikeli from "./image/tbikeli.jpg";
 import TEA from "./image/TEA.jpg";
 import lake from "./image/lake.JPG";
 import balda_canyon from "./image/balda_canyon.jpg";
 import kazbek from "./image/kazbek.JPG";
-import maga from "./image/maga.webp";
+import maga from "./image/maga.jpg";
 import astro from "./image/astro.jpg";
-import djava from "./image/djava.webp";
+import djava from "./image/djava.jpg";
 import see from "./image/see.JPG";
 import kappadokia from "./image/kappadokia.jpeg";
 import { useInView } from "react-intersection-observer";
@@ -142,32 +144,32 @@ const events = [
   //   type: "group",
   //   leo: true,
   // },
-  {
-    date: "26 июля",
-    title: "Скалолазание в Гонио",
-    description:
-      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-    price: "49",
-    image: rock1,
-    link: "/rockClimbing",
-    type: "rockClimbing",
-  },
-  {
-    date: "27 июля",
-    title: "Скалолазание в Гонио",
-    description:
-      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-    price: "49",
-    image: rock2,
-    link: "/rockClimbing",
-    type: "rockClimbing",
-  },
+  // {
+  //   date: "26 июля",
+  //   title: "Скалолазание в Гонио",
+  //   description:
+  //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+  //   price: "49",
+  //   image: rock1,
+  //   link: "/rockClimbing",
+  //   type: "rockClimbing",
+  // },
+  // {
+  //   date: "27 июля",
+  //   title: "Скалолазание в Гонио",
+  //   description:
+  //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+  //   price: "49",
+  //   image: rock2,
+  //   link: "/rockClimbing",
+  //   type: "rockClimbing",
+  // },
 
   {
     date: "2 августа (сб)",
     title: "МагалМта с заброской к альпийский лугам",
     description:
-      "Редкий маршрут с заброской до деревни на высоте более 2 тысяч метров и подъём на вершину с шикарными понарамными видами на кавказ и Турцию.",
+      "Редкий маршрут с заброской на внедорожниках на высоту более 2 тысяч метров и подъём на вершину с шикарными панорамными видами на Кавказ и Турцию. Маршрут | 7 км, 350 м набора и сброса. ",
     price: "150",
     image: maga,
     link: "/",
@@ -179,22 +181,33 @@ const events = [
     title: "Мартвили + тайное место для купания",
     description:
       "Комбинация живописных каньонов и купания в укромной локации — идеальный летний день. Лёгкая прогулка и купание.",
-    price: "-",
+    price: "120",
     image: martvili,
     link: "/",
     type: "group",
   },
   {
-    date: "3 августа (вс)",
-    title: "Джвариминдори – гора Тагинаури и альпийские луга",
+    date: "10 августа (вс)",
+    title: "Гомисмта с закатом и морем облаков",
     description:
-      "Средней сложности маршрут с подъёмом на одну из самых высших гор всей Гурии. Маршрут | 7 км, 500 м набора и сброса.",
-    price: "110",
-    image: djava,
+      "Единственный выезд в августе к «морю облаков» и в лёгкий поход на вершину Диди Ваке. Маршрут | 10 км, 350 м набора.",
+    price: "100",
+    image: gomismta,
     link: "/",
     type: "group",
     leo: true,
   },
+  // {
+  //   date: "3 августа (вс)",
+  //   title: "Джвариминдори – гора Тагинаури и альпийские луга",
+  //   description:
+  //     "Средней сложности маршрут с подъёмом на одну из самых высших гор всей Гурии. Маршрут | 7 км, 500 м набора и сброса.",
+  //   price: "110",
+  //   image: djava,
+  //   link: "/",
+  //   type: "group",
+  //   leo: true,
+  // },
   // {
   //   date: "2 августа - 3 августа",
   //   title: "Шуамтоба в Бешуми + хайк с ночевкой или на один день",
@@ -220,7 +233,7 @@ const events = [
     title: "Крепость Хихани",
     description:
       "Однодневная прогулка к старинным крепостям и к высокогорным озёрам Шуамта (к ним уже по желанию). Маршрут | 14 км, 850 набора и сброса высоты (5 км и 500 набора и сброса высоты, если идти только на крепость). Гид Лео.",
-    price: "90",
+    price: "100",
     image: Hihani,
     link: "/hikhani",
     type: "group",
@@ -236,7 +249,17 @@ const events = [
     link: "/",
     type: "group",
   },
-
+  {
+    date: "10 августа (вс)",
+    title: "Джвариминдори – гора Тагинаури и альпийские луга",
+    description:
+      "Средней сложности маршрут с подъёмом на одну из самых высших гор всей Гурии. Маршрут | 7 км, 500 м набора и сброса.",
+    price: "110",
+    image: djava,
+    link: "/",
+    type: "group",
+    leo: true,
+  },
   // {
   //   date: "9 августа - 10 августа",
   //   title: "Каньон Мартивили (водопады Тоби и Ориони)",
@@ -247,20 +270,20 @@ const events = [
   //   link: "/",
   //   type: "group",
   // },
-  {
-    date: "10 августа (вс)",
-    title: "Гомисмта с закатом и морем облаков",
-    description:
-      "Единственный выезд в августе к «морю облаков» и в лёгкий поход на вершину Диди Ваке.Маршрут | 10 км, 350 м набора.",
-    price: "100",
-    image: gomismta,
-    link: "/",
-    type: "group",
-    leo: true,
-  },
+  // {
+  //   date: "10 августа (вс)",
+  //   title: "Гомисмта с закатом и морем облаков",
+  //   description:
+  //     "Единственный выезд в августе к «морю облаков» и в лёгкий поход на вершину Диди Ваке.Маршрут | 10 км, 350 м набора.",
+  //   price: "100",
+  //   image: gomismta,
+  //   link: "/",
+  //   type: "group",
+  //   leo: true,
+  // },
 
   {
-    date: "16-17 август",
+    date: "16-17 август (сб–вс)",
     title: "Озеро Тбикели с палатками",
     description:
       "Ночёвка у одного из самых красивых озёр Грузии — с классными видами, костром и звездным потоком Персеиды.Маршрут | 30 км, 1300 м набора (по 15км в день).",
@@ -295,32 +318,45 @@ const events = [
     date: "23 августа (сб)",
     title: "Зелёное озеро (опции: 1 день или с ночёвкой)",
     description:
-      "Поездка к высокогорному альпийскому Зелёному озеру в Годердзи с походом к озеру Сабанела. Для тех, кто остаётся на ночь — вечер у костра с шашлыком под звёздным небом, а утром — новый трек к Чёрному озеру.  Маршрут | 14 км. 100 лари (1 день) / 160 лари (с ночёвкой) ",
+      "Поездка к высокогорному альпийскому Зелёному озеру в Годердзи с походом к озеру Сабанела. Для тех, кто остаётся на ночь — вечер у костра с шашлыком под звёздным небом, а утром — новый трек к Чёрному озеру. Маршрут | 14 км. 100 лари (1 день) / 160 лари (с ночёвкой) ",
     price: "100",
     image: greenlake,
     link: "/",
     type: "group",
     leo: true,
   },
-  // {
-  //   date: "23 августа (сб)",
-  //   title: "Таго – озеро Оцинари",
-  //   description:
-  //     "Живописный однодневный маршрут с выходом к малоизвестному высокогорному озеру Оцинари.",
-  //   price: "-",
-  //   image: mu,
-  //   link: "/",
-  //   type: "group",
-  // },
-  // {
-  //   date: "23 август -24 августа",
-  //   title: "Озеро Тбикели (1 ночь)",
-  //   description: "Идёт подготовка тура. Предзапись уже открыта.",
-  //   price: "-",
-  //   image: lake,
-  //   link: "/",
-  //   type: "group",
-  // },
+  {
+    date: "23 августа (сб)",
+    title: "Таго – озеро Оцинари",
+    description:
+      "Живописный однодневный маршрут с выходом к малоизвестному высокогорному озеру Оцинари.",
+    price: "-",
+    image: tago,
+    link: "/",
+    type: "group",
+  },
+  {
+    date: "24 августа (вс)",
+    title: "Бахмаро – Гора Гадрекили.",
+    description:
+      "Однодневная хайкинг-поездка с пикником в высокогорную деревню на высоте более 2000 метров, известную своим чистым и целебным воздухом Маршрут | 8 км, 550 набора и сброса высоты. Гид Лео.",
+    price: "100",
+    image: bakhmaro,
+    link: "/",
+    type: "group",
+    leo: true,
+  },
+  {
+    date: "29–31 августа (пт–вс) ",
+    title: "Озеро  Удзиро",
+    description:
+      "Финальный выезд лета — озеро на высоте 2800+, один из самых известных треков в Раче. Многодневный маршрут (3 дня и 2 ночи). Еда включена в стоимость. ",
+    price: "450",
+    image: udziro,
+    link: "/",
+    type: "group",
+    leo: true,
+  },
   {
     date: "6–14 сентября",
     title: "Восхождение на Казбек",

@@ -6795,7 +6795,8 @@ export const PRODUCT = [
     img: "17.04.02.jpg",
     desc: "С ПОДСТАКАННИКОМ  до 120 кг",
     category: "chair",
-    price: 45,
+    price: 59,
+    newPrice: 45,
     column: [
       "Вес: 1кг",
       "2 подлокотника | 1 подстаканник | Высота сиденья: 40 см",
@@ -6915,7 +6916,7 @@ export const PRODUCT = [
     img: "203838802_w640_h640_203838802.webp",
     desc: " до 150 кг",
     category: "chair",
-    price: 210,
+    price: 170,
     column: [
       "Максимальная нагрузка: 200 кг",
       "Материал каркаса: усиленный алюминий",
