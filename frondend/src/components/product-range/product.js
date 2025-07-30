@@ -1,6 +1,23 @@
 export const PRODUCT = [
   {
     order: true,
+    id: 1009000029,
+    titleEng: "",
+    title: "Сертификат на продажу снаряжения",
+    img: "sale2.webp",
+    descEng: "",
+    desc: "номиналом от 100 до 2000 лари",
+    category: "tent",
+    price: 100,
+    shortlyEng: "",
+    shortly: "",
+    column: [
+      "В комментариях к заказу, пожалуйста, укажите, какой номинал вам необходим.",
+    ],
+    columnEng: [],
+  },
+  {
+    order: true,
     id: 100022229,
     titleEng: "",
     title: "Палатка",

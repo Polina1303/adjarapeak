@@ -1,6 +1,23 @@
 export const RENT = [
   {
     order: true,
+    id: 21009000029,
+    titleEng: "",
+    title: "Сертификат на аренду снаряжения",
+    img: "rent2.webp",
+    descEng: "",
+    desc: "номиналом от 100 до 2000 лари",
+    category: "tent",
+    price: 100,
+    shortlyEng: "",
+    shortly: "",
+    column: [
+      "В комментариях к заказу, пожалуйста, укажите, какой номинал вам необходим.",
+    ],
+    columnEng: [],
+  },
+  {
+    order: true,
     id: 20001,
     title: "ПАЛАТКА MESUCA OUTDOOR",
     img: "tent2Mesuca.jpg",

@@ -4,6 +4,7 @@ import { calcTotalPrice } from "../utils";
 import "./cart-menu.css";
 
 export const CartMenu = ({ items, onClick }) => {
+  console.log("items,", items);
   return (
     <div className="cart-menu">
       <div className="cart-menu__list">

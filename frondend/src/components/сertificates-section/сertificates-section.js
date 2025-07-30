@@ -11,12 +11,12 @@ import climbingImg from "./img/rock.webp";
 const certificates = [
   {
     id: "cert1",
-    title: "Прокат",
+    title: "Прадажа  снаряжения",
     image: rentImg,
   },
   {
     id: "cert2",
-    title: "Аренда",
+    title: "Аренда снаряжения",
     image: leaseImg,
   },
   {
