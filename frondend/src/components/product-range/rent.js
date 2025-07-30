@@ -4,7 +4,7 @@ export const RENT = [
     id: 21009000029,
     titleEng: "",
     title: "Сертификат на аренду снаряжения",
-    img: "rent2.webp",
+    img: "rent3.webp",
     descEng: "",
     desc: "номиналом от 100 до 2000 лари",
     category: "tent",

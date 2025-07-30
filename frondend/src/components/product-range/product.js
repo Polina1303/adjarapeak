@@ -4,7 +4,7 @@ export const PRODUCT = [
     id: 1009000029,
     titleEng: "",
     title: "Сертификат на продажу снаряжения",
-    img: "sale2.webp",
+    img: "sale3.webp",
     descEng: "",
     desc: "номиналом от 100 до 2000 лари",
     category: "tent",
