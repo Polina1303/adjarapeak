@@ -1,5 +1,3 @@
-// };
-
 import React, { useState } from "react";
 import { Card, Button } from "antd";
 import { motion } from "framer-motion";
@@ -20,7 +18,7 @@ import tago from "./image/tago.jpg";
 import tobo from "./image/tobo.webp";
 import mu from "./image/mu.jpg";
 import Hihani from "./image/Hihani.JPG";
-import uchkho from "./image/uchkho.JPG";
+// import uchkho from "./image/uchkho.JPG";
 // import tago from "./image/tago.webp";
 import bakhmaro from "./image/bakhmaro.JPG";
 import tbikeli from "./image/tbikeli.jpg";
