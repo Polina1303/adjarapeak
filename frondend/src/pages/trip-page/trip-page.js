@@ -21,7 +21,7 @@ import Hihani from "./image/Hihani.JPG";
 // import uchkho from "./image/uchkho.JPG";
 // import tago from "./image/tago.webp";
 import bakhmaro from "./image/bakhmaro.JPG";
-import tbikeli from "./image/tbikeli.jpg";
+import tbikeli from "./image/tbi.jpg";
 import TEA from "./image/TEA.jpg";
 import lake from "./image/lake.JPG";
 import balda_canyon from "./image/balda_canyon.jpg";
