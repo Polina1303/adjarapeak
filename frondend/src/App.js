@@ -30,6 +30,7 @@ import { RockClimbingPage } from "./pages/rock-climbing-page";
 import { RentSkyPage } from "./pages/rent-sky-page";
 import { ReturnPolicyPage } from "./pages/return-policy-page/return-policy-page";
 import { HikhaniTripPage } from "./pages/hihani-page";
+import { TeaTripPage } from "./pages/tea-page";
 import { UchkhoTripPage } from "./pages/uchkho-page";
 
 function App() {
@@ -60,6 +61,7 @@ function App() {
           <Route exact path="/garden" element={<GardenRoutePage />} />
           <Route exact path="/kazbeg" element={<KazbegPage />} />
           <Route exact path="/hikhani" element={<HikhaniTripPage />} />
+          <Route exact path="/tea" element={<TeaTripPage />} />
           <Route exact path="/uchkho" element={<UchkhoTripPage />} />
           <Route exact path="*" element={<Error />} />
           <Route exact path="/return_policy" element={<ReturnPolicyPage />} />

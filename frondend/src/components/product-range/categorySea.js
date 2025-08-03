@@ -12,11 +12,11 @@ export const CATEGORY_SEA = [
     title: "САПБОРДЫ",
     type: "supboard",
   },
-
   {
-    title: "ШАПКА ДЛЯ ПЛАВАНИЯ",
-    type: "hat",
+    title: "КОМПЛЕКТУЮЩИЕ САПБОРД",
+    type: "sup_accessories",
   },
+
   {
     title: "ЛАСТЫ",
     type: "flippers",
@@ -33,10 +33,7 @@ export const CATEGORY_SEA = [
     title: "ЖИЛЕТЫ",
     type: "vest",
   },
-  {
-    title: "КОМПЛЕКТУЮЩИЕ САПБОРД",
-    type: "sup_accessories",
-  },
+
   {
     title: "ГЕРМОМЕШКИ",
     type: "hermo",
@@ -44,6 +41,10 @@ export const CATEGORY_SEA = [
   {
     title: "ПЛЯЖНАЯ ОБУВЬ",
     type: "shoes",
+  },
+  {
+    title: "ШАПКА ДЛЯ ПЛАВАНИЯ",
+    type: "hat",
   },
   {
     title: "МЕБЕЛЬ ДЛЯ ПЛЯЖА",
