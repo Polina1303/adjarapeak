@@ -78,7 +78,8 @@ export const SPORT_PRODUCT = [
     img: "hjhhgg344.png",
     desc: "регулируемые 31-34",
     category: "roller",
-    price: 99,
+    newPrice: 99,
+    oldPrice: 130,
     column: [
       "Размер: регулируется от 31 до 34.",
       "Материал ботинка: текстиль, материал рамы: алюминий.",

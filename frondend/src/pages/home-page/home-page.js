@@ -13,7 +13,8 @@ import "./home-page.css";
 
 import sport from "./sport.webp";
 import sea from "./sea.webp";
-import sky from "./snow.webp";
+import sky from "./sele.webp";
+// import sky from "./snow.webp";
 import eq from "./sale.webp";
 import eq2 from "./rent.webp";
 import del from "./tour.webp";
@@ -186,6 +187,24 @@ export const HomePage = () => {
             </div>
           </a>
         </div>
+        {
+          <div ref={ref} onClick={handleClickRentSky} className="sale-item">
+            <a href="/rent_ski">
+              <img src={sky} alt="adjara peak" className="sale-img" />
+              <div className="sale-info">
+                <div className="sale-title">
+                  <span className="highlight-sale">
+                    {languages === "RU" ? "Подарочные" : "Rental"}
+                  </span>
+                  <br />
+                  {languages === "RU"
+                    ? "сертификаты на снаряжения"
+                    : "of ski equipment"}
+                </div>
+              </div>
+            </a>
+          </div>
+        }
       </div>
       {/* <CertificatesSection /> */}
       <RockClimbing />

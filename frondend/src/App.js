@@ -11,6 +11,7 @@ import { TripPageTwoDay } from "./pages/trip-page-two-day/trip-page-two-day";
 import { EndSeason } from "./pages/end-season/end-season";
 import { Transfer } from "./pages/transfer/transfer";
 import { TripPage } from "./pages/trip-page/trip-page";
+import { SvanetiTripPage } from "./pages/svaneti-page";
 import { LakeRoutePage } from "./pages/lake-route-page";
 import { GardenRoutePage } from "./pages/garden-route-page";
 import { ErgeRoutePage } from "./pages/erge-route-page";
@@ -63,6 +64,7 @@ function App() {
           <Route exact path="/hikhani" element={<HikhaniTripPage />} />
           <Route exact path="/tea" element={<TeaTripPage />} />
           <Route exact path="/uchkho" element={<UchkhoTripPage />} />
+          <Route exact path="/svaneti" element={<SvanetiTripPage />} />
           <Route exact path="*" element={<Error />} />
           <Route exact path="/return_policy" element={<ReturnPolicyPage />} />
         </Routes>

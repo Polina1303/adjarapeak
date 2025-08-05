@@ -1,23 +1,6 @@
 export const PRODUCT = [
   {
     order: true,
-    id: 1009000029,
-    titleEng: "",
-    title: "Сертификат на продажу снаряжения",
-    img: "sale3.webp",
-    descEng: "",
-    desc: "номиналом от 100 до 2000 лари. В комментарий к заказу укажите номинал.",
-    category: "tent",
-    price: 100,
-    shortlyEng: "",
-    shortly: "",
-    column: [
-      "В комментариях к заказу, пожалуйста, укажите, какой номинал вам необходим.",
-    ],
-    columnEng: [],
-  },
-  {
-    order: true,
     id: 100022229,
     titleEng: "",
     title: "Палатка",
@@ -2644,7 +2627,8 @@ export const PRODUCT = [
     desc: "HIKING 119*53*2,5 см",
     descEng: "",
     category: "mat",
-    price: 99,
+    oldPrice: 99,
+    newPrice: 69,
     column: [
       "Походный надувной коврик HI KING 119×53×2.5 см",
       "Идеален для кемпинга, туризма и пикников",
@@ -7192,7 +7176,8 @@ export const PRODUCT = [
     img: "203838802_w640_h640_203838802.webp",
     desc: " до 150 кг",
     category: "chair",
-    price: 170,
+    oldPrice: 210,
+    newPrice: 170,
     column: [
       "Максимальная нагрузка: 200 кг",
       "Материал каркаса: усиленный алюминий",
