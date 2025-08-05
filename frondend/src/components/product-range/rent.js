@@ -6,7 +6,7 @@ export const RENT = [
     title: "Сертификат на аренду снаряжения",
     img: "rent3.webp",
     descEng: "",
-    desc: "номиналом от 100 до 2000 лари",
+    desc: "номиналом от 100 до 2000 лари.В комментарий к заказу укажите номинал.",
     category: "tent",
     price: 100,
     shortlyEng: "",

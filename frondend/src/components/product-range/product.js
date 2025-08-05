@@ -6,7 +6,7 @@ export const PRODUCT = [
     title: "Сертификат на продажу снаряжения",
     img: "sale3.webp",
     descEng: "",
-    desc: "номиналом от 100 до 2000 лари",
+    desc: "номиналом от 100 до 2000 лари. В комментарий к заказу укажите номинал.",
     category: "tent",
     price: 100,
     shortlyEng: "",
