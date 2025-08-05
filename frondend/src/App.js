@@ -46,7 +46,7 @@ function App() {
           <Route exact path="/sale_sea" element={<SeaSalePage />} />
           <Route exact path="/sport_sale" element={<SportSalePage />} />
           <Route exact path="/rent" element={<RentPage />} />
-          <Route exact path="/rent_ski" element={<RentSkyPage />} />
+          <Route exact path="/certificate" element={<RentSkyPage />} />
           <Route exact path="/one_day_trip" element={<TripPageOneDay />} />
           <Route exact path="/two_day_trip" element={<TripPageTwoDay />} />
           <Route exact path="/end-season" element={<EndSeason />} />

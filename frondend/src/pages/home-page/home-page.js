@@ -53,7 +53,7 @@ export const HomePage = () => {
   const handleClickSaleSea = () => navigate("/sale_sea");
   const handleClickSportSale = () => navigate("/sport_sale");
   const handleClickRent = () => navigate("/rent");
-  const handleClickRentSky = () => navigate("/rent_ski");
+  const handleClickRentSky = () => navigate("/certificate");
   const handleClickTrip = () => navigate("/");
 
   const [isOpen, setIsOpen] = useState(false);
@@ -189,7 +189,7 @@ export const HomePage = () => {
         </div>
         {
           <div ref={ref} onClick={handleClickRentSky} className="sale-item">
-            <a href="/rent_ski">
+            <a href="/certificate">
               <img src={sky} alt="adjara peak" className="sale-img" />
               <div className="sale-info">
                 <div className="sale-title">
@@ -217,7 +217,7 @@ export const HomePage = () => {
 
 {
   /* <div ref={ref} onClick={handleClickRentSky} className="sale-item">
-          <a href="/rent_ski">
+          <a href="/certificate">
             <img src={sky} alt="adjara peak" className="sale-img" />
             <div className="sale-info">
               <div className="sale-title">
