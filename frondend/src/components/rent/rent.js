@@ -22,8 +22,8 @@ export const Rent = ({ rent }) => {
 
   return (
     <div className="add-to-cart__rent" onClick={handelClickWeekday}>
-      <b className="product-items__price">{rent.price}.00₾-сутки</b>
-
+      <b className="product-items__price">{rent.price}.00₾</b>
+      {/* !!!!!!добавить обязательно */}
       <div className="add-to-cart-cover">
         <div className="add-to-cart">
           <Button type="primary">
