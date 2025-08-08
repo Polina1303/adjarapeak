@@ -33,6 +33,8 @@ import { ReturnPolicyPage } from "./pages/return-policy-page/return-policy-page"
 import { HikhaniTripPage } from "./pages/hihani-page";
 import { TeaTripPage } from "./pages/tea-page";
 import { UchkhoTripPage } from "./pages/uchkho-page";
+import { JvarimindoriTripPage } from "./pages/jvarimindori-page";
+import { TbikeliTripPage } from "./pages/tbikeli-page";
 
 function App() {
   return (
@@ -62,8 +64,15 @@ function App() {
           <Route exact path="/garden" element={<GardenRoutePage />} />
           <Route exact path="/kazbeg" element={<KazbegPage />} />
           <Route exact path="/hikhani" element={<HikhaniTripPage />} />
+          <Route
+            exact
+            path="/jvarimindori"
+            element={<JvarimindoriTripPage />}
+          />
+          <Route exact path="/tbikeli" element={<TbikeliTripPage />} />
           <Route exact path="/tea" element={<TeaTripPage />} />
           <Route exact path="/uchkho" element={<UchkhoTripPage />} />
+
           <Route exact path="/svaneti" element={<SvanetiTripPage />} />
           <Route exact path="*" element={<Error />} />
           <Route exact path="/return_policy" element={<ReturnPolicyPage />} />
