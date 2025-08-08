@@ -191,7 +191,7 @@ export const SEA_PRODUCT = [
     img: "5515.48.40.jpg",
     desc: "Hello Plus blue shark 320",
     category: "supboard",
-    price: 820,
+    price: 880,
     shortly: "КОМПЛЕКТАЦИЯ: ",
     column: [
       " -Водонепроницаемый мешок 5 литров - 1 шт",
@@ -205,7 +205,7 @@ export const SEA_PRODUCT = [
       "Безопасный ремень - 1 шт.",
       "Ширина:84см",
       "Толщина: 15см",
-      "Длина: 350 см",
+      "Длина: 320 см",
       "Вес: 9.5 кг",
       "Макс. нагрузка: 145 кг",
     ],

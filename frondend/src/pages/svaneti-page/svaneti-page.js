@@ -10,9 +10,9 @@ import photo3 from "./img/photo3.webp";
 import photo4 from "./img/photo4.webp";
 import photo5 from "./img/photo5.webp";
 import photo6 from "./img/photo6.webp";
-import photo7 from "./img/photo5.webp";
-import photo8 from "./img/photo6.webp";
-import photo9 from "./img/photo6.webp";
+import photo7 from "./img/photo7.webp";
+import photo8 from "./img/photo8.webp";
+import photo9 from "./img/photo9.webp";
 import { Navigation, Pagination } from "swiper/modules";
 
 const photos = [
