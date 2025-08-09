@@ -35,6 +35,7 @@ import { TeaTripPage } from "./pages/tea-page";
 import { UchkhoTripPage } from "./pages/uchkho-page";
 import { JvarimindoriTripPage } from "./pages/jvarimindori-page";
 import { TbikeliTripPage } from "./pages/tbikeli-page";
+import { YogaGomismtaPage } from "./pages/yoga-gomismta-page";
 
 function App() {
   return (
@@ -64,6 +65,7 @@ function App() {
           <Route exact path="/garden" element={<GardenRoutePage />} />
           <Route exact path="/kazbeg" element={<KazbegPage />} />
           <Route exact path="/hikhani" element={<HikhaniTripPage />} />
+          <Route exact path="/yoga-gomismta" element={<YogaGomismtaPage />} />
           <Route
             exact
             path="/jvarimindori"
