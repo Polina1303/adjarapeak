@@ -8,9 +8,10 @@ import tea1 from "./img/tea1.webp";
 import tea2 from "./img/tea2.webp";
 import tea3 from "./img/tea3.webp";
 import tea4 from "./img/tea4.webp";
+import tea5 from "./img/tea5.webp";
 import { Navigation, Pagination } from "swiper/modules";
 
-const teas = [tea1, tea2, tea3, tea4];
+const teas = [tea1, tea2, tea3, tea4, tea5];
 
 export const TeaTripPage = () => {
   const history = useNavigate();

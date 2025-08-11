@@ -65,14 +65,14 @@ export const RentSkyPage = () => {
         </button>
       </div>
       <div className="search-container" style={{ margin: "20px 0" }}>
-        <Menu
+        {/* <Menu
           mode="horizontal"
           selectedKeys={[`${activeType}`]}
           items={items}
           style={{ flex: 1, minWidth: 0 }}
           onClick={handleClick}
           overflowedIndicator={overflowedIndicator}
-        />
+        /> */}
 
         <input
           type="text"

@@ -13,7 +13,8 @@ import "./home-page.css";
 
 import sport from "./sport.webp";
 import sea from "./sea.webp";
-import sky from "./sele.webp";
+// import sky from "./sele.webp";
+import sky from "./sertif.jpg";
 // import sky from "./snow.webp";
 import eq from "./sale.webp";
 import eq2 from "./rent.webp";
@@ -197,9 +198,7 @@ export const HomePage = () => {
                     {languages === "RU" ? "Подарочные" : "Rental"}
                   </span>
                   <br />
-                  {languages === "RU"
-                    ? "сертификаты на снаряжения"
-                    : "of ski equipment"}
+                  {languages === "RU" ? "сертификаты " : "of ski equipment"}
                 </div>
               </div>
             </a>
