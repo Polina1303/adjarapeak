@@ -5,10 +5,6 @@ export const CATEGORY_SEA = [
   },
 
   {
-    title: "МАСКИ И ОЧКИ",
-    type: "mask",
-  },
-  {
     title: "САПБОРДЫ",
     type: "supboard",
   },
@@ -16,7 +12,10 @@ export const CATEGORY_SEA = [
     title: "КОМПЛЕКТУЮЩИЕ САПБОРД",
     type: "sup_accessories",
   },
-
+  {
+    title: "МАСКИ И ОЧКИ",
+    type: "mask",
+  },
   {
     title: "ЛАСТЫ",
     type: "flippers",
