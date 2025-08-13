@@ -19,7 +19,7 @@ export const SEA_PRODUCT = [
     img: "IMG_6532.JPG",
     desc: "Hello Plus blue shark 320",
     category: "supboard",
-    price: 880,
+    price: 749,
     column: [
       "SUP-доска HYDRO STAR HELLOPLUS PRO – для дальних водных путешествий",
       "Длина 320 см — отличная курсовая устойчивость и высокая скорость",
@@ -113,7 +113,7 @@ export const SEA_PRODUCT = [
     img: "IMG_6530.JPG",
     desc: "Hello Plus fiesta 320",
     category: "supboard",
-    price: 820,
+    price: 719,
     column: [
       "Длина 320 см — отличная курсовая устойчивость и высокая скорость",
       "Drop Stitch технология — жесткость и надёжность как у твёрдой доски",
@@ -136,7 +136,7 @@ export const SEA_PRODUCT = [
     img: "IMG_6529.WEBP",
     desc: "Hello Plus fiesta 320",
     category: "supboard",
-    price: 820,
+    price: 719,
     column: [
       "Длина 320 см — отличная курсовая устойчивость и высокая скорость",
       "Drop Stitch технология — жесткость и надёжность как у твёрдой доски",
@@ -197,7 +197,7 @@ export const SEA_PRODUCT = [
     img: "IMG_6284 (1).JPG",
     desc: "РАСПРОДАНО",
     category: "supboard",
-    price: 890,
+    price: 770,
     shortly: "КОМПЛЕКТАЦИЯ: ",
     column: [
       " -Водонепроницаемый мешок 5 литров - 1 шт",
@@ -223,7 +223,7 @@ export const SEA_PRODUCT = [
     img: "IMG_6618.PNG",
     desc: "РАСПРОДАНО",
     category: "supboard",
-    price: 890,
+    price: 770,
     shortly: "КОМПЛЕКТАЦИЯ: ",
     column: [
       " -Водонепроницаемый мешок 5 литров - 1 шт",
