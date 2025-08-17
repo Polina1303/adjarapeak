@@ -8,7 +8,6 @@ import { Header } from "./components/header";
 import { ProductPage } from "./pages/product-page";
 import { TripPageOneDay } from "./pages/trip-page-one-day/trip-page-one-day";
 import { TripPageTwoDay } from "./pages/trip-page-two-day/trip-page-two-day";
-import { EndSeason } from "./pages/end-season/end-season";
 import { Transfer } from "./pages/transfer/transfer";
 import { TripPage } from "./pages/trip-page/trip-page";
 import { SvanetiTripPage } from "./pages/svaneti-page";
@@ -18,6 +17,8 @@ import { ErgeRoutePage } from "./pages/erge-route-page";
 import { SportSalePage } from "./pages/sport-sale-page";
 import { KazbegPage } from "./pages/kazbeg-page";
 import { GoderdziMountingTripPage } from "./pages/goderdzi_mounting-page";
+import { GreenlakePage } from "./pages/greenlake-page";
+import { BakhmaroPage } from "./pages/bakhmaro-page";
 
 import { OrderPage } from "./pages/order-page";
 
@@ -54,7 +55,6 @@ function App() {
           <Route exact path="/certificate" element={<RentSkyPage />} />
           <Route exact path="/one_day_trip" element={<TripPageOneDay />} />
           <Route exact path="/two_day_trip" element={<TripPageTwoDay />} />
-          <Route exact path="/end-season" element={<EndSeason />} />
           <Route exact path="/transfer" element={<Transfer />} />
           <Route exact path="/trip" element={<TripPage />} />
           <Route exact path="app/:id" element={<ProductPage />} />
@@ -73,6 +73,8 @@ function App() {
             element={<GoderdziMountingTripPage />}
           />
           <Route exact path="/yoga-gomismta" element={<YogaGomismtaPage />} />
+          <Route exact path="/greenlake" element={<GreenlakePage />} />
+          <Route exact path="/bakhmaro" element={<BakhmaroPage />} />
           <Route
             exact
             path="/jvarimindori"

@@ -16,6 +16,10 @@ export const CATEGORY_SPORT_PRODUCT = [
     type: "helmet",
   },
   {
+    title: "🏄SUP-ДОСКИ",
+    type: "supboard",
+  },
+  {
     title: "🎾ТЕННИС",
     type: "tennis",
   },
@@ -86,13 +90,8 @@ export const CATEGORY_SPORT_PRODUCT = [
   //   type: "sportings",
   // },
 
-  {
-    title: "🌊ВОДНЫЙ СПОРТ",
-    type: "watersport",
-  },
-
-  {
-    title: "🏄SUP-ДОСКИ",
-    type: "supboard",
-  },
+  // {
+  //   title: "🌊ВОДНЫЙ СПОРТ",
+  //   type: "watersport",
+  // },
 ];

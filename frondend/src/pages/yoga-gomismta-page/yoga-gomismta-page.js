@@ -149,7 +149,7 @@ export const YogaGomismtaPage = () => {
       </section>
 
       <div className="trip-contact">
-        🔗 Чтобы записаться или задать вопрос — пиши:{" "}
+        🔗 Чтобы записаться или задать вопрос — пиши Юле:{" "}
         <a href="https://t.me/YulikosTailor" target="_blank" rel="noreferrer">
           @YulikosTailor
         </a>

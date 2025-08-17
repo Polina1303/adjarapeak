@@ -185,9 +185,9 @@ export const TbikeliTripPage = () => {
       </section>
 
       <div className="trip-contact">
-        🔗 Чтобы записаться или задать вопрос — пиши Станислав:{" "}
-        <a href="https://t.me/shpaksn" target="_blank" rel="noreferrer">
-          @shpaksn
+        🔗 Чтобы записаться или задать вопрос — пиши Лео:
+        <a href="https://t.me/molmeena" target="_blank" rel="noreferrer">
+          @molmeena
         </a>
       </div>
     </div>
