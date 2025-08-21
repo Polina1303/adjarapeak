@@ -16,9 +16,11 @@ import { GardenRoutePage } from "./pages/garden-route-page";
 import { ErgeRoutePage } from "./pages/erge-route-page";
 import { SportSalePage } from "./pages/sport-sale-page";
 import { KazbegPage } from "./pages/kazbeg-page";
+import { UdziroPage } from "./pages/udziro-page";
 import { GoderdziMountingTripPage } from "./pages/goderdzi_mounting-page";
 import { GreenlakePage } from "./pages/greenlake-page";
 import { BakhmaroPage } from "./pages/bakhmaro-page";
+import { GomismtaChinchaoPage } from "./pages/gomismta_chinchao-page";
 
 import { OrderPage } from "./pages/order-page";
 
@@ -67,6 +69,7 @@ function App() {
           <Route exact path="/garden" element={<GardenRoutePage />} />
           <Route exact path="/kazbeg" element={<KazbegPage />} />
           <Route exact path="/hikhani" element={<HikhaniTripPage />} />
+          <Route exact path="/udziro" element={<UdziroPage />} />
           <Route
             exact
             path="/goderdzi_mounting"
@@ -74,6 +77,11 @@ function App() {
           />
           <Route exact path="/yoga-gomismta" element={<YogaGomismtaPage />} />
           <Route exact path="/greenlake" element={<GreenlakePage />} />
+          <Route
+            exact
+            path="/gomismta_chinchao"
+            element={<GomismtaChinchaoPage />}
+          />
           <Route exact path="/bakhmaro" element={<BakhmaroPage />} />
           <Route
             exact
