@@ -12,7 +12,8 @@ import { RulesPage } from "../rules-page";
 import "./home-page.css";
 
 import sport from "./sport.webp";
-import sea from "./sea.webp";
+import clothes from "./sea.webp";
+import sea from "./sea2.webp";
 // import sky from "./sele.webp";
 import sky from "./sertif.jpg";
 // import sky from "./snow.webp";
@@ -56,6 +57,7 @@ export const HomePage = () => {
   const handleClickRent = () => navigate("/rent");
   const handleClickRentSky = () => navigate("/certificate");
   const handleClickTrip = () => navigate("/");
+  const handleClickСlothes = () => navigate("/clothes");
 
   const [isOpen, setIsOpen] = useState(false);
   const toggleModal = () => setIsOpen(!isOpen);
@@ -154,6 +156,20 @@ export const HomePage = () => {
                 </span>
                 <br />
                 {languages === "RU" ? "спортивного снаряжения" : "of equipment"}
+              </div>
+            </div>
+          </a>
+        </div>
+        <div ref={ref} onClick={handleClickСlothes} className="sale-item">
+          <a href="/clothes">
+            <img src={clothes} alt="adjara peak" className="sale-img" />
+            <div className="sale-info">
+              <div className="sale-title">
+                <span className="highlight-rent">
+                  {languages === "RU" ? "Продажа" : "Sale"}
+                </span>
+                <br />
+                {languages === "RU" ? "одежды" : ""}
               </div>
             </div>
           </a>

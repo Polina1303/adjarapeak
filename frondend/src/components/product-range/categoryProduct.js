@@ -36,14 +36,14 @@ export const CATEGORY_PRODUCT = [
     title: "🔥ГАЗ·ГОРЕЛКИ",
     type: "gas/burner",
   },
-  {
-    title: "🧣БАФФЫ · БАЛАКЛАВЫ · ПЕРЧАТКИ",
-    type: "buff",
-  },
-  {
-    title: "🧢ГОЛОВНЫЕ УБОРЫ",
-    type: "hat",
-  },
+  // {
+  //   title: "🧣БАФФЫ · БАЛАКЛАВЫ · ПЕРЧАТКИ",
+  //   type: "buff",
+  // },
+  // {
+  //   title: "🧢ГОЛОВНЫЕ УБОРЫ",
+  //   type: "hat",
+  // },
 
   {
     title: "🔭БИНОКЛЬ",
@@ -53,10 +53,10 @@ export const CATEGORY_PRODUCT = [
   //   title: "🧤ПЕРЧАТКИ",
   //   type: "gloves",
   // },
-  {
-    title: "🧦НОСКИ",
-    type: "socks",
-  },
+  // {
+  //   title: "🧦НОСКИ",
+  //   type: "socks",
+  // },
   {
     title: "🔦ФОНАРИ",
     type: "lantern",
@@ -100,10 +100,10 @@ export const CATEGORY_PRODUCT = [
     title: "ИНОЕ",
     type: "accessories",
   },
-  {
-    title: "🧼УХОД ЗА ОБУВЬЮ И ОДЕЖДОЙ",
-    type: "care",
-  },
+  // {
+  //   title: "🧼УХОД ЗА ОБУВЬЮ И ОДЕЖДОЙ",
+  //   type: "care",
+  // },
   // {
   //   title: "🍲ПОХОДНАЯ ЕДА",
   //   type: "sublimates",

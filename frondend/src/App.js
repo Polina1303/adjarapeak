@@ -6,6 +6,7 @@ import { SeaSalePage } from "./pages/sea-sale-page";
 import { RentPage } from "./pages/rent-page";
 import { Header } from "./components/header";
 import { ProductPage } from "./pages/product-page";
+import { ClothesPage } from "./pages/clothes-page";
 import { TripPageOneDay } from "./pages/trip-page-one-day/trip-page-one-day";
 import { TripPageTwoDay } from "./pages/trip-page-two-day/trip-page-two-day";
 import { Transfer } from "./pages/transfer/transfer";
@@ -56,6 +57,7 @@ function App() {
           <Route exact path="/rent" element={<RentPage />} />
           <Route exact path="/certificate" element={<RentSkyPage />} />
           <Route exact path="/one_day_trip" element={<TripPageOneDay />} />
+          <Route exact path="/clothes" element={<ClothesPage />} />
           <Route exact path="/two_day_trip" element={<TripPageTwoDay />} />
           <Route exact path="/transfer" element={<Transfer />} />
           <Route exact path="/trip" element={<TripPage />} />

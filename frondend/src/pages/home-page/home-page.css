@@ -541,15 +541,16 @@
 }
 .sale-container {
   display: flex;
-  flex-wrap: wrap; /* Разрешаем перенос строк */
-  justify-content: center; /* Центрируем карточки */
-  gap: 12px;
-  padding: 16px;
+  flex-wrap: wrap;
+  justify-content: center; /* по центру */
+  gap: 16px; /* отступы между карточками */
+  max-width: calc(4 * 180px + 3 * 16px); /* ширина для 4 карточек в ряд */
+  margin: 0 auto; /* центрируем */
 }
 
 /* Каждая карточка фиксированной ширины */
 .sale-item {
-  flex: 0 1 13%; /* Примерно 7 карточек в строку (100 / 7 ≈ 14.2%) менять на 13*/
+  flex: 0 0 200px; /* фиксированная ширина */
   max-width: 180px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
