@@ -318,59 +318,60 @@ const events = [
   //   link: "/rockClimbing",
   //   type: "rockClimbing",
   // },
-  {
-    date: "23 августа (сб)",
-    title: "ГОДЕРДЗИ — ЗЕЛЁНОЕ ОЗЕРО + ПИКНИК",
-    description: "Зелёное озеро и Сабанела на высоте свыше 2000 метров.",
-    price: "130",
-    image: greenlake,
-    link: "/greenlake",
-    type: "group",
-    gide: 1,
-  },
-  {
-    date: "23 августа (сб)",
-    title: "ГОМИС МТА - ОЗЕРО ЧИНЧАО ",
-    description:
-      "Если вы устали от типичных закатов в Гомисмта, то это для вас — пеший маршрут от деревни ГомисМта до озера Чинчао, которое находится на высоте 2500 метров над уровнем море. ",
-    price: "110",
-    image: gomismta,
-    link: "/gomismta_chinchao",
-    type: "group",
-    gide: 2,
-  },
+  // {
+  //   date: "23 августа (сб)",
+  //   title: "ГОДЕРДЗИ — ЗЕЛЁНОЕ ОЗЕРО + ПИКНИК",
+  //   description: "Зелёное озеро и Сабанела на высоте свыше 2000 метров.",
+  //   price: "130",
+  //   image: greenlake,
+  //   link: "/greenlake",
+  //   type: "group",
+  //   gide: 1,
+  // },
+  // {
+  //   date: "23 августа (сб)",
+  //   title: "ГОМИС МТА - ОЗЕРО ЧИНЧАО ",
+  //   description:
+  //     "Если вы устали от типичных закатов в Гомисмта, то это для вас — пеший маршрут от деревни ГомисМта до озера Чинчао, которое находится на высоте 2500 метров над уровнем море. ",
+  //   price: "110",
+  //   image: gomismta,
+  //   link: "/gomismta_chinchao",
+  //   type: "group",
+  //   gide: 2,
+  // },
 
-  {
-    date: "23 августа (сб)",
-    title: "Скалолазание в Гонио",
-    description:
-      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-    price: "49",
-    image: rock1,
-    link: "/rockClimbing",
-    type: "rockClimbing",
-  },
-  {
-    date: "24 августа (вс)",
-    title: "Бахмаро – Гора Гадрекили.",
-    description:
-      "Однодневная хайкинг-поездка с пикником в высокогорную деревню на высоте более 2000 метров, известную своим чистым и целебным воздухом Маршрут | 8 км, 550 набора и сброса высоты. Гид Лео.",
-    price: "100",
-    image: bakhmaro,
-    link: "/bakhmaro",
-    type: "group",
-    gide: 1,
-  },
-  {
-    date: "24 августа (вс)",
-    title: "Скалолазание в Гонио",
-    description:
-      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-    price: "49",
-    image: rock1,
-    link: "/rockClimbing",
-    type: "rockClimbing",
-  },
+  // {
+  //   date: "23 августа (сб)",
+  //   title: "Скалолазание в Гонио",
+  //   description:
+  //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+  //   price: "49",
+  //   image: rock1,
+  //   link: "/rockClimbing",
+  //   type: "rockClimbing",
+  // },
+  // {
+  //   date: "24 августа (вс)",
+  //   title: "Бахмаро – Гора Гадрекили.",
+  //   description:
+  //     "Однодневная хайкинг-поездка с пикником в высокогорную деревню на высоте более 2000 метров, известную своим чистым и целебным воздухом Маршрут | 8 км, 550 набора и сброса высоты. Гид Лео.",
+  //   price: "100",
+  //   image: bakhmaro,
+  //   link: "/bakhmaro",
+  //   type: "group",
+  //   gide: 1,
+  // },
+  // {
+  //   date: "24 августа (вс)",
+  //   title: "Скалолазание в Гонио",
+  //   description:
+  //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+  //   price: "49",
+  //   image: rock1,
+  //   link: "/rockClimbing",
+  //   type: "rockClimbing",
+  // },
+
   {
     date: "29–31 августа (пт–вс) ",
     title: "Озеро Удзиро",
@@ -381,6 +382,106 @@ const events = [
     link: "/udziro",
     type: "group",
     gide: 1,
+  },
+  {
+    date: "30 августа (сб)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock1,
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
+  {
+    date: "31 августа (вс)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock1,
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
+  {
+    date: "6 сентября (сб)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock1,
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
+  {
+    date: "7 сентября (вс)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock1,
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
+  {
+    date: "13 сентября (сб)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock1,
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
+  {
+    date: "14 сентября (вс)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock1,
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
+  {
+    date: "20 сентября (сб)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock1,
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
+  {
+    date: "21 сентября (вс)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock1,
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
+  {
+    date: "27 сентября (сб)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock1,
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
+  {
+    date: "28 сентября (вс)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock1,
+    link: "/rockClimbing",
+    type: "rockClimbing",
   },
   {
     date: "6 сентября (сб)",

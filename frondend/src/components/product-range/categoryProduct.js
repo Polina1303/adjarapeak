@@ -12,10 +12,10 @@ export const CATEGORY_PRODUCT = [
     title: "🎒РЮКЗАКИ",
     type: "backpack",
   },
-  {
-    title: "🥾ОБУВЬ",
-    type: "shoes",
-  },
+  // {
+  //   title: "🥾ОБУВЬ",
+  //   type: "shoes",
+  // },
   {
     title: "💤СПАЛЬНЫЕ МЕШКИ",
     type: "sleepingbag",

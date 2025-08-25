@@ -25,7 +25,7 @@ export const KazbegPage = () => {
       <button className="back-button" onClick={() => history(-1)}>
         <IoIosArrowBack size={"25px"} /> Назад
       </button>
-      <h1 className="trip-title">Восхождение на Казбег 6–14 сентября</h1>
+      <h1 className="trip-title">Восхождение на Казбек 6–14 сентября</h1>
 
       <div
         style={{

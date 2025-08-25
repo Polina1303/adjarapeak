@@ -37,10 +37,7 @@ export const CATEGORY_SEA = [
     title: "ГЕРМОМЕШКИ",
     type: "hermo",
   },
-  {
-    title: "ПЛЯЖНАЯ ОБУВЬ",
-    type: "shoes",
-  },
+
   {
     title: "ШАПКА ДЛЯ ПЛАВАНИЯ",
     type: "hat",

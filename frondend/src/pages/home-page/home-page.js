@@ -169,7 +169,7 @@ export const HomePage = () => {
                   {languages === "RU" ? "Продажа" : "Sale"}
                 </span>
                 <br />
-                {languages === "RU" ? "одежды" : ""}
+                {languages === "RU" ? "одежды и обуви" : ""}
               </div>
             </div>
           </a>
