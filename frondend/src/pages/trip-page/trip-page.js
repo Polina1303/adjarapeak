@@ -463,6 +463,7 @@ const events = [
     price: "320",
     image: svan,
     link: "/svaneti",
+    type: "group",
     gide: 2,
   },
   {
