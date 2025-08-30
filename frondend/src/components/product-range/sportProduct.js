@@ -1426,16 +1426,7 @@ export const SPORT_PRODUCT = [
     price: 25,
     column: [],
   },
-  {
-    order: true,
-    id: 9876596415806,
-    title: "Мяч футбольный",
-    img: "018.29.27.png",
-    desc: "подходит для игр на улице и на поле",
-    category: "balls",
-    price: 20,
-    column: [],
-  },
+
   {
     order: true,
     id: 98765964158069,
