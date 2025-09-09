@@ -2177,9 +2177,9 @@ export const SPORT_PRODUCT = [
   {
     order: true,
     id: 31243909799432,
-    title: "Высокопрочные петли",
+    title: "Набор - ручки и петли",
     img: "7d4449f6-b7d4-4050-a130.png",
-    desc: "удобеные в использовании",
+    desc: "для тренировок с фитнес резинками",
     category: "elasticbands",
     price: 59,
     column: [],

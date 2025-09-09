@@ -268,7 +268,9 @@ export const PRODUCT = [
     desc: "1 местная двухслойная 180*300*110",
     category: "tent",
     order: true,
-    price: 390,
+    oldPrice: 390,
+    newPrice: 242,
+
     shortlyEng: "Ultralight backpacking tent with a skirt.",
     shortly:
       "Ультралегкая одноместная палатка Naturehike Cloud UP1 для пеших, водных и вело-походов. Полный вес 1,57 кг. Легкий вес, компактность в сложенном виде и просторность в разложенном - отличный выбор независимого одиночки.",
@@ -294,6 +296,8 @@ export const PRODUCT = [
     descEng: "2-person, double-layer 150*275*110",
     category: "tent",
     price: 440,
+    oldPrice: 440,
+    newPrice: 286,
     order: true,
     shortlyEng:
       "Ultralight two-person tent for hiking, water, and biking trips. The spacious vestibule can accommodate a couple of large-sized backpacks.",
@@ -449,7 +453,8 @@ export const PRODUCT = [
     category: "tent",
     order: true,
     price: 580,
-
+    oldPrice: 580,
+    newPrice: 396,
     shortlyEng: "Ultralight backpacking tent with a skirt.",
     shortly: "Ультралёгкая туристическая палатка с юбкой.",
     column: [
@@ -635,7 +640,8 @@ export const PRODUCT = [
     desc: "коричневый/серебренный",
     category: "tent",
     price: 190,
-
+    oldPrice: 190,
+    newPrice: 99,
     column: [
       "Naturehike Foldable Changing Tent — лёгкая и удобная палатка для душа, туалета и переодевания",
       "Быстрая установка, компактна при транспортировке — вес 2.67 кг",
@@ -724,6 +730,8 @@ export const PRODUCT = [
     desc: "2.4meters 28MM",
     category: "accessories",
     price: 88,
+    oldPrice: 88,
+    newPrice: 44,
     column: [
       "Алюминиевые стойки для палатки Naturehike — надёжная опора в походах и кемпинге",
       "Длина: 2.4 м, конструкция из 4 секций — регулируется по высоте",
@@ -744,6 +752,8 @@ export const PRODUCT = [
     desc: "Wood 2.8meter 33MM",
     category: "accessories",
     price: 99,
+    oldPrice: 99,
+    newPrice: 60,
     column: [
       "Алюминиевые стойки для палатки Naturehike — надёжная опора в походах и кемпинге",
       "Длина: 2.8 м, конструкция из 4 секций — регулируется по высоте",
@@ -906,6 +916,8 @@ export const PRODUCT = [
     category: "sleepingbag",
     price: 140,
     order: true,
+    oldPrice: 140,
+    newPrice: 75,
     columnEng: [""],
     column: [
       " Спальник Naturehike с капюшоном и мягкой подкладкой",
@@ -924,6 +936,8 @@ export const PRODUCT = [
     desc: "(правый), зеленый камуфляж",
     category: "sleepingbag",
     price: 140,
+    oldPrice: 140,
+    newPrice: 75,
     order: true,
     columnEng: [""],
     column: [

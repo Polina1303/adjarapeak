@@ -10,6 +10,7 @@ import { useInView } from "react-intersection-observer";
 import { MdOutlineArrowLeft, MdArrowRight } from "react-icons/md";
 import { RulesPage } from "../rules-page";
 import "./home-page.css";
+import { SaleBanner } from "./SaleBanner";
 
 import sport from "./sport.webp";
 import clothes from "./sea.webp";
