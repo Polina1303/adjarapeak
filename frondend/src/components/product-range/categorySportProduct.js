@@ -8,6 +8,10 @@ export const CATEGORY_SPORT_PRODUCT = [
     type: "roller",
   },
   {
+    title: "ЕДИНОБОРСТВА",
+    type: "martialart",
+  },
+  {
     title: "🛡️ЗАЩИТА",
     type: "protection",
   },

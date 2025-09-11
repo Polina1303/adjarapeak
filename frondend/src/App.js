@@ -22,6 +22,8 @@ import { GoderdziMountingTripPage } from "./pages/goderdzi_mounting-page";
 import { GreenlakePage } from "./pages/greenlake-page";
 import { BakhmaroPage } from "./pages/bakhmaro-page";
 import { GomismtaChinchaoPage } from "./pages/gomismta_chinchao-page";
+import { GuriaTeaPage } from "./pages/guriaTea-page";
+import { MagaPage } from "./pages/maga-page";
 
 import { OrderPage } from "./pages/order-page";
 
@@ -67,6 +69,8 @@ function App() {
           <Route exact path="/lycian" element={<LycianWayPage />} />
           <Route exact path="/rockClimbing" element={<RockClimbingPage />} />
           <Route exact path="/lake" element={<LakeRoutePage />} />
+          <Route exact path="/guriaTea" element={<GuriaTeaPage />} />
+          <Route exact path="/maga" element={<MagaPage />} />
           <Route exact path="/erge" element={<ErgeRoutePage />} />
           <Route exact path="/garden" element={<GardenRoutePage />} />
           <Route exact path="/kazbeg" element={<KazbegPage />} />
