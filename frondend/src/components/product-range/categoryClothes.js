@@ -8,8 +8,12 @@ export const CATEGORY_CLOTHES = [
     type: "shoes",
   },
   {
-    title: "ПЛЯЖНАЯ ОБУВЬ",
+    title: "ПЛЯЖНАЯ ОБУВЬ И ОДЕЖДА",
     type: "shoesSea",
+  },
+  {
+    title: "ФЛИСОВЫЕ КОФТЫ",
+    type: "fleece",
   },
   {
     title: "🧣БАФФЫ · БАЛАКЛАВЫ · ПЕРЧАТКИ",

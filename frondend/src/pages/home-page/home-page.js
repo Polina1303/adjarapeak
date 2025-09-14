@@ -98,7 +98,7 @@ export const HomePage = () => {
           </span>
         </p>
       </div>
-
+      <SaleBanner />
       <div className="sale-container">
         <div ref={ref} onClick={handleClickSale} className="sale-item">
           <a href="/sale">

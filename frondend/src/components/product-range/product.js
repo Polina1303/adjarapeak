@@ -268,8 +268,8 @@ export const PRODUCT = [
     desc: "1 местная двухслойная 180*300*110",
     category: "tent",
     order: true,
-    oldPrice: 390,
-    newPrice: 242,
+    price: 390,
+    newPrice: 290,
 
     shortlyEng: "Ultralight backpacking tent with a skirt.",
     shortly:
@@ -296,8 +296,7 @@ export const PRODUCT = [
     descEng: "2-person, double-layer 150*275*110",
     category: "tent",
     price: 440,
-    oldPrice: 440,
-    newPrice: 286,
+    newPrice: 340,
     order: true,
     shortlyEng:
       "Ultralight two-person tent for hiking, water, and biking trips. The spacious vestibule can accommodate a couple of large-sized backpacks.",
@@ -453,8 +452,7 @@ export const PRODUCT = [
     category: "tent",
     order: true,
     price: 580,
-    oldPrice: 580,
-    newPrice: 396,
+    newPrice: 480,
     shortlyEng: "Ultralight backpacking tent with a skirt.",
     shortly: "Ультралёгкая туристическая палатка с юбкой.",
     column: [
@@ -640,8 +638,7 @@ export const PRODUCT = [
     desc: "коричневый/серебренный",
     category: "tent",
     price: 190,
-    oldPrice: 190,
-    newPrice: 99,
+    newPrice: 130,
     column: [
       "Naturehike Foldable Changing Tent — лёгкая и удобная палатка для душа, туалета и переодевания",
       "Быстрая установка, компактна при транспортировке — вес 2.67 кг",
@@ -730,8 +727,7 @@ export const PRODUCT = [
     desc: "2.4meters 28MM",
     category: "accessories",
     price: 88,
-    oldPrice: 88,
-    newPrice: 44,
+    newPrice: 68,
     column: [
       "Алюминиевые стойки для палатки Naturehike — надёжная опора в походах и кемпинге",
       "Длина: 2.4 м, конструкция из 4 секций — регулируется по высоте",
@@ -752,8 +748,7 @@ export const PRODUCT = [
     desc: "Wood 2.8meter 33MM",
     category: "accessories",
     price: 99,
-    oldPrice: 99,
-    newPrice: 60,
+    newPrice: 79,
     column: [
       "Алюминиевые стойки для палатки Naturehike — надёжная опора в походах и кемпинге",
       "Длина: 2.8 м, конструкция из 4 секций — регулируется по высоте",
@@ -916,8 +911,7 @@ export const PRODUCT = [
     category: "sleepingbag",
     price: 140,
     order: true,
-    oldPrice: 140,
-    newPrice: 75,
+    newPrice: 109,
     columnEng: [""],
     column: [
       " Спальник Naturehike с капюшоном и мягкой подкладкой",
@@ -936,8 +930,7 @@ export const PRODUCT = [
     desc: "(правый), зеленый камуфляж",
     category: "sleepingbag",
     price: 140,
-    oldPrice: 140,
-    newPrice: 75,
+    newPrice: 109,
     order: true,
     columnEng: [""],
     column: [
@@ -957,6 +950,7 @@ export const PRODUCT = [
     desc: " MJ300-NAVY",
     category: "sleepingbag",
     price: 199,
+    newPrice: 139,
     order: true,
     columnEng: [""],
     column: [
@@ -976,6 +970,8 @@ export const PRODUCT = [
     desc: "MJ600-DARK",
     category: "sleepingbag",
     price: 230,
+    newPrice: 159,
+
     order: true,
     columnEng: [""],
     column: [
@@ -1453,6 +1449,7 @@ export const PRODUCT = [
     desc: "размер S",
     category: "sleepingbag",
     price: 22,
+    newPrice: 11,
     order: true,
     columnEng: [""],
     column: [
@@ -1473,6 +1470,7 @@ export const PRODUCT = [
     desc: "размер L",
     category: "sleepingbag",
     price: 32,
+    newPrice: 16,
     order: true,
     columnEng: [""],
     column: [
@@ -2023,6 +2021,7 @@ export const PRODUCT = [
     desc: "55L",
     category: "backpack",
     price: 340,
+    newPrice: 299,
     order: true,
 
     column: [
@@ -2046,6 +2045,7 @@ export const PRODUCT = [
     desc: "55L",
     category: "backpack",
     price: 340,
+    newPrice: 299,
     order: true,
 
     column: [
@@ -2070,6 +2070,7 @@ export const PRODUCT = [
     descEng: "55L",
     category: "backpack",
     price: 340,
+    newPrice: 299,
     shortlyEng:
       "Designed for medium-length hikes and made from durable and abrasion-resistant material.",
     shortly:
@@ -2642,6 +2643,7 @@ export const PRODUCT = [
     desc: "185*59*1.5 см, сверхлекгий",
     category: "mat",
     price: 59,
+    newPrice: 40,
     column: ["применим для пляжа / кемпинга / йоги"],
     columnEng: ["suitable for beach / camping / yoga"],
   },
@@ -2714,8 +2716,8 @@ export const PRODUCT = [
     desc: "HIKING 119*53*2,5 см",
     descEng: "",
     category: "mat",
-    oldPrice: 99,
-    newPrice: 69,
+    price: 99,
+    newPrice: 49,
     column: [
       "Походный надувной коврик HI KING 119×53×2.5 см",
       "Идеален для кемпинга, туризма и пикников",
@@ -7041,6 +7043,7 @@ export const PRODUCT = [
     descEng: "",
     category: "dishes",
     price: 15,
+    newPrice: 10,
     column: [],
     columnEng: [],
   },
@@ -7054,6 +7057,7 @@ export const PRODUCT = [
     descEng: "",
     category: "dishes",
     price: 20,
+    newPrice: 10,
     column: [],
     columnEng: [],
   },
@@ -7067,6 +7071,7 @@ export const PRODUCT = [
     descEng: "",
     category: "dishes",
     price: 20,
+    newPrice: 10,
     column: [],
     columnEng: [],
   },
@@ -7093,6 +7098,7 @@ export const PRODUCT = [
     descEng: "",
     category: "dishes",
     price: 65,
+    newPrice: 35,
     column: [" 41 х 45 х 30 см"],
     columnEng: [],
   },
@@ -7106,6 +7112,7 @@ export const PRODUCT = [
     descEng: "",
     category: "dishes",
     price: 40,
+    newPrice: 29,
     column: ["22 х 40 х 24,5 см"],
     columnEng: [],
   },
@@ -7795,6 +7802,7 @@ export const PRODUCT = [
     desc: " в чехле (черный/серый)",
     category: "chair",
     price: 99,
+    newPrice: 69,
     column: [
       "Складной стул Naturehike",
       "Цвет: черный",
@@ -7823,8 +7831,8 @@ export const PRODUCT = [
     img: "17.04.02.jpg",
     desc: "С ПОДСТАКАННИКОМ  до 120 кг",
     category: "chair",
-    price: 59,
-    newPrice: 45,
+    price: 45,
+    newPrice: 35,
     column: [
       "Вес: 1кг",
       "2 подлокотника | 1 подстаканник | Высота сиденья: 40 см",
@@ -7954,8 +7962,8 @@ export const PRODUCT = [
     img: "203838802_w640_h640_203838802.webp",
     desc: " до 150 кг",
     category: "chair",
-    oldPrice: 210,
-    newPrice: 170,
+    price: 210,
+    newPrice: 160,
     column: [
       "Максимальная нагрузка: 200 кг",
       "Материал каркаса: усиленный алюминий",
@@ -7974,6 +7982,7 @@ export const PRODUCT = [
     desc: " до 150 кг",
     category: "chair",
     price: 199,
+    newPrice: 140,
     column: [
       "Регулировка наклона: есть",
       "Материал ткани: 600D Оксфорд",
@@ -8288,6 +8297,44 @@ export const PRODUCT = [
   //   ],
   // },
 
+  {
+    order: true,
+    id: 101001413343,
+    title: "Нарукавники INTEX 6-12 лет",
+    img: "6640411556.png",
+    desc: "6-12 лет",
+    category: "air",
+    price: 15,
+    newPrice: 7,
+    column: [
+      "Яркие детские нарукавники для плавания – помогают ребёнку быстро и безопасно освоить навыки плавания без стресса.",
+      "Подходят для детей 6–12 лет (вес 15–60 кг), можно использовать как в бассейне, так и в открытой воде – море, река, озеро, аквапарк.",
+      "Изготовлены из мягкого и прочного винила (ПВХ) толщиной 0,25 мм, гипоаллергенный материал, устойчивый к повреждениям и перепадам температуры.",
+      "Нарукавники состоят из двух независимых воздушных камер с надёжными клапанами, что обеспечивает дополнительную безопасность.",
+      "Поверхность приятна к коже, без царапающих и режущих швов, не натирают и не давят на руки.",
+      "Лёгко надуваются без использования насоса, удобно брать с собой на отдых или в поездку.",
+      "Обеспечивают крепкий, но мягкий захват руки, не соскальзывают и не мешают движениям ребёнка.",
+    ],
+  },
+  {
+    order: true,
+    id: 103001413343,
+    title: "Нарукавники INTEX 6-12 лет",
+    img: "3313.jpg",
+    desc: "3-6 лет",
+    category: "air",
+    price: 12,
+    newPrice: 6,
+    column: [
+      "Яркие детские нарукавники для плавания – помогают ребёнку быстро и безопасно освоить навыки плавания без стресса.",
+      "Подходят для детей 3–6 лет (вес до 30 кг), можно использовать как в бассейне, так и в открытой воде – море, река, озеро, аквапарк.",
+      "Изготовлены из мягкого и прочного винила (ПВХ) толщиной 0,25 мм, гипоаллергенный материал, устойчивый к повреждениям и перепадам температуры.",
+      "Нарукавники состоят из двух независимых воздушных камер с надёжными клапанами, что обеспечивает дополнительную безопасность.",
+      "Поверхность приятна к коже, без царапающих и режущих швов, не натирают и не давят на руки.",
+      "Лёгко надуваются без использования насоса, удобно брать с собой на отдых или в поездку.",
+      "Обеспечивают крепкий, но мягкий захват руки, не соскальзывают и не мешают движениям ребёнка.",
+    ],
+  },
   {
     order: true,
     id: 1000141343,

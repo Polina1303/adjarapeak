@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { HomePage } from "./pages/home-page";
 import { SalePage } from "./pages/sale-page";
+import { DiscountPage } from "./pages/discount-page";
 import { SaleFoodPage } from "./pages/sale-food-page";
 import { SeaSalePage } from "./pages/sea-sale-page";
 import { RentPage } from "./pages/rent-page";
@@ -53,6 +54,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route exact path="/sale" element={<SalePage />} />
+          <Route exact path="/discount" element={<DiscountPage />} />
           <Route exact path="/sale_food" element={<SaleFoodPage />} />
           <Route exact path="/sale_sea" element={<SeaSalePage />} />
           <Route exact path="/sport_sale" element={<SportSalePage />} />
@@ -75,6 +77,7 @@ function App() {
           <Route exact path="/garden" element={<GardenRoutePage />} />
           <Route exact path="/kazbeg" element={<KazbegPage />} />
           <Route exact path="/hikhani" element={<HikhaniTripPage />} />
+          <Route exact path="/udziro" element={<UdziroPage />} />
           <Route exact path="/udziro" element={<UdziroPage />} />
           <Route
             exact
