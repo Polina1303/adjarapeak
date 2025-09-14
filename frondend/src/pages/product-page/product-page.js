@@ -11,6 +11,7 @@ import { RENT } from "../../components/product-range/rent";
 import { RENT_SKY } from "../../components/product-range/rent-sky";
 import { SEA_PRODUCT } from "../../components/product-range/sea-product";
 import { FOOD } from "../../components/product-range/food";
+import { CLOTHES } from "../../components/product-range/clothes";
 
 export const ProductPage = () => {
   const history = useNavigate();
@@ -33,6 +34,9 @@ export const ProductPage = () => {
       (item) => item.id === Number(params.id)
     );
     const parsedFood = FOOD.filter((item) => item.id === Number(params.id));
+    const parsedClothes = CLOTHES.filter(
+      (item) => item.id === Number(params.id)
+    );
 
     if (parsedProduct.length > 0) {
       dispatch(setCurrentProduct(parsedProduct[0]));
@@ -46,6 +50,8 @@ export const ProductPage = () => {
       dispatch(setCurrentProduct(parsedSea[0]));
     } else if (parsedFood.length > 0) {
       dispatch(setCurrentProduct(parsedFood[0]));
+    } else if (parsedClothes.length > 0) {
+      dispatch(setCurrentProduct(parsedClothes[0]));
     } else {
       history("/error");
     }

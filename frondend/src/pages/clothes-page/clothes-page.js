@@ -95,7 +95,7 @@ export const ClothesPage = () => {
       <div className="home-page__container-product">
         <div>
           <div className="title" id="home-page-buy">
-            ПРОДАЖА ТУРИСТИЧЕСКОГО, ГОРНОЛЫЖНОГО СНАРЯЖЕНИЯ
+            ПРОДАЖА ОБУВИ И ОДЕЖДЫ
           </div>
           <>
             <div className="home-page-product">
