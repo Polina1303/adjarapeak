@@ -9,6 +9,7 @@ export const PRODUCT = [
     desc: "2-х местная 205*100",
     category: "tent",
     price: 99,
+    newPrice: 59,
     shortlyEng: "",
     shortly: "",
     column: [
@@ -291,7 +292,7 @@ export const PRODUCT = [
     id: 12001,
     title: "ПАЛАТКА NATUREHIKE CLOUD UP 2 210T",
     titleEng: "TENT NATUREHIKE CLOUD UP 2 210T",
-    img: "cloudup2-green-210T.jpg",
+    img: "IMG_1703.JPG",
     desc: "2-х местная двухслойная 150*275*110",
     descEng: "2-person, double-layer 150*275*110",
     category: "tent",
@@ -7959,7 +7960,7 @@ export const PRODUCT = [
     order: true,
     id: 102340344109989,
     title: "Кресло-шезлонг складное ",
-    img: "203838802_w640_h640_203838802.webp",
+    img: "a849cccfe53a11eb817e902b3435f33d_f7b19641e54111eb817e902b3435f33d.jpg",
     desc: " до 150 кг",
     category: "chair",
     price: 210,
@@ -8300,7 +8301,7 @@ export const PRODUCT = [
   {
     order: true,
     id: 101001413343,
-    title: "Нарукавники INTEX 6-12 лет",
+    title: "Нарукавники INTEX",
     img: "6640411556.png",
     desc: "6-12 лет",
     category: "air",
@@ -8319,7 +8320,7 @@ export const PRODUCT = [
   {
     order: true,
     id: 103001413343,
-    title: "Нарукавники INTEX 6-12 лет",
+    title: "Нарукавники INTEX",
     img: "3313.jpg",
     desc: "3-6 лет",
     category: "air",
