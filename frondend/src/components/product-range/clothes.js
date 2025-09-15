@@ -454,7 +454,7 @@ export const CLOTHES = [
   },
   {
     order: true,
-    id: 10430014845,
+    id: 1043001484590,
     title: "Мужская футболка / рашгард",
     img: "erkek-slim-fit-uzun-kollu-uv-korumali-tisort-beyaz-100.png",
     desc: "защитой от ультрафиолета S-XL",
