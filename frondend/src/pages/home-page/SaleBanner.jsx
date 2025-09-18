@@ -11,7 +11,7 @@ export const SaleBanner = () => {
   return (
     <section onClick={handleClickSale} className="sale-hero" aria-label="Акция">
       <div className="sale-hero__content">
-        <span className="sale-hero__badge">Акция</span>
+        <span className="sale-hero__badge">Акция до 30.09</span>
 
         <h2 className="sale-hero__title">
           Осенняя распродажа — <span>до -50% на снаряжение</span>
