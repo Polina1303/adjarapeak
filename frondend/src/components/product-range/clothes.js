@@ -497,6 +497,7 @@ export const CLOTHES = [
     desc: "S, M, L, XL",
     category: "fleece",
     price: 78,
+    newPrice: 55,
     column: [],
   },
   {
@@ -769,6 +770,21 @@ export const CLOTHES = [
     category: "hat",
     price: 35,
     column: [],
+  },
+  {
+    order: true,
+    id: 1043424976450,
+    title: "Кепка",
+    img: "Trendova.jpg",
+    desc: "с защитой шеи и лица от ультрафиолета",
+    category: "hat",
+    price: 32,
+    newPrice: 20,
+    column: [
+      "Широкий козырек обеспечивает защиту от солнца.",
+      "Лёгкий и дышащий материал обеспечивает комфорт при носке.",
+      "Размер регулируемый – универсально подходит большинству.",
+    ],
   },
   {
     order: true,

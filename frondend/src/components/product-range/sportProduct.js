@@ -520,6 +520,7 @@ export const SPORT_PRODUCT = [
     desc: "для роликов и скейтборда",
     category: "helmet",
     price: 90,
+    newPrice: 70,
     column: [
       "Многофункциональный защитный шлем GUDOOK для взрослых и подростков.",
       "Подходит для езды на велосипеде, скейтборде, самокате и роликах.",
@@ -1003,6 +1004,7 @@ export const SPORT_PRODUCT = [
     desc: "из карбонового композита",
     category: "tennis",
     price: 170,
+    newPrice: 128,
     column: [
       "305 грамм",
       "Теннисная ракетка SALYWEE из углеродного композита — прочная и лёгкая.",
@@ -1339,6 +1341,7 @@ export const SPORT_PRODUCT = [
     desc: "в оранжевом и синем кейсе",
     category: "badminton",
     price: 50,
+    newPrice: 30,
     column: [],
   },
   {
@@ -1403,6 +1406,7 @@ export const SPORT_PRODUCT = [
     desc: "алюминий",
     category: "baseball",
     price: 55,
+    newPrice: 40,
     column: [],
   },
   {
@@ -1661,6 +1665,7 @@ export const SPORT_PRODUCT = [
     desc: "для тренировок и игр",
     category: "balls",
     price: 85,
+    newPrice: 60,
     column: [],
   },
   {
@@ -2178,6 +2183,7 @@ export const SPORT_PRODUCT = [
     desc: "лёгкая",
     category: "jumprope",
     price: 18,
+    newPrice: 12,
     column: [],
   },
   {
@@ -2550,6 +2556,7 @@ export const SPORT_PRODUCT = [
     desc: "мягкий",
     category: "hoop",
     price: 45,
+    newPrice: 35,
     column: ["Материал:вспененный полиэтилен", "Диаметр:15 см", "Длина:450 см"],
   },
   {
@@ -2643,6 +2650,7 @@ export const SPORT_PRODUCT = [
     desc: " 55 см, 800 гр ",
     category: "hoop",
     price: 36,
+    newPrice: 26,
     column: [],
   },
   {
@@ -2673,6 +2681,7 @@ export const SPORT_PRODUCT = [
     desc: "96 см",
     category: "hoop",
     price: 52,
+    newPrice: 35,
     column: [],
   },
   {
@@ -2699,6 +2708,7 @@ export const SPORT_PRODUCT = [
     desc: "оранжевый M,L,XL / черный М, L, Xl, XXL / зеленый М, L, XL",
     category: "kneePads",
     price: 30,
+    newPrice: 20,
     column: [
       "Спортивный наколенник с регулируемыми ремнями для надёжной поддержки колена.",
       "Компрессионная защита снижает нагрузку и предотвращает травмы.",

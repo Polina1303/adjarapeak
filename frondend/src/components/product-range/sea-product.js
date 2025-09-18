@@ -468,6 +468,7 @@ export const SEA_PRODUCT = [
     desc: "для снорклинга",
     category: "mask",
     price: 120,
+    newPrice: 80,
     column: [
       "Полнолицевая силиконовая маска для сноркелинга — водонепроницаемая маска с большой панорамной рамкой, защитой от запотевания и держателем для камеры. Обеспечивает широкий обзор и комфортное дыхание. Идеальна для взрослых.",
     ],
@@ -605,6 +606,7 @@ export const SEA_PRODUCT = [
     desc: "Hello Plus",
     category: "oar",
     price: 75,
+    newPrice: 60,
     shortly: "",
     column: [],
   },
@@ -646,6 +648,7 @@ export const SEA_PRODUCT = [
     desc: "170/220 см, 960 гр",
     category: "oar",
     price: 160,
+    newPrice: 130,
     shortly: "",
     column: [],
   },
@@ -733,6 +736,7 @@ export const SEA_PRODUCT = [
     desc: "Hello Plus взрослый ",
     category: "vest",
     price: 65,
+    newPrice: 55,
     column: [
       "Наполнитель жилета- пена",
       "Внешний материал жилета- оксфорд",
@@ -747,6 +751,7 @@ export const SEA_PRODUCT = [
     desc: "Hello Plus детский",
     category: "vest",
     price: 55,
+    newPrice: 45,
     column: [
       "Наполнитель жилета- пена",
       "Внешний материал жилета- оксфорд",
@@ -761,6 +766,7 @@ export const SEA_PRODUCT = [
     desc: "и сапа",
     category: "vest",
     price: 99,
+    newPrice: 75,
     column: [
       "Наполнитель жилета- пена",
       "Внешний материал жилета- оксфорд",
