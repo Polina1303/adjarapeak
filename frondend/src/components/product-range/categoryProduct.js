@@ -251,7 +251,7 @@ export const CATEGORY_PRODUCT = [
     type: "food",
   },
   {
-    title: "ИНОЕ",
+    title: "АКСЕССУАРЫ",
     type: "accessories",
   },
 ];
