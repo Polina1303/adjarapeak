@@ -5,9 +5,8 @@ import { RockClimbing } from "../../components/rock-сlimbing/rock-сlimbing";
 import { CertificatesSection } from "../../components/сertificates-section/сertificates-section";
 import { ChooseUs } from "../../components/chooseus";
 import { Routes } from "../../components/routes/routes";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
-import { MdOutlineArrowLeft, MdArrowRight } from "react-icons/md";
 import { RulesPage } from "../rules-page";
 import "./home-page.css";
 import { SaleBanner } from "./SaleBanner";
@@ -15,9 +14,7 @@ import { SaleBanner } from "./SaleBanner";
 import sport from "./sport.webp";
 import clothes from "./sea.webp";
 import sea from "./sea2.webp";
-// import sky from "./sele.webp";
 import sky from "./sertif.jpg";
-// import sky from "./snow.webp";
 import eq from "./sale.webp";
 import eq2 from "./rent.webp";
 import del from "./tour.webp";
@@ -27,10 +24,6 @@ import img2 from "./IMG_7671.JPG";
 
 import { useSelector } from "react-redux";
 
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
 export const HomePage = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 630);
   const languages = useSelector((state) => state.languages.currentLanguages);
@@ -39,17 +32,14 @@ export const HomePage = () => {
     localStorage.removeItem("activeType");
     localStorage.removeItem("activeTypeSale");
     localStorage.removeItem("searchQuery");
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 630);
-    };
+
+    const handleResize = () => setIsMobile(window.innerWidth <= 630);
     window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const navigate = useNavigate();
-  const { ref, inView } = useInView({ threshold: 0, triggerOnce: true });
+  const { ref } = useInView({ threshold: 0, triggerOnce: true });
 
   const handleClickSaleFood = () => navigate("/sale_food");
   const handleClickSale = () => navigate("/sale");
@@ -61,79 +51,281 @@ export const HomePage = () => {
   const handleClickСlothes = () => navigate("/clothes");
 
   const [isOpen, setIsOpen] = useState(false);
-  const toggleModal = () => setIsOpen(!isOpen);
+  const toggleModal = () => setIsOpen((v) => !v);
+
+  const isRU = languages === "RU";
 
   return (
     <div className="home-page__container">
-      <div className="header-section-alt">
-        <h2 className="rental-name">Adjara Peak</h2>
-        <p className="main-title-alt">
-          {languages === "RU" ? (
+      <header className="header-section-alt">
+        <h1 className="rental-name">Adjara Peak</h1>
+
+        <p
+          className="main-title-alt"
+          aria-label={
+            isRU
+              ? "Туристическое горнолыжное и спортивное снаряжение"
+              : "Tourist, ski and sports equipment"
+          }
+        >
+          {isRU ? (
             <>
               <span className="orange-line">Туристическое, </span>
               <span className="orange-line">горнолыжное </span>
-              <span className="orange-box"> и </span>
+              <span className="orange-box">и</span>
               <span className="orange-line"> спортивное</span>
-              <span className="orange-line">снаряжение</span>
+              <span className="orange-line"> снаряжение</span>
             </>
           ) : (
             <>
               <span className="orange-line">Tourist, </span>
-              <span className="orange-line">ski, </span>
+              <span className="orange-line">ski </span>
               <span className="orange-box">and</span>
               <span className="orange-line"> sports</span>
-              <span className="orange-line">equipment</span>
+              <span className="orange-line"> equipment</span>
             </>
           )}
         </p>
 
         <p className="sub-title-alt">
           <span className="highlight-alt">
-            {languages === "RU"
-              ? "Центр твоих приключений. "
-              : "The hiking season "}
+            {isRU ? "Центр твоих приключений. " : "The hiking season "}
           </span>
-          <span>
-            {languages === "RU" ? "Всё для спорта и туризма." : "is open!"}
-          </span>
+          <span>{isRU ? "Всё для спорта и туризма." : "is open!"}</span>
         </p>
-      </div>
-      <SaleBanner />
-      <div className="sale-container">
-        <div ref={ref} onClick={handleClickSale} className="sale-item">
-          <a href="/sale">
-            <img src={eq} alt="adjara peak" className="sale-img" />
-            <div className="sale-info">
-              <div className="sale-title">
-                <span className="highlight-rent">
-                  {languages === "RU" ? "Продажа" : "Sale"}
-                </span>
-                <br />
-                {languages === "RU"
-                  ? "туристического снаряжения"
-                  : "of tourist equipment"}
-              </div>
-            </div>
-          </a>
-        </div>
+      </header>
 
-        <div ref={ref} onClick={handleClickRent} className="sale-item">
-          <a href="/rent">
-            <img src={eq2} alt="adjara peak" className="sale-img" />
+      <SaleBanner />
+
+      <section
+        className="sale-container"
+        aria-label={isRU ? "Разделы магазина" : "Store sections"}
+      >
+        <article ref={ref} className="sale-item">
+          <Link to="/sale" className="sale-card">
+            <img
+              loading="lazy"
+              src={eq}
+              alt="Tourist equipment sale"
+              className="sale-img"
+            />
             <div className="sale-info">
-              <div className="sale-title">
+              <h3 className="sale-title">
                 <span className="highlight-rent">
-                  {languages === "RU" ? "Прокат" : "Rental"}
+                  {isRU ? "Купить" : "Sale"}
                 </span>
                 <br />
-                {languages === "RU"
-                  ? "туристического снаряжения"
-                  : "of tourist equipment"}
-              </div>
+                {isRU ? "снаряжения" : "of tourist equipment"}
+              </h3>
             </div>
-          </a>
-        </div>
-        <div ref={ref} onClick={handleClickSaleSea} className="sale-item">
+          </Link>
+        </article>
+
+        <article className="sale-item">
+          <Link to="/rent" className="sale-card">
+            <img
+              loading="lazy"
+              src={eq2}
+              alt="Tourist equipment rental"
+              className="sale-img"
+            />
+            <div className="sale-info">
+              <h3 className="sale-title">
+                <span className="highlight-rent">
+                  {isRU ? "Арендовать" : "Rental"}
+                </span>
+                <br />
+                {isRU ? "снаряжения" : "of tourist equipment"}
+              </h3>
+            </div>
+          </Link>
+        </article>
+
+        <article className="sale-item">
+          <Link to="/trip" className="sale-card">
+            <img
+              loading="lazy"
+              src={del}
+              alt="Travel booking"
+              className="sale-img"
+            />
+            <div className="sale-info">
+              <h3 className="sale-title">
+                <span className="highlight-sale">
+                  {isRU ? "Забронировать" : "Schedule"}
+                </span>
+                <br />
+                {isRU ? "путешествие" : "of events"}
+              </h3>
+            </div>
+          </Link>
+        </article>
+      </section>
+
+      <RockClimbing />
+      <Routes />
+      <RulesPage />
+      <ChooseUs />
+    </div>
+  );
+};
+
+// import { useState, useEffect } from "react";
+// import { HitSales } from "../../components/hit-sales";
+// import { LycianWay } from "../../components/lycian-way";
+// import { RockClimbing } from "../../components/rock-сlimbing/rock-сlimbing";
+// import { CertificatesSection } from "../../components/сertificates-section/сertificates-section";
+// import { ChooseUs } from "../../components/chooseus";
+// import { Routes } from "../../components/routes/routes";
+// import { useNavigate } from "react-router-dom";
+// import { useInView } from "react-intersection-observer";
+// import { MdOutlineArrowLeft, MdArrowRight } from "react-icons/md";
+// import { RulesPage } from "../rules-page";
+// import "./home-page.css";
+// import { SaleBanner } from "./SaleBanner";
+
+// import sport from "./sport.webp";
+// import clothes from "./sea.webp";
+// import sea from "./sea2.webp";
+// // import sky from "./sele.webp";
+// import sky from "./sertif.jpg";
+// // import sky from "./snow.webp";
+// import eq from "./sale.webp";
+// import eq2 from "./rent.webp";
+// import del from "./tour.webp";
+// import food from "./food2.webp";
+// import img1 from "./IMG_7669.JPG";
+// import img2 from "./IMG_7671.JPG";
+
+// import { useSelector } from "react-redux";
+
+// import Slider from "react-slick";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
+
+// export const HomePage = () => {
+//   const [isMobile, setIsMobile] = useState(window.innerWidth <= 630);
+//   const languages = useSelector((state) => state.languages.currentLanguages);
+
+//   useEffect(() => {
+//     localStorage.removeItem("activeType");
+//     localStorage.removeItem("activeTypeSale");
+//     localStorage.removeItem("searchQuery");
+//     const handleResize = () => {
+//       setIsMobile(window.innerWidth <= 630);
+//     };
+//     window.addEventListener("resize", handleResize);
+//     return () => {
+//       window.removeEventListener("resize", handleResize);
+//     };
+//   }, []);
+
+//   const navigate = useNavigate();
+//   const { ref, inView } = useInView({ threshold: 0, triggerOnce: true });
+
+//   const handleClickSaleFood = () => navigate("/sale_food");
+//   const handleClickSale = () => navigate("/sale");
+//   const handleClickSaleSea = () => navigate("/sale_sea");
+//   const handleClickSportSale = () => navigate("/sport_sale");
+//   const handleClickRent = () => navigate("/rent");
+//   const handleClickRentSky = () => navigate("/certificate");
+//   const handleClickTrip = () => navigate("/");
+//   const handleClickСlothes = () => navigate("/clothes");
+
+//   const [isOpen, setIsOpen] = useState(false);
+//   const toggleModal = () => setIsOpen(!isOpen);
+
+//   return (
+//     <div className="home-page__container">
+//       <div className="header-section-alt">
+//         <h2 className="rental-name">Adjara Peak</h2>
+//         <p className="main-title-alt">
+//           {languages === "RU" ? (
+//             <>
+//               <span className="orange-line">Туристическое, </span>
+//               <span className="orange-line">горнолыжное </span>
+//               <span className="orange-box"> и </span>
+//               <span className="orange-line"> спортивное</span>
+//               <span className="orange-line">снаряжение</span>
+//             </>
+//           ) : (
+//             <>
+//               <span className="orange-line">Tourist, </span>
+//               <span className="orange-line">ski, </span>
+//               <span className="orange-box">and</span>
+//               <span className="orange-line"> sports</span>
+//               <span className="orange-line">equipment</span>
+//             </>
+//           )}
+//         </p>
+
+//         <p className="sub-title-alt">
+//           <span className="highlight-alt">
+//             {languages === "RU"
+//               ? "Центр твоих приключений. "
+//               : "The hiking season "}
+//           </span>
+//           <span>
+//             {languages === "RU" ? "Всё для спорта и туризма." : "is open!"}
+//           </span>
+//         </p>
+//       </div>
+//       <SaleBanner />
+//       <div className="sale-container">
+//         <div ref={ref} onClick={handleClickSale} className="sale-item">
+//           <a href="/sale">
+//             <img src={eq} alt="adjara peak" className="sale-img" />
+//             <div className="sale-info">
+//               <div className="sale-title">
+//                 <span className="highlight-rent">
+//                   {languages === "RU" ? "Купить" : "Sale"}
+//                 </span>
+//                 <br />
+//                 {languages === "RU" ? "снаряжения" : "of tourist equipment"}
+//               </div>
+//             </div>
+//           </a>
+//         </div>
+
+//         <div ref={ref} onClick={handleClickRent} className="sale-item">
+//           <a href="/rent">
+//             <img src={eq2} alt="adjara peak" className="sale-img" />
+//             <div className="sale-info">
+//               <div className="sale-title">
+//                 <span className="highlight-rent">
+//                   {languages === "RU" ? "Арендовать" : "Rental"}
+//                 </span>
+//                 <br />
+//                 {languages === "RU" ? "снаряжения" : "of tourist equipment"}
+//               </div>
+//             </div>
+//           </a>
+//         </div>
+
+//         <div ref={ref} onClick={handleClickTrip} className="sale-item">
+//           <a href="/trip">
+//             <img src={del} alt="adjara peak" className="sale-img" />
+//             <div className="sale-info">
+//               <div className="sale-title">
+//                 <span className="highlight-sale">
+//                   {languages === "RU" ? "Забронировать" : "Schedule"}
+//                 </span>
+//                 <br />
+//                 {languages === "RU" ? "путешествие" : "of events"}
+//               </div>
+//             </div>
+//           </a>
+//         </div>
+//       </div>
+//       <RockClimbing />
+//       <Routes />
+//       <RulesPage />
+//       <ChooseUs />
+//     </div>
+//   );
+// };
+{
+  /* <div ref={ref} onClick={handleClickSaleSea} className="sale-item">
           <a href="/sale_sea">
             <img src={sea} alt="adjara peak" className="sale-img" />
             <div className="sale-info">
@@ -146,8 +338,10 @@ export const HomePage = () => {
               </div>
             </div>
           </a>
-        </div>
-        <div ref={ref} onClick={handleClickSportSale} className="sale-item">
+        </div> */
+}
+{
+  /* <div ref={ref} onClick={handleClickSportSale} className="sale-item">
           <a href="/sport_sale">
             <img src={sport} alt="adjara peak" className="sale-img" />
             <div className="sale-info">
@@ -160,8 +354,10 @@ export const HomePage = () => {
               </div>
             </div>
           </a>
-        </div>
-        <div ref={ref} onClick={handleClickСlothes} className="sale-item">
+        </div> */
+}
+{
+  /* <div ref={ref} onClick={handleClickСlothes} className="sale-item">
           <a href="/clothes">
             <img src={clothes} alt="adjara peak" className="sale-img" />
             <div className="sale-info">
@@ -174,8 +370,10 @@ export const HomePage = () => {
               </div>
             </div>
           </a>
-        </div>
-        <div ref={ref} onClick={handleClickSaleFood} className="sale-item">
+        </div> */
+}
+{
+  /* <div ref={ref} onClick={handleClickSaleFood} className="sale-item">
           <a href="/sale_food">
             <img src={food} alt="adjara peak" className="sale-img" />
             <div className="sale-info">
@@ -188,49 +386,8 @@ export const HomePage = () => {
               </div>
             </div>
           </a>
-        </div>
-        <div ref={ref} onClick={handleClickTrip} className="sale-item">
-          <a href="/trip">
-            <img src={del} alt="adjara peak" className="sale-img" />
-            <div className="sale-info">
-              <div className="sale-title">
-                <span className="highlight-sale">
-                  {languages === "RU" ? "Расписание" : "Schedule"}
-                </span>
-                <br />
-                {languages === "RU" ? "мероприятий" : "of events"}
-                <br />
-                {languages === "RU" ? "с Adjara Peak" : "with Adjara Peak"}
-              </div>
-            </div>
-          </a>
-        </div>
-        {
-          <div ref={ref} onClick={handleClickRentSky} className="sale-item">
-            <a href="/certificate">
-              <img src={sky} alt="adjara peak" className="sale-img" />
-              <div className="sale-info">
-                <div className="sale-title">
-                  <span className="highlight-sale">
-                    {languages === "RU" ? "Подарочные" : "Rental"}
-                  </span>
-                  <br />
-                  {languages === "RU" ? "сертификаты " : "of ski equipment"}
-                </div>
-              </div>
-            </a>
-          </div>
-        }
-      </div>
-      {/* <CertificatesSection /> */}
-      <RockClimbing />
-      <Routes />
-      <RulesPage />
-      <ChooseUs />
-    </div>
-  );
-};
-
+        </div> */
+}
 {
   /* <div ref={ref} onClick={handleClickRentSky} className="sale-item">
           <a href="/certificate">
@@ -249,7 +406,20 @@ export const HomePage = () => {
           </a>
         </div> */
 }
-
+// <div ref={ref} onClick={handleClickRentSky} className="sale-item">
+//   <a href="/certificate">
+//     <img src={sky} alt="adjara peak" className="sale-img" />
+//     <div className="sale-info">
+//       <div className="sale-title">
+//         <span className="highlight-sale">
+//           {languages === "RU" ? "Подарочные" : "Rental"}
+//         </span>
+//         <br />
+//         {languages === "RU" ? "сертификаты " : "of ski equipment"}
+//       </div>
+//     </div>
+//   </a>
+// </div>
 {
   /* <section className="service-section">
         <h2 className="routes-title">

@@ -97,7 +97,6 @@
 
   .sub-title-alt {
     font-size: 14px;
-    /* display: flex; */
   }
 
   .orange-line {
@@ -138,7 +137,6 @@
 }
 
 .title {
-  /* padding-top: 15px; */
   padding-bottom: 10px;
   font-size: 20px;
   text-align: center;
@@ -191,8 +189,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* margin-top: 15px;
-  margin-bottom: -15px; */
 }
 @media only screen and (max-width: 1104px) {
   .categories {
@@ -233,7 +229,6 @@
   top: -30px;
   bottom: 20px;
   right: 50px;
-  /* margin: auto; */
   cursor: pointer;
   transition: all 500ms ease;
   opacity: 0.8;
@@ -253,7 +248,6 @@
   top: -30px;
   bottom: 0;
   right: 0px;
-  /* margin: auto; */
   cursor: pointer;
   transition: all 500ms ease;
   opacity: 0.8;
@@ -273,19 +267,6 @@
 @media only screen and (max-width: 853px) {
   .categories {
     margin-top: -10px;
-  }
-  /* .home-page__container-title {
-    margin-top: 50px;
-  } */
-}
-@media only screen and (max-width: 614px) {
-  .home-page__container-title {
-    /* margin-top: 70px; */
-  }
-}
-@media only screen and (max-width: 469px) {
-  .home-page__container-title {
-    /* margin-top: 80px; */
   }
 }
 
@@ -317,7 +298,6 @@
 }
 @media only screen and (max-width: 468px) {
   .back-button-cover {
-    /* margin-top: 90px; */
     margin-bottom: 10px;
   }
 }
@@ -329,23 +309,12 @@
   z-index: 2000;
 }
 
-/* .slick-prev {
-
-  left: -100px;
-}
-
-.slick-next {
-  right: 50px;
-} */
-
-/* Общий стиль для секции */
 .header-section {
   text-align: center;
   margin-top: 50px;
   font-family: "Arial", sans-serif;
 }
 
-/* Основной заголовок */
 .main-title {
   font-size: 48px;
   font-weight: bold;
@@ -356,7 +325,6 @@
   margin: 0;
 }
 
-/* Общий фон для модального окна */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -370,9 +338,8 @@
   z-index: 1000;
 }
 
-/* Контейнер модального окна */
 .modal-content {
-  width: 50%; /* Половина экрана */
+  width: 50%;
   background-color: #fff;
   border-radius: 10px;
   padding: 20px;
@@ -383,7 +350,6 @@
   align-items: center;
 }
 
-/* Кнопка закрытия */
 .close-button {
   position: absolute;
   top: 10px;
@@ -394,7 +360,6 @@
   cursor: pointer;
 }
 
-/* Контейнер для изображений */
 .images-container {
   display: flex;
   justify-content: space-between;
@@ -403,15 +368,13 @@
   width: 100%;
 }
 
-/* Изображения */
 .modal-image {
-  width: 48%; /* Два изображения, по половине ширины контейнера */
+  width: 48%;
   height: auto;
   border-radius: 5px;
   object-fit: cover;
 }
 
-/* Кнопка открытия модального окна */
 .open-modal-button {
   padding: 10px 20px;
   font-size: 16px;
@@ -426,11 +389,9 @@
   background-color: #0056b3;
 }
 
-/* App.css */
 .service-table {
   width: 100%;
   border-collapse: collapse;
-  /* margin: 20px 0; */
   font-size: 16px;
   text-align: left;
 }
@@ -462,9 +423,8 @@
   width: 100%;
 }
 
-/* Изображения */
 .modal-image {
-  width: 48%; /* Два изображения, по половине ширины контейнера */
+  width: 48%;
   height: auto;
   border-radius: 5px;
   object-fit: cover;
@@ -473,15 +433,15 @@
 @media (max-width: 775px) {
   .images-container {
     flex-direction: column;
-    align-items: center; /* Optional: To center the images vertically */
-    width: 90%; /* You can adjust this to control the container width */
-    margin-top: 10px; /* Adjust the top margin for mobile */
+    align-items: center;
+    width: 90%;
+    margin-top: 10px;
   }
 
   .modal-image {
-    width: 80%; /* Adjust image width on mobile */
-    height: auto; /* Ensure the height adjusts proportionally */
-    margin-bottom: 10px; /* Add margin between images */
+    width: 80%;
+    height: auto;
+    margin-bottom: 10px;
   }
 }
 
@@ -519,7 +479,7 @@
 }
 
 .sale-title {
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.4;
 }
 
@@ -530,28 +490,68 @@
 }
 @media (min-width: 768px) {
   .sale-item {
-    flex: 1 1 calc(100% / 3 - 20px); /* по 3 на ряд на планшетах */
+    flex: 1 1 calc(100% / 3 - 20px);
   }
 }
 
 @media (min-width: 1024px) {
   .sale-item {
-    flex: 1 1 calc(100% / 6 - 20px); /* по 6 на десктопах */
+    flex: 1 1 calc(100% / 6 - 20px);
   }
 }
 .sale-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* по центру */
-  gap: 16px; /* отступы между карточками */
-  max-width: calc(4 * 180px + 3 * 16px); /* ширина для 4 карточек в ряд */
-  margin: 0 auto; /* центрируем */
+  justify-content: center;
+  gap: 24px;
+  max-width: 1200px; /* три больших карточки помещаются */
+  margin: 0 auto;
 }
 
-/* Каждая карточка фиксированной ширины */
 .sale-item {
-  flex: 0 0 200px; /* фиксированная ширина */
-  max-width: 180px;
+  flex: 1 1 calc(100% / 2 - 20px);
+  max-width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  background: #fff;
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+.sale-item:hover {
+  transform: translateY(-5px);
+}
+
+.sale-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .sale-item {
+    flex: 1 1 calc(33.333% - 16px);
+  }
+}
+
+@media (max-width: 768px) {
+  .sale-item {
+    flex: 1 1 calc(50% - 16px);
+  }
+}
+
+.sale-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1000px; /* контейнер не разъезжается */
+  margin: 0 auto;
+}
+
+.sale-item {
+  flex: 1 1 calc(100% / 2 - 20px);
+  max-width: 260px; /* ограничение, чтобы не становились огромными */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   background: #fff;
@@ -570,21 +570,29 @@
   display: block;
 }
 
-/* 📱 Мобильная адаптация */
-@media (max-width: 1024px) {
+.sale-info {
+  padding: 14px;
+}
+
+.highlight-sale,
+.highlight-rent {
+  font-weight: bold;
+  color: #f68632;
+}
+
+/* планшет — 3 карточки */
+@media (min-width: 768px) {
   .sale-item {
-    flex: 1 1 calc(33.333% - 16px);
+    flex: 1 1 calc(100% / 3 - 20px);
+  }
+  .sale-title {
+    font-size: 18px;
   }
 }
 
-@media (max-width: 768px) {
+/* десктоп — тоже 3 карточки */
+@media (min-width: 1024px) {
   .sale-item {
-    flex: 1 1 calc(50% - 16px);
+    flex: 1 1 calc(100% / 3 - 20px);
   }
 }
-/*
-@media (max-width: 480px) {
-  .sale-item {
-    flex: 1 1 100%;
-  }
-} */
