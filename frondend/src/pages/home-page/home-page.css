@@ -586,7 +586,7 @@
     flex: 1 1 calc(100% / 3 - 20px);
   }
   .sale-title {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 
