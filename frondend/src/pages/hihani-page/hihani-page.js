@@ -129,7 +129,7 @@ export const HikhaniTripPage = () => {
           <strong>Место сбора:</strong> магазин AdjaraPeak
         </p>
         <p>
-          <strong>Стоимость:</strong> 100₾ (бронь 50% предоплата, не
+          <strong>Стоимость:</strong> 130₾ (бронь 50% предоплата, не
           возвращается при отмене)
         </p>
       </section>
