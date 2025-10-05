@@ -7,7 +7,7 @@ export const SALE = [
     desc: " до 150 кг",
     category: "chair",
     price: 210,
-    newPrice: 160,
+
     column: [
       "Максимальная нагрузка: 200 кг",
       "Материал каркаса: усиленный алюминий",
@@ -26,7 +26,7 @@ export const SALE = [
     desc: " до 150 кг",
     category: "chair",
     price: 199,
-    newPrice: 140,
+
     column: [
       "Регулировка наклона: есть",
       "Материал ткани: 600D Оксфорд",
@@ -44,7 +44,7 @@ export const SALE = [
     desc: "KOETSU Полный комплект",
     category: "supboard",
     price: 719,
-    newPrice: 570,
+
     column: [
       "Надувная SUP-доска KOETSU длиной 3,2 м — универсальная модель для серфинга, гребли и отдыха.",
       "Изготовлена из прочного двухслойного ПВХ-сетчатого материала, устойчивого к износу и повреждениям.",
@@ -64,7 +64,7 @@ export const SALE = [
     desc: "KOETSU Полный комплект",
     category: "supboard",
     price: 719,
-    newPrice: 570,
+
     column: [
       "Надувная SUP-доска KOETSU длиной 3,2 м — универсальная модель для серфинга, гребли и отдыха.",
       "Изготовлена из прочного двухслойного ПВХ-сетчатого материала, устойчивого к износу и повреждениям.",
@@ -84,7 +84,7 @@ export const SALE = [
     desc: "39,41,44,46",
     category: "shoesSea",
     price: 74,
-    newPrice: 55,
+
     column: [
       "Легкие дышащие быстросохнущие водные ботинки унисекс для пляжа, бассейна и прогулок летом.",
       "Нескользящая резиновая подошва обеспечивает надежное сцепление на мокрых поверхностях.",
@@ -102,7 +102,7 @@ export const SALE = [
     desc: "защитой от ультрафиолета S-XL",
     category: "shoesSea",
     price: 99,
-    newPrice: 70,
+
     column: [
       "Футболка с длинным рукавом и защитой от ультрафиолета разработана для серфинг-тренировок продолжительностью менее 1 часа в тёплой воде.",
       "Ткань с защитой UPF50+ обеспечивает минимум 95% защиты от ультрафиолета даже во влажном состоянии.",
@@ -119,7 +119,7 @@ export const SALE = [
     desc: "6-12 лет",
     category: "air",
     price: 15,
-    newPrice: 7,
+
     column: [
       "Яркие детские нарукавники для плавания – помогают ребёнку быстро и безопасно освоить навыки плавания без стресса.",
       "Подходят для детей 6–12 лет (вес 15–60 кг), можно использовать как в бассейне, так и в открытой воде – море, река, озеро, аквапарк.",
@@ -138,7 +138,7 @@ export const SALE = [
     desc: "3-6 лет",
     category: "air",
     price: 12,
-    newPrice: 6,
+
     column: [
       "Яркие детские нарукавники для плавания – помогают ребёнку быстро и безопасно освоить навыки плавания без стресса.",
       "Подходят для детей 3–6 лет (вес до 30 кг), можно использовать как в бассейне, так и в открытой воде – море, река, озеро, аквапарк.",
@@ -157,7 +157,7 @@ export const SALE = [
     desc: "97 см ",
     category: "air",
     price: 25,
-    newPrice: 18,
+
     column: [],
   },
   {
@@ -168,7 +168,7 @@ export const SALE = [
     desc: "80 см",
     category: "air",
     price: 15,
-    newPrice: 9,
+
     column: [],
   },
   {
@@ -179,7 +179,7 @@ export const SALE = [
     desc: "70 см",
     category: "air",
     price: 15,
-    newPrice: 9,
+
     column: [],
   },
   {
@@ -190,7 +190,7 @@ export const SALE = [
     desc: "Hello Plus взрослый ",
     category: "vest",
     price: 65,
-    newPrice: 55,
+
     column: [
       "Наполнитель жилета- пена",
       "Внешний материал жилета- оксфорд",
@@ -205,7 +205,7 @@ export const SALE = [
     desc: "Hello Plus детский",
     category: "vest",
     price: 55,
-    newPrice: 45,
+
     column: [
       "Наполнитель жилета- пена",
       "Внешний материал жилета- оксфорд",
@@ -220,7 +220,7 @@ export const SALE = [
     desc: "и сапа",
     category: "vest",
     price: 99,
-    newPrice: 75,
+
     column: [
       "Наполнитель жилета- пена",
       "Внешний материал жилета- оксфорд",
@@ -235,7 +235,7 @@ export const SALE = [
     desc: "Hello Plus",
     category: "oar",
     price: 75,
-    newPrice: 60,
+
     shortly: "",
     column: [],
   },
@@ -247,7 +247,7 @@ export const SALE = [
     desc: "170/220 см, 960 гр",
     category: "oar",
     price: 160,
-    newPrice: 130,
+
     shortly: "",
     column: [],
   },
@@ -259,7 +259,7 @@ export const SALE = [
     desc: "для снорклинга",
     category: "mask",
     price: 120,
-    newPrice: 80,
+
     column: [
       "Полнолицевая силиконовая маска для сноркелинга — водонепроницаемая маска с большой панорамной рамкой, защитой от запотевания и держателем для камеры. Обеспечивает широкий обзор и комфортное дыхание. Идеальна для взрослых.",
     ],
@@ -272,7 +272,7 @@ export const SALE = [
     desc: "плавающий",
     category: "hermo",
     price: 15,
-    newPrice: 7,
+
     column: [
       "Высота: 170 мм",
       "Ширина: 100 мм",
@@ -288,7 +288,7 @@ export const SALE = [
     desc: "плавающий",
     category: "hermo",
     price: 12,
-    newPrice: 6,
+
     column: [
       "Изделие подходит для абсолютного большинства моделей смартфонов",
       "Кроме телефона, в него можно вложить деньги, украшения и прочие ценные вещи небольшого размера",
@@ -302,7 +302,7 @@ export const SALE = [
     desc: "фотохромные",
     category: "sunglasses",
     price: 35,
-    newPrice: 20,
+
     column: [],
   },
   {
@@ -313,7 +313,7 @@ export const SALE = [
     desc: "для активностей и вождения за рулем",
     category: "sunglasses",
     price: 40,
-    newPrice: 20,
+
     column: [
       "Поляризованные линзы — защита от бликов",
       "Неразбиваемая оправа — прочность и надёжность",
@@ -330,7 +330,7 @@ export const SALE = [
     desc: "для активностей и вождения за рулем",
     category: "sunglasses",
     price: 126,
-    newPrice: 90,
+
     column: [
       "Поляризованные спортивные очки ROCKBROS с ударопрочными и ветрозащитными линзами.",
       "В комплект входят сменные линзы для разных условий освещения.",
@@ -348,7 +348,7 @@ export const SALE = [
     desc: "жёсткий",
     category: "sunglasses",
     price: 20,
-    newPrice: 10,
+
     column: [
       "Жёсткий чехол с текстильным термически формованным корпусом для защиты очков от царапин, давления и ударов.",
       "Застежка-молния.",
@@ -365,7 +365,7 @@ export const SALE = [
     desc: "с защитой шеи и лица от ультрафиолета",
     category: "hat",
     price: 32,
-    newPrice: 20,
+
     column: [
       "Широкий козырек обеспечивает защиту от солнца.",
       "Лёгкий и дышащий материал обеспечивает комфорт при носке.",
@@ -382,7 +382,7 @@ export const SALE = [
     desc: "55L",
     category: "backpack",
     price: 340,
-    newPrice: 299,
+
     order: true,
 
     column: [
@@ -406,7 +406,7 @@ export const SALE = [
     desc: "55L",
     category: "backpack",
     price: 340,
-    newPrice: 299,
+
     order: true,
 
     column: [
@@ -431,7 +431,7 @@ export const SALE = [
     descEng: "55L",
     category: "backpack",
     price: 340,
-    newPrice: 299,
+
     shortlyEng:
       "Designed for medium-length hikes and made from durable and abrasion-resistant material.",
     shortly:
@@ -456,7 +456,7 @@ export const SALE = [
     desc: " в чехле (черный/серый)",
     category: "chair",
     price: 99,
-    newPrice: 69,
+
     column: [
       "Складной стул Naturehike",
       "Цвет: черный",
@@ -475,7 +475,7 @@ export const SALE = [
     desc: "С ПОДСТАКАННИКОМ  до 120 кг",
     category: "chair",
     price: 45,
-    newPrice: 35,
+
     column: [
       "Вес: 1кг",
       "2 подлокотника | 1 подстаканник | Высота сиденья: 40 см",
@@ -496,7 +496,7 @@ export const SALE = [
     descEng: "",
     category: "mat",
     price: 99,
-    newPrice: 49,
+
     column: [
       "Походный надувной коврик HI KING 119×53×2.5 см",
       "Идеален для кемпинга, туризма и пикников",
@@ -517,7 +517,7 @@ export const SALE = [
     desc: "(зеленый, желтый) ",
     category: "helmet",
     price: 110,
-    newPrice: 79,
+
     column: [
       "Прочный и универсальный шлем, разработанный для максимальной безопасности при занятиях каякингом, рафтингом, скейтбордингом, водным парусным спортом, серфингом, дрифтом и прогулках по воде.",
       "Ударопрочная конструкция обеспечивает защиту даже в экстремальных условиях.",
@@ -536,7 +536,7 @@ export const SALE = [
     desc: "колени, локти, запястье S, M, L",
     category: "protection",
     price: 35,
-    newPrice: 15,
+
     column: [],
   },
   {
@@ -547,7 +547,7 @@ export const SALE = [
     desc: "в оранжевом и синем кейсе",
     category: "badminton",
     price: 50,
-    newPrice: 30,
+
     column: [],
   },
   {
@@ -558,7 +558,7 @@ export const SALE = [
     desc: "для тренировок и игр",
     category: "balls",
     price: 85,
-    newPrice: 60,
+
     column: [],
   },
   {
@@ -569,7 +569,7 @@ export const SALE = [
     desc: "96 см",
     category: "hoop",
     price: 52,
-    newPrice: 35,
+
     column: [],
   },
   {
@@ -580,7 +580,7 @@ export const SALE = [
     desc: "мягкий",
     category: "hoop",
     price: 45,
-    newPrice: 35,
+
     column: ["Материал:вспененный полиэтилен", "Диаметр:15 см", "Длина:450 см"],
   },
   {
@@ -591,7 +591,7 @@ export const SALE = [
     desc: "для роликов и скейтборда",
     category: "helmet",
     price: 90,
-    newPrice: 70,
+
     column: [
       "Многофункциональный защитный шлем GUDOOK для взрослых и подростков.",
       "Подходит для езды на велосипеде, скейтборде, самокате и роликах.",
@@ -611,7 +611,7 @@ export const SALE = [
     desc: "LED 3ААА",
     category: "lantern",
     price: 40,
-    newPrice: 25,
+
     column: [
       "Мощность: 3W LED, яркость до 300 люмен",
       "Дальность света: до 50 метров",
@@ -628,7 +628,7 @@ export const SALE = [
     desc: "TD-02 white&red",
     category: "lantern",
     price: 109,
-    newPrice: 89,
+
     column: [
       "Налобный фонарь Naturehike TD-02",
       "Материал корпуса: прочный ABS пластик",
@@ -654,7 +654,7 @@ export const SALE = [
     desc: "TD-02 orange&gray",
     category: "lantern",
     price: 109,
-    newPrice: 89,
+
     column: [
       "Налобный фонарь Naturehike TD-02",
       "Материал корпуса: прочный ABS пластик",
@@ -680,7 +680,7 @@ export const SALE = [
     desc: "TD-02  tropical blue",
     category: "lantern",
     price: 109,
-    newPrice: 89,
+
     column: [
       "Налобный фонарь Naturehike TD-02",
       "Материал корпуса: прочный ABS пластик",
@@ -706,7 +706,7 @@ export const SALE = [
     desc: " 55 см, 800 гр ",
     category: "hoop",
     price: 36,
-    newPrice: 26,
+
     column: [],
   },
   {
@@ -717,7 +717,7 @@ export const SALE = [
     desc: "лёгкая",
     category: "jumprope",
     price: 18,
-    newPrice: 12,
+
     column: [],
   },
   {
@@ -728,7 +728,7 @@ export const SALE = [
     desc: "оранжевый M,L,XL / черный М, L, Xl, XXL / зеленый М, L, XL",
     category: "kneePads",
     price: 30,
-    newPrice: 20,
+
     column: [
       "Спортивный наколенник с регулируемыми ремнями для надёжной поддержки колена.",
       "Компрессионная защита снижает нагрузку и предотвращает травмы.",
@@ -744,7 +744,7 @@ export const SALE = [
     desc: "стол 120х60 и 4 табуретак",
     category: "chair",
     price: 230,
-    newPrice: 189,
+
     column: [
       "Высота предмета: 70 см",
       "Ширина предмета: 60 см",
@@ -763,7 +763,7 @@ export const SALE = [
     desc: " 27,5 Х 39",
     category: "mat",
     price: 12,
-    newPrice: 6,
+
     column: ["складывается в 4 раза"],
     columnEng: [],
   },
@@ -777,7 +777,7 @@ export const SALE = [
     descEng: "FOR COLLET CYLINDERS",
     category: "gas/burner",
     price: 37,
-    newPrice: 27,
+
     column: ["Материал: Алюминий", "Вес: 150 гр", "Пьезоподжиг"],
     columnEng: ["Material: Aluminum", "Weight: 150 g", "Piezo ignition"],
   },
@@ -789,7 +789,7 @@ export const SALE = [
     desc: "алюминий",
     category: "baseball",
     price: 55,
-    newPrice: 40,
+
     column: [],
   },
   {
@@ -800,7 +800,7 @@ export const SALE = [
     desc: "из карбонового композита",
     category: "tennis",
     price: 170,
-    newPrice: 128,
+
     column: [
       "305 грамм",
       "Теннисная ракетка SALYWEE из углеродного композита — прочная и лёгкая.",
@@ -818,7 +818,7 @@ export const SALE = [
     desc: "черный/серый",
     category: "chair",
     price: 130,
-    newPrice: 89,
+
     column: [],
   },
   {
@@ -831,7 +831,7 @@ export const SALE = [
     descEng: "Pot holde",
     category: "dishes",
     price: 85,
-    newPrice: 65,
+
     column: [],
     columnEng: [],
   },
@@ -845,7 +845,7 @@ export const SALE = [
     desc: "с антипригарным керамическим покрытием ",
     category: "dishes",
     price: 86,
-    newPrice: 60,
+
     column: [],
     columnEng: [],
   },
@@ -859,7 +859,7 @@ export const SALE = [
     desc: "",
     category: "dishes",
     price: 68,
-    newPrice: 49,
+
     column: [
       "Легкий походный чайник Naturehike CNK2450CF010 объемом 0,8 л и весом всего 191 г — идеален для походов, пикников и отдыха на природе",
       "Корпус из алюминиевого сплава 3003 с защитным оксидным слоем толщиной около 30 мкм, устойчив к коррозии и безопасен для продуктов",
@@ -883,7 +883,7 @@ export const SALE = [
     descEng: "",
     category: "dishes",
     price: 64,
-    newPrice: 47,
+
     column: [
       "Сковорода туристическая из алюминия",
       "Диаметр 17,5 см",
@@ -902,7 +902,7 @@ export const SALE = [
     desc: "S, M, L, XL",
     category: "fleece",
     price: 78,
-    newPrice: 55,
+
     column: [],
   },
   {
@@ -913,7 +913,7 @@ export const SALE = [
     desc: "ламзак",
     category: "air",
     price: 49,
-    newPrice: 37,
+
     column: [
       "Универсальный надувной диван для кемпинга и отдыха.",
       "Складной, мягкий и быстро надуваемый — удобно брать с собой.",
@@ -933,7 +933,7 @@ export const SALE = [
     descEng: "",
     category: "dishes",
     price: 40,
-    newPrice: 29,
+
     column: ["22 х 40 х 24,5 см"],
     columnEng: [],
   },
@@ -947,7 +947,7 @@ export const SALE = [
     descEng: "",
     category: "dishes",
     price: 65,
-    newPrice: 35,
+
     column: [" 41 х 45 х 30 см"],
     columnEng: [],
   },
@@ -961,7 +961,7 @@ export const SALE = [
     descEng: "",
     category: "dishes",
     price: 15,
-    newPrice: 10,
+
     column: [],
     columnEng: [],
   },
@@ -975,7 +975,6 @@ export const SALE = [
     descEng: "",
     category: "dishes",
     price: 20,
-    newPrice: 10,
 
     column: [],
     columnEng: [],
@@ -990,7 +989,7 @@ export const SALE = [
     descEng: "",
     category: "dishes",
     price: 20,
-    newPrice: 10,
+
     column: [],
     columnEng: [],
   },
@@ -1004,7 +1003,7 @@ export const SALE = [
     desc: "185*59*1.5 см, сверхлекгий",
     category: "mat",
     price: 59,
-    newPrice: 40,
+
     column: ["применим для пляжа / кемпинга / йоги"],
     columnEng: ["suitable for beach / camping / yoga"],
   },
@@ -1019,7 +1018,7 @@ export const SALE = [
     category: "tent",
     order: true,
     price: 390,
-    newPrice: 290,
+
     shortlyEng: "Ultralight backpacking tent with a skirt.",
     shortly:
       "Ультралегкая одноместная палатка Naturehike Cloud UP1 для пеших, водных и вело-походов. Полный вес 1,57 кг. Легкий вес, компактность в сложенном виде и просторность в разложенном - отличный выбор независимого одиночки.",
@@ -1045,7 +1044,7 @@ export const SALE = [
     descEng: "2-person, double-layer 150*275*110",
     category: "tent",
     price: 440,
-    newPrice: 340,
+
     order: true,
     shortlyEng:
       "Ultralight two-person tent for hiking, water, and biking trips. The spacious vestibule can accommodate a couple of large-sized backpacks.",
@@ -1088,7 +1087,7 @@ export const SALE = [
     category: "tent",
     order: true,
     price: 580,
-    newPrice: 480,
+
     shortlyEng: "Ultralight backpacking tent with a skirt.",
     shortly: "Ультралёгкая туристическая палатка с юбкой.",
     column: [
@@ -1131,7 +1130,7 @@ export const SALE = [
     desc: "2-х местная 205*100",
     category: "tent",
     price: 99,
-    newPrice: 59,
+
     shortlyEng: "",
     shortly: "",
     column: [
@@ -1152,7 +1151,7 @@ export const SALE = [
     desc: "коричневый/серебренный",
     category: "tent",
     price: 190,
-    newPrice: 130,
+
     column: [
       "Naturehike Foldable Changing Tent — лёгкая и удобная палатка для душа, туалета и переодевания",
       "Быстрая установка, компактна при транспортировке — вес 2.67 кг",
@@ -1176,7 +1175,7 @@ export const SALE = [
     desc: "2.4meters 28MM",
     category: "accessories",
     price: 88,
-    newPrice: 68,
+
     column: [
       "Алюминиевые стойки для палатки Naturehike — надёжная опора в походах и кемпинге",
       "Длина: 2.4 м, конструкция из 4 секций — регулируется по высоте",
@@ -1197,7 +1196,7 @@ export const SALE = [
     desc: "Wood 2.8meter 33MM",
     category: "accessories",
     price: 99,
-    newPrice: 79,
+
     column: [
       "Алюминиевые стойки для палатки Naturehike — надёжная опора в походах и кемпинге",
       "Длина: 2.8 м, конструкция из 4 секций — регулируется по высоте",
@@ -1220,7 +1219,7 @@ export const SALE = [
     category: "sleepingbag",
     price: 140,
     order: true,
-    newPrice: 109,
+
     columnEng: [""],
     column: [
       " Спальник Naturehike с капюшоном и мягкой подкладкой",
@@ -1239,7 +1238,7 @@ export const SALE = [
     desc: "(правый), зеленый камуфляж",
     category: "sleepingbag",
     price: 140,
-    newPrice: 109,
+
     order: true,
     columnEng: [""],
     column: [
@@ -1259,7 +1258,7 @@ export const SALE = [
     desc: " MJ300-NAVY",
     category: "sleepingbag",
     price: 199,
-    newPrice: 139,
+
     order: true,
     columnEng: [""],
     column: [
@@ -1279,7 +1278,6 @@ export const SALE = [
     desc: "MJ600-DARK",
     category: "sleepingbag",
     price: 230,
-    newPrice: 159,
 
     order: true,
     columnEng: [""],
@@ -1300,7 +1298,7 @@ export const SALE = [
     desc: "размер S",
     category: "sleepingbag",
     price: 22,
-    newPrice: 11,
+
     order: true,
     columnEng: [""],
     column: [
@@ -1321,7 +1319,7 @@ export const SALE = [
     desc: "размер L",
     category: "sleepingbag",
     price: 32,
-    newPrice: 16,
+
     order: true,
     columnEng: [""],
     column: [

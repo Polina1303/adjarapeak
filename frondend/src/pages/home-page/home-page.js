@@ -95,7 +95,7 @@ export const HomePage = () => {
         </p>
       </header>
 
-      <SaleBanner />
+      {/* <SaleBanner /> */}
 
       <section
         className="sale-container"
