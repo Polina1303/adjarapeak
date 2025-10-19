@@ -13,7 +13,7 @@ export const CATEGORY_PRODUCT = [
   },
   {
     title: "ОДЕЖДА",
-    category: "clothes",
+    type: "clothes",
   },
   {
     title: "БАФФЫ · БАЛАКЛАВЫ · ПЕРЧАТКИ",

@@ -2433,7 +2433,7 @@ export const PRODUCT = [
     img: "f25e9788-d2ab-4ded-97de-1240e1866629.webp",
     desc: "ZLYBox",
     category: "martialart",
-    price: 17,
+    price: 18,
     column: [
       "Спортивный чехол ZLYBox из материала EVA для бокса, тайского бокса, тхэквондо и баскетбола.",
       "Подходит для универсального использования спортсменами разных направлений.",
@@ -2447,7 +2447,7 @@ export const PRODUCT = [
     img: "b22a9672-b8cc-42c2-bc20-22b9960e389c.webp",
     desc: "NN",
     category: "martialart",
-    price: 12,
+    price: 18,
     column: [
       "Спортивная челюстная защита премиум-класса из материала EVA.",
       "Надежно защищает зубы во время тренировок и соревнований.",
@@ -3131,7 +3131,7 @@ export const PRODUCT = [
     id: 24424394443356,
     title: "Ракетка для мини-тенниса",
     img: "small-indoor-table-tennis-set-ppr-100-with-2-bats-and-3-balls.avif",
-    desc: "PONGORI PPR 100",
+    desc: "Butterfly",
     category: "mini",
     price: 55,
     column: [
@@ -3667,7 +3667,7 @@ export const PRODUCT = [
     img: "66eee86a-c7e0-453d-875e-0db8501f3c7c.webp",
     desc: "для мяча",
     category: "pump",
-    price: 29,
+    price: 2,
     column: [
       "Подходит для футбольных, баскетбольных и волейбольных мячей. Удобный и компактный аксессуар для быстрого надува.",
     ],
@@ -10616,7 +10616,7 @@ export const PRODUCT = [
     img: "2201772.png",
     desc: "1 литр Quechua",
     category: "termoryukzak",
-    price: 95,
+    price: 110,
 
     column: [
       "Начал. темп. 95°С: 82°C после 6 ч., 73°C после 12 ч., 60°C после 24 ч",
@@ -12427,7 +12427,7 @@ export const PRODUCT = [
   {
     order: true,
     id: 100013254565242232,
-    title: "Монокуляр - телескоп",
+    title: "Монокуляр - зрительная труба",
     img: "Beige.webp",
     desc: "с регулировкой зума 25-75х60",
     category: "binoculars",
