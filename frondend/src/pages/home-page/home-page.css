@@ -583,7 +583,7 @@
 /* планшет — 3 карточки */
 @media (min-width: 768px) {
   .sale-item {
-    flex: 1 1 calc(100% / 3 - 20px);
+    flex: 1 1 calc(100% / 2 - 20px);
   }
   .sale-title {
     font-size: 14px;
@@ -593,7 +593,7 @@
 /* десктоп — тоже 3 карточки */
 @media (min-width: 1024px) {
   .sale-item {
-    flex: 1 1 calc(100% / 3 - 20px);
+    flex: 1 1 calc(100% / 4 - 20px);
   }
 }
 

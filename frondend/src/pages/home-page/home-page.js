@@ -14,7 +14,7 @@ import { SaleBanner } from "./SaleBanner";
 import sport from "./sport.webp";
 import clothes from "./sea.webp";
 import sea from "./sea2.webp";
-import sky from "./sertif.jpg";
+import sky from "./snow.webp";
 import eq from "./sale.webp";
 import eq2 from "./rent.webp";
 import del from "./tour.webp";
@@ -46,7 +46,7 @@ export const HomePage = () => {
   const handleClickSaleSea = () => navigate("/sale_sea");
   const handleClickSportSale = () => navigate("/sport_sale");
   const handleClickRent = () => navigate("/rent");
-  const handleClickRentSky = () => navigate("/certificate");
+  const handleClickRentSky = () => navigate("/rent_sky");
   const handleClickTrip = () => navigate("/");
   const handleClickСlothes = () => navigate("/clothes");
 
@@ -157,6 +157,27 @@ export const HomePage = () => {
                 <br />
                 {isRU ? "путешествие" : "of events"}
               </h3>
+            </div>
+          </Link>
+        </article>
+        <article className="sale-item">
+          <Link to="/rent_sky" className="sale-card">
+            <img
+              loading="lazy"
+              src={sky}
+              alt="adjara peak"
+              className="sale-img"
+            />
+            <div className="sale-info">
+              <div className="sale-title">
+                <span className="highlight-sale">
+                  {languages === "RU" ? "Прокат" : "Rental"}
+                </span>
+                <br />
+                {languages === "RU"
+                  ? "горнолыжного снаряжения"
+                  : "of ski equipment"}
+              </div>
             </div>
           </Link>
         </article>
