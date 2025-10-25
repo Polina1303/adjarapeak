@@ -12,12 +12,10 @@
   white-space: nowrap;
 }
 
-/* По умолчанию — без движения */
 .delivery-text {
   text-align: center;
 }
 
-/* Для маленьких экранов — анимация бегущей строки */
 @media (max-width: 767px) {
   .delivery-text {
     display: inline-block;
@@ -35,87 +33,183 @@
   }
 }
 
-.header {
-  margin-top: 25px;
-  height: auto;
-  display: flex;
+.app-bar {
+  background-color: #fff !important;
+  color: #000 !important;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1) !important;
+  top: 30px !important;
+  z-index: 100 !important;
+}
+
+.toolbar {
   justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: #fff;
-  z-index: 100;
-  width: 100%;
-  flex-wrap: wrap;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px !important;
+  gap: 8px;
 }
 
-.wrapper {
+.mobile-menu-button {
+  display: none !important;
+  margin-left: 12px !important;
+  cursor: pointer;
+}
+
+.mobile-menu-button svg {
+  font-size: 20px;
+}
+
+.logo-container {
+  flex: 1;
   display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 901px) {
+  .logo-container {
+    flex: 0;
+    justify-content: flex-start;
+  }
+}
+
+.logo {
+  width: 130px;
+  height: auto;
+}
+
+.desktop-nav {
+  display: none;
+  gap: 115px;
+  flex: 1;
+  justify-content: center;
   align-items: center;
+  white-space: nowrap;
 }
 
-.location,
-.number {
-  font-size: 14px;
-  margin: 5px 10px;
+@media (min-width: 1201px) {
+  .desktop-nav {
+    display: flex;
+  }
+}
+
+@media (min-width: 1201px) and (max-width: 1400px) {
+  .desktop-nav {
+    gap: 70px;
+  }
+}
+
+@media (min-width: 1401px) and (max-width: 1600px) {
+  .desktop-nav {
+    gap: 90px;
+  }
+}
+
+@media (min-width: 1601px) {
+  .desktop-nav {
+    gap: 110px;
+  }
+}
+
+
+.nav-link {
+  color: #000;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: "RoadRadio";
+  cursor: pointer;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #de682d;
+}
+
+.cart-container {
+  flex: 0;
+}
+
+.mobile-drawer .MuiDrawer-paper {
+  background-color: #ffffff !important;
+  margin-top: 105px !important;
+  box-shadow: none !important;
+}
+
+.mobile-menu-list {
+  padding: 0;
+}
+
+.mobile-menu-item {
+  color: #000 !important;
+  text-decoration: none;
   text-align: center;
+  padding: 12px 14px !important;
+  /* border-bottom: 1px solid #f0f0f0; */
 }
 
-.cart {
-  margin: 0 10px;
+.mobile-menu-item:hover {
+  background-color: transparent !important;
 }
 
-@media only screen and (max-width: 785px) {
-  .header {
-    flex-wrap: wrap;
-    padding: 10px;
-  }
-  .number {
-    flex: 1 1 100%;
-    text-align: right;
+.mobile-menu-text .MuiListItemText-primary {
+  font-weight: 300 !important;
+  font-size: 16px !important;
+  font-family: "RoadRadio", sans-serif !important;
+  transition: color 0.3s ease;
+}
+
+.mobile-menu-item:hover .mobile-menu-text .MuiListItemText-primary,
+.mobile-menu-item.active .mobile-menu-text .MuiListItemText-primary {
+  color: #de682d !important;
+}
+
+.header-spacer {
+  height: 140px;
+}
+
+@media (min-width: 901px) {
+  .header-spacer {
+    height: 130px;
   }
 }
 
-@media only screen and (max-width: 654px) {
-  .location {
-    font-size: 12px;
-  }
-  .number {
-    font-size: 12px;
-  }
-}
 
-/* @media only screen and (max-width: 615px) {
-  .wrapper {
-    flex: 1 1 100%;
-    justify-content: center;
+@media (max-width: 1200px) {
+  .mobile-menu-button {
+    display: flex !important;
   }
-  .header {
-    flex-direction: column;
-    align-items: center;
-  }
-  .icon {
-    gap: 10px;
-  }
-} */
-
-@media only screen and (max-width: 615px) {
-  .location {
+  
+  .desktop-nav {
     display: none;
   }
-  .number {
-    display: none;
-  }
-  .cart {
-    position: relative;
+}
+
+
+@media (max-width: 480px) {
+  .logo {
+    width: 110px;
   }
 }
 
-@media only screen and (max-width: 450px) {
-  .icon {
-    display: none;
+@media (max-width: 360px) {
+  .logo {
+    width: 100px;
   }
+}
+
+.mobile-drawer .MuiDrawer-paper {
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+.app-bar.scrolled {
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15) !important;
 }

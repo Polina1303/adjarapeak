@@ -1,9 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const localStorageLanguages =
-  JSON.parse(localStorage.getItem("languages")) || "RU";
-
-// console.log('localStorageLanguages',localStorageLanguages)
 const getLocalCartData = () => {
   const localCartData = localStorage.getItem("languages");
   if (localCartData === JSON.stringify("ENG")) {

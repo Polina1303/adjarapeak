@@ -24,9 +24,14 @@
   object-fit: cover;
 }
 
+.routes-title{
+  font-family: "RoadRadio";
+}
+
 .routes-cover-title {
   padding: 10px;
   text-align: center;
+  font-family: "RoadRadio-Thin";
 }
 
 .routes-item-page {
@@ -34,6 +39,7 @@
   font-size: 13px;
   margin-top: -5px;
   text-decoration: underline;
+  font-family: "RoadRadio";
 }
 
 .routes-cover-summary {
@@ -41,6 +47,7 @@
   text-align: center;
   margin-top: 20px;
 }
+
 @media (max-width: 1024px) {
   .cover-routes {
     grid-template-columns: repeat(2, 1fr); /* Планшеты */
