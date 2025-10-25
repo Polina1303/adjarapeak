@@ -90,14 +90,15 @@ span {
   font-size: 20px;
   border: none;
   background-color: #fff;
-  margin-top: 45px;
   cursor: pointer;
   color: #222;
 }
 
+
 @media only screen and (max-width: 785px) {
   .product-page__title {
     font-size: 17px;
+
   }
   .product-text {
     font-size: 15px;

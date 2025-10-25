@@ -28,12 +28,12 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin: 80px 20px 0px 40px;
+  margin: 20px 20px 0px 40px;
 }
 
 .main-title-alt {
   font-size: 40px;
-  font-weight: 700;
+  font-family: "RoadRadio-Bold";
   color: #333;
   margin: 0;
   line-height: 1.4;
@@ -45,7 +45,9 @@
   border-bottom: 4px solid #f68632;
   padding: 0 4px;
 }
+
 .rental-name {
+  font-family: "RoadRadio-Bold";
   font-size: 24px;
   font-weight: 600;
   margin: 10px 0;
@@ -181,7 +183,6 @@
 }
 
 .home-page__container {
-  margin-top: 25px;
   margin-bottom: 10px;
 }
 
@@ -195,7 +196,6 @@
     display: flex;
     margin-bottom: -20px;
     left: -35px;
-    margin-top: 25px;
     overflow-x: auto;
     overflow-y: hidden;
     padding-bottom: 60px;
@@ -281,18 +281,14 @@
   color: #222;
 }
 
-.back-button-cover {
-  margin-top: 65px;
-}
+
 @media only screen and (max-width: 785px) {
   .back-button-cover {
-    margin-top: 65px;
     margin-bottom: 10px;
   }
 }
 @media only screen and (max-width: 615px) {
   .back-button-cover {
-    margin-top: 80px;
     margin-bottom: 10px;
   }
 }
@@ -340,6 +336,7 @@
 
 .modal-content {
   width: 50%;
+  height: 80%;
   background-color: #fff;
   border-radius: 10px;
   padding: 20px;

@@ -17,11 +17,16 @@ h5 {
   margin-left: 10px;
 }
 
+.choose-title h2{
+  font-family: "RoadRadio";
+}
+
 .choose-item-description {
   margin-top: -15px;
   font-weight: 600;
   color: rgba(34, 34, 34, 0.788);
   font-size: 15px;
+  font-family: "RoadRadio-Thin";
 }
 
 .choose-cover-advice {

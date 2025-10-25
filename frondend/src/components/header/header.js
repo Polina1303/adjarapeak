@@ -1,133 +1,182 @@
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import { CartBlock } from "../cart-block";
-import { MdLocationPin } from "react-icons/md";
-import { BsInstagram, BsTelegram } from "react-icons/bs";
-import { AiOutlineWhatsApp } from "react-icons/ai";
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect, useState } from "react";
-import Switch from "react-switch";
 import { updateCurrentLanguages } from "../../redux/languages/reducer";
-import "./header.css";
+import { TfiAlignJustify, TfiClose } from "react-icons/tfi";
+import {
+  AppBar,
+  Toolbar,
+  Box,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+  IconButton,
+} from "@mui/material";
 import adjara from "../image/adjara2.png";
+import "./header.css";
+
 export const Header = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileView, setIsMobileView] = useState(false);
+
   const dispatch = useDispatch();
   const languages = useSelector((state) => state.languages.currentLanguages);
-
-  // Initialize `checked` first
-  const [checked, setChecked] = useState(
-    JSON.stringify(languages) === JSON.stringify("RU")
-  );
+  const [checked, setChecked] = useState(languages === "RU");
 
   useEffect(() => {
-    if (checked) {
-      dispatch(updateCurrentLanguages("RU"));
-    } else {
-      dispatch(updateCurrentLanguages("ENG"));
-    }
+    dispatch(updateCurrentLanguages(checked ? "RU" : "ENG"));
   }, [checked, dispatch]);
 
   useEffect(() => {
-    setChecked(JSON.stringify(languages) === JSON.stringify("RU"));
-  }, [languages]);
+    document.body.style.overflow = isMobileMenuOpen ? "hidden" : "";
 
-  const handleChange = () => {
-    setChecked((prevChecked) => !prevChecked);
+    const checkScreenSize = () => {
+      const mobile = window.innerWidth <= 1200;
+      setIsMobileView(mobile);
+      if (!mobile && isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    checkScreenSize();
+
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => {
+      window.removeEventListener("resize", checkScreenSize);
+    };
+  }, [isMobileMenuOpen]);
+
+  const toggleMobileMenu = () => {
+    if (isMobileView) {
+      setIsMobileMenuOpen(!isMobileMenuOpen);
+    }
   };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
+  const menuItems = [
+    { path: "/sale", text: { RU: "МАГАЗИН", ENG: "SHOP" } },
+    { path: "/rent", text: { RU: "ПРОКАТ", ENG: "CAMPING" } },
+    { path: "/trip", text: { RU: "ТУРЫ", ENG: "TOURS" } },
+    {
+      path: "/rockClimbing",
+      text: { RU: "СКАЛОЛАЗАНИЕ", ENG: "ROCK CLIMBING" },
+    },
+    { path: "/service", text: { RU: "СЕРВИС-ЦЕНТР", ENG: "SERVICE CENTER" } },
+    { path: "/contact", text: { RU: "КОНТАКТЫ", ENG: "CONTACTS" } },
+  ];
+
+  const menuItemsMobile = [
+    { path: "/sale", text: { RU: "МАГАЗИН", ENG: "SHOP" } },
+    {
+      path: "/rent_sky",
+      text: {
+        RU: "ПРОКАТ ГОРНОЛЫЖНОГО СНАРЯЖЕНИЯ",
+        ENG: "SKI EQUIPMENT RENTAL",
+      },
+    },
+    {
+      path: "/rent",
+      text: {
+        RU: "ПРОКАТ ТУРИСТИЧЕСКОГО СНАРЯЖЕНИЯ",
+        ENG: "CAMPING EQUIPMENT RENTAL",
+      },
+    },
+    { path: "/trip", text: { RU: "ТУРЫ", ENG: "TOURS" } },
+    {
+      path: "/rockClimbing",
+      text: { RU: "СКАЛОЛАЗАНИЕ", ENG: "ROCK CLIMBING" },
+    },
+    { path: "/service", text: { RU: "СЕРВИС-ЦЕНТР", ENG: "SERVICE CENTER" } },
+    { path: "/contact", text: { RU: "КОНТАКТЫ", ENG: "CONTACTS" } },
+  ];
+
+  const deliveryText =
+    languages === "RU"
+      ? "Доставка по Батуми — 10 лари, бесплатно от 300. По Грузии — от 20 лари, бесплатно от 500.❗️Не распространяется на аренду."
+      : "Delivery in Batumi - 10 GEL, free from 300. In Georgia - from 20 GEL, free from 500.❗️Not applicable for rental.";
 
   return (
     <>
       <div className="delivery-strip">
-        <div className="delivery-text">
-          Доставка по Батуми — 10 лари, бесплатно от 300. По Грузии — от 20
-          лари, бесплатно от 500.❗️Не распространяется на аренду.
-        </div>
+        <div className="delivery-text">{deliveryText}</div>
       </div>
 
-      <div className="header">
-        <div className="wrapper">
-          <Link to="/">
-            <img src={adjara} alt="adjarapeak" width="130" />
-          </Link>
-        </div>
-        <div className="location">
-          {/* <MdLocationPin size={25} color="#de682d" /> */}
-          <a
-            href="https://www.google.com/maps/place/Adjara+Peak+%7C+Sport,+Hiking,+Ski+%26+Outdoor+Equipment+-+rental+and+sales/@41.6333505,41.614659,177m/data=!3m1!1e3!4m14!1m7!3m6!1s0x4067858105d2e915:0x5a619f050a0a9584!2sAdjara+Peak+%7C+Sport,+Hiking,+Ski+%26+Outdoor+Equipment+-+rental+and+sales!8m2!3d41.6333992!4d41.615391!16s%2Fg%2F11t40_rjr5!3m5!1s0x4067858105d2e915:0x5a619f050a0a9584!8m2!3d41.6333992!4d41.615391!16s%2Fg%2F11t40_rjr5?entry=ttu&g_ep=EgoyMDI1MDQyNy4xIKXMDSoASAFQAw%3D%3D"
-            target="_blank"
-            rel="noreferrer"
+      <AppBar position="fixed" className="app-bar">
+        <Toolbar className="toolbar">
+          <IconButton
+            edge="start"
+            onClick={toggleMobileMenu}
+            className="mobile-menu-button"
           >
-            {languages === "RU"
-              ? "Батуми, ул. Ген. Аслана Абашидзе, 19"
-              : "Batumi, 38 Tbel-Abuseridze St."}
-            <br />
-            <span className="work">
-              (11:00-20:00){" "}
-              {languages === "RU" ? "без выходных" : "closed on Sunday"}
-            </span>
-          </a>
-        </div>
-        <div className="number">
-          <a href="tel:+995511147586">+995 511 147 586</a>
-          <br /> <a href="tel:+995551132803">+995 551 132 803</a>
-        </div>
-        <div className="icon">
-          <div className="social-icons">
-            <a
-              href="https://www.instagram.com/adjarapeak/?igshid=YmMyMTA2M2Y%3D"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Instagram"
-              style={{ marginRight: "10px" }} // расстояние между иконками
-            >
-              <BsInstagram style={{ fontSize: "28px" }} /> {/* размер иконки */}
-            </a>
-            <a
-              href="https://t.me/adjarapeak/229"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Telegram"
-              style={{ marginRight: "10px" }} // расстояние между иконками
-            >
-              <BsTelegram style={{ fontSize: "28px" }} /> {/* размер иконки */}
-            </a>
-            <a
-              href="https://wa.me/995511147586"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="WhatsApp"
-            >
-              <AiOutlineWhatsApp style={{ fontSize: "28px" }} />{" "}
-              {/* размер иконки */}
-            </a>
-          </div>
-        </div>
+            {isMobileMenuOpen ? <TfiClose /> : <TfiAlignJustify />}
+          </IconButton>
 
-        {/* <div className="switch">
-        <label htmlFor="material-switch" id="switch-label">
-          {languages}
-        </label>
-        <Switch
-          checked={checked}
-          onChange={handleChange}
-          onHandleColor="#fff"
-          handleDiameter={15}
-          uncheckedIcon={false}
-          checkedIcon={false}
-          boxShadow="#f68632"
-          activeBoxShadow="#f68632"
-          offColor="#f68632"
-          onColor="#f68632"
-          height={18}
-          width={40}
-          className="react-switch"
-          id="material-switch"
-          aria-labelledby="switch-label"
-        />
-      </div> */}
-        <div className="cart">
-          <CartBlock />
-        </div>
-      </div>
+          <Box className="logo-container">
+            <NavLink to="/">
+              <img src={adjara} alt="adjarapeak" className="logo" />
+            </NavLink>
+          </Box>
+
+          <Box className="desktop-nav">
+            {menuItems.map((item, index) => (
+              <NavLink
+                key={index}
+                to={item.path}
+                className={({ isActive }) =>
+                  `nav-link ${isActive ? "active" : ""}`
+                }
+              >
+                {languages === "RU" ? item.text.RU : item.text.ENG}
+              </NavLink>
+            ))}
+          </Box>
+
+          <Box className="cart-container">
+            <CartBlock />
+          </Box>
+        </Toolbar>
+
+        <Drawer
+          anchor="top"
+          open={isMobileMenuOpen}
+          onClose={closeMobileMenu}
+          className="mobile-drawer"
+          ModalProps={{
+            BackdropProps: {
+              style: {
+                backgroundColor: "transparent",
+              },
+            },
+          }}
+        >
+          <List className="mobile-menu-list">
+            {menuItemsMobile.map((item, index) => (
+              <ListItem
+                key={index}
+                component={NavLink}
+                to={item.path}
+                onClick={closeMobileMenu}
+                className="mobile-menu-item"
+              >
+                <ListItemText
+                  primary={languages === "RU" ? item.text.RU : item.text.ENG}
+                  className="mobile-menu-text"
+                  sx={{
+                    textAlign: "center",
+                  }}
+                />
+              </ListItem>
+            ))}
+          </List>
+        </Drawer>
+      </AppBar>
+      <Box className="header-spacer" />
     </>
   );
 };

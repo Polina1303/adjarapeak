@@ -12,6 +12,7 @@ const CART_KEY = "productInCart";
 
 export const CartBlock = () => {
   const [isCartMenuVisible, setIsCartMenuVisible] = useState(false);
+
   const items = useSelector((state) => state.cart.itemsInCart);
 
   const navigate = useNavigate();
@@ -22,9 +23,7 @@ export const CartBlock = () => {
   }, [navigate]);
 
   const totalPrice = calcTotalPrice(items);
-  const totalCount = items
-    ? items.reduce((acc, item) => acc + item.count, 0)
-    : 0;
+  const totalCount = items?.reduce((acc, item) => acc + item.count, 0) || 0;
 
   useEffect(() => {
     localStorage.setItem(CART_KEY, JSON.stringify(items));
@@ -36,15 +35,13 @@ export const CartBlock = () => {
     };
 
     window.addEventListener("beforeunload", handleBeforeUnload);
-
-    return () => {
-      window.removeEventListener("beforeunload", handleBeforeUnload);
-    };
+    return () => window.removeEventListener("beforeunload", handleBeforeUnload);
   }, [items]);
 
-  const localCartData = useMemo(() => {
-    return JSON.parse(localStorage.getItem(CART_KEY)) || [];
-  }, []);
+  const localCartData = useMemo(
+    () => JSON.parse(localStorage.getItem(CART_KEY)) || [],
+    []
+  );
 
   useEffect(() => {
     if (items.length === 0 && localCartData.length > 0) {
@@ -54,19 +51,16 @@ export const CartBlock = () => {
 
   return (
     <div className="cart-block">
-      <ItemsInCart quantity={totalCount} />
-      <Button>
-        <BsCart3
-          size={"25"}
-          className="cart-icon"
-          onClick={() => setIsCartMenuVisible(!isCartMenuVisible)}
-        />
+      <Button
+        className="cart-btn"
+        variant="ghost"
+        onClick={() => setIsCartMenuVisible(!isCartMenuVisible)}
+      >
+        <BsCart3 size={22} className="cart-icon" />
+        {totalCount > 0 && <ItemsInCart quantity={totalCount} />}
+        {totalPrice > 0 && <span className="cart-price">{totalPrice}₾</span>}
       </Button>
-      {totalPrice > 0 ? (
-        <div className="cart-price">{totalPrice}.00₾</div>
-      ) : (
-        <div className="cart-price"></div>
-      )}
+
       {isCartMenuVisible && <CartMenu items={items} onClick={handleClick} />}
     </div>
   );

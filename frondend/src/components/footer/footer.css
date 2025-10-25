@@ -26,6 +26,7 @@
   margin: 8px 0; /* Уменьшает отступы сверху и снизу */
   font-size: 16px; /* При необходимости уменьшает шрифт */
   line-height: 1.8; /* Уменьшает высоту строки */
+  font-family: "RoadRadio-Light";
 }
 
 .footer-info h4,
@@ -128,8 +129,9 @@
     font-size: 20px; /* Уменьшаем размер иконок */
   }
 
-  .footer-bottom {
+  .footer-bottom p {
     font-size: 12px; /* Меньший текст внизу */
+    font-family: "RoadRadio-Light";
   }
 }
 
@@ -179,4 +181,5 @@
   /* text-align: center; */
   padding: 8px 0;
   cursor: pointer; /* если кликабельно */
+  font-family: "RoadRadio-Light";
 }

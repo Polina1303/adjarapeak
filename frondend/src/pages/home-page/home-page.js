@@ -95,8 +95,6 @@ export const HomePage = () => {
         </p>
       </header>
 
-      {/* <SaleBanner /> */}
-
       <section
         className="sale-container"
         aria-label={isRU ? "Разделы магазина" : "Store sections"}
