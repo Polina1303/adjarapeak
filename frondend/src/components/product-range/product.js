@@ -4875,6 +4875,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "2-х местная 205*100",
     category: "tent",
+    section: 1,
     price: 99,
 
     shortlyEng: "",
@@ -4896,6 +4897,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "3-х местная 210*130",
     category: "tent",
+    section: 1,
     price: 130,
     shortlyEng: "",
     shortly: "",
@@ -4923,6 +4925,7 @@ export const PRODUCT = [
     descEng: "2-person, double-layer 130*210*106",
     desc: "2-х местная 140*200",
     category: "tent",
+    section: 1,
     price: 95,
     shortlyEng: "",
     shortly: "",
@@ -4944,6 +4947,7 @@ export const PRODUCT = [
     descEng: "2-person, double-layer 130*210*107",
     desc: "2-х местная двухслойная 130*210*107",
     category: "tent",
+    section: 1,
     price: 220,
     shortlyEng:
       "Simple and easy to set up, this eco-friendly tent is designed for your camping trips for 2 people. An environmentally friendly and affordable tent. Thanks to the freestanding dome-shaped structure, you can move the tent to choose the most suitable camping spot for you.",
@@ -4977,6 +4981,7 @@ export const PRODUCT = [
     descEng: "3-person, double-layer 130*210*107",
     desc: "3-х местная двухслойная 130*210*107",
     category: "tent",
+    section: 1,
     price: 290,
     shortlyEng:
       "Simple and easy to set up, this eco-friendly tent is designed for your 3-person camping trips. With a freestanding dome structure, you can move the tent to choose the most suitable camping spot for you.",
@@ -5014,6 +5019,7 @@ export const PRODUCT = [
     descEng: "2-person, double-layer 130*210*106",
     desc: "2-х местная двухслойная 130*210*106",
     category: "tent",
+    section: 1,
     price: 390,
     shortlyEng:
       "The Fresh&Black two-person tent, which is easy and quick to set up. Thanks to its freestanding dome structure, it can be moved to a better location after setup.",
@@ -5051,6 +5057,7 @@ export const PRODUCT = [
     descEng: "2-person, double-layer 130*210*106",
     desc: "4-х местная двухслойная 260*210*137",
     category: "tent",
+    section: 1,
     price: 450,
     ordert: false,
     column: [
@@ -5072,6 +5079,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "оранжевый/зеленая",
     category: "tent",
+    section: 1,
     price: 280,
 
     column: [
@@ -5104,6 +5112,7 @@ export const PRODUCT = [
     descEng: "green 2-местная",
     desc: "оранжевый/зеленая",
     category: "tent",
+    section: 1,
     price: 320,
 
     column: [
@@ -5135,6 +5144,7 @@ export const PRODUCT = [
     descEng: "1-person, double-layer 120*295*110",
     desc: "1 местная двухслойная 180*300*110",
     category: "tent",
+    section: 1,
     order: true,
     price: 390,
 
@@ -5162,6 +5172,7 @@ export const PRODUCT = [
     desc: "2-х местная двухслойная 150*275*110",
     descEng: "2-person, double-layer 150*275*110",
     category: "tent",
+    section: 1,
     price: 440,
     order: true,
     shortlyEng:
@@ -5204,6 +5215,7 @@ export const PRODUCT = [
     descEng: "3-person, double-layer 180*300*110",
     desc: "3-х местная двухслойная 180*300*110",
     category: "tent",
+    section: 1,
     order: true,
     price: 510,
     shortlyEng:
@@ -5245,6 +5257,7 @@ export const PRODUCT = [
     descEng: "1-person, double-layer 180*300*110",
     desc: "1 местная двухслойная 180*300*110",
     category: "tent",
+    section: 1,
     order: true,
     price: 449,
 
@@ -5275,6 +5288,7 @@ export const PRODUCT = [
     desc: "2-х местная двухслойная",
     descEng: "2-person, double-layer 150*275*110",
     category: "tent",
+    section: 1,
     order: true,
     price: 505,
     shortlyEng:
@@ -5316,6 +5330,7 @@ export const PRODUCT = [
     descEng: "3-person, double-layer 180*300*110",
     desc: "3-х местная двухслойная 180*300*110",
     category: "tent",
+    section: 1,
     order: true,
     price: 580,
 
@@ -5359,6 +5374,7 @@ export const PRODUCT = [
     descEng: "2-person, double-layer 215*135*110",
     desc: "2-х местная двухслойная 215*135*110",
     category: "tent",
+    section: 1,
     order: true,
     price: 399,
     column: [
@@ -5389,6 +5405,7 @@ export const PRODUCT = [
     descEng: "2-person, double-layer 255×215×110",
     desc: "2-х местная двухслойная 255×215×110",
     category: "tent",
+    section: 1,
     order: true,
     price: 499,
     column: [
@@ -5417,6 +5434,7 @@ export const PRODUCT = [
     descEng: "2-person, double-layer 255×220×110",
     desc: "2-х местная двухслойная 255×220×110",
     category: "tent",
+    section: 1,
     order: true,
     price: 445,
     column: [
@@ -5446,6 +5464,7 @@ export const PRODUCT = [
     descEng: "2-person, double-layer 300*210*120",
     desc: "2-х местная двухслойная, 300*210*120",
     category: "tent",
+    section: 1,
     price: 550,
     shortlyEng:
       "Two-layer tent with two entrances. The outer tent is UV-resistant. It also has a fire-retardant coating. It features a large spacious vestibule, two ventilation valves, and reflective guy lines and elements on the ventilation. All seams are sealed. Ideal for hiking in spring, summer, and autumn.",
@@ -5503,6 +5522,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "коричневый/серебренный",
     category: "tent",
+    section: 1,
     price: 190,
 
     column: [
@@ -5529,6 +5549,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "400*292 см для кемпинга",
     category: "tent",
+    section: 1,
     price: 235,
     column: [
       "Naturehike Girder NH20TM006 — прочный тент для кемпинга и активного отдыха",
@@ -5553,6 +5574,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "400*350 см для кемпинга",
     category: "tent",
+    section: 1,
     price: 250,
     column: [
       "Шестигранный тент Naturehike NH22ZP009 для 5–8 человек",
@@ -5576,6 +5598,7 @@ export const PRODUCT = [
     order: false,
     desc: "2 x 2,5 метра",
     category: "tent",
+    section: 1,
     price: 59,
     column: [
       "Вес:593г",
@@ -5592,6 +5615,7 @@ export const PRODUCT = [
     order: true,
     desc: "2.4meters 28MM",
     category: "tent",
+    section: 1,
     price: 88,
 
     column: [
@@ -5613,6 +5637,7 @@ export const PRODUCT = [
     order: true,
     desc: "Wood 2.8meter 33MM",
     category: "tent",
+    section: 1,
     price: 99,
 
     column: [
@@ -5635,6 +5660,7 @@ export const PRODUCT = [
     img: "pegs.jpg",
     desc: " V-образные ( 10 ШТ )",
     category: "tent",
+    section: 1,
     price: 37,
     column: [
       "v-образная форма",
@@ -5653,6 +5679,7 @@ export const PRODUCT = [
     img: "10-steel-tent-pegs-various-terrains-quechua-1163836.jpg",
     desc: "Круглые ( 10 ШТ )",
     category: "tent",
+    section: 1,
     order: false,
     price: 28,
     column: [
@@ -5670,6 +5697,7 @@ export const PRODUCT = [
     img: "S545914f908.jpg",
     desc: "треугольные ( 10 ШТ )",
     category: "tent",
+    section: 1,
     order: true,
     price: 30,
     column: ["Для песка", "Вес: 13 г"],
@@ -5680,6 +5708,7 @@ export const PRODUCT = [
     img: "9016991.970.jpg",
     desc: "из алюминиевого сплава ( 8 ШТ )",
     category: "tent",
+    section: 1,
     order: true,
     price: 29,
     column: [
@@ -5696,6 +5725,7 @@ export const PRODUCT = [
     img: "23e514t.jpg_640x640.webp",
     desc: "круглые ( 1 ШТ )",
     category: "tent",
+    section: 1,
     price: 4,
     order: false,
     column: ["18 см"],
@@ -5706,6 +5736,7 @@ export const PRODUCT = [
     img: "97F.jpg_640x640.webp",
     desc: "круглые ( 10 ШТ )",
     category: "tent",
+    section: 1,
     price: 29,
     order: false,
     column: ["18 см"],
@@ -5717,6 +5748,7 @@ export const PRODUCT = [
     img: "hoops-6-metres-quechua.png",
     desc: "6 метров 2,5мм",
     category: "tent",
+    section: 1,
     price: 25,
     column: [
       "Длина: 6 м | Диаметр: 2,5 мм | Вес: 10 г",
@@ -5730,6 +5762,7 @@ export const PRODUCT = [
     img: "8ca3d39a-18f6-47c0-9312-5f159fc794a1-Photoroom.png",
     desc: "салатовые с отражателем",
     category: "tent",
+    section: 1,
     price: 14,
     column: [
       "Отражающая кемпинговая верёвка с двойной петлёй",
@@ -5746,6 +5779,7 @@ export const PRODUCT = [
     img: "1749019.jpg",
     desc: "по 10 метров",
     category: "tent",
+    section: 1,
     price: 27,
     column: [
       "Подходит для любых палаток",
@@ -5835,6 +5869,7 @@ export const PRODUCT = [
     descEng: "Hiker (комфорт от +18)",
     desc: "Hiker (комфорт от +18)",
     category: "sleepingbag",
+    section: 1,
     price: 79,
     order: false,
     columnEng: ["Weight: 960g", "Outer size: 35*26cm"],
@@ -5848,6 +5883,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "(левый), зеленый камуфляж",
     category: "sleepingbag",
+    section: 1,
     price: 140,
     order: true,
 
@@ -5868,6 +5904,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "(правый), зеленый камуфляж",
     category: "sleepingbag",
+    section: 1,
     price: 140,
 
     order: true,
@@ -5888,6 +5925,7 @@ export const PRODUCT = [
     descEng: "",
     desc: " MJ300-NAVY",
     category: "sleepingbag",
+    section: 1,
     price: 199,
 
     order: true,
@@ -5908,6 +5946,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "MJ600-DARK",
     category: "sleepingbag",
+    section: 1,
     price: 230,
 
     order: true,
@@ -5928,6 +5967,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "левый",
     category: "sleepingbag",
+    section: 1,
     price: 105,
     order: true,
     columnEng: [""],
@@ -5948,6 +5988,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "правый",
     category: "sleepingbag",
+    section: 1,
     price: 105,
     order: true,
     columnEng: [""],
@@ -5968,6 +6009,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "левый",
     category: "sleepingbag",
+    section: 1,
     price: 105,
     order: true,
     columnEng: [""],
@@ -5988,6 +6030,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "правый",
     category: "sleepingbag",
+    section: 1,
     price: 105,
     order: true,
     columnEng: [""],
@@ -6008,6 +6051,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "",
     category: "sleepingbag",
+    section: 1,
     price: 105,
     order: true,
     columnEng: [""],
@@ -6028,6 +6072,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "XL",
     category: "sleepingbag",
+    section: 1,
     price: 129,
     order: true,
     columnEng: [""],
@@ -6048,6 +6093,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "ArmyGreen U250",
     category: "sleepingbag",
+    section: 1,
     price: 165,
     order: true,
     columnEng: [""],
@@ -6068,6 +6114,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "Grey U350",
     category: "sleepingbag",
+    section: 1,
     price: 199,
     order: true,
     columnEng: [""],
@@ -6088,6 +6135,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "M300/Grey левый",
     category: "sleepingbag",
+    section: 1,
     price: 189,
     order: true,
     columnEng: [""],
@@ -6108,6 +6156,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "M300/Grey правый",
     category: "sleepingbag",
+    section: 1,
     price: 189,
     order: true,
     columnEng: [""],
@@ -6130,6 +6179,7 @@ export const PRODUCT = [
     descEng: "190*72cm from +20 to +15°C",
     desc: "190*72см от +20 до +15°C",
     category: "sleepingbag",
+    section: 1,
     price: 99,
     shortlyEng:
       "This eco-friendly sleeping bag is designed for users who want to sleep comfortably at temperatures up to 20°C while camping.",
@@ -6156,6 +6206,7 @@ export const PRODUCT = [
     descEng: "190*72cm from +15 to +8°C",
     desc: "190*72см от +15 до +8",
     category: "sleepingbag",
+    section: 1,
     order: false,
     price: 140,
     shortlyEng:
@@ -6183,6 +6234,7 @@ export const PRODUCT = [
     descEng: "190*72cm from +5 to +10°C",
     desc: "190*72см от +5 до +10",
     category: "sleepingbag",
+    section: 1,
     order: false,
     price: 140,
     shortly:
@@ -6202,6 +6254,7 @@ export const PRODUCT = [
     desc: "комфорт 0/ лимит -5",
     descEng: "210*66cm from +10 to 0°C",
     category: "sleepingbag",
+    section: 1,
     order: false,
     price: 395,
     column: [
@@ -6224,6 +6277,7 @@ export const PRODUCT = [
     desc: "оранжевый 190+30*70 см",
     descEng: "210*66cm from +10 to 0°C",
     category: "sleepingbag",
+    section: 1,
     price: 84,
     order: false,
     column: [
@@ -6240,6 +6294,7 @@ export const PRODUCT = [
     desc: "-5 экстрим / комфорт +10/+20",
     descEng: "210*66cm from +10 to 0°C",
     category: "sleepingbag",
+    section: 1,
     price: 170,
     order: false,
     column: ["Вес: 1800гр", "Материал внутри:	190T синтепон;"],
@@ -6255,6 +6310,7 @@ export const PRODUCT = [
     desc: "летний +15",
     descEng: "",
     category: "sleepingbag",
+    section: 1,
     price: 70,
     column: [],
     columnEng: [],
@@ -6267,6 +6323,7 @@ export const PRODUCT = [
     desc: "210*66см от +10 до 0",
     descEng: "210*66cm from +10 to 0°C",
     category: "sleepingbag",
+    section: 1,
     price: 140,
     order: false,
     column: ["Вес: 1300гр", "Размер внешний: 33*24см"],
@@ -6281,6 +6338,7 @@ export const PRODUCT = [
     descEng: "Super lightweight 220*90(55) from +15 to +5",
     desc: "Супер лёгкий 220*90(55) от +15  до +5",
     category: "sleepingbag",
+    section: 1,
     price: 269,
     order: false,
     shortlyEng:
@@ -6321,6 +6379,7 @@ export const PRODUCT = [
     descEng: "Insulation: 195(+35)*100, from 0°C to -21°C",
     desc: "Утеплитель 195(+35)*100 от 0°C до -21°C",
     category: "sleepingbag",
+    section: 1,
     price: 320,
     shortlyEng:
       "Insulation. The insulation used is lzoShell 40. The multi-directional super-fine hollow fibers of the lzoShell 4D insulation create numerous microvoids where warm air is trapped. The fibers of the insulation are bonded together with synthetic resin, making the lzoShell 4D insulation more airy, durable, and easy to maintain. Its low thermal conductivity, high hydrophobic and consumer properties make lzoShell 4D insulation one of the best insulators for sleeping bags. The outer material of the upper part of the sleeping bag is Polyester 190T with Rip Stop weave, a special breathable fabric that allows moisture to escape without condensing inside the sleeping bag. The outer material of the lower part of the sleeping bag is Polyester 190T with Diamond Rip Stop weave with a special waterproof PU coating, providing reliable protection from damage and moisture. The inner material is Flannel 100% Cotton - silky, soft, and comfortable fabric.",
@@ -6360,6 +6419,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "комфорт 14, лимит 10, экстрим 0",
     category: "sleepingbag",
+    section: 1,
     price: 224,
     shortlyEng: "",
     shortly: "",
@@ -6386,6 +6446,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "размер S",
     category: "sleepingbag",
+    section: 1,
     price: 22,
 
     order: true,
@@ -6407,6 +6468,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "размер L",
     category: "sleepingbag",
+    section: 1,
     price: 32,
 
     order: true,
