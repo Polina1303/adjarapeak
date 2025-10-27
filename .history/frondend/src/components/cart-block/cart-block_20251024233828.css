@@ -1,0 +1,77 @@
+.cart-block {
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  min-height: 45px;
+  flex-shrink: 0; /* Добавляем чтобы не расширялся */
+}
+
+.cart-price {
+  font-weight: 600;
+  font-size: 16px;
+  min-width: auto; /* Меняем на auto */
+  width: auto; /* Добавляем */
+  text-align: center;
+  white-space: nowrap;
+  flex-shrink: 0; /* Добавляем */
+}
+
+.cart-icon {
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .cart-block {
+    padding: 6px 10px;
+    min-height: 40px;
+    gap: 6px;
+  }
+  
+  .cart-price {
+    font-size: 14px;
+    min-width: auto; /* Убираем фиксированную ширину */
+  }
+  
+  .cart-icon {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cart-block {
+    padding: 4px 6px; /* Уменьшаем padding */
+    min-height: 36px;
+    gap: 3px;
+  }
+  
+  .cart-price {
+    font-size: 12px; /* Еще уменьшаем шрифт */
+    min-width: auto;
+  }
+  
+  .cart-icon {
+    font-size: 18px; /* Уменьшаем иконку */
+  }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 360px) {
+  .cart-block {
+    padding: 3px 5px;
+    gap: 2px;
+  }
+  
+  .cart-price {
+    font-size: 11px;
+  }
+  
+  .cart-icon {
+    font-size: 16px;
+  }
+}

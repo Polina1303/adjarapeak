@@ -1,0 +1,190 @@
+.delivery-strip {
+  background-color: #000;
+  color: #fff;
+  padding: 4px 10px;
+  font-size: 14px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 110;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+
+.delivery-text {
+  text-align: center;
+}
+
+.header {
+  margin-top: 25px;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 100;
+  width: 100%;
+  flex-wrap: wrap;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.nav-links {
+  font-size: 18px;
+  margin: 5px 10px;
+  text-align: center;
+  display: flex;
+  gap: 115px; 
+  align-items: center;
+  font-weight: 600;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+
+
+.cart {
+  margin: 0 10px;
+  flex-shrink: 0;
+}
+
+.active{
+  color: rgb(161, 161, 161);
+}
+
+
+/* === >1600px — очень большие мониторы === */
+@media (min-width: 1600px) {
+  .header {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .wrapper img { width: 140px !important; }
+}
+
+/* === <1200px — планшеты и небольшие ноутбуки === */
+@media (max-width: 1199px) {
+  .nav-links { gap: 80px; font-size: 16px; }
+  .wrapper img { width: 125px !important; }
+}
+
+/* === <1024px — стандартные планшеты === */
+@media (max-width: 1023px) {
+  .nav-links { gap: 40px; font-size: 15px; }
+  .wrapper { margin-right: 15px; }
+  .wrapper img { width: 115px !important; }
+  .cart-block { padding: 6px 10px; }
+  .cart-icon { font-size: 22px; }
+  .cart-text { font-size: 13px; }
+}
+
+/* === <900px — маленькие планшеты === */
+@media (max-width: 899px) {
+  .nav-links { gap: 30px; font-size: 14px; }
+  .header { padding: 10px 15px; }
+  .wrapper { margin-right: 10px; }
+  .wrapper img { width: 105px !important; }
+  .cart-text { display: none; }
+  .cart-block { padding: 6px 8px; gap: 6px; }
+  .cart-count { width: 18px; height: 18px; font-size: 11px; }
+}
+
+/* === <768px — планшеты в портретной ориентации === */
+@media (max-width: 767px) {
+  .nav-links { gap: 20px; font-size: 13px; }
+  .header { padding: 8px 12px; }
+  .wrapper { margin-right: 8px; }
+  .wrapper img { width: 95px !important; }
+  .cart-icon { font-size: 20px; }
+  .cart-block { padding: 5px; border: 1px solid #eee; border-radius: 8px; }
+}
+
+/* === <654px — большие телефоны === */
+@media (max-width: 653px) {
+  .location, .number { font-size: 12px; }
+  .nav-links { gap: 15px; font-size: 12px; }
+  .header { padding: 6px 10px; margin-top: 22px; }
+  .wrapper { margin-right: 5px; }
+  .wrapper img { width: 90px !important; }
+  .cart-icon { font-size: 18px; }
+  .cart-count { width: 16px; height: 16px; font-size: 10px; }
+}
+
+/* === <615px — телефоны (горизонтальная прокрутка меню) === */
+@media (max-width: 614px) {
+  .location, .number { display: none; }
+  .nav-links {
+    gap: 12px;
+    font-size: 11px;
+    margin: 8px 4px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 4px 0;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+  }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .header { padding: 5px 8px; margin-top: 20px; }
+  .wrapper { margin-right: 3px; }
+  .wrapper img { width: 85px !important; }
+  .cart { margin: 0 3px; }
+  .cart-block { padding: 4px; min-width: 34px; }
+}
+
+/* === <480px — маленькие телефоны === */
+@media (max-width: 479px) {
+  .nav-links { gap: 10px; font-size: 10px; }
+  .delivery-strip { font-size: 12px; padding: 3px 8px; }
+  .header { padding: 4px 6px; margin-top: 18px; }
+  .wrapper { margin-right: 2px; }
+  .wrapper img { width: 80px !important; }
+  .cart-icon { font-size: 16px; }
+  .cart-count {
+    width: 14px; height: 14px; font-size: 9px;
+    position: absolute; top: -2px; right: -2px;
+  }
+  .cart-block { position: relative; padding: 5px; }
+}
+
+/* === <360px — очень маленькие телефоны === */
+@media (max-width: 359px) {
+  .nav-links { gap: 8px; font-size: 9px; }
+  .delivery-strip { font-size: 11px; }
+  .header { padding: 3px 4px; margin-top: 16px; }
+  .wrapper { margin-right: 1px; }
+  .wrapper img { width: 70px !important; }
+  .cart-icon { font-size: 14px; }
+  .cart-count { width: 12px; height: 12px; font-size: 8px; top: -1px; right: -1px; }
+}
+
+/* === <500px по высоте (ландшафт) === */
+@media (max-height: 500px) and (orientation: landscape) {
+  .header { padding: 4px 12px; margin-top: 20px; }
+  .nav-links { gap: 15px; font-size: 12px; }
+  .wrapper img { width: 85px !important; }
+  .cart-block { padding: 4px 8px; }
+}
+
+/* === <400px по высоте (маленькая высота экрана) === */
+@media (max-height: 400px) {
+  .header { padding: 2px 8px; margin-top: 15px; }
+  .wrapper img { width: 75px !important; }
+  .cart-block { padding: 2px 6px; }
+  .cart-icon { font-size: 16px; }
+}

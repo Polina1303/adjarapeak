@@ -1,0 +1,129 @@
+
+.recommended-product-card {
+  padding: 16px;
+  margin: 0 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 300px;
+  box-sizing: border-box; 
+}
+
+
+.recommended-product-image {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.recommended-product-title {
+  margin: 8px 0;
+  font-family: "RoadRadio-Thin", sans-serif;
+  font-weight: 300;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  text-align: center;
+}
+
+.my-swiper {
+  padding: 0 30px; 
+}
+
+.my-swiper .swiper-button-next,
+.my-swiper .swiper-button-prev {
+  color: #ff8000; 
+  margin-top: -80px; 
+}
+
+@media (max-width: 768px) {
+  .recommended-product-card {
+    min-height: 280px; 
+    padding: 12px;
+    gap:10px;
+    width:30%
+  }
+  
+  .recommended-product-title {
+    font-size: 14px; 
+    max-height: calc(1.2em * 2);
+  }
+  
+  .recommended-product-image {
+    height: 100px;
+  }
+}
+
+
+/* carousel.css */
+.my-swiper {
+  position: relative;
+  padding: 0 15px; /* Добавляем отступы по бокам */
+}
+
+/* Стрелки навигации */
+.my-swiper .swiper-button-next,
+.my-swiper .swiper-button-prev {
+  color: #000000; /* Черный цвет */
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  margin-top: -20px;
+}
+
+.my-swiper .swiper-button-next:after,
+.my-swiper .swiper-button-prev:after {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Позиционирование стрелок на мобилках */
+@media (max-width: 767px) {
+  .my-swiper .swiper-button-next {
+    right: 5px !important;
+  }
+  
+  .my-swiper .swiper-button-prev {
+    left: 5px !important;
+  }
+  
+  .my-swiper .swiper-button-next,
+  .my-swiper .swiper-button-prev {
+    width: 35px;
+    height: 35px;
+    margin-top: -17px;
+  }
+  
+  .my-swiper .swiper-button-next:after,
+  .my-swiper .swiper-button-prev:after {
+    font-size: 16px;
+  }
+}
+
+/* На планшетах и десктопе */
+@media (min-width: 768px) {
+  .my-swiper .swiper-button-next {
+    right: -15px;
+  }
+  
+  .my-swiper .swiper-button-prev {
+    left: -15px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .my-swiper .swiper-button-next {
+    right: -25px;
+  }
+  
+  .my-swiper .swiper-button-prev {
+    left: -25px;
+  }
+}
