@@ -1,0 +1,6 @@
+.nav{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin: 40px;
+}

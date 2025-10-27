@@ -1,0 +1,21 @@
+
+.cart-block {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  min-height: 45px;
+}
+
+.cart-price {
+  font-weight: 600;
+  font-size: 16px;
+  min-width: 70px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.cart-icon {
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+}

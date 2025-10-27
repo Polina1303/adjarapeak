@@ -1,0 +1,367 @@
+.product-items__price {
+  padding-left: 7px;
+}
+
+.product-items__oldPrice.discounted {
+  font-size: 12px;
+}
+.product-items__price.discounted {
+  font-size: 12px;
+}
+
+.product-items__count {
+  border: 1px solid white;
+  color: #de682d;
+  border-radius: 40px;
+  background-color: white;
+  padding: 1px 5px;
+}
+
+/* Контейнер для обычного вида */
+.container-items-price {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Контейнер для страницы (page=true) */
+.container-items-price-page {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+}
+
+/* Контейнеры цен */
+.price-container-default {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.price-container-page {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  flex-shrink: 0;
+}
+
+/* Текст "скоро в наличии" */
+.availability-text-default {
+  margin: 0 0 0 20px;
+  color: #9f9d9df5;
+  line-height: 1;
+  position: relative;
+  top: -2px;
+}
+
+.availability-text-page {
+  color: #9f9d9df5;
+  line-height: 1;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.add-to-cart-cover {
+  width: 100%;
+}
+
+.add-to-cart.discounted {
+  margin-top: 10px;
+  background-color: #f87736;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  transition: transform 500ms ease;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+}
+
+.add-to-cart {
+  margin-top: 10px;
+  background-color: #f87736;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  transition: transform 500ms ease;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-items__price_page {
+  font-family: "RoadRadio-Bold";
+  font-size: 36px;
+  font-weight: 900;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+}
+
+.add-to-cart-page {
+  background-color: #f87736;
+  transition: transform 500ms ease;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-width: 150px;
+  flex-shrink: 0;
+}
+
+.add-to-cart:hover {
+  transform: scale(1.05);
+}
+.add-to-cart-page:hover {
+  transform: scale(1.05);
+}
+
+.add-to-cart-title.discounted {
+  color: white;
+  font-weight: 600;
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  font-size: 10px;
+}
+
+.add-to-cart-title {
+  color: white;
+  font-weight: 600;
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.add-to-cart-icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.shopping-cart-icon {
+  width: 25px;
+  height: 25px;
+  color: white;
+}
+
+.shopping-cart-icon.discounted {
+  width: 15px;
+  height: 15px;
+  color: white;
+}
+
+.product-items__oldPrice {
+  text-decoration: line-through;
+}
+
+/* Мобильная версия для page=true */
+@media only screen and (max-width: 768px) {
+  .container-items-price-page {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .price-container-page {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: nowrap;
+  }
+
+  .product-items__price_page {
+    font-size: 24px;
+    white-space: nowrap;
+  }
+
+  .availability-text-page {
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .add-to-cart-page {
+    min-width: 120px;
+    height: 40px;
+  }
+
+  .add-to-cart-title {
+    font-size: 14px;
+    margin-bottom: 0;
+    margin-right: 5px;
+  }
+
+  .shopping-cart-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media only screen and (max-width: 569px) {
+  .add-to-cart {
+    height: 35px;
+  }
+  
+  .product-items__count {
+    display: none;
+  }
+
+  .container-items-price-page {
+    gap: 8px;
+  }
+
+  .product-items__price_page {
+    font-size: 20px;
+  }
+
+  .add-to-cart-page {
+    min-width: 100px;
+    height: 35px;
+  }
+
+  .add-to-cart-title {
+    font-size: 12px;
+  }
+
+  .shopping-cart-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .container-items-price-page {
+    flex-wrap: nowrap;
+    gap: 5px;
+  }
+
+  .price-container-page {
+    gap: 5px;
+  }
+
+  .product-items__price_page {
+    font-size: 18px;
+  }
+
+  .availability-text-page {
+    font-size: 10px;
+  }
+
+  .add-to-cart-page {
+    min-width: 90px;
+    height: 32px;
+  }
+
+  .add-to-cart-title {
+    font-size: 11px;
+    margin-right: 3px;
+  }
+
+  .shopping-cart-icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .product-items__price_page {
+    font-size: 16px;
+  }
+
+  .add-to-cart-page {
+    min-width: 80px;
+    height: 30px;
+  }
+
+  .add-to-cart-title {
+    font-size: 10px;
+  }
+
+  .shopping-cart-icon {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* Остальные существующие медиа-запросы */
+@media only screen and (max-width: 510px) {
+  .add-to-cart {
+    font-size: 13px;
+    height: 30px;
+  }
+  .shopping-cart-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media only screen and (max-width: 435px) {
+  .add-to-cart {
+    font-size: 12px;
+    height: 25px;
+    padding-top: 3px;
+  }
+  .shopping-cart-icon {
+    width: 15px;
+    height: 15px;
+  }
+  .add-to-cart-icon {
+    margin-bottom: 5px;
+  }
+}
+
+@media only screen and (max-width: 416px) {
+  .shopping-cart-icon {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+@media only screen and (max-width: 404px) {
+  .add-to-cart {
+    font-size: 11px;
+    height: 25px;
+    padding-top: 3px;
+  }
+  .shopping-cart-icon {
+    margin-left: -5px;
+  }
+}
+
+@media only screen and (max-width: 371px) {
+  .add-to-cart {
+    height: 22px;
+  }
+  .shopping-cart-icon {
+    margin-left: -5px;
+  }
+}
+
+@media only screen and (max-width: 363px) {
+  .shopping-cart-icon {
+    width: 11px;
+    height: 11px;
+    margin-left: -3px;
+  }
+  .product-items__price {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (max-width: 354px) {
+  .add-to-cart {
+    height: 21px;
+    font-size: 9px;
+  }
+}
