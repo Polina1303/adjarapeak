@@ -1959,7 +1959,7 @@ export const PRODUCT = [
     title: "Очки для плавания",
     img: "swimming-goggles-ready-one-size-clear-lenses-grey-nabaiji-8616684.jpg",
     desc: "NABAIJI серые",
-    category: "mask",
+    category: "goggles",
     price: 30,
     column: [
       "Плавайте с ясным обзором благодаря специальной противотуманной обработке.",
@@ -1974,7 +1974,7 @@ export const PRODUCT = [
     title: "Очки для плавания",
     img: "xbase-100-adult-swimming-goggles-clear-lenses-black-nabaiji-8669830.avif",
     desc: "NABAIJI (черные, голубые, розовые) ",
-    category: "mask",
+    category: "goggles",
     price: 35,
     column: [
       "Благодаря специальной обработке эти очки не запотевают во время плавания.",
@@ -2003,7 +2003,7 @@ export const PRODUCT = [
     title: "Детские очки",
     img: "e00ba9e4-ba61-4990-a272-51e358b1ccdb.webp",
     desc: "плавательные",
-    category: "mask",
+    category: "goggles",
     price: 24,
     column: [
       "Детские плавательные очки для детей 3–12 лет — обеспечивают защиту от запотевания, чёткое зрение и надёжную герметичность.",
@@ -2245,7 +2245,7 @@ export const PRODUCT = [
     title: "Гермопакет для телефона",
     img: "ci4aqul40v.png",
     desc: "плавающий",
-    category: "hermo",
+    category: "hermo2",
     price: 15,
 
     column: [
@@ -2261,7 +2261,7 @@ export const PRODUCT = [
     title: "Гермопакет для телефона",
     img: "22.16.11.jpg",
     desc: "плавающий",
-    category: "hermo",
+    category: "hermo2",
     price: 12,
 
     column: [
@@ -2274,7 +2274,7 @@ export const PRODUCT = [
     title: "Гермопакет для телефона",
     img: "23.11.48.jpg",
     desc: "плавающий",
-    category: "hermo",
+    category: "hermo2",
     order: false,
     price: 24,
     column: [
@@ -2291,7 +2291,7 @@ export const PRODUCT = [
     title: "Гермопакет для телефона",
     img: "s-l1600.png",
     desc: "защита телефона",
-    category: "hermo",
+    category: "hermo2",
     price: 19,
     order: false,
     column: [
@@ -2308,7 +2308,7 @@ export const PRODUCT = [
     title: "Гермомешок",
     img: "IMG_8530.JPG",
     desc: " HelloPlus 10L",
-    category: "hermo",
+    category: "hermo3",
     price: 59,
     column: [
       "Гермомешок (гермобаул) подходит как для активного отдыха (рыбалка, сплав), так и для хранения и транспортировки вещей и снаряжения.",
@@ -2321,7 +2321,7 @@ export const PRODUCT = [
     title: "Гермомешок нетонующий",
     img: "8fb71243600589af2ec1.png",
     desc: "OceanPac 2L",
-    category: "hermo",
+    category: "hermo2",
     price: 25,
     column: [
       "Объем 2 литра",
@@ -2338,7 +2338,7 @@ export const PRODUCT = [
     title: "Гермомешок нетонующий",
     img: "cebea8e02d1ff88a8.png",
     desc: "OceanPac 5L",
-    category: "hermo",
+    category: "hermo2",
     price: 35,
     column: [
       "Объем 5 литра",
@@ -2355,7 +2355,7 @@ export const PRODUCT = [
     title: "Гермомешок нетонующий",
     img: "50782c9bb6af9de7282.png",
     desc: "OceanPac 10L",
-    category: "hermo",
+    category: "hermo2",
     price: 47,
     column: [
       "Объем 10 литра",
@@ -2372,7 +2372,7 @@ export const PRODUCT = [
     title: "Гермомешок нетонующий",
     img: "3761a8a8fb85c00fa72.png",
     desc: "OceanPac 20L",
-    category: "hermo",
+    category: "hermo2",
     price: 70,
     column: [
       "Объем 20 литра",
@@ -2389,7 +2389,7 @@ export const PRODUCT = [
     title: "ВОДОНЕПРОНИЦАЕМАЯ СУМКА",
     img: "su-sizdirmaz-silindir-canta-10l-turuncu-2.jpg",
     desc: "ГЕРМОМЕШОК 10 Л ITIWT",
-    category: "hermo",
+    category: "hermo2",
     order: false,
     price: 79,
     column: [
@@ -2409,7 +2409,7 @@ export const PRODUCT = [
     title: "ВОДОНЕПРОНИЦАЕМАЯ СУМКА",
     img: "su-sizdirmaz-silindir-canta-30l-turuncu-3.jpg",
     desc: "ГЕРМОМЕШОК 30 Л ITIWT",
-    category: "hermo",
+    category: "hermo2",
     price: 109,
     column: [
       "Новая двойная полиэфирная ткань с ПВХ-покрытием для большей износостойкости",
@@ -2428,7 +2428,7 @@ export const PRODUCT = [
     title: "ВОДОНЕПРОНИЦАЕМЫЙ КОМПРЕССИОННЫЙ МЕШОК",
     img: "trekking-su-gecirmez-sikistirma-kilif-25-litre.jpg",
     desc: "25L FORCIAZ",
-    category: "hermo",
+    category: "hermo2",
     price: 45,
     column: [
       "Емкость: 25 литров.",
@@ -2479,7 +2479,7 @@ export const PRODUCT = [
     title: "Полотенце из микрофибры",
     img: "259cd_1300x1300.webp",
     desc: "Cool Gray 82 Х 32 СМ",
-    category: "beach",
+    category: "towel",
     price: 19,
     column: ["Основной материал: Полиэстер (полиэфирное волокно)"],
   },
@@ -2489,7 +2489,7 @@ export const PRODUCT = [
     title: "Полотенце из микрофибры",
     img: "microfibre.avif",
     desc: "S 39*55см",
-    category: "beach",
+    category: "towel",
 
     price: 18,
     column: [
@@ -2506,7 +2506,7 @@ export const PRODUCT = [
     title: "Полотенце из микрофибры",
     img: "microfibre.avif",
     desc: "M 60*80см",
-    category: "beach",
+    category: "towel",
     price: 28,
     column: [
       "Двустороннее банное полотенце из микрофибры",
@@ -2522,7 +2522,7 @@ export const PRODUCT = [
     title: "Полотенце из микрофибры",
     img: "microfibre.avif",
     desc: "L 80*130см",
-    category: "beach",
+    category: "towel",
     price: 38,
     column: [
       "Двустороннее банное полотенце из микрофибры",
@@ -2540,6 +2540,7 @@ export const PRODUCT = [
     img: "f3a392a0-9695-41c1-9895-084b1f7b477e-Photoroom.png",
     desc: "45-46",
     category: "roller",
+    subcategory: "roller",
     price: 290,
     column: [
       "Профессиональные роликовые коньки унисекс. Идеальный выбор для начинающих мужчин и женщин. Удобная, регулируемая тренировочная обувь со съёмной внутренней частью и прочными колёсами.",
@@ -2554,6 +2555,7 @@ export const PRODUCT = [
     img: "2726be67-fd77-4b23-abd1.png",
     desc: "белые, черно-белые, черные ",
     category: "roller",
+    subcategory: "roller",
     price: 270,
     column: [
       "Профессиональные роликовые коньки классического стиля.",
@@ -2571,6 +2573,7 @@ export const PRODUCT = [
     img: "9b748ca8-550b-4653-bf5b-a16d9981e097.webp",
     desc: "белые, черно-белые, черные ",
     category: "roller",
+    subcategory: "roller",
     price: 270,
     column: [
       "Профессиональные роликовые коньки классического стиля.",
@@ -2588,6 +2591,7 @@ export const PRODUCT = [
     img: "S26c662a36c034fac90.png",
     desc: "43 размер",
     category: "roller",
+    subcategory: "roller",
     price: 350,
     column: [
       "Колёса: 3×110 мм или 3×125 мм из PU (с подсветкой или без).",
@@ -2602,6 +2606,7 @@ export const PRODUCT = [
     img: "du71fbs6s55jawrupgbdmb67firtfjxf.jpg",
     desc: "S(28-32), M(33-37), L(38-42)",
     category: "roller",
+    subcategory: "roller",
     price: 150,
     column: [],
   },
@@ -2612,6 +2617,7 @@ export const PRODUCT = [
     img: "hjhhgg344.png",
     desc: "регулируемые 31-34",
     category: "roller",
+    subcategory: "roller",
 
     price: 130,
     column: [
@@ -2629,6 +2635,7 @@ export const PRODUCT = [
     img: "600014668618b0.jpeg",
     desc: "регулируемые 31-34",
     category: "roller",
+    subcategory: "roller",
     price: 135,
     column: [
       "Детские роликовые коньки для активного и безопасного отдыха.",
@@ -2649,6 +2656,7 @@ export const PRODUCT = [
     img: "kids-inline-skates-learn-100-beige-eu-28-34-oxelo.png",
     desc: "30-32, 32-34, 32-34",
     category: "roller",
+    subcategory: "roller",
     price: 230,
     column: [
       "Идеальные роликовые коньки для начинающих детей от 3 лет!",
@@ -2666,6 +2674,7 @@ export const PRODUCT = [
     img: "7988f4b5-6b43-4661-856c-58fc8281338b.webp",
     desc: "35-38 размер",
     category: "roller",
+    subcategory: "roller",
     price: 230,
     column: [
       "Удобная нескользящая и дышащая конструкция для комфортного катания.",
@@ -2681,6 +2690,7 @@ export const PRODUCT = [
     img: "b1f2b627383337af48f04d809f5c9453.webp",
     desc: "28-31, 32-35, 36-39",
     category: "roller",
+    subcategory: "roller",
     price: 270,
     column: [
       "Регулируемые, модные и удобные – идеально подойдут как мальчикам, так и девочкам!",
@@ -2698,6 +2708,7 @@ export const PRODUCT = [
     img: "picture2442.png",
     desc: " OXELO 100 S",
     category: "roller",
+    subcategory: "roller _accessories",
     price: 49,
     column: [
       "Сумка для переноски и хранения детских роликовых и ледовых коньков с экипировкой.",
@@ -2714,6 +2725,7 @@ export const PRODUCT = [
     img: "picture3434.jpg",
     desc: " OXELO 500 L",
     category: "roller",
+    subcategory: "roller _accessories",
     price: 70,
     column: [
       "Сумка для хранения и переноски роликовых и ледовых коньков с экипировкой.",
@@ -2729,6 +2741,7 @@ export const PRODUCT = [
     img: "s-l4070.jpg",
     desc: "для хранения и переноски",
     category: "roller",
+    subcategory: "roller _accessories",
     price: 55,
     column: [],
   },
@@ -2739,6 +2752,7 @@ export const PRODUCT = [
     img: "fa4c6149-d0c.png",
     desc: "8x22x7mm",
     category: "roller",
+    subcategory: "roller _accessories",
     price: 2,
     column: [" из углеродистой стали 608ZZ ", " с двойным экранированием"],
   },
@@ -2749,6 +2763,7 @@ export const PRODUCT = [
     img: "49190a52206847959cace56787259b5f.webp",
     desc: "8шт в кейсе",
     category: "roller",
+    subcategory: "roller _accessories",
     price: 52,
     column: ["Подшипники abec9"],
   },
@@ -3237,6 +3252,7 @@ export const PRODUCT = [
     img: "yetiskin-tenis-seti-2-raket-2-top.png",
     desc: "270 gr DECATHLON 2шт+чехол",
     category: "tennis",
+    subcategory: "tennis",
     price: 250,
     column: [
       "Новички смогут сразу же открыть для себя теннис с этим набором, в который входят 2 алюминиевые ракетки для взрослых, 2 теннисных мяча и кейс.",
@@ -3252,6 +3268,7 @@ export const PRODUCT = [
     desc: "270 gr ARTENGO 2шт+чехол",
     category: "tennis",
     price: 250,
+    subcategory: "tennis",
     column: [
       "Набор для начинающих игроков в теннис.",
       "В комплект входят: 2 алюминиевые ракетки для взрослых, 2 теннисных мяча и сумка.",
@@ -3267,6 +3284,7 @@ export const PRODUCT = [
     img: "picture1234.png",
     desc: "270 gr KUIKMA ",
     category: "tennis",
+    subcategory: "tennis",
     price: 220,
     column: [
       "Теннисная ракетка для начинающих игроков, ищущих универсальность и простоту игры.",
@@ -3284,6 +3302,7 @@ export const PRODUCT = [
     img: "13cd58cd-4444-448.png",
     desc: "из карбонового композита",
     category: "tennis",
+    subcategory: "tennis",
     price: 170,
 
     column: [
@@ -3302,6 +3321,7 @@ export const PRODUCT = [
     img: "cocuk-tenis-raketi.png",
     desc: "DECATHLON ",
     category: "tennis",
+    subcategory: "tennis",
     price: 140,
     column: [
       "Теннисная ракетка для детей ростом 116–125 см, начинающих играть в теннис.",
@@ -3318,6 +3338,7 @@ export const PRODUCT = [
     img: "picture1266.png",
     desc: "ARTENGO Easy TR130",
     category: "tennis",
+    subcategory: "tennis",
     price: 160,
     column: [
       "Детская теннисная ракетка TR130 — идеальна для первых ударов.",
@@ -3335,6 +3356,7 @@ export const PRODUCT = [
     img: "picture0908.jpg",
     desc: "ARTENGO",
     category: "tennis",
+    subcategory: "tennis_accessories",
     price: 35,
     column: [
       "Мяч TB100 предназначен для детей 4–7 лет, начинающих осваивать теннис.",
@@ -3351,6 +3373,7 @@ export const PRODUCT = [
     img: "116153720.webp",
     desc: "ITF Marka",
     category: "tennis",
+    subcategory: "tennis_accessories",
     price: 47,
     column: [],
   },
@@ -3361,6 +3384,7 @@ export const PRODUCT = [
     img: "picture19866.png",
     desc: "ARTENGO TB160 3 шт",
     category: "tennis",
+    subcategory: "tennis_accessories",
     price: 35,
     column: [
       "Теннисный мяч для первых подач и клубных тренировок.",
@@ -3377,6 +3401,7 @@ export const PRODUCT = [
     img: "tenis-topu-4-adet-cok-islevli-sari-comfort-.png",
     desc: "ARTENGO COMFORT",
     category: "tennis",
+    subcategory: "tennis_accessories",
     price: 65,
     column: [
       "Набор из 4 теннисных мячей ARTENGO COMFORT — для игры на твёрдом и грунтовом покрытии.",
@@ -3393,6 +3418,7 @@ export const PRODUCT = [
     img: "8ca3c670-3d24-46e1.png",
     desc: "для начинающих 6,4 см",
     category: "tennis",
+    subcategory: "tennis_accessories",
     price: 5,
     column: [],
   },
@@ -3403,6 +3429,7 @@ export const PRODUCT = [
     img: "e8c98ae4-eacf-49c5-8b08-ad35c2a76e91.webp",
     desc: "из нейлона",
     category: "tennis",
+    subcategory: "tennis_accessories",
     price: 35,
     column: [
       "Прочная сумка для хранения и переноски теннисных ракеток.",
@@ -3420,6 +3447,7 @@ export const PRODUCT = [
     img: "71H8zP9VCFL._AC_UF8.png",
     desc: "49 х 33 х 12 см ",
     category: "tennis",
+    subcategory: "tennis_accessories",
     price: 90,
     column: [
       "Теннисная сумка на плечо унисекс от бренда Thousand Fish.",
@@ -3441,6 +3469,7 @@ export const PRODUCT = [
     img: "6849178727.jpg",
     desc: "1 шт",
     category: "tennis",
+    subcategory: "tennis_accessories",
     price: 8,
     column: [
       "Материал: искусственная кожа — прочная, приятная на ощупь и долговечная.",
@@ -3457,6 +3486,7 @@ export const PRODUCT = [
     img: "1876_org.png",
     desc: "3 шт. Цветная ARTENGO Comfort",
     category: "tennis",
+    subcategory: "tennis_accessories",
     price: 35,
     column: [
       "Овергрип обеспечивает комфорт и надёжное сцепление во время игры в теннис.",
@@ -3468,11 +3498,48 @@ export const PRODUCT = [
   },
   {
     order: true,
+    id: 108043018223,
+    title: "Носки для тенниса RS 500 ",
+    img: "tenis-corabi-uzun-konclu-3lu-.png",
+    desc: "3 пары",
+    category: "socks",
+    price: 35,
+    column: [
+      "Спортивные носки для тенниса — комфорт, сцепление и долговечность.",
+      "Мягкий махровый материал по всей поверхности эффективно впитывает пот.",
+      "Плотная вязка с усилением в области пятки и носка для износостойкости.",
+      "Эластичная вставка в области голеностопа — надёжно фиксируются и не сползают.",
+      "Зона вентиляции в верхней части обеспечивает воздухообмен.",
+      "Мягкость махровой и хлопковой ткани снижает риск раздражения кожи.",
+      "Продаются в упаковке по 3 пары.",
+    ],
+  },
+  {
+    order: true,
+    id: 244243944954344885091,
+    title: "Короткие носки RS100",
+    img: "tenis-corabi-kisa-konclu-3-cift-beyaz.png",
+    desc: "3 пары",
+    category: "tennis",
+    subcategory: "tennis_accessories",
+    price: 30,
+    column: [
+      "Эти носки разработаны для начинающих игроков в теннис, которым нужна удобная модель для тренировок.",
+      "Высокое содержание хлопка обеспечивает комфорт и безопасность при первых занятиях спортом.",
+      "Продаются комплектом из 3 пар.",
+      "Усиленные пятка и носок повышают износостойкость.",
+      "Мягкие махровые вставки в зонах трения предотвращают раздражение кожи.",
+      "Эластичная структура с добавлением спандекса обеспечивает плотное прилегание и отличную гибкость.",
+    ],
+  },
+  {
+    order: true,
     id: 2442439449543448850910,
     title: "Ракетка для падела",
     img: "picture23445.png",
     desc: "Kuikma PR 190",
     category: "padel",
+    subcategory: "padel",
     price: 180,
     column: [
       "Ракетка для паделя для начинающих игроков, ищущих лёгкость и комфорт.",
@@ -3502,6 +3569,7 @@ export const PRODUCT = [
     order: true,
     id: 244243944954344885091029,
     title: "Мячи для падела",
+    subcategory: "padel_accessories",
     img: "picture544343.png",
     desc: "3 шт PB Control",
     category: "padel",
@@ -3521,6 +3589,7 @@ export const PRODUCT = [
     title: "Мячи для падела",
     img: "padel-topu-3-adet-pb-spee.png",
     desc: "3 шт PB Speed",
+    subcategory: "padel_accessories",
     category: "padel",
     price: 49,
     column: [
@@ -3539,6 +3608,7 @@ export const PRODUCT = [
     img: "small-indoor-table-tennis-set-ppr-100-with-2-bats-and-3-balls.avif",
     desc: "Butterfly",
     category: "mini",
+    subcategory: "mini",
     price: 55,
     column: [
       "Эти компактные ракетки разработаны для лучшего контроля мяча при игре на маленьком столе.",
@@ -3558,6 +3628,7 @@ export const PRODUCT = [
     img: "table-tennis-set-of-2-durable-bats-3-balls-.png",
     desc: "PONGORI PPR 100",
     category: "mini",
+    subcategory: "mini",
     price: 80,
     column: [
       "Освойте настольный теннис легко с этим набором ракеток! PPR 100 устойчива к ударам и погодным условиям, помогая вам научиться контролировать мяч и наслаждаться более долгими розыгрышами.",
@@ -3572,6 +3643,7 @@ export const PRODUCT = [
     img: "p272464998.png",
     desc: "PONGORI PPR 100",
     category: "mini",
+    subcategory: "mini",
     price: 40,
     column: [
       "Освойте настольный теннис легко с этим набором ракеток! PPR 100 устойчива к ударам и погодным условиям, помогая вам научиться контролировать мяч и наслаждаться более долгими розыгрышами.",
@@ -3584,6 +3656,7 @@ export const PRODUCT = [
     id: 24424394445692,
     title: "Мяч для настольного тенниса STIGA",
     img: "76742674267а.jpg",
+    subcategory: "mini_accessories",
     desc: "3шт.",
     category: "mini",
     price: 14,
@@ -3594,6 +3667,7 @@ export const PRODUCT = [
     id: 244243944456921,
     title: "Мяч для настольного тенниса STIGA",
     img: "1_org44242.png",
+    subcategory: "mini_accessories",
     desc: "6шт.",
     category: "mini",
     price: 18,
@@ -3604,28 +3678,11 @@ export const PRODUCT = [
     id: 244243944456923,
     title: "Мяч для настольного тенниса",
     img: "table-tennis-ball_.avif",
+    subcategory: "mini_accessories",
     desc: "1шт.",
     category: "mini",
     price: 2,
     column: [],
-  },
-  {
-    order: true,
-    id: 244243944954344885091,
-    title: "Короткие носки RS100",
-    img: "tenis-corabi-kisa-konclu-3-cift-beyaz.png",
-    desc: "3 пары",
-    category: "tennis",
-    subcategory: "tennis_accessories",
-    price: 30,
-    column: [
-      "Эти носки разработаны для начинающих игроков в теннис, которым нужна удобная модель для тренировок.",
-      "Высокое содержание хлопка обеспечивает комфорт и безопасность при первых занятиях спортом.",
-      "Продаются комплектом из 3 пар.",
-      "Усиленные пятка и носок повышают износостойкость.",
-      "Мягкие махровые вставки в зонах трения предотвращают раздражение кожи.",
-      "Эластичная структура с добавлением спандекса обеспечивает плотное прилегание и отличную гибкость.",
-    ],
   },
   {
     order: true,
@@ -3634,6 +3691,7 @@ export const PRODUCT = [
     img: "6337498439.jpg",
     desc: "в черном чехле",
     category: "badminton",
+    subcategory: "badminton",
     price: 35,
     column: [],
   },
@@ -3644,6 +3702,7 @@ export const PRODUCT = [
     img: "cunhus.png",
     desc: "в оранжевом кейсе",
     category: "badminton",
+    subcategory: "badminton",
     price: 45,
     column: [],
   },
@@ -3654,6 +3713,7 @@ export const PRODUCT = [
     img: "17.33.20.jpg",
     desc: "в оранжевом и синем кейсе",
     category: "badminton",
+    subcategory: "badminton",
     price: 50,
 
     column: [],
@@ -3666,6 +3726,7 @@ export const PRODUCT = [
     desc: "универсальные, лёгкие и прочные ",
     category: "badminton",
     price: 25,
+    subcategory: "badminton_accessories",
     column: [],
   },
   {
@@ -3675,6 +3736,7 @@ export const PRODUCT = [
     img: "S2b8ec593e3a049d7afd20d8bda8d6b7eX.webp",
     desc: "универсальный, лёгкий и прочный",
     category: "badminton",
+    subcategory: "badminton_accessories",
     price: 4,
     column: [],
   },
@@ -3685,6 +3747,7 @@ export const PRODUCT = [
     img: "3-1033331.png",
     desc: "универсальные, лёгкие и прочные ",
     category: "badminton",
+    subcategory: "badminton_accessories",
     price: 12,
     column: [],
   },
@@ -3695,6 +3758,7 @@ export const PRODUCT = [
     img: "badminton-shuttlecocks-pack-of-3-100-series-perfly.png",
     desc: "PERFLY PSC 100",
     category: "badminton",
+    subcategory: "badminton_accessories",
     price: 23,
     column: [
       "Пластиковый ободок обеспечивает высокую износостойкость волана.",
@@ -3780,7 +3844,7 @@ export const PRODUCT = [
     title: "Мяч волейбольный ",
     img: "p1991708.avif",
     desc: "KIPSTA VB100",
-    category: "balls",
+    category: "volleyball",
     price: 60,
     column: [
       "Приятный на ощупь мяч с хорошим сцеплением — идеален для начала занятий волейболом! Отличный выбор для изучения первых приёмов и движений.",
@@ -3794,7 +3858,7 @@ export const PRODUCT = [
     title: "Мяч волейбольный",
     img: "765.webp",
     desc: "BV100 детский",
-    category: "balls",
+    category: "volleyball",
     price: 32,
     column: [
       "Благодаря специальной технологии производства, этот мяч обладает идеальным балансом и легкостью, что делает его отличным выбором как для тренировок, так и для соревнований.",
@@ -3806,7 +3870,7 @@ export const PRODUCT = [
     title: "Мяч волейбольный",
     img: "beach-volleyball-size-5-bv100-classic-turquoise-kipsta.png",
     desc: "BV100 взрослый",
-    category: "balls",
+    category: "volleyball",
     price: 65,
     column: [
       "Очень мягкий и комфортный на ощупь — обеспечивает уверенный контакт с мячом.",
@@ -3819,7 +3883,8 @@ export const PRODUCT = [
     title: "Мяч футбольный",
     img: "size-4-football-sunny-300-green-kipsta.png",
     desc: "KIPSTA Sunny 300 4 оранжевый и бирюзовый ",
-    category: "balls",
+    category: "football",
+    subcategory: "football",
     price: 32,
     column: [
       "Мяч изготовлен из толстого ПВХ.",
@@ -3837,7 +3902,9 @@ export const PRODUCT = [
     title: "Мяч футбольный",
     img: "myach-futbolnyj-firs.png",
     desc: "детский First Kick 5 ",
-    category: "balls",
+    category: "football",
+    subcategory: "football",
+
     price: 40,
     column: [
       "Оболочка из ПВХ обеспечивает надёжность и износостойкость.",
@@ -3852,7 +3919,9 @@ export const PRODUCT = [
     title: "Мяч футбольный",
     img: "images8780.jpeg",
     desc: "детский First Kick 4 ",
-    category: "balls",
+    category: "football",
+    subcategory: "football",
+
     price: 40,
     column: [
       "Оболочка из ПВХ обеспечивает надёжность и износостойкость.",
@@ -3867,7 +3936,9 @@ export const PRODUCT = [
     title: "Мяч футбольный",
     img: "8676296.jpg",
     desc: "детский First Kick 3 ",
-    category: "balls",
+    category: "football",
+    subcategory: "football",
+
     price: 32,
     column: [
       "Размер 3 для детей до 9 лет. Самым требовательным испытанием мяча является машинный удар.",
@@ -3880,7 +3951,9 @@ export const PRODUCT = [
     title: "Мяч футбольный",
     img: "876545678.png",
     desc: "NATIONAL GEORGIA",
-    category: "balls",
+    category: "football",
+    subcategory: "football",
+
     price: 70,
     column: [],
   },
@@ -3890,7 +3963,9 @@ export const PRODUCT = [
     title: "Мяч футбольный",
     img: "17.47.25.png",
     desc: "подходит для игр на улице и на поле",
-    category: "balls",
+    category: "football",
+    subcategory: "football",
+
     price: 45,
     column: [],
   },
@@ -3900,7 +3975,9 @@ export const PRODUCT = [
     title: "Мяч футбольный",
     img: "17.51.009.png",
     desc: "подходит для игр на улице и на поле",
-    category: "balls",
+    category: "football",
+    subcategory: "football",
+
     price: 45,
     column: [],
   },
@@ -3910,7 +3987,9 @@ export const PRODUCT = [
     title: "Мяч футбольный",
     img: "17.9854.50.png",
     desc: "подходит для игр на улице и на поле",
-    category: "balls",
+    category: "football",
+    subcategory: "football",
+
     price: 20,
     column: [],
   },
@@ -3920,7 +3999,9 @@ export const PRODUCT = [
     title: "Мяч футбольный",
     img: "m-yach-futbolnij-5-pvc-330g-fb24329.jpg",
     desc: "подходит для игр на улице и на поле",
-    category: "balls",
+    category: "football",
+    subcategory: "football",
+
     price: 30,
     column: [],
   },
@@ -3930,28 +4011,21 @@ export const PRODUCT = [
     title: "Мяч футбольный",
     img: "018.29.27.png",
     desc: "подходит для игр на улице и на поле",
-    category: "balls",
+    category: "football",
+    subcategory: "football",
+
     price: 25,
     column: [],
   },
 
   {
     order: true,
-    id: 98765964158069,
-    title: "Мяч Регби 9",
-    img: "american-football-with-brown-leather-texture-white-laces-white-background.jpg",
-    desc: "классический",
-    category: "balls",
-    price: 55,
-    column: [],
-  },
-  {
-    order: true,
     id: 987654532232,
     title: "Мяч для мини-футбола Sunny 300 1",
     img: "open-uri20240628-2483388-scidbd.jpeg",
     desc: "розовый и бирюзовый",
-    category: "balls",
+    category: "football",
+    subcategory: "football",
     price: 32,
     column: [
       "Футбол, сделанный из утолщенного материала из пвх",
@@ -3965,7 +4039,8 @@ export const PRODUCT = [
     title: "Перчатки вратарские",
     img: "0dc50b88-9dcf-4473-beb1-f339e0c14545.avif",
     desc: "",
-    category: "balls",
+    category: "football",
+    subcategory: "football_accessories",
     price: 79,
     column: [
       "Профессиональные вратарские перчатки Titan обеспечивают надежную защиту и исключительный захват для взрослых и юных футболистов.",
@@ -3981,7 +4056,8 @@ export const PRODUCT = [
     title: "Перчатки вратарские",
     img: "d3de4709-d200-4d2e-909b-0f1c5a0d438a.avif",
     desc: "",
-    category: "balls",
+    category: "football",
+    subcategory: "football_accessories",
     price: 55,
     column: [
       "Вратарские перчатки SPORTOUT без защиты пальцев обеспечивают надежное сцепление и удобную посадку при тренировках и матчах.",
@@ -3990,25 +4066,25 @@ export const PRODUCT = [
       "Изготовлены из прочных и эластичных материалов, устойчивых к износу; застежка — крюк и петля.",
     ],
   },
-  // {
-  // order:true,//
-  // id: 9890654532232,
-  //   title: "Мяч Регби 9",
-  //   img: "open-uri20240628-2483388-scidbd.jpeg",
-  //   desc: "",
-  //   category: "balls",
-  //   price: 55,
-  //   column: [
+  {
+    order: true,
+    id: 98765964158069,
+    title: "Мяч Регби 9",
+    img: "american-football-with-brown-leather-texture-white-laces-white-background.jpg",
+    desc: "классический",
+    category: "rugby",
+    price: 55,
+    column: [],
+  },
 
-  //   ],
-  // },
   {
     order: true,
     id: 924476544323,
     title: "Мяч баскетбольный",
     img: "18.40.32.png",
     desc: "для тренировок и игр",
-    category: "balls",
+    category: "basketball",
+    subcategory: "basketball",
     price: 85,
 
     column: [],
@@ -4019,7 +4095,9 @@ export const PRODUCT = [
     title: "Мяч баскетбольный",
     img: "764335.webp",
     desc: "TARMAK R100 7 ",
-    category: "balls",
+    category: "basketball",
+    subcategory: "basketball",
+
     price: 50,
     column: [
       "Баскетбольный мяч R100 размером 7 отлично подойдет для игры и тренировок как на улице, так и в помещении. ",
@@ -4033,7 +4111,9 @@ export const PRODUCT = [
     title: "Мяч баскетбольный",
     img: "765888.webp",
     desc: "TARMAK R100 5 ",
-    category: "balls",
+    category: "basketball",
+    subcategory: "basketball",
+
     price: 50,
     column: [
       "Баскетбольный мяч R100 размером 7 отлично подойдет для игры и тренировок как на улице, так и в помещении. ",
@@ -4047,7 +4127,9 @@ export const PRODUCT = [
     title: "Мяч баскетбольный 7",
     img: "3e884d70-745a-4b09-bc88-7e4bf68e695b_800x800.webp",
     desc: "черный in|outdoor",
-    category: "balls",
+    category: "basketball",
+    subcategory: "basketball",
+
     price: 75,
     column: [
       "Баскетбольный мяч размера 7 (74,93 см).",
@@ -4061,7 +4143,7 @@ export const PRODUCT = [
     title: "Мяч волейбольный",
     img: "18.44.180.png",
     desc: "Humble",
-    category: "balls",
+    category: "volleyball",
     price: 45,
     column: [],
   },
@@ -4071,7 +4153,7 @@ export const PRODUCT = [
     title: "Мяч волейбольный",
     img: "18.49.15.png",
     desc: "Mikasa Replic ",
-    category: "balls",
+    category: "volleyball",
     price: 50,
     column: [],
   },
@@ -4081,7 +4163,7 @@ export const PRODUCT = [
     title: "Мяч волейбольный",
     img: "18.51.50.png",
     desc: "Defeeat ",
-    category: "balls",
+    category: "volleyball",
     price: 45,
     column: [],
   },
@@ -4091,7 +4173,8 @@ export const PRODUCT = [
     title: "Насос",
     img: "988871.png",
     desc: "для мяча",
-    category: "pump",
+    category: "air",
+    subcategory: "pump",
     price: 15,
     column: [],
   },
@@ -4101,7 +4184,8 @@ export const PRODUCT = [
     title: "Насос",
     img: "998787661.png",
     desc: "для мячей, велосипедов",
-    category: "pump",
+    category: "air",
+    subcategory: "pump",
     price: 25,
     column: [],
   },
@@ -4111,7 +4195,8 @@ export const PRODUCT = [
     title: "Насос",
     img: "6562506036.jpg",
     desc: "ножной для велосипеда, мячей, фитболов",
-    category: "pump",
+    category: "air",
+    subcategory: "pump",
     price: 32,
     column: [],
   },
@@ -4121,7 +4206,8 @@ export const PRODUCT = [
     title: "Игла",
     img: "66eee86a-c7e0-453d-875e-0db8501f3c7c.webp",
     desc: "для мяча",
-    category: "pump",
+    category: "air",
+    subcategory: "pump",
     price: 2,
     column: [
       "Подходит для футбольных, баскетбольных и волейбольных мячей. Удобный и компактный аксессуар для быстрого надува.",
@@ -4133,7 +4219,8 @@ export const PRODUCT = [
     title: "Насос для мячей",
     img: "futbol-topu.png",
     desc: "DECATHLON",
-    category: "pump",
+    category: "air",
+    subcategory: "pump",
     price: 32,
     column: [
       "Компактный односторонний насос для накачивания футбольных мячей.",
@@ -5036,6 +5123,7 @@ export const PRODUCT = [
     img: "1834274d-e94e-4281-b81b-043695664120_960x960-Photoroom.png",
     desc: "синий L, синий XXL, черный L, черный XL, серый М",
     category: "kneePads",
+    subcategory: "kneePads",
     price: 20,
     column: [
       "Компрессионный наколенник AOLIKES — универсальная поддержка для колена.",
@@ -5053,6 +5141,7 @@ export const PRODUCT = [
     desc: "оранжевый M,L,XL / черный М, L, Xl, XXL / зеленый М, L, XL",
     category: "kneePads",
     price: 30,
+    subcategory: "kneePads",
 
     column: [
       "Спортивный наколенник с регулируемыми ремнями для надёжной поддержки колена.",
@@ -5068,6 +5157,7 @@ export const PRODUCT = [
     img: "a288aabd-266a-.png",
     desc: "зеленый S, синий М, синий L, красный L, серый XL",
     category: "kneePads",
+    subcategory: "kneePads",
     price: 35,
     column: [
       "Комплект из 2-х эластичных наколенников для повседневного использования и тренировок.",
@@ -5083,6 +5173,7 @@ export const PRODUCT = [
     img: "6037586511.jpg",
     desc: "взрослый",
     category: "kneePads",
+    subcategory: "elbowPads",
     price: 15,
     column: [],
   },
@@ -5093,6 +5184,7 @@ export const PRODUCT = [
     img: "6037586511.jpg",
     desc: "детский",
     category: "kneePads",
+    subcategory: "elbowPads",
     price: 15,
     column: [],
   },
@@ -5105,7 +5197,8 @@ export const PRODUCT = [
     descEng: "",
     desc: "2-х местная 205*100",
     category: "tent",
-    section: 1,
+    subcategory: "tent",
+
     price: 99,
 
     shortlyEng: "",
@@ -5127,7 +5220,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "3-х местная 210*130",
     category: "tent",
-    section: 1,
+    subcategory: "tent",
     price: 130,
     shortlyEng: "",
     shortly: "",
@@ -5155,7 +5248,7 @@ export const PRODUCT = [
     descEng: "2-person, double-layer 130*210*106",
     desc: "2-х местная 140*200",
     category: "tent",
-    section: 1,
+    subcategory: "tent",
     price: 95,
     shortlyEng: "",
     shortly: "",
@@ -5177,7 +5270,7 @@ export const PRODUCT = [
     descEng: "2-person, double-layer 130*210*107",
     desc: "2-х местная двухслойная 130*210*107",
     category: "tent",
-    section: 1,
+    subcategory: "tent",
     price: 220,
     shortlyEng:
       "Simple and easy to set up, this eco-friendly tent is designed for your camping trips for 2 people. An environmentally friendly and affordable tent. Thanks to the freestanding dome-shaped structure, you can move the tent to choose the most suitable camping spot for you.",
@@ -5211,7 +5304,7 @@ export const PRODUCT = [
     descEng: "3-person, double-layer 130*210*107",
     desc: "3-х местная двухслойная 130*210*107",
     category: "tent",
-    section: 1,
+    subcategory: "tent",
     price: 290,
     shortlyEng:
       "Simple and easy to set up, this eco-friendly tent is designed for your 3-person camping trips. With a freestanding dome structure, you can move the tent to choose the most suitable camping spot for you.",
@@ -5249,7 +5342,7 @@ export const PRODUCT = [
     descEng: "2-person, double-layer 130*210*106",
     desc: "2-х местная двухслойная 130*210*106",
     category: "tent",
-    section: 1,
+    subcategory: "tent",
     price: 390,
     shortlyEng:
       "The Fresh&Black two-person tent, which is easy and quick to set up. Thanks to its freestanding dome structure, it can be moved to a better location after setup.",
@@ -5287,7 +5380,7 @@ export const PRODUCT = [
     descEng: "2-person, double-layer 130*210*106",
     desc: "4-х местная двухслойная 260*210*137",
     category: "tent",
-    section: 1,
+    subcategory: "tent",
     price: 450,
     ordert: false,
     column: [
@@ -5309,7 +5402,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "оранжевый/зеленая",
     category: "tent",
-    section: 1,
+    subcategory: "tent",
     price: 280,
 
     column: [
@@ -5342,7 +5435,7 @@ export const PRODUCT = [
     descEng: "green 2-местная",
     desc: "оранжевый/зеленая",
     category: "tent",
-    section: 1,
+    subcategory: "tent",
     price: 320,
 
     column: [
@@ -5374,7 +5467,7 @@ export const PRODUCT = [
     descEng: "1-person, double-layer 120*295*110",
     desc: "1 местная двухслойная 180*300*110",
     category: "tent",
-    section: 1,
+    subcategory: "tent",
     order: true,
     price: 390,
 
@@ -5402,7 +5495,7 @@ export const PRODUCT = [
     desc: "2-х местная двухслойная 150*275*110",
     descEng: "2-person, double-layer 150*275*110",
     category: "tent",
-    section: 1,
+    subcategory: "tent",
     price: 440,
     order: true,
     shortlyEng:
@@ -5445,7 +5538,7 @@ export const PRODUCT = [
     descEng: "3-person, double-layer 180*300*110",
     desc: "3-х местная двухслойная 180*300*110",
     category: "tent",
-    section: 1,
+    subcategory: "tent",
     order: true,
     price: 510,
     shortlyEng:
@@ -5487,7 +5580,7 @@ export const PRODUCT = [
     descEng: "1-person, double-layer 180*300*110",
     desc: "1 местная двухслойная 180*300*110",
     category: "tent",
-    section: 1,
+    subcategory: "tent",
     order: true,
     price: 449,
 
@@ -5518,7 +5611,7 @@ export const PRODUCT = [
     desc: "2-х местная двухслойная",
     descEng: "2-person, double-layer 150*275*110",
     category: "tent",
-    section: 1,
+    subcategory: "tent",
     order: true,
     price: 505,
     shortlyEng:
@@ -5560,7 +5653,7 @@ export const PRODUCT = [
     descEng: "3-person, double-layer 180*300*110",
     desc: "3-х местная двухслойная 180*300*110",
     category: "tent",
-    section: 1,
+    subcategory: "tent",
     order: true,
     price: 580,
 
@@ -5604,7 +5697,7 @@ export const PRODUCT = [
     descEng: "2-person, double-layer 215*135*110",
     desc: "2-х местная двухслойная 215*135*110",
     category: "tent",
-    section: 1,
+    subcategory: "tent",
     order: true,
     price: 399,
     column: [
@@ -5635,7 +5728,7 @@ export const PRODUCT = [
     descEng: "2-person, double-layer 255×215×110",
     desc: "2-х местная двухслойная 255×215×110",
     category: "tent",
-    section: 1,
+    subcategory: "tent",
     order: true,
     price: 499,
     column: [
@@ -5664,7 +5757,7 @@ export const PRODUCT = [
     descEng: "2-person, double-layer 255×220×110",
     desc: "2-х местная двухслойная 255×220×110",
     category: "tent",
-    section: 1,
+    subcategory: "tent",
     order: true,
     price: 445,
     column: [
@@ -5694,7 +5787,7 @@ export const PRODUCT = [
     descEng: "2-person, double-layer 300*210*120",
     desc: "2-х местная двухслойная, 300*210*120",
     category: "tent",
-    section: 1,
+    subcategory: "tent",
     price: 550,
     shortlyEng:
       "Two-layer tent with two entrances. The outer tent is UV-resistant. It also has a fire-retardant coating. It features a large spacious vestibule, two ventilation valves, and reflective guy lines and elements on the ventilation. All seams are sealed. Ideal for hiking in spring, summer, and autumn.",
@@ -5752,7 +5845,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "коричневый/серебренный",
     category: "tent",
-    section: 1,
+    subcategory: "tent_accessories",
     price: 190,
 
     column: [
@@ -5779,7 +5872,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "400*292 см для кемпинга",
     category: "tent",
-    section: 1,
+    subcategory: "tent_accessories",
     price: 235,
     column: [
       "Naturehike Girder NH20TM006 — прочный тент для кемпинга и активного отдыха",
@@ -5804,7 +5897,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "400*350 см для кемпинга",
     category: "tent",
-    section: 1,
+    subcategory: "tent_accessories",
     price: 250,
     column: [
       "Шестигранный тент Naturehike NH22ZP009 для 5–8 человек",
@@ -5828,7 +5921,7 @@ export const PRODUCT = [
     order: false,
     desc: "2 x 2,5 метра",
     category: "tent",
-    section: 1,
+    subcategory: "tent_accessories",
     price: 59,
     column: [
       "Вес:593г",
@@ -5845,7 +5938,7 @@ export const PRODUCT = [
     order: true,
     desc: "2.4meters 28MM",
     category: "tent",
-    section: 1,
+    subcategory: "tent_accessories",
     price: 88,
 
     column: [
@@ -5867,7 +5960,7 @@ export const PRODUCT = [
     order: true,
     desc: "Wood 2.8meter 33MM",
     category: "tent",
-    section: 1,
+    subcategory: "tent_accessories",
     price: 99,
 
     column: [
@@ -5890,7 +5983,7 @@ export const PRODUCT = [
     img: "pegs.jpg",
     desc: " V-образные ( 10 ШТ )",
     category: "tent",
-    section: 1,
+    subcategory: "tent_accessories",
     price: 37,
     column: [
       "v-образная форма",
@@ -5909,7 +6002,7 @@ export const PRODUCT = [
     img: "10-steel-tent-pegs-various-terrains-quechua-1163836.jpg",
     desc: "Круглые ( 10 ШТ )",
     category: "tent",
-    section: 1,
+    subcategory: "tent_accessories",
     order: false,
     price: 28,
     column: [
@@ -5927,7 +6020,7 @@ export const PRODUCT = [
     img: "S545914f908.jpg",
     desc: "треугольные ( 10 ШТ )",
     category: "tent",
-    section: 1,
+    subcategory: "tent_accessories",
     order: true,
     price: 30,
     column: ["Для песка", "Вес: 13 г"],
@@ -5938,7 +6031,7 @@ export const PRODUCT = [
     img: "9016991.970.jpg",
     desc: "из алюминиевого сплава ( 8 ШТ )",
     category: "tent",
-    section: 1,
+    subcategory: "tent_accessories",
     order: true,
     price: 29,
     column: [
@@ -5955,7 +6048,7 @@ export const PRODUCT = [
     img: "23e514t.jpg_640x640.webp",
     desc: "круглые ( 1 ШТ )",
     category: "tent",
-    section: 1,
+    subcategory: "tent_accessories",
     price: 4,
     order: false,
     column: ["18 см"],
@@ -5966,7 +6059,7 @@ export const PRODUCT = [
     img: "97F.jpg_640x640.webp",
     desc: "круглые ( 10 ШТ )",
     category: "tent",
-    section: 1,
+    subcategory: "tent_accessories",
     price: 29,
     order: false,
     column: ["18 см"],
@@ -5978,7 +6071,7 @@ export const PRODUCT = [
     img: "hoops-6-metres-quechua.png",
     desc: "6 метров 2,5мм",
     category: "tent",
-    section: 1,
+    subcategory: "tent_accessories",
     price: 25,
     column: [
       "Длина: 6 м | Диаметр: 2,5 мм | Вес: 10 г",
@@ -5992,7 +6085,7 @@ export const PRODUCT = [
     img: "8ca3d39a-18f6-47c0-9312-5f159fc794a1-Photoroom.png",
     desc: "салатовые с отражателем",
     category: "tent",
-    section: 1,
+    subcategory: "tent_accessories",
     price: 14,
     column: [
       "Отражающая кемпинговая верёвка с двойной петлёй",
@@ -6009,7 +6102,7 @@ export const PRODUCT = [
     img: "1749019.jpg",
     desc: "по 10 метров",
     category: "tent",
-    section: 1,
+    subcategory: "tent_accessories",
     price: 27,
     column: [
       "Подходит для любых палаток",
@@ -6099,7 +6192,7 @@ export const PRODUCT = [
     descEng: "Hiker (комфорт от +18)",
     desc: "Hiker (комфорт от +18)",
     category: "sleepingbag",
-    section: 1,
+
     price: 79,
     order: false,
     columnEng: ["Weight: 960g", "Outer size: 35*26cm"],
@@ -6113,7 +6206,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "(левый), зеленый камуфляж",
     category: "sleepingbag",
-    section: 1,
+
     price: 140,
     order: true,
 
@@ -6134,7 +6227,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "(правый), зеленый камуфляж",
     category: "sleepingbag",
-    section: 1,
+
     price: 140,
 
     order: true,
@@ -6155,7 +6248,7 @@ export const PRODUCT = [
     descEng: "",
     desc: " MJ300-NAVY",
     category: "sleepingbag",
-    section: 1,
+
     price: 199,
 
     order: true,
@@ -6176,7 +6269,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "MJ600-DARK",
     category: "sleepingbag",
-    section: 1,
+
     price: 230,
 
     order: true,
@@ -6197,7 +6290,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "левый",
     category: "sleepingbag",
-    section: 1,
+
     price: 105,
     order: true,
     columnEng: [""],
@@ -6218,7 +6311,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "правый",
     category: "sleepingbag",
-    section: 1,
+
     price: 105,
     order: true,
     columnEng: [""],
@@ -6239,7 +6332,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "левый",
     category: "sleepingbag",
-    section: 1,
+
     price: 105,
     order: true,
     columnEng: [""],
@@ -6260,7 +6353,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "правый",
     category: "sleepingbag",
-    section: 1,
+
     price: 105,
     order: true,
     columnEng: [""],
@@ -6281,7 +6374,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "",
     category: "sleepingbag",
-    section: 1,
+
     price: 105,
     order: true,
     columnEng: [""],
@@ -6302,7 +6395,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "XL",
     category: "sleepingbag",
-    section: 1,
+
     price: 129,
     order: true,
     columnEng: [""],
@@ -6323,7 +6416,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "ArmyGreen U250",
     category: "sleepingbag",
-    section: 1,
+
     price: 165,
     order: true,
     columnEng: [""],
@@ -6344,7 +6437,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "Grey U350",
     category: "sleepingbag",
-    section: 1,
+
     price: 199,
     order: true,
     columnEng: [""],
@@ -6365,7 +6458,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "M300/Grey левый",
     category: "sleepingbag",
-    section: 1,
+
     price: 189,
     order: true,
     columnEng: [""],
@@ -6386,7 +6479,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "M300/Grey правый",
     category: "sleepingbag",
-    section: 1,
+
     price: 189,
     order: true,
     columnEng: [""],
@@ -6409,7 +6502,7 @@ export const PRODUCT = [
     descEng: "190*72cm from +20 to +15°C",
     desc: "190*72см от +20 до +15°C",
     category: "sleepingbag",
-    section: 1,
+
     price: 99,
     shortlyEng:
       "This eco-friendly sleeping bag is designed for users who want to sleep comfortably at temperatures up to 20°C while camping.",
@@ -6436,7 +6529,7 @@ export const PRODUCT = [
     descEng: "190*72cm from +15 to +8°C",
     desc: "190*72см от +15 до +8",
     category: "sleepingbag",
-    section: 1,
+
     order: false,
     price: 140,
     shortlyEng:
@@ -6464,7 +6557,7 @@ export const PRODUCT = [
     descEng: "190*72cm from +5 to +10°C",
     desc: "190*72см от +5 до +10",
     category: "sleepingbag",
-    section: 1,
+
     order: false,
     price: 140,
     shortly:
@@ -6484,7 +6577,7 @@ export const PRODUCT = [
     desc: "комфорт 0/ лимит -5",
     descEng: "210*66cm from +10 to 0°C",
     category: "sleepingbag",
-    section: 1,
+
     order: false,
     price: 395,
     column: [
@@ -6507,7 +6600,7 @@ export const PRODUCT = [
     desc: "оранжевый 190+30*70 см",
     descEng: "210*66cm from +10 to 0°C",
     category: "sleepingbag",
-    section: 1,
+
     price: 84,
     order: false,
     column: [
@@ -6524,7 +6617,7 @@ export const PRODUCT = [
     desc: "-5 экстрим / комфорт +10/+20",
     descEng: "210*66cm from +10 to 0°C",
     category: "sleepingbag",
-    section: 1,
+
     price: 170,
     order: false,
     column: ["Вес: 1800гр", "Материал внутри:	190T синтепон;"],
@@ -6540,7 +6633,7 @@ export const PRODUCT = [
     desc: "летний +15",
     descEng: "",
     category: "sleepingbag",
-    section: 1,
+
     price: 70,
     column: [],
     columnEng: [],
@@ -6553,7 +6646,7 @@ export const PRODUCT = [
     desc: "210*66см от +10 до 0",
     descEng: "210*66cm from +10 to 0°C",
     category: "sleepingbag",
-    section: 1,
+
     price: 140,
     order: false,
     column: ["Вес: 1300гр", "Размер внешний: 33*24см"],
@@ -6568,7 +6661,7 @@ export const PRODUCT = [
     descEng: "Super lightweight 220*90(55) from +15 to +5",
     desc: "Супер лёгкий 220*90(55) от +15  до +5",
     category: "sleepingbag",
-    section: 1,
+
     price: 269,
     order: false,
     shortlyEng:
@@ -6609,7 +6702,7 @@ export const PRODUCT = [
     descEng: "Insulation: 195(+35)*100, from 0°C to -21°C",
     desc: "Утеплитель 195(+35)*100 от 0°C до -21°C",
     category: "sleepingbag",
-    section: 1,
+
     price: 320,
     shortlyEng:
       "Insulation. The insulation used is lzoShell 40. The multi-directional super-fine hollow fibers of the lzoShell 4D insulation create numerous microvoids where warm air is trapped. The fibers of the insulation are bonded together with synthetic resin, making the lzoShell 4D insulation more airy, durable, and easy to maintain. Its low thermal conductivity, high hydrophobic and consumer properties make lzoShell 4D insulation one of the best insulators for sleeping bags. The outer material of the upper part of the sleeping bag is Polyester 190T with Rip Stop weave, a special breathable fabric that allows moisture to escape without condensing inside the sleeping bag. The outer material of the lower part of the sleeping bag is Polyester 190T with Diamond Rip Stop weave with a special waterproof PU coating, providing reliable protection from damage and moisture. The inner material is Flannel 100% Cotton - silky, soft, and comfortable fabric.",
@@ -6649,7 +6742,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "комфорт 14, лимит 10, экстрим 0",
     category: "sleepingbag",
-    section: 1,
+
     price: 224,
     shortlyEng: "",
     shortly: "",
@@ -6676,7 +6769,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "размер S",
     category: "sleepingbag",
-    section: 1,
+
     price: 22,
 
     order: true,
@@ -6698,7 +6791,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "размер L",
     category: "sleepingbag",
-    section: 1,
+
     price: 32,
 
     order: true,
@@ -6722,7 +6815,7 @@ export const PRODUCT = [
     desc: "",
     category: "backpack",
     price: 90,
-
+    subcategory: "backpack",
     column: [
       "Летний уличный рюкзак большого объема 30 л.",
       "Легкий и портативный — подходит для походов и активного отдыха.",
@@ -6747,6 +6840,7 @@ export const PRODUCT = [
     descEng: "FORCIAZ TRAVEL",
     desc: "FORCLAZ 10L",
     category: "backpack",
+    subcategory: "backpack",
     price: 27,
     shortlyEng:
       "This compact extra backpack is to make it easier for you to hike around the world with a backpack.",
@@ -6777,6 +6871,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "с карманом для телефона",
     category: "backpack",
+    subcategory: "fannypack",
     price: 20,
     shortlyEng: "",
     shortly: "",
@@ -6797,7 +6892,7 @@ export const PRODUCT = [
     desc: "KIPRUN",
     category: "backpack",
     price: 44,
-
+    subcategory: "fannypack",
     column: [],
     columnEng: [
       "Благодаря пряжке сумка надежно фиксируется на поясе и не соскальзывает во время бега.",
@@ -6816,7 +6911,7 @@ export const PRODUCT = [
     desc: "с карманом для бутылки",
     category: "backpack",
     price: 47,
-
+    subcategory: "fannypack",
     column: [
       "Универсальный поясной рюкзак из прочного нейлона с надежной застёжкой-молнией. ",
       "Идеален для бега, велоспорта, походов и других видов активного отдыха.",
@@ -6836,7 +6931,7 @@ export const PRODUCT = [
     desc: "(красная, желтая, зеленая, синяя и тд)",
     category: "backpack",
     price: 38,
-
+    subcategory: "fannypack",
     column: [
       "Практичная и лёгкая поясная сумка — незаменимый аксессуар для бега, походов, велопрогулок и путешествий.",
       "Обеспечивает комфорт и безопасность хранения благодаря надёжной пряжке и карману на молнии.",
@@ -6854,6 +6949,7 @@ export const PRODUCT = [
     descEng: "",
     desc: " 2 L",
     category: "backpack",
+    subcategory: "fannypack",
     price: 35,
     shortlyEng: "",
     shortly: "",
@@ -6875,6 +6971,7 @@ export const PRODUCT = [
     descEng: "",
     desc: " 2 L",
     category: "backpack",
+    subcategory: "fannypack",
     price: 45,
     shortlyEng: "",
     shortly: "",
@@ -6892,6 +6989,7 @@ export const PRODUCT = [
     descEng: "",
     desc: " 2 L",
     category: "backpack",
+    subcategory: "fannypack",
     price: 24,
     order: false,
     shortlyEng: "",
@@ -6912,6 +7010,7 @@ export const PRODUCT = [
     desc: "NH ESCAPE 100",
     descEng: "NH ESCAPE 100",
     category: "backpack",
+    subcategory: "backpack",
     price: 57,
     shortlyEng:
       "Environmentally friendly 17-liter NH Escape 100 backpack for casual strolls and commutes.",
@@ -6951,6 +7050,7 @@ export const PRODUCT = [
     desc: "KIPSTA",
     descEng: "KIPSTA",
     category: "backpack",
+    subcategory: "backpack",
     price: 66,
     column: [
       "Объем 17 литров. Размер салона самолета | Размеры 43 x 29 x 13 см.",
@@ -6968,6 +7068,7 @@ export const PRODUCT = [
     descEng: "Soft back panel",
     desc: "Мягкая спинка и лямки",
     category: "backpack",
+    subcategory: "backpack",
     price: 39,
     shortlyEng:
       "The 10-liter backpack is designed so that you can safely carry essential items on all trails with gentle slopes.",
@@ -6984,6 +7085,7 @@ export const PRODUCT = [
     descEng: "Soft back panel",
     desc: "Мягкая спинка и лямки",
     category: "backpack",
+    subcategory: "backpack",
     order: false,
     price: 63,
     column: [
@@ -7003,6 +7105,7 @@ export const PRODUCT = [
     descEng: "A 30L eco-friendly backpack, durable and wear-resistant.",
     desc: "экологичный рюкзак",
     category: "backpack",
+    subcategory: "backpack",
     price: 115,
     shortlyEng:
       "The back panel and straps with overlays, 2 support loops on the straps, a chest strap. Side compression straps for optimal load distribution.",
@@ -7019,6 +7122,7 @@ export const PRODUCT = [
     img: "2629836.png",
     desc: "20L",
     category: "backpack",
+    subcategory: "backpack",
     price: 99,
     column: [
       "Объем: 20л",
@@ -7039,6 +7143,7 @@ export const PRODUCT = [
     img: "pictureback.png",
     desc: "с усиленным поясом",
     category: "backpack",
+    subcategory: "backpack",
     price: 157,
 
     column: [
@@ -7060,6 +7165,7 @@ export const PRODUCT = [
     img: "pictu33223.png",
     desc: "с усиленным поясом",
     category: "backpack",
+    subcategory: "backpack",
     price: 210,
 
     column: [
@@ -7084,6 +7190,7 @@ export const PRODUCT = [
     img: "backpack10.jpg",
     desc: "Travel100 FORCLAZ",
     category: "backpack",
+    subcategory: "backpack",
     price: 294,
     shortlyEng:
       "A backpack for all your first outdoor adventures, whether it's a mountain hike or a journey to the ends of the earth.",
@@ -7120,6 +7227,7 @@ export const PRODUCT = [
     img: "ryukzak-fit-50-l.jpg",
     desc: "Easyfit MT100 FORCLAZ",
     category: "backpack",
+    subcategory: "backpack",
     price: 375,
     order: true,
     column: [
@@ -7139,6 +7247,7 @@ export const PRODUCT = [
     img: "1799211.jpg",
     desc: "Easyfit MT100 FORCLAZ ",
     category: "backpack",
+    subcategory: "backpack",
     price: 485,
     order: false,
     column: [
@@ -7158,6 +7267,7 @@ export const PRODUCT = [
     img: "picture2221.png",
     desc: "MT100 Easyfit 60L",
     category: "backpack",
+    subcategory: "backpack",
     price: 420,
     column: [
       "Рюкзак объёмом 50 л, создан для женщин, совершающих многодневные походы.",
@@ -7182,6 +7292,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "ZT14 XPAC 20L",
     category: "backpack",
+    subcategory: "backpack",
     price: 176,
     order: true,
 
@@ -7204,6 +7315,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "45L",
     category: "backpack",
+    subcategory: "backpack",
     price: 310,
     order: true,
 
@@ -7227,6 +7339,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "45L",
     category: "backpack",
+    subcategory: "backpack",
     price: 310,
     order: true,
 
@@ -7250,6 +7363,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "55L",
     category: "backpack",
+    subcategory: "backpack",
     price: 340,
 
     order: true,
@@ -7274,6 +7388,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "55L",
     category: "backpack",
+    subcategory: "backpack",
     price: 340,
     order: true,
 
@@ -7298,6 +7413,7 @@ export const PRODUCT = [
     desc: "55L",
     descEng: "55L",
     category: "backpack",
+    subcategory: "backpack",
     price: 340,
 
     shortlyEng:
@@ -7324,6 +7440,7 @@ export const PRODUCT = [
     img: "backpackNaturehike60.jpg",
     desc: "NATUREHIKE ROCK 60+51",
     category: "backpack",
+    subcategory: "backpack",
     price: 320,
     order: true,
     shortlyEng:
@@ -7371,6 +7488,7 @@ export const PRODUCT = [
     img: "3024269.970.webp",
     desc: " Orange ",
     category: "backpack",
+    subcategory: "backpack",
     price: 385,
     order: true,
 
@@ -7397,6 +7515,7 @@ export const PRODUCT = [
     img: "3024282.970.webp",
     desc: "Black&Gray",
     category: "backpack",
+    subcategory: "backpack",
     price: 385,
     order: true,
 
@@ -7423,6 +7542,7 @@ export const PRODUCT = [
     img: "3024281.970.webp",
     desc: "Mediterranean Blue",
     category: "backpack",
+    subcategory: "backpack",
     price: 385,
     order: true,
 
@@ -7450,6 +7570,7 @@ export const PRODUCT = [
     descEng: "50L THE NORTH FACE(REPLICA)",
     desc: "50L THE NORTH FACE(REPLICA)",
     category: "backpack",
+    subcategory: "backpack",
     price: 165,
     order: false,
     shortlyEng:
@@ -7470,6 +7591,7 @@ export const PRODUCT = [
     descEng: "55L THE NORTH FACE(REPLICA)",
     desc: "55L THE NORTH FACE(REPLICA)",
     category: "backpack",
+    subcategory: "backpack",
     price: 175,
     order: false,
     shortlyEng:
@@ -7487,6 +7609,7 @@ export const PRODUCT = [
     descEng: "THE NORTH FACE 60",
     desc: "THE NORTH FACE 60",
     category: "backpack",
+    subcategory: "backpack",
     price: 195,
     order: false,
     shortlyEng:
@@ -7520,6 +7643,7 @@ export const PRODUCT = [
     descEng: "80L THE NORTH FACE(REPLICA)",
     desc: "80L THE NORTH FACE(REPLICA)",
     category: "backpack",
+    subcategory: "backpack",
     order: false,
     price: 260,
     shortlyEng: "Incredibly spacious model with many useful features.",
@@ -7536,6 +7660,7 @@ export const PRODUCT = [
     desc: "95+10L Сakard ",
     descEng: "95+10L Сakard",
     category: "backpack",
+    subcategory: "backpack",
     price: 185,
     column: ["Объем: 95+10 л"],
     columnEng: ["Volume: 95+10 L"],
@@ -7548,6 +7673,7 @@ export const PRODUCT = [
     descEng: "75+10L, includes rain cover",
     desc: "75+10L В комплекте дождевик",
     category: "backpack",
+    subcategory: "backpack",
     order: false,
     price: 310,
     column: [
@@ -7699,6 +7825,7 @@ export const PRODUCT = [
     img: "2024-06-16.png",
     desc: "Gregory Arrio",
     category: "backpack",
+    subcategory: "backpack",
     order: false,
     price: 399,
     column: [
@@ -7724,7 +7851,7 @@ export const PRODUCT = [
     desc: "Из пеноматериала",
     category: "mat",
     price: 15,
-
+    subcategory: "seats",
     column: [
       "Складная подушка для сидения из пенопласта.",
       "Влагостойкая и изолирующая от холода.",
@@ -7744,6 +7871,7 @@ export const PRODUCT = [
     descEng: "Made of foam with a metallized layer",
     desc: "Из пеноматериала с металлизированным слоем",
     category: "mat",
+    subcategory: "seats",
     price: 15,
     shortlyEng: "Seat with foam metal frame, suitable for trekking",
     shortly:
@@ -7767,6 +7895,7 @@ export const PRODUCT = [
     descEng: " folds into 4 sections",
     desc: " складывается в 4 раза",
     category: "mat",
+    subcategory: "seats",
     price: 29,
     order: false,
     column: ["Вес:60г"],
@@ -7781,6 +7910,7 @@ export const PRODUCT = [
     descEng: "",
     desc: " 27,5 Х 39",
     category: "mat",
+    subcategory: "seats",
     price: 12,
     column: ["складывается в 4 раза"],
     columnEng: [],
@@ -7794,6 +7924,7 @@ export const PRODUCT = [
     desc: "180*50*0,7см ",
     descEng: "180*50*0,7сm",
     category: "mat",
+    subcategory: "mat",
     price: 35,
     column: [
       "Размеры: 180*50*0,7 см.",
@@ -7818,6 +7949,7 @@ export const PRODUCT = [
     desc: "180*60*1 см",
     descEng: "180*60*1 сm",
     category: "mat",
+    subcategory: "mat",
     order: false,
     price: 44,
     column: [
@@ -7844,6 +7976,7 @@ export const PRODUCT = [
     desc: "фольгированная 180x50x0.6 см",
     descEng: "180cmx50cmx0.6сm",
     category: "mat",
+    subcategory: "mat",
     price: 22,
     column: ["Нескользящий"],
     columnEng: ["Non-slip"],
@@ -7856,6 +7989,7 @@ export const PRODUCT = [
     img: "e60a8f025bd7Z.avif",
     desc: "для йога-коврика",
     descEng: "",
+    subcategory: "mat_accessories",
     category: "mat",
     price: 10,
     column: ["66*22*14*69 см"],
@@ -7867,6 +8001,7 @@ export const PRODUCT = [
     id: 100063,
     title: "СКЛАДНОЙ ВЛАГОСТОЙКИЙ КОВРИК ДЛЯ КЕМПИНГА",
     titleEng: "FOLDABLE WATER-RESISTANT CAMPING MAT",
+    subcategory: "mat",
     img: "mat6.jpg",
     descEng: "185*59*1.5 cm, ultralight",
     desc: "185*59*1.5 см, сверхлекгий",
@@ -7884,6 +8019,7 @@ export const PRODUCT = [
     desc: "180*60*3 см",
     descEng: "180*60*3 сm",
     category: "mat",
+    subcategory: "self-inflating",
     price: "-",
     order: false,
     column: [
@@ -7914,6 +8050,7 @@ export const PRODUCT = [
     desc: "FORGLAZ MT100 180*52*25 см",
     descEng: "FORGLAZ MT100 180*52*25cm",
     category: "mat",
+    subcategory: "self-inflating",
     price: 235,
     column: [
       "Вес: 820 грамм",
@@ -7945,6 +8082,7 @@ export const PRODUCT = [
     desc: "HIKING 119*53*2,5 см",
     descEng: "",
     category: "mat",
+    subcategory: "self-inflating",
     price: 99,
 
     column: [
@@ -7982,7 +8120,7 @@ export const PRODUCT = [
     descEng: "180 × 52 × 1 CM (L) MT500 AIR",
     category: "mat",
     price: 256,
-
+    subcategory: "inflatable",
     column: [
       "Вес: 510 г",
       "Объем: 1,7 литра",
@@ -8016,6 +8154,7 @@ export const PRODUCT = [
     desc: "FC-12 army green R value: 1.5",
     descEng: "",
     category: "mat",
+    subcategory: "inflatable",
     price: 148,
     order: true,
     column: [
@@ -8038,6 +8177,7 @@ export const PRODUCT = [
     desc: "FC-10 Blue R value: 1.5",
     descEng: "",
     category: "mat",
+    subcategory: "inflatable",
     price: 130,
     order: true,
     column: [
@@ -8061,6 +8201,7 @@ export const PRODUCT = [
     desc: "FC-10 Blue R value: 1.5",
     descEng: "",
     category: "mat",
+    subcategory: "inflatable",
     price: 130,
     order: true,
     column: [
@@ -8084,6 +8225,7 @@ export const PRODUCT = [
     desc: "blue 180 × 50 × 5 cm",
     descEng: "",
     category: "mat",
+    subcategory: "inflatable",
     price: 230,
     order: false,
     column: [
@@ -8104,6 +8246,7 @@ export const PRODUCT = [
     desc: "GREEN 180 × 61 × 6 cm",
     descEng: "",
     category: "mat",
+    subcategory: "inflatable",
     price: 175,
     order: false,
     column: [
@@ -8125,6 +8268,7 @@ export const PRODUCT = [
     desc: "187 × 55 × 5 cm",
     descEng: "",
     category: "mat",
+    subcategory: "inflatable",
     price: 260,
 
     column: [
@@ -8148,7 +8292,7 @@ export const PRODUCT = [
     desc: "Комплект из 2шт, алюминиевые",
     category: "trekkingsticks",
     price: 80,
-
+    subcategory: "trekkingsticks",
     shortlyEng:
       "Trekking poles are designed to help you maintain balance and evenly distribute weight between your arms and legs.",
     shortly:
@@ -8185,6 +8329,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "с 4 узлами, 130cm",
     category: "trekkingsticks",
+    subcategory: "trekkingsticks",
     price: 240,
     column: [
       "Треккинговая палка Naturehike CNK2450DS016 — легкая и прочная",
@@ -8205,6 +8350,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "с 3 узлами, 62-135 (темно-зеленый / черный)",
     category: "trekkingsticks",
+    subcategory: "trekkingsticks",
     price: 172,
     column: [
       "Треккинговая палка — помощник в пеших походах и активном отдыхе",
@@ -8226,6 +8372,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "с 3 узлами, 57-120",
     category: "trekkingsticks",
+    subcategory: "trekkingsticks",
     price: 158,
     column: [
       "Треккинговая палка — надёжный спутник в походах и путешествиях",
@@ -8248,6 +8395,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "с 3 узлами",
     category: "trekkingsticks",
+    subcategory: "trekkingsticks",
     price: 194,
     column: [
       "Треккинговая палка Naturehike ST03 — надёжный выбор для активного отдыха",
@@ -8299,6 +8447,7 @@ export const PRODUCT = [
     descEng: "Set of 2, aluminum with tungsten tips",
     desc: "Комплект из 2шт",
     category: "trekkingsticks",
+    subcategory: "trekkingsticks",
     price: 135,
     order: false,
     shortlyEng:
@@ -8335,6 +8484,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "регулируемая длина 65-135 см",
     category: "trekkingsticks",
+    subcategory: "trekkingsticks",
     price: 85,
 
     column: [
@@ -8351,6 +8501,7 @@ export const PRODUCT = [
     descEng: "Set of 2, aluminum with tungsten tips",
     desc: "Комплект из 2шт",
     category: "trekkingsticks",
+    subcategory: "trekkingsticks",
     price: 96,
     order: false,
     column: [
@@ -8375,6 +8526,7 @@ export const PRODUCT = [
     descEng: "Set of 2, aluminum with tungsten tips",
     desc: "Комплект из 2шт",
     category: "trekkingsticks",
+    subcategory: "trekkingsticks",
     price: 162,
     column: [
       "Легкая эргономичная рукоятка из комбинации пробки и синтетической пены EVA",
@@ -8396,6 +8548,7 @@ export const PRODUCT = [
     descEng: "Set of 2, aluminum with tungsten tips",
     desc: "Комплект из 2шт",
     category: "trekkingsticks",
+    subcategory: "trekkingsticks",
     price: 135,
     order: false,
     column: [
@@ -8419,18 +8572,20 @@ export const PRODUCT = [
     descEng: "",
     desc: "Комплект из 2шт",
     category: "trekkingsticks",
+    subcategory: "trekkingsticks",
     price: 155,
     order: false,
     column: ["Размеры: 4 x 15 x 69 см", "Основной материал Алюминий"],
   },
   {
     id: 1056056409866,
-    title: "Трекинговые палкм VIKING Kivi",
+    title: "Трекинговые палки VIKING Kivi",
     titleEng: "",
     img: "laxmtbas_20250304_135007-800x800.jpg",
     descEng: "",
     desc: "Комплект из 2шт",
     category: "trekkingsticks",
+    subcategory: "trekkingsticks",
     price: 175,
     order: true,
     column: [
@@ -8455,6 +8610,7 @@ export const PRODUCT = [
     order: false,
     desc: "Комплект из 2шт",
     category: "trekkingsticks",
+    subcategory: "trekkingsticks",
     price: 210,
 
     column: [
@@ -8478,6 +8634,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "сверхлегкие TANERDD",
     category: "trekkingsticks",
+    subcategory: "trekkingsticks",
     price: 125,
     column: [
       "Набор из 2 складных телескопических треккинговых палок.",
@@ -8500,6 +8657,7 @@ export const PRODUCT = [
     descEng: "Set of 2, made of duralumin",
     desc: "Комплект из 2шт",
     category: "trekkingsticks",
+    subcategory: "trekkingsticks",
     price: 125,
     shortly: "",
     column: [
@@ -8523,6 +8681,7 @@ export const PRODUCT = [
     desc: "FORCIAZ (KOMПЛЕКТ ИЗ 2 ШТ)",
     descEng: '"FORCIAZ, Set of 2',
     category: "trekkingsticks",
+    subcategory: "trekkingsticks_accessories",
     order: true,
     price: 16,
     column: [
@@ -8547,6 +8706,7 @@ export const PRODUCT = [
     desc: "ДЛЯ ТРЕККИНГОВЫХ ПАЛОК (KOMПЛЕКТ ИЗ 2 ШТ)",
     descEng: "SUMMER RINGS, (Set of 2)",
     category: "trekkingsticks",
+    subcategory: "trekkingsticks_accessories",
     price: 17,
     column: [
       "бренд forciaz",
@@ -8571,6 +8731,7 @@ export const PRODUCT = [
     img: "26656.jpg",
     desc: "цвета в ассортименте",
     category: "hermo",
+    subcategory: "hermo",
     price: 7,
     column: [],
   },
@@ -8581,28 +8742,11 @@ export const PRODUCT = [
     img: "h600_3926592351.webp",
     desc: "цвета в ассортименте",
     category: "hermo",
+    subcategory: "hermo",
     price: 9,
     column: [],
   },
-  {
-    order: true,
-    id: 10330330114,
-    title: "Аварийное термоодеяло ",
-    img: "6fc3cf85-c35a-45e3-8a11-081352c255e6.webp",
-    desc: "из алюминиевой фольги (многоразовое)",
-    category: "hermo",
-    price: 25,
-    column: [
-      "Аварийное термоодеяло-пончо из алюминиевой фольги.",
-      "Ветрозащитный и водонепроницаемый дождевик с капюшоном.",
-      "Подходит для мужчин и женщин.",
-      "Идеален для походов, кемпинга и выживания на открытом воздухе.",
-      "Многоразовое использование.",
-      "Состав материалов: преимущественно нетекстильные материалы.",
-      "Инструкции по уходу: ручная стирка, не подвергать химчистке.",
-      "Подходит как аксессуар для путешествий и активного отдыха.",
-    ],
-  },
+
   {
     order: true,
     id: 1000114,
@@ -8610,6 +8754,7 @@ export const PRODUCT = [
     img: "raincoat.jpg",
     desc: "цвета в ассортименте",
     category: "hermo",
+    subcategory: "hermo",
     price: 12,
     column: [
       "Имеет универсальный размер",
@@ -8625,6 +8770,7 @@ export const PRODUCT = [
     img: "7441d660-94e7-452b-8c67-8c0a615ce424.jpeg",
     desc: "цвета в ассортименте",
     category: "hermo",
+    subcategory: "hermo",
     price: 16,
     column: [],
   },
@@ -8635,6 +8781,7 @@ export const PRODUCT = [
     img: "5GQ2RAD.png",
     desc: "цвета в ассортименте",
     category: "hermo",
+    subcategory: "hermo",
     price: 15,
     column: [
       "Быстро сохнет",
@@ -8648,6 +8795,7 @@ export const PRODUCT = [
     img: "IMG_8620.JPG",
     desc: "розовый и синий",
     category: "hermo",
+    subcategory: "hermo",
     price: 25,
     column: [],
   },
@@ -8657,6 +8805,7 @@ export const PRODUCT = [
     img: "raincoutBlack.jpg",
     desc: "Caperlan 100",
     category: "hermo",
+    subcategory: "hermo",
     price: 45,
     order: false,
     column: [
@@ -8672,6 +8821,7 @@ export const PRODUCT = [
     desc: "Gri - MT 50",
     category: "hermo",
     order: false,
+    subcategory: "hermo",
     price: 49,
     column: [
       "Ткань ПВХ 100% водонепроницаемая. Герметичные швы.",
@@ -8685,6 +8835,7 @@ export const PRODUCT = [
     img: "beb99fe7-d341-40a9-99df-aae0f09095d3.webp",
     desc: " XS-XXXL",
     category: "hermo",
+    subcategory: "hermo",
     order: false,
     price: 59,
     column: [
@@ -8706,6 +8857,7 @@ export const PRODUCT = [
     img: "6_1000x1000.png",
     desc: "3 В 1 ",
     category: "hermo",
+    subcategory: "hermo",
     price: 37,
     column: [],
   },
@@ -8716,6 +8868,7 @@ export const PRODUCT = [
     img: "331231.jpg",
     desc: "плотный синий и черный",
     category: "hermo",
+    subcategory: "hermo",
     price: 22,
     column: [],
   },
@@ -8736,6 +8889,7 @@ export const PRODUCT = [
     title: "Дождевик - плащ Smile ",
     img: "21.38.49.png",
     desc: "Smile с капюшоном",
+    subcategory: "hermo",
     category: "hermo",
     price: 42,
     column: [],
@@ -8747,6 +8901,7 @@ export const PRODUCT = [
     img: "222374113_w600_h600_222374113.webp",
     desc: "чёрного цвета",
     category: "hermo",
+    subcategory: "hermo",
     price: 45,
     column: [],
   },
@@ -8757,6 +8912,7 @@ export const PRODUCT = [
     img: "3024493.970.webp",
     desc: " 210T 3в1",
     category: "hermo",
+    subcategory: "hermo",
     price: 95,
     column: [
       "Пончо-тент Naturehike NH17D002-M — универсальная защита от дождя и солнца",
@@ -8810,6 +8966,7 @@ export const PRODUCT = [
     img: "backpackcase.jpg",
     desc: "10-20 Л",
     category: "hermo",
+    subcategory: "raincoat",
     price: 29,
     column: [
       "Ткань с покрытием для защиты рюкзака от дождя.",
@@ -8827,6 +8984,7 @@ export const PRODUCT = [
     img: "backpackcase.jpg",
     desc: "20-40 Л",
     category: "hermo",
+    subcategory: "raincoat",
     price: 34,
     column: [
       "Вес: 71 г.",
@@ -8842,6 +9000,7 @@ export const PRODUCT = [
     img: "8817.55.18.png",
     desc: "20-30 Л",
     category: "hermo",
+    subcategory: "raincoat",
     price: 36,
     column: [
       "Прочная накидка из влагозащитного полиэстера 210T",
@@ -8859,6 +9018,7 @@ export const PRODUCT = [
     img: "8817.55.18.png",
     desc: "30-50 Л",
     category: "hermo",
+    subcategory: "raincoat",
     price: 39,
     column: [
       "Накидка выполнена из прочного полиэстера 210T с влагозащитными свойствами",
@@ -8876,6 +9036,7 @@ export const PRODUCT = [
     img: "backpackcase.jpg",
     desc: "40-60 Л",
     category: "hermo",
+    subcategory: "raincoat",
     order: true,
     price: 38,
     column: [
@@ -8892,6 +9053,7 @@ export const PRODUCT = [
     img: "backpackcase70-100.jpg",
     desc: "70-100 Л",
     category: "hermo",
+    subcategory: "raincoat",
     price: 46,
     column: [
       "Вес: 71 г.",
@@ -8928,6 +9090,7 @@ export const PRODUCT = [
     descEng: "227GR COLLET",
     desc: "227GR ЦАНГОВЫЙ ",
     category: "gas/burner",
+    subcategory: "gas/burner",
     price: 5,
     column: [
       "Горит в среднем 2-2.5 часа",
@@ -8953,6 +9116,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "227 гр. ЦАНГОВЫЙ ",
     category: "gas/burner",
+    subcategory: "gas/burner",
     price: 7,
     column: [
       "Цанговый газовый баллон объёмом 220 г",
@@ -8974,6 +9138,7 @@ export const PRODUCT = [
     desc: "110GR РЕЗЬБОВОЙ",
     descEng: "110GR THREADED",
     category: "gas/burner",
+    subcategory: "gas/burner",
     order: true,
     price: 17,
     column: [
@@ -9000,6 +9165,7 @@ export const PRODUCT = [
     desc: "230GR РЕЗЬБОВОЙ",
     descEng: "230GR THREADED",
     category: "gas/burner",
+    subcategory: "gas/burner",
     order: true,
     price: 26,
     column: [
@@ -9024,6 +9190,7 @@ export const PRODUCT = [
     desc: "230GR РЕЗЬБОВОЙ",
     descEng: "230GR THREADED",
     category: "gas/burner",
+    subcategory: "gas/burner",
     order: true,
     price: 40,
     column: [
@@ -9049,6 +9216,7 @@ export const PRODUCT = [
     desc: "230GR РЕЗЬБОВОЙ",
     descEng: "230GR THREADED",
     category: "gas/burner",
+    subcategory: "gas/burner",
     price: 21,
     column: [
       "Горит в среднем 2.5-3 часа",
@@ -9074,6 +9242,7 @@ export const PRODUCT = [
     desc: "450GR РЕЗЬБОВОЙ",
     descEng: "450GR THREADED",
     category: "gas/burner",
+    subcategory: "gas/burner",
     price: 35,
     column: [
       "Горит в среднем 4-5 часа",
@@ -9099,6 +9268,7 @@ export const PRODUCT = [
     desc: "MSR 227 gr ",
     descEng: "",
     category: "gas/burner",
+    subcategory: "gas/burner",
     price: 40,
     column: [
       "Вес(кг):227 г",
@@ -9116,7 +9286,7 @@ export const PRODUCT = [
     img: "screen.jpg",
     desc: "13,50 см ",
     category: "gas/burner",
-
+    subcategory: "gas/burner_accessories",
     price: 27,
 
     column: [
@@ -9135,7 +9305,7 @@ export const PRODUCT = [
     img: "ff0e256f2223e3c576d5f5953acfea92.webp",
     desc: "24 X 8,5 см",
     category: "gas/burner",
-
+    subcategory: "gas/burner_accessories",
     price: 39,
 
     column: ["Основной материал: Алюминиевый сплав"],
@@ -9148,6 +9318,7 @@ export const PRODUCT = [
     img: "gas-flame.jpg",
     desc: "FLAME GUN 915",
     category: "gas/burner",
+    subcategory: "burner",
     price: 12,
     column: [
       "Включается в одно касание",
@@ -9174,6 +9345,7 @@ export const PRODUCT = [
     img: "718.17.42.jpg",
     desc: "145 мм Jadever",
     category: "gas/burner",
+    subcategory: "burner",
     price: 25,
     column: [
       "Газовый пистолет JADEVER JDFG3603",
@@ -9191,6 +9363,7 @@ export const PRODUCT = [
     desc: "для розжига металлическая",
     descEng: "",
     category: "gas/burner",
+    subcategory: "burner",
     price: 23,
     column: [
       "Газовая горелка WADFOW WFG3603",
@@ -9213,6 +9386,7 @@ export const PRODUCT = [
     desc: "туристическая (вертикальная)",
     descEng: "",
     category: "gas/burner",
+    subcategory: "burner",
     price: 15,
     column: [
       "195x70x40 мм",
@@ -9233,6 +9407,7 @@ export const PRODUCT = [
     desc: "ДЛЯ ЦАНГОВЫХ БАЛЛОНОВ",
     descEng: "FOR COLLET CYLINDERS",
     category: "gas/burner",
+    subcategory: "burner",
     price: 37,
 
     column: ["Материал: Алюминий", "Вес: 150 гр", "Пьезоподжиг"],
@@ -9246,6 +9421,7 @@ export const PRODUCT = [
     img: "burn8.jpg",
     desc: "Orcamp",
     category: "gas/burner",
+    subcategory: "burner",
     price: 29,
     columnEng: [
       "Powerful stainless steel burner",
@@ -9269,6 +9445,7 @@ export const PRODUCT = [
     desc: "Campsor (складная) ",
     descEng: "Campsor (folding)",
     category: "gas/burner",
+    subcategory: "burner",
     price: 49,
     column: ["Материал: Алюминий", "Вес: 150 гр", "Пьезоподжиг"],
     columnEng: ["Material: Aluminum", "Weight: 150 g", "Piezo ignition"],
@@ -9283,6 +9460,7 @@ export const PRODUCT = [
     desc: "ДЛЯ ЗАПРАВКИ РЕЗЬБОВОГО БАЛЛОНА",
     descEng: "FOR REFILLING THREADED CARTRIDGE",
     category: "gas/burner",
+    subcategory: "gas/burner_accessories",
     price: 12,
     column: [
       "Многоразовый",
@@ -9306,6 +9484,7 @@ export const PRODUCT = [
     desc: "ДЛЯ ГАЗОВОЙ ГОРЕЛКИ",
     descEng: "FOR GAS STOVE",
     category: "gas/burner",
+    subcategory: "gas/burner_accessories",
     price: 25,
     column: [
       "Переключение с цанговых баллонов на резьбу",
@@ -9329,6 +9508,7 @@ export const PRODUCT = [
     desc: "для газовых баллонов",
     descEng: "FOR GAS STOVE",
     category: "gas/burner",
+    subcategory: "gas/burner_accessories",
     price: 21,
     column: [
       "Адаптер для бутанового бака и переключатель заправки канистры соедините адаптер с переключателем для достижения заправки газа между канистрой и плоским баком.",
@@ -9348,6 +9528,7 @@ export const PRODUCT = [
     desc: "большая под цанговые баллоны",
     descEng: "",
     category: "gas/burner",
+    subcategory: "gas/burner_accessories",
     price: 87,
     column: [],
     columnEng: [],
@@ -9361,6 +9542,7 @@ export const PRODUCT = [
     desc: "черная",
     descEng: "FOR GAS STOVE",
     category: "gas/burner",
+    subcategory: "burner",
     price: 29,
     column: [
       "Скорость розжига угля	от 3 до 5 минут",
@@ -9378,6 +9560,7 @@ export const PRODUCT = [
     desc: "под резьбовой баллон",
     descEng: "",
     category: "gas/burner",
+    subcategory: "burner",
     price: 79,
     column: [
       "Высокое качество — долговечная конструкция, подходит для длительного использования",
@@ -9395,6 +9578,7 @@ export const PRODUCT = [
     desc: "для резьбовых баллонов",
     descEng: "",
     category: "gas/burner",
+    subcategory: "burner",
     price: 46,
     column: [],
     columnEng: ["48гр", "Нержавеющая сталь"],
@@ -9408,6 +9592,7 @@ export const PRODUCT = [
     desc: " и пьезоподжигом ",
     descEng: "",
     category: "gas/burner",
+    subcategory: "burner",
     price: 85,
     column: [
       "Трёхголовая конструкция: обеспечивает равномерный и мощный нагрев",
@@ -9426,6 +9611,7 @@ export const PRODUCT = [
     desc: "+ с адаптером для цанговых баллонов",
     descEng: "",
     category: "gas/burner",
+    subcategory: "burner",
     price: 99,
     column: [
       "Складная конструкция: компактно складывается и легко помещается в рюкзак — идеально для путешествий.",
@@ -9443,6 +9629,7 @@ export const PRODUCT = [
     desc: "NURGAZ",
     descEng: "",
     category: "gas/burner",
+    subcategory: "burner",
     price: 55,
     column: [
       "Складной набор для печи NURGAZ — компактное и надёжное решение для готовки на природе.",
@@ -9462,6 +9649,7 @@ export const PRODUCT = [
     desc: "51 гр",
     descEng: "",
     category: "gas/burner",
+    subcategory: "burner",
     price: 92,
     column: [
       "Туристическая горелка Naturehike NH21RJ004",
@@ -9486,6 +9674,7 @@ export const PRODUCT = [
     desc: "Camp UPD silver",
     descEng: "",
     category: "gas/burner",
+    subcategory: "burner",
     price: 118,
     column: [
       "Газовая горелка Naturehike Camp UPD NH21RJ009",
@@ -9511,6 +9700,7 @@ export const PRODUCT = [
     desc: "со шлангом",
     descEng: "",
     category: "gas/burner",
+    subcategory: "burner",
     price: 88,
     column: [
       "Ультралёгкая ветрозащитная кемпинговая печь GL277638 — идеальный выбор для походов, пикников и кемпинга.",
@@ -9529,6 +9719,7 @@ export const PRODUCT = [
     desc: "Набор для кемпинга с форсункой и пьезо-зажиганием",
     descEng: "",
     category: "gas/burner",
+    subcategory: "burner",
     price: 209,
     column: [
       "Ветрозащитный портативный набор для кемпинга",
@@ -9551,7 +9742,7 @@ export const PRODUCT = [
     desc: "TD-02 white&red",
     category: "lantern",
     price: 109,
-
+    subcategory: "headlamp",
     column: [
       "Налобный фонарь Naturehike TD-02",
       "Материал корпуса: прочный ABS пластик",
@@ -9577,7 +9768,7 @@ export const PRODUCT = [
     desc: "TD-02 orange&gray",
     category: "lantern",
     price: 109,
-
+    subcategory: "headlamp",
     column: [
       "Налобный фонарь Naturehike TD-02",
       "Материал корпуса: прочный ABS пластик",
@@ -9603,7 +9794,7 @@ export const PRODUCT = [
     desc: "TD-02  tropical blue",
     category: "lantern",
     price: 109,
-
+    subcategory: "headlamp",
     column: [
       "Налобный фонарь Naturehike TD-02",
       "Материал корпуса: прочный ABS пластик",
@@ -9628,6 +9819,7 @@ export const PRODUCT = [
     img: "bdf55de02531edd244f968e670291c84.jpg",
     desc: "IP68 Green водонепроницаемый",
     category: "lantern",
+    subcategory: "headlamp",
     price: 122,
     column: [
       "Налобный фонарь Naturehike с тремя светодиодами: два холодного белого света и один красный.",
@@ -9649,6 +9841,7 @@ export const PRODUCT = [
     img: "b972652dd44014f98e1cebffc40a1f12.jpg",
     desc: "Xingyu Max Outdoor Headlamp Moss Green",
     category: "lantern",
+    subcategory: "headlamp",
     price: 78,
     column: [
       "Налобный фонарь Xingyu Max Outdoor Headlamp — лёгкий, прочный и мощный, подходит для походов и отдыха на природе.",
@@ -9674,6 +9867,7 @@ export const PRODUCT = [
     descEng: "Illumination range: 25m (120 lumens)",
     desc: "Дальность  освещения: 25м (120 люмен)",
     category: "lantern",
+    subcategory: "headlamp",
     price: 69,
     order: false,
     column: [
@@ -9703,6 +9897,7 @@ export const PRODUCT = [
     img: "el-feneri-15-lumen-ye.png",
     desc: "100 (15 люмен)",
     category: "lantern",
+    subcategory: "headlamp",
     price: 46,
     column: [
       "Этот фонарик создан для тех, кто ищет дополнительное освещение, которое всегда под рукой.",
@@ -9721,6 +9916,7 @@ export const PRODUCT = [
     img: "IMG_9941.JPG",
     desc: "300 люмен",
     category: "lantern",
+    subcategory: "headlamp",
     order: false,
     price: 114,
     column: [
@@ -9755,7 +9951,7 @@ export const PRODUCT = [
     img: "20.47.jpg",
     desc: "TIKKINA 300 lumen (Hybrid)",
     category: "lantern",
-
+    subcategory: "headlamp",
     price: 125,
     column: [
       "Налобный фонарь TIKKINA с яркостью 300 люмен и равномерным комфортным освещением осветит ваши вечера под звездами! Он так же удобен для чтения в палатке, как и для прогулок или походов. Он прост в использовании, с одной кнопкой для управления и симметричным головным ремнем для регулировки размера. Компактный и легкий, он легко помещается в кармане, поэтому вы можете брать его с собой куда угодно. TIKKINA поставляется с 3 стандартными батарейками, а также совместима с перезаряжаемым аккумулятором CORE благодаря своей конструкции HYBRID CONCEPT.",
@@ -9776,7 +9972,7 @@ export const PRODUCT = [
     img: "sabtlxam_20250503_082229-800x800.jpg",
     desc: "TIKKINA 350 lumen (Hybrid)",
     category: "lantern",
-
+    subcategory: "headlamp",
     price: 154,
     column: [
       "Налобный фонарь PETZL TIKKA — компактный, простой в использовании налобный фонарь с красным светом",
@@ -9797,6 +9993,7 @@ export const PRODUCT = [
     img: "btasalxm_20250213_152323-500x500.jpg",
     desc: "300-R ",
     category: "lantern",
+    subcategory: "headlamp",
     order: true,
     price: 149,
     column: [
@@ -9818,6 +10015,7 @@ export const PRODUCT = [
     img: "lUqF06z0s1xcs.jpg",
     desc: "300 люмен",
     category: "lantern",
+    subcategory: "headlamp",
     order: false,
     price: 135,
     column: [
@@ -9838,6 +10036,7 @@ export const PRODUCT = [
     img: "black-diamond-storm-450.jpg",
     desc: "350 люмен",
     category: "lantern",
+    subcategory: "headlamp",
     price: 143,
     column: [
       "Световой поток: до 350 люмен",
@@ -9884,6 +10083,7 @@ export const PRODUCT = [
     desc: "Дальность  освещения: 15м (30 люмен). 1 режима освещения.",
     descEng: "Illumination range: 15m (30 lumens). Single lighting mode.",
     category: "lantern",
+    subcategory: "headlamp",
     price: 25,
     column: [
       "Питание:2 шт ААА(в наборе)",
@@ -9929,6 +10129,7 @@ export const PRODUCT = [
     desc: "3ААА 80 Lümen ONNIGHT 100 (3 режима)",
     descEng: "",
     category: "lantern",
+    subcategory: "headlamp",
     price: 42,
     column: [
       "Широкий световой луч дальностью 25 м (80 лм): идеален для походов и на стоянке",
@@ -9948,6 +10149,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "Caperlan 80 люмен",
     category: "lantern",
+    subcategory: "headlamp",
     price: 55,
     column: [
       "Широкий/направленный пучок, макс. дальность 25 м",
@@ -9965,6 +10167,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "с датчиком движения",
     category: "lantern",
+    subcategory: "headlamp",
     price: 25,
     column: [
       "Перезаряжаемый LED-фонарик — идеально подходит для кемпинга, туризма, аварийных ситуаций.",
@@ -9986,6 +10189,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "LED 3ААА",
     category: "lantern",
+    subcategory: "headlamp",
     price: 40,
 
     column: [
@@ -10004,6 +10208,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "LED 3ААА",
     category: "lantern",
+    subcategory: "headlamp",
     price: 40,
     column: [
       "Яркость: до 500 люмен — отлично освещает на дальнюю дистанцию",
@@ -10023,6 +10228,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "ручной сверхмощный",
     category: "lantern",
+    subcategory: "headlamp",
     price: 99,
     column: [
       "Светодиод: мощный P50",
@@ -10042,6 +10248,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "USB",
     category: "lantern",
+    subcategory: "lamps",
     price: 45,
     column: [
       "Яркий светодиод для мощного освещения",
@@ -10060,6 +10267,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "зарядка: microUSB",
     category: "lantern",
+    subcategory: "lamps",
     price: 25,
     column: [
       "Режимы работы: 3 (100%, Flash, COB)",
@@ -10080,6 +10288,7 @@ export const PRODUCT = [
     img: "1288707.png",
     desc: "на батарейках",
     category: "lantern",
+    subcategory: "lamps",
     price: 65,
     column: [
       "100 люмен в режиме 100% 40 люмен в режиме 50% Освещение LED",
@@ -10098,6 +10307,7 @@ export const PRODUCT = [
     img: "kamp-lambasi-100-lumen-kirmizi-bl100.jpg",
     desc: "QUECHUA BL100",
     category: "lantern",
+    subcategory: "lamps",
     price: 55,
     column: [
       "Красный режим: 20 лумен (яркость света)",
@@ -10132,6 +10342,7 @@ export const PRODUCT = [
     img: "8615283-product_image-p2440715_960x.png",
     desc: "BL40 (40 люменов)",
     category: "lantern",
+    subcategory: "lamps",
     price: 35,
     column: [
       "Используется на открытом воздухе или в палатке, кемпинге или бивуаке.",
@@ -10161,6 +10372,7 @@ export const PRODUCT = [
     img: "kishenkovij-likhtar-onbright-50-10-lyumen-chornij.jpg",
     desc: "на батарейках черно-желтый ",
     category: "lantern",
+    subcategory: "lamps",
     price: 24,
     column: [
       "1 режим освещения, эластичный ремешок для крепления в любом месте",
@@ -10180,6 +10392,7 @@ export const PRODUCT = [
     img: "FaPx6OhjaIcWKxTfR5KtEb43UuQHAa.jpg",
     desc: "BLACK DIAMOND MOJI R+ LANTERN",
     category: "lantern",
+    subcategory: "lamps",
     price: 145,
     column: [
       "Перезаряжаемый: питание от встроенного литий-ионного аккумулятора емкостью 1500 мАч с портом зарядки micro-USB",
@@ -10200,6 +10413,7 @@ export const PRODUCT = [
     img: "7f6b61df2.png",
     desc: "с карабином 3хААА",
     category: "lantern",
+    subcategory: "lamps",
     price: 8,
     column: [
       "Идеальный выбор для кемпинга, походов и рыбалки",
@@ -10217,11 +10431,12 @@ export const PRODUCT = [
   {
     order: true,
     id: 1222090223044,
-    title: "Перезаряжаемая кемпинговая",
+    title: "подвесная лампочка USB",
     // titleEng: "CAMPING LAMP / LANTERN",
     img: "1728.png",
-    desc: "подвесная лампочка USB",
+    desc: "перезаряжаемая кемпинговая",
     category: "lantern",
+    subcategory: "lamps",
     price: 17,
     column: [
       "Набор из 4 мощных LED-ламп — идеально для кемпинга, рыбалки и путешествий",
@@ -10243,6 +10458,7 @@ export const PRODUCT = [
     img: "17.04.49.jpg",
     desc: "3-Й КАТЕГОРИИ Julbo Sherpa Matt Black",
     category: "sunglasses",
+    subcategory: "sunglasses",
     price: 249,
 
     column: [
@@ -10265,6 +10481,7 @@ export const PRODUCT = [
     img: "alxtbams_20250213_151626-500x500.jpg",
     desc: "4-Й КАТЕГОРИИ RUN NOIR MAT/ORANGE SP4",
     category: "sunglasses",
+    subcategory: "sunglasses",
     price: 310,
 
     column: [
@@ -10281,6 +10498,7 @@ export const PRODUCT = [
     img: "2480425.png",
     desc: "3-Й КАТЕГОРИИ QUECHUA MH140",
     category: "sunglasses",
+    subcategory: "sunglasses",
     price: 108,
 
     column: [
@@ -10299,6 +10517,7 @@ export const PRODUCT = [
     img: "2482114.png",
     desc: "3-Й КАТЕГОРИИ QUECHUA MH100",
     category: "sunglasses",
+    subcategory: "sunglasses",
     price: 65,
 
     column: [
@@ -10316,6 +10535,7 @@ export const PRODUCT = [
     img: "2482151.png",
     desc: "3-Й КАТЕГОРИИ QUECHUA MH120A",
     category: "sunglasses",
+    subcategory: "sunglasses",
     price: 98,
     column: [
       "Поляризационные линзы: ограничивают отражения от блестящих поверхностей",
@@ -10332,6 +10552,7 @@ export const PRODUCT = [
     img: "sunglasses3.jpg",
     desc: "3-Й КАТЕГОРИИ QUECHUA MH500",
     category: "sunglasses",
+    subcategory: "sunglasses",
     price: 91,
     column: [
       "Особая форма: защищает глаза от ветра, брызг, плохой погоды",
@@ -10350,6 +10571,7 @@ export const PRODUCT = [
     img: "72317535.png",
     desc: "категория 0",
     category: "sunglasses",
+    subcategory: "sunglasses",
     price: 49,
     column: [
       "Линзы категории 0, защита на 100% от УФ-лучей.",
@@ -10366,6 +10588,7 @@ export const PRODUCT = [
     img: "sunglasses5.jpg",
     desc: "3-Й КАТЕГОРИИ ROCKRIDER ST100",
     category: "sunglasses",
+    subcategory: "sunglasses",
     price: 49,
     column: [
       "Особая форма: защищает глаза от ветра, брызг, плохой погоды",
@@ -10384,6 +10607,7 @@ export const PRODUCT = [
     img: "ef8fea74-cee3.png",
     desc: "KEITHION",
     category: "sunglasses",
+    subcategory: "sunglasses",
 
     price: 41,
     column: [
@@ -10398,6 +10622,7 @@ export const PRODUCT = [
     img: "66e.png",
     desc: "классической формы ",
     category: "sunglasses",
+    subcategory: "sunglasses",
     price: 45,
     column: [
       "Материал рамы: ПК (поликарбонат)",
@@ -10412,6 +10637,7 @@ export const PRODUCT = [
     img: "202898778.png",
     desc: "с боковой защитой",
     category: "sunglasses",
+    subcategory: "sunglasses",
     price: 25,
     column: ["Материал рамы: ПК (поликарбонат)"],
   },
@@ -10422,6 +10648,7 @@ export const PRODUCT = [
     img: "59b.png",
     desc: "квадратные",
     category: "sunglasses",
+    subcategory: "sunglasses",
     price: 25,
     column: [
       "Материал рамы: ПК (поликарбонат)",
@@ -10435,6 +10662,7 @@ export const PRODUCT = [
     img: "S564f20428c654ae19.png",
     desc: "квадратные, KDEAM ",
     category: "sunglasses",
+    subcategory: "sunglasses",
     price: 65,
     column: [
       "Поляризованные HD-линзы с покрытием — защита от бликов, четкое изображение",
@@ -10449,6 +10677,7 @@ export const PRODUCT = [
     img: "23fc60ec-0e45-4f30.png",
     desc: "с чехлом и карабином",
     category: "sunglasses",
+    subcategory: "sunglasses",
     price: 75,
     column: [
       "Поляризационные очки KDEAM для мужчин и женщин",
@@ -10469,6 +10698,7 @@ export const PRODUCT = [
     img: "17018.png",
     desc: "SCVCN",
     category: "sunglasses",
+    subcategory: "sunglasses",
     price: 62,
     column: [
       "Материал рамы: ПК (поликарбонат)",
@@ -10482,6 +10712,7 @@ export const PRODUCT = [
     img: "363a8690-cb0.png",
     desc: "YUKY 1шт",
     category: "sunglasses",
+    subcategory: "sunglasses",
     price: 25,
     column: [
       "Материал рамы: ПК (поликарбонат)",
@@ -10496,6 +10727,7 @@ export const PRODUCT = [
     desc: "универсальные",
     category: "sunglasses",
     price: 30,
+    subcategory: "sunglasses",
     column: [
       "Поляризация и UV-защита — комфортное зрение даже на ярком солнце",
       "Ветрозащитные — отлично подходят для высокой скорости и активного движения",
@@ -10510,6 +10742,7 @@ export const PRODUCT = [
     img: "b6d54701-e981-4.png",
     desc: "универсальные",
     category: "sunglasses",
+    subcategory: "sunglasses",
     price: 25,
     column: [
       "Поляризованные линзы TAC — снижают блики, обеспечивают чёткое зрение",
@@ -10526,6 +10759,7 @@ export const PRODUCT = [
     img: "73a6.png",
     desc: "для активностей и вождения за рулем",
     category: "sunglasses",
+    subcategory: "sunglasses",
     price: 40,
 
     column: [
@@ -10543,6 +10777,7 @@ export const PRODUCT = [
     img: "29973f4c-86df-4133-8212-2c2eb2e9ec11.png",
     desc: "для активностей и вождения за рулем",
     category: "sunglasses",
+    subcategory: "sunglasses",
     price: 126,
 
     column: [
@@ -10561,6 +10796,7 @@ export const PRODUCT = [
     img: "5de640a808d4f6e6f0df.png",
     desc: "с поляризацией",
     category: "sunglasses",
+    subcategory: "sunglasses",
     price: 35,
     column: [
       "Поляризованные линзы TAC — защита от бликов и чёткое зрение",
@@ -10577,6 +10813,7 @@ export const PRODUCT = [
     img: "d03a3228460a4b6f9785b417ebce3388-goods.webp",
     desc: "спортивные",
     category: "sunglasses",
+    subcategory: "sunglasses",
     price: 62,
     column: [
       "Фотохромные спортивные очки SCVCN для мужчин и женщин",
@@ -10595,6 +10832,7 @@ export const PRODUCT = [
     img: "0c29838a-5b0d-49cb-9723-29ef1336e692-fotor-bg-remover-20250803185934.png",
     desc: "спортивные",
     category: "sunglasses",
+    subcategory: "sunglasses",
     price: 75,
     column: [
       "Подходят для шоссейного велоспорта, горного альпинизма, занятий спортом на открытом воздухе",
@@ -10607,6 +10845,7 @@ export const PRODUCT = [
     img: "8485e428-73ab-4de8-a3cb-9ab6714f2417.webp",
     desc: "черные, прозрачные фотохромные",
     category: "sunglasses",
+    subcategory: "sunglasses",
     price: 38,
     column: [],
   },
@@ -10617,6 +10856,7 @@ export const PRODUCT = [
     img: "362ef7ae-0642-4122-acd6.png",
     desc: "фотохромные",
     category: "sunglasses",
+    subcategory: "sunglasses",
     price: 35,
 
     column: [],
@@ -10628,6 +10868,7 @@ export const PRODUCT = [
     img: "sunglasses6.jpg",
     desc: "VAN RYSEL ROADR 500",
     category: "sunglasses",
+    subcategory: "sunglasses",
     order: false,
     price: 110,
     column: [
@@ -10649,6 +10890,7 @@ export const PRODUCT = [
     img: "604225.png",
     desc: "MH ACC 100",
     category: "sunglasses",
+    subcategory: "sunglasses_accessories",
     price: 23,
     column: [
       "Ремешок, предназначенный для туристов, желающих сохранить очки",
@@ -10658,10 +10900,11 @@ export const PRODUCT = [
   {
     order: true,
     id: 11459999,
-    title: "Противоскользящий шнурок для очков ",
+    title: "Противоскользящий шнурок для очков",
     img: "999999.png",
     desc: "1шт (цвета в ассортименте)",
     category: "sunglasses",
+    ssubcategory: "sunglasses_accessories",
     price: 17,
     column: ["Основной материал: Полиэстер"],
   },
@@ -10672,6 +10915,7 @@ export const PRODUCT = [
     img: "723184043.png",
     desc: "плавучий",
     category: "sunglasses",
+    subcategory: "sunglasses_accessories",
     price: 26,
     column: [
       "Плавучий шнурок удерживает на воде очки весом до 38 грамм",
@@ -10686,6 +10930,7 @@ export const PRODUCT = [
     img: "case-560.jpg",
     desc: "жёсткий",
     category: "sunglasses",
+    subcategory: "sunglasses_accessories",
     price: 29,
     column: [
       "Жёсткий чехол с текстильным термически формованным корпусом для защиты очков от царапин, давления и ударов.",
@@ -10702,6 +10947,7 @@ export const PRODUCT = [
     img: "14fb15b80ca-goods.webp",
     desc: "жёсткий",
     category: "sunglasses",
+    subcategory: "sunglasses_accessories",
     price: 20,
 
     column: [
@@ -10719,6 +10965,7 @@ export const PRODUCT = [
     img: "1334998.png",
     desc: "QUECHUA",
     category: "sunglasses",
+    subcategory: "sunglasses_accessories",
     price: 12,
     column: [
       "Мягкий чехол из микрофибры для защиты очков от царапин.",
@@ -10772,6 +11019,7 @@ export const PRODUCT = [
     img: "840394203942_40.webp",
     desc: "354 мл",
     category: "termoryukzak",
+    subcategory: "cup",
     order: true,
     price: 69,
     column: [
@@ -10790,6 +11038,7 @@ export const PRODUCT = [
     img: "41O+Wc7yBPL.jpg",
     desc: "354 мл",
     category: "termoryukzak",
+    subcategory: "cup",
     order: true,
     price: 69,
     column: [
@@ -10808,6 +11057,7 @@ export const PRODUCT = [
     img: "07f0e43f-0498-452d-b7b2-f9f290e33719.jpg",
     desc: "354 мл (зеленый/оранжевый/розовый/синий/черный)",
     category: "termoryukzak",
+    subcategory: "thermos",
     order: true,
     price: 89,
     column: [
@@ -10844,6 +11094,7 @@ export const PRODUCT = [
     img: "810070086732-1.jpg",
     desc: "473 мл (сиреневый/синий/черный)",
     category: "termoryukzak",
+    subcategory: "thermos",
     order: true,
     price: 85,
     column: [
@@ -10863,6 +11114,7 @@ export const PRODUCT = [
     img: "9888.jpg",
     desc: "473 мл (синий/голубой/розовый/черный)",
     category: "termoryukzak",
+    subcategory: "thermos",
     order: true,
     price: 110,
     column: [
@@ -10877,10 +11129,11 @@ export const PRODUCT = [
   },
   {
     id: 418240033094622,
-    title: "Бутылка спортивная Hydro Flask 20 OZ ",
+    title: "термос-бутылка Hydro Flask 20 OZ ",
     img: "7d57252c-3335-409f-a1c0-ddd13a6e1d6a.jpg",
     desc: "591 мл (синий/черный/красный)",
     category: "termoryukzak",
+    subcategory: "thermos",
     order: true,
     price: 99,
     column: [
@@ -10904,6 +11157,7 @@ export const PRODUCT = [
     img: "51TkrgI3GdL._UF1000,1000_QL80_.jpg",
     desc: "621 мл (серый/синий)",
     category: "termoryukzak",
+    subcategory: "thermos",
     order: true,
     price: 125,
     column: [
@@ -10926,6 +11180,7 @@ export const PRODUCT = [
     img: "s21sx162-21-oz-standard-flex-cap-fossil-straight.webp",
     desc: "621 мл (сиреневый/оранжевый)",
     category: "termoryukzak",
+    subcategory: "thermos",
     order: true,
     price: 119,
     column: [
@@ -10943,6 +11198,7 @@ export const PRODUCT = [
     img: "f6093e18-8469-4e90-8be8-1852a7447664.png",
     desc: "1180 мл (белый, черный, розовый, сиреневый)",
     category: "termoryukzak",
+    subcategory: "cup",
     order: true,
     price: 125,
     column: [
@@ -10962,6 +11218,7 @@ export const PRODUCT = [
     img: "810028848443.jpg",
     desc: "354 мл (белый, зеленая, розовый, сиреневый, ораньжевая)",
     category: "termoryukzak",
+    subcategory: "thermos",
     order: true,
     price: 89,
     column: [
@@ -10979,7 +11236,7 @@ export const PRODUCT = [
     title: "Бутылка с фильтром LifeStraw 22oz",
     img: "483540392.webp",
     desc: "650 мл (бордовый, зеленая, чёрный, голубой)",
-    category: "termoryukzak",
+    category: "bottle",
     order: true,
     price: 150,
     column: [
@@ -10999,7 +11256,7 @@ export const PRODUCT = [
     title: "Фильтр для воды LifeStraw Peak Personal",
     img: "lifestraw-фильтр-для-воды-peak-series-personal.webp",
     desc: "серый, голубой",
-    category: "termoryukzak",
+    category: "bottle",
     order: true,
     price: 89,
     column: [
@@ -11016,7 +11273,7 @@ export const PRODUCT = [
     title: "Фильтр для воды LifeStraw Peak Series Solo",
     img: "pol_pl_LifeStraw-Peak-Solo-Mountain-Blue-Filtr-slomkowy-do-wody-3244_6.webp",
     desc: "серый, голубой",
-    category: "termoryukzak",
+    category: "bottle",
     order: true,
     price: 95,
     column: [
@@ -11035,6 +11292,7 @@ export const PRODUCT = [
     img: "TEPMOCSTANIEY.jpg",
     desc: "Vacuum Bottle",
     category: "termoryukzak",
+    subcategory: "thermos",
     order: false,
     price: 159,
     column: [
@@ -11056,6 +11314,7 @@ export const PRODUCT = [
     img: "s-l960.png",
     desc: "Vacuum Bottle",
     category: "termoryukzak",
+    subcategory: "thermos",
     order: false,
     price: 175,
     column: [
@@ -11079,6 +11338,7 @@ export const PRODUCT = [
     img: "ClassicLegendaryBottle2.0qtNightfall-1.webp",
     desc: "1,9L (nightfall)",
     category: "termoryukzak",
+    subcategory: "thermos",
     price: 199,
     column: [
       "45 ЧАСОВ ГОРЯЧО",
@@ -11096,6 +11356,7 @@ export const PRODUCT = [
     img: "2024-12-29.png",
     desc: "черный, синий, розовый, оранжевый",
     category: "termoryukzak",
+    subcategory: "cup",
     price: 136,
     column: [
       "Двойные стенки стакана Flip Straw Tumbler сохраняют содержимое полностью прохладным в течение нескольких часов и предотвращают протекание бутылки.",
@@ -11112,6 +11373,7 @@ export const PRODUCT = [
     img: "thermose3.jpg",
     desc: "1.5 л серо-черный QUECHUA",
     category: "termoryukzak",
+    subcategory: "thermos",
     price: 149,
     column: [
       "Два раскрытия: широкое/для розлива",
@@ -11133,6 +11395,7 @@ export const PRODUCT = [
     img: "2201772.png",
     desc: "1 литр Quechua",
     category: "termoryukzak",
+    subcategory: "thermos",
     price: 110,
 
     column: [
@@ -11150,6 +11413,7 @@ export const PRODUCT = [
     img: "3191441.png",
     desc: "0,7 литра Quechua",
     category: "termoryukzak",
+    subcategory: "thermos",
     price: 86,
     order: false,
     column: [
@@ -11166,6 +11430,7 @@ export const PRODUCT = [
     img: "41HMErMRa0L.jpg",
     desc: "с пластиковой крышкой",
     category: "termoryukzak",
+    subcategory: "thermos",
     price: 95,
     column: [
       "Начал. темп. 95°С: 81°C через 6 ч., 70°C через 12 ч., 55°C через 24 ч.",
@@ -11180,6 +11445,7 @@ export const PRODUCT = [
     img: "quechua-8734555.png",
     desc: "0,4 литра QUECHUA",
     category: "termoryukzak",
+    subcategory: "thermos",
     price: 59,
     order: false,
     column: [
@@ -11195,6 +11461,7 @@ export const PRODUCT = [
     img: "0723192137.png",
     desc: " с пластиковой крышкой",
     category: "termoryukzak",
+    subcategory: "thermos",
     price: 69,
     order: false,
     column: [
@@ -11212,6 +11479,7 @@ export const PRODUCT = [
     img: "thermos20.jpg",
     desc: "QUECHUA 0.5 Л",
     category: "termoryukzak",
+    subcategory: "thermos",
     price: 89,
     column: [
       "Способность сохранять продукты горячими от 95°C до 61°C в течение 6 часов.",
@@ -11230,6 +11498,7 @@ export const PRODUCT = [
     title: "Ланч-бокс",
     img: "termo21.jpg",
     desc: "QUECHUA MN500 0.8 Л",
+    subcategory: "thermos",
     category: "termoryukzak",
     price: 119,
     column: [
@@ -11251,6 +11520,7 @@ export const PRODUCT = [
     img: "mug.png",
     desc: "Хаки и Красная",
     category: "termoryukzak",
+    subcategory: "cup",
     price: 55,
     column: [
       "Двойная стенка с воздушной прослойкой позволяет сохранять температуру напитка",
@@ -11270,6 +11540,7 @@ export const PRODUCT = [
     img: "09856-009.jpg",
     desc: "0,35L",
     category: "termoryukzak",
+    subcategory: "cup",
     price: 89,
     column: [
       "5 ЧАСОВ ГОРЯЧО",
@@ -11290,6 +11561,7 @@ export const PRODUCT = [
     img: "9DGmNrt71S546.png",
     desc: "0,25L",
     category: "termoryukzak",
+    subcategory: "cup",
     price: 79,
     column: [
       "Нержавеющая сталь",
@@ -11327,6 +11599,7 @@ export const PRODUCT = [
     img: "kamp-esnek-sogutucu-10l.jpg",
     desc: "QUECHUA 10L",
     category: "termoryukzak",
+    subcategory: "termoryukzak",
     order: false,
     price: 59,
     column: [
@@ -11342,6 +11615,7 @@ export const PRODUCT = [
     img: "7107092846.jpg",
     desc: "Naturehike 20 л",
     category: "termoryukzak",
+    subcategory: "termoryukzak",
     order: true,
     price: 157,
     column: [
@@ -11366,6 +11640,7 @@ export const PRODUCT = [
     img: "292813c6-b150-11ef-abc2-0a580a660e6a.webp",
     desc: "",
     category: "termoryukzak",
+    subcategory: "termoryukzak",
     order: true,
     price: 75,
     column: [],
@@ -11376,6 +11651,7 @@ export const PRODUCT = [
     img: "65566.jpg",
     desc: " 200ML, 11 х 16,5 х 1,5 см",
     category: "termoryukzak",
+    subcategory: "termoryukzak",
     order: true,
     price: 10,
     column: [],
@@ -11386,6 +11662,7 @@ export const PRODUCT = [
     img: "jjjj123.jpg",
     desc: "1 шт. 15 х 8,5 х 2,2 см",
     category: "termoryukzak",
+    subcategory: "termoryukzak",
     order: true,
     price: 10,
     column: [],
@@ -11611,7 +11888,7 @@ export const PRODUCT = [
     desc: "",
     category: "dishes",
     price: 68,
-
+    subcategory: "teapot",
     column: [
       "Легкий походный чайник Naturehike CNK2450CF010 объемом 0,8 л и весом всего 191 г — идеален для походов, пикников и отдыха на природе",
       "Корпус из алюминиевого сплава 3003 с защитным оксидным слоем толщиной около 30 мкм, устойчив к коррозии и безопасен для продуктов",
@@ -11634,6 +11911,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "с антипригарным керамическим покрытием ",
     category: "dishes",
+    subcategory: "teapot",
     price: 86,
 
     column: [],
@@ -11648,6 +11926,7 @@ export const PRODUCT = [
     descEng: "Made of stainless steel",
     desc: "Из нержавеющей стали",
     category: "dishes",
+    subcategory: "teapot",
     price: 84,
     column: [
       "Объем: 1 л",
@@ -11668,6 +11947,7 @@ export const PRODUCT = [
     img: "bee569efm.webp",
     descEng: "Made of stainless steel",
     desc: "Из нержавеющей стали",
+    subcategory: "teapot",
     category: "dishes",
     price: 49,
     column: [
@@ -11701,6 +11981,7 @@ export const PRODUCT = [
     desc: "для 2 человек",
     category: "dishes",
     order: false,
+    subcategory: "setdishes",
     price: 109,
     column: [
       "Объем: 1,6 л",
@@ -11723,6 +12004,7 @@ export const PRODUCT = [
     // descEng:'1 pot, 2 deep plates, 2 sets of cutlery',
     desc: "для 1 человек",
     category: "dishes",
+    subcategory: "setdishes",
     price: 84,
     column: [
       "Объем: 1,1 л",
@@ -11744,6 +12026,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "Объем-800 мл",
     category: "dishes",
+    subcategory: "setdishes",
     price: 72,
     column: [
       "котелок со складными ручками и крышкой 124*106 мм (Объем-800 мл)",
@@ -11783,6 +12066,7 @@ export const PRODUCT = [
     descEng: "",
     desc: "2 котелков 0,8 и 0,5л",
     category: "dishes",
+    subcategory: "setdishes",
     price: 66,
     column: [
       "котелок со складными ручками и крышкой 124*106 мм (Объем-800 мл)",
@@ -11799,6 +12083,7 @@ export const PRODUCT = [
     desc: "Из нержавеющий стали (цена за 1 единицу)",
     descEng: "Made of stainless steel (price per unit)",
     category: "dishes",
+    subcategory: "cutlery",
     price: "15",
     column: [
       "Pазмер:	18*4 см",
@@ -11817,11 +12102,12 @@ export const PRODUCT = [
     order: true,
     id: 100076,
     titleEng: "PLASTIC CAMPING SET - KNIFE, FORK, AND SPOON",
-    title: "НАБОР ПОХОДНЫЙ ПЛАСТИКОВЫЙ",
+    title: "набор СТОЛОВЫх ПРИБОРов",
     img: "PLASTICCAMPING.jpg",
     descEng: "The knife, fork, and spoon are joined together",
     desc: "скреплены вместе",
     category: "dishes",
+    subcategory: "cutlery",
     price: 15,
     column: [
       "Вес: 21 г.",
@@ -11843,6 +12129,7 @@ export const PRODUCT = [
     desc: "Вилка/ложка",
     descEng: "FORK/SPOON",
     category: "dishes",
+    subcategory: "cutlery",
     price: 14,
     column: [
       "Вес: 11 г.",
@@ -11870,6 +12157,7 @@ export const PRODUCT = [
     desc: "Из нержавеющий стали",
     descEng: "",
     category: "dishes",
+    subcategory: "cutlery",
     price: "26",
     column: [],
     columnEng: [],
@@ -11883,6 +12171,7 @@ export const PRODUCT = [
     desc: "ЧАПЕЛЬНИК",
     descEng: "Pot holde",
     category: "dishes",
+    subcategory: "cutlery",
     price: 15,
     column: [
       "Легкий алюминиевый чапельник обезопасит приготовление пищи на газовой горелке или таганке",
@@ -11902,6 +12191,7 @@ export const PRODUCT = [
     title: "Многоразовый пластиковый стакан",
     img: "orang76876_7867867_763.jpg",
     desc: "260 мл (7 х 10 х 5 см)",
+    subcategory: "mug",
     descEng: "",
     category: "dishes",
     price: 3,
@@ -11918,6 +12208,7 @@ export const PRODUCT = [
     desc: "150 мл",
     descEng: "Pot holde",
     category: "dishes",
+    subcategory: "mug",
     price: 10,
     column: [],
     columnEng: [],
@@ -11931,6 +12222,7 @@ export const PRODUCT = [
     desc: "200 мл",
     descEng: "Pot holde",
     category: "dishes",
+    subcategory: "mug",
     price: 14,
     column: [],
     columnEng: [],
@@ -11944,6 +12236,7 @@ export const PRODUCT = [
     desc: "300 мл",
     descEng: "Pot holde",
     category: "dishes",
+    subcategory: "mug",
     price: 17,
     column: [],
     columnEng: [],
@@ -11957,6 +12250,7 @@ export const PRODUCT = [
     desc: "200 мл Naturehike",
     descEng: "Pot holde",
     category: "dishes",
+    subcategory: "mug",
     price: 85,
 
     column: [],
@@ -11971,6 +12265,7 @@ export const PRODUCT = [
     desc: "QUECHUA 0,4 литра ",
     category: "dishes",
     price: 32,
+    subcategory: "mug",
     order: false,
     column: ["Пищевая нержавеющая сталь", "Вес: 65 г"],
     columnEng: [],
@@ -11984,6 +12279,7 @@ export const PRODUCT = [
     category: "dishes",
     order: false,
     price: 19,
+    subcategory: "mug",
     column: [],
     columnEng: [],
   },
@@ -11994,6 +12290,7 @@ export const PRODUCT = [
     img: "thermose2.jpg",
     desc: "QUECHUA 0,4 литра ",
     category: "dishes",
+    subcategory: "mug",
     price: 32,
     order: false,
     column: [
@@ -12017,6 +12314,7 @@ export const PRODUCT = [
     desc: "нанесение любого принта",
     descEng: "Customizable Sublimation Mug",
     category: "dishes",
+    subcategory: "mug",
     order: false,
     price: 40,
     column: [
@@ -12046,6 +12344,7 @@ export const PRODUCT = [
     desc: "нанесение любого принта",
     descEng: "Customizable Sublimation Mug",
     category: "dishes",
+    subcategory: "mug",
     price: 35,
     order: false,
     column: ["Металлическая", "Рекомендовано мыть вручную", "Объем 300 мл"],
@@ -12060,6 +12359,7 @@ export const PRODUCT = [
     desc: "Легкая и прочная миска",
     descEng: "Lightweight and durable bowl",
     category: "dishes",
+    subcategory: "plate",
     price: 13,
     column: [
       "Вес: 69 г.",
@@ -12083,6 +12383,7 @@ export const PRODUCT = [
     desc: "Легкая и прочная миска",
     descEng: "Lightweight and durable bowl",
     category: "dishes",
+    subcategory: "plate",
     price: 15,
     column: [
       "Вес: 71 г.",
@@ -12136,6 +12437,7 @@ export const PRODUCT = [
     desc: " глубокая М",
     descEng: "",
     category: "dishes",
+    subcategory: "plate",
     price: 15,
 
     column: [],
@@ -12151,6 +12453,7 @@ export const PRODUCT = [
     descEng: "",
     category: "dishes",
     price: 17,
+    subcategory: "plate",
 
     column: [],
     columnEng: [],
@@ -12164,6 +12467,7 @@ export const PRODUCT = [
     desc: "квадратная 0,3L (розовая) ",
     descEng: "",
     category: "dishes",
+    subcategory: "plate",
     price: 9,
 
     column: [],
@@ -12177,6 +12481,7 @@ export const PRODUCT = [
     img: "1234567.jpg",
     desc: "глубокая",
     descEng: "",
+    subcategory: "plate",
     category: "dishes",
     price: 6,
 
@@ -12191,7 +12496,7 @@ export const PRODUCT = [
     img: "7348836.png",
     desc: "для посуды Decathlon",
     descEng: "",
-    category: "dishes",
+    category: "rope",
     price: 7,
     column: [],
     columnEng: [],
@@ -12208,6 +12513,7 @@ export const PRODUCT = [
     price: 67,
     column: [],
     columnEng: [],
+    subcategory: "setdishes",
   },
   {
     order: true,
@@ -12216,6 +12522,7 @@ export const PRODUCT = [
     title: "Кружка нержавеющая сталь 350мл",
     img: "a522b9ef-8023-417a-93d6-f86e0ff1bb4c.webp",
     desc: "с ручками",
+    subcategory: "mug",
     descEng: "",
     category: "dishes",
     price: 24,
@@ -12231,6 +12538,7 @@ export const PRODUCT = [
     desc: "с ручками",
     descEng: "",
     category: "dishes",
+    subcategory: "mug",
     price: 29,
     column: [],
     columnEng: [],
@@ -12244,6 +12552,7 @@ export const PRODUCT = [
     desc: "MH100 0,25L",
     descEng: "",
     category: "dishes",
+    subcategory: "mug",
     price: 14,
     column: [
       "Ручка д/удобного захвата, вставляется в другие кружки, отверстие д/крючка. 36 г",
@@ -12260,6 +12569,7 @@ export const PRODUCT = [
     desc: "алюминиевый",
     descEng: "",
     category: "dishes",
+    subcategory: "pot",
     price: 35,
     column: [],
     columnEng: [],
@@ -12273,6 +12583,7 @@ export const PRODUCT = [
     desc: "алюминий",
     descEng: "",
     category: "dishes",
+    subcategory: "pot",
     price: 72,
     column: [
       "Набор походной посуды Naturehike Aluminium Alloy для компании 2–4 человек",
@@ -12292,6 +12603,7 @@ export const PRODUCT = [
     desc: "(17,5) х 4,1 см",
     descEng: "",
     category: "dishes",
+    subcategory: "pot",
     price: 64,
 
     column: [
@@ -12308,11 +12620,12 @@ export const PRODUCT = [
     order: true,
     id: 10065440999,
     titleEng: "",
-    title: "Нержавеющая стальная",
+    title: "тренога с цепью",
     img: "20.28.06.png",
-    desc: "пластина-тренога с цепью",
+    desc: "Нержавеющая стальная",
     descEng: "",
     category: "dishes",
+    subcategory: "pot",
     price: 35,
     column: [],
     columnEng: [],
@@ -12325,7 +12638,7 @@ export const PRODUCT = [
     img: "3424.jpg",
     desc: "34 х 24 см",
     descEng: "",
-    category: "dishes",
+    category: "barbecue",
     price: 15,
 
     column: [],
@@ -12339,7 +12652,7 @@ export const PRODUCT = [
     img: "104026.jpg",
     desc: "34 х 23 см",
     descEng: "",
-    category: "dishes",
+    category: "barbecue",
     price: 20,
 
     column: [],
@@ -12353,7 +12666,7 @@ export const PRODUCT = [
     img: "shampur.webp",
     desc: "10 шт",
     descEng: "",
-    category: "dishes",
+    category: "barbecue",
     price: 20,
 
     column: [],
@@ -12367,7 +12680,8 @@ export const PRODUCT = [
     img: " 22.21.12.png",
     desc: "с решёткой",
     descEng: "",
-    category: "dishes",
+
+    category: "barbecue",
     price: 57,
     column: ["33,5 х 59 х 22,5 см"],
     columnEng: [],
@@ -12380,7 +12694,7 @@ export const PRODUCT = [
     img: "12.45.59.jpg",
     desc: "со складными ножками ",
     descEng: "",
-    category: "dishes",
+    category: "barbecue",
     price: 65,
 
     column: [" 41 х 45 х 30 см"],
@@ -12394,7 +12708,7 @@ export const PRODUCT = [
     img: "202322.png",
     desc: "классический",
     descEng: "",
-    category: "dishes",
+    category: "barbecue",
     price: 40,
 
     column: ["22 х 40 х 24,5 см"],
@@ -12408,7 +12722,7 @@ export const PRODUCT = [
     img: "SX300_V1___.jpg",
     desc: "портативная",
     descEng: "",
-    category: "dishes",
+    category: "barbecue",
     price: 35,
     column: ["22 х 40 х 24,5 см"],
     columnEng: [],
@@ -12434,6 +12748,7 @@ export const PRODUCT = [
     img: "opinel.jpeg",
     desc: "INOX OPINEL 9 CM",
     category: "knife",
+    subcategory: "knife",
     price: 79,
     column: [
       "Вес: 57 г.",
@@ -12451,6 +12766,7 @@ export const PRODUCT = [
     img: "opinel.jpeg",
     desc: "INOX OPINEL 7/8 CM",
     category: "knife",
+    subcategory: "knife",
     price: 70,
     column: [
       // "Вес: 57 г.",
@@ -12467,6 +12783,7 @@ export const PRODUCT = [
     img: "knife3.jpg",
     desc: "AXIS 75 GRIP V2",
     category: "knife",
+    subcategory: "knife",
     price: 75,
     order: false,
     column: [
@@ -12487,6 +12804,7 @@ export const PRODUCT = [
     img: "knife4.jpg",
     desc: "AXIS 85 GRIP V2",
     category: "knife",
+    subcategory: "knife",
     order: false,
     price: 86,
     column: [
@@ -12507,6 +12825,7 @@ export const PRODUCT = [
     img: "pictur888e.jpg",
     desc: "SOLOGNAC SIKA 100 GRIP ",
     category: "knife",
+    subcategory: "knife",
     order: true,
     price: 90,
     column: [
@@ -12526,6 +12845,7 @@ export const PRODUCT = [
     img: "knife5.jpg",
     desc: "VICTORINOX 14 ФУНКЦИЙ",
     category: "knife",
+    subcategory: "knife",
     order: false,
     price: 162,
     column: [
@@ -12545,6 +12865,7 @@ export const PRODUCT = [
     img: "6955_big.jpg",
     desc: "длина лезвия 91 мм",
     category: "knife",
+    subcategory: "knife",
     price: 130,
     column: [
       "Большое лезвие",
@@ -12566,6 +12887,7 @@ export const PRODUCT = [
     img: "knife7.jpg",
     desc: "CAPERLAN KN FID",
     category: "knife",
+    subcategory: "knife",
     price: 49,
     column: [
       "Нержавеющая сталь с тефлоновым покрытием для защиты от ржавчиныв",
@@ -12586,6 +12908,7 @@ export const PRODUCT = [
     img: "14.19.29.jpg",
     desc: "черный",
     category: "knife",
+    subcategory: "knife",
     price: 84,
     column: [
       "Многофункциональный черный швейцарский карманный нож Valkyrie для кемпинга",
@@ -12599,6 +12922,7 @@ export const PRODUCT = [
     img: "multifunctional-fishing-plier.png",
     desc: "12 функций",
     category: "knife",
+    subcategory: "knife",
     price: 95,
     column: [
       "Многофункциональный черный швейцарский карманный нож Valkyrie для кемпинга",
@@ -12611,6 +12935,7 @@ export const PRODUCT = [
     desc: "7 функций",
     order: false,
     category: "knife",
+    subcategory: "knife",
     price: 52,
     column: [""],
   },
@@ -12621,6 +12946,7 @@ export const PRODUCT = [
     img: "coghlans-kamp.avif",
     desc: "COGHLANS",
     category: "knife",
+    subcategory: "knife",
     price: 59,
     column: [
       "Съемные вилка и ложка и консервный нож из нержавеющей стали.",
@@ -12634,6 +12960,7 @@ export const PRODUCT = [
     img: "coghlans.avif",
     desc: "5 функций",
     category: "knife",
+    subcategory: "knife",
     price: 48,
     column: [
       "Нож Открывалка для бутылок",
@@ -12650,6 +12977,7 @@ export const PRODUCT = [
     img: "9897778.jpg",
     desc: "9,5 см",
     category: "knife",
+    subcategory: "knife",
     price: 81,
     column: [
       "Общая длина:225 мм",
@@ -12668,6 +12996,7 @@ export const PRODUCT = [
     img: "009090.jpg",
     desc: "8,5 см",
     category: "knife",
+    subcategory: "knife",
     price: 72,
     column: [
       "Morakniv Bushcraft Pathfinder - один из самых прочных и больших ножей для активного отдыха. Эргономичная резиновая ручка с двойным формованием обеспечивает удобство и долговечность.",
@@ -12684,6 +13013,7 @@ export const PRODUCT = [
     img: "196823.2048x2048.jpg",
     desc: "8,5 см",
     category: "knife",
+    subcategory: "knife",
     price: 85,
     column: [
       "нержавеющая сталь с твердостью 56-58 HRC",
@@ -12700,6 +13030,7 @@ export const PRODUCT = [
     img: "36594.440@2x.jpg",
     desc: "(S) 104 х 2 мм",
     category: "knife",
+    subcategory: "knife",
     price: 89,
     column: [
       "Morakniv Bushcraft Pathfinder - один из самых прочных и больших ножей для активного отдыха. Эргономичная резиновая ручка с двойным формованием обеспечивает удобство и долговечность.",
@@ -12718,6 +13049,7 @@ export const PRODUCT = [
     img: "629bf3ced.jpeg",
     desc: "(М) 104 х 2,5 мм",
     category: "knife",
+    subcategory: "knife",
     price: 95,
     column: [
       "Morakniv Bushcraft Pathfinder - один из самых прочных и больших ножей для активного отдыха. Эргономичная резиновая ручка с двойным формованием обеспечивает удобство и долговечность.",
@@ -12731,10 +13063,11 @@ export const PRODUCT = [
   {
     order: true,
     id: 103043233353301012,
-    title: "Зеркало сигнальное ",
+    title: "Зеркало сигнальное",
     img: "65428db21e554cd1a60833246a77760b-goods.webp",
     desc: "",
     category: "knife",
+    subcategory: "knife_accessories",
     price: 18,
     column: [
       "Многофункциональное зеркало для подава сигналов в условиях выживания",
@@ -12752,6 +13085,7 @@ export const PRODUCT = [
     img: "sharpener.png",
     desc: "SOLOGNAC",
     category: "knife",
+    subcategory: "knife_accessories",
     price: 36,
     column: [
       "Для эффективной заточки: Проведите 5 раз лезвием в направлении от рукоятки к острию с 'карбидной' (металлической) стороны, затем 5 раз с 'керамической' (белой) стороны. Усилие должно быть сильным, но не чрезмерным. Повторяйте до достижения необходимого результата",
@@ -12771,6 +13105,7 @@ export const PRODUCT = [
     img: "16.07.38.jpg",
     desc: "походная",
     category: "knife",
+    subcategory: "saw",
     price: 26,
     column: [],
   },
@@ -12782,6 +13117,7 @@ export const PRODUCT = [
     desc: "Coghlan's - Bushcraft",
     category: "knife",
     price: 76,
+    subcategory: "saw",
     column: [
       "Эту компактную, но эффективную пилу можно взять с собой куда угодно.",
       "При весе 76,5 грамм вы даже не заметите, что он у вас в сумке.",
@@ -12799,6 +13135,7 @@ export const PRODUCT = [
     img: "testeresi-bushcraft.avif",
     desc: "Coghlan's - Bushcraft",
     category: "knife",
+    subcategory: "saw",
     price: 98,
     column: [
       "При весе 155 грамм вы даже не заметите, что он у вас в сумке.",
@@ -12818,6 +13155,7 @@ export const PRODUCT = [
     img: "p2306573.png",
     desc: "120/40/20 mm",
     category: "knife",
+    subcategory: "knife_accessories",
     price: 35,
     column: [
       "Предназначен для хранения складных ножей Axis 75 и 85 или любых ножей длиной до 120/40/20 мм.",
@@ -12832,6 +13170,7 @@ export const PRODUCT = [
     img: "13.23.12.jpg",
     desc: "фиберглассовая рукоять ",
     category: "knife",
+    subcategory: "axe",
     price: 30,
     column: [
       "Размеры, мм: 410х150х25",
@@ -12847,6 +13186,7 @@ export const PRODUCT = [
     img: "13.23.12.jpg",
     desc: "фиберглассовая рукоять ",
     category: "knife",
+    subcategory: "axe",
     price: 38,
     column: [
       "Материал рабочей части: Сталь",
@@ -12862,6 +13202,7 @@ export const PRODUCT = [
     img: "v8_2C0_1c14.webp",
     desc: "Fiskars Solid",
     category: "knife",
+    subcategory: "shovel",
     price: 80,
     column: [
       "Лопата с острой режущей кромкой позволяет очень легко копать снег или грязь в кратчайшие сроки. Ее компактный размер идеально подходит для хранения в багажнике автомобиля на случай непредвиденных обстоятельств. Изготовлена из прочной борсодержащей стали. Оснащена хорошо заметной оранжевой D-образной рукояткой, которую удобно держать в перчатках или без них.",
@@ -12879,6 +13220,7 @@ export const PRODUCT = [
     img: "binoculars.jpg",
     desc: "8-кратное приближение",
     category: "binoculars",
+    subcategory: "binoculars",
     price: 142,
 
     column: ["Вес: 202г", "Верхнее покрытие : 100% Силикон"],
@@ -12890,6 +13232,7 @@ export const PRODUCT = [
     img: "quechuabinoculars.jpg",
     desc: "12-кратное приближение",
     category: "binoculars",
+    subcategory: "binoculars",
     price: 197,
     shortly:
       "Компактный и легкий бинокль с простой регулировкой. Идеален для обзора панорамы во время походов. Большие объективы (32 мм) и специальное покрытие оптики для обеспечения четкости изображения. Подходит для тех, кто носит очки, благодаря выдвижному глазку, который можно откинуть назад.",
@@ -12906,6 +13249,7 @@ export const PRODUCT = [
     img: "5339573802.webp",
     desc: "10х50",
     category: "binoculars",
+    subcategory: "binoculars",
     price: 160,
 
     column: [],
@@ -12917,6 +13261,7 @@ export const PRODUCT = [
     img: "09099921.jpg",
     desc: "мини-телескоп 10х42",
     category: "binoculars",
+    subcategory: "monocular",
     price: 80,
 
     column: [],
@@ -12929,6 +13274,7 @@ export const PRODUCT = [
     img: "6280099088.jpg",
     desc: "16x52",
     category: "binoculars",
+    subcategory: "monocular",
     price: 45,
 
     column: [
@@ -12948,6 +13294,7 @@ export const PRODUCT = [
     img: "Beige.webp",
     desc: "с регулировкой зума 25-75х60",
     category: "binoculars",
+    subcategory: "monocular",
     price: 240,
 
     column: [
@@ -12968,6 +13315,7 @@ export const PRODUCT = [
     img: "kids-fixed-focus-hiking-monocular-m100-x8-magnification-blue-quechua-8872579.avif",
     desc: "синий — MH100",
     category: "binoculars",
+    subcategory: "monocular",
     price: 69,
     shortly: "",
     column: [
@@ -12985,6 +13333,7 @@ export const PRODUCT = [
     img: "4886c6b7bbc4.jpg",
     desc: "для бинокля",
     category: "binoculars",
+    subcategory: "binoculars_accessories",
     price: 52,
     shortly: "",
     column: [
@@ -13000,6 +13349,7 @@ export const PRODUCT = [
     img: "f48b5fe5.png",
     desc: "с объективом 21 мм и призмой 8х21",
     category: "binoculars",
+    subcategory: "binoculars",
     price: 59,
     shortly: "",
     column: [
@@ -13015,6 +13365,7 @@ export const PRODUCT = [
     img: "269979ik.png",
     desc: "с объективом 30 мм и призмой 10х22",
     category: "binoculars",
+    subcategory: "binoculars",
     price: 65,
     shortly: "",
     column: [
@@ -13086,7 +13437,7 @@ export const PRODUCT = [
     desc: " в чехле (черный/серый)",
     category: "chair",
     price: 99,
-
+    subcategory: "chair",
     column: [
       "Складной стул Naturehike",
       "Цвет: черный",
@@ -13105,6 +13456,7 @@ export const PRODUCT = [
     img: "22.28.38.jpg",
     desc: "без подстаканников",
     category: "chair",
+    subcategory: "chair",
     price: 35,
     column: ["Максимальная нагрузка: 110 кг"],
   },
@@ -13116,6 +13468,7 @@ export const PRODUCT = [
     desc: "С ПОДСТАКАННИКОМ  до 120 кг",
     category: "chair",
     price: 45,
+    subcategory: "chair",
 
     column: [
       "Вес: 1кг",
@@ -13132,6 +13485,7 @@ export const PRODUCT = [
     img: "2024-08-2417.14.44.jpg",
     desc: "до 150 кг",
     category: "chair",
+    subcategory: "chair",
     order: false,
     price: 59,
     column: [
@@ -13150,6 +13504,7 @@ export const PRODUCT = [
     img: "22.33.47.jpg",
     desc: "сверхлегкий. до 110 кг",
     category: "chair",
+    subcategory: "chair",
     price: 99,
     column: [
       "Легкая и прочная алюминиевая рама",
@@ -13167,6 +13522,7 @@ export const PRODUCT = [
     img: "стол1.jpg",
     desc: "ТКАНЕВЫЙ, ДЛЯ КЕМПИНГА",
     category: "chair",
+    subcategory: "chair",
     price: 80,
     order: false,
     column: [
@@ -13182,6 +13538,7 @@ export const PRODUCT = [
     img: "2579643.png",
     desc: "Quechua MH100",
     category: "chair",
+    subcategory: "chair",
     price: 120,
     order: false,
     column: [
@@ -13203,6 +13560,7 @@ export const PRODUCT = [
     desc: "высота 60 см",
     category: "chair",
     price: 172,
+    subcategory: "tables",
     column: [
       "Размер: 50х70 см",
       "Высота: 60 см",
@@ -13220,6 +13578,7 @@ export const PRODUCT = [
     img: "3313.40.22.png",
     desc: "стол 120х60 и 4 табуретак",
     category: "chair",
+    subcategory: "tables",
     price: 230,
 
     column: [
@@ -13237,6 +13596,7 @@ export const PRODUCT = [
     img: "79af8233d0edbd9ef0cb742245511f41.jpeg",
     desc: "черный/серый",
     category: "chair",
+    subcategory: "tables",
     price: 130,
 
     column: [],
@@ -13248,6 +13608,7 @@ export const PRODUCT = [
     img: "a849cccfe53a11eb817e902b3435f33d_f7b19641e54111eb817e902b3435f33d.jpg",
     desc: " до 150 кг",
     category: "chair",
+    subcategory: "chair",
     price: 210,
 
     column: [
@@ -13268,6 +13629,7 @@ export const PRODUCT = [
     desc: " до 150 кг",
     category: "chair",
     price: 199,
+    subcategory: "chair",
 
     column: [
       "Регулировка наклона: есть",
@@ -13583,88 +13945,88 @@ export const PRODUCT = [
   //   ],
   // },
 
-  {
-    order: true,
-    id: 101001413343,
-    title: "Нарукавники INTEX",
-    img: "6640411556.png",
-    desc: "6-12 лет",
-    category: "air",
-    price: 15,
-    column: [
-      "Яркие детские нарукавники для плавания – помогают ребёнку быстро и безопасно освоить навыки плавания без стресса.",
-      "Подходят для детей 6–12 лет (вес 15–60 кг), можно использовать как в бассейне, так и в открытой воде – море, река, озеро, аквапарк.",
-      "Изготовлены из мягкого и прочного винила (ПВХ) толщиной 0,25 мм, гипоаллергенный материал, устойчивый к повреждениям и перепадам температуры.",
-      "Нарукавники состоят из двух независимых воздушных камер с надёжными клапанами, что обеспечивает дополнительную безопасность.",
-      "Поверхность приятна к коже, без царапающих и режущих швов, не натирают и не давят на руки.",
-      "Лёгко надуваются без использования насоса, удобно брать с собой на отдых или в поездку.",
-      "Обеспечивают крепкий, но мягкий захват руки, не соскальзывают и не мешают движениям ребёнка.",
-    ],
-  },
-  {
-    order: true,
-    id: 103001413343,
-    title: "Нарукавники INTEX",
-    img: "3313.jpg",
-    desc: "3-6 лет",
-    category: "air",
-    price: 12,
-    column: [
-      "Яркие детские нарукавники для плавания – помогают ребёнку быстро и безопасно освоить навыки плавания без стресса.",
-      "Подходят для детей 3–6 лет (вес до 30 кг), можно использовать как в бассейне, так и в открытой воде – море, река, озеро, аквапарк.",
-      "Изготовлены из мягкого и прочного винила (ПВХ) толщиной 0,25 мм, гипоаллергенный материал, устойчивый к повреждениям и перепадам температуры.",
-      "Нарукавники состоят из двух независимых воздушных камер с надёжными клапанами, что обеспечивает дополнительную безопасность.",
-      "Поверхность приятна к коже, без царапающих и режущих швов, не натирают и не давят на руки.",
-      "Лёгко надуваются без использования насоса, удобно брать с собой на отдых или в поездку.",
-      "Обеспечивают крепкий, но мягкий захват руки, не соскальзывают и не мешают движениям ребёнка.",
-    ],
-  },
-  {
-    order: true,
-    id: 1030014133443,
-    title: "Надувной круг INTEX",
-    img: "afe58f67-d338-4edb-a841-1b6164facc29.webp",
-    desc: "97 см ",
-    category: "air",
-    price: 25,
+  // {
+  //   order: true,
+  //   id: 101001413343,
+  //   title: "Нарукавники INTEX",
+  //   img: "6640411556.png",
+  //   desc: "6-12 лет",
+  //   category: "air",
+  //   price: 15,
+  //   column: [
+  //     "Яркие детские нарукавники для плавания – помогают ребёнку быстро и безопасно освоить навыки плавания без стресса.",
+  //     "Подходят для детей 6–12 лет (вес 15–60 кг), можно использовать как в бассейне, так и в открытой воде – море, река, озеро, аквапарк.",
+  //     "Изготовлены из мягкого и прочного винила (ПВХ) толщиной 0,25 мм, гипоаллергенный материал, устойчивый к повреждениям и перепадам температуры.",
+  //     "Нарукавники состоят из двух независимых воздушных камер с надёжными клапанами, что обеспечивает дополнительную безопасность.",
+  //     "Поверхность приятна к коже, без царапающих и режущих швов, не натирают и не давят на руки.",
+  //     "Лёгко надуваются без использования насоса, удобно брать с собой на отдых или в поездку.",
+  //     "Обеспечивают крепкий, но мягкий захват руки, не соскальзывают и не мешают движениям ребёнка.",
+  //   ],
+  // },
+  // {
+  //   order: true,
+  //   id: 103001413343,
+  //   title: "Нарукавники INTEX",
+  //   img: "3313.jpg",
+  //   desc: "3-6 лет",
+  //   category: "air",
+  //   price: 12,
+  //   column: [
+  //     "Яркие детские нарукавники для плавания – помогают ребёнку быстро и безопасно освоить навыки плавания без стресса.",
+  //     "Подходят для детей 3–6 лет (вес до 30 кг), можно использовать как в бассейне, так и в открытой воде – море, река, озеро, аквапарк.",
+  //     "Изготовлены из мягкого и прочного винила (ПВХ) толщиной 0,25 мм, гипоаллергенный материал, устойчивый к повреждениям и перепадам температуры.",
+  //     "Нарукавники состоят из двух независимых воздушных камер с надёжными клапанами, что обеспечивает дополнительную безопасность.",
+  //     "Поверхность приятна к коже, без царапающих и режущих швов, не натирают и не давят на руки.",
+  //     "Лёгко надуваются без использования насоса, удобно брать с собой на отдых или в поездку.",
+  //     "Обеспечивают крепкий, но мягкий захват руки, не соскальзывают и не мешают движениям ребёнка.",
+  //   ],
+  // },
+  // {
+  //   order: true,
+  //   id: 1030014133443,
+  //   title: "Надувной круг INTEX",
+  //   img: "afe58f67-d338-4edb-a841-1b6164facc29.webp",
+  //   desc: "97 см ",
+  //   category: "air",
+  //   price: 25,
 
-    column: [],
-  },
-  {
-    order: true,
-    id: 10300141334434,
-    title: "Надувной круг Арбуз",
-    img: "krug-arbuz-2-800x800.jpeg",
-    desc: "80 см",
-    category: "air",
-    price: 15,
-    column: [],
-  },
-  {
-    order: true,
-    id: 103001414334434,
-    title: "Надувной круг Пончик",
-    img: "6657623820.jpg",
-    desc: "70 см",
-    category: "air",
-    price: 15,
-    column: [],
-  },
-  {
-    order: true,
-    id: 144343016795347,
-    title: "Жилет спасательный",
-    img: "Most-Popular-EPE-Foam-Life-Jacket-Full-Size-for-Adult-and-Children.avif",
-    desc: "Hello Plus взрослый ",
-    category: "vest",
-    price: 65,
+  //   column: [],
+  // },
+  // {
+  //   order: true,
+  //   id: 10300141334434,
+  //   title: "Надувной круг Арбуз",
+  //   img: "krug-arbuz-2-800x800.jpeg",
+  //   desc: "80 см",
+  //   category: "air",
+  //   price: 15,
+  //   column: [],
+  // },
+  // {
+  //   order: true,
+  //   id: 103001414334434,
+  //   title: "Надувной круг Пончик",
+  //   img: "6657623820.jpg",
+  //   desc: "70 см",
+  //   category: "air",
+  //   price: 15,
+  //   column: [],
+  // },
+  // {
+  //   order: true,
+  //   id: 144343016795347,
+  //   title: "Жилет спасательный",
+  //   img: "Most-Popular-EPE-Foam-Life-Jacket-Full-Size-for-Adult-and-Children.avif",
+  //   desc: "Hello Plus взрослый ",
+  //   category: "vest",
+  //   price: 65,
 
-    column: [
-      "Наполнитель жилета- пена",
-      "Внешний материал жилета- оксфорд",
-      "Для максимального комфорта, жилет имеет стяжки, благодаря которым можно регулировать размер",
-    ],
-  },
+  //   column: [
+  //     "Наполнитель жилета- пена",
+  //     "Внешний материал жилета- оксфорд",
+  //     "Для максимального комфорта, жилет имеет стяжки, благодаря которым можно регулировать размер",
+  //   ],
+  // },
   {
     order: true,
     id: 1000141343,
@@ -13672,6 +14034,7 @@ export const PRODUCT = [
     img: "v8_EFB6_55a.png.webp",
     desc: "43 х 28 х 9 см",
     category: "air",
+    subcategory: "pillows",
     price: 16,
     column: [
       "Водонепроницаемая поверхность",
@@ -13688,6 +14051,7 @@ export const PRODUCT = [
     img: "airbasic.jpg",
     desc: "QUECHUA AIR BASIC ",
     category: "air",
+    subcategory: "pillows",
     price: 34,
     column: [
       "Размеры: 27×37×10 см",
@@ -13702,6 +14066,7 @@ export const PRODUCT = [
     img: "podushka-comfort-dlya-kempingu.jpg",
     desc: "QUECHUA COMFORT",
     category: "air",
+    subcategory: "pillows",
     price: 49,
     column: [
       "Размер: 45 x 30 x 13 см ",
@@ -13717,6 +14082,7 @@ export const PRODUCT = [
     img: "1720837776393-90673.png",
     desc: "ламзак",
     category: "air",
+    subcategory: "mattress",
     price: 49,
 
     column: [
@@ -13758,6 +14124,7 @@ export const PRODUCT = [
     img: "3c5adc24b3_1080x.webp",
     desc: "BESTWAY 188 Х 99 Х 22 см",
     category: "air",
+    subcategory: "mattress",
     price: 61,
     column: [
       "Размеры: 188 Х 99 Х 22 см",
@@ -13771,6 +14138,7 @@ export const PRODUCT = [
     img: "mattressIntex1.png",
     desc: "INTEX 191 Х 76 Х 25 см",
     category: "air",
+    subcategory: "mattress",
     price: 55,
     order: false,
     column: [
@@ -13788,6 +14156,7 @@ export const PRODUCT = [
     img: "mattressIntex2.jpg",
     desc: "INTEX 203х152х25 см",
     category: "air",
+    subcategory: "mattress",
     price: 90,
     column: [
       "Размеры: 203х152х25 см",
@@ -13803,6 +14172,7 @@ export const PRODUCT = [
     img: "mattressIntex2.jpg",
     desc: "INTEX 203х183х25 см",
     category: "air",
+    subcategory: "mattress",
     order: false,
     price: 89,
     column: [
@@ -13813,17 +14183,17 @@ export const PRODUCT = [
       "В комплект входит самоклеящаяся заплатка",
     ],
   },
-  {
-    order: true,
-    id: 100044141,
-    title: "Тюбинг",
-    img: "09491dd5-4982-448d-8ed7-d424eb2b2545.webp",
-    desc: "надувной",
-    category: "air",
-    price: 80,
+  // {
+  //   order: true,
+  //   id: 100044141,
+  //   title: "Тюбинг",
+  //   img: "09491dd5-4982-448d-8ed7-d424eb2b2545.webp",
+  //   desc: "надувной",
+  //   category: "air",
+  //   price: 80,
 
-    column: ["Сверхпрочный надувной тюбинг"],
-  },
+  //   column: ["Сверхпрочный надувной тюбинг"],
+  // },
   {
     order: true,
     id: 1100143,
@@ -13831,6 +14201,7 @@ export const PRODUCT = [
     img: "ocr.jpeg",
     desc: "Air Pump",
     category: "air",
+    subcategory: "pump",
     price: 18,
     column: [
       "Вес: 420 г",
@@ -13846,6 +14217,7 @@ export const PRODUCT = [
     img: "ayak-pompasi-kamp-mati-ve-sisme-yatak--2-7fbf.webp",
     desc: "Quechua Basic",
     category: "air",
+    subcategory: "pump",
     price: 55,
     column: [
       "Ножной насос для надувания туристических ковриков.",
@@ -13862,7 +14234,8 @@ export const PRODUCT = [
     title: "Ультразвуковой отпугиватель",
     img: "18.51.22.jpg",
     desc: "собак",
-    category: "spray",
+    category: "safety",
+    subcategory: "repeller",
     price: 38,
     column: [
       "USB",
@@ -13879,7 +14252,8 @@ export const PRODUCT = [
     title: "Ультразвуковой отпугиватель собак",
     img: "d3727b.png",
     desc: "ультразвуковой",
-    category: "spray",
+    category: "safety",
+    subcategory: "repeller",
     price: 43,
     column: [
       "12,5 х 4,5 см",
@@ -13897,7 +14271,8 @@ export const PRODUCT = [
     title: "Свисток 3в1",
     img: "b6-18a41e7916f6.webp",
     desc: "Компас, Термометр, Свисток",
-    category: "spray",
+    category: "safety",
+    subcategory: "compass",
     price: 14,
     column: ["6 см до 150 дБ"],
   },
@@ -13907,7 +14282,8 @@ export const PRODUCT = [
     title: "Трёхчастотный свисток",
     img: "image_2025-07-06_13-32-41.png",
     desc: "для выживания",
-    category: "spray",
+    category: "safety",
+    subcategory: "compass",
     price: 10,
     column: [
       "Высокочастотный трёхчастотный свисток для выживания.",
@@ -13922,7 +14298,8 @@ export const PRODUCT = [
     title: "Зуковой сигнал",
     img: "745044389694.png",
     desc: "воздушный горн Ревун, дудка, 210 мл",
-    category: "spray",
+    category: "safety",
+    subcategory: "repeller",
     price: 127,
     column: [
       "Акустический отпугиватель диких животных.",
@@ -13943,7 +14320,8 @@ export const PRODUCT = [
     title: "Спираль от камаров ZENDEN",
     img: "HLB1x7i4.webp",
     desc: "micro-smoke",
-    category: "spray",
+    category: "safety",
+    subcategory: "repellent",
     price: 12,
     column: [
       "Марка: AWQC. Страна производства: Китай.",
@@ -13964,7 +14342,9 @@ export const PRODUCT = [
     title: "Спрей от комаров 165 мл",
     img: "12.32.14122.jpg",
     desc: "Gardex Naturin",
-    category: "spray",
+    category: "safety",
+    subcategory: "repellent",
+
     price: 25,
     column: [
       "Спрей-аэрозоль Gardex Naturin 3 в 1 — объём 165 мл.",
@@ -13983,7 +14363,8 @@ export const PRODUCT = [
     title: "Спрей AUT от клещей, комаров, мошек",
     img: "12.32.1032.jpg",
     desc: "150 мл",
-    category: "spray",
+    category: "safety",
+    subcategory: "repellent",
     price: 21,
     column: [
       "Универсальное акарицидно-репеллентное средство «№1» в аэрозольной упаковке.",
@@ -14001,7 +14382,9 @@ export const PRODUCT = [
     title: "Спрей антиклещ ARGUS",
     img: "12.46.55.jpg",
     desc: "125 мл",
-    category: "spray",
+    category: "safety",
+    subcategory: "repellent",
+
     price: 24,
     column: [
       "Репеллентный спрей АНТИКЛЕЩ от ARGUS — объём 125 мл.",
@@ -14020,7 +14403,9 @@ export const PRODUCT = [
     title: "Спрей от комаров и мошек",
     img: "12.46.55.jpg",
     desc: "NADZOR ",
-    category: "spray",
+    category: "safety",
+    subcategory: "repellent",
+
     price: 25,
     column: [
       "Спрей от комаров и мошек Nadzor — надёжная защита на природе",
@@ -14207,7 +14592,7 @@ export const PRODUCT = [
     title: "Веревка",
     img: "picture32.jpg",
     desc: "8 мм, длина 10 метров",
-    category: "accessories",
+    category: "rope",
     price: 62,
     order: false,
     column: [
@@ -14221,7 +14606,7 @@ export const PRODUCT = [
     title: "Веревка 30 мм",
     img: "22.45.18.jpg",
     desc: "длина 10 метров",
-    category: "accessories",
+    category: "rope",
     price: 21,
     column: [],
   },
@@ -14231,7 +14616,7 @@ export const PRODUCT = [
     title: "Веревка 30 мм",
     img: "22.45.18.jpg",
     desc: "длина 15 метров",
-    category: "accessories",
+    category: "rope",
     price: 31,
     column: [],
   },
@@ -14242,7 +14627,8 @@ export const PRODUCT = [
     title: "Браслет из паракорда+свисток",
     img: "paracordbig.jpg",
     desc: "Цвета в ассартименте",
-    category: "accessories",
+    category: "safety",
+    subcategory: "bracelet",
     price: 14,
     column: [
       "Браслет при необходимости можно распустить в крепкий шнур длина веревки около 3 метров",
@@ -14258,7 +14644,8 @@ export const PRODUCT = [
     title: "Браслет из паракорда без свистка",
     img: "paracordsmall.jpg",
     desc: "Цвета в ассартименте",
-    category: "accessories",
+    category: "safety",
+    subcategory: "bracelet",
     price: 9,
     column: [
       "браслет при необходимости можно распустить в крепкий шнур длина веревки около 3 метров,",
@@ -14274,7 +14661,8 @@ export const PRODUCT = [
     title: "Браслет из паракорда (свисток, огниво, компас)",
     img: "567890.png",
     desc: "Цвета в ассартименте",
-    category: "accessories",
+    category: "safety",
+    subcategory: "bracelet",
     price: 16,
     column: [
       "Ширина браслета – 23 мм. Окружность (в застегнутом виде с учетом фастексов) – 22,5 см (можно самостоятельно перевязать на другой размер).",
@@ -14292,7 +14680,8 @@ export const PRODUCT = [
     title: "Аварийное Термоодеяло",
     img: "21.49.26.jpg",
     desc: "130 X 210 см",
-    category: "accessories",
+    category: "safety",
+    subcategory: " thermalblanket",
     price: 9,
 
     column: [
@@ -14301,13 +14690,34 @@ export const PRODUCT = [
       "",
     ],
   },
+  {
+    order: true,
+    id: 10330330114,
+    title: "Аварийное термоодеяло ",
+    img: "6fc3cf85-c35a-45e3-8a11-081352c255e6.webp",
+    desc: "из алюминиевой фольги (многоразовое)",
+    category: "safety",
+    subcategory: " thermalblanket",
 
+    price: 25,
+    column: [
+      "Аварийное термоодеяло-пончо из алюминиевой фольги.",
+      "Ветрозащитный и водонепроницаемый дождевик с капюшоном.",
+      "Подходит для мужчин и женщин.",
+      "Идеален для походов, кемпинга и выживания на открытом воздухе.",
+      "Многоразовое использование.",
+      "Состав материалов: преимущественно нетекстильные материалы.",
+      "Инструкции по уходу: ручная стирка, не подвергать химчистке.",
+      "Подходит как аксессуар для путешествий и активного отдыха.",
+    ],
+  },
   {
     id: 1000135,
     title: "СПАСАТЕЛЬНОЕ ОДЕЯЛО",
     img: "rescueBlanket.jpg",
     desc: "SIMOND",
-    category: "accessories",
+    category: "safety",
+    subcategory: " thermalblanket",
     price: 15,
     order: false,
     column: [
@@ -14324,7 +14734,9 @@ export const PRODUCT = [
     title: "ОДЕЯЛО ПЕРВОЙ ПОМОЩИ",
     img: "safeBlanket.jpg",
     desc: "FORCIAZ 100",
-    category: "accessories",
+    category: "safety",
+    subcategory: " thermalblanket",
+
     price: 24,
     column: [
       "Односпальное термоодеяло для одноразового использования, чтобы защитить Вас от холода или тепла, когда это необходимо.",
@@ -14342,7 +14754,8 @@ export const PRODUCT = [
     title: "Компас",
     img: "110000428237905.jpg",
     desc: "на мини-карабине",
-    category: "accessories",
+    category: "safety",
+    subcategory: "compass",
     price: 32,
     column: [
       "4 в 1: Компас, свисток, термометр, увеличительное стекло.",
@@ -14357,7 +14770,7 @@ export const PRODUCT = [
     title: "Карабин-компас",
     img: "compass-orange.png",
     desc: "16 г",
-    category: "accessories",
+    category: "rope",
     price: 28,
     column: [
       "Практичный и легкий, вы можете прикрепить его где угодно!",
@@ -14393,7 +14806,6 @@ export const PRODUCT = [
     price: 3,
     column: ["Размер: 25 см"],
   },
-
   {
     order: true,
     id: 9382990032123,
@@ -14426,13 +14838,14 @@ export const PRODUCT = [
     title: "Медаль Казбек",
     img: "23.11.40.jpg",
     desc: "MOUNTAIN MEDALS",
-    category: "accessories",
+    category: "medal",
+    subcategory: "medal",
     price: 65,
     column: [],
   },
   {
     order: true,
-    id: 93829900329989124,
+    id: 293829900329989124,
     title: "игра UNO",
     img: "O1CN01bOFvfc1Xr3.avif",
     desc: "Настольная карточная",
@@ -14440,16 +14853,6 @@ export const PRODUCT = [
     price: 10,
     column: [],
   },
-  // {
-  //   order: true,
-  //   id: 93829900329989123,
-  //   title: "Медаль ГОРЫ",
-  //   img: "23.11.40.jpg",
-  //   desc: "",
-  //   category: "accessories",
-  //   price: 42,
-  //   column: [],
-  // },
   // {
   //
   // order:true,
@@ -14474,7 +14877,8 @@ export const PRODUCT = [
     title: "Портативная солнечная зарядная панель",
     img: "IMG_1503.PNG",
     desc: "2W-USB",
-    category: "accessories",
+    category: "technic",
+    subcategory: "technic",
     price: 35,
     column: ["Водонепроницаемая"],
   },
@@ -14484,7 +14888,8 @@ export const PRODUCT = [
     title: "Складная солнечная панель",
     img: "b50b5ab1-1d19-4903-a247-d.png",
     desc: "Выход: USB 5 В, Напряжение ≤36 В ",
-    category: "accessories",
+    category: "technic",
+    subcategory: "technic",
     price: 97,
     column: [
       " Изготовлен из высококачественных материалов, прочный и чувствительный.",
@@ -14537,48 +14942,6 @@ export const PRODUCT = [
   },
   {
     order: true,
-    id: 902382123791214,
-    title: "часы-секундомер для бега ",
-    img: "110000574032863.jpg",
-    desc: "Водонепроницаемые W50",
-    category: "technic",
-    subcategory: "watch",
-    price: 110,
-    column: [
-      "Эти часы идеально подходят для лёгкого контроля вашей физической активности.",
-      "Ищете удобные часы, которые можно использовать на всех тренировках, даже под дождём? Герметичные часы ATW100 станут вашим надёжным спутником во всех пробежках на открытом воздухе.",
-      "Функции: простой и эффективный хронометр с промежуточным временем, точностью до 1/100 секунды.",
-      "Водонепроницаемость — до 50 м. Можно плавать и использовать кнопки под водой.",
-      "Крупные цифры на экране обеспечивают отличную читаемость.",
-      "Устойчивость к хлору, солёной воде и поту — подходят для использования в бассейне и на море.",
-      "Простое управление: благодаря пиктограммам и трём кнопкам настройки часы легко настраиваются.",
-    ],
-  },
-  {
-    order: true,
-    id: 9023821237912143,
-    title: "часы-секундомер для бега ",
-    img: "pictur33233e.jpg",
-    desc: "Водонепроницаемые  W900 M",
-    category: "technic",
-    subcategory: "watch",
-    price: 150,
-    column: [
-      "Эти часы разработаны для измерения вашей производительности и планирования интервальных тренировок.",
-      "Ищете прочные и стильные часы, которые помогут улучшить результаты на пробежках? Благодаря встроенному режиму интервальных тренировок вы можете полностью персонализировать свои занятия.",
-      "Функции: два часовых пояса, хронометр, подсветка экрана, будильник и календарь.",
-      "Режим тренера: программируйте свои тренировки с помощью 5 таймеров обратного отсчёта.",
-      "Водонепроницаемость до 10 ATM — можно использовать во время водных видов спорта.",
-      "Персонализация: выберите цвет ремешка по своему вкусу.",
-      "Устойчивость к воде: часы не боятся морской и хлорированной воды, а также пота.",
-      "Прочность: минеральное стекло и металлический корпус защищают от царапин.",
-      "Быстрая замена ремешка — специальная система фиксации позволяет менять его без инструментов.",
-      "Простое управление благодаря пиктограммам на экране.",
-    ],
-  },
-
-  {
-    order: true,
     id: 90238212379121430,
     title: "часы-секундомер для бега ",
     img: "pictur33233e.jpg",
@@ -14605,7 +14968,8 @@ export const PRODUCT = [
     title: "Компактная аптечка: мини-сумка",
     img: "c44e346-goods.webp",
     desc: "20 X 13 СМ",
-    category: "accessories",
+    category: "safety",
+    subcategory: "aid",
     price: 13,
     column: [],
   },
@@ -14615,17 +14979,18 @@ export const PRODUCT = [
     title: "Компактная аптечка",
     img: "1720779232944-7b2.png",
     desc: "10,5 х 15 х 2 СМ",
-    category: "accessories",
+    category: "safety",
+    subcategory: "aid",
     price: 19,
     column: [],
   },
   {
     order: true,
     id: 99990908723,
-    title: "сверхпрочные брелки-карабины",
+    title: "брелки-карабины",
     img: "87ade41f917.webp",
     desc: "1 шт.",
-    category: "accessories",
+    category: "rope",
     price: 1,
     column: ["47 X 24,5 mm", "Диаметр 3,8 мм", "Алюминиевый сплав"],
   },
@@ -14636,7 +15001,7 @@ export const PRODUCT = [
     title: "алюминиевые карабины",
     img: "28c1b-goods.webp",
     desc: "1 шт.",
-    category: "accessories",
+    category: "rope",
     price: 1,
     column: ["47 Х 24 mm", "3,8 мм"],
   },
@@ -14647,7 +15012,8 @@ export const PRODUCT = [
     title: "Водонепроницаемый компас",
     img: "59e987c9-037c-4.png",
     desc: "со шкалой 10.5 Х 6.2 см ",
-    category: "accessories",
+    category: "safety",
+    subcategory: "compass",
     price: 10,
     column: [],
   },
@@ -15074,6 +15440,7 @@ export const PRODUCT = [
     img: "ukrainian-borscht-front.png",
     desc: "Max pack +50%",
     category: "food",
+    subcategory: "lazy",
     price: 19,
 
     column: [
@@ -15100,6 +15467,7 @@ export const PRODUCT = [
     img: "ukrainian-borscht-front.png",
     desc: "Max pack +50%",
     category: "food",
+    subcategory: "lazy",
     price: 16,
     column: [
       "Состав: картофель (48%), лук (13%), соевое мясо (10%), свекла (8%), помидоры (8%), морковь (8%), капуста (3%), приправы",
@@ -15125,6 +15493,7 @@ export const PRODUCT = [
     img: "tomato-soup-front.png",
     desc: "Max pack +50%",
     category: "food",
+    subcategory: "lazy",
     price: 19,
     column: [
       "Состав: картофель (40%), свинина (20%), помидоры (15%), лапша (10%), морковь (5%), лук (5%), пармезан (2%), приправы.",
@@ -15150,6 +15519,7 @@ export const PRODUCT = [
     img: "tomato-soup-front.png",
     desc: "Max pack +50%",
     category: "food",
+    subcategory: "lazy",
     price: 16,
     column: [
       "Состав: картофель (40%), соевое мясо (20%), помидоры (15%), лапша (10%), морковь (5%), лук (5%), пармезан (2%), приправы. ",
@@ -15175,6 +15545,7 @@ export const PRODUCT = [
     img: "buckwheat-front.png",
     desc: "Max pack +50%",
     category: "food",
+    subcategory: "lazy",
     price: 23,
     column: [
       "Состав: гречневая крупа (57%), мясо свинины (26%), помидоры (5%), лук (5%), морковь (5%), приправы",
@@ -15200,6 +15571,7 @@ export const PRODUCT = [
     img: "buckwheat-front.png",
     desc: "Max pack +50%",
     category: "food",
+    subcategory: "lazy",
     price: 20,
     column: [
       "Состав: гречневая крупа (57%), соевое мясо (26%), помидоры (5%), лук (5%), морковь (5%), приправы.",
@@ -15225,6 +15597,7 @@ export const PRODUCT = [
     img: "rizotto-front.png",
     desc: "Max pack +50%",
     category: "food",
+    subcategory: "lazy",
     price: 23,
 
     column: [
@@ -15251,6 +15624,7 @@ export const PRODUCT = [
     img: "rizotto-front.png",
     desc: "Max pack +50%",
     category: "food",
+    subcategory: "lazy",
     price: 20,
 
     column: [
@@ -15277,6 +15651,7 @@ export const PRODUCT = [
     img: "creamy-potato-front.png",
     desc: "Max pack +50%",
     category: "food",
+    subcategory: "lazy",
     price: 23,
     column: [
       "Состав: картофель (50%), куриное мясо (20%), сухое молоко (10%), лук репчатый (10%), шампиньоны (5%), пармезан (2%), приправы",
@@ -15326,6 +15701,7 @@ export const PRODUCT = [
     img: "pasta-front.png",
     desc: "Max pack +50%",
     category: "food",
+    subcategory: "lazy",
     price: 23,
     column: [
       "Состав:лапша (72%), куриное мясо (20%), помидоры (5%), пармезан (2%), приправы",
@@ -15351,6 +15727,7 @@ export const PRODUCT = [
     img: "pasta-front.png",
     desc: "Max pack +50%",
     category: "food",
+    subcategory: "lazy",
     price: 20,
     column: [
       "Состав: лапша (72%), соевое мясо (20%), помидоры (5%), пармезан (2%), приправы.",
@@ -15377,6 +15754,7 @@ export const PRODUCT = [
     desc: "Max pack +50%",
     category: "food",
     price: 23,
+    subcategory: "lazy",
     column: [
       "Состав: фасоль в томатном соусе (54%), мясо свинины (27%), картофель (11%), лук (11%), приправы",
       "Высококаллорийные блюда быстрого приготовления",
@@ -15401,6 +15779,7 @@ export const PRODUCT = [
     img: "lobio-front.png",
     desc: "lobio-front.png",
     category: "food",
+    subcategory: "lazy",
     price: 19,
     column: [
       "Состав: фасоль в томатном соусе (54%), соевое мясо (27%), картофель (11%), лук (11%), приправы",
@@ -15426,6 +15805,7 @@ export const PRODUCT = [
     img: "bulgur-front.png",
     desc: "Max pack +50%",
     category: "food",
+    subcategory: "lazy",
     price: 23,
     column: [
       "Состав: булгур (63%), куриное мясо (21%), морковь (5%), кукуруза (5%), лук (3%), приправы",
@@ -15451,6 +15831,7 @@ export const PRODUCT = [
     img: "bulgur-front.png",
     desc: "Max pack +50%",
     category: "food",
+    subcategory: "lazy",
     price: 20,
     column: [
       "Состав: булгур (63%), соевое мясо (21%), морковь (5%), кукуруза (5%), лук (3%), приправы",
@@ -15476,6 +15857,7 @@ export const PRODUCT = [
     img: "jerky-beef-front.png",
     desc: "60 грамм",
     category: "food",
+    subcategory: "lazy",
     price: 18,
     column: [
       "Ингредиенты: мясо говядины, маринад (соевый соус, винный уксус, чеснок, сахар, перец чили, имбирь, соль)",
@@ -15504,6 +15886,7 @@ export const PRODUCT = [
     img: "chocolate-granola-front.png",
     desc: "шоколадная",
     category: "food",
+    subcategory: "lazy",
     price: 12,
     column: [
       "Ингредиенты: овсянка печеная, бананы, фундук, миндаль, изюм, какао, масло сливочное, мед, молоко сухое (20 грамм).",
@@ -15517,6 +15900,7 @@ export const PRODUCT = [
     img: "chocolate-granola-front.png",
     desc: "яблоко+банан",
     category: "food",
+    subcategory: "lazy",
     price: 12,
     column: [
       "Ингредиенты: овсяная каша, яблоки, бананы, смола, семечки (тыквенные, подсолнечные), орехи (миндаль, фундук, грецкий орех), яблочный сок, мед, корица, сухое молоко (20 грамм).",
@@ -15530,6 +15914,7 @@ export const PRODUCT = [
     img: "chocolate-granola-front.png",
     desc: "апельсиновая",
     category: "food",
+    subcategory: "lazy",
     price: 12,
     column: [
       "Ингредиенты: овсяная каша, миндаль, кешью, изюм, курага, мед, апельсиново-лимонный сок, сухое молоко (20 г).",
@@ -15543,6 +15928,7 @@ export const PRODUCT = [
     img: "Izy__Meal-Borscht-Web-Thumbnail.jpg",
     desc: "Borscht",
     category: "food",
+    subcategory: "izy",
     price: 16,
     column: [
       "Украинский сублимированный борщ - это простая версия классического супа, приготовленного из свеклы, моркови, картофеля и капусты, без добавления укропа. Он не содержит искусственных добавок, что обеспечивает натуральные и питательные вкусовые качества. Этот суп - отличный источник витаминов и минералов, что делает его полезным блюдом. Для приготовления требуется всего лишь добавить воды, что позволяет быстро и просто насладиться теплым и приятным блюдом на свежем воздухе.",
@@ -15555,6 +15941,7 @@ export const PRODUCT = [
     img: "23.56.48.jpg",
     desc: "Pumpkin soup",
     category: "food",
+    subcategory: "izy",
     price: 16,
     column: [],
   },
@@ -15566,6 +15953,7 @@ export const PRODUCT = [
     img: "23.51.25.jpg",
     desc: "Mashed Beans with herbs",
     category: "food",
+    subcategory: "izy",
     price: 17,
     column: [
       "Лобио - это простая смесь фасоли и овощного ассорти, приправленная различными травами для придания вкуса. Это сублимированное блюдо, не содержащее искусственных ингредиентов, которое является полезным и питательным блюдом с высоким содержанием витаминов и минералов. Чтобы приготовить, просто добавьте горячей воды, перемешайте и подождите, пока жидкость восстановится, как при заваривании чая. Он разработан с учетом простоты приготовления, что делает его подходящим для активного отдыха, где возможности приготовления ограничены.",
@@ -15578,6 +15966,7 @@ export const PRODUCT = [
     img: "Izy__Meal-Puree-Web-Thumbnail.jpg",
     desc: "Puree with smoked sulguni",
     category: "food",
+    subcategory: "izy",
     price: 17,
     column: [
       "Это сублимированное блюдо сочетает в себе мягкость и неповторимый аромат копченого сыра сулугуни, а для придания вкуса оно приправлено укропом. Оно готовится без использования искусственных ингредиентов, чтобы сделать блюдо одновременно вкусным и питательным. Приготовление очень простое: добавьте горячую воду и подождите несколько минут, пока блюдо не впитает влагу. Этот продукт идеально подходит для тех, кто ищет быстрое, полезное блюдо с неповторимым вкусом, подходящее для трапезы на свежем воздухе.",
@@ -15590,6 +15979,7 @@ export const PRODUCT = [
     img: "23.41.04.jpg",
     desc: "Chiken soup kharcho",
     category: "food",
+    subcategory: "izy",
     price: 24,
     column: [],
   },
@@ -15600,6 +15990,7 @@ export const PRODUCT = [
     img: "67441f06af0f7ef9e0d09955_Izy__Apricots-small.png",
     desc: "Apricots",
     category: "food",
+    subcategory: "izy",
     price: 10,
     column: [],
   },
@@ -15610,6 +16001,7 @@ export const PRODUCT = [
     img: "6748c170457a94e8c61a30dd_Izy__Strawberries-small.png",
     desc: "Strawberries",
     category: "food",
+    subcategory: "izy",
     price: 10,
     column: [],
   },
@@ -15620,6 +16012,7 @@ export const PRODUCT = [
     img: "6748c0134409e73d369a01fe_Izy__Cantaloupe-smal.png",
     desc: "Cantaloupes",
     category: "food",
+    subcategory: "izy",
     price: 10,
     column: [],
   },
@@ -15630,6 +16023,7 @@ export const PRODUCT = [
     img: "6748bd0b3865454921878fcc_Izy__Feijoa-small__Front-min.png",
     desc: "Feijoas",
     category: "food",
+    subcategory: "izy",
     price: 10,
     column: [],
   },
@@ -15640,6 +16034,7 @@ export const PRODUCT = [
     img: "6748bf97622f36c7b8776249_Izy__Peaches-small.png",
     desc: "Peachs",
     category: "food",
+    subcategory: "izy",
     price: 10,
     column: [],
   },
@@ -15651,6 +16046,7 @@ export const PRODUCT = [
     desc: "Plums",
     category: "food",
     price: 10,
+    subcategory: "izy",
     column: [],
   },
   {
@@ -15660,6 +16056,7 @@ export const PRODUCT = [
     img: "6748bda752df4674f7c0b351_Izy__Figs-small.png",
     desc: "Figs",
     category: "food",
+    subcategory: "izy",
     price: 10,
     column: [],
   },
@@ -15700,6 +16097,7 @@ export const PRODUCT = [
     img: "a281_Izy__Smoked-Sulguni-25g-Mockup.png",
     desc: "25 грамм",
     category: "food",
+    subcategory: "izy",
     price: 7,
     column: [],
   },
@@ -15710,6 +16108,7 @@ export const PRODUCT = [
     img: "a281_Izy__Smoked-Sulguni-25g-Mockup.png",
     desc: "90 грамм",
     category: "food",
+    subcategory: "izy",
     price: 18,
     column: [],
   },
@@ -15720,6 +16119,7 @@ export const PRODUCT = [
     img: "coffee-peru-front.png",
     desc: "Lazy Snark",
     category: "food",
+    subcategory: "coffe",
     price: 6,
     column: ["Грейпфрут, слива, апельсин"],
   },
@@ -15730,6 +16130,7 @@ export const PRODUCT = [
     img: "coffee-burundi-front.png",
     desc: "Lazy Snark",
     category: "food",
+    subcategory: "coffe",
     price: 6,
     column: ["Клубника, Черника, Карамель"],
   },
@@ -15740,6 +16141,7 @@ export const PRODUCT = [
     img: "coffee-rwanda-front.png",
     desc: "Lazy Snark",
     category: "food",
+    subcategory: "coffe",
     price: 6,
     column: ["Апельсин, папайя, киви, цветы"],
   },
@@ -15750,6 +16152,7 @@ export const PRODUCT = [
     img: "drip-coffee-kenya-maunt-new-768.png",
     desc: "1 дрип",
     category: "food",
+    subcategory: "coffe",
     price: 4,
     column: ["Сочный кофе с нотами красной смородины, какао и чёрного чая"],
   },
@@ -15760,6 +16163,7 @@ export const PRODUCT = [
     img: "169-Barry_10-768.png",
     desc: "1 дрип",
     category: "food",
+    subcategory: "coffe",
     price: 4,
     column: [
       "Плотный кофе с нотами ореховой пасты, темных ягод и печенья",
@@ -15773,6 +16177,7 @@ export const PRODUCT = [
     img: "drip-coffee-ethiopia-sidamo-new-768.png",
     desc: "1 дрип",
     category: "food",
+    subcategory: "coffe",
     price: 4,
     column: ["Лёгкий кофе с нотами цветов, желтых фруктов и спелого лимона"],
   },
