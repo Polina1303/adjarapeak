@@ -281,12 +281,12 @@ export const CATEGORY_PRODUCT = [
       },
       {
         title: "ВОЛЙЕБОЛ",
-        category: "volleyball",
+        caterory: "volleyball",
         img: "beach-volleyball-size-5-bv100-classic-turquoise-kipsta.png",
       },
       {
         title: "РЕГБИ И АМЕРИКАНСКИЙ ФУТБОЛ",
-        category: "rugby",
+        caterory: "rugby",
         img: "american-football-with-brown-leather-texture-white-laces-white-background.jpg",
       },
       {
