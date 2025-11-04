@@ -1,0 +1,19 @@
+.carousel-container { position: relative; overflow: visible; }
+.my-swiper { overflow: hidden; position: relative; }
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #ff8000;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  z-index: 1000;
+}
+
+.swiper-button-prev { left: -40px; }
+.swiper-button-next { right: -40px; }
+
+@media (max-width: 768px) {
+  .swiper-button-prev,
+  .swiper-button-next { display: none; }
+}

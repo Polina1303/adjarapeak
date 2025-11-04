@@ -1,0 +1,57 @@
+/* убираем паддинги контейнера */
+.my-swiper {
+  padding: 0 !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  box-sizing: border-box;
+}
+
+/* на мобилке жестко задаём ширину слайда — чтобы влезали ровно 2 */
+@media (max-width: 700px) {
+  /* small gap: 6px — совпадает с spaceBetween в breakpoint 0 */
+  .my-swiper .swiper-slide {
+    flex: 0 0 calc((100% - 6px) / 2) !important;
+    max-width: calc((100% - 6px) / 2) !important;
+    box-sizing: border-box;
+  }
+
+  /* убедимся, что wrapper не добавляет лишний отступ */
+  .my-swiper .swiper-wrapper {
+    gap: 6px; /* синхронизируем visual gap и js gap */
+  }
+
+  /* скрываем контролы, если нужно */
+  .my-swiper .swiper-button-next,
+  .my-swiper .swiper-button-prev {
+    display: none !important;
+  }
+}
+
+/* на очень узких экранах уменьшаем gap ещё больше */
+@media (max-width: 420px) {
+  .my-swiper .swiper-slide {
+    flex: 0 0 calc((100% - 4px) / 2) !important;
+    max-width: calc((100% - 4px) / 2) !important;
+  }
+  .my-swiper .swiper-wrapper {
+    gap: 4px;
+  }
+}
+
+/* убираем внешние margin у карточки, которые могли ломать вёрстку */
+.product-items {
+  margin: 0 0 12px 0; /* сохраняем только нижний margin */
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* внутри карточки: картинка не должна растягивать слайд */
+.product-items__img,
+.product-items__img-unvisible {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  box-sizing: border-box;
+}

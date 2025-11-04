@@ -1,0 +1,48 @@
+.my-swiper {
+  width: 100% !important;
+  max-width: 100vw !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+  position: relative; /* чтобы можно было позиционировать стрелки */
+}
+
+/* стрелки */
+.my-swiper .swiper-button-next,
+.my-swiper .swiper-button-prev {
+  color: #ff8000;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-top: 0;
+  z-index: 10;
+}
+
+/* смещаем стрелки за пределы слайдера */
+.my-swiper .swiper-button-prev {
+  left: -20px; /* регулируй под нужное расстояние */
+}
+
+.my-swiper .swiper-button-next {
+  right: -40px;
+}
+
+/* точки пагинации */
+.my-swiper .swiper-pagination-bullet {
+  background: #717171;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.my-swiper .swiper-pagination-bullet-active {
+  background: #ff6600 !important;
+}
+/* .my-swiper {
+  width: 100% !important;
+  max-width: 100vw !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+}
+
+@media (max-width: 700px) {
+  
+}
+ */

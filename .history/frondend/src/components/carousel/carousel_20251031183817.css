@@ -1,0 +1,52 @@
+
+
+.my-swiper {
+  padding: 0 10px; 
+}
+
+.my-swiper .swiper-button-next,
+.my-swiper .swiper-button-prev {
+  color: #ff8000; 
+  margin-top: -80px; 
+}
+
+.my-swiper .swiper-pagination-bullet {
+ 
+  background: #717171;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.my-swiper .swiper-pagination-bullet-active {
+  background: #ff6600 !important; 
+}
+
+
+@media (max-width: 768px) {
+  .recommended-product-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 280px; 
+    padding: 12px;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+    width:30%
+  }
+  
+  .recommended-product-title {
+    font-size: 12px; 
+    max-height: calc(1.2em * 2);
+  }
+  
+  .recommended-product-image {
+    height: 100px;
+  }
+
+  .my-swiper .swiper-button-next,
+  .my-swiper .swiper-button-prev {
+    display: none !important;
+  }
+}
+
+
