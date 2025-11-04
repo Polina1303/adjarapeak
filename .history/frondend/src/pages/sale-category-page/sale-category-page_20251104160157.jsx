@@ -194,25 +194,29 @@ export const SaleCategoryPage = ({ category }) => {
   const [loadedIds, setLoadedIds] = useState([]);
 
   const segments = location.pathname.split("/").filter(Boolean);
-  const sectionPath = segments[1];
-  const currentCategory = segments[2];
-  const currentSubcategory = segments[3];
+  const sectionPath = segments[1]; // tourismCamping
+  const currentCategory = segments[2]; // trekkingsticks
+  const currentSubcategory = segments[3]; // trekkingsticks_accessories
 
   const section =
     CATEGORY_PRODUCT.find((s) => s.path === sectionPath) || category;
 
   let filteredProducts = [];
 
+  // Если мы находимся на уровне подкатегории
   if (currentSubcategory) {
     filteredProducts = PRODUCT.filter(
       (p) => p.subcategory === currentSubcategory
     );
-  } else if (currentCategory) {
+  }
+  // Если находимся на уровне типа (category)
+  else if (currentCategory) {
     filteredProducts = PRODUCT.filter(
       (p) => p.category === currentCategory || p.subcategory === currentCategory
     );
   }
 
+  // Если нет конкретной категории — показываем список типов
   if (!currentCategory && section?.types) {
     return (
       <div className="home-page-product">
@@ -280,6 +284,8 @@ export const SaleCategoryPage = ({ category }) => {
       </div>
     );
   }
+
+  // Если есть товары
   if (filteredProducts.length > 0) {
     return (
       <div className="home-page-product">
@@ -342,8 +348,12 @@ export const SaleCategoryPage = ({ category }) => {
       </div>
     );
   }
+
+  // Если товаров нет
   if (currentCategory || currentSubcategory) {
     return <p style={{ textAlign: "center" }}>Товары не найдены</p>;
   }
+
+  // Для вложенных роутов
   return <Outlet />;
 };

@@ -69,19 +69,33 @@ export const router = createBrowserRouter([
     children: [
       { index: true, Component: HomePage },
       { path: "service", Component: ServiceCenter },
-      {
-        path: "sale",
-        element: <SalePage />,
-        children: [
-          { index: true, element: <SaleCategoryPage /> },
-          { path: ":section", element: <SaleCategoryPage /> },
-          { path: ":section/:type", element: <SaleCategoryPage /> },
-          {
-            path: ":section/:type/:subcategory",
-            element: <SaleCategoryPage />,
-          },
-        ],
-      },
+
+      // {
+      //   path: "sale",
+      //   element: <SalePage />,
+      //   children: [
+      //     {
+      //       index: true,
+      //       element: <SaleCategoryPage category={CATEGORY_PRODUCT[0]} />,
+      //     },
+      //     ...CATEGORY_PRODUCT.map((section) => ({
+      //       path: section.path,
+      //       element: <SaleCategoryPage category={section} />,
+      //       children: section.types
+      //         ? section.types.map((type) => ({
+      //             path: type.category,
+      //             element: <SaleCategoryPage category={type} />,
+      //             children: type.subcategories
+      //               ? type.subcategories.map((sub) => ({
+      //                   path: sub.subcategory,
+      //                   element: <SaleCategoryPage category={sub} />,
+      //                 }))
+      //               : [],
+      //           }))
+      //         : [],
+      //     })),
+      //   ],
+      // },
       { path: "discount", Component: DiscountPage },
       { path: "sale_food", Component: SaleFoodPage },
       { path: "sale_sea", Component: SeaSalePage },

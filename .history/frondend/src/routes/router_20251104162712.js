@@ -82,6 +82,7 @@ export const router = createBrowserRouter([
           },
         ],
       },
+
       { path: "discount", Component: DiscountPage },
       { path: "sale_food", Component: SaleFoodPage },
       { path: "sale_sea", Component: SeaSalePage },

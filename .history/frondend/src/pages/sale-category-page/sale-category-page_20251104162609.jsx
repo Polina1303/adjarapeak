@@ -194,9 +194,9 @@ export const SaleCategoryPage = ({ category }) => {
   const [loadedIds, setLoadedIds] = useState([]);
 
   const segments = location.pathname.split("/").filter(Boolean);
-  const sectionPath = segments[1];
-  const currentCategory = segments[2];
-  const currentSubcategory = segments[3];
+  const sectionPath = segments[1]; // tourismCamping
+  const currentCategory = segments[2]; // trekkingsticks
+  const currentSubcategory = segments[3]; // trekkingsticks_accessories
 
   const section =
     CATEGORY_PRODUCT.find((s) => s.path === sectionPath) || category;

@@ -188,7 +188,7 @@ export const CATEGORY_PRODUCT = [
       {
         title: "ТЕХНИКА и ЧАСЫ",
         category: "technic",
-        img: "1_org_zoom323.png",
+        img: "22.16.11.jpg",
         subcategories: [
           { title: "Часы", subcategory: "watch" },
           { title: "Техника", subcategory: "technic" },
@@ -287,7 +287,7 @@ export const CATEGORY_PRODUCT = [
       {
         title: "РЕГБИ И АМЕРИКАНСКИЙ ФУТБОЛ",
         caterory: "rugby",
-        img: "american-football-with-brown-leather-texture-white-laces-white-background.jpg",
+        img: "",
       },
       {
         title: "Защита",

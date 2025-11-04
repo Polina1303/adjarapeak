@@ -26,6 +26,7 @@ export const SalePage = () => {
 
   const currentCategory = CATEGORY_PRODUCT[activeCategory];
 
+  // Синхронизируем активный раздел с URL
   useEffect(() => {
     if (!section) {
       setActiveCategory(0);
@@ -147,16 +148,16 @@ export const SalePage = () => {
                       ) : null
                     }
                     sx={{ cursor: "pointer" }}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleTypeClick(type.category);
+                    }}
                   >
                     <span
                       style={{
                         fontWeight: "700",
                         fontFamily: "RoadRadio, sans-serif",
                         fontSize: "14px",
-                      }}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleTypeClick(type.category);
                       }}
                     >
                       {type.title}

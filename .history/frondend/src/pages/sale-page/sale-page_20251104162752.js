@@ -154,12 +154,13 @@ export const SalePage = () => {
                         fontFamily: "RoadRadio, sans-serif",
                         fontSize: "14px",
                       }}
-                      onClick={(e) => {
+                    >
+                      {type.title}
+                      onClick=
+                      {(e) => {
                         e.stopPropagation();
                         handleTypeClick(type.category);
                       }}
-                    >
-                      {type.title}
                     </span>
                   </AccordionSummary>
 

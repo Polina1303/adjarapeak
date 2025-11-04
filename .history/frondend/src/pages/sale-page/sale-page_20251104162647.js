@@ -147,16 +147,16 @@ export const SalePage = () => {
                       ) : null
                     }
                     sx={{ cursor: "pointer" }}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleTypeClick(type.category);
+                    }}
                   >
                     <span
                       style={{
                         fontWeight: "700",
                         fontFamily: "RoadRadio, sans-serif",
                         fontSize: "14px",
-                      }}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleTypeClick(type.category);
                       }}
                     >
                       {type.title}
