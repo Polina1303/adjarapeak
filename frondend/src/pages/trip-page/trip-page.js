@@ -15,9 +15,15 @@ import vashlovani from "./image/vashlovani.jpg";
 import beshumi from "./image/beshumi.jpg";
 import svan from "./image/svan.webp";
 import guriaTea from "./image/guriaTea.webp";
+import kaviani from "./image/kaviani.JPG";
 import greenlake from "./image/greenlake.webp";
+import waterfall from "./image/waterfall.JPG";
+import gulebi from "./image/gulebi.webp";
 import tago from "./image/tago.jpg";
 import tobo from "./image/tobo.webp";
+import djo from "./image/djo.JPG";
+import mtirala from "./image/mtirala.webp";
+import archangela from "./image/archangela.webp";
 import mu from "./image/mu.jpg";
 import Hihani from "./image/Hihani.JPG";
 import goderdzi_mounting from "./image/2.webp";
@@ -38,25 +44,25 @@ import { useInView } from "react-intersection-observer";
 import { GuidesSection } from "./guides-section/GuidesSection";
 
 const events = [
-  {
-    date: "В любой из дней по запросу",
-    title: "День чая в горах Гурии",
-    description:
-      "Большая дегустация редких сортов премиального чая. Мастер-класс по изготовлению чая. *все включено (для детей 15% скидка) ",
-    price: "200",
-    image: TEA,
-    link: "/tea",
-    type: "individual",
-  },
-  {
-    date: "В любой из дней по запросу",
-    title: "Морское приключение на парусной яхте",
-    description: "3 часа вокруг Батуми",
-    price: "550",
-    image: see,
-    link: "/",
-    type: "individual",
-  },
+  // {
+  //   date: "В любой из дней по запросу",
+  //   title: "День чая в горах Гурии",
+  //   description:
+  //     "Большая дегустация редких сортов премиального чая. Мастер-класс по изготовлению чая. *все включено (для детей 15% скидка) ",
+  //   price: "200",
+  //   image: TEA,
+  //   link: "/tea",
+  //   type: "individual",
+  // },
+  // {
+  //   date: "В любой из дней по запросу",
+  //   title: "Морское приключение на парусной яхте",
+  //   description: "3 часа вокруг Батуми",
+  //   price: "550",
+  //   image: see,
+  //   link: "/",
+  //   type: "individual",
+  // },
 
   // {
   //   date: "6 июля",
@@ -690,18 +696,18 @@ const events = [
   //   type: "rockClimbing",
   // },
   {
-    date: "25 октября (сб) ",
-    title: "Бахмаро – Гора Гадрекили.",
+    date: "8 ноября (сб)",
+    title: "Архангела",
     description:
-      "Однодневная хайкинг-поездка с пикником в высокогорную деревню на высоте более 2000 метров, известную своим чистым и целебным воздухом Маршрут | 8 км, 550 набора и сброса высоты. Гид Лео.",
-    price: "130",
-    image: bakhmaro,
-    link: "/bakhmaro",
+      "Маршрут с заброской до уютного кемпинга с качелями, беседкой и костровищем. Сходим в радиальный хайк до смотровой площадки на пик горы Архангела. Сложность - 2 из 5",
+    price: "99",
+    image: archangela,
+    link: "/",
     type: "group",
-    gide: 1,
+    leo: true,
   },
   {
-    date: "25 октября (сб)",
+    date: "8 ноября (сб)",
     title: "Скалолазание в Гонио",
     description:
       "Тренировки и маршруты для любого уровня – от новичков до любителей.",
@@ -711,17 +717,229 @@ const events = [
     type: "rockClimbing",
   },
   {
-    date: "26 октября (вс)",
-    title: "Годердзи-Зеленое озеро",
-    description: "Зелёное озеро и Сабанела на высоте свыше 2000 метров.",
-    price: "130",
-    image: greenlake,
-    link: "/greenlake",
+    date: "9 ноября (вс)",
+    title: "Мтирала",
+    description:
+      "Живописный маршрут с посещением водопада и озера. Подойдёт даже новичкам. Сложность - 2 из 5.",
+    price: "99",
+    image: mtirala,
+    link: "/",
     type: "group",
-    gide: 1,
+    leo: true,
   },
   {
-    date: "26 октября (вс)",
+    date: "9 ноября (вс)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock2,
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
+  {
+    date: "15 ноября (сб)",
+    title: "Гулеби",
+    description:
+      "Маршрут с заброской для сокращения набора высоты. Подойдёт даже новичкам. Пройдём через осенний лес и поднимемся на вершину к крепости Гулеби, где устроим пикник с панорамными видами. Сложность - 1 из 5.",
+    price: "99",
+    image: gulebi,
+    link: "/",
+    type: "group",
+    leo: true,
+  },
+  {
+    date: "15 ноября (сб)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock1,
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
+  {
+    date: "16 ноября (вс)",
+    title: "Крепость Кавиани",
+    description:
+      "Повторный выезд к исторической крепости Кавиани с хайкингом по осеннему лесу. Сложность - 1 из 5.",
+    price: "99",
+    image: kaviani,
+    link: "/",
+    type: "group",
+    leo: true,
+  },
+  {
+    date: "16 ноября (вс)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock2,
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
+  {
+    date: "22 ноября (сб)",
+    title: "Водопад Джочо",
+    description:
+      "Маршрут, в котором мы зайдём прямо за водопад и устроим там пикник. Сложность - 2 из 5.",
+    price: "99",
+    image: djo,
+    link: "/",
+    type: "group",
+    leo: true,
+  },
+  {
+    date: "22 ноября (сб)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock1,
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
+  {
+    date: "23 ноября (вс)",
+    title: "Водопад Чинкадзебе",
+    description:
+      "Атмосферный маршрут к редко посещаемому водопаду Чинкадзебе. Сложность - 2 из 5.",
+    price: "99",
+    image: waterfall,
+    link: "/",
+    type: "group",
+    leo: true,
+  },
+  {
+    date: "23 ноября (вс)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock2,
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
+  {
+    date: "29 ноября (сб)",
+    title: "Архангела",
+    description:
+      "Маршрут с заброской до уютного кемпинга с качелями, беседкой и костровищем. Сходим в радиальный хайк до смотровой площадки на пик горы Архангела. Сложность - 2 из 5",
+    price: "99",
+    image: archangela,
+    link: "/",
+    type: "group",
+    leo: true,
+  },
+  {
+    date: "29 ноября (вс)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock1,
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
+  {
+    date: "30 ноября (сб)",
+    title: "Мтирала",
+    description:
+      "Живописный маршрут с посещением водопада и озера. Подойдёт даже новичкам. Сложность - 2 из 5.",
+    price: "99",
+    image: mtirala,
+    link: "/",
+    type: "group",
+    leo: true,
+  },
+  {
+    date: "30 ноября (вс)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock2,
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
+  {
+    date: "6 декабря (сб)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock1,
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
+
+  {
+    date: "7 декабря  (вс)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock2,
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
+  {
+    date: "13 декабря (сб)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock1,
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
+
+  {
+    date: "14 декабря  (вс)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock2,
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
+  {
+    date: "20 декабря (сб)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock1,
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
+
+  {
+    date: "21 декабря  (вс)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock2,
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
+
+  {
+    date: "27 декабря (сб)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: rock1,
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
+
+  {
+    date: "28 декабря  (вс)",
     title: "Скалолазание в Гонио",
     description:
       "Тренировки и маршруты для любого уровня – от новичков до любителей.",
@@ -765,20 +983,20 @@ export const TripPage = () => {
         </h2>
 
         <div className="filter-buttons">
-          <button
+          {/* <button
             className={`filter-button ${filter === "all" ? "active" : ""}`}
             onClick={() => handleFilter("all")}
           >
             Все туры
-          </button>
-          <button
+          </button> */}
+          {/* <button
             className={`filter-button ${
               filter === "individual" ? "active" : ""
             }`}
             onClick={() => handleFilter("individual")}
           >
             Индивидуальные
-          </button>
+          </button> */}
           <button
             className={`filter-button ${filter === "group" ? "active" : ""}`}
             onClick={() => handleFilter("group")}
@@ -866,7 +1084,7 @@ export const TripPage = () => {
           ))}
         </div>
       </div>
-      <GuidesSection />
+      {/* <GuidesSection /> */}
     </div>
   );
 };
