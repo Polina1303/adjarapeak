@@ -67,8 +67,8 @@ export const Header = () => {
           </a>
         </div>
         <div className="number">
-          <a href="tel:+995511147586">+995 511 147 586</a>
-          <br /> <a href="tel:+995551132803">+995 551 132 803</a>
+          <a href="tel:+995511147586">+995 511 147 586 (RU)</a>
+          <br /> <a href="tel:+995557229348">+995 557 229 348 (ENG/GE)</a>
         </div>
         <div className="icon">
           <div className="social-icons">
