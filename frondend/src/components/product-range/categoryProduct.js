@@ -238,10 +238,10 @@ export const CATEGORY_PRODUCT = [
     type: "spray",
   },
 
-  // {
-  //   title: "МАСКА/ШЛЕМ ГОРНОЛЫЖНЫЕ",
-  //   type: "skigoggles",
-  // },
+  {
+    title: "МАСКА/ШЛЕМ ГОРНОЛЫЖНЫЕ",
+    type: "skigoggles",
+  },
   {
     title: "ТЕРМОБЕЛЬЕ/ЗАЩИТА",
     type: "thermalUnderwear",
