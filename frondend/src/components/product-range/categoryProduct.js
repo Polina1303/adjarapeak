@@ -16,8 +16,12 @@ export const CATEGORY_PRODUCT = [
     type: "clothes",
   },
   {
-    title: "БАФФЫ · БАЛАКЛАВЫ · ПЕРЧАТКИ",
+    title: "БАФФЫ/БАЛАКЛАВЫ",
     type: "buff",
+  },
+  {
+    title: "ПЕРЧАТКИ",
+    type: "gloves",
   },
   {
     title: "ГОЛОВНЫЕ УБОРЫ",
