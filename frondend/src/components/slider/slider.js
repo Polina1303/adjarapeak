@@ -1,13 +1,13 @@
-import "./slider.css";
+import { useRouter } from "next/router";
+import styles from './slider.module.css';
 import { MdOutlineArrowLeft, MdArrowRight } from "react-icons/md";
 import { sliderItem,sliderItemEng } from "./data";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 
 export const SliderMain = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const languages = useSelector((state) => state.languages.currentLanguages);
 
   const [sliderIndex, setSliderIndex] = useState(0);
@@ -20,10 +20,10 @@ export const SliderMain = () => {
   };
 
   const handleClickSale = () => {
-    navigate("/sale");
+    router.push("/sale");
   };
   const handleClickRent = () => {
-    navigate("/rent");
+    router.push("/rent");
   };
 
   const slider=languages==="RU" ?sliderItem:sliderItemEng
@@ -46,7 +46,7 @@ export const SliderMain = () => {
             <div className="images-container">
               <img
                 className="slider-image"
-                src={process.env.PUBLIC_URL + "/img/" + item.img}
+                src={"/img/" + item.img}
                 alt="viewTent"
                 width={"500px"}
                 loading="lazy"

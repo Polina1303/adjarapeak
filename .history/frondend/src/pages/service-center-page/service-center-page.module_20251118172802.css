@@ -1,0 +1,68 @@
+
+
+.images-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 20px 0px;
+  width: 100%;
+  height: calc(100% - 20px);
+}
+
+.works-photos-title{
+  font-family: "RoadRadio";
+    font-family: "RoadRadio-Thin", sans-serif;
+  text-align: center;
+}
+
+.modal-image {
+  width: 48%;
+  height: auto;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.service-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  text-align: left;
+}
+
+.service-table th,
+.service-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.service-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.service-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.service-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.back-button {
+  background: transparent;
+  border: none;
+  color: #000; 
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  /* gap: 6px; */
+  cursor: pointer;
+}
+
+.back-button:hover {
+  color: #ff6a2b;
+}
+
+.back-button-cover {
+  color: #000; 
+}

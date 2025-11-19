@@ -1,0 +1,79 @@
+
+@font-face {
+  font-family: "RoadRadio";
+  src: url("/fonts/RoadRadio.woff") format("woff"),
+       url("/fonts/RoadRadio.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "RoadRadio-Light";
+  src: url("/fonts/RoadRadio-Light.woff2") format("woff2"),
+       url("/fonts/RoadRadio-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "RoadRadio-Bold";
+  src: url("/fonts/RoadRadio-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "RoadRadio-Thin";
+  src: url("/fonts/RoadRadio-Thin.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #222;
+  font-family: "RoadRadio-Light", sans-serif;
+  font-weight: 500;
+  overflow-x: hidden;
+}
+
+.App {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 10px;
+  color: #222;
+  font-family: "RoadRadio-Light", sans-serif;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* padding-left: 40px; */
+}
+
+a {
+  color: #222;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: "RoadRadio-Thin", sans-serif;
+}
+
+h1, h2, h3, h4 {
+    font-family: "RoadRadio", sans-serif;
+}
+
+/* CSS переменные для SaleBanner */
+:root {
+  --sale-bg-1: #ffefe4;
+  --sale-bg-2: #ffffff;
+  --sale-accent: #ff6a2b; /* оранжевый брендовый */
+  --sale-accent-600: #e85d23;
+  --sale-text: #15171a;
+  --sale-muted: #535a63;
+  --sale-shadow: 0 14px 40px rgba(17, 19, 23, 0.12);
+  --sale-radius: 20px;
+}

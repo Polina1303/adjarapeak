@@ -1,0 +1,40 @@
+.cartBlock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.cartBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 8px;
+}
+
+.cartBtn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.cartIcon {
+  flex-shrink: 0;
+  color: #333;
+}
+
+.cartPrice {
+  font-weight: 600;
+  font-size: 15px;
+  color: #222;
+  white-space: nowrap;
+}
+
+.cartBlock .items-in-cart {
+  position: absolute;
+  top: -16px;
+  right: -5px;
+}

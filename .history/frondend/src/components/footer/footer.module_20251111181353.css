@@ -1,0 +1,185 @@
+.footerContainer {
+  background-color: #ecececfa;
+  color: #222;
+  padding: 0px 0 20px 0px;
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  /* align-items: center; */
+  gap: 20px;
+  font-family: "Montserrat", sans-serif;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.footerInfo {
+  max-width: 500px;
+  flex: 1 1 100%;
+}
+
+.footerHeading {
+  margin: 8px 0; /* Уменьшает отступы сверху и снизу */
+  font-size: 16px; /* При необходимости уменьшает шрифт */
+  line-height: 1.8; /* Уменьшает высоту строки */
+  font-family: "RoadRadio-Light";
+}
+
+.footerInfo h4,
+.footer-socials h4 {
+  /* margin-bottom: 10px; */
+  font-size: 18px;
+}
+
+.footerInfo p,
+.footerLocation,
+.footerPhone {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.footerLocation a,
+.footerPhone a {
+  /* color: #de682d; */
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footerLocation a:hover,
+.footerPhone a:hover {
+  text-decoration: underline;
+}
+
+.icon {
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.footerSocials {
+  flex: 1 1 100%; /* занимает всю ширину на мобилке */
+  /* margin-top: 10px; */
+  /* margin-top:-20px */
+}
+
+.footer-socials .social-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-start; /* на мобилке элементы прижаты к началу */
+}
+
+.social-icons a {
+  font-size: 24px;
+  color: #de682d;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+}
+
+.footer-bottom {
+  /* margin-top: 20px; */
+  text-align: center;
+  border-top: 1px solid #ddd;
+  /* padding-top: 10px; */
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* === Медиазапросы === */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column; /* Колонки становятся вертикальными */
+    gap: 10px;
+    padding: 20px 0 20px 0px;
+  }
+
+  .footer-socials {
+    text-align: center;
+  }
+
+  .footer-info h4,
+  .footer-socials h4 {
+    font-size: 16px;
+  }
+
+  .footer-socials .social-icons {
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 10px;
+  }
+
+  .footer-info h4,
+  .footer-socials h4 {
+    font-size: 14px;
+  }
+
+  .social-icons a {
+    font-size: 20px; /* Уменьшаем размер иконок */
+  }
+
+  .footer-bottom p {
+    font-size: 12px; /* Меньший текст внизу */
+    font-family: "RoadRadio-Light";
+  }
+}
+
+.reviews-text {
+  /* margin: 20px 0; */
+  text-align: center;
+}
+
+.reviews-text h4 {
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: #333;
+}
+
+.reviews-text a {
+  font-size: 14px;
+  color: #007bff; /* Цвет ссылки */
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.reviews-text a:hover {
+  color: #0056b3; /* Цвет при наведении */
+}
+
+.footer-content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.footer-map {
+  width: 100%;
+  max-width: 720px;
+  height: 300px;
+}
+
+@media (max-width: 768px) {
+  .footer-content-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer-return {
+  font-size: 14px;
+  color: #666;
+  /* text-align: center; */
+  padding: 8px 0;
+  cursor: pointer; /* если кликабельно */
+  font-family: "RoadRadio-Light";
+}

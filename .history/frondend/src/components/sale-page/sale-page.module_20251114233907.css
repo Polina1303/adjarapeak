@@ -1,0 +1,95 @@
+.ant-menu-horizontal .ant-menu-item-selected {
+ color: #de682d!important;
+ 
+}
+
+.ant-menu-horizontal > .ant-menu-item-selected::after {
+  border-bottom: 2px solid #de682d !important;
+}
+
+.ant-menu-horizontal > .ant-menu-item-selected {
+  color: #de682d !important;
+}
+
+.ant-menu-horizontal > .ant-menu-item:hover::after {
+  border-bottom: 2px solid #de682d !important;
+}
+
+
+.ant-menu-horizontal > .ant-menu-item:hover {
+  color: #de682d !important;
+}
+
+.sticky-horizontal-menu.ant-menu-horizontal {
+  gap: 3px !important;
+}
+
+
+
+.search-container > div:first-child {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.search-container > div:first-child::-webkit-scrollbar {
+  display: none;
+}
+
+/* .search-container{
+   position: fixed;
+    z-index: 1000;
+    top: 90px;           
+ 
+} */
+.filter-scroll-container{
+     width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 10px 15px;
+  background: white;
+}
+.title{
+    font-family: "RoadRadio", sans-serif;
+    font-size: 24px;
+    text-align: left;
+}
+
+.sale-page-content {
+  display: grid;
+  grid-template-columns: 20% 1fr; 
+  gap: 24px;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.not-found{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+.category-product{
+  display: grid;
+  grid-template-rows: 3fr; 
+  gap: 10px;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.home-page-product {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* ровно 4 колонки */
+  gap: 20px;
+  width: 100%;
+}
+

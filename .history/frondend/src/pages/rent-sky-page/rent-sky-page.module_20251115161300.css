@@ -1,0 +1,42 @@
+.title{
+    font-family: "RoadRadio", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: left;
+}
+
+.sale-page-content {
+  display: grid;
+  grid-template-columns: 20% 1fr; 
+  gap: 24px;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.not-found{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+.category-product{
+  display: grid;
+  grid-template-rows: 3fr; 
+  gap: 10px;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 20px;
+}
+.home-page__container{
+ display: flex;
+ flex-direction: column;
+ gap: 10px;
+}
+
+.home-page-product{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 100%;
+}

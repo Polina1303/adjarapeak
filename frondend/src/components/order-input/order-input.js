@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { SendEmail } from "../../API/index";
 import { useDispatch } from "react-redux";
 import { clearCart } from "../../redux/cart/reducer";
-import "./order-input.css";
+import styles from './order-input.module.css';
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { calcTotalPrice } from "../../components/utils";
 

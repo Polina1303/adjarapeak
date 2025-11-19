@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import {
   Card,
@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 
 export const CategoryCard = ({ title, img, routePath }) => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const [loaded, setLoaded] = useState(false);
 
   return (
@@ -22,7 +22,7 @@ export const CategoryCard = ({ title, img, routePath }) => {
         transition: "transform 0.2s ease",
         "&:hover": { transform: "scale(1.03)" },
       }}
-      onClick={() => navigate(routePath)}
+      onClick={() => router.push(routePath)}
     >
       <CardActionArea>
         {img && (
@@ -34,7 +34,7 @@ export const CategoryCard = ({ title, img, routePath }) => {
                 objectFit: "cover",
                 display: loaded ? "block" : "none",
               }}
-              image={process.env.PUBLIC_URL + "/img/" + img}
+              image={"/img/" + img}
               alt={title}
               loading="lazy"
               onLoad={() => setLoaded(true)}

@@ -1,0 +1,30 @@
+.nav{
+   display: flex;
+    flex-direction: row;
+    gap: 90px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    font-size: 20px;
+    font-family: "RoadRadio";
+    font-weight: 700;
+}
+
+.back-button {
+  background: transparent;
+  border: none;
+  color: #000; 
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  /* gap: 6px; */
+  cursor: pointer;
+}
+
+.back-button:hover {
+  color: #ff6a2b;
+}
+
+.back-button-cover {
+  color: #000; 
+}

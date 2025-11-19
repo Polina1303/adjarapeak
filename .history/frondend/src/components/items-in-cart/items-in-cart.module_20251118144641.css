@@ -1,0 +1,33 @@
+.items-in-cart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #f68632;
+  border-radius: 50%; 
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  z-index: 2;
+  left: 4px;
+  top: -10px;
+  flex-shrink: 0; 
+  min-width: 20px;
+}
+
+.items-in-cart.double-digit {
+  width: 24px;
+  height: 24px;
+  font-size: 11px;
+  left: 10px;
+  top: -9px;
+}
+
+.items-in-cart.triple-digit {
+  width: 28px;
+  height: 28px;
+  font-size: 10px;
+  left: 8px;
+  top: -11px;
+}

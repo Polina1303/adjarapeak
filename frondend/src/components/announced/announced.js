@@ -1,4 +1,4 @@
-import "./announced.css";
+import styles from './announced.module.css';
 
 export const Announced = () => {
   return (

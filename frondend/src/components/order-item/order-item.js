@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { TiDeleteOutline } from "react-icons/ti";
 import { deletItemFromCart } from "../../redux/cart/reducer";
-import "./order-item.css";
+import styles from './order-item.module.css';
 import { Button } from "../button";
 
 export const OrderItem = ({ item }) => {

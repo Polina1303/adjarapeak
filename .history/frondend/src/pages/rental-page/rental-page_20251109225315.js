@@ -1,0 +1,23 @@
+"use client";
+import { useRouter } from "next/router";
+import Link from "next/link";
+import { IoIosArrowBack } from "react-icons/io";
+import "./rental-page.css";
+
+export const RentalPage = () => {
+  const router = useRouter();
+
+  return (
+    <>
+      <div className="back-button-cover">
+        <button className="back-button" onClick={() => router.back()}>
+          <IoIosArrowBack size={25} /> Назад
+        </button>
+      </div>
+      <div className="nav">
+        <Link href="/rent_sky">ПРОКАТ ГОРНОЛЫЖНОГО СНАРЯЖЕНИЯ</Link>
+        <Link href="/rent">ПРОКАТ ТУРИСТИЧЕСКОГО СНАРЯЖЕНИЯ</Link>
+      </div>
+    </>
+  );
+};
