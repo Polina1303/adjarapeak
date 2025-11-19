@@ -15404,17 +15404,17 @@ export const PRODUCT = [
       "В комплект входит самоклеящаяся заплатка",
     ],
   },
-  // {
-  //   order: true,
-  //   id: 100044141,
-  //   title: "Тюбинг",
-  //   img: "09491dd5-4982-448d-8ed7-d424eb2b2545.webp",
-  //   desc: "надувной",
-  //   category: "air",
-  //   price: 80,
+  {
+    order: true,
+    id: 100044141,
+    title: "Тюбинг",
+    img: "09491dd5-4982-448d-8ed7-d424eb2b2545.webp",
+    desc: "надувной",
+    category: "air_sky",
+    price: 80,
 
-  //   column: ["Сверхпрочный надувной тюбинг"],
-  // },
+    column: ["Сверхпрочный надувной тюбинг"],
+  },
   {
     order: true,
     id: 1100143,
@@ -15707,7 +15707,7 @@ export const PRODUCT = [
     title: "перчатки",
     img: "b54f-206290edcc2.png",
     desc: "Goski",
-    category: "gloves",
+    category: "gloves_sky",
     price: 42,
     column: [
       "Утепленные, водонепроницаемые, нескользящие перчатки",
@@ -15721,7 +15721,7 @@ export const PRODUCT = [
     title: "перчатки",
     img: "001405-2-yinhe.png_468x468Q75.jpg_.avif",
     desc: "Goski",
-    category: "gloves",
+    category: "gloves_sky",
     price: 42,
     column: [
       "Состав: Мех, нейлон",
@@ -15738,7 +15738,7 @@ export const PRODUCT = [
     title: "перчатки",
     img: "IMG_7228.png",
     desc: "Goski",
-    category: "gloves",
+    category: "gloves_sky",
     price: 42,
     column: [
       "Состав: Мех, нейлон",
@@ -15755,7 +15755,7 @@ export const PRODUCT = [
     title: "перчатки",
     img: " 20.36.32.jpg",
     desc: "Pita",
-    category: "gloves",
+    category: "gloves_sky",
     price: 42,
     column: [
       "Фактура материала: плащевая ткань",
@@ -15768,7 +15768,7 @@ export const PRODUCT = [
     title: "перчатки",
     img: "IMG_7227.png",
     desc: "Proud life",
-    category: "gloves",
+    category: "gloves_sky",
     price: 42,
     column: ["Материал подкладки: полиэстер"],
   },
@@ -15778,7 +15778,7 @@ export const PRODUCT = [
     title: "перчатки",
     img: "e39a3.png",
     desc: "Sports(розовые и салатовые)",
-    category: "gloves",
+    category: "gloves_sky",
     price: 55,
     column: ["Флисовая подкладка", "Материал: Полиэстер"],
   },
@@ -15788,7 +15788,7 @@ export const PRODUCT = [
     title: "перчатки",
     img: "05999887307cb1b7dfca05fcbadaccc6.webp",
     desc: "Sports",
-    category: "gloves",
+    category: "gloves_sky",
     price: 55,
     column: ["Флисовая подкладка", "Материал: Полиэстер"],
   },
@@ -16314,7 +16314,7 @@ export const PRODUCT = [
     title: "Шлем MOON",
     img: "19.18.34.png",
     desc: "синий и оранжевый",
-    category: "skigoggles",
+    category: "helmet_sky",
     price: 190,
     column: [
       "Съемные очки",
@@ -16330,7 +16330,7 @@ export const PRODUCT = [
     title: "Шлем MOON",
     img: "9.10.09.jpg",
     desc: "регулируемым размер",
-    category: "skigoggles",
+    category: "helmet_sky",
     price: 178,
     column: [
       "изготовленный из цельного поликарбоната",
@@ -16344,7 +16344,7 @@ export const PRODUCT = [
     title: "Горнолыжный шлем взрослый",
     img: "yetiskin-kayak-kaski-g.avif",
     desc: "56-59 см, 59-62 см",
-    category: "skigoggles",
+    category: "helmet_sky",
     order: false,
     price: 140,
     column: [
@@ -16363,7 +16363,7 @@ export const PRODUCT = [
     title: "Шлем SMITH",
     img: "SL1002_.jpg",
     desc: "51-55 см",
-    category: "skigoggles",
+    category: "helmet_sky",
     price: 210,
     column: [
       "Цвет: Жемчужно-белый",
@@ -16379,7 +16379,7 @@ export const PRODUCT = [
     title: "Горнолыжный шлем подросткой",
     img: "cocuk-kayak-kaski.png",
     desc: "48-52 см, 53-56 см",
-    category: "skigoggles",
+    category: "helmet_sky",
     price: 120,
     column: [
       "Этот простой и прочный шлем идеален для обучения горнолыжному спорту в полной безопасности.",
@@ -16535,7 +16535,7 @@ export const PRODUCT = [
     title: "Защита коленей, локтей, запястья",
     img: "8.42.28.jpg",
     desc: "для активного отдыха",
-    category: "thermalUnderwear",
+    category: "sky_care",
 
     price: 115,
     column: [],
@@ -16546,7 +16546,7 @@ export const PRODUCT = [
     title: "Шорты защитные",
     img: "18.38.22.jpg",
     desc: "S-XXL",
-    category: "thermalUnderwear",
+    category: "sky_care",
     price: 118,
 
     column: [
