@@ -72,14 +72,14 @@ export const CATEGORY_PRODUCT = [
 
   {
     title: "ШАПКА ДЛЯ ПЛАВАНИЯ",
-    category: "hat_sea",
+    type: "hat_sea",
   },
   {
     title: "МЕБЕЛЬ ДЛЯ ПЛЯЖА",
     type: "beach",
   },
   {
-    title: "РОЛИКИ",
+    title: "ВЕЛОСПОРТ И РОЛИКИ",
     type: "roller",
   },
   {
