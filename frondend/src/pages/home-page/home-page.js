@@ -115,7 +115,7 @@ export const HomePage = () => {
                   {isRU ? "Купить" : "Sale"}
                 </span>
                 <br />
-                {isRU ? "снаряжения" : "of tourist equipment"}
+                {isRU ? "снаряжение" : "of tourist equipment"}
               </h3>
             </div>
           </Link>
@@ -135,7 +135,7 @@ export const HomePage = () => {
                   {isRU ? "Арендовать" : "Rental"}
                 </span>
                 <br />
-                {isRU ? "снаряжения" : "of tourist equipment"}
+                {isRU ? "снаряжениу" : "of tourist equipment"}
               </h3>
             </div>
           </Link>

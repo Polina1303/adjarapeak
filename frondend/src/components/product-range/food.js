@@ -640,9 +640,9 @@ export const FOOD = [
     id: 1000164982109889,
     title: "Чипсы сулугуни",
     img: "a281_Izy__Smoked-Sulguni-25g-Mockup.png",
-    desc: "90 грамм",
+    desc: "85 грамм",
     category: "izy",
-    price: 18,
+    price: 21,
     column: [],
   },
   {
