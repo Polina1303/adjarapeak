@@ -1,64 +1,42 @@
-.filters-scroll-container :global(.ant-menu-horizontal) {
-  display: inline-flex !important;
-  flex-wrap: nowrap !important;
-  overflow: hidden !important;
-}
 
-.filters-scroll-container :global(.ant-menu-horizontal > li) {
-  flex-shrink: 0 !important;
-}
-
-.filters-scroll-container :global(.ant-menu-overflowed-indicator) {
-  display: none !important;
-}
-
-
-
-.search-container > div:first-child {
+.filters-scroll-container {
   width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  background: white;
+  padding: 10px 0;
 }
 
-.search-container > div:first-child::-webkit-scrollbar {
+.filters-scroll-container::-webkit-scrollbar {
   display: none;
 }
 
-
 .filters-scroll-container :global(.ant-menu-horizontal) {
-  position: relative !important;
   display: inline-flex !important;
   flex-wrap: nowrap !important;
   width: auto !important;
-  min-width: max-content !important;  
-  overflow: visible !important;
-}
-
-
-.filters-scroll-container :global(.ant-menu-item),
-.filters-scroll-container :global(.ant-menu-submenu) {
-  flex: 0 0 auto !important;
+  min-width: max-content !important;
+  border: none !important;
   white-space: nowrap !important;
 }
 
-.filters-scroll-container :global(.ant-menu-overflowed-indicator),
-.filters-scroll-container :global(.ant-menu-submenu-title > span:last-child),
-.filters-scroll-container :global(.ant-menu-overflowed-submenu) {
-  display: none !important;
-  width: 0 !important;
-  height: 0 !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
-  color: #ff6f00 !important;
+.filters-scroll-container :global(.ant-menu-horizontal > .ant-menu-item),
+.filters-scroll-container :global(.ant-menu-horizontal > .ant-menu-submenu) {
+  flex-shrink: 0 !important;
+  white-space: nowrap !important;
 }
 
-.filters-scroll-container :global(.ant-menu-overflow) {
-  display: flex !important;
-  color: #ff6f00 !important;
+.filters-scroll-container :global(.ant-menu-overflowed-indicator) {
+  display: none !important;
 }
+
+.filters-scroll-container :global(.ant-menu-overflow-item) {
+  flex-shrink: 0 !important;
+}
+
 
 .filters-scroll-container :global(.ant-menu-horizontal .ant-menu-item-selected) {
   color: #de682d !important;
@@ -76,28 +54,11 @@
   color: #de682d !important;
 }
 
-.filters-scroll-container :global(.sticky-horizontal-menu.ant-menu-horizontal) {
-  gap: 3px !important;
-}
-
-.filter-scroll-container{
-   width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch; 
-  white-space: nowrap;
-  padding: 10px 15px;
-  background: white;
-}
-.filter-scroll-container::-webkit-scrollbar {
-  display: none !important
-}
-
 .sticky-horizontal-menu {
   display: inline-flex !important;
   flex-wrap: nowrap;
-  
-} 
+  gap: 3px !important;
+}
 
 
 .title{
@@ -105,7 +66,6 @@
     font-size: 24px;
     text-align: left;
 }
-
 
 .filterTitle{
   color: black;
