@@ -37,7 +37,7 @@ export const Routes = () => {
           <Link href="/lake-route">
             <img
               ref={ref}
-              src="/img/lake.jpg"
+              src="/image/lake1.jpg"
               alt="lake"
               className={styles["routes-image"]}
             />
@@ -57,7 +57,7 @@ export const Routes = () => {
           <Link href="/erge-route">
             <img
               ref={ref}
-              src="/img/erge.jpg"
+              src="/image/erge1.jpg"
               alt="lake"
               className={styles["routes-image"]}
             />
@@ -78,7 +78,7 @@ export const Routes = () => {
           <Link href="/garden-route">
             <img
               ref={ref}
-              src="/img/garden.jpg"
+              src="/image/garden1.jpg"
               alt="lake"
               className={styles["routes-image"]}
             />

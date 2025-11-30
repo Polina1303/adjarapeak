@@ -12,10 +12,12 @@ import "swiper/css/navigation";
 import "swiper/css/scrollbar";
 import "swiper/css/mousewheel";
 import "swiper/css/pagination";
+import { useRouter } from "next/router";
 import { ProductItems } from "../product-items";
 import styles from "./carousel.module.css";
 
 export const RecommendedCarousel = ({ products }) => {
+  const router = useRouter();
   if (!products || products.length === 0) return null;
 
   return (
@@ -60,7 +62,7 @@ export const RecommendedCarousel = ({ products }) => {
       >
         {products.map((item) => (
           <SwiperSlide key={item.id}>
-            <div>
+            <div onClick={() => router.push(`/app/${item.id}`)}>
               <ProductItems product={item} />
             </div>
           </SwiperSlide>

@@ -1,7 +1,131 @@
+.filters-scroll-container :global(.ant-menu-horizontal) {
+  display: inline-flex !important;
+  flex-wrap: nowrap !important;
+  overflow: hidden !important;
+}
+
+.filters-scroll-container :global(.ant-menu-horizontal > li) {
+  flex-shrink: 0 !important;
+}
+
+.filters-scroll-container :global(.ant-menu-overflowed-indicator) {
+  display: none !important;
+}
+
+
+
+.search-container > div:first-child {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.search-container > div:first-child::-webkit-scrollbar {
+  display: none;
+}
+
+
+.filters-scroll-container :global(.ant-menu-horizontal) {
+  position: relative !important;
+  display: inline-flex !important;
+  flex-wrap: nowrap !important;
+  width: auto !important;
+  min-width: max-content !important;  
+  overflow: visible !important;
+}
+
+
+.filters-scroll-container :global(.ant-menu-item),
+.filters-scroll-container :global(.ant-menu-submenu) {
+  flex: 0 0 auto !important;
+  white-space: nowrap !important;
+}
+
+.filters-scroll-container :global(.ant-menu-overflowed-indicator),
+.filters-scroll-container :global(.ant-menu-submenu-title > span:last-child),
+.filters-scroll-container :global(.ant-menu-overflowed-submenu) {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  color: #ff6f00 !important;
+}
+
+.filters-scroll-container :global(.ant-menu-overflow) {
+  display: flex !important;
+  color: #ff6f00 !important;
+}
+
+.filters-scroll-container :global(.ant-menu-horizontal .ant-menu-item-selected) {
+  color: #de682d !important;
+}
+
+.filters-scroll-container :global(.ant-menu-horizontal > .ant-menu-item-selected::after) {
+  border-bottom: 2px solid #de682d !important;
+}
+
+.filters-scroll-container :global(.ant-menu-horizontal > .ant-menu-item:hover::after) {
+  border-bottom: 2px solid #de682d !important;
+}
+
+.filters-scroll-container :global(.ant-menu-horizontal > .ant-menu-item:hover) {
+  color: #de682d !important;
+}
+
+.filters-scroll-container :global(.sticky-horizontal-menu.ant-menu-horizontal) {
+  gap: 3px !important;
+}
+
+.filter-scroll-container{
+   width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch; 
+  white-space: nowrap;
+  padding: 10px 15px;
+  background: white;
+}
+.filter-scroll-container::-webkit-scrollbar {
+  display: none !important
+}
+
+.sticky-horizontal-menu {
+  display: inline-flex !important;
+  flex-wrap: nowrap;
+  
+} 
+
+
 .title{
-    font-family: "RoadRadio", sans-serif;
+    font-family: "RoadRadio", sans-serif !important;
     font-size: 24px;
     text-align: left;
+}
+
+
+.filterTitle{
+  color: black;
+  font-family: "RoadRadio", sans-serif !important;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.toolbarMobile {
+  display: flex;
+  justify-content: center; 
+  position: relative;     
+  padding-right: 40px;     
+}
+
+.mobileMenuButton {
+  position: absolute !important;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .sale-page-content {
@@ -13,46 +137,68 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.searchInput {
+  width: 98%;
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+.searchInput:focus {
+  border-color: #ff6f00;
+}
+
+
 .not-found{
  display: flex;
  flex-direction: column;
  justify-content: center;
  align-items: center;
 }
+
 .category-product{
   display: grid;
   grid-template-rows: 3fr; 
-  gap: 10px;
   align-items: flex-start;
   width: 100%;
-  margin-top: 20px;
-}
-.home-page__container{
- display: flex;
- flex-direction: column;
- gap: 10px;
 }
 
-.home-page-product{
+.home-page-product {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   width: 100%;
 }
-.back-button {
-  background: transparent;
-  border: none;
-  color: #000; 
-  font-size: 16px;
+
+@media (max-width: 800px) {
+  .sale-page-content {
   display: flex;
-  align-items: center;
-  cursor: pointer;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+ .home-page-product {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px;
+  }
+ 
+
+  .category-product {
+    width: 100%;
+  }
+
+  .category-product img{
+    width: 100%;
+  }
+.searchInput {
+    font-size: 14px;
+    padding: 8px 10px;
+    border-radius: 5px;
+    width: 97%;
+  }
 }
 
-.back-button:hover {
-  color: #ff6a2b;
-}
-
-.back-button-cover {
-  color: #000; 
-}

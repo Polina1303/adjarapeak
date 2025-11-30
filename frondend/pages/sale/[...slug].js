@@ -1,4 +1,4 @@
-import SalePage from "../../src/components/sale-page/sale-page"; // твоя главная страница
+import SalePage from "../../src/components/sale-page/sale-page";
 import SaleCategoryPage from "../../src/components/sale-category-page/sale-category-page";
 import { useRouter } from "next/router";
 

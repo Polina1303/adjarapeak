@@ -1,10 +1,11 @@
 "use client";
 import { PRODUCT } from "../product-range/product";
 import { CATEGORY_PRODUCT } from "../product-range/categoryProduct";
-import { Card, CardActionArea, CardContent, Skeleton } from "@mui/material";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import { ProductItems } from "../product-items";
+import { Card, CardActionArea, CardContent, Skeleton } from "@mui/material";
 import styles from "../sale-page/sale-page.module.css";
 
 export default function SaleCategoryPage({ section, type, subcategory }) {
@@ -53,7 +54,7 @@ export default function SaleCategoryPage({ section, type, subcategory }) {
                     <div
                       style={{
                         position: "relative",
-                        height: 250,
+                        height: 300,
                         display: isLoaded ? "block" : "none",
                       }}
                     >
@@ -61,8 +62,12 @@ export default function SaleCategoryPage({ section, type, subcategory }) {
                         src={`/img/${t.img}`}
                         alt={t.title}
                         priority
-                        fill
-                        // style={{ objectFit: "cover" }}
+                        width={300}
+                        height={300}
+                        style={{
+                          objectFit: "cover",
+                          objectPosition: "center",
+                        }}
                         onLoadingComplete={() =>
                           setLoadedIds((prev) => [...prev, t.category])
                         }
@@ -109,7 +114,7 @@ export default function SaleCategoryPage({ section, type, subcategory }) {
               <Card
                 sx={{
                   boxShadow: 3,
-                  height: "100%",
+                  height: "95%",
                   overflow: "hidden",
                   cursor: "pointer",
                   transition: "transform 0.2s ease",
@@ -118,47 +123,11 @@ export default function SaleCategoryPage({ section, type, subcategory }) {
                 onClick={() => router.push(`/app/${product.id}`)}
               >
                 <CardActionArea>
-                  {!isLoaded && <Skeleton variant="rectangular" height={250} />}
-                  {product.img && (
-                    <div
-                      style={{
-                        position: "relative",
-                        height: 250,
-                        display: isLoaded ? "block" : "none",
-                      }}
-                    >
-                      <Image
-                        src={`/img/${product.img}`}
-                        alt={product.title}
-                        priority
-                        fill
-                        // style={{ objectFit: "cover" }}
-                        onLoadingComplete={() =>
-                          setLoadedIds((prev) => [...prev, product.id])
-                        }
-                      />
-                    </div>
+                  {!!isLoaded ? (
+                    <Skeleton variant="rectangular" height={450} />
+                  ) : (
+                    <ProductItems product={product} />
                   )}
-                  <CardContent
-                    sx={{
-                      textAlign: "center",
-                      p: 1.5,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <p
-                      style={{
-                        fontFamily: "RoadRadio-Thin, sans-serif",
-                        fontSize: "14px",
-                        fontWeight: 700,
-                        margin: 0,
-                      }}
-                    >
-                      {product.title}
-                    </p>
-                  </CardContent>
                 </CardActionArea>
               </Card>
             </div>

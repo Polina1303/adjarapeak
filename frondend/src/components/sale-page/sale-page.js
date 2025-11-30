@@ -1,82 +1,129 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
+import { useRouter } from "next/router";
 import { PRODUCT } from "../product-range/product";
 import { Menu } from "antd";
 import { CATEGORY_PRODUCT } from "../product-range/categoryProduct";
-
+import FilterListIcon from "@mui/icons-material/FilterList";
+import { ProductItems } from "../product-items";
+import { TfiClose } from "react-icons/tfi";
 import {
   Accordion,
+  Toolbar,
+  Drawer,
+  List,
+  IconButton,
   AccordionSummary,
   AccordionDetails,
-  List,
   ListItemButton,
+  Typography,
 } from "@mui/material";
+import { Card, CardActionArea, Skeleton } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { useRouter } from "next/router";
 import styles from "./sale-page.module.css";
 
 export default function SalePage({ children }) {
+  const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
-  const { section } = router.query;
+  const [loadedIds, setLoadedIds] = useState([]);
+
+  const [searchValue, setSearchValue] = useState("");
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setSearchQuery(searchValue);
+      localStorage.setItem("searchQuery", searchValue);
+    }, 200);
+
+    return () => clearTimeout(timer);
+  }, [searchValue]);
+
   const [activeCategory, setActiveCategory] = useState(0);
   const [expandedAccordion, setExpandedAccordion] = useState(null);
-  const [searchQuery, setSearchQuery] = useState(() =>
-    typeof window !== "undefined"
-      ? localStorage.getItem("searchQuery") || ""
-      : ""
-  );
-  const [filteredProducts, setFilteredProducts] = useState(PRODUCT);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileView, setIsMobileView] = useState(false);
 
-  const currentCategory = CATEGORY_PRODUCT[activeCategory];
+  const [searchQuery, setSearchQuery] = useState("");
+  const [isInitialized, setIsInitialized] = useState(false);
+
+  const filteredProducts = useMemo(() => {
+    if (!isInitialized || !searchQuery.trim()) {
+      return [];
+    }
+
+    const query = searchQuery.toLowerCase().trim();
+
+    const results = [];
+    const seenIds = new Set();
+
+    for (const product of PRODUCT) {
+      if (product.title?.toLowerCase().includes(query)) {
+        if (!seenIds.has(product.id)) {
+          seenIds.add(product.id);
+          results.push(product);
+        }
+      }
+    }
+
+    return results;
+  }, [searchQuery, isInitialized]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("searchQuery");
+      if (saved) {
+        setSearchQuery(saved);
+      }
+      setIsInitialized(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    const checkScreen = () => {
+      const mobile = window.innerWidth <= 1200;
+      setIsMobileView(mobile);
+      if (!mobile) setIsMobileMenuOpen(false);
+    };
+
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
+  const handleSearchChange = (e) => {
+    const value = e.target.value;
+    setSearchQuery(value);
+    localStorage.setItem("searchQuery", value);
+    setSearchValue(e.target.value);
+  };
 
   const handleCategoryClick = (e) => {
     const categoryIndex = Number(e.key);
     setActiveCategory(categoryIndex);
     const category = CATEGORY_PRODUCT[categoryIndex];
     setExpandedAccordion(null);
-    setSearchQuery("");
-    localStorage.removeItem("searchQuery");
     router.push(`/sale/${category.path}`);
   };
 
-  const handleSearchChange = (e) => {
-    const query = e.target.value;
-    setSearchQuery(query);
-    localStorage.setItem("searchQuery", query);
-  };
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
-  useEffect(() => {
-    const category = CATEGORY_PRODUCT[activeCategory];
-    if (!category) return;
-
-    let filtered = PRODUCT.filter((product) => {
-      const inCategory =
-        category.types?.some(
-          (type) =>
-            product.category === type.category ||
-            type.subcategories?.some(
-              (sub) => sub.subcategory === product.subcategory
-            )
-        ) ?? false;
-      return inCategory;
-    });
-
-    if (searchQuery.trim()) {
-      filtered = filtered.filter((product) =>
-        product.title.toLowerCase().includes(searchQuery.toLowerCase())
-      );
-    }
-
-    setFilteredProducts(filtered);
-  }, [activeCategory, searchQuery]);
+  const currentCategory = CATEGORY_PRODUCT[activeCategory];
 
   const handleTypeClick = (typeCategory) => {
     const category = CATEGORY_PRODUCT[activeCategory];
     router.push(`/sale/${category.path}/${typeCategory}`);
   };
 
+  const toggleMobileMenu = () => {
+    if (isMobileView) setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   const handleSubcategoryClick = (subcategoryPath) => {
     const category = CATEGORY_PRODUCT[activeCategory];
     router.push(`/sale/${category.path}/${subcategoryPath}`);
+  };
+
+  const getProductKey = (product, index) => {
+    return `product-${product.id}-${index}`;
   };
 
   return (
@@ -100,16 +147,10 @@ export default function SalePage({ children }) {
 
         <input
           type="text"
-          placeholder="Поиск..."
-          value={searchQuery}
+          placeholder="Поиск"
+          value={searchValue}
           onChange={handleSearchChange}
-          style={{
-            width: "99%",
-            padding: "10px",
-            fontSize: "16px",
-            border: "1px solid #ccc",
-            borderRadius: "4px",
-          }}
+          className={styles.searchInput}
         />
       </div>
 
@@ -121,95 +162,220 @@ export default function SalePage({ children }) {
 
           <div className={styles["sale-page-content"]}>
             <div className={styles["filter-category"]}>
-              {currentCategory?.types?.map((type) => (
-                <Accordion
-                  key={type.category}
-                  expanded={expandedAccordion === type.category}
-                  onChange={() =>
-                    setExpandedAccordion((prev) =>
-                      prev === type.category ? null : type.category
-                    )
-                  }
-                  disableGutters
-                  sx={{
-                    boxShadow: "none",
-                    borderBottom: "1px solid #eee",
-                    "&:before": { display: "none" },
-                  }}
-                >
-                  <AccordionSummary
-                    expandIcon={
-                      type.subcategories?.length ? (
-                        <ExpandMoreIcon style={{ color: "#ff6f00" }} />
-                      ) : null
-                    }
-                    sx={{ cursor: "pointer" }}
-                  >
-                    <span
-                      style={{
-                        fontWeight: "700",
-                        fontFamily: "RoadRadio, sans-serif",
-                        fontSize: "14px",
-                      }}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleTypeClick(type.category);
-                      }}
-                    >
-                      {type.title}
-                    </span>
-                  </AccordionSummary>
+              {isMobileView ? (
+                <>
+                  <FilterListIcon onClick={toggleMobileMenu} />
 
-                  <AccordionDetails sx={{ p: 0 }}>
-                    <List>
-                      {type.subcategories?.map((sub) => (
-                        <ListItemButton
-                          key={sub.subcategory}
-                          sx={{ pl: 3 }}
-                          onClick={() =>
-                            handleSubcategoryClick(sub.subcategory)
+                  <Drawer
+                    anchor="top"
+                    open={isMobileMenuOpen}
+                    onClose={closeMobileMenu}
+                    className={styles.mobileDrawer}
+                    PaperProps={{
+                      className: styles.mobileDrawerPaper,
+                      style: {
+                        boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
+                        borderBottom: "2px solid #e0e0e0",
+                      },
+                    }}
+                    ModalProps={{
+                      BackdropProps: {
+                        style: { backgroundColor: "rgba(0, 0, 0, 0.5)" },
+                      },
+                    }}
+                  >
+                    <Toolbar className={styles.toolbarMobile}>
+                      <Typography className={styles.filterTitle}>
+                        Фильтр
+                      </Typography>
+                      <IconButton
+                        edge="start"
+                        onClick={toggleMobileMenu}
+                        className={styles.mobileMenuButton}
+                      >
+                        <TfiClose />
+                      </IconButton>
+                    </Toolbar>
+
+                    <List className={styles.mobileMenuList}>
+                      {currentCategory?.types?.map((type) => (
+                        <Accordion
+                          key={type.category}
+                          expanded={expandedAccordion === type.category}
+                          onChange={() =>
+                            setExpandedAccordion((prev) =>
+                              prev === type.category ? null : type.category
+                            )
                           }
+                          disableGutters
+                          sx={{
+                            boxShadow: "none",
+                            borderBottom: "1px solid #eee",
+                            "&:before": { display: "none" },
+                          }}
                         >
-                          <span
-                            style={{
-                              fontFamily: "RoadRadio, sans-serif",
-                              fontSize: "14px",
-                            }}
+                          <AccordionSummary
+                            expandIcon={
+                              type.subcategories?.length ? (
+                                <ExpandMoreIcon style={{ color: "#ff6f00" }} />
+                              ) : null
+                            }
+                            sx={{ cursor: "pointer" }}
                           >
-                            {sub.title}
-                          </span>
-                        </ListItemButton>
+                            <span
+                              style={{
+                                fontWeight: "700",
+                                fontFamily: "RoadRadio, sans-serif",
+                                fontSize: "14px",
+                              }}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleTypeClick(type.category);
+                                closeMobileMenu();
+                              }}
+                            >
+                              {type.title}
+                            </span>
+                          </AccordionSummary>
+
+                          <AccordionDetails sx={{ p: 0 }}>
+                            <List>
+                              {type.subcategories?.map((sub) => (
+                                <ListItemButton
+                                  key={sub.subcategory}
+                                  sx={{ pl: 3 }}
+                                  onClick={() =>
+                                    handleSubcategoryClick(sub.subcategory)
+                                  }
+                                >
+                                  <span
+                                    style={{
+                                      fontFamily: "RoadRadio, sans-serif",
+                                      fontSize: "14px",
+                                    }}
+                                    onClick={closeMobileMenu}
+                                  >
+                                    {sub.title}
+                                  </span>
+                                </ListItemButton>
+                              ))}
+                            </List>
+                          </AccordionDetails>
+                        </Accordion>
                       ))}
                     </List>
-                  </AccordionDetails>
-                </Accordion>
-              ))}
+                  </Drawer>
+                </>
+              ) : (
+                currentCategory?.types?.map((type) => (
+                  <Accordion
+                    key={type.category}
+                    expanded={expandedAccordion === type.category}
+                    onChange={() =>
+                      setExpandedAccordion((prev) =>
+                        prev === type.category ? null : type.category
+                      )
+                    }
+                    disableGutters
+                    sx={{
+                      boxShadow: "none",
+                      borderBottom: "1px solid #eee",
+                      "&:before": { display: "none" },
+                    }}
+                  >
+                    <AccordionSummary
+                      expandIcon={
+                        type.subcategories?.length ? (
+                          <ExpandMoreIcon style={{ color: "#ff6f00" }} />
+                        ) : null
+                      }
+                      sx={{ cursor: "pointer" }}
+                    >
+                      <span
+                        style={{
+                          fontWeight: "700",
+                          fontFamily: "RoadRadio, sans-serif",
+                          fontSize: "14px",
+                        }}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleTypeClick(type.category);
+                        }}
+                      >
+                        {type.title}
+                      </span>
+                    </AccordionSummary>
+
+                    <AccordionDetails sx={{ p: 0 }}>
+                      <List>
+                        {type.subcategories?.map((sub) => (
+                          <ListItemButton
+                            key={sub.subcategory}
+                            sx={{ pl: 3 }}
+                            onClick={() =>
+                              handleSubcategoryClick(sub.subcategory)
+                            }
+                          >
+                            <span
+                              style={{
+                                fontFamily: "RoadRadio, sans-serif",
+                                fontSize: "14px",
+                              }}
+                            >
+                              {sub.title}
+                            </span>
+                          </ListItemButton>
+                        ))}
+                      </List>
+                    </AccordionDetails>
+                  </Accordion>
+                ))
+              )}
             </div>
 
             {searchQuery.trim() ? (
-              <div className={styles["filtered-results"]}>
+              <div>
                 {filteredProducts.length > 0 ? (
-                  <div className={styles["product-grid"]}>
-                    {filteredProducts.map((product) => (
-                      <div key={product.id} className={styles["product-card"]}>
-                        <img
-                          src={`/images/${product.img}`}
-                          alt={product.title}
-                          loading="lazy"
-                        />
-                        <div className={styles["product-title"]}>
-                          {product.title}
-                        </div>
-                        <div className={styles["product-price"]}>
-                          {product.price} BYN
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+                  <>
+                    <div className={styles["home-page-product"]}>
+                      {filteredProducts.map((product, index) => {
+                        const isLoaded = loadedIds.includes(product.id);
+                        return (
+                          <div
+                            key={getProductKey(product, index)}
+                            className={styles["category-product"]}
+                          >
+                            <Card
+                              sx={{
+                                boxShadow: 3,
+                                height: "95%",
+                                overflow: "hidden",
+                                cursor: "pointer",
+                                transition: "transform 0.2s ease",
+                                "&:hover": { transform: "scale(1.03)" },
+                              }}
+                              onClick={() => router.push(`/app/${product.id}`)}
+                            >
+                              <CardActionArea>
+                                {!!isLoaded ? (
+                                  <Skeleton
+                                    variant="rectangular"
+                                    height={450}
+                                  />
+                                ) : (
+                                  <ProductItems product={product} />
+                                )}
+                              </CardActionArea>
+                            </Card>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </>
                 ) : (
                   <div className={styles["not-found"]}>
-                    <p>Ничего не найдено </p>
-                    <p>Попробуй изменить запрос</p>
+                    <p>Ничего не найдено по запросу "{searchQuery}"</p>
+                    <p>Попробуйте изменить запрос</p>
                   </div>
                 )}
               </div>

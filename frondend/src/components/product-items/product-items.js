@@ -35,13 +35,6 @@ export const ProductItems = ({ product }) => {
             alt={product.title}
             loading="lazy"
           />
-
-          <div className={styles["icon-background"]} onClick={handelClickImg}>
-            <div className={styles["icon-search"]}>
-              <BsSearch />
-            </div>
-          </div>
-
           <span className={styles["product-items__title"]}>
             {product.title.toUpperCase()}
           </span>

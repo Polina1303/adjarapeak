@@ -85,7 +85,7 @@ export const Header = () => {
 
   const menuItems = [
     { path: "/sale/tourismCamping", text: { RU: "МАГАЗИН", ENG: "SHOP" } },
-    { path: "/rental", text: { RU: "ПРОКАТ", ENG: "CAMPING" } },
+    { path: "/rent/skiRental", text: { RU: "ПРОКАТ", ENG: "CAMPING" } },
     { path: "/trip", text: { RU: "ТУРЫ", ENG: "TOURS" } },
     {
       path: "/rockClimbing",
@@ -97,20 +97,15 @@ export const Header = () => {
 
   const menuItemsMobile = [
     { path: "/sale/tourismCamping", text: { RU: "МАГАЗИН", ENG: "SHOP" } },
-    {
-      path: "/rent-sky",
-      text: {
-        RU: "ПРОКАТ ГОРНОЛЫЖНОГО СНАРЯЖЕНИЯ",
-        ENG: "SKI EQUIPMENT RENTAL",
-      },
-    },
-    {
-      path: "/rent",
-      text: {
-        RU: "ПРОКАТ ТУРИСТИЧЕСКОГО СНАРЯЖЕНИЯ",
-        ENG: "CAMPING EQUIPMENT RENTAL",
-      },
-    },
+
+    { path: "/rent/skiRental", text: { RU: "ПРОКАТ", ENG: "CAMPING" } },
+    // {
+    //   path: "/rent",
+    //   text: {
+    //     RU: "ПРОКАТ ТУРИСТИЧЕСКОГО СНАРЯЖЕНИЯ",
+    //     ENG: "CAMPING EQUIPMENT RENTAL",
+    //   },
+    // },
     { path: "/trip", text: { RU: "ТУРЫ", ENG: "TOURS" } },
     {
       path: "/rockClimbing",

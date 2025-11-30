@@ -254,7 +254,7 @@ export const CATEGORY_PRODUCT = [
       {
         title: "БЕЙСБОЛ",
         category: "baseball",
-        img: "ne-bb-70-1.jpg",
+        img: "2df97b49-7dac-455e-9d50-9467ea7cd0fe.jpeg",
       },
       {
         title: "ФРИЗБИ",
@@ -310,7 +310,7 @@ export const CATEGORY_PRODUCT = [
     title: "ФИТНЕС И ЙОГА",
     path: "fitness",
     types: [
-      { title: "УТЯЖЕЛИТЕЛИ", img: "weights.jpg", category: "weights" },
+      // { title: "УТЯЖЕЛИТЕЛИ", img: "weights.jpg", category: "weights" },
       { title: "ШЕЙКЕР", img: "eb87bf73-7c37-44.png", category: "shaker" },
       {
         title: "ЭСПАНДЕР",
@@ -420,7 +420,7 @@ export const CATEGORY_PRODUCT = [
       },
       {
         title: "АКСЕССУАРЫ ДЛЯ ВЕЛОСИПЕДА",
-        img: "c5ef9f33-19eb-4104-9add-80ea28528697.webp",
+        img: "bc1cc4f6-0205-11ef-9217-0a580a68309d.png",
         category: "bike_accessories",
       },
     ],
@@ -442,7 +442,7 @@ export const CATEGORY_PRODUCT = [
       },
       {
         title: "ПУХОВИКИ",
-        img: "",
+        img: "24423424.17.13.jpg",
         category: "down_jackets",
       },
       {
@@ -534,7 +534,11 @@ export const CATEGORY_PRODUCT = [
         img: "32c41b55-7fce-41c2-9d6e-8d6e3f027d34.webp",
         category: "martialart_helmet",
       },
-      { title: "КАПЫ", img: "", category: "martialart_mouth_guard" },
+      {
+        title: "КАПЫ",
+        img: "f25e9788-d2ab-4ded-97de-1240e1866629.webp",
+        category: "martialart_mouth_guard",
+      },
       {
         title: "ЗАЩИТА",
         img: "9d89ae16-8e53-4cae-b62a-79392297469b-Photoroom.png",
@@ -547,12 +551,12 @@ export const CATEGORY_PRODUCT = [
       },
       {
         title: "БИНТЫ ДЛЯ РУК",
-        img: "",
+        img: "a3094f4d-9d76-4776.png",
         category: "bandages",
       },
       {
         title: "ОДЕЖДА И ОБУВЬ ДЛЯ ЕДИНОБОРСТВ",
-        img: "",
+        img: "ac3ab5679fd87.avif",
         category: "martialart_clothes",
       },
       {
@@ -567,13 +571,41 @@ export const CATEGORY_PRODUCT = [
       },
       {
         title: "ТРЕНАЖЕРЫ",
-        img: "",
-        category: "martialart_exercise ",
+        img: "b8556d1a-1dde-470e-9858-de257ebabaf5.avif",
+        category: "martialart_exercise",
       },
     ],
   },
+
   {
     title: "ГОРНОЛЫЖНЫЙ СПОРТ",
-    types: ["skiing", "helmet", "protection", "thermalUnderwear"],
+    path: "alpinesking",
+    types: [
+      {
+        title: "ШЛЕМЫ",
+        img: "32c41b55-7fce-41c2-9d6e-8d6e3f027d34.webp",
+        category: "helmet_sky",
+      },
+      {
+        title: "МАСКИ",
+        img: "IMG_6870.JPG",
+        category: "skigoggles",
+      },
+      {
+        title: "ЗАЩИТА",
+        img: "8.42.28.jpg",
+        category: "sky_care",
+      },
+      {
+        title: "ТЮБИНГИ",
+        img: "09491dd5-4982-448d-8ed7-d424eb2b2545.webp",
+        category: "air_sky",
+      },
+      {
+        title: "ПЕРЧАТКИ",
+        img: "055723de-45b0-47c6-988f-6ecd99853b53.avif",
+        category: "gloves_sky",
+      },
+    ],
   },
 ];

@@ -39,6 +39,8 @@
   flex-direction: column;
   justify-content: center;
   gap: 24px;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .product-title {
@@ -46,7 +48,6 @@
   text-transform: uppercase;
   word-wrap: break-word;
   overflow-wrap: break-word;
-
 }
 
 .product-buy {
@@ -134,6 +135,9 @@
     justify-content: flex-start;
     align-items: flex-start; 
     width: 100%;
+  }
+  .product-title{
+    font-size: 10px;
   }
   
   .product-image-box {

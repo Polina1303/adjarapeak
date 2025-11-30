@@ -1025,8 +1025,8 @@ export const TripPage = () => {
 
       <div className={style["event-schedule-container"]}>
         <h2 className={style["event-schedule-title"]}>
-          <span className={style["tripe-text"]}> Расписание </span>
-          <span className={style["tripe-text"]}> мероприятий </span>
+          <span className={style["tripe-text"]}>Расписание</span>
+          <span className={style["tripe-text"]}>мероприятий </span>
           <span className={style["tripe-text"]}>на</span>
           <span className={style["tripe-text"]}>сезон</span>
         </h2>

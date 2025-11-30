@@ -45,16 +45,13 @@ export const ProductPage = () => {
 
     const sameCategoryProducts = allProducts
       .filter((item) => item.category === product.category)
-      .sort(() => Math.random() - 0.5)
-      .slice(0, 3);
+      .sort(() => Math.random() - 0.5);
 
-    const remainingCount = 10 - sameCategoryProducts.length;
-    const otherProducts = allProducts
-      .filter((item) => item.category !== product.category)
-      .sort(() => Math.random() - 0.5)
-      .slice(0, remainingCount);
+    if (sameCategoryProducts.length >= 10) {
+      return sameCategoryProducts.slice(0, 10);
+    }
 
-    return [...sameCategoryProducts, ...otherProducts];
+    return sameCategoryProducts;
   }, [product]);
 
   const recommendedProducts = getRecommendedProducts();
@@ -108,8 +105,11 @@ export const ProductPage = () => {
               className={styles["product-title"]}
               sx={{
                 fontFamily: "RoadRadio-Bold, sans-serif",
+                minWidth: 0,
+                whiteSpace: "normal",
+                overflowWrap: "anywhere",
                 fontSize: {
-                  xs: "26px",
+                  xs: "18px",
                   sm: "28px",
                   md: "30px",
                   lg: "32px",
