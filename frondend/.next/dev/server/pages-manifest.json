@@ -2,7 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/sale/[...slug]": "pages/sale/[...slug].js",
   "/": "pages/index.js",
+  "/sale/[...slug]": "pages/sale/[...slug].js",
   "/rent/[...slug]": "pages/rent/[...slug].js"
 }
