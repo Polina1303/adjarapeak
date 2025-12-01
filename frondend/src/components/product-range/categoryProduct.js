@@ -606,6 +606,16 @@ export const CATEGORY_PRODUCT = [
         img: "055723de-45b0-47c6-988f-6ecd99853b53.avif",
         category: "gloves_sky",
       },
+      {
+        title: "СНЕГОСТУПЫ",
+        category: "snowshoes",
+        img: "202514.50.50.jpg",
+      },
+      {
+        title: "РЮКЗАКИ И ЧЕХЛЫ",
+        category: "bag_sky",
+        img: "kayak-cantasi-siyah-100.png",
+      },
     ],
   },
 ];
