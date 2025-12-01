@@ -39,18 +39,6 @@ export const HomePage = () => {
   }, []);
   const { ref } = useInView({ threshold: 0, triggerOnce: true });
 
-  const handleClickSaleFood = () => router.push("/sale-food");
-  const handleClickSale = () => router.push("/sale");
-  const handleClickSaleSea = () => router.push("/sea-sale");
-  const handleClickSportSale = () => router.push("/sport-sale");
-  const handleClickRent = () => router.push("/rent");
-  const handleClickRentSky = () => router.push("/rent-sky");
-  const handleClickTrip = () => router.push("/");
-  const handleClickСlothes = () => router.push("/clothes");
-
-  const [isOpen, setIsOpen] = useState(false);
-  const toggleModal = () => setIsOpen((v) => !v);
-
   const isRU = languages === "RU";
 
   return (
@@ -119,7 +107,7 @@ export const HomePage = () => {
         </article>
 
         <article className={styles.saleItem}>
-          <Link href="/rent" className={styles.saleCard}>
+          <Link href="/rent/skiRental" className={styles.saleCard}>
             <img
               loading="lazy"
               src="/img/rent.webp"

@@ -1,5 +1,70 @@
 export const CATEGORY_RENT = [
   {
+    title: "ПРОКАТ ТУРИСТИЧЕСКОГО СНАРЯЖЕНИЯ",
+    path: "tourismRental",
+    types: [
+      // {
+      //   title: "ВСЁ",
+      //   // type:'all',
+      // },
+      {
+        title: "КОМПЛЕКТЫ",
+        category: "set",
+        img: "19.45.11.jpg",
+      },
+      {
+        title: "ЛЫЖИ",
+        category: "sky",
+        img: "19.08.22.jpg",
+      },
+      {
+        title: "СНОУБОРД",
+        category: "snowboard",
+        img: "19.52.32.jpg",
+      },
+      {
+        title: "КУРТКИ",
+        category: "jacket",
+        img: "IMG_5871.JPG",
+      },
+      {
+        title: "КОМБИНЕЗОНЫ",
+        category: "overall",
+        img: "IMG_5903.PNG",
+      },
+      {
+        title: "ШТАНЫ",
+        category: "pants",
+        img: "IMG_5870.JPG",
+      },
+      {
+        title: "ПЕРЧАТКИ",
+        category: "gloves",
+        img: "IMG_586.png",
+      },
+      {
+        title: "ШЛЕМ",
+        category: "helmet",
+        img: "IMG_58.png",
+      },
+      {
+        title: "МАСКА",
+        category: "mask",
+        img: "IMG_5865-.png",
+      },
+      {
+        title: "ЗАЩИТА",
+        category: "protection",
+        img: "19.24.57.jpg",
+      },
+      {
+        title: "ИНОЕ",
+        category: "dif",
+        img: "Gn31w.jpg",
+      },
+    ],
+  },
+  {
     title: "ПРОКАТ ГОРНОЛЫЖНОГО СНАРЯЖЕНИЯ ",
     path: "skiRental",
     types: [
@@ -73,71 +138,6 @@ export const CATEGORY_RENT = [
       //   type: "rentSPORTS",
       //   id: 13,
       // },
-    ],
-  },
-  {
-    title: "ПРОКАТ ТУРИСТИЧЕСКОГО СНАРЯЖЕНИЯ",
-    path: "tourismRental",
-    types: [
-      // {
-      //   title: "ВСЁ",
-      //   // type:'all',
-      // },
-      {
-        title: "КОМПЛЕКТЫ",
-        category: "set",
-        img: "19.45.11.jpg",
-      },
-      {
-        title: "ЛЫЖИ",
-        category: "sky",
-        img: "19.08.22.jpg",
-      },
-      {
-        title: "СНОУБОРД",
-        category: "snowboard",
-        img: "19.52.32.jpg",
-      },
-      {
-        title: "КУРТКИ",
-        category: "jacket",
-        img: "IMG_5871.JPG",
-      },
-      {
-        title: "КОМБИНЕЗОНЫ",
-        category: "overall",
-        img: "IMG_5903.PNG",
-      },
-      {
-        title: "ШТАНЫ",
-        category: "pants",
-        img: "IMG_5870.JPG",
-      },
-      {
-        title: "ПЕРЧАТКИ",
-        category: "gloves",
-        img: "IMG_586.png",
-      },
-      {
-        title: "ШЛЕМ",
-        category: "helmet",
-        img: "IMG_58.png",
-      },
-      {
-        title: "МАСКА",
-        category: "mask",
-        img: "IMG_5865-.png",
-      },
-      {
-        title: "ЗАЩИТА",
-        category: "protection",
-        img: "19.24.57.jpg",
-      },
-      {
-        title: "ИНОЕ",
-        category: "dif",
-        img: "Gn31w.jpg",
-      },
     ],
   },
 ];

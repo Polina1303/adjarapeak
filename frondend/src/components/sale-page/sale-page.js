@@ -202,10 +202,15 @@ export default function SalePage({ children }) {
                         <Accordion
                           key={type.category}
                           expanded={expandedAccordion === type.category}
-                          onChange={() =>
-                            setExpandedAccordion((prev) =>
-                              prev === type.category ? null : type.category
-                            )
+                          onChange={
+                            type.subcategories?.length
+                              ? () =>
+                                  setExpandedAccordion((prev) =>
+                                    prev === type.category
+                                      ? null
+                                      : type.category
+                                  )
+                              : undefined
                           }
                           disableGutters
                           sx={{
@@ -271,10 +276,13 @@ export default function SalePage({ children }) {
                   <Accordion
                     key={type.category}
                     expanded={expandedAccordion === type.category}
-                    onChange={() =>
-                      setExpandedAccordion((prev) =>
-                        prev === type.category ? null : type.category
-                      )
+                    onChange={
+                      type.subcategories?.length
+                        ? () =>
+                            setExpandedAccordion((prev) =>
+                              prev === type.category ? null : type.category
+                            )
+                        : undefined
                     }
                     disableGutters
                     sx={{
