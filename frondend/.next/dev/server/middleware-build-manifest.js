@@ -24,10 +24,15 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/service": [
+    "/rent/[...slug]": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/service.js"
+      "static/chunks/pages/rent/[...slug].js"
+    ],
+    "/sale/[...slug]": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/sale/[...slug].js"
     ]
   }
 };

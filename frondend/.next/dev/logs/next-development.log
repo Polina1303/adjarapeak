@@ -1,125 +1,114 @@
-[00:00:06.186] Server  LOG      ✓ Ready in 5.4s
-[00:00:42.093] Server  LOG      ○ Compiling / ...
-[00:03:36.668] Server  ERROR    ⨯ ./src/pages/service-center-page/service-center-page.js
-Error:   × Unterminated string constant
-    ╭─[C:\Users\Hp\Desktop\adjarapeak\frondend\src\pages\service-center-page\service-center-page.js:64:1]
- 61 │             <tr>
- 62 │               <td>
- 63 │                 {languages === "RU"
- 64 │                   ? "Нанесение
-    ·                     ──────────
- 65 │ температурного парафина "
- 66 │                   : "Sliding surface repair, scratch filling R-Tech"}
- 66 │               </td>
-    ╰────
-  × Expected '</', got 'температурного'
-    ╭─[C:\Users\Hp\Desktop\adjarapeak\frondend\src\pages\service-center-page\service-center-page.js:65:1]
- 62 │               <td>
- 63 │                 {languages === "RU"
- 64 │                   ? "Нанесение
- 65 │ температурного парафина "
-    · ──────────────
- 66 │                   : "Sliding surface repair, scratch filling R-Tech"}
- 67 │               </td>
- 67 │ 
-    ╰────
-
-Caused by:
-    Syntax Error
-
-Import trace for requested module:
-./src/pages/service-center-page/service-center-page.js
-./src/pages/service-center-page/index.js
-[00:03:37.507] Browser ERROR   ./src/pages/service-center-page/service-center-page.js
-Error:   × Unterminated string constant
-    ╭─[C:\Users\Hp\Desktop\adjarapeak\frondend\src\pages\service-center-page\service-center-page.js:64:1]
- 61 │             <tr>
- 62 │               <td>
- 63 │                 {languages === "RU"
- 64 │                   ? "Нанесение
-    ·                     ──────────
- 65 │ температурного парафина "
- 66 │                   : "Sliding surface repair, scratch filling R-Tech"}
- 66 │               </td>
-    ╰────
-  × Expected '</', got 'температурного'
-    ╭─[C:\Users\Hp\Desktop\adjarapeak\frondend\src\pages\service-center-page\service-center-page.js:65:1]
- 62 │               <td>
- 63 │                 {languages === "RU"
- 64 │                   ? "Нанесение
- 65 │ температурного парафина "
-    · ──────────────
- 66 │                   : "Sliding surface repair, scratch filling R-Tech"}
- 67 │               </td>
- 67 │ 
-    ╰────
-
-Caused by:
-    Syntax Error
-
-Import trace for requested module:
-./src/pages/service-center-page/service-center-page.js
-./src/pages/service-center-page/index.js
-[00:03:37.507] Browser ERROR   ./src/pages/service-center-page/service-center-page.js
-Error:   × Unterminated string constant
-    ╭─[C:\Users\Hp\Desktop\adjarapeak\frondend\src\pages\service-center-page\service-center-page.js:64:1]
- 61 │             <tr>
- 62 │               <td>
- 63 │                 {languages === "RU"
- 64 │                   ? "Нанесение
-    ·                     ──────────
- 65 │ температурного парафина "
- 66 │                   : "Sliding surface repair, scratch filling R-Tech"}
- 66 │               </td>
-    ╰────
-  × Expected '</', got 'температурного'
-    ╭─[C:\Users\Hp\Desktop\adjarapeak\frondend\src\pages\service-center-page\service-center-page.js:65:1]
- 62 │               <td>
- 63 │                 {languages === "RU"
- 64 │                   ? "Нанесение
- 65 │ температурного парафина "
-    · ──────────────
- 66 │                   : "Sliding surface repair, scratch filling R-Tech"}
- 67 │               </td>
- 67 │ 
-    ╰────
-
-Caused by:
-    Syntax Error
-
-Import trace for requested module:
-./src/pages/service-center-page/service-center-page.js
-./src/pages/service-center-page/index.js
-./pages/service.js
-[00:03:41.499] Browser ERROR   ./src/pages/service-center-page/service-center-page.js
-Error:   × Unterminated string constant
-    ╭─[C:\Users\Hp\Desktop\adjarapeak\frondend\src\pages\service-center-page\service-center-page.js:64:1]
- 61 │             <tr>
- 62 │               <td>
- 63 │                 {languages === "RU"
- 64 │                   ? "Нанесение
-    ·                     ──────────
- 65 │ температурного парафина "
- 66 │                   : "Sliding surface repair, scratch filling R-Tech"}
- 66 │               </td>
-    ╰────
-  × Expected '</', got 'температурного'
-    ╭─[C:\Users\Hp\Desktop\adjarapeak\frondend\src\pages\service-center-page\service-center-page.js:65:1]
- 62 │               <td>
- 63 │                 {languages === "RU"
- 64 │                   ? "Нанесение
- 65 │ температурного парафина "
-    · ──────────────
- 66 │                   : "Sliding surface repair, scratch filling R-Tech"}
- 67 │               </td>
- 67 │ 
-    ╰────
-
-Caused by:
-    Syntax Error
-
-Import trace for requested module:
-./src/pages/service-center-page/service-center-page.js
-./src/pages/service-center-page/index.js
-[00:09:50.763] Server  WARN     ⚠ You have added a custom /_error page without a custom /404 page. This prevents the 404 page from being auto statically optimized.
+[00:00:04.065] Server  LOG      ✓ Ready in 3.4s
+[00:00:36.733] Server  LOG      ○ Compiling / ...
+[00:00:44.241] Server  WARN     ⚠ You have added a custom /_error page without a custom /404 page. This prevents the 404 page from being auto statically optimized.
 See here for info: https://nextjs.org/docs/messages/custom-error-no-custom-404
+[00:00:44.505] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/img/adjara2.png" "received" null
+[00:00:44.566] Server  ERROR   Error: The requested resource isn't a valid image.
+[00:01:14.472] Server  LOG      ○ Compiling /sale/[...slug] ...
+[00:01:21.172] Browser WARN    Image with src "/img/14.41.19.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:21.172] Browser WARN    Image with src "/img/BTRACE_ZERO_L.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:21.172] Browser WARN    Image with src "/img/backpackBlack17L.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:21.172] Browser WARN    Image with src "/img/folga-paraloni.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:21.173] Browser WARN    Image with src "/img/098764567890.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:21.173] Browser WARN    Image with src "/img/raincoat.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:21.173] Browser WARN    Image with src "/img/gas-flame.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:21.173] Browser WARN    Image with src "/img/33aafde2567a999fdb086b8664e299b2.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:21.173] Browser WARN    Image with src "/img/17.04.49.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:21.173] Browser WARN    Image with src "/img/s21sx162-21-oz-standard-flex-cap-fossil-straight.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:21.173] Browser WARN    Image with src "/img/7d57252c-3335-409f-a1c0-ddd13a6e1d6a.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:21.173] Browser WARN    Image with src "/img/8dcd-aede1cf3ab55.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:21.173] Browser WARN    Image with src "/img/202322.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:21.173] Browser WARN    Image with src "/img/6955_big.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:21.173] Browser WARN    Image with src "/img/binoculars.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:21.173] Browser WARN    Image with src "/img/orig4211.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:21.173] Browser WARN    Image with src "/img/hammock.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:21.173] Browser WARN    Image with src "/img/picture32.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:21.173] Browser WARN    Image with src "/img/podushka-comfort-dlya-kempingu.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:21.173] Browser WARN    Image with src "/img/110000428237905.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:21.173] Browser WARN    Image with src "/img/1_org_zoom323.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:21.173] Browser WARN    Image with src "/img/23.11.40.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:21.173] Browser WARN    Image with src "/img/ukrainian-borscht-front.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:23.820] Browser WARN    Image with src "/img/61yQ51BsmYL.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:23.820] Browser WARN    Image with src "/img/picture23445.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:23.820] Browser WARN    Image with src "/img/small-indoor-table-tennis-set-ppr-100-with-2-bats-and-3-balls.avif" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:23.820] Browser WARN    Image with src "/img/6337498439.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:23.820] Browser WARN    Image with src "/img/2df97b49-7dac-455e-9d50-9467ea7cd0fe.jpeg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:23.820] Browser WARN    Image with src "/img/1018264996.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:23.820] Browser WARN    Image with src "/img/size-4-football-sunny-300-green-kipsta.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:23.820] Browser WARN    Image with src "/img/18.40.32.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:23.820] Browser WARN    Image with src "/img/beach-volleyball-size-5-bv100-classic-turquoise-kipsta.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:23.820] Browser WARN    Image with src "/img/american-football-with-brown-leather-texture-white-laces-white-background.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:23.820] Browser WARN    Image with src "/img/1834274d-e94e-4281-b81b-043695664120_960x960-Photoroom.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:23.820] Browser WARN    Image with src "/img/ocr.jpeg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:30.425] Browser WARN    Image with src "/img/tent2Mesuca.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:30.425] Browser WARN    Image with src "/img/sleeping_bag_green.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:30.425] Browser WARN    Image with src "/img/IMG_8135.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:30.425] Browser WARN    Image with src "/img/9858034f125a76b5679055e7b28c27aa.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:30.425] Browser WARN    Image with src "/img/00.13.37.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:30.425] Browser WARN    Image with src "/img/adapter.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:30.425] Browser WARN    Image with src "/img/product_1207_1.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:30.425] Browser WARN    Image with src "/img/sitting_DECATHLON.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:30.425] Browser WARN    Image with src "/img/VERTEXVENT.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:30.425] Browser WARN    Image with src "/img/18a131f8-02f0-47bc-b2a5-88b58d52642d.438bc7c551289ad8284aa8b118c9bc5a.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:30.425] Browser WARN    Image with src "/img/xiaomi-redmi-fast-charge-power-bank-20000-mah-18w.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:01:52.525] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'length')
+[00:01:52.525] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'length')
+[00:01:52.525] Browser ERROR   The above error occurred in the <RentSkyPage> component:
+
+    at RentSkyPage (webpack-internal:///(pages-dir-browser)/./src/pages/rent-sky-page/rent-sky-page.js:36:74)
+    at main
+    at Provider (webpack-internal:///(pages-dir-browser)/./node_modules/react-redux/es/components/Provider.js:16:3)
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:31:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:07:03.046] Browser WARN    Image with src "/img/14.41.19.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:07:03.046] Browser WARN    Image with src "/img/BTRACE_ZERO_L.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:07:03.046] Browser WARN    Image with src "/img/backpackBlack17L.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:07:03.046] Browser WARN    Image with src "/img/folga-paraloni.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:07:03.046] Browser WARN    Image with src "/img/098764567890.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:07:03.046] Browser WARN    Image with src "/img/raincoat.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:07:03.046] Browser WARN    Image with src "/img/gas-flame.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:07:03.046] Browser WARN    Image with src "/img/33aafde2567a999fdb086b8664e299b2.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:07:03.046] Browser WARN    Image with src "/img/17.04.49.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:07:03.046] Browser WARN    Image with src "/img/s21sx162-21-oz-standard-flex-cap-fossil-straight.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:07:03.046] Browser WARN    Image with src "/img/7d57252c-3335-409f-a1c0-ddd13a6e1d6a.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:07:03.046] Browser WARN    Image with src "/img/8dcd-aede1cf3ab55.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:07:03.046] Browser WARN    Image with src "/img/202322.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:07:03.046] Browser WARN    Image with src "/img/6955_big.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:07:03.046] Browser WARN    Image with src "/img/binoculars.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:07:03.046] Browser WARN    Image with src "/img/orig4211.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:07:03.047] Browser WARN    Image with src "/img/hammock.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:07:03.047] Browser WARN    Image with src "/img/picture32.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:07:03.047] Browser WARN    Image with src "/img/podushka-comfort-dlya-kempingu.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:07:03.047] Browser WARN    Image with src "/img/110000428237905.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:07:03.047] Browser WARN    Image with src "/img/1_org_zoom323.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:07:03.047] Browser WARN    Image with src "/img/23.11.40.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:07:03.047] Browser WARN    Image with src "/img/ukrainian-borscht-front.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:07:14.759] Browser WARN    Image with src "/img/tent2Mesuca.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:07:14.759] Browser WARN    Image with src "/img/sleeping_bag_green.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:07:14.759] Browser WARN    Image with src "/img/IMG_8135.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:07:14.759] Browser WARN    Image with src "/img/9858034f125a76b5679055e7b28c27aa.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:07:14.759] Browser WARN    Image with src "/img/00.13.37.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:07:14.759] Browser WARN    Image with src "/img/adapter.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:07:14.759] Browser WARN    Image with src "/img/product_1207_1.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:07:14.760] Browser WARN    Image with src "/img/sitting_DECATHLON.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:07:14.760] Browser WARN    Image with src "/img/VERTEXVENT.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:07:14.760] Browser WARN    Image with src "/img/18a131f8-02f0-47bc-b2a5-88b58d52642d.438bc7c551289ad8284aa8b118c9bc5a.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:07:14.760] Browser WARN    Image with src "/img/xiaomi-redmi-fast-charge-power-bank-20000-mah-18w.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:08:16.291] Browser WARN    Image with src "/img/19.45.11.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:08:16.291] Browser WARN    Image with src "/img/19.08.22.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:08:16.291] Browser WARN    Image with src "/img/19.52.32.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:08:16.291] Browser WARN    Image with src "/img/IMG_5871.JPG" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:08:16.291] Browser WARN    Image with src "/img/IMG_5903.PNG" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:08:16.291] Browser WARN    Image with src "/img/IMG_5870.JPG" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:08:16.291] Browser WARN    Image with src "/img/IMG_586.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:08:16.291] Browser WARN    Image with src "/img/IMG_58.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:08:16.291] Browser WARN    Image with src "/img/IMG_5865-.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:08:16.291] Browser WARN    Image with src "/img/19.24.57.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:08:16.291] Browser WARN    Image with src "/img/Gn31w.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.

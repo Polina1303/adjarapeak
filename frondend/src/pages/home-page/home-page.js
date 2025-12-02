@@ -146,7 +146,7 @@ export const HomePage = () => {
           </Link>
         </article>
         <article className={styles.saleItem}>
-          <Link href="/rent-sky" className={styles.saleCard}>
+          <Link href="/rent/skiRental" className={styles.saleCard}>
             <img
               loading="lazy"
               src="/img/snow.webp"
