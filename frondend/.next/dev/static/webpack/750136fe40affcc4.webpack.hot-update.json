@@ -1,0 +1,1 @@
+{"c":["pages/sale/[...slug]","webpack"],"r":[],"m":["(pages-dir-browser)/__barrel_optimize__?names=Box,Card,CardActionArea,CardContent,FormControl,InputLabel,MenuItem,Select,Skeleton,Stack,ToggleButton,Typography!=!./node_modules/@mui/material/esm/index.js"]}
