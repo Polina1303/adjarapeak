@@ -49,6 +49,24 @@ function ServiceCenterPage() {
 
               <td>от 20 {languages === "RU" ? "лари" : "gel"}</td>
             </tr>
+            <tr>
+              <td>
+                {languages === "RU"
+                  ? "Ремонт скользящей поверхности, заливка царапин Р-Тех"
+                  : "Sliding surface repair, scratch filling R-Tech"}
+              </td>
+
+              <td>от 20 {languages === "RU" ? "лари" : "gel"}</td>
+            </tr>
+            <tr>
+              <td>
+                {languages === "RU"
+                  ? "Нанесение температурного парафина"
+                  : "Application of temperature paraffin"}
+              </td>
+
+              <td> 40 {languages === "RU" ? "лари" : "gel"}</td>
+            </tr>
           </tbody>
         </table>
 
@@ -58,13 +76,25 @@ function ServiceCenterPage() {
 
         <div className={style["images-container"]}>
           <img
-            src="/serviceImage/IMG_7669.JPG"
+            src="/serviceImage/IMG_4590.PNG"
             alt="Image 1"
             className={style["modal-image"]}
           />
           <img
-            src="/serviceImage/IMG_7671.JPG"
+            src="/serviceImage/IMG_4591.JPG"
             alt="Image 2"
+            className={style["modal-image"]}
+          />
+        </div>
+        <div className={style["images-container"]}>
+          <img
+            src="/serviceImage/IMG_4592.JPG"
+            alt="Image 3"
+            className={style["modal-image"]}
+          />
+          <img
+            src="/serviceImage/IMG_4589.JPG"
+            alt="Image 4"
             className={style["modal-image"]}
           />
         </div>
