@@ -3,9 +3,9 @@ import { useForm } from "react-hook-form";
 import { SendEmail } from "../../API/index";
 import { useDispatch } from "react-redux";
 import { clearCart } from "../../redux/cart/reducer";
-import styles from './order-input.module.css';
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { calcTotalPrice } from "../../components/utils";
+import styles from "./order-input.module.css";
 
 export const OrderInput = ({ items, setOrderSuccess }) => {
   const [visible, setVisible] = useState(false);
@@ -77,13 +77,15 @@ export const OrderInput = ({ items, setOrderSuccess }) => {
 
   return (
     <>
-      <div className="container-form">
-        <p className="title-form">Введите информацию для оформления заказа</p>
+      <div className={styles["container-form"]}>
+        <p className={styles["title-form"]}>
+          Введите информацию для оформления заказа
+        </p>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="form-item">
+          <div className={styles["form-item"]}>
             <label>Имя*:</label>
             <input
-              className="input"
+              className={styles["input"]}
               type="text"
               placeholder="Имя"
               {...register("name", {
@@ -92,15 +94,15 @@ export const OrderInput = ({ items, setOrderSuccess }) => {
               })}
             />
             {errors?.name && (
-              <div className="input-error" style={{ color: "red" }}>
+              <div className={styles["input-error"]} style={{ color: "red" }}>
                 {errors.name.message}
               </div>
             )}
           </div>
-          <div className="form-item">
+          <div className={styles["form-item"]}>
             <label>Номер телефона*:</label>
             <input
-              className="input"
+              className={styles["input"]}
               type="tel"
               placeholder="Номер телефона"
               {...register("phone", {
@@ -113,15 +115,15 @@ export const OrderInput = ({ items, setOrderSuccess }) => {
               })}
             />
             {errors?.phone && (
-              <div className="input-error" style={{ color: "red" }}>
+              <div className={styles["input-error"]} style={{ color: "red" }}>
                 {errors.phone.message}
               </div>
             )}
           </div>
-          <div className="form-item">
+          <div className={styles["form-item"]}>
             <label>Telegram:</label>
             <input
-              className="input"
+              className={styles["input"]}
               type="text"
               placeholder="Telegram"
               {...register("telegram")}
@@ -129,10 +131,10 @@ export const OrderInput = ({ items, setOrderSuccess }) => {
           </div>
           {visible && (
             <>
-              <div className="form-item">
+              <div className={styles["form-item"]}>
                 <label>Даты аренды:</label>
                 <input
-                  className="input"
+                  className={styles["input"]}
                   type="date"
                   {...register("dateStart", {
                     required:
@@ -140,12 +142,15 @@ export const OrderInput = ({ items, setOrderSuccess }) => {
                   })}
                 />
                 {errors?.dateStart && (
-                  <div className="input-error" style={{ color: "red" }}>
+                  <div
+                    className={styles["input-error"]}
+                    style={{ color: "red" }}
+                  >
                     {errors.dateStart.message}
                   </div>
                 )}
                 <input
-                  className="input"
+                  className={styles["input"]}
                   type="date"
                   {...register("dateEnd", {
                     required:
@@ -153,25 +158,28 @@ export const OrderInput = ({ items, setOrderSuccess }) => {
                   })}
                 />
                 {errors?.dateEnd && (
-                  <div className="input-error" style={{ color: "red" }}>
+                  <div
+                    className={styles["input-error"]}
+                    style={{ color: "red" }}
+                  >
                     {errors.dateEnd.message}
                   </div>
                 )}
               </div>
             </>
           )}
-          <div className="form-item">
+          <div className={styles["form-item"]}>
             {/* <p className="comment-hint">
               *Укажите, пожалуйста: самовывоз или доставка, адрес доставки и
               желаемую дату.
             </p> */}
             <label>Комментарий:</label>
             <textarea
-              className="input-text"
+              className={styles["input-text"]}
               placeholder="Комментарий"
               {...register("comments")}
             />
-            <p className="comment-note">
+            <p className={styles["comment-note"]}>
               *Укажите, пожалуйста: самовывоз или доставка, адрес доставки и
               желаемую дату. <br /> После оформления заказа с вами свяжутся.
             </p>
@@ -183,7 +191,7 @@ export const OrderInput = ({ items, setOrderSuccess }) => {
             <input {...register("count")} defaultValue={defaultValues.count} />
           </div>
           <div>
-            <button className="button-form">ОФОРМИТЬ ЗАКАЗ</button>
+            <button className={styles["button-form"]}>ОФОРМИТЬ ЗАКАЗ</button>
           </div>
         </form>
       </div>

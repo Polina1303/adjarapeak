@@ -8,7 +8,6 @@ import { Buy } from "../../components/buy/buy";
 import { PRODUCT } from "../../components/product-range/product";
 import { SPORT_PRODUCT } from "../../components/product-range/sportProduct";
 import { RENT } from "../../components/product-range/rent";
-import { RENT_SKY } from "../../components/product-range/rent-sky";
 import { SEA_PRODUCT } from "../../components/product-range/sea-product";
 import { FOOD } from "../../components/product-range/food";
 import { CLOTHES } from "../../components/product-range/clothes";
@@ -37,7 +36,6 @@ export const ProductPage = () => {
       ...PRODUCT,
       ...SPORT_PRODUCT,
       ...RENT,
-      ...RENT_SKY,
       ...SEA_PRODUCT,
       ...FOOD,
       ...CLOTHES,
@@ -63,7 +61,6 @@ export const ProductPage = () => {
       ...PRODUCT,
       ...SPORT_PRODUCT,
       ...RENT,
-      ...RENT_SKY,
       ...SEA_PRODUCT,
       ...FOOD,
       ...CLOTHES,

@@ -1,22 +1,47 @@
 import { useSelector } from "react-redux";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useCallback } from "react";
+import { useRouter } from "next/router";
 import { calcTotalPrice, enumerate } from "../../components/utils";
 import { IoIosArrowBack } from "react-icons/io";
 import { MdLocationPin } from "react-icons/md";
-
 import { OrderItem } from "../../components/order-item";
 import { OrderInput } from "../../components/order-input/order-input";
-import "./order-page.css";
+import { PRODUCT } from "../../components/product-range/product";
+import { SPORT_PRODUCT } from "../../components/product-range/sportProduct";
+import { RENT } from "../../components/product-range/rent";
+import { SEA_PRODUCT } from "../../components/product-range/sea-product";
+import { FOOD } from "../../components/product-range/food";
+import { CLOTHES } from "../../components/product-range/clothes";
+import { RecommendedCarousel } from "../../components/carousel";
+import styles from "./order-page.module.css";
 
 export const OrderPage = () => {
-  const history = useNavigate();
+  const router = useRouter();
   const [orderSuccess, setOrderSuccess] = useState(false);
   const items = useSelector((state) => state.cart.itemsInCart);
+  const getRecommendedProducts = useCallback(() => {
+    if (!items) return [];
+
+    const allProducts = [
+      ...PRODUCT,
+      ...SPORT_PRODUCT,
+      ...RENT,
+      ...SEA_PRODUCT,
+      ...FOOD,
+      ...CLOTHES,
+    ].filter((p) => p.id !== items.id);
+
+    const shuffled = allProducts.sort(() => Math.random() - 0.5);
+
+    return shuffled.slice(0, 10);
+  }, [items]);
+
+  const recommendedProducts = getRecommendedProducts();
+
   if (items && items.length < 1) {
     return orderSuccess ? (
       <div style={{ marginTop: 120 }}>
-        <p className="rental-warning">
+        <p className={styles["rental-warning"]}>
           ⚠️ <strong>Бронь проката</strong> подтверждается только после
           предоплаты. <br />
           <strong>Предоплата не возвращается</strong> в случае отмены заказа
@@ -40,7 +65,6 @@ export const OrderPage = () => {
           <br /> С уважением, Adjara Peak.
         </p>
         <div style={{ marginTop: 10 }}>
-          {" "}
           Всем подписчикам нашего{" "}
           <a
             href="https://t.me/adjarapeak"
@@ -49,16 +73,16 @@ export const OrderPage = () => {
             style={{ color: "rgba(0, 136, 204)" }}
           >
             Telegram-канал
-          </a>{" "}
+          </a>
           предоставляется СКИДКА 5% на весь прокат снаряжения.
-        </div>{" "}
+        </div>
         <div>
           Кроме того, если вы отметите нас в социальных сетях, мы добавим еще 5%
           кэшбэка от суммы вашего заказа. Покажите подписку на своём телефоне
           при выдаче снаряжения. Кэшбэк возвращается, если у вас открытый
           аккаунт и отметка кликабельна.
-        </div>{" "}
-        <br />{" "}
+        </div>
+        <br />
       </div>
     ) : (
       <h1 style={{ marginTop: 100 }}>Ваша корзина пуста!</h1>
@@ -66,16 +90,16 @@ export const OrderPage = () => {
   }
 
   return (
-    <div className="order-page">
-      <button className="back-button" onClick={() => history(-1)}>
+    <div className={styles["order-page"]}>
+      <button className={styles["back-button"]} onClick={() => router.back()}>
         <IoIosArrowBack size={"25px"} /> Назад
       </button>
 
-      <div className="order-page__left">
+      <div className={styles["order-page__left"]}>
         {items && items.map((item) => <OrderItem key={item.id} item={item} />)}
       </div>
-      <div className="order-page__right">
-        <div className="order-page__totalprice">
+      <div className={styles["order-page__right"]}>
+        <div className={styles["order-page__totalprice"]}>
           <h4>
             {items.length}
             {enumerate(items && items.length, [
@@ -89,6 +113,7 @@ export const OrderPage = () => {
           <OrderInput setOrderSuccess={setOrderSuccess} items={items} />
         </div>
       </div>
+      <RecommendedCarousel products={recommendedProducts} />
     </div>
   );
 };

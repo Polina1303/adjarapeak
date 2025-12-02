@@ -1,8 +1,8 @@
 import { useDispatch } from "react-redux";
 import { TiDeleteOutline } from "react-icons/ti";
 import { deletItemFromCart } from "../../redux/cart/reducer";
-import styles from './order-item.module.css';
 import { Button } from "../button";
+import styles from "./order-item.module.css";
 
 export const OrderItem = ({ item }) => {
   const dispatch = useDispatch();
@@ -12,17 +12,17 @@ export const OrderItem = ({ item }) => {
   };
 
   return (
-    <div className="order-item">
-      <div className="order-item__cover">
+    <div className={styles["order-item"]}>
+      <div className={styles["order-item__cover"]}>
         <img
-          className="order-items__img"
-          src={process.env.PUBLIC_URL + "/img/" + item.img}
+          className={styles["order-items__img"]}
+          src={"/img/" + item.img}
           alt={item.title}
         />
       </div>
-      <div className="order-item__title">{item.title}</div>
-      <div className="order-item__title">{item.count}</div>
-      <div className="order-item__price">
+      <div className={styles["order-item__title"]}>{item.title}</div>
+      <div className={styles["order-item__title"]}>{item.count}</div>
+      <div className={styles["order-item__price"]}>
         <span>{item.price * item.count}.00₾</span>
         <Button>
           <TiDeleteOutline
