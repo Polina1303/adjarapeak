@@ -1,9 +1,11 @@
 
-.carousel-container { position: relative; overflow: visible; }
-.my-swiper { overflow: hidden; position: relative;  width: 90% !important;
-  max-width: 100vw !important;
-  padding: 0 !important;
-  box-sizing: border-box; }
+  .carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;           
+  padding: 0 10px;          
+  box-sizing: border-box;
+}
 
 .swiper-button-prev,
 .swiper-button-next {
@@ -51,6 +53,36 @@
 
 .swiper-button-next::after {
   content: "›";
+}
+
+
+.carousel-container {
+  position: relative;
+  overflow: visible;
+}
+
+.my-swiper {
+  width: 90% !important;
+  max-width: 100vw !important;
+  overflow: hidden;
+}
+
+.my-swiper {
+  overflow: hidden;
+  padding-bottom: 30px !important;
+}
+
+.my-swiper :global(.swiper) {
+  overflow: visible !important;
+}
+
+.my-swiper :global(.swiper-slide) {
+  height: auto !important;
+  display: flex;
+}
+
+.my-swiper :global(.swiper-wrapper) {
+  align-items: stretch;
 }
 
 @media (max-width: 768px) {

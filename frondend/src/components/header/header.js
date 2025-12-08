@@ -85,7 +85,7 @@ export const Header = () => {
 
   const menuItems = [
     { path: "/sale/tourismCamping", text: { RU: "МАГАЗИН", ENG: "SHOP" } },
-    { path: "/rent/skiRental", text: { RU: "ПРОКАТ", ENG: "CAMPING" } },
+    { path: "/rent/tourismRental", text: { RU: "ПРОКАТ", ENG: "CAMPING" } },
     { path: "/trip", text: { RU: "ТУРЫ", ENG: "TOURS" } },
     {
       path: "/rockClimbing",

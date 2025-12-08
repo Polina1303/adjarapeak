@@ -17,6 +17,7 @@ import {
   ListItemButton,
   Typography,
 } from "@mui/material";
+import { RENT_SKY } from "../../components/product-range/rent-sky";
 import { Card, CardActionArea, Skeleton } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import styles from "./rent-page.module.css";
@@ -55,7 +56,7 @@ export default function RentPage({ children }) {
     const results = [];
     const seenIds = new Set();
 
-    for (const product of RENT) {
+    for (const product of RENT || RENT_SKY) {
       if (product.title?.toLowerCase().includes(query)) {
         if (!seenIds.has(product.id)) {
           seenIds.add(product.id);

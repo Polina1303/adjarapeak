@@ -1,61 +1,63 @@
-[00:00:04.065] Server  LOG      ✓ Ready in 3.4s
-[00:00:36.733] Server  LOG      ○ Compiling / ...
-[00:00:44.241] Server  WARN     ⚠ You have added a custom /_error page without a custom /404 page. This prevents the 404 page from being auto statically optimized.
+[00:00:03.494] Server  LOG      ✓ Ready in 2.9s
+[00:00:16.987] Server  LOG      ○ Compiling / ...
+[00:00:23.238] Server  WARN     ⚠ You have added a custom /_error page without a custom /404 page. This prevents the 404 page from being auto statically optimized.
 See here for info: https://nextjs.org/docs/messages/custom-error-no-custom-404
-[00:00:44.505] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/img/adjara2.png" "received" null
-[00:00:44.566] Server  ERROR   Error: The requested resource isn't a valid image.
-[00:01:14.472] Server  LOG      ○ Compiling /sale/[...slug] ...
-[00:01:21.172] Browser WARN    Image with src "/img/14.41.19.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:21.172] Browser WARN    Image with src "/img/BTRACE_ZERO_L.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:21.172] Browser WARN    Image with src "/img/backpackBlack17L.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:21.172] Browser WARN    Image with src "/img/folga-paraloni.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:21.173] Browser WARN    Image with src "/img/098764567890.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:21.173] Browser WARN    Image with src "/img/raincoat.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:21.173] Browser WARN    Image with src "/img/gas-flame.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:21.173] Browser WARN    Image with src "/img/33aafde2567a999fdb086b8664e299b2.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:21.173] Browser WARN    Image with src "/img/17.04.49.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:21.173] Browser WARN    Image with src "/img/s21sx162-21-oz-standard-flex-cap-fossil-straight.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:21.173] Browser WARN    Image with src "/img/7d57252c-3335-409f-a1c0-ddd13a6e1d6a.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:21.173] Browser WARN    Image with src "/img/8dcd-aede1cf3ab55.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:21.173] Browser WARN    Image with src "/img/202322.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:21.173] Browser WARN    Image with src "/img/6955_big.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:21.173] Browser WARN    Image with src "/img/binoculars.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:21.173] Browser WARN    Image with src "/img/orig4211.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:21.173] Browser WARN    Image with src "/img/hammock.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:21.173] Browser WARN    Image with src "/img/picture32.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:21.173] Browser WARN    Image with src "/img/podushka-comfort-dlya-kempingu.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:21.173] Browser WARN    Image with src "/img/110000428237905.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:21.173] Browser WARN    Image with src "/img/1_org_zoom323.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:21.173] Browser WARN    Image with src "/img/23.11.40.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:21.173] Browser WARN    Image with src "/img/ukrainian-borscht-front.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:23.820] Browser WARN    Image with src "/img/61yQ51BsmYL.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:23.820] Browser WARN    Image with src "/img/picture23445.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:23.820] Browser WARN    Image with src "/img/small-indoor-table-tennis-set-ppr-100-with-2-bats-and-3-balls.avif" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:23.820] Browser WARN    Image with src "/img/6337498439.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:23.820] Browser WARN    Image with src "/img/2df97b49-7dac-455e-9d50-9467ea7cd0fe.jpeg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:23.820] Browser WARN    Image with src "/img/1018264996.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:23.820] Browser WARN    Image with src "/img/size-4-football-sunny-300-green-kipsta.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:23.820] Browser WARN    Image with src "/img/18.40.32.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:23.820] Browser WARN    Image with src "/img/beach-volleyball-size-5-bv100-classic-turquoise-kipsta.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:23.820] Browser WARN    Image with src "/img/american-football-with-brown-leather-texture-white-laces-white-background.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:23.820] Browser WARN    Image with src "/img/1834274d-e94e-4281-b81b-043695664120_960x960-Photoroom.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:23.820] Browser WARN    Image with src "/img/ocr.jpeg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:30.425] Browser WARN    Image with src "/img/tent2Mesuca.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:30.425] Browser WARN    Image with src "/img/sleeping_bag_green.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:30.425] Browser WARN    Image with src "/img/IMG_8135.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:30.425] Browser WARN    Image with src "/img/9858034f125a76b5679055e7b28c27aa.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:30.425] Browser WARN    Image with src "/img/00.13.37.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:30.425] Browser WARN    Image with src "/img/adapter.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:30.425] Browser WARN    Image with src "/img/product_1207_1.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:30.425] Browser WARN    Image with src "/img/sitting_DECATHLON.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:30.425] Browser WARN    Image with src "/img/VERTEXVENT.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:30.425] Browser WARN    Image with src "/img/18a131f8-02f0-47bc-b2a5-88b58d52642d.438bc7c551289ad8284aa8b118c9bc5a.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:30.425] Browser WARN    Image with src "/img/xiaomi-redmi-fast-charge-power-bank-20000-mah-18w.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:52.525] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'length')
-[00:01:52.525] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'length')
-[00:01:52.525] Browser ERROR   The above error occurred in the <RentSkyPage> component:
-
-    at RentSkyPage (webpack-internal:///(pages-dir-browser)/./src/pages/rent-sky-page/rent-sky-page.js:36:74)
+[00:00:23.493] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/img/adjara2.png" "received" null
+[00:00:23.699] Server  ERROR   Error: The requested resource isn't a valid image.
+[00:00:26.490] Server  LOG      ○ Compiling /sale/[...slug] ...
+[00:00:29.898] Browser WARN    Image with src "/img/14.41.19.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:29.898] Browser WARN    Image with src "/img/BTRACE_ZERO_L.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:29.898] Browser WARN    Image with src "/img/backpackBlack17L.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:29.898] Browser WARN    Image with src "/img/folga-paraloni.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:29.898] Browser WARN    Image with src "/img/098764567890.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:29.898] Browser WARN    Image with src "/img/raincoat.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:29.898] Browser WARN    Image with src "/img/gas-flame.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:29.898] Browser WARN    Image with src "/img/33aafde2567a999fdb086b8664e299b2.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:29.899] Browser WARN    Image with src "/img/17.04.49.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:29.899] Browser WARN    Image with src "/img/s21sx162-21-oz-standard-flex-cap-fossil-straight.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:29.899] Browser WARN    Image with src "/img/7d57252c-3335-409f-a1c0-ddd13a6e1d6a.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:29.899] Browser WARN    Image with src "/img/8dcd-aede1cf3ab55.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:29.899] Browser WARN    Image with src "/img/202322.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:29.899] Browser WARN    Image with src "/img/6955_big.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:29.899] Browser WARN    Image with src "/img/binoculars.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:29.899] Browser WARN    Image with src "/img/orig4211.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:29.899] Browser WARN    Image with src "/img/hammock.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:29.899] Browser WARN    Image with src "/img/picture32.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:29.899] Browser WARN    Image with src "/img/podushka-comfort-dlya-kempingu.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:29.899] Browser WARN    Image with src "/img/110000428237905.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:29.899] Browser WARN    Image with src "/img/1_org_zoom323.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:29.899] Browser WARN    Image with src "/img/23.11.40.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:29.899] Browser WARN    Image with src "/img/ukrainian-borscht-front.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:32.718] Browser ERROR   Warning: validateDOMNesting(...): %s cannot appear as a descendant of <%s>.%s <button> button 
+    at button
+    at Button (webpack-internal:///(pages-dir-browser)/./src/components/button/button.js:14:19)
+    at div
+    at div
+    at div
+    at Buy (webpack-internal:///(pages-dir-browser)/./src/components/buy/buy.js:23:16)
+    at div
+    at div
+    at ProductItems (webpack-internal:///(pages-dir-browser)/./src/components/product-items/product-items.js:27:25)
+    at button
+    at eval (webpack-internal:///(pages-dir-browser)/./node_modules/@emotion/react/dist/emotion-element-489459f2.browser.development.esm.js:55:66)
+    at ButtonBase (webpack-internal:///(pages-dir-browser)/./node_modules/@mui/material/esm/ButtonBase/ButtonBase.js:100:98)
+    at eval (webpack-internal:///(pages-dir-browser)/./node_modules/@emotion/react/dist/emotion-element-489459f2.browser.development.esm.js:55:66)
+    at CardActionArea (webpack-internal:///(pages-dir-browser)/./node_modules/@mui/material/esm/CardActionArea/CardActionArea.js:79:98)
+    at div
+    at eval (webpack-internal:///(pages-dir-browser)/./node_modules/@emotion/react/dist/emotion-element-489459f2.browser.development.esm.js:55:66)
+    at Paper (webpack-internal:///(pages-dir-browser)/./node_modules/@mui/material/esm/Paper/Paper.js:88:98)
+    at eval (webpack-internal:///(pages-dir-browser)/./node_modules/@emotion/react/dist/emotion-element-489459f2.browser.development.esm.js:55:66)
+    at Card (webpack-internal:///(pages-dir-browser)/./node_modules/@mui/material/esm/Card/Card.js:43:98)
+    at div
+    at div
+    at div
+    at SaleCategoryPage (webpack-internal:///(pages-dir-browser)/./src/components/sale-category-page/sale-category-page.js:33:29)
+    at div
+    at div
+    at div
+    at div
+    at SalePage (webpack-internal:///(pages-dir-browser)/./src/components/sale-page/sale-page.js:36:21)
+    at SaleSlug (webpack-internal:///(pages-dir-browser)/./pages/sale/[...slug].js:18:74)
     at main
     at Provider (webpack-internal:///(pages-dir-browser)/./node_modules/react-redux/es/components/Provider.js:16:3)
     at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:31:16)
@@ -65,50 +67,1475 @@ See here for info: https://nextjs.org/docs/messages/custom-error-no-custom-404
     at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
     at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
     at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+[00:00:32.718] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:00:32.718] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:00:32.718] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:00:32.922] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:00:37.800] Server  LOG      ○ Compiling /app/[id] ...
+[00:01:08.366] Server  LOG      ○ Compiling /app/delivery_terms ...
+[00:02:01.170] Browser WARN    Image with src "/img/14.41.19.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:02:01.170] Browser WARN    Image with src "/img/BTRACE_ZERO_L.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:02:01.170] Browser WARN    Image with src "/img/backpackBlack17L.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:02:01.170] Browser WARN    Image with src "/img/folga-paraloni.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:02:01.170] Browser WARN    Image with src "/img/098764567890.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:02:01.170] Browser WARN    Image with src "/img/raincoat.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:02:01.170] Browser WARN    Image with src "/img/gas-flame.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:02:01.170] Browser WARN    Image with src "/img/33aafde2567a999fdb086b8664e299b2.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:02:01.170] Browser WARN    Image with src "/img/17.04.49.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:02:01.170] Browser WARN    Image with src "/img/s21sx162-21-oz-standard-flex-cap-fossil-straight.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:02:01.170] Browser WARN    Image with src "/img/7d57252c-3335-409f-a1c0-ddd13a6e1d6a.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:02:01.170] Browser WARN    Image with src "/img/8dcd-aede1cf3ab55.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:02:01.170] Browser WARN    Image with src "/img/202322.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:02:01.170] Browser WARN    Image with src "/img/6955_big.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:02:01.170] Browser WARN    Image with src "/img/binoculars.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:02:01.170] Browser WARN    Image with src "/img/orig4211.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:02:01.170] Browser WARN    Image with src "/img/hammock.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:02:01.170] Browser WARN    Image with src "/img/picture32.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:02:01.170] Browser WARN    Image with src "/img/podushka-comfort-dlya-kempingu.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:02:01.170] Browser WARN    Image with src "/img/110000428237905.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:02:01.170] Browser WARN    Image with src "/img/1_org_zoom323.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:02:01.170] Browser WARN    Image with src "/img/23.11.40.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:02:01.170] Browser WARN    Image with src "/img/ukrainian-borscht-front.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:03:51.048] Browser LOG     items, []
+[00:03:51.048] Browser LOG     [2;38;2;124;124;124m%s[0m items, []
+[00:04:04.129] Browser LOG     items, []
+[00:04:04.129] Browser LOG     [2;38;2;124;124;124m%s[0m items, []
+[00:04:04.665] Browser WARN    Image with src "/img/14.41.19.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:04:04.665] Browser WARN    Image with src "/img/BTRACE_ZERO_L.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:04:04.665] Browser WARN    Image with src "/img/backpackBlack17L.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:04:04.665] Browser WARN    Image with src "/img/folga-paraloni.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:04:04.665] Browser WARN    Image with src "/img/098764567890.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:04:04.665] Browser WARN    Image with src "/img/raincoat.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:04:04.665] Browser WARN    Image with src "/img/gas-flame.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:04:04.665] Browser WARN    Image with src "/img/33aafde2567a999fdb086b8664e299b2.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:04:04.665] Browser WARN    Image with src "/img/17.04.49.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:04:04.665] Browser WARN    Image with src "/img/s21sx162-21-oz-standard-flex-cap-fossil-straight.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:04:04.665] Browser WARN    Image with src "/img/7d57252c-3335-409f-a1c0-ddd13a6e1d6a.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:04:04.665] Browser WARN    Image with src "/img/8dcd-aede1cf3ab55.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:04:04.665] Browser WARN    Image with src "/img/202322.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:04:04.665] Browser WARN    Image with src "/img/6955_big.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:04:04.665] Browser WARN    Image with src "/img/binoculars.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:04:04.665] Browser WARN    Image with src "/img/orig4211.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:04:04.665] Browser WARN    Image with src "/img/hammock.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:04:04.665] Browser WARN    Image with src "/img/picture32.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:04:04.665] Browser WARN    Image with src "/img/podushka-comfort-dlya-kempingu.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:04:04.665] Browser WARN    Image with src "/img/110000428237905.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:04:04.665] Browser WARN    Image with src "/img/1_org_zoom323.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:04:04.665] Browser WARN    Image with src "/img/23.11.40.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:04:04.665] Browser WARN    Image with src "/img/ukrainian-borscht-front.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:04:04.870] Browser LOG     items, []
+[00:04:04.870] Browser LOG     [2;38;2;124;124;124m%s[0m items, []
+[00:04:06.485] Browser LOG     items, []
+[00:04:06.485] Browser LOG     [2;38;2;124;124;124m%s[0m items, []
+[00:04:06.485] Browser ERROR   Warning: validateDOMNesting(...): %s cannot appear as a descendant of <%s>.%s <button> button 
+    at button
+    at Button (webpack-internal:///(pages-dir-browser)/./src/components/button/button.js:14:19)
+    at div
+    at div
+    at div
+    at Buy (webpack-internal:///(pages-dir-browser)/./src/components/buy/buy.js:23:16)
+    at div
+    at div
+    at ProductItems (webpack-internal:///(pages-dir-browser)/./src/components/product-items/product-items.js:27:25)
+    at button
+    at eval (webpack-internal:///(pages-dir-browser)/./node_modules/@emotion/react/dist/emotion-element-489459f2.browser.development.esm.js:55:66)
+    at ButtonBase (webpack-internal:///(pages-dir-browser)/./node_modules/@mui/material/esm/ButtonBase/ButtonBase.js:100:98)
+    at eval (webpack-internal:///(pages-dir-browser)/./node_modules/@emotion/react/dist/emotion-element-489459f2.browser.development.esm.js:55:66)
+    at CardActionArea (webpack-internal:///(pages-dir-browser)/./node_modules/@mui/material/esm/CardActionArea/CardActionArea.js:79:98)
+    at div
+    at eval (webpack-internal:///(pages-dir-browser)/./node_modules/@emotion/react/dist/emotion-element-489459f2.browser.development.esm.js:55:66)
+    at Paper (webpack-internal:///(pages-dir-browser)/./node_modules/@mui/material/esm/Paper/Paper.js:88:98)
+    at eval (webpack-internal:///(pages-dir-browser)/./node_modules/@emotion/react/dist/emotion-element-489459f2.browser.development.esm.js:55:66)
+    at Card (webpack-internal:///(pages-dir-browser)/./node_modules/@mui/material/esm/Card/Card.js:43:98)
+    at div
+    at div
+    at div
+    at SaleCategoryPage (webpack-internal:///(pages-dir-browser)/./src/components/sale-category-page/sale-category-page.js:33:29)
+    at div
+    at div
+    at div
+    at div
+    at SalePage (webpack-internal:///(pages-dir-browser)/./src/components/sale-page/sale-page.js:36:21)
+    at SaleSlug (webpack-internal:///(pages-dir-browser)/./pages/sale/[...slug].js:18:74)
+    at main
+    at Provider (webpack-internal:///(pages-dir-browser)/./node_modules/react-redux/es/components/Provider.js:16:3)
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:31:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+[00:04:06.485] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:04:06.485] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:04:06.485] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:04:06.485] Browser LOG     items, []
+[00:04:06.485] Browser LOG     [2;38;2;124;124;124m%s[0m items, []
+[00:04:06.652] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:04:23.009] Browser LOG     items, []
+[00:04:23.009] Browser LOG     [2;38;2;124;124;124m%s[0m items, []
+[00:05:48.596] Server  ERROR    ⨯ ./src/components/carousel/carousel.js
+Error:   × Expected '</', got ')'
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\components\carousel\carousel.js:69:1]
+ 66 │           //     <ProductItems product={item} />
+ 67 │           //   </div>
+ 68 │           // </SwiperSlide>
+ 69 │         ))}
+    ·          ─
+ 70 │       </Swiper>
+ 71 │       <div className={styles["swiper-button-prev"]}></div>
+ 71 │       <div className={styles["swiper-button-next"]}></div>
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/carousel/carousel.js
+./src/components/carousel/index.js
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:05:49.213] Browser ERROR   ./src/components/carousel/carousel.js
+Error:   × Expected '</', got ')'
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\components\carousel\carousel.js:69:1]
+ 66 │           //     <ProductItems product={item} />
+ 67 │           //   </div>
+ 68 │           // </SwiperSlide>
+ 69 │         ))}
+    ·          ─
+ 70 │       </Swiper>
+ 71 │       <div className={styles["swiper-button-prev"]}></div>
+ 71 │       <div className={styles["swiper-button-next"]}></div>
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/carousel/carousel.js
+./src/components/carousel/index.js
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:05:49.213] Browser ERROR   ./src/components/carousel/carousel.js
+Error:   × Expected '</', got ')'
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\components\carousel\carousel.js:69:1]
+ 66 │           //     <ProductItems product={item} />
+ 67 │           //   </div>
+ 68 │           // </SwiperSlide>
+ 69 │         ))}
+    ·          ─
+ 70 │       </Swiper>
+ 71 │       <div className={styles["swiper-button-prev"]}></div>
+ 71 │       <div className={styles["swiper-button-next"]}></div>
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/carousel/carousel.js
+./src/components/carousel/index.js
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+./pages/app/[id].js
+[00:05:59.228] Browser ERROR   ./src/components/carousel/carousel.js
+Error:   × Expected '</', got ')'
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\components\carousel\carousel.js:69:1]
+ 66 │           //     <ProductItems product={item} />
+ 67 │           //   </div>
+ 68 │           // </SwiperSlide>
+ 69 │         ))}
+    ·          ─
+ 70 │       </Swiper>
+ 71 │       <div className={styles["swiper-button-prev"]}></div>
+ 71 │       <div className={styles["swiper-button-next"]}></div>
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/carousel/carousel.js
+./src/components/carousel/index.js
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:17:10.214] Browser ERROR   Warning: React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element.%s autoHeight autoheight 
+    at div
+    at eval (webpack-internal:///(pages-dir-browser)/./node_modules/swiper/swiper-react.mjs:337:67)
+    at div
+    at div
+    at eval (webpack-internal:///(pages-dir-browser)/./node_modules/swiper/swiper-react.mjs:151:98)
+    at div
+    at RecommendedCarousel (webpack-internal:///(pages-dir-browser)/./src/components/carousel/carousel.js:36:32)
+    at div
+    at eval (webpack-internal:///(pages-dir-browser)/./node_modules/@emotion/react/dist/emotion-element-489459f2.browser.development.esm.js:55:66)
+    at Box (webpack-internal:///(pages-dir-browser)/./node_modules/@mui/system/esm/createBox/createBox.js:30:81)
+    at div
+    at eval (webpack-internal:///(pages-dir-browser)/./node_modules/@emotion/react/dist/emotion-element-489459f2.browser.development.esm.js:55:66)
+    at Paper (webpack-internal:///(pages-dir-browser)/./node_modules/@mui/material/esm/Paper/Paper.js:88:98)
+    at eval (webpack-internal:///(pages-dir-browser)/./node_modules/@emotion/react/dist/emotion-element-489459f2.browser.development.esm.js:55:66)
+    at Card (webpack-internal:///(pages-dir-browser)/./node_modules/@mui/material/esm/Card/Card.js:43:98)
+    at ProductPage (webpack-internal:///(pages-dir-browser)/./src/pages/product-page/product-page.jsx:47:77)
+    at main
+    at Provider (webpack-internal:///(pages-dir-browser)/./node_modules/react-redux/es/components/Provider.js:16:3)
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:31:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+[00:18:32.795] Browser LOG     items, []
+[00:18:32.795] Browser LOG     [2;38;2;124;124;124m%s[0m items, []
+[00:18:52.148] Browser LOG     items, []
+[00:18:52.148] Browser LOG     [2;38;2;124;124;124m%s[0m items, []
+[00:21:44.605] Browser LOG     items, []
+[00:21:44.606] Browser LOG     [2;38;2;124;124;124m%s[0m items, []
+[00:21:46.793] Browser LOG     items, []
+[00:21:46.793] Browser LOG     [2;38;2;124;124;124m%s[0m items, []
+[00:21:48.939] Browser LOG     items, []
+[00:21:48.939] Browser LOG     [2;38;2;124;124;124m%s[0m items, []
+[00:21:49.328] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:21:49.328] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:21:49.328] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:21:49.524] Browser LOG     items, []
+[00:21:49.524] Browser LOG     [2;38;2;124;124;124m%s[0m items, []
+[00:21:49.524] Browser LOG     items, []
+[00:21:49.524] Browser LOG     [2;38;2;124;124;124m%s[0m items, []
+[00:21:49.524] Browser LOG     items, []
+[00:21:49.524] Browser LOG     [2;38;2;124;124;124m%s[0m items, []
+[00:21:49.663] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:21:50.838] Browser LOG     items, []
+[00:21:50.838] Browser LOG     [2;38;2;124;124;124m%s[0m items, []
+[00:21:57.085] Browser LOG     items, []
+[00:21:57.085] Browser LOG     [2;38;2;124;124;124m%s[0m items, []
+[00:22:00.187] Browser LOG     items, []
+[00:22:00.187] Browser LOG     [2;38;2;124;124;124m%s[0m items, []
+[00:28:50.078] Browser LOG     items, []
+[00:28:50.079] Browser LOG     [2;38;2;124;124;124m%s[0m items, []
+[00:29:32.013] Browser LOG     items, []
+[00:29:32.013] Browser LOG     [2;38;2;124;124;124m%s[0m items, []
+[00:34:24.114] Browser LOG     items, []
+[00:34:24.114] Browser LOG     [2;38;2;124;124;124m%s[0m items, []
+[00:34:55.262] Browser LOG     items, []
+[00:34:55.262] Browser LOG     [2;38;2;124;124;124m%s[0m items, []
+[00:35:36.644] Browser LOG     items, []
+[00:35:36.645] Browser LOG     [2;38;2;124;124;124m%s[0m items, []
+[00:39:10.698] Server  ERROR    ⨯ ./src/components/carousel/carousel.module.css:133:21
+Syntax error: C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\components\carousel\carousel.module.css Double colon
+
+  131 | 
+  132 | .swiper-button-prev::after { content: "‹";
+> 133 | .swiper-button-next::after content: "›";
+      |                     ^
+  134 | 
+  135 | .swiper-button-prev::after,
+[00:39:11.214] Browser ERROR   ./src/components/carousel/carousel.module.css:133:21
+Syntax error: C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\components\carousel\carousel.module.css Double colon
+
+  131 | 
+  132 | .swiper-button-prev::after { content: "‹";
+> 133 | .swiper-button-next::after content: "›";
+      |                     ^
+  134 | 
+  135 | .swiper-button-prev::after,
+[00:39:13.598] Server  ERROR    ⨯ ./src/components/carousel/carousel.module.css:133:21
+Syntax error: C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\components\carousel\carousel.module.css Double colon
+
+  131 | 
+  132 | .swiper-button-prev::after { content: "‹";
+> 133 | .swiper-button-next::after content: "›";
+      |                     ^
+  134 | 
+  135 | .swiper-button-prev::after,
+[00:39:14.211] Browser ERROR   ./src/components/carousel/carousel.module.css:133:21
+Syntax error: C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\components\carousel\carousel.module.css Double colon
+
+  131 | 
+  132 | .swiper-button-prev::after { content: "‹";
+> 133 | .swiper-button-next::after content: "›";
+      |                     ^
+  134 | 
+  135 | .swiper-button-prev::after,
+[00:39:14.211] Browser ERROR   ./src/components/carousel/carousel.module.css:133:21
+Syntax error: C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\components\carousel\carousel.module.css Double colon
+
+  131 | 
+  132 | .swiper-button-prev::after { content: "‹";
+> 133 | .swiper-button-next::after content: "›";
+      |                     ^
+  134 | 
+  135 | .swiper-button-prev::after,
+[00:39:14.211] Browser ERROR   ./src/components/carousel/carousel.module.css:133:21
+Syntax error: C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\components\carousel\carousel.module.css Double colon
+
+  131 | 
+  132 | .swiper-button-prev::after { content: "‹";
+> 133 | .swiper-button-next::after content: "›";
+      |                     ^
+  134 | 
+  135 | .swiper-button-prev::after,
+[00:39:17.323] Server  ERROR    ⨯ ./src/components/carousel/carousel.module.css:133:21
+Syntax error: C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\components\carousel\carousel.module.css Double colon
+
+  131 | 
+  132 | .swiper-button-prev::after { content: "‹";
+> 133 | .swiper-button-next::after content: "›";
+      |                     ^
+  134 | 
+  135 | .swiper-button-prev::after,
+[00:39:18.205] Browser ERROR   ./src/components/carousel/carousel.module.css:133:21
+Syntax error: C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\components\carousel\carousel.module.css Double colon
+
+  131 | 
+  132 | .swiper-button-prev::after { content: "‹";
+> 133 | .swiper-button-next::after content: "›";
+      |                     ^
+  134 | 
+  135 | .swiper-button-prev::after,
+[00:39:18.205] Browser ERROR   ./src/components/carousel/carousel.module.css:133:21
+Syntax error: C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\components\carousel\carousel.module.css Double colon
+
+  131 | 
+  132 | .swiper-button-prev::after { content: "‹";
+> 133 | .swiper-button-next::after content: "›";
+      |                     ^
+  134 | 
+  135 | .swiper-button-prev::after,
+[00:39:26.238] Browser ERROR   ./src/components/carousel/carousel.module.css:133:21
+Syntax error: C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\components\carousel\carousel.module.css Double colon
+
+  131 | 
+  132 | .swiper-button-prev::after { content: "‹";
+> 133 | .swiper-button-next::after content: "›";
+      |                     ^
+  134 | 
+  135 | .swiper-button-prev::after,
+[00:45:56.851] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:45:56.851] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:45:56.851] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:45:57.095] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:46:21.795] Server  LOG      ○ Compiling /error ...
+[00:51:23.236] Browser ERROR   uncaughtError: ReferenceError: useEffect is not defined
+[00:51:23.236] Browser ERROR   uncaughtError: ReferenceError: useEffect is not defined
+[00:51:23.236] Browser ERROR   The above error occurred in the <App> component:
+
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:32:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
 
 React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
-[00:07:03.046] Browser WARN    Image with src "/img/14.41.19.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:07:03.046] Browser WARN    Image with src "/img/BTRACE_ZERO_L.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:07:03.046] Browser WARN    Image with src "/img/backpackBlack17L.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:07:03.046] Browser WARN    Image with src "/img/folga-paraloni.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:07:03.046] Browser WARN    Image with src "/img/098764567890.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:07:03.046] Browser WARN    Image with src "/img/raincoat.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:07:03.046] Browser WARN    Image with src "/img/gas-flame.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:07:03.046] Browser WARN    Image with src "/img/33aafde2567a999fdb086b8664e299b2.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:07:03.046] Browser WARN    Image with src "/img/17.04.49.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:07:03.046] Browser WARN    Image with src "/img/s21sx162-21-oz-standard-flex-cap-fossil-straight.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:07:03.046] Browser WARN    Image with src "/img/7d57252c-3335-409f-a1c0-ddd13a6e1d6a.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:07:03.046] Browser WARN    Image with src "/img/8dcd-aede1cf3ab55.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:07:03.046] Browser WARN    Image with src "/img/202322.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:07:03.046] Browser WARN    Image with src "/img/6955_big.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:07:03.046] Browser WARN    Image with src "/img/binoculars.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:07:03.046] Browser WARN    Image with src "/img/orig4211.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:07:03.047] Browser WARN    Image with src "/img/hammock.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:07:03.047] Browser WARN    Image with src "/img/picture32.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:07:03.047] Browser WARN    Image with src "/img/podushka-comfort-dlya-kempingu.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:07:03.047] Browser WARN    Image with src "/img/110000428237905.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:07:03.047] Browser WARN    Image with src "/img/1_org_zoom323.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:07:03.047] Browser WARN    Image with src "/img/23.11.40.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:07:03.047] Browser WARN    Image with src "/img/ukrainian-borscht-front.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:07:14.759] Browser WARN    Image with src "/img/tent2Mesuca.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:07:14.759] Browser WARN    Image with src "/img/sleeping_bag_green.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:07:14.759] Browser WARN    Image with src "/img/IMG_8135.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:07:14.759] Browser WARN    Image with src "/img/9858034f125a76b5679055e7b28c27aa.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:07:14.759] Browser WARN    Image with src "/img/00.13.37.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:07:14.759] Browser WARN    Image with src "/img/adapter.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:07:14.759] Browser WARN    Image with src "/img/product_1207_1.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:07:14.760] Browser WARN    Image with src "/img/sitting_DECATHLON.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:07:14.760] Browser WARN    Image with src "/img/VERTEXVENT.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:07:14.760] Browser WARN    Image with src "/img/18a131f8-02f0-47bc-b2a5-88b58d52642d.438bc7c551289ad8284aa8b118c9bc5a.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:07:14.760] Browser WARN    Image with src "/img/xiaomi-redmi-fast-charge-power-bank-20000-mah-18w.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:08:16.291] Browser WARN    Image with src "/img/19.45.11.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:08:16.291] Browser WARN    Image with src "/img/19.08.22.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:08:16.291] Browser WARN    Image with src "/img/19.52.32.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:08:16.291] Browser WARN    Image with src "/img/IMG_5871.JPG" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:08:16.291] Browser WARN    Image with src "/img/IMG_5903.PNG" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:08:16.291] Browser WARN    Image with src "/img/IMG_5870.JPG" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:08:16.291] Browser WARN    Image with src "/img/IMG_586.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:08:16.291] Browser WARN    Image with src "/img/IMG_58.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:08:16.291] Browser WARN    Image with src "/img/IMG_5865-.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:08:16.291] Browser WARN    Image with src "/img/19.24.57.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:08:16.291] Browser WARN    Image with src "/img/Gn31w.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:51:24.215] Browser LOG     Refreshing page data due to server-side change
+[00:51:24.216] Browser ERROR   uncaughtError: ReferenceError: useEffect is not defined
+[00:51:24.216] Browser ERROR   uncaughtError: ReferenceError: useEffect is not defined
+[00:51:24.216] Browser ERROR   The above error occurred in the <App> component:
+
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:32:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:51:24.216] Browser LOG     Refreshing page data due to server-side change
+[00:51:26.219] Browser LOG     Refreshing page data due to server-side change
+[00:51:26.219] Browser ERROR   uncaughtError: ReferenceError: useEffect is not defined
+[00:51:26.219] Browser ERROR   uncaughtError: ReferenceError: useEffect is not defined
+[00:51:26.219] Browser ERROR   The above error occurred in the <App> component:
+
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:32:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:51:26.219] Browser LOG     Refreshing page data due to server-side change
+[00:51:26.219] Browser ERROR   uncaughtError: ReferenceError: useEffect is not defined
+[00:51:26.219] Browser ERROR   uncaughtError: ReferenceError: useEffect is not defined
+[00:51:26.219] Browser ERROR   The above error occurred in the <App> component:
+
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:32:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:51:35.525] Browser ERROR   uncaughtError: ReferenceError: initCache is not defined
+[00:51:35.525] Browser ERROR   uncaughtError: ReferenceError: initCache is not defined
+[00:51:35.525] Browser ERROR   The above error occurred in the <App> component:
+
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:35:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:51:35.525] Browser ERROR   The above error occurred in the <App> component:
+
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:35:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:51:35.525] Browser LOG     Refreshing page data due to server-side change
+[00:51:35.525] Browser ERROR   uncaughtError: ReferenceError: initCache is not defined
+[00:51:35.525] Browser ERROR   uncaughtError: ReferenceError: initCache is not defined
+[00:51:35.525] Browser ERROR   The above error occurred in the <App> component:
+
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:35:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:51:35.525] Browser ERROR   The above error occurred in the <App> component:
+
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:35:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:51:35.525] Browser LOG     Refreshing page data due to server-side change
+[00:51:45.211] Browser LOG     Refreshing page data due to server-side change
+[00:54:03.209] Browser LOG     Refreshing page data due to server-side change
+[00:54:03.209] Browser ERROR   uncaughtError: ReferenceError: initProductCache is not defined
+[00:54:03.209] Browser ERROR   The above error occurred in the <App> component:
+
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:37:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:54:03.209] Browser LOG     Refreshing page data due to server-side change
+[00:54:03.209] Browser ERROR   uncaughtError: ReferenceError: initProductCache is not defined
+[00:54:03.209] Browser ERROR   The above error occurred in the <App> component:
+
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:37:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:54:15.248] Browser ERROR   uncaughtError: TypeError: (0 , _lib_cache__WEBPACK_IMPORTED_MODULE_7__.initProductCache) is not a function
+[00:54:15.248] Browser ERROR   uncaughtError: TypeError: (0 , _lib_cache__WEBPACK_IMPORTED_MODULE_7__.initProductCache) is not a function
+[00:54:15.248] Browser ERROR   The above error occurred in the <App> component:
+
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:37:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:54:15.248] Browser ERROR   The above error occurred in the <App> component:
+
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:37:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:54:15.248] Browser ERROR   uncaughtError: TypeError: (0 , _lib_cache__WEBPACK_IMPORTED_MODULE_7__.initProductCache) is not a function
+[00:54:15.248] Browser ERROR   uncaughtError: TypeError: (0 , _lib_cache__WEBPACK_IMPORTED_MODULE_7__.initProductCache) is not a function
+[00:54:15.248] Browser ERROR   The above error occurred in the <App> component:
+
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:37:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:54:15.248] Browser ERROR   The above error occurred in the <App> component:
+
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:37:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:54:16.214] Browser LOG     Refreshing page data due to server-side change
+[00:54:16.215] Browser LOG     Refreshing page data due to server-side change
+[00:54:26.646] Server  ERROR    ⨯ ./src/pages/product-page/product-page.jsx:16:1
+Module not found: Can't resolve '../lib/cache'
+  14 | import DoneIcon from "@mui/icons-material/Done";
+  15 | import { RecommendedCarousel } from "../../components/carousel";
+> 16 | import { initProductCache } from "../lib/cache";
+     | ^
+  17 | import styles from "./product-page.module.css";
+  18 |
+  19 | export const ProductPage = () => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/pages/product-page/index.js
+./pages/app/[id].js
+[00:54:27.218] Browser ERROR   ./src/pages/product-page/product-page.jsx:16:1
+Module not found: Can't resolve '../lib/cache'
+  14 | import DoneIcon from "@mui/icons-material/Done";
+  15 | import { RecommendedCarousel } from "../../components/carousel";
+> 16 | import { initProductCache } from "../lib/cache";
+     | ^
+  17 | import styles from "./product-page.module.css";
+  18 |
+  19 | export const ProductPage = () => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/pages/product-page/index.js
+./pages/app/[id].js
+[00:54:27.218] Browser ERROR   ./src/pages/product-page/product-page.jsx:16:1
+Module not found: Can't resolve '../lib/cache'
+  14 | import DoneIcon from "@mui/icons-material/Done";
+  15 | import { RecommendedCarousel } from "../../components/carousel";
+> 16 | import { initProductCache } from "../lib/cache";
+     | ^
+  17 | import styles from "./product-page.module.css";
+  18 |
+  19 | export const ProductPage = () => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/pages/product-page/index.js
+./pages/app/[id].js
+[00:55:21.432] Browser ERROR   ./src/pages/product-page/product-page.jsx:16:1
+Module not found: Can't resolve '../lib/cache'
+  14 | import DoneIcon from "@mui/icons-material/Done";
+  15 | import { RecommendedCarousel } from "../../components/carousel";
+> 16 | import { initProductCache } from "../lib/cache";
+     | ^
+  17 | import styles from "./product-page.module.css";
+  18 |
+  19 | export const ProductPage = () => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/pages/product-page/index.js
+./pages/app/[id].js
+[00:55:21.432] Browser ERROR   uncaughtError: TypeError: (0 , _lib_cache__WEBPACK_IMPORTED_MODULE_7__.initProductCache) is not a function
+[00:55:21.432] Browser ERROR   uncaughtError: TypeError: (0 , _lib_cache__WEBPACK_IMPORTED_MODULE_7__.initProductCache) is not a function
+[00:55:21.432] Browser ERROR   The above error occurred in the <App> component:
+
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:37:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:55:21.432] Browser ERROR   The above error occurred in the <App> component:
+
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:37:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:55:21.433] Browser ERROR   ./src/pages/product-page/product-page.jsx:16:1
+Module not found: Can't resolve '../lib/cache'
+  14 | import DoneIcon from "@mui/icons-material/Done";
+  15 | import { RecommendedCarousel } from "../../components/carousel";
+> 16 | import { initProductCache } from "../lib/cache";
+     | ^
+  17 | import styles from "./product-page.module.css";
+  18 |
+  19 | export const ProductPage = () => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/pages/product-page/index.js
+./pages/app/[id].js
+[00:55:21.433] Browser ERROR   uncaughtError: TypeError: (0 , _lib_cache__WEBPACK_IMPORTED_MODULE_7__.initProductCache) is not a function
+[00:55:21.433] Browser ERROR   uncaughtError: TypeError: (0 , _lib_cache__WEBPACK_IMPORTED_MODULE_7__.initProductCache) is not a function
+[00:55:21.433] Browser ERROR   The above error occurred in the <App> component:
+
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:37:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:55:21.433] Browser ERROR   The above error occurred in the <App> component:
+
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:37:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:55:44.210] Browser ERROR   uncaughtError: TypeError: (0 , _lib_cache__WEBPACK_IMPORTED_MODULE_7__.initProductCache) is not a function
+[00:55:44.210] Browser ERROR   uncaughtError: TypeError: (0 , _lib_cache__WEBPACK_IMPORTED_MODULE_7__.initProductCache) is not a function
+[00:55:44.210] Browser ERROR   The above error occurred in the <App> component:
+
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:37:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:55:44.210] Browser ERROR   The above error occurred in the <App> component:
+
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:37:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:55:44.210] Browser ERROR   uncaughtError: TypeError: (0 , _lib_cache__WEBPACK_IMPORTED_MODULE_7__.initProductCache) is not a function
+[00:55:44.210] Browser ERROR   uncaughtError: TypeError: (0 , _lib_cache__WEBPACK_IMPORTED_MODULE_7__.initProductCache) is not a function
+[00:55:44.210] Browser ERROR   The above error occurred in the <App> component:
+
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:37:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:55:44.210] Browser ERROR   The above error occurred in the <App> component:
+
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:37:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:55:55.186] Server  ERROR    ⨯ ./lib/cache.js:6:1
+Module not found: Can't resolve '../data/allProducts'
+  4 | // frontend/lib/productCache.js
+  5 |
+> 6 | import allProducts from "../data/allProducts";
+    | ^
+  7 |
+  8 | // Инициализация кэша при первом запуске
+  9 | export const initProductCache = () => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./pages/_app.js
+[00:55:55.219] Browser ERROR   ./lib/cache.js:6:1
+Module not found: Can't resolve '../data/allProducts'
+  4 | // frontend/lib/productCache.js
+  5 |
+> 6 | import allProducts from "../data/allProducts";
+    | ^
+  7 |
+  8 | // Инициализация кэша при первом запуске
+  9 | export const initProductCache = () => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./pages/_app.js
+[00:55:55.220] Browser ERROR   ./lib/cache.js:6:1
+Module not found: Can't resolve '../data/allProducts'
+  4 | // frontend/lib/productCache.js
+  5 |
+> 6 | import allProducts from "../data/allProducts";
+    | ^
+  7 |
+  8 | // Инициализация кэша при первом запуске
+  9 | export const initProductCache = () => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./pages/_app.js
+[00:56:01.344] Server  ERROR    ⨯ ./lib/cache.js:6:1
+Module not found: Can't resolve '../data/allProducts'
+  4 | // frontend/lib/productCache.js
+  5 |
+> 6 | import allProducts from "../data/allProducts";
+    | ^
+  7 |
+  8 | // Инициализация кэша при первом запуске
+  9 | export const initProductCache = () => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./pages/_app.js
+[00:56:02.210] Browser ERROR   ./lib/cache.js:6:1
+Module not found: Can't resolve '../data/allProducts'
+  4 | // frontend/lib/productCache.js
+  5 |
+> 6 | import allProducts from "../data/allProducts";
+    | ^
+  7 |
+  8 | // Инициализация кэша при первом запуске
+  9 | export const initProductCache = () => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./pages/_app.js
+[00:56:02.210] Browser ERROR   ./lib/cache.js:6:1
+Module not found: Can't resolve '../data/allProducts'
+  4 | // frontend/lib/productCache.js
+  5 |
+> 6 | import allProducts from "../data/allProducts";
+    | ^
+  7 |
+  8 | // Инициализация кэша при первом запуске
+  9 | export const initProductCache = () => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./pages/_app.js
+[00:56:02.210] Browser ERROR   ./lib/cache.js:6:1
+Module not found: Can't resolve '../data/allProducts'
+  4 | // frontend/lib/productCache.js
+  5 |
+> 6 | import allProducts from "../data/allProducts";
+    | ^
+  7 |
+  8 | // Инициализация кэша при первом запуске
+  9 | export const initProductCache = () => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./pages/_app.js
+[00:56:02.210] Browser ERROR   ./lib/cache.js:6:1
+Module not found: Can't resolve '../data/allProducts'
+  4 | // frontend/lib/productCache.js
+  5 |
+> 6 | import allProducts from "../data/allProducts";
+    | ^
+  7 |
+  8 | // Инициализация кэша при первом запуске
+  9 | export const initProductCache = () => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./pages/_app.js
+[00:56:12.569] Server  ERROR    ⨯ ./lib/cache.js:7:1
+Module not found: Can't resolve '../data/allProducts'
+   5 | // frontend/lib/productCache.js
+   6 |
+>  7 | import allProducts from "../data/allProducts";
+     | ^
+   8 |
+   9 | // Инициализация кэша при первом запуске
+  10 | export const initProductCache = () => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./pages/_app.js
+[00:56:13.209] Browser ERROR   ./lib/cache.js:6:1
+Module not found: Can't resolve '../data/allProducts'
+  4 | // frontend/lib/productCache.js
+  5 |
+> 6 | import allProducts from "../data/allProducts";
+    | ^
+  7 |
+  8 | // Инициализация кэша при первом запуске
+  9 | export const initProductCache = () => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./pages/_app.js
+[00:56:13.209] Browser ERROR   ./lib/cache.js:7:1
+Module not found: Can't resolve '../data/allProducts'
+   5 | // frontend/lib/productCache.js
+   6 |
+>  7 | import allProducts from "../data/allProducts";
+     | ^
+   8 |
+   9 | // Инициализация кэша при первом запуске
+  10 | export const initProductCache = () => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./pages/_app.js
+[00:56:13.209] Browser ERROR   ./lib/cache.js:6:1
+Module not found: Can't resolve '../data/allProducts'
+  4 | // frontend/lib/productCache.js
+  5 |
+> 6 | import allProducts from "../data/allProducts";
+    | ^
+  7 |
+  8 | // Инициализация кэша при первом запуске
+  9 | export const initProductCache = () => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./pages/_app.js
+[00:56:13.209] Browser ERROR   ./lib/cache.js:7:1
+Module not found: Can't resolve '../data/allProducts'
+   5 | // frontend/lib/productCache.js
+   6 |
+>  7 | import allProducts from "../data/allProducts";
+     | ^
+   8 |
+   9 | // Инициализация кэша при первом запуске
+  10 | export const initProductCache = () => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./pages/_app.js
+[00:56:25.798] Server  ERROR    ⨯ ./lib/cache.js:8:1
+Module not found: Can't resolve '../data/allProducts'
+   6 | // frontend/lib/productCache.js
+   7 |
+>  8 | import allProducts from "../data/allProducts";
+     | ^
+   9 |
+  10 | // Инициализация кэша при первом запуске
+  11 | export const initProductCache = () => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./pages/_app.js
+[00:56:26.218] Browser ERROR   ./lib/cache.js:7:1
+Module not found: Can't resolve '../data/allProducts'
+   5 | // frontend/lib/productCache.js
+   6 |
+>  7 | import allProducts from "../data/allProducts";
+     | ^
+   8 |
+   9 | // Инициализация кэша при первом запуске
+  10 | export const initProductCache = () => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./pages/_app.js
+[00:56:26.218] Browser ERROR   ./lib/cache.js:8:1
+Module not found: Can't resolve '../data/allProducts'
+   6 | // frontend/lib/productCache.js
+   7 |
+>  8 | import allProducts from "../data/allProducts";
+     | ^
+   9 |
+  10 | // Инициализация кэша при первом запуске
+  11 | export const initProductCache = () => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./pages/_app.js
+[00:56:26.218] Browser ERROR   ./lib/cache.js:8:1
+Module not found: Can't resolve '../data/allProducts'
+   6 | // frontend/lib/productCache.js
+   7 |
+>  8 | import allProducts from "../data/allProducts";
+     | ^
+   9 |
+  10 | // Инициализация кэша при первом запуске
+  11 | export const initProductCache = () => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./pages/_app.js
+[00:56:26.218] Browser ERROR   ./lib/cache.js:7:1
+Module not found: Can't resolve '../data/allProducts'
+   5 | // frontend/lib/productCache.js
+   6 |
+>  7 | import allProducts from "../data/allProducts";
+     | ^
+   8 |
+   9 | // Инициализация кэша при первом запуске
+  10 | export const initProductCache = () => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./pages/_app.js
+[00:56:26.219] Browser ERROR   ./lib/cache.js:8:1
+Module not found: Can't resolve '../data/allProducts'
+   6 | // frontend/lib/productCache.js
+   7 |
+>  8 | import allProducts from "../data/allProducts";
+     | ^
+   9 |
+  10 | // Инициализация кэша при первом запуске
+  11 | export const initProductCache = () => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./pages/_app.js
+[00:56:26.219] Browser ERROR   ./lib/cache.js:8:1
+Module not found: Can't resolve '../data/allProducts'
+   6 | // frontend/lib/productCache.js
+   7 |
+>  8 | import allProducts from "../data/allProducts";
+     | ^
+   9 |
+  10 | // Инициализация кэша при первом запуске
+  11 | export const initProductCache = () => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./pages/_app.js
+[00:56:28.216] Browser ERROR   ./lib/cache.js:8:1
+Module not found: Can't resolve '../data/allProducts'
+   6 | // frontend/lib/productCache.js
+   7 |
+>  8 | import allProducts from "../data/allProducts";
+     | ^
+   9 |
+  10 | // Инициализация кэша при первом запуске
+  11 | export const initProductCache = () => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./pages/_app.js
+[00:56:28.216] Browser ERROR   ./lib/cache.js:8:1
+Module not found: Can't resolve '../data/allProducts'
+   6 | // frontend/lib/productCache.js
+   7 |
+>  8 | import allProducts from "../data/allProducts";
+     | ^
+   9 |
+  10 | // Инициализация кэша при первом запуске
+  11 | export const initProductCache = () => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./pages/_app.js
+[00:56:29.755] Server  ERROR    ⨯ ./lib/cache.js:7:1
+Module not found: Can't resolve '../data/allProducts'
+   5 | import { RENT_SKY } from "../src/components/product-range/rent-sky";
+   6 |
+>  7 | import allProducts from "../data/allProducts";
+     | ^
+   8 |
+   9 | // Инициализация кэша при первом запуске
+  10 | export const initProductCache = () => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./pages/_app.js
+[00:56:30.210] Browser ERROR   ./lib/cache.js:8:1
+Module not found: Can't resolve '../data/allProducts'
+   6 | // frontend/lib/productCache.js
+   7 |
+>  8 | import allProducts from "../data/allProducts";
+     | ^
+   9 |
+  10 | // Инициализация кэша при первом запуске
+  11 | export const initProductCache = () => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./pages/_app.js
+[00:56:30.210] Browser ERROR   ./lib/cache.js:7:1
+Module not found: Can't resolve '../data/allProducts'
+   5 | import { RENT_SKY } from "../src/components/product-range/rent-sky";
+   6 |
+>  7 | import allProducts from "../data/allProducts";
+     | ^
+   8 |
+   9 | // Инициализация кэша при первом запуске
+  10 | export const initProductCache = () => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./pages/_app.js
+[00:56:30.210] Browser ERROR   ./lib/cache.js:7:1
+Module not found: Can't resolve '../data/allProducts'
+   5 | import { RENT_SKY } from "../src/components/product-range/rent-sky";
+   6 |
+>  7 | import allProducts from "../data/allProducts";
+     | ^
+   8 |
+   9 | // Инициализация кэша при первом запуске
+  10 | export const initProductCache = () => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./pages/_app.js
+[00:56:30.210] Browser ERROR   ./lib/cache.js:8:1
+Module not found: Can't resolve '../data/allProducts'
+   6 | // frontend/lib/productCache.js
+   7 |
+>  8 | import allProducts from "../data/allProducts";
+     | ^
+   9 |
+  10 | // Инициализация кэша при первом запуске
+  11 | export const initProductCache = () => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./pages/_app.js
+[00:56:30.210] Browser ERROR   ./lib/cache.js:7:1
+Module not found: Can't resolve '../data/allProducts'
+   5 | import { RENT_SKY } from "../src/components/product-range/rent-sky";
+   6 |
+>  7 | import allProducts from "../data/allProducts";
+     | ^
+   8 |
+   9 | // Инициализация кэша при первом запуске
+  10 | export const initProductCache = () => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./pages/_app.js
+[00:56:30.210] Browser ERROR   ./lib/cache.js:7:1
+Module not found: Can't resolve '../data/allProducts'
+   5 | import { RENT_SKY } from "../src/components/product-range/rent-sky";
+   6 |
+>  7 | import allProducts from "../data/allProducts";
+     | ^
+   8 |
+   9 | // Инициализация кэша при первом запуске
+  10 | export const initProductCache = () => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./pages/_app.js
+[00:56:33.241] Browser ERROR   ./lib/cache.js:7:1
+Module not found: Can't resolve '../data/allProducts'
+   5 | import { RENT_SKY } from "../src/components/product-range/rent-sky";
+   6 |
+>  7 | import allProducts from "../data/allProducts";
+     | ^
+   8 |
+   9 | // Инициализация кэша при первом запуске
+  10 | export const initProductCache = () => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./pages/_app.js
+[00:56:33.241] Browser ERROR   uncaughtError: ReferenceError: allProducts is not defined
+[00:56:33.241] Browser ERROR   uncaughtError: ReferenceError: allProducts is not defined
+[00:56:33.241] Browser ERROR   The above error occurred in the <App> component:
+
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:37:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:56:33.241] Browser ERROR   The above error occurred in the <App> component:
+
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:37:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:56:33.241] Browser LOG     Refreshing page data due to server-side change
+[00:56:33.243] Browser ERROR   ./lib/cache.js:7:1
+Module not found: Can't resolve '../data/allProducts'
+   5 | import { RENT_SKY } from "../src/components/product-range/rent-sky";
+   6 |
+>  7 | import allProducts from "../data/allProducts";
+     | ^
+   8 |
+   9 | // Инициализация кэша при первом запуске
+  10 | export const initProductCache = () => {
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./pages/_app.js
+[00:56:33.243] Browser ERROR   uncaughtError: ReferenceError: allProducts is not defined
+[00:56:33.243] Browser ERROR   uncaughtError: ReferenceError: allProducts is not defined
+[00:56:33.243] Browser ERROR   The above error occurred in the <App> component:
+
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:37:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:56:33.243] Browser ERROR   The above error occurred in the <App> component:
+
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:37:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:57:00.219] Browser LOG     Refreshing page data due to server-side change
+[00:57:00.220] Browser LOG     Refreshing page data due to server-side change
+[00:57:08.817] Browser WARN    Image with src "/img/14.41.19.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:08.817] Browser WARN    Image with src "/img/BTRACE_ZERO_L.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:08.817] Browser WARN    Image with src "/img/backpackBlack17L.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:08.817] Browser WARN    Image with src "/img/folga-paraloni.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:08.817] Browser WARN    Image with src "/img/098764567890.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:08.817] Browser WARN    Image with src "/img/raincoat.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:08.817] Browser WARN    Image with src "/img/gas-flame.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:08.817] Browser WARN    Image with src "/img/33aafde2567a999fdb086b8664e299b2.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:08.817] Browser WARN    Image with src "/img/17.04.49.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:08.817] Browser WARN    Image with src "/img/s21sx162-21-oz-standard-flex-cap-fossil-straight.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:08.817] Browser WARN    Image with src "/img/7d57252c-3335-409f-a1c0-ddd13a6e1d6a.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:08.817] Browser WARN    Image with src "/img/8dcd-aede1cf3ab55.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:08.817] Browser WARN    Image with src "/img/202322.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:08.817] Browser WARN    Image with src "/img/6955_big.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:08.817] Browser WARN    Image with src "/img/binoculars.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:08.817] Browser WARN    Image with src "/img/orig4211.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:08.817] Browser WARN    Image with src "/img/hammock.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:08.817] Browser WARN    Image with src "/img/picture32.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:08.817] Browser WARN    Image with src "/img/podushka-comfort-dlya-kempingu.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:08.817] Browser WARN    Image with src "/img/110000428237905.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:08.817] Browser WARN    Image with src "/img/1_org_zoom323.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:08.817] Browser WARN    Image with src "/img/23.11.40.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:08.817] Browser WARN    Image with src "/img/ukrainian-borscht-front.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:10.408] Browser ERROR   Warning: validateDOMNesting(...): %s cannot appear as a descendant of <%s>.%s <button> button 
+    at button
+    at Button (webpack-internal:///(pages-dir-browser)/./src/components/button/button.js:14:19)
+    at div
+    at div
+    at div
+    at Buy (webpack-internal:///(pages-dir-browser)/./src/components/buy/buy.js:23:16)
+    at div
+    at div
+    at ProductItems (webpack-internal:///(pages-dir-browser)/./src/components/product-items/product-items.js:27:25)
+    at button
+    at eval (webpack-internal:///(pages-dir-browser)/./node_modules/@emotion/react/dist/emotion-element-489459f2.browser.development.esm.js:55:66)
+    at ButtonBase (webpack-internal:///(pages-dir-browser)/./node_modules/@mui/material/esm/ButtonBase/ButtonBase.js:100:98)
+    at eval (webpack-internal:///(pages-dir-browser)/./node_modules/@emotion/react/dist/emotion-element-489459f2.browser.development.esm.js:55:66)
+    at CardActionArea (webpack-internal:///(pages-dir-browser)/./node_modules/@mui/material/esm/CardActionArea/CardActionArea.js:79:98)
+    at div
+    at eval (webpack-internal:///(pages-dir-browser)/./node_modules/@emotion/react/dist/emotion-element-489459f2.browser.development.esm.js:55:66)
+    at Paper (webpack-internal:///(pages-dir-browser)/./node_modules/@mui/material/esm/Paper/Paper.js:88:98)
+    at eval (webpack-internal:///(pages-dir-browser)/./node_modules/@emotion/react/dist/emotion-element-489459f2.browser.development.esm.js:55:66)
+    at Card (webpack-internal:///(pages-dir-browser)/./node_modules/@mui/material/esm/Card/Card.js:43:98)
+    at div
+    at div
+    at div
+    at SaleCategoryPage (webpack-internal:///(pages-dir-browser)/./src/components/sale-category-page/sale-category-page.js:33:29)
+    at div
+    at div
+    at div
+    at div
+    at SalePage (webpack-internal:///(pages-dir-browser)/./src/components/sale-page/sale-page.js:36:21)
+    at SaleSlug (webpack-internal:///(pages-dir-browser)/./pages/sale/[...slug].js:18:74)
+    at main
+    at Provider (webpack-internal:///(pages-dir-browser)/./node_modules/react-redux/es/components/Provider.js:16:3)
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:37:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+[00:57:10.408] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:57:10.408] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:57:10.408] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:57:10.616] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:57:27.580] Browser WARN    Image with src "/img/14.41.19.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:27.580] Browser WARN    Image with src "/img/BTRACE_ZERO_L.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:27.580] Browser WARN    Image with src "/img/backpackBlack17L.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:27.580] Browser WARN    Image with src "/img/folga-paraloni.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:27.580] Browser WARN    Image with src "/img/098764567890.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:27.580] Browser WARN    Image with src "/img/raincoat.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:27.580] Browser WARN    Image with src "/img/gas-flame.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:27.580] Browser WARN    Image with src "/img/33aafde2567a999fdb086b8664e299b2.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:27.580] Browser WARN    Image with src "/img/17.04.49.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:27.580] Browser WARN    Image with src "/img/s21sx162-21-oz-standard-flex-cap-fossil-straight.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:27.580] Browser WARN    Image with src "/img/7d57252c-3335-409f-a1c0-ddd13a6e1d6a.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:27.580] Browser WARN    Image with src "/img/8dcd-aede1cf3ab55.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:27.580] Browser WARN    Image with src "/img/202322.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:27.580] Browser WARN    Image with src "/img/6955_big.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:27.580] Browser WARN    Image with src "/img/binoculars.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:27.580] Browser WARN    Image with src "/img/orig4211.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:27.580] Browser WARN    Image with src "/img/hammock.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:27.580] Browser WARN    Image with src "/img/picture32.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:27.580] Browser WARN    Image with src "/img/podushka-comfort-dlya-kempingu.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:27.580] Browser WARN    Image with src "/img/110000428237905.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:27.580] Browser WARN    Image with src "/img/1_org_zoom323.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:27.580] Browser WARN    Image with src "/img/23.11.40.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:27.580] Browser WARN    Image with src "/img/ukrainian-borscht-front.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:57:29.714] Browser ERROR   Warning: validateDOMNesting(...): %s cannot appear as a descendant of <%s>.%s <button> button 
+    at button
+    at Button (webpack-internal:///(pages-dir-browser)/./src/components/button/button.js:14:19)
+    at div
+    at div
+    at div
+    at Buy (webpack-internal:///(pages-dir-browser)/./src/components/buy/buy.js:23:16)
+    at div
+    at div
+    at ProductItems (webpack-internal:///(pages-dir-browser)/./src/components/product-items/product-items.js:27:25)
+    at button
+    at eval (webpack-internal:///(pages-dir-browser)/./node_modules/@emotion/react/dist/emotion-element-489459f2.browser.development.esm.js:55:66)
+    at ButtonBase (webpack-internal:///(pages-dir-browser)/./node_modules/@mui/material/esm/ButtonBase/ButtonBase.js:100:98)
+    at eval (webpack-internal:///(pages-dir-browser)/./node_modules/@emotion/react/dist/emotion-element-489459f2.browser.development.esm.js:55:66)
+    at CardActionArea (webpack-internal:///(pages-dir-browser)/./node_modules/@mui/material/esm/CardActionArea/CardActionArea.js:79:98)
+    at div
+    at eval (webpack-internal:///(pages-dir-browser)/./node_modules/@emotion/react/dist/emotion-element-489459f2.browser.development.esm.js:55:66)
+    at Paper (webpack-internal:///(pages-dir-browser)/./node_modules/@mui/material/esm/Paper/Paper.js:88:98)
+    at eval (webpack-internal:///(pages-dir-browser)/./node_modules/@emotion/react/dist/emotion-element-489459f2.browser.development.esm.js:55:66)
+    at Card (webpack-internal:///(pages-dir-browser)/./node_modules/@mui/material/esm/Card/Card.js:43:98)
+    at div
+    at div
+    at div
+    at SaleCategoryPage (webpack-internal:///(pages-dir-browser)/./src/components/sale-category-page/sale-category-page.js:33:29)
+    at div
+    at div
+    at div
+    at div
+    at SalePage (webpack-internal:///(pages-dir-browser)/./src/components/sale-page/sale-page.js:36:21)
+    at SaleSlug (webpack-internal:///(pages-dir-browser)/./pages/sale/[...slug].js:18:74)
+    at main
+    at Provider (webpack-internal:///(pages-dir-browser)/./node_modules/react-redux/es/components/Provider.js:16:3)
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:37:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+[00:57:29.714] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:57:29.714] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:57:29.714] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:57:29.904] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:57:33.704] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:57:33.704] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:57:33.704] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:57:33.878] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:57:37.052] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:57:37.052] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:57:37.052] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:57:37.274] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:58:01.211] Browser LOG     Refreshing page data due to server-side change
+[00:58:01.211] Browser LOG     Refreshing page data due to server-side change
+[00:58:01.211] Browser LOG     Refreshing page data due to server-side change
+[00:58:01.211] Browser LOG     Refreshing page data due to server-side change
+[00:58:04.205] Browser LOG     Refreshing page data due to server-side change
+[00:58:04.220] Browser LOG     Refreshing page data due to server-side change
+[00:58:04.220] Browser LOG     Refreshing page data due to server-side change
+[00:58:04.220] Browser LOG     Refreshing page data due to server-side change
+[00:58:07.718] Browser WARN    Image with src "/img/tent2Mesuca.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:58:07.718] Browser WARN    Image with src "/img/sleeping_bag_green.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:58:07.718] Browser WARN    Image with src "/img/IMG_8135.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:58:07.718] Browser WARN    Image with src "/img/9858034f125a76b5679055e7b28c27aa.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:58:07.718] Browser WARN    Image with src "/img/00.13.37.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:58:07.718] Browser WARN    Image with src "/img/adapter.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:58:07.718] Browser WARN    Image with src "/img/product_1207_1.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:58:07.718] Browser WARN    Image with src "/img/sitting_DECATHLON.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:58:07.718] Browser WARN    Image with src "/img/VERTEXVENT.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:58:07.718] Browser WARN    Image with src "/img/18a131f8-02f0-47bc-b2a5-88b58d52642d.438bc7c551289ad8284aa8b118c9bc5a.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:58:07.718] Browser WARN    Image with src "/img/xiaomi-redmi-fast-charge-power-bank-20000-mah-18w.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:58:09.083] Browser ERROR   Warning: validateDOMNesting(...): %s cannot appear as a descendant of <%s>.%s <button> button 
+    at button
+    at Button (webpack-internal:///(pages-dir-browser)/./src/components/button/button.js:14:19)
+    at div
+    at div
+    at div
+    at Buy (webpack-internal:///(pages-dir-browser)/./src/components/buy/buy.js:23:16)
+    at div
+    at div
+    at ProductItems (webpack-internal:///(pages-dir-browser)/./src/components/product-items/product-items.js:27:25)
+    at button
+    at eval (webpack-internal:///(pages-dir-browser)/./node_modules/@emotion/react/dist/emotion-element-489459f2.browser.development.esm.js:55:66)
+    at ButtonBase (webpack-internal:///(pages-dir-browser)/./node_modules/@mui/material/esm/ButtonBase/ButtonBase.js:100:98)
+    at eval (webpack-internal:///(pages-dir-browser)/./node_modules/@emotion/react/dist/emotion-element-489459f2.browser.development.esm.js:55:66)
+    at CardActionArea (webpack-internal:///(pages-dir-browser)/./node_modules/@mui/material/esm/CardActionArea/CardActionArea.js:79:98)
+    at div
+    at eval (webpack-internal:///(pages-dir-browser)/./node_modules/@emotion/react/dist/emotion-element-489459f2.browser.development.esm.js:55:66)
+    at Paper (webpack-internal:///(pages-dir-browser)/./node_modules/@mui/material/esm/Paper/Paper.js:88:98)
+    at eval (webpack-internal:///(pages-dir-browser)/./node_modules/@emotion/react/dist/emotion-element-489459f2.browser.development.esm.js:55:66)
+    at Card (webpack-internal:///(pages-dir-browser)/./node_modules/@mui/material/esm/Card/Card.js:43:98)
+    at div
+    at div
+    at div
+    at RentCategoryPage (webpack-internal:///(pages-dir-browser)/./src/components/rent-category-page/rent-category-page.js:35:29)
+    at div
+    at div
+    at div
+    at div
+    at RentPage (webpack-internal:///(pages-dir-browser)/./src/pages/rent-page/rent-page.js:38:21)
+    at RentSlug (webpack-internal:///(pages-dir-browser)/./pages/rent/[...slug].js:18:74)
+    at main
+    at Provider (webpack-internal:///(pages-dir-browser)/./node_modules/react-redux/es/components/Provider.js:16:3)
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:37:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+[00:58:09.083] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:58:09.083] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:58:09.083] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:58:09.242] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:58:29.219] Browser LOG     Refreshing page data due to server-side change
+[00:58:29.219] Browser LOG     Refreshing page data due to server-side change
+[00:58:29.219] Browser LOG     Refreshing page data due to server-side change
+[00:58:29.219] Browser LOG     Refreshing page data due to server-side change
+[00:58:29.219] Browser LOG     Refreshing page data due to server-side change
+[00:58:57.210] Browser LOG     Refreshing page data due to server-side change
+[00:58:57.210] Browser LOG     Refreshing page data due to server-side change
+[00:58:57.210] Browser LOG     Refreshing page data due to server-side change
+[00:58:57.210] Browser LOG     Refreshing page data due to server-side change
+[00:58:57.211] Browser LOG     Refreshing page data due to server-side change

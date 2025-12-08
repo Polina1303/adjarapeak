@@ -61,10 +61,11 @@ export const RecommendedCarousel = ({ products }) => {
         className={styles["my-swiper"]}
       >
         {products.map((item) => (
-          <SwiperSlide key={item.id}>
-            <div onClick={() => router.push(`/app/${item.id}`)}>
-              <ProductItems product={item} />
-            </div>
+          <SwiperSlide
+            key={item.id}
+            onClick={() => router.push(`/app/${item.id}`)}
+          >
+            <ProductItems product={item} />
           </SwiperSlide>
         ))}
       </Swiper>

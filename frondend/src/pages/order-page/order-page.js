@@ -1,17 +1,15 @@
 import { useSelector } from "react-redux";
 import { useState, useCallback } from "react";
 import { useRouter } from "next/router";
+import { Typography } from "@mui/material";
 import { calcTotalPrice, enumerate } from "../../components/utils";
 import { IoIosArrowBack } from "react-icons/io";
 import { MdLocationPin } from "react-icons/md";
 import { OrderItem } from "../../components/order-item";
 import { OrderInput } from "../../components/order-input/order-input";
 import { PRODUCT } from "../../components/product-range/product";
-import { SPORT_PRODUCT } from "../../components/product-range/sportProduct";
 import { RENT } from "../../components/product-range/rent";
-import { SEA_PRODUCT } from "../../components/product-range/sea-product";
-import { FOOD } from "../../components/product-range/food";
-import { CLOTHES } from "../../components/product-range/clothes";
+import { RENT_SKY } from "../../components/product-range/rent-sky";
 import { RecommendedCarousel } from "../../components/carousel";
 import styles from "./order-page.module.css";
 
@@ -22,14 +20,9 @@ export const OrderPage = () => {
   const getRecommendedProducts = useCallback(() => {
     if (!items) return [];
 
-    const allProducts = [
-      ...PRODUCT,
-      ...SPORT_PRODUCT,
-      ...RENT,
-      ...SEA_PRODUCT,
-      ...FOOD,
-      ...CLOTHES,
-    ].filter((p) => p.id !== items.id);
+    const allProducts = [...PRODUCT, ...RENT, ...RENT_SKY].filter(
+      (p) => p.id !== items.id
+    );
 
     const shuffled = allProducts.sort(() => Math.random() - 0.5);
 
@@ -113,7 +106,18 @@ export const OrderPage = () => {
           <OrderInput setOrderSuccess={setOrderSuccess} items={items} />
         </div>
       </div>
-      <RecommendedCarousel products={recommendedProducts} />
+      {/* <Typography
+        variant="h5"
+        component="h3"
+        className={styles["product-related-title"]}
+        sx={{
+          fontFamily: "RoadRadio-Bold, sans-serif",
+          marginBottom: "10px",
+        }}
+      >
+        С этим товаром покупают
+      </Typography>
+      <RecommendedCarousel products={recommendedProducts} /> */}
     </div>
   );
 };
