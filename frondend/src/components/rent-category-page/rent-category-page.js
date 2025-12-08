@@ -1,8 +1,8 @@
 "use client";
 import { RENT } from "../product-range/rent";
 import { CATEGORY_RENT } from "../product-range/categoryRent";
+import { RENT_SKY } from "../product-range/rent-sky";
 import { useState } from "react";
-
 import Image from "next/image";
 import { ProductItems } from "../product-items";
 import {
@@ -21,7 +21,6 @@ import { useSearchParams, usePathname } from "next/navigation";
 
 import { FormControl, Select, MenuItem, InputLabel } from "@mui/material";
 import styles from "../sale-page/sale-page.module.css";
-import { RENT_SKY } from "../product-range/rent-sky";
 
 export default function RentCategoryPage({ section, type }) {
   const router = useRouter();
@@ -52,7 +51,7 @@ export default function RentCategoryPage({ section, type }) {
   let filteredProducts = [];
 
   if (type) {
-    filteredProducts = [...RENT, RENT_SKY].filter(
+    filteredProducts = [...RENT, ...RENT_SKY].filter(
       (p) => p.type === type || p.category === type
     );
   }
