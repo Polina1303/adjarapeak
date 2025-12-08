@@ -1,30 +1,1425 @@
-[00:00:04.934] Server  LOG      ✓ Ready in 4.4s
-[00:00:08.213] Server  LOG      ○ Compiling /app/[id] ...
-[00:01:33.347] Server  LOG      ○ Compiling /app/[id] ...
-[00:01:41.073] Browser WARN    Image with src "/img/14.41.19.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:41.073] Browser WARN    Image with src "/img/BTRACE_ZERO_L.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:41.073] Browser WARN    Image with src "/img/backpackBlack17L.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:41.073] Browser WARN    Image with src "/img/folga-paraloni.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:41.073] Browser WARN    Image with src "/img/098764567890.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:41.073] Browser WARN    Image with src "/img/raincoat.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:41.073] Browser WARN    Image with src "/img/gas-flame.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:41.074] Browser WARN    Image with src "/img/33aafde2567a999fdb086b8664e299b2.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:41.074] Browser WARN    Image with src "/img/17.04.49.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:41.074] Browser WARN    Image with src "/img/s21sx162-21-oz-standard-flex-cap-fossil-straight.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:41.074] Browser WARN    Image with src "/img/7d57252c-3335-409f-a1c0-ddd13a6e1d6a.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:41.074] Browser WARN    Image with src "/img/8dcd-aede1cf3ab55.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:41.074] Browser WARN    Image with src "/img/202322.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:41.074] Browser WARN    Image with src "/img/6955_big.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:41.074] Browser WARN    Image with src "/img/binoculars.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:41.074] Browser WARN    Image with src "/img/orig4211.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:41.074] Browser WARN    Image with src "/img/hammock.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:41.074] Browser WARN    Image with src "/img/picture32.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:41.074] Browser WARN    Image with src "/img/podushka-comfort-dlya-kempingu.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:41.074] Browser WARN    Image with src "/img/110000428237905.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:41.074] Browser WARN    Image with src "/img/1_org_zoom323.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:41.074] Browser WARN    Image with src "/img/23.11.40.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:01:41.074] Browser WARN    Image with src "/img/ukrainian-borscht-front.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:02:07.354] Browser ERROR   Warning: validateDOMNesting(...): %s cannot appear as a descendant of <%s>.%s <button> button 
+[00:00:03.075] Server  LOG      ✓ Ready in 2.7s
+[00:00:07.621] Server  LOG      ○ Compiling /app/[id] ...
+[00:00:27.179] Server  LOG      ○ Compiling /sale/[...slug] ...
+[00:00:30.961] Browser WARN    Image with src "/img/14.41.19.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:30.961] Browser WARN    Image with src "/img/BTRACE_ZERO_L.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:30.961] Browser WARN    Image with src "/img/backpackBlack17L.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:30.961] Browser WARN    Image with src "/img/folga-paraloni.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:30.961] Browser WARN    Image with src "/img/098764567890.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:30.961] Browser WARN    Image with src "/img/raincoat.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:30.961] Browser WARN    Image with src "/img/gas-flame.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:30.961] Browser WARN    Image with src "/img/33aafde2567a999fdb086b8664e299b2.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:30.961] Browser WARN    Image with src "/img/17.04.49.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:30.961] Browser WARN    Image with src "/img/s21sx162-21-oz-standard-flex-cap-fossil-straight.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:30.961] Browser WARN    Image with src "/img/7d57252c-3335-409f-a1c0-ddd13a6e1d6a.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:30.961] Browser WARN    Image with src "/img/8dcd-aede1cf3ab55.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:30.961] Browser WARN    Image with src "/img/202322.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:30.961] Browser WARN    Image with src "/img/6955_big.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:30.961] Browser WARN    Image with src "/img/binoculars.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:30.961] Browser WARN    Image with src "/img/orig4211.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:30.962] Browser WARN    Image with src "/img/hammock.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:30.962] Browser WARN    Image with src "/img/picture32.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:30.962] Browser WARN    Image with src "/img/podushka-comfort-dlya-kempingu.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:30.962] Browser WARN    Image with src "/img/110000428237905.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:30.962] Browser WARN    Image with src "/img/1_org_zoom323.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:30.962] Browser WARN    Image with src "/img/23.11.40.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:30.962] Browser WARN    Image with src "/img/ukrainian-borscht-front.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:35.028] Browser WARN    Image with src "/img/19.45.11.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:35.028] Browser WARN    Image with src "/img/19.08.22.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:35.028] Browser WARN    Image with src "/img/19.52.32.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:35.028] Browser WARN    Image with src "/img/IMG_5871.JPG" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:35.028] Browser WARN    Image with src "/img/IMG_5903.PNG" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:35.028] Browser WARN    Image with src "/img/IMG_5870.JPG" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:35.028] Browser WARN    Image with src "/img/IMG_586.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:35.028] Browser WARN    Image with src "/img/IMG_58.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:35.028] Browser WARN    Image with src "/img/IMG_5865-.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:35.028] Browser WARN    Image with src "/img/19.24.57.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:35.028] Browser WARN    Image with src "/img/Gn31w.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:00:36.998] Browser ERROR   Warning: validateDOMNesting(...): %s cannot appear as a descendant of <%s>.%s <button> button 
+    at button
+    at Button (webpack-internal:///(pages-dir-browser)/./src/components/button/button.js:14:19)
+    at div
+    at div
+    at div
+    at Buy (webpack-internal:///(pages-dir-browser)/./src/components/buy/buy.js:23:16)
+    at div
+    at div
+    at ProductItems (webpack-internal:///(pages-dir-browser)/./src/components/product-items/product-items.js:27:25)
+    at button
+    at eval (webpack-internal:///(pages-dir-browser)/./node_modules/@emotion/react/dist/emotion-element-489459f2.browser.development.esm.js:55:66)
+    at ButtonBase (webpack-internal:///(pages-dir-browser)/./node_modules/@mui/material/esm/ButtonBase/ButtonBase.js:100:98)
+    at eval (webpack-internal:///(pages-dir-browser)/./node_modules/@emotion/react/dist/emotion-element-489459f2.browser.development.esm.js:55:66)
+    at CardActionArea (webpack-internal:///(pages-dir-browser)/./node_modules/@mui/material/esm/CardActionArea/CardActionArea.js:79:98)
+    at div
+    at eval (webpack-internal:///(pages-dir-browser)/./node_modules/@emotion/react/dist/emotion-element-489459f2.browser.development.esm.js:55:66)
+    at Paper (webpack-internal:///(pages-dir-browser)/./node_modules/@mui/material/esm/Paper/Paper.js:88:98)
+    at eval (webpack-internal:///(pages-dir-browser)/./node_modules/@emotion/react/dist/emotion-element-489459f2.browser.development.esm.js:55:66)
+    at Card (webpack-internal:///(pages-dir-browser)/./node_modules/@mui/material/esm/Card/Card.js:43:98)
+    at div
+    at div
+    at div
+    at RentCategoryPage (webpack-internal:///(pages-dir-browser)/./src/components/rent-category-page/rent-category-page.js:35:29)
+    at div
+    at div
+    at div
+    at div
+    at RentPage (webpack-internal:///(pages-dir-browser)/./src/pages/rent-page/rent-page.js:38:21)
+    at RentSlug (webpack-internal:///(pages-dir-browser)/./pages/rent/[...slug].js:18:74)
+    at main
+    at Provider (webpack-internal:///(pages-dir-browser)/./node_modules/react-redux/es/components/Provider.js:16:3)
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:37:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+[00:00:36.999] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:00:36.999] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:00:36.999] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:00:36.999] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+Consider providing a value that matches one of the available options or ''.
+The available values are `price-desc`, `price-asc`.
+[00:02:16.642] Server  ERROR    ⨯ ./src/pages/product-page/product-page.jsx
+Error:   × The "use client" directive must be placed before other expressions. Move it to the top of the file to resolve this issue.
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:20:1]
+ 17 │ import { getProductById } from "../../../lib/cache";
+ 18 │ import styles from "./product-page.module.css";
+ 19 │ 
+ 20 │ ("use client");
+    · ───────────────
+ 21 │ export const ProductPage = () => {
+ 22 │   const product = useSelector((state) => state.products.currentProduct);
+ 22 │   const router = useRouter();
+    ╰────
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:02:17.255] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × The "use client" directive must be placed before other expressions. Move it to the top of the file to resolve this issue.
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:20:1]
+ 17 │ import { getProductById } from "../../../lib/cache";
+ 18 │ import styles from "./product-page.module.css";
+ 19 │ 
+ 20 │ ("use client");
+    · ───────────────
+ 21 │ export const ProductPage = () => {
+ 22 │   const product = useSelector((state) => state.products.currentProduct);
+ 22 │   const router = useRouter();
+    ╰────
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:02:17.255] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × The "use client" directive must be placed before other expressions. Move it to the top of the file to resolve this issue.
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:20:1]
+ 17 │ import { getProductById } from "../../../lib/cache";
+ 18 │ import styles from "./product-page.module.css";
+ 19 │ 
+ 20 │ ("use client");
+    · ───────────────
+ 21 │ export const ProductPage = () => {
+ 22 │   const product = useSelector((state) => state.products.currentProduct);
+ 22 │   const router = useRouter();
+    ╰────
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+./pages/app/[id].js
+[00:02:25.259] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × The "use client" directive must be placed before other expressions. Move it to the top of the file to resolve this issue.
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:20:1]
+ 17 │ import { getProductById } from "../../../lib/cache";
+ 18 │ import styles from "./product-page.module.css";
+ 19 │ 
+ 20 │ ("use client");
+    · ───────────────
+ 21 │ export const ProductPage = () => {
+ 22 │   const product = useSelector((state) => state.products.currentProduct);
+ 22 │   const router = useRouter();
+    ╰────
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:09:47.960] Server  WARN     ⚠ You have added a custom /_error page without a custom /404 page. This prevents the 404 page from being auto statically optimized.
+See here for info: https://nextjs.org/docs/messages/custom-error-no-custom-404
+[00:10:03.249] Browser ERROR   uncaughtError: ReferenceError: useRef is not defined
+[00:10:03.249] Browser ERROR   uncaughtError: ReferenceError: useRef is not defined
+[00:10:03.249] Browser ERROR   The above error occurred in the <ProductPage> component:
+
+    at ProductPage (webpack-internal:///(pages-dir-browser)/./src/pages/product-page/product-page.jsx:50:77)
+    at main
+    at Provider (webpack-internal:///(pages-dir-browser)/./node_modules/react-redux/es/components/Provider.js:16:3)
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:37:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:10:03.250] Browser ERROR   uncaughtError: ReferenceError: useRef is not defined
+[00:10:03.250] Browser ERROR   uncaughtError: ReferenceError: useRef is not defined
+[00:10:03.250] Browser ERROR   The above error occurred in the <ProductPage> component:
+
+    at ProductPage (webpack-internal:///(pages-dir-browser)/./src/pages/product-page/product-page.jsx:50:77)
+    at main
+    at Provider (webpack-internal:///(pages-dir-browser)/./node_modules/react-redux/es/components/Provider.js:16:3)
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:37:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:10:03.250] Browser ERROR   uncaughtError: ReferenceError: useRef is not defined
+[00:10:03.250] Browser ERROR   uncaughtError: ReferenceError: useRef is not defined
+[00:10:03.250] Browser ERROR   The above error occurred in the <ProductPage> component:
+
+    at ProductPage (webpack-internal:///(pages-dir-browser)/./src/pages/product-page/product-page.jsx:50:77)
+    at main
+    at Provider (webpack-internal:///(pages-dir-browser)/./node_modules/react-redux/es/components/Provider.js:16:3)
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:37:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:10:03.250] Browser ERROR   uncaughtError: ReferenceError: useRef is not defined
+[00:10:03.250] Browser ERROR   uncaughtError: ReferenceError: useRef is not defined
+[00:10:03.250] Browser ERROR   The above error occurred in the <ProductPage> component:
+
+    at ProductPage (webpack-internal:///(pages-dir-browser)/./src/pages/product-page/product-page.jsx:50:77)
+    at main
+    at Provider (webpack-internal:///(pages-dir-browser)/./node_modules/react-redux/es/components/Provider.js:16:3)
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:37:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:18:53.741] Server  ERROR    ⨯ ./src/pages/product-page/product-page.jsx
+Error:   × Expected '</', got '}'
+     ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:116:1]
+ 113 │             <img
+ 114 │               src={"/img/" + product.img}
+ 115 │               alt={product.title}
+ 116 │               className={styles["product-image"]}}
+     ·                                                  ─
+ 117 │             />
+ 118 │           </Box>
+ 118 │ 
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:18:54.252] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expected '</', got '}'
+     ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:116:1]
+ 113 │             <img
+ 114 │               src={"/img/" + product.img}
+ 115 │               alt={product.title}
+ 116 │               className={styles["product-image"]}}
+     ·                                                  ─
+ 117 │             />
+ 118 │           </Box>
+ 118 │ 
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+./pages/app/[id].js
+[00:18:54.252] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expected '</', got '}'
+     ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:116:1]
+ 113 │             <img
+ 114 │               src={"/img/" + product.img}
+ 115 │               alt={product.title}
+ 116 │               className={styles["product-image"]}}
+     ·                                                  ─
+ 117 │             />
+ 118 │           </Box>
+ 118 │ 
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+./pages/app/[id].js
+[00:18:54.253] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expected '</', got '}'
+     ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:116:1]
+ 113 │             <img
+ 114 │               src={"/img/" + product.img}
+ 115 │               alt={product.title}
+ 116 │               className={styles["product-image"]}}
+     ·                                                  ─
+ 117 │             />
+ 118 │           </Box>
+ 118 │ 
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+./pages/app/[id].js
+[00:18:54.253] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expected '</', got '}'
+     ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:116:1]
+ 113 │             <img
+ 114 │               src={"/img/" + product.img}
+ 115 │               alt={product.title}
+ 116 │               className={styles["product-image"]}}
+     ·                                                  ─
+ 117 │             />
+ 118 │           </Box>
+ 118 │ 
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+./pages/app/[id].js
+[00:18:55.248] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expected '</', got '}'
+     ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:116:1]
+ 113 │             <img
+ 114 │               src={"/img/" + product.img}
+ 115 │               alt={product.title}
+ 116 │               className={styles["product-image"]}}
+     ·                                                  ─
+ 117 │             />
+ 118 │           </Box>
+ 118 │ 
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:18:55.251] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expected '</', got '}'
+     ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:116:1]
+ 113 │             <img
+ 114 │               src={"/img/" + product.img}
+ 115 │               alt={product.title}
+ 116 │               className={styles["product-image"]}}
+     ·                                                  ─
+ 117 │             />
+ 118 │           </Box>
+ 118 │ 
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:18:55.253] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expected '</', got '}'
+     ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:116:1]
+ 113 │             <img
+ 114 │               src={"/img/" + product.img}
+ 115 │               alt={product.title}
+ 116 │               className={styles["product-image"]}}
+     ·                                                  ─
+ 117 │             />
+ 118 │           </Box>
+ 118 │ 
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:18:55.289] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expected '</', got '}'
+     ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:116:1]
+ 113 │             <img
+ 114 │               src={"/img/" + product.img}
+ 115 │               alt={product.title}
+ 116 │               className={styles["product-image"]}}
+     ·                                                  ─
+ 117 │             />
+ 118 │           </Box>
+ 118 │ 
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:24:59.579] Server  ERROR    ⨯ ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:25:00.255] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:25:00.255] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+./pages/app/[id].js
+[00:25:00.255] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:25:00.255] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+./pages/app/[id].js
+[00:25:00.256] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:25:00.256] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+./pages/app/[id].js
+[00:25:00.256] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:25:00.256] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+./pages/app/[id].js
+[00:25:01.878] Server  ERROR    ⨯ ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:25:02.249] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:25:02.249] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:25:02.249] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+./pages/app/[id].js
+[00:25:02.249] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:25:02.249] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:25:02.249] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+./pages/app/[id].js
+[00:25:02.250] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:25:02.250] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:25:02.250] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+./pages/app/[id].js
+[00:25:02.250] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:25:02.250] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:25:02.250] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+./pages/app/[id].js
+[00:25:03.947] Server  ERROR    ⨯ ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:25:04.249] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:25:04.249] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:25:04.249] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+./pages/app/[id].js
+[00:25:04.249] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:25:04.249] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:25:04.249] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+./pages/app/[id].js
+[00:25:04.249] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:25:04.249] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:25:04.249] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+./pages/app/[id].js
+[00:25:04.249] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:25:04.249] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:25:04.249] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+./pages/app/[id].js
+[00:25:15.318] Server  ERROR    ⨯ ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:25:16.249] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:25:16.249] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:25:16.249] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+./pages/app/[id].js
+[00:25:16.249] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:25:16.249] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:25:16.249] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+./pages/app/[id].js
+[00:25:16.250] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:25:16.250] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:25:16.250] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+./pages/app/[id].js
+[00:25:16.250] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+ 79 │ 
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:25:16.250] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:25:16.250] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+./pages/app/[id].js
+[00:25:23.262] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:25:23.262] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:25:23.262] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:25:23.262] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Error:   × Expression expected
+    ╭─[C:\Users\Hp\Desktop\work\adjarapeak\frondend\src\pages\product-page\product-page.jsx:77:1]
+ 74 │         zoomRef.current = null;
+ 75 │       }
+ 76 │     };
+ 77 │   }, [product]);
+    ·    ─
+ 78 │ 
+ 79 │ 
+ 79 │   const recommendedProducts = getRecommendedProducts();
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:25:32.163] Browser WARN    Image with src "/img/14.41.19.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:25:32.163] Browser WARN    Image with src "/img/BTRACE_ZERO_L.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:25:32.163] Browser WARN    Image with src "/img/backpackBlack17L.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:25:32.163] Browser WARN    Image with src "/img/folga-paraloni.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:25:32.163] Browser WARN    Image with src "/img/098764567890.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:25:32.163] Browser WARN    Image with src "/img/raincoat.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:25:32.163] Browser WARN    Image with src "/img/gas-flame.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:25:32.163] Browser WARN    Image with src "/img/33aafde2567a999fdb086b8664e299b2.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:25:32.163] Browser WARN    Image with src "/img/17.04.49.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:25:32.163] Browser WARN    Image with src "/img/s21sx162-21-oz-standard-flex-cap-fossil-straight.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:25:32.163] Browser WARN    Image with src "/img/7d57252c-3335-409f-a1c0-ddd13a6e1d6a.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:25:32.163] Browser WARN    Image with src "/img/8dcd-aede1cf3ab55.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:25:32.164] Browser WARN    Image with src "/img/202322.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:25:32.164] Browser WARN    Image with src "/img/6955_big.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:25:32.164] Browser WARN    Image with src "/img/binoculars.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:25:32.164] Browser WARN    Image with src "/img/orig4211.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:25:32.164] Browser WARN    Image with src "/img/hammock.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:25:32.164] Browser WARN    Image with src "/img/picture32.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:25:32.164] Browser WARN    Image with src "/img/podushka-comfort-dlya-kempingu.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:25:32.164] Browser WARN    Image with src "/img/110000428237905.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:25:32.164] Browser WARN    Image with src "/img/1_org_zoom323.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:25:32.164] Browser WARN    Image with src "/img/23.11.40.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:25:32.164] Browser WARN    Image with src "/img/ukrainian-borscht-front.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:25:49.621] Browser ERROR   Warning: validateDOMNesting(...): %s cannot appear as a descendant of <%s>.%s <button> button 
     at button
     at Button (webpack-internal:///(pages-dir-browser)/./src/components/button/button.js:14:19)
     at div
@@ -63,234 +1458,297 @@
     at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
     at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
     at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
-[00:02:07.355] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+[00:25:49.621] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
 Consider providing a value that matches one of the available options or ''.
 The available values are `price-desc`, `price-asc`.
-[00:02:07.355] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+[00:25:49.621] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
 Consider providing a value that matches one of the available options or ''.
 The available values are `price-desc`, `price-asc`.
-[00:02:07.355] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+[00:25:49.621] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
 Consider providing a value that matches one of the available options or ''.
 The available values are `price-desc`, `price-asc`.
-[00:02:07.597] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+[00:25:49.911] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
 Consider providing a value that matches one of the available options or ''.
 The available values are `price-desc`, `price-asc`.
-[00:04:31.229] Server  LOG      ○ Compiling /trip ...
-[00:04:46.079] Server  LOG      ○ Compiling /contact ...
-[00:04:55.905] Browser WARN    Image with src "/img/61yQ51BsmYL.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:04:55.905] Browser WARN    Image with src "/img/picture23445.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:04:55.906] Browser WARN    Image with src "/img/small-indoor-table-tennis-set-ppr-100-with-2-bats-and-3-balls.avif" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:04:55.906] Browser WARN    Image with src "/img/6337498439.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:04:55.906] Browser WARN    Image with src "/img/2df97b49-7dac-455e-9d50-9467ea7cd0fe.jpeg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:04:55.906] Browser WARN    Image with src "/img/1018264996.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:04:55.906] Browser WARN    Image with src "/img/size-4-football-sunny-300-green-kipsta.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:04:55.906] Browser WARN    Image with src "/img/18.40.32.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:04:55.906] Browser WARN    Image with src "/img/beach-volleyball-size-5-bv100-classic-turquoise-kipsta.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:04:55.906] Browser WARN    Image with src "/img/american-football-with-brown-leather-texture-white-laces-white-background.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:04:55.906] Browser WARN    Image with src "/img/1834274d-e94e-4281-b81b-043695664120_960x960-Photoroom.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:04:55.906] Browser WARN    Image with src "/img/ocr.jpeg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:04:56.868] Browser WARN    Image with src "/img/eb87bf73-7c37-44.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:04:56.868] Browser WARN    Image with src "/img/ayarlanabilir-el-yayi-8-40-kg.avif" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:04:56.868] Browser WARN    Image with src "/img/6653934320.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:04:56.868] Browser WARN    Image with src "/img/elastik-pilates-bandi-3-kg-bordo-orta-seviye.avif" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:04:56.868] Browser WARN    Image with src "/img/CGiBiTNufHIJPB2V.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:04:56.868] Browser WARN    Image with src "/img/67429309.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:04:56.868] Browser WARN    Image with src "/img/2vefe5.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:04:57.958] Browser WARN    Image with src "/img/IMG_6532.JPG" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:04:57.958] Browser WARN    Image with src "/img/sup_veslo_allyuminij_gladiator_lt.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:04:57.958] Browser WARN    Image with src "/img/73684021.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:04:57.958] Browser WARN    Image with src "/img/Most-Popular-EPE-Foam-Life-Jacket-Full-Size-for-Adult-and-Children.avif" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:04:57.958] Browser WARN    Image with src "/img/strahovochnyj-lish-coil-leash-8-7mm.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:04:57.958] Browser WARN    Image with src "/img/diving-mask-100-grey-subea-8491466.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:04:57.958] Browser WARN    Image with src "/img/swimming-goggles-ready-one-size-clear-lenses-grey-nabaiji-8616684.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:04:57.958] Browser WARN    Image with src "/img/mesh-swim-cap-printed-fabric-size.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:04:57.958] Browser WARN    Image with src "/img/picture8989.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:04:57.959] Browser WARN    Image with src "/img/22.16.11.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:04:57.959] Browser WARN    Image with src "/img/f868cd79-546c-4990-957f-e60263f80295.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:04:57.959] Browser WARN    Image with src "/img/47046567365643.jpeg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:04:57.959] Browser WARN    Image with src "/img/259cd_1300x1300.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:05:42.711] Browser WARN    Image with src "/img/61yQ51BsmYL.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:05:42.711] Browser WARN    Image with src "/img/picture23445.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:05:42.711] Browser WARN    Image with src "/img/small-indoor-table-tennis-set-ppr-100-with-2-bats-and-3-balls.avif" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:05:42.711] Browser WARN    Image with src "/img/6337498439.jpg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:05:42.711] Browser WARN    Image with src "/img/2df97b49-7dac-455e-9d50-9467ea7cd0fe.jpeg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:05:42.711] Browser WARN    Image with src "/img/1018264996.jpg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:05:42.711] Browser WARN    Image with src "/img/size-4-football-sunny-300-green-kipsta.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:05:42.711] Browser WARN    Image with src "/img/18.40.32.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:05:42.711] Browser WARN    Image with src "/img/beach-volleyball-size-5-bv100-classic-turquoise-kipsta.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:05:42.711] Browser WARN    Image with src "/img/american-football-with-brown-leather-texture-white-laces-white-background.jpg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:05:42.711] Browser WARN    Image with src "/img/1834274d-e94e-4281-b81b-043695664120_960x960-Photoroom.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:05:42.711] Browser WARN    Image with src "/img/ocr.jpeg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:05:44.295] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+[00:26:58.620] Server  ERROR    ⨯ ./src/pages/product-page/product-page.jsx
+Module parse failed: Identifier 'imageRef' has already been declared (74:10)
+|     //   };
+|     // }, [product]);
+>     const imageRef = useRef(null);
+|     const zoomRef = useRef(null);
+|     useEffect({
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:26:59.262] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Module parse failed: Identifier 'imageRef' has already been declared (74:10)
+|     //   };
+|     // }, [product]);
+>     const imageRef = useRef(null);
+|     const zoomRef = useRef(null);
+|     useEffect({
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:26:59.262] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Module parse failed: Identifier 'imageRef' has already been declared (72:10)
+|     //   };
+|     // }, [product]);
+>     const imageRef = useRef(null);
+|     const zoomRef = useRef(null);
+|     useEffect({
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+./pages/app/[id].js
+[00:26:59.262] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Module parse failed: Identifier 'imageRef' has already been declared (74:10)
+|     //   };
+|     // }, [product]);
+>     const imageRef = useRef(null);
+|     const zoomRef = useRef(null);
+|     useEffect({
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:26:59.262] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Module parse failed: Identifier 'imageRef' has already been declared (72:10)
+|     //   };
+|     // }, [product]);
+>     const imageRef = useRef(null);
+|     const zoomRef = useRef(null);
+|     useEffect({
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+./pages/app/[id].js
+[00:26:59.262] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Module parse failed: Identifier 'imageRef' has already been declared (74:10)
+|     //   };
+|     // }, [product]);
+>     const imageRef = useRef(null);
+|     const zoomRef = useRef(null);
+|     useEffect({
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:26:59.262] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Module parse failed: Identifier 'imageRef' has already been declared (72:10)
+|     //   };
+|     // }, [product]);
+>     const imageRef = useRef(null);
+|     const zoomRef = useRef(null);
+|     useEffect({
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+./pages/app/[id].js
+[00:26:59.263] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Module parse failed: Identifier 'imageRef' has already been declared (74:10)
+|     //   };
+|     // }, [product]);
+>     const imageRef = useRef(null);
+|     const zoomRef = useRef(null);
+|     useEffect({
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:26:59.263] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Module parse failed: Identifier 'imageRef' has already been declared (72:10)
+|     //   };
+|     // }, [product]);
+>     const imageRef = useRef(null);
+|     const zoomRef = useRef(null);
+|     useEffect({
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+./pages/app/[id].js
+[00:27:03.266] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Module parse failed: Identifier 'imageRef' has already been declared (74:10)
+|     //   };
+|     // }, [product]);
+>     const imageRef = useRef(null);
+|     const zoomRef = useRef(null);
+|     useEffect({
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:27:03.266] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Module parse failed: Identifier 'imageRef' has already been declared (74:10)
+|     //   };
+|     // }, [product]);
+>     const imageRef = useRef(null);
+|     const zoomRef = useRef(null);
+|     useEffect({
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:27:03.276] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Module parse failed: Identifier 'imageRef' has already been declared (74:10)
+|     //   };
+|     // }, [product]);
+>     const imageRef = useRef(null);
+|     const zoomRef = useRef(null);
+|     useEffect({
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:27:03.403] Browser ERROR   ./src/pages/product-page/product-page.jsx
+Module parse failed: Identifier 'imageRef' has already been declared (74:10)
+|     //   };
+|     // }, [product]);
+>     const imageRef = useRef(null);
+|     const zoomRef = useRef(null);
+|     useEffect({
+
+Import trace for requested module:
+./src/pages/product-page/product-page.jsx
+./src/pages/product-page/index.js
+[00:27:18.256] Browser ERROR   uncaughtError: ReferenceError: imageRef is not defined
+[00:27:18.256] Browser ERROR   uncaughtError: ReferenceError: imageRef is not defined
+[00:27:18.256] Browser ERROR   The above error occurred in the <ProductPage> component:
+
+    at ProductPage (webpack-internal:///(pages-dir-browser)/./src/pages/product-page/product-page.jsx:51:77)
+    at main
+    at Provider (webpack-internal:///(pages-dir-browser)/./node_modules/react-redux/es/components/Provider.js:16:3)
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:37:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:27:18.257] Browser ERROR   uncaughtError: ReferenceError: imageRef is not defined
+[00:27:18.257] Browser ERROR   uncaughtError: ReferenceError: imageRef is not defined
+[00:27:18.257] Browser ERROR   The above error occurred in the <ProductPage> component:
+
+    at ProductPage (webpack-internal:///(pages-dir-browser)/./src/pages/product-page/product-page.jsx:51:77)
+    at main
+    at Provider (webpack-internal:///(pages-dir-browser)/./node_modules/react-redux/es/components/Provider.js:16:3)
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:37:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:27:18.257] Browser ERROR   uncaughtError: ReferenceError: imageRef is not defined
+[00:27:18.257] Browser ERROR   uncaughtError: ReferenceError: imageRef is not defined
+[00:27:18.257] Browser ERROR   The above error occurred in the <ProductPage> component:
+
+    at ProductPage (webpack-internal:///(pages-dir-browser)/./src/pages/product-page/product-page.jsx:51:77)
+    at main
+    at Provider (webpack-internal:///(pages-dir-browser)/./node_modules/react-redux/es/components/Provider.js:16:3)
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:37:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:27:18.257] Browser ERROR   uncaughtError: ReferenceError: imageRef is not defined
+[00:27:18.257] Browser ERROR   uncaughtError: ReferenceError: imageRef is not defined
+[00:27:18.257] Browser ERROR   The above error occurred in the <ProductPage> component:
+
+    at ProductPage (webpack-internal:///(pages-dir-browser)/./src/pages/product-page/product-page.jsx:51:77)
+    at main
+    at Provider (webpack-internal:///(pages-dir-browser)/./node_modules/react-redux/es/components/Provider.js:16:3)
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:37:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:78:43)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:44:34)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:75:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:171:25)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:390:17)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:27:38.021] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
 Consider providing a value that matches one of the available options or ''.
 The available values are `price-desc`, `price-asc`.
-[00:05:44.295] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+[00:27:38.021] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
 Consider providing a value that matches one of the available options or ''.
 The available values are `price-desc`, `price-asc`.
-[00:05:44.295] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+[00:27:38.021] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
 Consider providing a value that matches one of the available options or ''.
 The available values are `price-desc`, `price-asc`.
-[00:05:44.295] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+[00:27:38.297] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
 Consider providing a value that matches one of the available options or ''.
 The available values are `price-desc`, `price-asc`.
-[00:06:21.227] Browser WARN    Image with src "/img/19.45.11.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:06:21.227] Browser WARN    Image with src "/img/19.08.22.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:06:21.227] Browser WARN    Image with src "/img/19.52.32.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:06:21.227] Browser WARN    Image with src "/img/IMG_5871.JPG" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:06:21.227] Browser WARN    Image with src "/img/IMG_5903.PNG" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:06:21.227] Browser WARN    Image with src "/img/IMG_5870.JPG" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:06:21.227] Browser WARN    Image with src "/img/IMG_586.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:06:21.227] Browser WARN    Image with src "/img/IMG_58.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:06:21.227] Browser WARN    Image with src "/img/IMG_5865-.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:06:21.227] Browser WARN    Image with src "/img/19.24.57.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:06:21.227] Browser WARN    Image with src "/img/Gn31w.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:06:32.423] Browser WARN    Image with src "/img/19.45.11.jpg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:06:32.423] Browser WARN    Image with src "/img/19.08.22.jpg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:06:32.423] Browser WARN    Image with src "/img/19.52.32.jpg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:06:32.423] Browser WARN    Image with src "/img/IMG_5871.JPG" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:06:32.423] Browser WARN    Image with src "/img/IMG_5903.PNG" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:06:32.423] Browser WARN    Image with src "/img/IMG_5870.JPG" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:06:32.423] Browser WARN    Image with src "/img/IMG_586.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:06:32.423] Browser WARN    Image with src "/img/IMG_58.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:06:32.423] Browser WARN    Image with src "/img/IMG_5865-.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:06:32.423] Browser WARN    Image with src "/img/19.24.57.jpg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:06:32.423] Browser WARN    Image with src "/img/Gn31w.jpg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:06:42.814] Browser WARN    Image with src "/img/tent2Mesuca.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:06:42.814] Browser WARN    Image with src "/img/sleeping_bag_green.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:06:42.814] Browser WARN    Image with src "/img/IMG_8135.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:06:42.814] Browser WARN    Image with src "/img/9858034f125a76b5679055e7b28c27aa.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:06:42.814] Browser WARN    Image with src "/img/00.13.37.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:06:42.814] Browser WARN    Image with src "/img/adapter.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:06:42.814] Browser WARN    Image with src "/img/product_1207_1.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:06:42.814] Browser WARN    Image with src "/img/sitting_DECATHLON.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:06:42.814] Browser WARN    Image with src "/img/VERTEXVENT.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:06:42.814] Browser WARN    Image with src "/img/18a131f8-02f0-47bc-b2a5-88b58d52642d.438bc7c551289ad8284aa8b118c9bc5a.webp" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:06:42.814] Browser WARN    Image with src "/img/xiaomi-redmi-fast-charge-power-bank-20000-mah-18w.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
-[00:06:47.401] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+[00:27:43.182] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
 Consider providing a value that matches one of the available options or ''.
 The available values are `price-desc`, `price-asc`.
-[00:06:47.401] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+[00:27:43.182] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
 Consider providing a value that matches one of the available options or ''.
 The available values are `price-desc`, `price-asc`.
-[00:06:47.401] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+[00:27:43.182] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
 Consider providing a value that matches one of the available options or ''.
 The available values are `price-desc`, `price-asc`.
-[00:06:47.520] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+[00:27:43.481] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
 Consider providing a value that matches one of the available options or ''.
 The available values are `price-desc`, `price-asc`.
-[00:06:49.208] Server  WARN     ⚠ You have added a custom /_error page without a custom /404 page. This prevents the 404 page from being auto statically optimized.
-See here for info: https://nextjs.org/docs/messages/custom-error-no-custom-404
-[00:06:50.890] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+[00:29:57.750] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
 Consider providing a value that matches one of the available options or ''.
 The available values are `price-desc`, `price-asc`.
-[00:06:50.890] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+[00:29:57.750] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
 Consider providing a value that matches one of the available options or ''.
 The available values are `price-desc`, `price-asc`.
-[00:06:50.890] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+[00:29:57.750] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
 Consider providing a value that matches one of the available options or ''.
 The available values are `price-desc`, `price-asc`.
-[00:06:51.008] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+[00:29:58.103] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
 Consider providing a value that matches one of the available options or ''.
 The available values are `price-desc`, `price-asc`.
-[00:07:00.269] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+[00:30:04.606] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
 Consider providing a value that matches one of the available options or ''.
 The available values are `price-desc`, `price-asc`.
-[00:07:00.269] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+[00:30:04.606] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
 Consider providing a value that matches one of the available options or ''.
 The available values are `price-desc`, `price-asc`.
-[00:07:00.269] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+[00:30:04.606] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
 Consider providing a value that matches one of the available options or ''.
 The available values are `price-desc`, `price-asc`.
-[00:07:00.269] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+[00:30:04.912] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
 Consider providing a value that matches one of the available options or ''.
 The available values are `price-desc`, `price-asc`.
-[00:07:03.428] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+[00:30:09.652] Browser WARN    Image with src "/img/19.45.11.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:30:09.652] Browser WARN    Image with src "/img/19.08.22.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:30:09.652] Browser WARN    Image with src "/img/19.52.32.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:30:09.652] Browser WARN    Image with src "/img/IMG_5871.JPG" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:30:09.652] Browser WARN    Image with src "/img/IMG_5903.PNG" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:30:09.652] Browser WARN    Image with src "/img/IMG_5870.JPG" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:30:09.652] Browser WARN    Image with src "/img/IMG_586.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:30:09.652] Browser WARN    Image with src "/img/IMG_58.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:30:09.652] Browser WARN    Image with src "/img/IMG_5865-.png" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:30:09.652] Browser WARN    Image with src "/img/19.24.57.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:30:09.652] Browser WARN    Image with src "/img/Gn31w.jpg" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.
+[00:30:10.988] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
 Consider providing a value that matches one of the available options or ''.
 The available values are `price-desc`, `price-asc`.
-[00:07:03.428] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+[00:30:10.988] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
 Consider providing a value that matches one of the available options or ''.
 The available values are `price-desc`, `price-asc`.
-[00:07:03.428] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+[00:30:10.988] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
 Consider providing a value that matches one of the available options or ''.
 The available values are `price-desc`, `price-asc`.
-[00:07:03.536] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
-Consider providing a value that matches one of the available options or ''.
-The available values are `price-desc`, `price-asc`.
-[00:11:40.017] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
-Consider providing a value that matches one of the available options or ''.
-The available values are `price-desc`, `price-asc`.
-[00:11:40.017] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
-Consider providing a value that matches one of the available options or ''.
-The available values are `price-desc`, `price-asc`.
-[00:11:40.017] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
-Consider providing a value that matches one of the available options or ''.
-The available values are `price-desc`, `price-asc`.
-[00:11:40.180] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
-Consider providing a value that matches one of the available options or ''.
-The available values are `price-desc`, `price-asc`.
-[00:16:57.726] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
-Consider providing a value that matches one of the available options or ''.
-The available values are `price-desc`, `price-asc`.
-[00:16:57.726] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
-Consider providing a value that matches one of the available options or ''.
-The available values are `price-desc`, `price-asc`.
-[00:16:57.726] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
-Consider providing a value that matches one of the available options or ''.
-The available values are `price-desc`, `price-asc`.
-[00:16:57.726] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
-Consider providing a value that matches one of the available options or ''.
-The available values are `price-desc`, `price-asc`.
-[00:17:14.749] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
-Consider providing a value that matches one of the available options or ''.
-The available values are `price-desc`, `price-asc`.
-[00:17:14.749] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
-Consider providing a value that matches one of the available options or ''.
-The available values are `price-desc`, `price-asc`.
-[00:17:20.299] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
-Consider providing a value that matches one of the available options or ''.
-The available values are `price-desc`, `price-asc`.
-[00:17:20.299] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
-Consider providing a value that matches one of the available options or ''.
-The available values are `price-desc`, `price-asc`.
-[00:17:20.299] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
-Consider providing a value that matches one of the available options or ''.
-The available values are `price-desc`, `price-asc`.
-[00:17:20.439] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
-Consider providing a value that matches one of the available options or ''.
-The available values are `price-desc`, `price-asc`.
-[00:17:27.938] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
-Consider providing a value that matches one of the available options or ''.
-The available values are `price-desc`, `price-asc`.
-[00:17:27.938] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
-Consider providing a value that matches one of the available options or ''.
-The available values are `price-desc`, `price-asc`.
-[00:17:27.938] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
-Consider providing a value that matches one of the available options or ''.
-The available values are `price-desc`, `price-asc`.
-[00:17:27.938] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
-Consider providing a value that matches one of the available options or ''.
-The available values are `price-desc`, `price-asc`.
-[00:18:22.739] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
-Consider providing a value that matches one of the available options or ''.
-The available values are `price-desc`, `price-asc`.
-[00:18:22.739] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
-Consider providing a value that matches one of the available options or ''.
-The available values are `price-desc`, `price-asc`.
-[00:18:22.739] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
-Consider providing a value that matches one of the available options or ''.
-The available values are `price-desc`, `price-asc`.
-[00:18:22.739] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
-Consider providing a value that matches one of the available options or ''.
-The available values are `price-desc`, `price-asc`.
-[00:18:48.853] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
-Consider providing a value that matches one of the available options or ''.
-The available values are `price-desc`, `price-asc`.
-[00:18:48.854] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
-Consider providing a value that matches one of the available options or ''.
-The available values are `price-desc`, `price-asc`.
-[00:18:48.854] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
-Consider providing a value that matches one of the available options or ''.
-The available values are `price-desc`, `price-asc`.
-[00:18:48.854] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
+[00:30:10.988] Browser WARN    MUI: You have provided an out-of-range value `default` for the select component.
 Consider providing a value that matches one of the available options or ''.
 The available values are `price-desc`, `price-asc`.

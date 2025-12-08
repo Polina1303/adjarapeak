@@ -22,6 +22,7 @@
     "http-proxy-middleware": "^2.0.6",
     "libphonenumber-js": "^1.10.28",
     "mammoth": "^1.9.0",
+    "medium-zoom": "^1.1.0",
     "next": "^16.0.1",
     "react": "^18.3.1",
     "react-doc-viewer": "^0.1.14",

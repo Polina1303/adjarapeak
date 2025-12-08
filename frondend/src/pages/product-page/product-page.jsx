@@ -1,5 +1,6 @@
+"use client";
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect, useCallback } from "react";
+import { useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
 import { setCurrentProduct } from "../../redux/product/reducer";
 import { useRouter } from "next/router";
@@ -8,6 +9,7 @@ import { Buy } from "../../components/buy/buy";
 import { PRODUCT } from "../../components/product-range/product";
 import { RENT } from "../../components/product-range/rent";
 import { RENT_SKY } from "../../components/product-range/rent-sky";
+import mediumZoom from "medium-zoom";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
@@ -20,11 +22,16 @@ export const ProductPage = () => {
   const product = useSelector((state) => state.products.currentProduct);
   const router = useRouter();
   const { id } = router.query;
+
   const dispatch = useDispatch();
 
   const isRentProduct =
     RENT.some((p) => p.id === product.id) ||
     RENT_SKY.some((p) => p.id === product.id);
+
+  const imageRef = useRef(null);
+  const zoomRef = useRef(null);
+
   const relatedTitle = isRentProduct
     ? "С этим товаром арендуют"
     : "С этим товаром покупают";
@@ -51,21 +58,29 @@ export const ProductPage = () => {
     return sameCategoryProducts;
   }, [product]);
 
+  useEffect(() => {
+    const image = imageRef.current;
+    if (!image) return;
+
+    zoomRef.current?.detach();
+
+    zoomRef.current = mediumZoom(image, {
+      background: "rgba(113, 109, 109, 0.75)",
+      margin: 24,
+      scrollOffset: 120,
+      container: {
+        top: 120,
+      },
+
+      zIndex: 999,
+    });
+
+    return () => {
+      zoomRef.current?.detach();
+    };
+  }, [product]);
+
   const recommendedProducts = getRecommendedProducts();
-
-  // useEffect(() => {
-  //   const productId = Number(id);
-
-  //   const allCategories = [...PRODUCT, ...RENT, ...RENT_SKY];
-
-  //   const foundProduct = allCategories.find((item) => item.id === productId);
-
-  //   if (foundProduct) {
-  //     dispatch(setCurrentProduct(foundProduct));
-  //   } else {
-  //     redirectToError();
-  //   }
-  // }, [dispatch, id, redirectToError]);
 
   useEffect(() => {
     if (!id) return;
@@ -95,9 +110,11 @@ export const ProductPage = () => {
         <Box className={styles["product-top"]}>
           <Box className={styles["product-image-box"]}>
             <img
+              ref={imageRef}
               src={"/img/" + product.img}
               alt={product.title}
               className={styles["product-image"]}
+              style={{ cursor: "zoom-in" }}
             />
           </Box>
 
