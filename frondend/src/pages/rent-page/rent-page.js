@@ -1,0 +1,397 @@
+import { useState, useEffect, useMemo } from "react";
+import { useRouter } from "next/router";
+import { RENT } from "../../components/product-range/rent";
+import { Menu } from "antd";
+import { CATEGORY_RENT } from "../../components/product-range/categoryRent";
+import FilterListIcon from "@mui/icons-material/FilterList";
+import { ProductItems } from "../../components/product-items/product-items";
+import { TfiClose } from "react-icons/tfi";
+import {
+  Accordion,
+  Toolbar,
+  Drawer,
+  List,
+  IconButton,
+  AccordionSummary,
+  AccordionDetails,
+  ListItemButton,
+  Typography,
+} from "@mui/material";
+import { RENT_SKY } from "../../components/product-range/rent-sky";
+import { Card, CardActionArea, Skeleton } from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import styles from "./rent-page.module.css";
+
+export default function RentPage({ children }) {
+  const router = useRouter();
+
+  const [loadedIds, setLoadedIds] = useState([]);
+
+  const [searchValue, setSearchValue] = useState("");
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setSearchQuery(searchValue);
+      localStorage.setItem("searchQuery", searchValue);
+    }, 200);
+
+    return () => clearTimeout(timer);
+  }, [searchValue]);
+
+  const [activeCategory, setActiveCategory] = useState(0);
+  const [expandedAccordion, setExpandedAccordion] = useState(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileView, setIsMobileView] = useState(false);
+
+  const [searchQuery, setSearchQuery] = useState("");
+  const [isInitialized, setIsInitialized] = useState(false);
+
+  const filteredProducts = useMemo(() => {
+    if (!isInitialized || !searchQuery.trim()) {
+      return [];
+    }
+
+    const query = searchQuery.toLowerCase().trim();
+
+    const results = [];
+    const seenIds = new Set();
+
+    for (const product of RENT || RENT_SKY) {
+      if (product.title?.toLowerCase().includes(query)) {
+        if (!seenIds.has(product.id)) {
+          seenIds.add(product.id);
+          results.push(product);
+        }
+      }
+    }
+
+    return results;
+  }, [searchQuery, isInitialized]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("searchQuery");
+      if (saved) {
+        setSearchQuery(saved);
+      }
+      setIsInitialized(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    const checkScreen = () => {
+      const mobile = window.innerWidth <= 1200;
+      setIsMobileView(mobile);
+      if (!mobile) setIsMobileMenuOpen(false);
+    };
+
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
+  const handleSearchChange = (e) => {
+    const value = e.target.value;
+    setSearchQuery(value);
+    localStorage.setItem("searchQuery", value);
+    setSearchValue(e.target.value);
+  };
+
+  const handleCategoryClick = (e) => {
+    const categoryIndex = Number(e.key);
+    setActiveCategory(categoryIndex);
+    const category = CATEGORY_RENT[categoryIndex];
+    setExpandedAccordion(null);
+    router.push(`/rent/${category.path}`);
+  };
+
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
+
+  const currentCategory = CATEGORY_RENT[activeCategory];
+
+  const handleTypeClick = (typeCategory) => {
+    const category = CATEGORY_RENT[activeCategory];
+    router.push(`/rent/${category.path}/${typeCategory}`);
+  };
+
+  const toggleMobileMenu = () => {
+    if (isMobileView) setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleSubcategoryClick = (subcategoryPath) => {
+    const category = CATEGORY_RENT[activeCategory];
+    router.push(`/rent/${category.path}/${subcategoryPath}`);
+  };
+
+  const getProductKey = (product, index) => {
+    return `product-${product.id}-${index}`;
+  };
+
+  return (
+    <>
+      <div className={styles["search-container"]} style={{ margin: "20px 0" }}>
+        <div className={styles["filters-scroll-container"]}>
+          <Menu
+            mode="horizontal"
+            selectedKeys={[`${activeCategory}`]}
+            items={CATEGORY_RENT.map((c, i) => ({
+              key: i,
+              label: c.title.trim(),
+            }))}
+            className={styles["sticky-horizontal-menu"]}
+            style={{
+              flex: 1,
+              marginBottom: 10,
+              fontSize: "14.5px",
+              fontFamily: "RoadRadio",
+            }}
+            onClick={handleCategoryClick}
+          />
+        </div>
+
+        <input
+          type="text"
+          placeholder="Поиск"
+          value={searchValue}
+          onChange={handleSearchChange}
+          className={styles.searchInput}
+        />
+      </div>
+
+      <div className={styles["home-page__container-product"]}>
+        <div>
+          <div className={styles["title"]} id="home-page-buy">
+            {currentCategory?.title?.toUpperCase() || "ПРОДАЖА ТОВАРОВ"}
+          </div>
+
+          <div className={styles["sale-page-content"]}>
+            <div className={styles["filter-category"]}>
+              {isMobileView ? (
+                <>
+                  <FilterListIcon onClick={toggleMobileMenu} />
+
+                  <Drawer
+                    anchor="top"
+                    open={isMobileMenuOpen}
+                    onClose={closeMobileMenu}
+                    className={styles.mobileDrawer}
+                    PaperProps={{
+                      className: styles.mobileDrawerPaper,
+                      style: {
+                        boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
+                        borderBottom: "2px solid #e0e0e0",
+                      },
+                    }}
+                    ModalProps={{
+                      BackdropProps: {
+                        style: { backgroundColor: "rgba(0, 0, 0, 0.5)" },
+                      },
+                    }}
+                  >
+                    <Toolbar className={styles.toolbarMobile}>
+                      <Typography className={styles.filterTitle}>
+                        Фильтр
+                      </Typography>
+                      <IconButton
+                        edge="start"
+                        onClick={toggleMobileMenu}
+                        className={styles.mobileMenuButton}
+                      >
+                        <TfiClose />
+                      </IconButton>
+                    </Toolbar>
+
+                    <List className={styles.mobileMenuList}>
+                      {currentCategory?.types?.map((type) => (
+                        <Accordion
+                          key={type.category}
+                          expanded={expandedAccordion === type.category}
+                          onChange={() =>
+                            setExpandedAccordion((prev) =>
+                              prev === type.category ? null : type.category
+                            )
+                          }
+                          disableGutters
+                          sx={{
+                            boxShadow: "none",
+                            borderBottom: "1px solid #eee",
+                            "&:before": { display: "none" },
+                          }}
+                        >
+                          <AccordionSummary
+                            expandIcon={
+                              type.subcategories?.length ? (
+                                <ExpandMoreIcon style={{ color: "#ff6f00" }} />
+                              ) : null
+                            }
+                            sx={{ cursor: "pointer" }}
+                          >
+                            <span
+                              style={{
+                                fontWeight: "700",
+                                fontFamily: "RoadRadio, sans-serif",
+                                fontSize: "14px",
+                              }}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleTypeClick(type.category);
+                                closeMobileMenu();
+                              }}
+                            >
+                              {type.title}
+                            </span>
+                          </AccordionSummary>
+
+                          <AccordionDetails sx={{ p: 0 }}>
+                            <List>
+                              {type.subcategories?.map((sub) => (
+                                <ListItemButton
+                                  key={sub.subcategory}
+                                  sx={{ pl: 3 }}
+                                  onClick={() =>
+                                    handleSubcategoryClick(sub.subcategory)
+                                  }
+                                >
+                                  <span
+                                    style={{
+                                      fontFamily: "RoadRadio, sans-serif",
+                                      fontSize: "14px",
+                                    }}
+                                    onClick={closeMobileMenu}
+                                  >
+                                    {sub.title}
+                                  </span>
+                                </ListItemButton>
+                              ))}
+                            </List>
+                          </AccordionDetails>
+                        </Accordion>
+                      ))}
+                    </List>
+                  </Drawer>
+                </>
+              ) : (
+                currentCategory?.types?.map((type) => (
+                  <Accordion
+                    key={type.category}
+                    expanded={expandedAccordion === type.category}
+                    onChange={
+                      type.subcategories?.length
+                        ? () =>
+                            setExpandedAccordion((prev) =>
+                              prev === type.category ? null : type.category
+                            )
+                        : undefined
+                    }
+                    disableGutters
+                    sx={{
+                      boxShadow: "none",
+                      borderBottom: "1px solid #eee",
+                      "&:before": { display: "none" },
+                    }}
+                  >
+                    <AccordionSummary
+                      expandIcon={
+                        type.subcategories?.length ? (
+                          <ExpandMoreIcon style={{ color: "#ff6f00" }} />
+                        ) : null
+                      }
+                      sx={{ cursor: "pointer" }}
+                    >
+                      <span
+                        style={{
+                          fontWeight: "700",
+                          fontFamily: "RoadRadio, sans-serif",
+                          fontSize: "14px",
+                        }}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleTypeClick(type.category);
+                        }}
+                      >
+                        {type.title}
+                      </span>
+                    </AccordionSummary>
+
+                    <AccordionDetails sx={{ p: 0 }}>
+                      <List>
+                        {type.subcategories?.map((sub) => (
+                          <ListItemButton
+                            key={sub.subcategory}
+                            sx={{ pl: 3 }}
+                            onClick={() =>
+                              handleSubcategoryClick(sub.subcategory)
+                            }
+                          >
+                            <span
+                              style={{
+                                fontFamily: "RoadRadio, sans-serif",
+                                fontSize: "14px",
+                              }}
+                            >
+                              {sub.title}
+                            </span>
+                          </ListItemButton>
+                        ))}
+                      </List>
+                    </AccordionDetails>
+                  </Accordion>
+                ))
+              )}
+            </div>
+
+            {searchQuery.trim() ? (
+              <div>
+                {filteredProducts.length > 0 ? (
+                  <>
+                    <div className={styles["home-page-product"]}>
+                      {filteredProducts.map((product, index) => {
+                        const isLoaded = loadedIds.includes(product.id);
+                        return (
+                          <div
+                            key={getProductKey(product, index)}
+                            className={styles["category-product"]}
+                          >
+                            <Card
+                              sx={{
+                                boxShadow: 3,
+                                height: "95%",
+                                overflow: "hidden",
+                                cursor: "pointer",
+                                transition: "transform 0.2s ease",
+                                "&:hover": { transform: "scale(1.03)" },
+                              }}
+                              onClick={() => router.push(`/app/${product.id}`)}
+                            >
+                              <CardActionArea>
+                                {!!isLoaded ? (
+                                  <Skeleton
+                                    variant="rectangular"
+                                    height={450}
+                                  />
+                                ) : (
+                                  <ProductItems product={product} />
+                                )}
+                              </CardActionArea>
+                            </Card>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </>
+                ) : (
+                  <div className={styles["not-found"]}>
+                    <p>Ничего не найдено по запросу "{searchQuery}"</p>
+                    <p>Попробуйте изменить запрос</p>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <div className={styles["content"]}>{children}</div>
+            )}
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}

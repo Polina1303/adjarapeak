@@ -1,0 +1,1 @@
+export * from "./udziro-page";

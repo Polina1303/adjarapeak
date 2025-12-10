@@ -1,0 +1,14 @@
+.wrapper-count {
+  display: flex;
+  margin-top: 5px;
+}
+
+.count-cover {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #f68632;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
