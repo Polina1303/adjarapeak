@@ -1,17 +1,17 @@
 import { Rent } from "../rent/rent";
 import { useDispatch } from "react-redux";
 import { useInView } from "react-intersection-observer";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
 import { setCurrentProduct } from "../../redux/product/reducer";
 import { BsSearch } from "react-icons/bs";
-import "./rent-items.css";
+import styles from "./rent-items.module.css";
 
 export const RentItems = ({ rent }) => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const router = useRouter();
   const handelClickImg = () => {
     dispatch(setCurrentProduct(rent));
-    navigate(`/app/${rent.id}`);
+    router.push(`/app/${rent.id}`);
   };
 
   const { ref, inView } = useInView({
@@ -20,27 +20,27 @@ export const RentItems = ({ rent }) => {
   });
 
   return (
-    <div className="rent-items">
-      <div ref={ref} className="rent-items__details">
+    <div className={styles["rent-items"]}>
+      <div ref={ref} className={styles["rent-items__details"]}>
         <a href={`/app/${rent.id}`}>
           {inView ? (
             <img
               onClick={handelClickImg}
-              className="rent-items__img"
-              src={process.env.PUBLIC_URL + "/img/" + rent.img}
+              className={styles["rent-items__img"]}
+              src={"/img/" + rent.img}
               alt={rent.title}
             />
           ) : (
-            <div className="product-items__img-unvisible"></div>
+            <div className={styles["product-items__img-unvisible"]}></div>
           )}
         </a>
-        <div className="icon-background" onClick={handelClickImg}>
-          <div className="icon-search">
+        <div className={styles["icon-background"]} onClick={handelClickImg}>
+          <div className={styles["icon-search"]}>
             <BsSearch />
           </div>
         </div>
-        <span className="rent-items__title">{rent.title}</span>
-        <p className="rent-items__desc">{rent.desc}</p>
+        <span className={styles["rent-items__title"]}>{rent.title}</span>
+        <p className={styles["rent-items__desc"]}>{rent.desc}</p>
       </div>
 
       <Rent rent={rent} />

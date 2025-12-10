@@ -7,7 +7,7 @@ import {
   plusItem,
 } from "../../redux/cart/reducer";
 import { Button } from "../button";
-import "./count.css";
+import styles from './count.module.css';
 
 export const Count = ({ img, title, price, id, count }) => {
   const dispatch = useDispatch();

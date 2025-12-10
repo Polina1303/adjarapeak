@@ -8,6 +8,8 @@
 # testing
 /coverage
 
+node_modules/
+
 # production
 /build
 
@@ -22,3 +24,13 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+frondend/.next/
+
+
+.history/
+**/.history/
+*/.history/
+
+.next/
+

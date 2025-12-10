@@ -1,0 +1,106 @@
+.rent-rules-title {
+  background-color: #de682d;
+  padding: 10px 0px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: all 500ms ease;
+  cursor: pointer;
+}
+.rent-rules-title:hover {
+  opacity: 0.8;
+}
+
+.rent-rules-cover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rent-rules-button {
+  border: none;
+  outline: none;
+  background-color: #fff;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  margin-top: 30px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-height: 60vh; /* ограничиваем высоту окна 80% от высоты экрана */
+  overflow-y: auto; /* добавляем вертикальный скролл при необходимости */
+}
+
+.modal__column__text {
+  font-size: 13px;
+}
+
+.modal__column__text_ps {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.modal__column__text_ps-cover {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-button-cover {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%; /* или подходящий размер */
+  padding: 10px; /* для наглядности */
+}
+
+.modal-button {
+  border: none;
+  outline: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.highlighted-link {
+  color: #007bff; /* Синий цвет для привлечения внимания */
+  text-decoration: underline;
+  font-weight: bold;
+  cursor: pointer; /* Указывает, что это кликабельный элемент */
+}
+
+.highlighted-link:hover {
+  color: #0056b3; /* Более темный синий цвет при наведении */
+  text-decoration: none; /* Убираем подчеркивание при наведении */
+}
+
+@media (max-width: 773px) {
+  .modal-content {
+    margin-top: 50px;
+    height: 500px;
+    width: 80%;
+    overflow: auto;
+  }
+}
+@media (max-width: 610px) {
+  .modal-content {
+    margin-top: 70px;
+  }
+}

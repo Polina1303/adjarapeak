@@ -1,26 +1,28 @@
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
+import Link from "next/link";
 import { PRODUCT } from "../../components/product-range/product";
 import { useDispatch } from "react-redux";
 import { useInView } from "react-intersection-observer";
 import { setCurrentProduct } from "../../redux/product/reducer";
 import { BsSearch } from "react-icons/bs";
 import { Buy } from "../buy/buy";
-import "./hit-sales.css";
+import styles from "./hit-sales.module.css";
 
 export const HitSales = () => {
   const discount = PRODUCT.filter((item) => item.newPrice);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const handelClickImg = (product) => {
     dispatch(setCurrentProduct(product));
-    navigate(`/app/${product.id}`);
+    router.push(`/product?id=${product.id}`);
   };
 
   // const { ref, inView } = useInView({
   //   threshold: 0,
   //   triggerOnce: true,
   // });
+
   return (
     <div style={{ marginTop: 50 }}>
       <h2>Новогоднии скидки до 29.12.2023</h2>
@@ -30,11 +32,11 @@ export const HitSales = () => {
           {discount.map((product) => (
             <div className="discount-items">
               <div className="discount-items__details">
-                <a href={`/app/${product.id}`}>
+                <Link href={`/product?id=${product.id}`}>
                   {/* {inView ? ( */}
                   <img
                     className="product-items__img"
-                    src={process.env.PUBLIC_URL + "/img/" + product.img}
+                    src={"/img/" + product.img}
                     alt={product.title}
                   />
                   {/* ) : ( */}
@@ -49,7 +51,7 @@ export const HitSales = () => {
                       <BsSearch />
                     </div>
                   </div>
-                </a>
+                </Link>
 
                 <span className="discount__title">{product.title}</span>
 

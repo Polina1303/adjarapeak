@@ -1,29 +1,47 @@
 import { useSelector } from "react-redux";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useCallback } from "react";
+import { useRouter } from "next/router";
+import { Typography } from "@mui/material";
 import { calcTotalPrice, enumerate } from "../../components/utils";
 import { IoIosArrowBack } from "react-icons/io";
 import { MdLocationPin } from "react-icons/md";
-
 import { OrderItem } from "../../components/order-item";
 import { OrderInput } from "../../components/order-input/order-input";
-import "./order-page.css";
+import { PRODUCT } from "../../components/product-range/product";
+import { RENT } from "../../components/product-range/rent";
+import { RENT_SKY } from "../../components/product-range/rent-sky";
+import { RecommendedCarousel } from "../../components/carousel";
+import styles from "./order-page.module.css";
 
 export const OrderPage = () => {
-  const history = useNavigate();
+  const router = useRouter();
   const [orderSuccess, setOrderSuccess] = useState(false);
   const items = useSelector((state) => state.cart.itemsInCart);
+  const getRecommendedProducts = useCallback(() => {
+    if (!items) return [];
+
+    const allProducts = [...PRODUCT, ...RENT, ...RENT_SKY].filter(
+      (p) => p.id !== items.id
+    );
+
+    const shuffled = allProducts.sort(() => Math.random() - 0.5);
+
+    return shuffled.slice(0, 10);
+  }, [items]);
+
+  const recommendedProducts = getRecommendedProducts();
+
   if (items && items.length < 1) {
     return orderSuccess ? (
       <div style={{ marginTop: 120 }}>
-        <p className="rental-warning">
+        <p className={styles["rental-warning"]}>
           ⚠️ <strong>Бронь проката</strong> подтверждается только после
           предоплаты. <br />
           <strong>Предоплата не возвращается</strong> в случае отмены заказа
           клиентом.
         </p>
         Доставка по Батуми — 10 лари, бесплатно от 300. По Грузии — от 20 лари,
-        бесплатно от 500. Не распространяется на аренду.
+        бесплатно от 500.❗️Не распространяется на аренду.
         <br />
         Cамовывоз по адресу:
         <MdLocationPin size={25} color={"#de682d"} />
@@ -40,7 +58,6 @@ export const OrderPage = () => {
           <br /> С уважением, Adjara Peak.
         </p>
         <div style={{ marginTop: 10 }}>
-          {" "}
           Всем подписчикам нашего{" "}
           <a
             href="https://t.me/adjarapeak"
@@ -49,16 +66,16 @@ export const OrderPage = () => {
             style={{ color: "rgba(0, 136, 204)" }}
           >
             Telegram-канал
-          </a>{" "}
+          </a>
           предоставляется СКИДКА 5% на весь прокат снаряжения.
-        </div>{" "}
+        </div>
         <div>
           Кроме того, если вы отметите нас в социальных сетях, мы добавим еще 5%
           кэшбэка от суммы вашего заказа. Покажите подписку на своём телефоне
           при выдаче снаряжения. Кэшбэк возвращается, если у вас открытый
           аккаунт и отметка кликабельна.
-        </div>{" "}
-        <br />{" "}
+        </div>
+        <br />
       </div>
     ) : (
       <h1 style={{ marginTop: 100 }}>Ваша корзина пуста!</h1>
@@ -66,16 +83,16 @@ export const OrderPage = () => {
   }
 
   return (
-    <div className="order-page">
-      <button className="back-button" onClick={() => history(-1)}>
+    <div className={styles["order-page"]}>
+      <button className={styles["back-button"]} onClick={() => router.back()}>
         <IoIosArrowBack size={"25px"} /> Назад
       </button>
 
-      <div className="order-page__left">
+      <div className={styles["order-page__left"]}>
         {items && items.map((item) => <OrderItem key={item.id} item={item} />)}
       </div>
-      <div className="order-page__right">
-        <div className="order-page__totalprice">
+      <div className={styles["order-page__right"]}>
+        <div className={styles["order-page__totalprice"]}>
           <h4>
             {items.length}
             {enumerate(items && items.length, [
@@ -89,6 +106,18 @@ export const OrderPage = () => {
           <OrderInput setOrderSuccess={setOrderSuccess} items={items} />
         </div>
       </div>
+      {/* <Typography
+        variant="h5"
+        component="h3"
+        className={styles["product-related-title"]}
+        sx={{
+          fontFamily: "RoadRadio-Bold, sans-serif",
+          marginBottom: "10px",
+        }}
+      >
+        С этим товаром покупают
+      </Typography>
+      <RecommendedCarousel products={recommendedProducts} /> */}
     </div>
   );
 };

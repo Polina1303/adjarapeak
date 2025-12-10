@@ -7,7 +7,7 @@ import {
   plusItem,
 } from "../../redux/cart/reducer";
 import { Button } from "../button";
-import "./cart-item.css";
+import styles from "./cart-item.module.css";
 
 export const CartItem = ({ img, title, price, id, count }) => {
   const dispatch = useDispatch();
@@ -23,25 +23,28 @@ export const CartItem = ({ img, title, price, id, count }) => {
   };
 
   return (
-    <div className="cover">
-      <div className="cart-item">
+    <div className={styles["cover"]}>
+      <div className={styles["cart-item"]}>
         <img
-          className="cart-item__img"
-          src={process.env.PUBLIC_URL + "/img/" + img}
+          className={styles["cart-item__img"]}
+          src={"/img/" + img}
           alt={title}
         ></img>
-        <div className="cart-item__title">
+        <div className={styles["cart-item__title"]}>
           <span>{title}</span>
         </div>
         {count && count >= 0 ? (
-          <div className="cart-item__count_but">
+          <div className={styles["cart-item__count_but"]}>
             <Button onClick={handleClickMinus}>
-              <AiOutlineMinusCircle className="cart-item__count" size={20} />
+              <AiOutlineMinusCircle
+                className={styles["cart-item__count"]}
+                size={20}
+              />
             </Button>
-            <span className="cart-item__text"> {count}</span>
+            <span className={styles["cart-item__text"]}> {count}</span>
             <Button onClick={handleClickPlus}>
               <AiOutlinePlusCircle
-                className="cart-item__count-left"
+                className={styles["cart-item__count-left"]}
                 size={20}
               />
             </Button>
@@ -49,13 +52,13 @@ export const CartItem = ({ img, title, price, id, count }) => {
         ) : (
           handleClick()
         )}
-        <div className="cart-item__price">
+        <div className={styles["cart-item__price"]}>
           <span>{price * count}.00₾</span>
         </div>
         <div>
           <TiDeleteOutline
             size={25}
-            className="cart-item__delete"
+            className={styles["cart-item__delete"]}
             onClick={handleClick}
           />
         </div>

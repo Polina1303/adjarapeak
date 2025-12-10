@@ -1,47 +1,22 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Card, Button } from "antd";
 import { motion } from "framer-motion";
-import "./trip-page.css";
-import { useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
-import rock1 from "./image/rock1.WEBP";
-import rock2 from "./image/rock2.JPG";
-import martvili from "./image/martvili.jpeg";
-import udziro from "./image/udziro.jpg";
-import gomismta from "./image/gomismta.jpg";
-import latevra from "./image/latevra.jpg";
-import nardevan from "./image/nardevan.jpg";
-import vashlovani from "./image/vashlovani.jpg";
-import beshumi from "./image/beshumi.jpg";
-import svan from "./image/svan.webp";
-import guriaTea from "./image/guriaTea.webp";
-import kaviani from "./image/kaviani.JPG";
-import greenlake from "./image/greenlake.webp";
-import waterfall from "./image/waterfall.JPG";
-import gulebi from "./image/gulebi.webp";
-import tago from "./image/tago.jpg";
-import tobo from "./image/tobo.webp";
-import djo from "./image/djo.JPG";
-import mtirala from "./image/mtirala.webp";
-import archangela from "./image/archangela.webp";
-import mu from "./image/mu.jpg";
-import Hihani from "./image/Hihani.JPG";
-import goderdzi_mounting from "./image/2.webp";
-// import uchkho from "./image/uchkho.JPG";
-// import tago from "./image/tago.webp";
-import bakhmaro from "./image/bakhmaro.webp";
-import tbikeli from "./image/tbi.jpg";
-import TEA from "./image/TEA.jpg";
-import lake from "./image/lake.JPG";
-import balda_canyon from "./image/balda_canyon.jpg";
-import kazbek from "./image/kazbek.JPG";
-import maga from "./image/maga.jpg";
-import astro from "./image/astro.jpg";
-import djava from "./image/djava.jpg";
-import see from "./image/see.JPG";
-import kappadokia from "./image/kappadokia.jpeg";
+import classNames from "classnames";
 import { useInView } from "react-intersection-observer";
 import { GuidesSection } from "./guides-section/GuidesSection";
+import { useRouter } from "next/router";
+import { useMemo } from "react";
+import style from "./trip-page.module.css";
+// import latevra from "./image/latevra.jpg";
+// import nardevan from "./image/nardevan.jpg";
+// import vashlovani from "./image/vashlovani.jpg";
+// import tobo from "./image/tobo.webp";
+// import mu from "./image/mu.jpg";
+// import goderdzi_mounting from "./image/2.webp";
+// import balda_canyon from "./image/balda_canyon.jpg";
+// import astro from "./image/astro.jpg";
+// import kappadokia from "./image/kappadokia.jpeg";
 
 const events = [
   // {
@@ -50,7 +25,7 @@ const events = [
   //   description:
   //     "Большая дегустация редких сортов премиального чая. Мастер-класс по изготовлению чая. *все включено (для детей 15% скидка) ",
   //   price: "200",
-  //   image: TEA,
+  //   image: "/imageTrip/TEA.jpg",
   //   link: "/tea",
   //   type: "individual",
   // },
@@ -59,7 +34,7 @@ const events = [
   //   title: "Морское приключение на парусной яхте",
   //   description: "3 часа вокруг Батуми",
   //   price: "550",
-  //   image: see,
+  //   image: "/imageTrip/see.JPG",
   //   link: "/",
   //   type: "individual",
   // },
@@ -70,7 +45,7 @@ const events = [
   //   description:
   //     "Однодневный выезд с походом и пикником в горную деревню на высоте более 2 тысяч метров, закат в море  облаков. Маршрут | 10 км, 350 набора и сброса высоты. Гид Лео.",
   //   price: "95",
-  //   image: gomismta,
+  //   image: "/imageTrip/gomismta.jpg",
   //   link: "/",
   //   type: "group",
   //   leo: true,
@@ -81,7 +56,7 @@ const events = [
   //   description:
   //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
   //   price: "49",
-  //   image: rock2,
+  //   image: "/imageTrip/rock2.JPG",
   //   link: "/rockClimbing",
   //   type: "rockClimbing",
   // },
@@ -91,7 +66,7 @@ const events = [
   //   description:
   //     "Двухдневный выезд с палатками, в оборудованном кемпинге с цивилизованным душем, туалетом и инфраструктурой Маршрут | Озеро Оцинари и хребет с панорамными видами на кавказский хребет (12 км и 650 набора и сброса высоты). Гид Лео.",
   //   price: "190",
-  //   image: tago,
+  //   image: "/imageTrip/tago.webp",
   //   link: "/",
   //   type: "group",
   //   leo: true,
@@ -103,7 +78,7 @@ const events = [
   //   description:
   //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
   //   price: "49",
-  //   image: rock1,
+  //   image: "/imageTrip/rock1.WEBP",
   //   link: "/rockClimbing",
   //   type: "rockClimbing",
   // },
@@ -113,7 +88,7 @@ const events = [
   //   description:
   //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
   //   price: "49",
-  //   image: rock2,
+  //   image: "/imageTrip/rock2.JPG",
   //   link: "/rockClimbing",
   //   type: "rockClimbing",
   // },
@@ -124,7 +99,7 @@ const events = [
   //   description:
   //     "Высокогорное, тайное озеро на высоте 1700+ метров с живописной природой и местной фауной. Маршрут | 18 км, 1200 м набора и сброса высоты. Гид Лео.",
   //   price: "80",
-  //   image: uchkho,
+  //   image: "imageTrip/uchkho.JPG",
   //   link: "/uchkho",
   //   type: "group",
   //   leo: true,
@@ -135,7 +110,7 @@ const events = [
   //   description:
   //     "Однодневная прогулка к старинным крепостям и к высокогорным озёрам Шуамта (к ним уже по желанию). Маршрут | 14 км, 850 набора и сброса высоты (5 км и 500 набора и сброса высоты, если идти только на крепость). Гид Лео.",
   //   price: "90",
-  //   image: Hihani,
+  //   image: "/imageTrip/Hihani.JPG",
   //   link: "/hikhani",
   //   type: "group",
   //   leo: true,
@@ -147,7 +122,7 @@ const events = [
   //   description:
   //     "Редкий маршрут с заброской на внедорожниках на высоту более 2 тысяч метров и подъём на вершину с шикарными панорамными видами на Кавказ и Турцию. Маршрут | 7 км, 350 м набора и сброса. ",
   //   price: "150",
-  //   image: maga,
+  //   image: "/imageTrip/maga.jpg",
   //   link: "/",
   //   type: "group",
   //   leo: true,
@@ -158,7 +133,7 @@ const events = [
   //   description:
   //     "Комбинация живописных каньонов и купания в укромной локации — идеальный летний день. Лёгкая прогулка и купание.",
   //   price: "120",
-  //   image: martvili,
+  //   image: "/imageTrip/martvili.jpeg",
   //   link: "/",
   //   type: "group",
   // },
@@ -168,7 +143,7 @@ const events = [
   //   description:
   //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
   //   price: "49",
-  //   image: rock1,
+  //   image: "/imageTrip/rock1.WEBP",
   //   link: "/rockClimbing",
   //   type: "rockClimbing",
   // },
@@ -179,7 +154,7 @@ const events = [
   //   description:
   //     "Единственный выезд в августе к «морю облаков» и в лёгкий поход на вершину Диди Ваке. Маршрут | 10 км, 350 м набора.",
   //   price: "100",
-  //   image: gomismta,
+  //   image: "/imageTrip/gomismta.jpg",
   //   link: "/",
   //   type: "group",
   //   leo: true,
@@ -190,7 +165,7 @@ const events = [
   //   description:
   //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
   //   price: "49",
-  //   image: rock2,
+  //   image: "/imageTrip/rock2.JPG",
   //   link: "/rockClimbing",
   //   type: "rockClimbing",
   // },
@@ -201,7 +176,7 @@ const events = [
   //   description:
   //     "В высокогорном селе Бешуми в Аджарии проходит народный праздник «Шуамтоба», символизирующий завершение полевых работ и подъем в горы на летние пастбища. Праздник сопровождается песнями, танцами, традиционными угощениями и спортивными состязаниями, включая скачки. Идёт подготовка тура. Предзапись уже открыта. Гид Юлия.",
   //   price: "-",
-  //   image: beshumi,
+  //   image: "/imageTrip/beshumi.jpg" ,
   //   link: "/",
   //   type: "group",
   // },
@@ -211,7 +186,7 @@ const events = [
   //   description:
   //     "Маленькая группа — максимум 6 человек.Один из самых доступных пятитысячников Кавказа — и одновременно один из самых живописных. Если вы давно мечтали испытать себя в горах, это идеальный маршрут для первого восхождения. 7-дневная программа подойдёт даже новичкам.",
   //   price: "-",
-  //   image: kazbek,
+  //   image: "/imageTrip/kazbek.JPG",
   //   link: "/kazbeg",
   //   type: "group",
   // },
@@ -222,7 +197,7 @@ const events = [
   //   description:
   //     "Однодневная прогулка к старинным крепостям и к высокогорным озёрам Шуамта (к ним уже по желанию). Маршрут | 14 км, 850 набора и сброса высоты (5 км и 500 набора и сброса высоты, если идти только на крепость). Гид Лео.",
   //   price: "100",
-  //   image: Hihani,
+  //   image: "/imageTrip/Hihani.JPG",
   //   link: "/hikhani",
   //   type: "group",
   //   leo: true,
@@ -233,7 +208,7 @@ const events = [
   //   description:
   //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
   //   price: "49",
-  //   image: rock1,
+  //   image: "/imageTrip/rock1.WEBP",
   //   link: "/rockClimbing",
   //   type: "rockClimbing",
   // },
@@ -244,7 +219,7 @@ const events = [
   //   description:
   //     "Средней сложности маршрут с подъёмом на одну из самых высших гор всей Гурии. Маршрут | 7 км, 500 м набора и сброса.",
   //   price: "110",
-  //   image: djava,
+  //   image: "/imageTrip/djava.jpg",
   //   link: "/jvarimindori",
   //   type: "group",
   //   leo: true,
@@ -256,7 +231,7 @@ const events = [
   //   description:
   //     "Единственный выезд в августе к «морю облаков» и в лёгкий поход на вершину Диди Ваке.Маршрут | 10 км, 350 м набора.",
   //   price: "100",
-  //   image: gomismta,
+  //   image: "/imageTrip/gomismta.jpg",
   //   link: "/",
   //   type: "group",
   //   leo: true,
@@ -267,7 +242,7 @@ const events = [
   //   description:
   //     "Поход по каньону К водопадам Тоба и Ониоре, на границе трех регионов — Самегрело, Рача и Имерети. Потрясающая природа, захватывающий вид на Кавказский хребет, скалы и пещеры по пути.",
   //   price: "120",
-  //   image: martvili,
+  //   image:"/imageTrip/martvili.jpeg",
   //   link: "/martvili",
   //   type: "group",
   // },
@@ -277,7 +252,7 @@ const events = [
   //   description:
   //     "Ночёвка у одного из самых красивых озёр Грузии — с классными видами, костром и звездным потоком Персеиды.Маршрут | 30 км, 1300 м набора (по 15км в день).",
   //   price: "250",
-  //   image: tbikeli,
+  //   image: "/imageTrip/tbi.jpg",
   //   link: "/tbikeli",
   //   type: "group",
   //   leo: true,
@@ -288,7 +263,7 @@ const events = [
   //   description:
   //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
   //   price: "49",
-  //   image: rock1,
+  //   image: "/imageTrip/rock1.WEBP",
   //   link: "/rockClimbing",
   //   type: "rockClimbing",
   // },
@@ -299,7 +274,7 @@ const events = [
   //   description:
   //     "Вы просили — мы сделали 💫 Совместили путешествие в горы и глубокую практику хатха-йоги.",
   //   price: "130",
-  //   image: gomismta,
+  //   image:"/imageTrip/gomismta.jpg",
   //   link: "/yoga-gomismta",
   //   type: "group",
   //   gide: 2,
@@ -311,7 +286,7 @@ const events = [
   //   description:
   //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
   //   price: "49",
-  //   image: rock1,
+  //   image: "/imageTrip/rock1.WEBP",
   //   link: "/rockClimbing",
   //   type: "rockClimbing",
   // },
@@ -320,7 +295,7 @@ const events = [
   //   title: "Годердзи-Зеленое озеро + ПИКНИК",
   //   description: "Зелёное озеро и Сабанела на высоте свыше 2000 метров.",
   //   price: "130",
-  //   image: greenlake,
+  //   image: "/imageTrip/greenlake.webp",
   //   link: "/greenlake",
   //   type: "group",
   //   gide: 1,
@@ -331,7 +306,7 @@ const events = [
   //   description:
   //     "Если вы устали от типичных закатов в Гомисмта, то это для вас — пеший маршрут от деревни ГомисМта до озера Чинчао, которое находится на высоте 2500 метров над уровнем море. ",
   //   price: "110",
-  //   image: gomismta,
+  //   image: "/imageTrip/gomismta.jpg",
   //   link: "/gomismta_chinchao",
   //   type: "group",
   //   gide: 2,
@@ -343,7 +318,7 @@ const events = [
   //   description:
   //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
   //   price: "49",
-  //   image: rock1,
+  //   image: "/imageTrip/rock1.WEBP",
   //   link: "/rockClimbing",
   //   type: "rockClimbing",
   // },
@@ -353,7 +328,7 @@ const events = [
   //   description:
   //     "Однодневная хайкинг-поездка с пикником в высокогорную деревню на высоте более 2000 метров, известную своим чистым и целебным воздухом Маршрут | 8 км, 550 набора и сброса высоты. Гид Лео.",
   //   price: "100",
-  //   image: bakhmaro,
+  //   image: "/imageTrip/bakhmaro.webp",
   //   link: "/bakhmaro",
   //   type: "group",
   //   gide: 1,
@@ -364,7 +339,7 @@ const events = [
   //   description:
   //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
   //   price: "49",
-  //   image: rock1,
+  //   image: "/imageTrip/rock1.WEBP",
   //   link: "/rockClimbing",
   //   type: "rockClimbing",
   // },
@@ -375,7 +350,7 @@ const events = [
   //   description:
   //     "Финальный выезд лета — озеро на высоте 2800+, один из самых известных треков в Раче. Многодневный маршрут (3 дня и 2 ночи). Еда включена в стоимость. ",
   //   price: "450",
-  //   image: udziro,
+  //   image: "/imageTrip/udziro.jpg",
   //   link: "/udziro",
   //   type: "group",
   //   gide: 1,
@@ -386,7 +361,7 @@ const events = [
   //   description:
   //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
   //   price: "49",
-  //   image: rock1,
+  //   image: "/imageTrip/rock1.WEBP",
   //   link: "/rockClimbing",
   //   type: "rockClimbing",
   // },
@@ -396,7 +371,7 @@ const events = [
   //   description:
   //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
   //   price: "49",
-  //   image: rock1,
+  //   image: "/imageTrip/rock1.WEBP",
   //   link: "/rockClimbing",
   //   type: "rockClimbing",
   // },
@@ -406,7 +381,7 @@ const events = [
   //   description:
   //     "Поход к озеру Чинчао с ночевкой у высокогорного озера. Маршрут | 20 км. Сложность - 3 из 5.",
   //   price: "200",
-  //   image: gomismta,
+  //   image: "/imageTrip/gomismta.jpg",
   //   link: "/",
   //   type: "group",
   //   gide: 1,
@@ -417,7 +392,7 @@ const events = [
   //   description:
   //     "Маленькая группа — максимум 6 человек.Один из самых доступных пятитысячников Кавказа — и одновременно один из самых живописных. Если вы давно мечтали испытать себя в горах, это идеальный маршрут для первого восхождения. 7-дневная программа подойдёт даже новичкам.",
   //   price: "-",
-  //   image: kazbek,
+  //   image: "/imageTrip/kazbek.JPG",
   //   link: "/kazbeg",
   //   type: "group",
   // },
@@ -427,7 +402,7 @@ const events = [
   //   description:
   //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
   //   price: "49",
-  //   image: rock1,
+  //   image: "/imageTrip/rock1.WEBP",
   //   link: "/rockClimbing",
   //   type: "rockClimbing",
   // },
@@ -437,7 +412,7 @@ const events = [
   //   description:
   //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
   //   price: "49",
-  //   image: rock1,
+  //   image: "/imageTrip/rock1.WEBP",
   //   link: "/rockClimbing",
   //   type: "rockClimbing",
   // },
@@ -447,7 +422,7 @@ const events = [
   //   description:
   //     "Поездка к высокогорному альпийскому Зелёному озеру в Годердзи с походом к Чёрному озеру и Сабанела. Вечером — посиделки у костра с маршмеллоу и сосисками под звёздным небом, а утром — трек к Чёрному озеру. Маршрут | 14 км. Сложность - 3 из 5.",
   //   price: "200",
-  //   image: greenlake,
+  //   image: /imageTrip/greenlake.webp,
   //   link: "/greenlake",
   //   type: "group",
   //   gide: 1,
@@ -458,7 +433,7 @@ const events = [
   //   description:
   //     "Двухдневный выезд в высокогорный регион на северо-западе Сакартвело, который известен своими живописными пейзажами, средневековыми башнями и богатой культурой и историей.",
   //   price: "320",
-  //   image: svan,
+  //   image: "/imageTrip/svan.webp",
   //   link: "/svaneti",
   //   type: "group",
   //   gide: 2,
@@ -469,7 +444,7 @@ const events = [
   //   description:
   //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
   //   price: "49",
-  //   image: rock1,
+  //   image: "/imageTrip/rock1.WEBP",
   //   link: "/rockClimbing",
   //   type: "rockClimbing",
   // },
@@ -479,7 +454,7 @@ const events = [
   //   description:
   //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
   //   price: "49",
-  //   image: rock1,
+  //   image: "/imageTrip/rock1.WEBP",
   //   link: "/rockClimbing",
   //   type: "rockClimbing",
   // },
@@ -489,7 +464,7 @@ const events = [
   //   description:
   //     "Поход к самой высокой точке Бахмаро и всего региона Гурии — горе Сакорния (2755 метров). Пройдём с рюкзаками половину пути и остановимся с палатками. В тот же день либо утром отправимся налегке на вершину, а затем вернёмся обратно. Маршрут | 16 км.",
   //   price: "200",
-  //   image: bakhmaro,
+  //   image: "/imageTrip/bakhmaro.webp",
   //   link: "/bakhmaro",
   //   type: "group",
   //   gide: 1,
@@ -500,7 +475,7 @@ const events = [
   //   description:
   //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
   //   price: "49",
-  //   image: rock1,
+  //   image: "/imageTrip/rock1.WEBP",
   //   link: "/rockClimbing",
   //   type: "rockClimbing",
   // },
@@ -510,7 +485,7 @@ const events = [
   //   description:
   //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
   //   price: "49",
-  //   image: rock1,
+  //   image: "/imageTrip/rock1.WEBP",
   //   link: "/rockClimbing",
   //   type: "rockClimbing",
   // },
@@ -520,7 +495,7 @@ const events = [
   //   description:
   //     "Однодневная прогулка к старинным крепостям и к высокогорным озёрам Шуамта (к ним уже по желанию). Маршрут | 14 км, 850 набора и сброса высоты (5 км и 500 набора и сброса высоты, если идти только на крепость). Гид Лео.",
   //   price: "130",
-  //   image: Hihani,
+  //   image: "/imageTrip/Hihani.JPG",
   //   link: "/hikhani",
   //   type: "group",
   //   gide: 1,
@@ -531,7 +506,7 @@ const events = [
   //   description:
   //     "Вновь отправляемся в Гурию — сердце грузинского чая, на плантацию 📍Taba Tea, где чай растят с любовью с 1993 года. Это не просто тур, это ритуал погружения в культуру чая и открытие новой Грузии.",
   //   price: "120",
-  //   image: guriaTea,
+  //   image: "imageTrip/guriaTea.webp",
   //   link: "/guriaTea",
   //   type: "group",
   //   gide: 2,
@@ -542,7 +517,7 @@ const events = [
   //   description:
   //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
   //   price: "49",
-  //   image: rock1,
+  //   image: "/imageTrip/rock1.WEBP",
   //   link: "/rockClimbing",
   //   type: "rockClimbing",
   // },
@@ -552,7 +527,7 @@ const events = [
   //   description:
   //     "Последний выезд с заброской на внедорожниках туда, куда не возят туристов.",
   //   price: "150",
-  //   image: maga,
+  //   image: "/imageTrip/maga.jpg",
   //   link: "/maga",
   //   type: "group",
   //   gide: 1,
@@ -563,7 +538,7 @@ const events = [
   //   description:
   //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
   //   price: "49",
-  //   image: rock2,
+  //   image: "/imageTrip/rock2.JPG",
   //   link: "/rockClimbing",
   //   type: "rockClimbing",
   // },
@@ -574,7 +549,7 @@ const events = [
   //   description:
   //     "Средней сложности маршрут с подъёмом на одну из самых высших гор всей Гурии. Маршрут | 8 км, 500 м набора и сброса.",
   //   price: "130",
-  //   image: djava,
+  //   image: "/imageTrip/djava.jpg",
   //   link: "/jvarimindori",
   //   type: "group",
   //   leo: true,
@@ -585,7 +560,7 @@ const events = [
   //   description:
   //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
   //   price: "49",
-  //   image: rock1,
+  //   image: "/imageTrip/rock1.WEBP",
   //   link: "/rockClimbing",
   //   type: "rockClimbing",
   // },
@@ -596,7 +571,7 @@ const events = [
   //   description:
   //     "Единственный выезд в августе к «морю облаков» и в лёгкий поход на вершину Диди Ваке. Маршрут | 10 км, 350 м набора.",
   //   price: "130",
-  //   image: gomismta,
+  //   image: "/imageTrip/gomismta.jpg",
   //   link: "/",
   //   type: "group",
   //   leo: true,
@@ -607,7 +582,7 @@ const events = [
   //   description:
   //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
   //   price: "49",
-  //   image: rock2,
+  //   image: "/imageTrip/rock2.JPG",
   //   link: "/rockClimbing",
   //   type: "rockClimbing",
   // },
@@ -617,7 +592,7 @@ const events = [
   //   description:
   //     "Однодневная хайкинг-поездка с пикником в высокогорную деревню на высоте более 2000 метров, известную своим чистым и целебным воздухом Маршрут | 8 км, 550 набора и сброса высоты. Гид Лео.",
   //   price: "130",
-  //   image: bakhmaro,
+  //   image: "/imageTrip/bakhmaro.webp",
   //   link: "/bakhmaro",
   //   type: "group",
   //   gide: 1,
@@ -628,7 +603,7 @@ const events = [
   //   description:
   //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
   //   price: "49",
-  //   image: rock1,
+  //   image: "/imageTrip/rock1.WEBP",
   //   link: "/rockClimbing",
   //   type: "rockClimbing",
   // },
@@ -637,7 +612,7 @@ const events = [
   //   title: "Годердзи-Зеленое озеро",
   //   description: "Зелёное озеро и Сабанела на высоте свыше 2000 метров.",
   //   price: "130",
-  //   image: greenlake,
+  //   image: /imageTrip/greenlake.webp,
   //   link: "/greenlake",
   //   type: "group",
   //   gide: 1,
@@ -648,7 +623,7 @@ const events = [
   //   description:
   //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
   //   price: "49",
-  //   image: rock2,
+  //   image: "/imageTrip/rock2.JPG",
   //   link: "/rockClimbing",
   //   type: "rockClimbing",
   // },
@@ -658,7 +633,7 @@ const events = [
   //   description:
   //     "Однодневная прогулка к старинным крепостям и к высокогорным озёрам Шуамта (к ним уже по желанию). Маршрут | 14 км, 850 набора и сброса высоты (5 км и 500 набора и сброса высоты, если идти только на крепость). Гид Лео.",
   //   price: "130",
-  //   image: Hihani,
+  //   image: "/imageTrip/Hihani.JPG",
   //   link: "/hikhani",
   //   type: "group",
   //   gide: 1,
@@ -669,7 +644,7 @@ const events = [
   //   description:
   //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
   //   price: "49",
-  //   image: rock1,
+  //   image: "/imageTrip/rock1.WEBP",
   //   link: "/rockClimbing",
   //   type: "rockClimbing",
   // },
@@ -680,7 +655,7 @@ const events = [
   //   description:
   //     "Единственный выезд в августе к «морю облаков» и в лёгкий поход на вершину Диди Ваке. Маршрут | 10 км, 350 м набора.",
   //   price: "130",
-  //   image: gomismta,
+  //   image: "/imageTrip/gomismta.jpg",
   //   link: "/",
   //   type: "group",
   //   leo: true,
@@ -691,7 +666,7 @@ const events = [
   //   description:
   //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
   //   price: "49",
-  //   image: rock2,
+  //   image: "/imageTrip/rock2.JPG",
   //   link: "/rockClimbing",
   //   type: "rockClimbing",
   // },
@@ -701,7 +676,7 @@ const events = [
   //   description:
   //     "Маршрут с заброской до уютного кемпинга с качелями, беседкой и костровищем. Сходим в радиальный хайк до смотровой площадки на пик горы Архангела. Сложность - 2 из 5",
   //   price: "99",
-  //   image: archangela,
+  //   image: "/imageTrip/archangela.webp",
   //   link: "/",
   //   type: "group",
   //   leo: true,
@@ -712,7 +687,7 @@ const events = [
   //   description:
   //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
   //   price: "49",
-  //   image: rock1,
+  //   image: "/imageTrip/rock1.WEBP",
   //   link: "/rockClimbing",
   //   type: "rockClimbing",
   // },
@@ -722,7 +697,7 @@ const events = [
   //   description:
   //     "Живописный маршрут с посещением водопада и озера. Подойдёт даже новичкам. Сложность - 2 из 5.",
   //   price: "99",
-  //   image: mtirala,
+  //   image: "/imageTrip/mtirala.webp",
   //   link: "/",
   //   type: "group",
   //   leo: true,
@@ -733,7 +708,7 @@ const events = [
   //   description:
   //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
   //   price: "49",
-  //   image: rock2,
+  //   image: "/imageTrip/rock2.JPG",
   //   link: "/rockClimbing",
   //   type: "rockClimbing",
   // },
@@ -744,7 +719,7 @@ const events = [
     description:
       "Повторный выезд к исторической крепости Кавиани с хайкингом по осеннему лесу. Сложность - 1 из 5.",
     price: "99",
-    image: kaviani,
+    image: "/imageTrip/kaviani.JPG",
     link: "/",
     type: "group",
     leo: true,
@@ -755,7 +730,7 @@ const events = [
     description:
       "Тренировки и маршруты для любого уровня – от новичков до любителей.",
     price: "49",
-    image: rock1,
+    image: "/imageTrip/rock1.WEBP",
     link: "/rockClimbing",
     type: "rockClimbing",
   },
@@ -765,7 +740,7 @@ const events = [
     description:
       "Маршрут с заброской для сокращения набора высоты. Подойдёт даже новичкам. Пройдём через осенний лес и поднимемся на вершину к крепости Гулеби, где устроим пикник с панорамными видами. Сложность - 1 из 5.",
     price: "99",
-    image: gulebi,
+    image: "/imageTrip/gulebi.webp",
     link: "/",
     type: "group",
     leo: true,
@@ -776,7 +751,7 @@ const events = [
     description:
       "Тренировки и маршруты для любого уровня – от новичков до любителей.",
     price: "49",
-    image: rock2,
+    image: "/imageTrip/rock2.JPG",
     link: "/rockClimbing",
     type: "rockClimbing",
   },
@@ -786,7 +761,7 @@ const events = [
     description:
       "Маршрут, в котором мы зайдём прямо за водопад и устроим там пикник. Сложность - 2 из 5.",
     price: "99",
-    image: djo,
+    image: "/imageTrip/djo.JPG",
     link: "/",
     type: "group",
     leo: true,
@@ -797,7 +772,7 @@ const events = [
     description:
       "Тренировки и маршруты для любого уровня – от новичков до любителей.",
     price: "49",
-    image: rock1,
+    image: "/imageTrip/rock1.WEBP",
     link: "/rockClimbing",
     type: "rockClimbing",
   },
@@ -807,7 +782,7 @@ const events = [
     description:
       "Атмосферный маршрут к редко посещаемому водопаду Чинкадзебе. Сложность - 2 из 5.",
     price: "99",
-    image: waterfall,
+    image: "/imageTrip/waterfall.JPG",
     link: "/",
     type: "group",
     leo: true,
@@ -818,7 +793,7 @@ const events = [
     description:
       "Тренировки и маршруты для любого уровня – от новичков до любителей.",
     price: "49",
-    image: rock2,
+    image: "/imageTrip/rock2.JPG",
     link: "/rockClimbing",
     type: "rockClimbing",
   },
@@ -828,7 +803,7 @@ const events = [
     description:
       "Маршрут с заброской до уютного кемпинга с качелями, беседкой и костровищем. Сходим в радиальный хайк до смотровой площадки на пик горы Архангела. Сложность - 2 из 5",
     price: "99",
-    image: archangela,
+    image: "/imageTrip/archangela.webp",
     link: "/",
     type: "group",
     leo: true,
@@ -839,7 +814,7 @@ const events = [
     description:
       "Тренировки и маршруты для любого уровня – от новичков до любителей.",
     price: "49",
-    image: rock1,
+    image: "/imageTrip/rock1.WEBP",
     link: "/rockClimbing",
     type: "rockClimbing",
   },
@@ -849,7 +824,7 @@ const events = [
     description:
       "Живописный маршрут с посещением водопада и озера. Подойдёт даже новичкам. Сложность - 2 из 5.",
     price: "99",
-    image: mtirala,
+    image: "/imageTrip/mtirala.webp",
     link: "/",
     type: "group",
     leo: true,
@@ -860,7 +835,7 @@ const events = [
     description:
       "Тренировки и маршруты для любого уровня – от новичков до любителей.",
     price: "49",
-    image: rock2,
+    image: "/imageTrip/rock2.JPG",
     link: "/rockClimbing",
     type: "rockClimbing",
   },
@@ -870,7 +845,7 @@ const events = [
     description:
       "Тренировки и маршруты для любого уровня – от новичков до любителей.",
     price: "49",
-    image: rock1,
+    image: "/imageTrip/rock1.WEBP",
     link: "/rockClimbing",
     type: "rockClimbing",
   },
@@ -881,7 +856,7 @@ const events = [
     description:
       "Тренировки и маршруты для любого уровня – от новичков до любителей.",
     price: "49",
-    image: rock2,
+    image: "/imageTrip/rock2.JPG",
     link: "/rockClimbing",
     type: "rockClimbing",
   },
@@ -891,7 +866,7 @@ const events = [
     description:
       "Тренировки и маршруты для любого уровня – от новичков до любителей.",
     price: "49",
-    image: rock1,
+    image: "/imageTrip/rock1.WEBP",
     link: "/rockClimbing",
     type: "rockClimbing",
   },
@@ -902,7 +877,7 @@ const events = [
     description:
       "Тренировки и маршруты для любого уровня – от новичков до любителей.",
     price: "49",
-    image: rock2,
+    image: "/imageTrip/rock2.JPG",
     link: "/rockClimbing",
     type: "rockClimbing",
   },
@@ -912,7 +887,7 @@ const events = [
     description:
       "Тренировки и маршруты для любого уровня – от новичков до любителей.",
     price: "49",
-    image: rock1,
+    image: "/imageTrip/rock1.WEBP",
     link: "/rockClimbing",
     type: "rockClimbing",
   },
@@ -923,7 +898,7 @@ const events = [
     description:
       "Тренировки и маршруты для любого уровня – от новичков до любителей.",
     price: "49",
-    image: rock2,
+    image: "/imageTrip/rock2.JPG",
     link: "/rockClimbing",
     type: "rockClimbing",
   },
@@ -934,7 +909,7 @@ const events = [
     description:
       "Тренировки и маршруты для любого уровня – от новичков до любителей.",
     price: "49",
-    image: rock1,
+    image: "/imageTrip/rock1.WEBP",
     link: "/rockClimbing",
     type: "rockClimbing",
   },
@@ -945,14 +920,55 @@ const events = [
     description:
       "Тренировки и маршруты для любого уровня – от новичков до любителей.",
     price: "49",
-    image: rock2,
+    image: "/imageTrip/rock2.JPG",
     link: "/rockClimbing",
     type: "rockClimbing",
   },
 ];
+const monthMap = {
+  января: 0,
+  февраля: 1,
+  марта: 2,
+  апреля: 3,
+  мая: 4,
+  июня: 5,
+  июля: 6,
+  августа: 7,
+  сентября: 8,
+  октября: 9,
+  ноября: 10,
+  декабря: 11,
+};
+
+function parseEventDate(dateStr) {
+  const trimmed = dateStr.trim();
+
+  if (trimmed.includes("В любой из дней") || trimmed.includes("по запросу")) {
+    return null;
+  }
+  const clean = trimmed.replace(/\s*\([^)]*\)$/, "").trim();
+
+  const parts = clean.split(/\s+/);
+  const dayStr = parts[0].split("-")[0];
+  const monthStr = parts[1]?.toLowerCase();
+
+  const day = parseInt(dayStr, 10);
+  const month = monthMap[monthStr];
+
+  if (isNaN(day) || month === undefined) {
+    console.warn("Не удалось распарсить дату:", dateStr);
+    return null;
+  }
+
+  const year = new Date().getFullYear();
+  const eventDate = new Date(year, month, day);
+  eventDate.setHours(0, 0, 0, 0);
+
+  return eventDate;
+}
 
 export const TripPage = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { ref, inView } = useInView({
     threshold: 0,
     triggerOnce: true,
@@ -964,128 +980,174 @@ export const TripPage = () => {
     setFilter(type);
   };
 
-  const filteredEvents =
-    filter === "all"
-      ? events.filter((event) => event.type !== "rockClimbing")
-      : events.filter((event) => event.type === filter);
+  const getEmptyMessage = () => {
+    if (filter === "individual") {
+      return "На данный момент индивидуальных туров нет. Скоро появятся новые даты!";
+    }
+    if (filter === "group") {
+      return "Ближайших групповых туров пока нет. Скоро появятся новые даты!";
+    }
+    if (filter === "rockClimbing") {
+      return "Скалолазание временно приостановлено. Скоро появятся новые даты!";
+    }
+    return "Ближайших мероприятий пока нет. Скоро появятся новые даты!";
+  };
+
+  const filteredEvents = useMemo(() => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    return events
+      .filter((event) => {
+        if (
+          event.date.includes("В любой из дней") ||
+          event.date.includes("по запросу")
+        ) {
+          return true;
+        }
+
+        const eventDate = parseEventDate(event.date);
+        if (!eventDate) return true;
+
+        return eventDate >= today;
+      })
+      .filter((event) => {
+        if (filter === "all") return event.type !== "rockClimbing";
+        return event.type === filter;
+      });
+  }, [filter]);
 
   return (
-    <div className="back-button-cover">
-      <button className="back-button" onClick={() => navigate(-1)}>
+    <div className={style["back-button-cover"]}>
+      <button className={style["back-button"]} onClick={() => router.back()}>
         <IoIosArrowBack size={"25px"} /> Назад
       </button>
 
-      <div className="event-schedule-container">
-        <h2 className="event-schedule-title">
-          <span className="tripe-text"> Расписание </span>{" "}
-          <span className="tripe-text"> мероприятий </span>{" "}
-          <span className="tripe-text">на</span>{" "}
-          <span className="tripe-text">сезон</span>
+      <div className={style["event-schedule-container"]}>
+        <h2 className={style["event-schedule-title"]}>
+          <span className={style["tripe-text"]}>Расписание</span>
+          <span className={style["tripe-text"]}>мероприятий </span>
+          <span className={style["tripe-text"]}>на</span>
+          <span className={style["tripe-text"]}>сезон</span>
         </h2>
 
-        <div className="filter-buttons">
-          {/* <button
-            className={`filter-button ${filter === "all" ? "active" : ""}`}
+        <div className={style["filter-buttons"]}>
+          <button
+            className={classNames(style["filter-button"], {
+              [style.active]: filter === "all",
+            })}
             onClick={() => handleFilter("all")}
           >
             Все туры
-          </button> */}
-          {/* <button
-            className={`filter-button ${
-              filter === "individual" ? "active" : ""
-            }`}
+          </button>
+          <button
+            className={classNames(style["filter-button"], {
+              [style.active]: filter === "individual",
+            })}
             onClick={() => handleFilter("individual")}
           >
             Индивидуальные
-          </button> */}
+          </button>
+
           <button
-            className={`filter-button ${filter === "group" ? "active" : ""}`}
+            className={classNames(style["filter-button"], {
+              [style.active]: filter === "group",
+            })}
             onClick={() => handleFilter("group")}
           >
             Групповые
           </button>
+
           <button
-            commentMore
-            actions
-            className={`filter-button ${
-              filter === "rockClimbing" ? "active" : ""
-            }`}
+            className={classNames(style["filter-button"], {
+              [style.active]: filter === "rockClimbing",
+            })}
             onClick={() => handleFilter("rockClimbing")}
           >
             Скалолазание
           </button>
         </div>
 
-        <div className="card-grid">
-          {filteredEvents.map((event, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <Card
-                ref={ref}
-                title={`${event.date}`}
-                bordered={false}
-                className="card-item"
+        <div className={style["card-grid"]}>
+          {filteredEvents.length === 0 ? (
+            <div className={style["empty-state"]}>
+              <p className={style["empty-text"]}>{getEmptyMessage()}</p>
+            </div>
+          ) : (
+            filteredEvents.map((event, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <div className="card-header">
-                  <img
-                    src={event.image}
-                    alt={event.title}
-                    className="card-image"
-                  />
-                  <h3 className="card-title">{event.title}</h3>
-                </div>
-                <p className="card-description">{event.description}</p>
-                {event.price !== "-" && (
-                  <p className="card-price">Цена: {event.price} лари</p>
-                )}
-
-                <div className="card-buttons">
-                  {event.link !== "/" && (
-                    <Button
-                      className="button"
-                      onClick={() => navigate(event.link)}
-                    >
-                      Узнать больше
-                    </Button>
+                <Card
+                  ref={ref}
+                  title={`${event.date}`}
+                  bordered={false}
+                  className={style["card-item"]}
+                >
+                  <div className={style["card-header"]}>
+                    <img
+                      src={event.image}
+                      alt={event.title}
+                      className={style["card-image"]}
+                    />
+                    <h3 className={style["card-title"]}>{event.title}</h3>
+                  </div>
+                  <p className={style["card-description"]}>
+                    {event.description}
+                  </p>
+                  {event.price !== "-" && (
+                    <p className={style["card-price"]}>
+                      Цена: {event.price} лари
+                    </p>
                   )}
-                  <Button className="custom-button">
-                    {event.gide === 1 ? (
-                      <a
-                        href="https://t.me/molmeena"
-                        target="_blank"
-                        rel="noreferrer"
+
+                  <div className={style["card-buttons"]}>
+                    {event.link !== "/" && (
+                      <Button
+                        className={style["button"]}
+                        onClick={() => router.push(event.link)}
                       >
-                        Записаться
-                      </a>
-                    ) : event.gide === 2 ? (
-                      <a
-                        href="https://t.me/YulikosTailor"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Записаться
-                      </a>
-                    ) : (
-                      <a
-                        href="https://t.me/shpaksn"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Записаться
-                      </a>
+                        Узнать больше
+                      </Button>
                     )}
-                  </Button>
-                </div>
-              </Card>
-            </motion.div>
-          ))}
+                    <Button className={style["custom-button"]}>
+                      {event.gide === 1 ? (
+                        <a
+                          href="https://t.me/molmeena"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          Записаться
+                        </a>
+                      ) : event.gide === 2 ? (
+                        <a
+                          href="https://t.me/YulikosTailor"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          Записаться
+                        </a>
+                      ) : (
+                        <a
+                          href="https://t.me/shpaksn"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          Записаться
+                        </a>
+                      )}
+                    </Button>
+                  </div>
+                </Card>
+              </motion.div>
+            ))
+          )}
         </div>
       </div>
-      {/* <GuidesSection /> */}
+      <GuidesSection />
     </div>
   );
 };
@@ -1114,7 +1176,7 @@ export const TripPage = () => {
 //   description:
 //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
 //   price: "49",
-//   image: rock1,
+//   image: "/imageTrip/rock1.WEBP",
 //   link: "/rockClimbing",
 // },
 // {
@@ -1132,7 +1194,7 @@ export const TripPage = () => {
 //   description:
 //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
 //   price: "49",
-//   image: rock2,
+//   image: "/imageTrip/rock2.JPG",
 //   link: "/rockClimbing",
 // },
 // {
@@ -1150,7 +1212,7 @@ export const TripPage = () => {
 //   description:
 //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
 //   price: "49",
-//   image: rock1,
+//   image: "/imageTrip/rock1.WEBP",
 //   link: "/rockClimbing",
 // },
 // {
@@ -1168,7 +1230,7 @@ export const TripPage = () => {
 //   description:
 //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
 //   price: "49",
-//   image: rock2,
+//   image: "/imageTrip/rock2.JPG",
 //   link: "/rockClimbing",
 // },
 
@@ -1177,6 +1239,6 @@ export const TripPage = () => {
 //   title: "Гомис Мта",
 //   description: "Идёт подготовка тура. Предзапись уже открыта. Гид Юлия.",
 //   price: "-",
-//   image: gomismta,
+//   image: "/imageTrip/gomismta.jpg",
 //   link: "/",
 // },

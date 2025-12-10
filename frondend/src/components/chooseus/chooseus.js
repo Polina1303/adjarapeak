@@ -1,45 +1,54 @@
 import { AiOutlineCheckCircle } from "react-icons/ai";
 import { FaHandPointUp } from "react-icons/fa";
-import "./chooseus.css";
+import styles from "./chooseus.module.css";
 import { useSelector } from "react-redux";
 
 export const ChooseUs = () => {
   const languages = useSelector((state) => state.languages.currentLanguages);
 
   return (
-    <div className="choose-cover">
-      <div className="choose-title">
+    <div className={styles["choose-cover"]}>
+      <div className={styles["choose-title"]}>
         <h2>
           {languages === "RU" ? "Почему выбирают нас?" : "Why Choose Us?"}
         </h2>
 
-        <div className="choose-columns">
-          <div className="choose-column">
-            <div className="choose-item">
-              <AiOutlineCheckCircle size={25} className="choose-checkin" />
+        <div className={styles["choose-columns"]}>
+          <div className={styles["choose-column"]}>
+            <div className={styles["choose-item"]}>
+              <AiOutlineCheckCircle
+                size={25}
+                className={styles["choose-checkin"]}
+              />
               <h5>{languages === "RU" ? "ВСЁ В ОДНОМ МЕСТЕ" : ""}</h5>
             </div>
-            <p className="choose-item-description">
+            <p className={styles["choose-item-description"]}>
               {languages === "RU"
                 ? "Магазин, прокат, походы, джиппинг, восхождения и скалолазание — всё в одном месте."
                 : ""}
             </p>
 
-            <div className="choose-item">
-              <AiOutlineCheckCircle size={25} className="choose-checkin" />
+            <div className={styles["choose-item"]}>
+              <AiOutlineCheckCircle
+                size={25}
+                className={styles["choose-checkin"]}
+              />
               <h5>{languages === "RU" ? "ОТСУТСТВИЕ ЗАЛОГА" : ""}</h5>
             </div>
-            <p className="choose-item-description">
+            <p className={styles["choose-item-description"]}>
               {languages === "RU"
                 ? "Для заключения договора нужен только паспорт."
                 : ""}
             </p>
 
-            <div className="choose-item">
-              <AiOutlineCheckCircle size={25} className="choose-checkin" />
+            <div className={styles["choose-item"]}>
+              <AiOutlineCheckCircle
+                size={25}
+                className={styles["choose-checkin"]}
+              />
               <h5>{languages === "RU" ? "БРОНИРОВАНИЕ" : ""}</h5>
             </div>
-            <p className="choose-item-description">
+            <p className={styles["choose-item-description"]}>
               {languages === "RU" ? (
                 <>
                   Доступно от 2 суток, по предоплате.
@@ -51,11 +60,14 @@ export const ChooseUs = () => {
               )}
             </p>
 
-            <div className="choose-item">
-              <AiOutlineCheckCircle size={25} className="choose-checkin" />
+            <div className={styles["choose-item"]}>
+              <AiOutlineCheckCircle
+                size={25}
+                className={styles["choose-checkin"]}
+              />
               <h5>{languages === "RU" ? "БОНУС ЗА ПОДПИСКУ" : ""}</h5>
             </div>
-            <p className="choose-item-description">
+            <p className={styles["choose-item-description"]}>
               {languages === "RU"
                 ? "Подписчики нашего"
                 : "To all our followers"}
@@ -80,11 +92,14 @@ export const ChooseUs = () => {
               )}
             </p>
 
-            <div className="choose-item">
-              <AiOutlineCheckCircle size={25} className="choose-checkin" />
+            <div className={styles["choose-item"]}>
+              <AiOutlineCheckCircle
+                size={25}
+                className={styles["choose-checkin"]}
+              />
               <h5>{languages === "RU" ? "ГИБКИЕ УСЛОВИЯ" : ""}</h5>
             </div>
-            <p className="choose-item-description">
+            <p className={styles["choose-item-description"]}>
               {languages === "RU" ? (
                 <>
                   Можно взять снаряжение на день, на выходные или на неделю.
@@ -96,12 +111,15 @@ export const ChooseUs = () => {
             </p>
           </div>
 
-          <div className="choose-column">
-            <div className="choose-item">
-              <AiOutlineCheckCircle size={25} className="choose-checkin" />
+          <div className={styles["choose-column"]}>
+            <div className={styles["choose-item"]}>
+              <AiOutlineCheckCircle
+                size={25}
+                className={styles["choose-checkin"]}
+              />
               <h5>{languages === "RU" ? "ЭКСПЕРТНАЯ КОМАНДА" : ""}</h5>
             </div>
-            <p className="choose-item-description">
+            <p className={styles["choose-item-description"]}>
               {languages === "RU" ? (
                 <>
                   Мы сами ходим в горы, занимаемся спортом и тестируем
@@ -115,11 +133,14 @@ export const ChooseUs = () => {
               )}
             </p>
 
-            <div className="choose-item">
-              <AiOutlineCheckCircle size={25} className="choose-checkin" />
+            <div className={styles["choose-item"]}>
+              <AiOutlineCheckCircle
+                size={25}
+                className={styles["choose-checkin"]}
+              />
               <h5>{languages === "RU" ? "УДОБНОЕ РАСПОЛОЖЕНИЕ" : ""}</h5>
             </div>
-            <p className="choose-item-description">
+            <p className={styles["choose-item-description"]}>
               {languages === "RU" ? (
                 <>
                   Мы находимся недалеко от центрального стадиона и крупнейшего
@@ -130,11 +151,14 @@ export const ChooseUs = () => {
               )}
             </p>
 
-            <div className="choose-item">
-              <AiOutlineCheckCircle size={25} className="choose-checkin" />
+            <div className={styles["choose-item"]}>
+              <AiOutlineCheckCircle
+                size={25}
+                className={styles["choose-checkin"]}
+              />
               <h5>{languages === "RU" ? "РЕАЛЬНАЯ ЭКОНОМИЯ" : ""}</h5>
             </div>
-            <p className="choose-item-description">
+            <p className={styles["choose-item-description"]}>
               {languages === "RU" ? (
                 <>
                   Не нужно покупать дорогое снаряжение ради одного похода — всё
@@ -146,11 +170,14 @@ export const ChooseUs = () => {
               )}
             </p>
 
-            <div className="choose-item">
-              <AiOutlineCheckCircle size={25} className="choose-checkin" />
+            <div className={styles["choose-item"]}>
+              <AiOutlineCheckCircle
+                size={25}
+                className={styles["choose-checkin"]}
+              />
               <h5>{languages === "RU" ? "ОРГАНИЗУЕМ ПРИКЛЮЧЕНИЯ" : ""}</h5>
             </div>
-            <p className="choose-item-description">
+            <p className={styles["choose-item-description"]}>
               {languages === "RU" ? (
                 <>
                   Хочешь в поход или на скалы? Мы не просто прокат — мы включаем
@@ -161,11 +188,14 @@ export const ChooseUs = () => {
               )}
             </p>
 
-            <div className="choose-item">
-              <AiOutlineCheckCircle size={25} className="choose-checkin" />
+            <div className={styles["choose-item"]}>
+              <AiOutlineCheckCircle
+                size={25}
+                className={styles["choose-checkin"]}
+              />
               <h5>{languages === "RU" ? "ЛОКАЛЬНЫЙ БРЕНД" : ""}</h5>
             </div>
-            <p className="choose-item-description">
+            <p className={styles["choose-item-description"]}>
               {languages === "RU" ? (
                 <>
                   Мы развиваем спорт и outdoor-культуру в Аджарии.

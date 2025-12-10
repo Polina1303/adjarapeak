@@ -1,29 +1,29 @@
-import "./error-page.css";
-import { useNavigate } from "react-router-dom";
-import adjara from "../../components/image/adjara2.png";
+import { useRouter } from "next/router";
+// import adjara from "../../components/image/adjara2.png";
+import styles from "./error-page.module.css";
 
-export const Error = () => {
-  const navigate = useNavigate();
+export default function Error() {
+  const navigate = useRouter();
 
   const handleClick = () => {
     navigate("/");
   };
   return (
-    <div className="error-page-container">
-      <div className="error-page-title">
+    <div className={styles["error-page-container"]}>
+      <div className={styles["error-page-title"]}>
         <h1>Такой страницы нет</h1>
-        <img src={adjara} alt="adjara peak" width={"180px"} />
+        <img src="/image/adjara2.png" alt="adjara peak" width={"180px"} />
       </div>
-      <p className="error-page-error">Ошибка 404</p>
-      <p className="error-page-discripshion">
+      <p className={styles["error-page-error"]}>Ошибка 404</p>
+      <p className={styles["error-page-discripshion"]}>
         Возможно, в ссылке опечатка. Если считаете, что страница была здесь
         раньше, но исчезла, — напишите в службу поддержки.
       </p>
       <div>
-        <button className="error-page-btn" onClick={handleClick}>
+        <button className={styles["error-page-btn"]} onClick={handleClick}>
           Перейти на главную
         </button>
-        <button className="error-page-btn">
+        <button className={styles["error-page-btn"]}>
           <a href="https://t.me/shpaksn" target="_blank" rel="noreferrer">
             Написать в поддержку
           </a>
@@ -31,4 +31,4 @@ export const Error = () => {
       </div>
     </div>
   );
-};
+}

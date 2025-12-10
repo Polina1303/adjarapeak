@@ -1,14 +1,14 @@
-import "./return-policy-page.css";
-import { useNavigate } from "react-router-dom";
-import adjara from "../../components/image/adjara2.png";
+import { useRouter } from "next/router";
+// import adjara from "/image/adjara2.png";
 import { IoIosArrowBack } from "react-icons/io";
+import styles from "./return-policy-page.module.css";
 
 export const ReturnPolicyPage = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   return (
-    <div class="return-policy">
-      <button className="back-button" onClick={() => navigate(-1)}>
+    <div className={styles["return-policy"]}>
+      <button className={styles["back-button"]} onClick={() => router.back()}>
         <IoIosArrowBack size={"25px"} /> Назад
       </button>
       <h1>Правила возврата товара</h1>
@@ -104,7 +104,9 @@ export const ReturnPolicyPage = () => {
         </p>
       </section>
 
-      <p class="note">ПРАВИЛА НЕ РАСПРОСТРАНЯЮТСЯ НА ПРОКАТ СНАРЯЖЕНИЯ.</p>
+      <p className={styles["note"]}>
+        ПРАВИЛА НЕ РАСПРОСТРАНЯЮТСЯ НА ПРОКАТ СНАРЯЖЕНИЯ.
+      </p>
     </div>
   );
 };

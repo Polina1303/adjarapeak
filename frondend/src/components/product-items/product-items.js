@@ -1,50 +1,45 @@
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 import { setCurrentProduct } from "../../redux/product/reducer";
 import { BsSearch } from "react-icons/bs";
 import { Buy } from "../buy/buy";
-import "./product-items.css";
+import styles from "./product-items.module.css";
 
 export const ProductItems = ({ product }) => {
+  const [mounted, setMounted] = useState(false);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const router = useRouter();
   const handelClickImg = () => {
     dispatch(setCurrentProduct(product));
-    navigate(`/app/${product.id}`);
+    router.push(`/product?id=${product.id}`);
   };
 
   const { ref, inView } = useInView({
     threshold: 0,
     triggerOnce: true,
   });
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <>
-      <div className="product-items">
-        <div ref={ref} className="product-items__details">
-          <a href={`/app/${product.id}`}>
-            {inView ? (
-              <img
-                className="product-items__img"
-                src={process.env.PUBLIC_URL + "/img/" + product.img}
-                alt={product.title}
-              />
-            ) : (
-              <div className="product-items__img-unvisible"></div>
-            )}
-
-            <div className="icon-background" onClick={handelClickImg}>
-              <div className="icon-search">
-                <BsSearch />
-              </div>
-            </div>
-          </a>
-
-          <span className="product-items__title">
+      <div className={styles["product-items"]}>
+        <div ref={ref} className={styles["product-items__details"]}>
+          <img
+            className={styles["product-items__img"]}
+            src={"/img/" + product.img}
+            alt={product.title}
+            loading="lazy"
+          />
+          <span className={styles["product-items__title"]}>
             {product.title.toUpperCase()}
           </span>
 
-          <p className="product-items__desc">{product.desc}</p>
+          <p className={styles["product-items__desc"]}>{product.desc}</p>
           <Buy product={product} />
         </div>
       </div>

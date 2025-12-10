@@ -1,10 +1,11 @@
 import { RentItems } from "../../components/rent-items";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
 import { RENT_SKY } from "../../components/product-range/rent-sky";
 import { IoIosArrowBack } from "react-icons/io";
 import { CATEGORY_RENT_SKY } from "../../components/product-range/categoryRentSky";
 import { Menu } from "antd";
 import { useState, useEffect } from "react";
+import styles from "./rent-sky-page.module.css";
 
 const items = CATEGORY_RENT_SKY.map((item, index) => ({
   key: index,
@@ -13,12 +14,17 @@ const items = CATEGORY_RENT_SKY.map((item, index) => ({
 }));
 
 export const RentSkyPage = () => {
-  const history = useNavigate();
+  const router = useRouter();
   const [activeType, setActiveType] = useState(0);
   const [active, setActive] = useState(RENT_SKY);
-  const [searchQuery, setSearchQuery] = useState(() => {
-    return localStorage.getItem("searchQuery") || "";
-  });
+  const [searchQuery, setSearchQuery] = useState("");
+
+  useEffect(() => {
+    const saved =
+      typeof window !== "undefined" ? localStorage.getItem("searchQuery") : "";
+    if (saved) setSearchQuery(saved);
+  }, []);
+
   useEffect(() => {
     const storedActiveType = localStorage.getItem("activeType");
     if (storedActiveType) {
@@ -59,12 +65,12 @@ export const RentSkyPage = () => {
 
   return (
     <>
-      <div className="back-button-cover">
-        <button className="back-button" onClick={() => history(-1)}>
+      <div className={styles["back-button-cover"]}>
+        <button className={styles["back-button"]} onClick={() => router.back()}>
           <IoIosArrowBack size={"25px"} /> Назад
         </button>
       </div>
-      <div className="search-container" style={{ margin: "20px 0" }}>
+      <div className={styles["search-container"]} style={{ margin: "20px 0" }}>
         <Menu
           mode="horizontal"
           selectedKeys={[`${activeType}`]}
@@ -89,23 +95,21 @@ export const RentSkyPage = () => {
         />
       </div>
 
-      <div className="home-page__container">
-        <div>
-          <div className="title" id="home-page-rent">
-            ПРОКАТ ГОРНОЛЫЖНОГО СНАРЯЖЕНИЯ
-          </div>
+      <div className={styles["home-page__container"]}>
+        <div className={styles["title"]} id="home-page-rent">
+          ПРОКАТ ГОРНОЛЫЖНОГО СНАРЯЖЕНИЯ
+        </div>
 
-          <div className="home-page-product">
-            {active.length > 0 ? (
-              active.map((rent) => <RentItems key={rent.id} rent={rent} />)
-            ) : (
-              <div className="not-found">
-                <p>К сожалению, ничего не найдено.</p>
+        <div className={styles["home-page-product"]}>
+          {active.length > 0 ? (
+            active.map((rent) => <RentItems key={rent.id} rent={rent} />)
+          ) : (
+            <div className={styles["not-found"]}>
+              <p>К сожалению, ничего не найдено.</p>
 
-                <p>Попробуйте изменить запрос или выбрать другую категорию.</p>
-              </div>
-            )}
-          </div>
+              <p>Попробуйте изменить запрос или выбрать другую категорию.</p>
+            </div>
+          )}
         </div>
       </div>
     </>

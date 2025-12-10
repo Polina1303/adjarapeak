@@ -1,14 +1,14 @@
 import classNames from "classnames";
-import "./button.css";
+import styles from "./button.module.css";
 
 export const Button = ({ onClick, type, children, size = "s" }) => {
-  const btnClass = classNames({
-    btn: true,
-    "btn-secondary": type === "secondary",
-    "btn-primary": type === "primary",
-    "btn-small": type === "s",
-    "btn-medium": type === "m",
+  const btnClass = classNames(styles.btn, {
+    [styles["btn-secondary"]]: type === "secondary",
+    [styles["btn-primary"]]: type === "primary",
+    [styles["btn-small"]]: size === "s",
+    [styles["btn-medium"]]: size === "m",
   });
+
   return (
     <button className={btnClass} onClick={onClick}>
       {children}

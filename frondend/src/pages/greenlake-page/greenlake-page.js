@@ -1,33 +1,34 @@
-import React from "react";
-import "./greenlake-page.css";
 import { IoIosArrowBack } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useInView } from "react-intersection-observer";
-import photo1 from "./img/1.webp";
-import photo2 from "./img/2.webp";
-import photo3 from "./img/3.webp";
-import photo4 from "./img/4.webp";
-import photo5 from "./img/5.webp";
-import photo6 from "./img/6.webp";
-
 import { Navigation, Pagination } from "swiper/modules";
+import style from "./greenlake-page.module.css";
+
+const photo1 = "/imageGreenLake/1.webp";
+const photo2 = "/imageGreenLake/2.webp";
+const photo3 = "/imageGreenLake/3.webp";
+const photo4 = "/imageGreenLake/4.webp";
+const photo5 = "/imageGreenLake/5.webp";
+const photo6 = "/imageGreenLake/6.webp";
 
 const photos = [photo1, photo3, photo5, photo6, photo4, photo2];
 
 export const GreenlakePage = () => {
-  const history = useNavigate();
+  const router = useRouter();
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0,
   });
   return (
-    <div className="trip-container">
-      <button className="back-button" onClick={() => history(-1)}>
+    <div className={style["trip-container"]}>
+      <button className={style["back-button"]} onClick={() => router.back()}>
         <IoIosArrowBack size={"25px"} /> Назад
       </button>
-      <h1 className="trip-title"> | ЗЕЛЁНОЕ ОЗЕРО В ГОДЕРДЗИ | с палатками </h1>
-      <p className="trip-subtitle">
+      <h1 className={style["trip-title"]}>
+        | ЗЕЛЁНОЕ ОЗЕРО В ГОДЕРДЗИ | с палатками
+      </h1>
+      <p className={style["trip-subtitle"]}>
         Если вы устали от однодневных походов в горы — этот выезд точно для вас!
         Мы остаёмся с палатками на ночёвку прямо у озера. Не придётся весь день
         носить тяжёлые рюкзаки: хайки будут только налегке. Отличный вариант для
@@ -50,19 +51,15 @@ export const GreenlakePage = () => {
           navigation
           pagination={{ clickable: true }}
           spaceBetween={10}
-          slidesPerView={3} // По умолчанию показываем 3 фото
+          slidesPerView={3}
           breakpoints={{
-            // Адаптивные настройки
             0: {
-              // Для маленьких экранов
               slidesPerView: 1,
             },
             768: {
-              // Для планшетов
               slidesPerView: 2,
             },
             1024: {
-              // Для больших экранов
               slidesPerView: 3,
             },
           }}
@@ -70,22 +67,11 @@ export const GreenlakePage = () => {
         >
           {photos.map((photo, index) => (
             <SwiperSlide key={index}>
-              <div
-                style={{
-                  width: "100%",
-                  height: "350px",
-                  overflow: "hidden",
-                  borderRadius: "8px",
-                  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  backgroundColor: "#f0f0f0",
-                }}
-              >
+              <div>
                 <img
                   ref={ref}
                   src={photo}
+                  className={style.contentImage}
                   alt={`Photo ${index + 1}`}
                   style={{
                     width: "100%",
@@ -98,7 +84,7 @@ export const GreenlakePage = () => {
           ))}
         </Swiper>
       </div>
-      <section className="trip-section">
+      <section className={style["trip-section"]}>
         <p>
           Выезжаем в 08:00. Дорога займет в пределах 4 часов. Приехав, отдохнём
           у зелёного озера и сходим к соседнему озеру Сабанела (Наша цель на
@@ -112,7 +98,7 @@ export const GreenlakePage = () => {
           на сапах в бирюзовой воде!
         </p> */}
       </section>
-      <section className="trip-section">
+      <section className={style["trip-section"]}>
         <p>
           🥾 День первый: Сходим в короткий, но красивый трек до озера Сабанела.
           Сделаем привал, желающие смогут искупаться. После отправимся к
@@ -128,7 +114,7 @@ export const GreenlakePage = () => {
         {/* <p>Ориентировочное время на маршруте с привалами 3-5 часов.</p> */}
       </section>
 
-      <section className="trip-section">
+      <section className={style["trip-section"]}>
         <h2>➕ Что включено</h2>
         <ul>
           <li>Трансфер Батуми — Зелёное озеро — Батуми</li>
@@ -165,7 +151,7 @@ export const GreenlakePage = () => {
         </ul>
       </section>
 
-      <section className="trip-section">
+      <section className={style["trip-section"]}>
         <h2>📅 Детали</h2>
         <p>
           <strong>Место сбора:</strong>в 08:00, магазин AdjaraPeak
@@ -176,7 +162,7 @@ export const GreenlakePage = () => {
         </p>
       </section>
 
-      <section className="trip-section">
+      <section className={style["trip-section"]}>
         <h2>⚠️ Что взять с собой</h2>
         <ul>
           <li>Спальную систему — палатку, коврик, спальник</li>
@@ -199,7 +185,7 @@ export const GreenlakePage = () => {
         </ul>
       </section>
 
-      <div className="trip-contact">
+      <div className={style["trip-contact"]}>
         🔗 Чтобы записаться или задать вопрос — пиши Лео:
         <a href="https://t.me/molmeenar" target="_blank" rel="noreferrer">
           @molmeena

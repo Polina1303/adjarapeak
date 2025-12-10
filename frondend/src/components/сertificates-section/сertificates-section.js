@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { setItemInCart } from "../../redux/cart/reducer";
 import { MdAddShoppingCart } from "react-icons/md";
-import "./сertificates-section.css";
+import styles from './сertificates-section.module.css';
 import { useEffect, useState } from "react";
 
 import rentImg from "./img/rent.webp"; // Пример путей к картинкам

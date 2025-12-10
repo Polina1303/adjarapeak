@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setItemInCart } from "../../redux/cart/reducer";
 import { MdAddShoppingCart } from "react-icons/md";
 import { Button } from "../button";
-import "./rent.css";
+import styles from "./rent.module.css";
 
 export const Rent = ({ rent }) => {
   const dispatch = useDispatch();
@@ -21,17 +21,16 @@ export const Rent = ({ rent }) => {
   const addedCount = cartItem ? cartItem.count : 0;
 
   return (
-    <div className="add-to-cart__rent" onClick={handelClickWeekday}>
-      <b className="product-items__price">{rent.price}.00₾</b>
-      {/* !!!!!!добавить обязательно */}
-      <div className="add-to-cart-cover">
-        <div className="add-to-cart">
+    <div className={styles["add-to-cart__rent"]} onClick={handelClickWeekday}>
+      <b className={styles["product-items__price"]}>{rent.price}.00₾</b>
+      <div className={styles["add-to-cart-cover"]}>
+        <div className={styles["add-to-cart"]}>
           <Button type="primary">
-            <div className={`add-to-cart-title`}>В корзину</div>
-            <div className="add-to-cart-icon">
-              <MdAddShoppingCart className="shopping-cart-icon" />
+            <div className={styles["add-to-cart-title"]}>В корзину</div>
+            <div className={styles["add-to-cart-icon"]}>
+              <MdAddShoppingCart className={styles["shopping-cart-icon"]} />
               {addedCount > 0 && (
-                <i className="product-items__count">{addedCount}</i>
+                <i className={styles["product-items__count"]}>{addedCount}</i>
               )}
             </div>
           </Button>

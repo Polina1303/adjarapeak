@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setItemInCart } from "../../redux/cart/reducer";
 import { MdAddShoppingCart } from "react-icons/md";
 import { Button } from "../button";
-import "./buy.css";
+import styles from "./buy.module.css";
 
 export const Buy = ({ product, page, discount }) => {
   const cartItem = useSelector(
@@ -20,102 +20,144 @@ export const Buy = ({ product, page, discount }) => {
   };
 
   const [itemsInCart, setItemsInCart] = useState([]);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const storedItemsInCart = JSON.parse(localStorage.getItem("productInCart"));
-    if (storedItemsInCart) {
-      setItemsInCart(storedItemsInCart);
+    setMounted(true);
+    if (typeof window !== "undefined") {
+      const storedItemsInCart = JSON.parse(
+        localStorage.getItem("productInCart") || "null"
+      );
+      if (storedItemsInCart) {
+        setItemsInCart(storedItemsInCart);
+      }
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("productInCart", JSON.stringify(itemsInCart));
-  }, [itemsInCart]);
-
-  // {
-  //   `container-items-price ${discount ? "discounted" : ""}`;
-  // }
-
-  // const yes =product.newPrice?
+    if (mounted && typeof window !== "undefined") {
+      localStorage.setItem("productInCart", JSON.stringify(itemsInCart));
+    }
+  }, [itemsInCart, mounted]);
 
   return (
-    <div className="container-items-price" onClick={handleAddToCart}>
+    <div
+      className={page ? "" : "container-items-price"}
+      onClick={handleAddToCart}
+    >
       <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "flex-end",
-          justifyContent: "center",
-        }}
+        style={
+          page
+            ? {
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                gap: "5px",
+              }
+            : {
+                display: "flex",
+                flexDirection: "column",
+                gap: "5px",
+                justifyContent: "center",
+              }
+        }
       >
-        {product.newPrice && (
+        {product.order && product.newPrice && (
           <>
             <b
-              className={`product-items__price ${
-                discount ? "discounted-price" : ""
-              }`}
+              className={
+                discount
+                  ? `${styles["product-items__price"]} ${styles["discounted-price"]}`
+                  : styles["product-items__price"]
+              }
             >
               {product.newPrice}.00₾
             </b>
-            <s className="product-items__old-price"> {product.price}.00₾</s>
+            <s className={styles["product-items__old-price"]}>
+              {product.price}.00₾
+            </s>
           </>
         )}
-        {!product.newPrice && (
-          <b className="product-items__price">{product.price}.00₾</b>
+
+        {product.order && !product.newPrice && (
+          <b
+            className={
+              page
+                ? styles["product-items__price_page"]
+                : styles["product-items__price"]
+            }
+          >
+            {product.price}.00₾
+          </b>
         )}
+
         {!product.order && (
           <p
-            style={{
-              margin: "0 0 0 20px",
-              color: "#9f9d9df5",
-              lineHeight: "1",
-              position: "relative",
-              top: "-2px",
-            }}
+            style={
+              page
+                ? {
+                    color: "#9f9d9df5",
+                    lineHeight: "1",
+                    position: "relative",
+                    margin: 0,
+                    fontFamily: "RoadRadio-Thin",
+                    fontSize: "14px",
+                  }
+                : {
+                    margin: "0 0 0 20px",
+                    color: "#9f9d9df5",
+                    lineHeight: "1",
+                    position: "relative",
+                    top: "-2px",
+                    fontFamily: "RoadRadio-Thin",
+                    fontSize: "14px",
+                  }
+            }
           >
-            скоро в наличии
+            (скоро в наличии)
           </p>
         )}
       </div>
 
-      <div className="add-to-cart-cover">
+      <div className={styles["add-to-cart-cover"]}>
         {page ? (
-          <div className="add-to-cart-page">
+          <div className={styles["add-to-cart-page"]}>
             <Button type="primary">
-              <div className="add-to-cart-title"> В корзину</div>
-              <div className="add-to-cart-icon">
-                <MdAddShoppingCart className="shopping-cart-icon" />
+              <div className={styles["add-to-cart-title"]}> В корзину</div>
+              <div className={styles["add-to-cart-icon"]}>
+                <MdAddShoppingCart className={styles["shopping-cart-icon"]} />
               </div>
 
               {addedCount && addedCount > 0 ? (
-                <i className="product-items__count">{addedCount}</i>
+                <i className={styles["product-items__count"]}>{addedCount}</i>
               ) : null}
             </Button>
           </div>
         ) : (
-          <div className={`add-to-cart ${discount ? "discounted" : ""}`}>
+          <div
+            className={`${styles["add-to-cart"]} ${
+              discount ? styles["discounted"] : ""
+            }`}
+          >
             <Button type="primary">
               <div
-                className={`add-to-cart-title ${discount ? "discounted" : ""}`}
+                className={`${styles["add-to-cart-title"]} ${
+                  discount ? styles["discounted"] : ""
+                }`}
               >
                 В корзину
               </div>
-              <div className="add-to-cart-icon">
+
+              <div className={styles["add-to-cart-icon"]}>
                 <MdAddShoppingCart
-                  className={`shopping-cart-icon ${
-                    discount ? "discounted" : ""
+                  className={`${styles["shopping-cart-icon"]} ${
+                    discount ? styles["discounted"] : ""
                   }`}
                 />
               </div>
-
-              {/* {addedCount && addedCount > 0 ? (
-                <i className="product-items__count">{addedCount}</i>
-              ) : null} */}
             </Button>
           </div>
         )}
-
-        {/* )} */}
       </div>
     </div>
   );

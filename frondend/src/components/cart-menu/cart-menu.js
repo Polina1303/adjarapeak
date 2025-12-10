@@ -1,13 +1,13 @@
 import { Button } from "../button";
 import { CartItem } from "../cart-item";
 import { calcTotalPrice } from "../utils";
-import "./cart-menu.css";
+import styles from "./cart-menu.module.css";
 
 export const CartMenu = ({ items, onClick }) => {
   console.log("items,", items);
   return (
-    <div className="cart-menu">
-      <div className="cart-menu__list">
+    <div className={styles["cart-menu"]}>
+      <div className={styles["cart-menu__list"]}>
         {items && items.length > 0
           ? items.map((item) => (
               <CartItem
@@ -23,8 +23,8 @@ export const CartMenu = ({ items, onClick }) => {
       </div>
 
       {items && items.length > 0 ? (
-        <div className="cart-menu__arranged">
-          <div className="cart-menu__total-price">
+        <div className={styles["cart-menu__arranged"]}>
+          <div className={styles["cart-menu__total-price"]}>
             <span>Итого:</span> <span>{calcTotalPrice(items)}.00₾</span>
           </div>
           <Button
