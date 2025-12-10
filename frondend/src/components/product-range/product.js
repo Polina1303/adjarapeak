@@ -4208,6 +4208,17 @@ export const PRODUCT = [
   },
   {
     order: true,
+    id: 244076437403,
+    title: "Защита",
+    img: "16.05.369.png",
+    desc: "колени, локти, запястье S, M, L",
+    category: "protection",
+    price: 35,
+
+    column: [],
+  },
+  {
+    order: true,
     id: 2440764374,
     title: "Защита, набор из 6 предметов",
     img: "9d89ae16-8e53-4cae-b62a-79392297469b-Photoroom.png",
@@ -4224,17 +4235,7 @@ export const PRODUCT = [
       "Подходят для детей разного возраста — легко регулируются под нужный размер.",
     ],
   },
-  {
-    order: true,
-    id: 244076437403,
-    title: "Защита",
-    img: "16.05.369.png",
-    desc: "колени, локти, запястье S, M, L",
-    category: "protection",
-    price: 35,
 
-    column: [],
-  },
   {
     order: true,
     id: 24407643740314,
@@ -4256,7 +4257,7 @@ export const PRODUCT = [
     order: true,
     id: 2440764374031454,
     title: "Защита для роликов детская OXELO",
-    img: "images2424.jpeg",
+    img: "cocuk-paten-kaykay-scooter-3x2-destek-seti-pembe-play.avif",
     desc: "L, XL",
     category: "protection",
     price: 120,
@@ -4983,7 +4984,7 @@ export const PRODUCT = [
   },
   {
     order: true,
-    id: 2442443944433543612910,
+    id: 8988848988989,
     title: "Бита бейсбол",
     img: "294596261.webp",
     desc: "алюминий",
