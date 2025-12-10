@@ -415,8 +415,8 @@ export const CATEGORY_PRODUCT = [
       },
       {
         title: "ШЛЕМЫ",
-        img: "3df0404c-6656-471a-a89c-7a13e24d7bc0.webp",
-        category: "helmet",
+        img: "7527039974.png",
+        category: "helmet_sky",
       },
       {
         title: "АКСЕССУАРЫ ДЛЯ ВЕЛОСИПЕДА",
