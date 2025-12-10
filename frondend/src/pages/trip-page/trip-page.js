@@ -1032,7 +1032,7 @@ export const TripPage = () => {
         </h2>
 
         <div className={style["filter-buttons"]}>
-          <button
+          {/* <button
             className={classNames(style["filter-button"], {
               [style.active]: filter === "all",
             })}
@@ -1047,7 +1047,7 @@ export const TripPage = () => {
             onClick={() => handleFilter("individual")}
           >
             Индивидуальные
-          </button>
+          </button> */}
 
           <button
             className={classNames(style["filter-button"], {
@@ -1147,7 +1147,7 @@ export const TripPage = () => {
           )}
         </div>
       </div>
-      <GuidesSection />
+      {/* <GuidesSection /> */}
     </div>
   );
 };

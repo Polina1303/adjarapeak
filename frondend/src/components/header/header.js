@@ -119,8 +119,8 @@ export const Header = () => {
 
   const deliveryText =
     currentLanguage === "RU"
-      ? "Доставка по Батуми — 10 лари, бесплатно от 300. По Грузии — от 20 лари, бесплатно от 500.❗️Не распространяется на аренду."
-      : "Delivery in Batumi - 10 GEL, free from 300. In Georgia - from 20 GEL, free from 500.❗️Not applicable for rental.";
+      ? "Доставка по Батуми — 10 лари, бесплатно от 300. По Грузии — от 20 лари, бесплатно от 500. Не распространяется на аренду."
+      : "Delivery in Batumi - 10 GEL, free from 300. In Georgia - from 20 GEL, free from 500. Not applicable for rental.";
 
   return (
     <>
