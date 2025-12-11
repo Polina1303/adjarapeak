@@ -84,7 +84,7 @@ export const Header = () => {
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   const menuItems = [
-    { path: "/sale/tourismCamping", text: { RU: "МАГАЗИН", ENG: "SHOP" } },
+    { path: "/sale/alpinesking", text: { RU: "МАГАЗИН", ENG: "SHOP" } },
     { path: "/rent/skiRental", text: { RU: "ПРОКАТ", ENG: "CAMPING" } },
     { path: "/trip", text: { RU: "ТУРЫ", ENG: "TOURS" } },
     {
@@ -96,7 +96,7 @@ export const Header = () => {
   ];
 
   const menuItemsMobile = [
-    { path: "/sale/tourismCamping", text: { RU: "МАГАЗИН", ENG: "SHOP" } },
+    { path: "/sale/alpinesking", text: { RU: "МАГАЗИН", ENG: "SHOP" } },
 
     { path: "/rent/skiRental", text: { RU: "ПРОКАТ", ENG: "CAMPING" } },
     // {

@@ -1,2 +1,2 @@
-import { SvanetiPage } from "../src/pages/svaneti-page";
-export default SvanetiPage;
+import { SvanetiTripPage } from "../src/pages/svaneti-page";
+export default SvanetiTripPage;

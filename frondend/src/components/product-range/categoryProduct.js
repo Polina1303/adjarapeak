@@ -1,5 +1,46 @@
 export const CATEGORY_PRODUCT = [
   {
+    title: "ГОРНОЛЫЖНЫЙ СПОРТ",
+    path: "alpinesking",
+    types: [
+      {
+        title: "ШЛЕМЫ",
+        img: "32c41b55-7fce-41c2-9d6e-8d6e3f027d34.webp",
+        category: "helmet_sky",
+      },
+      {
+        title: "МАСКИ",
+        img: "IMG_6870.JPG",
+        category: "skigoggles",
+      },
+      {
+        title: "ЗАЩИТА",
+        img: "8.42.28.jpg",
+        category: "sky_care",
+      },
+      {
+        title: "ТЮБИНГИ",
+        img: "09491dd5-4982-448d-8ed7-d424eb2b2545.webp",
+        category: "air_sky",
+      },
+      {
+        title: "ПЕРЧАТКИ",
+        img: "055723de-45b0-47c6-988f-6ecd99853b53.avif",
+        category: "gloves_sky",
+      },
+      {
+        title: "СНЕГОСТУПЫ",
+        category: "snowshoes",
+        img: "202514.50.50.jpg",
+      },
+      {
+        title: "РЮКЗАКИ И ЧЕХЛЫ",
+        category: "bag_sky",
+        img: "kayak-cantasi-siyah-100.png",
+      },
+    ],
+  },
+  {
     title: "ТУРИЗМ И КЕМПИНГ",
     path: "tourismCamping",
     types: [
@@ -573,48 +614,6 @@ export const CATEGORY_PRODUCT = [
         title: "ТРЕНАЖЕРЫ",
         img: "b8556d1a-1dde-470e-9858-de257ebabaf5.avif",
         category: "martialart_exercise",
-      },
-    ],
-  },
-
-  {
-    title: "ГОРНОЛЫЖНЫЙ СПОРТ",
-    path: "alpinesking",
-    types: [
-      {
-        title: "ШЛЕМЫ",
-        img: "32c41b55-7fce-41c2-9d6e-8d6e3f027d34.webp",
-        category: "helmet_sky",
-      },
-      {
-        title: "МАСКИ",
-        img: "IMG_6870.JPG",
-        category: "skigoggles",
-      },
-      {
-        title: "ЗАЩИТА",
-        img: "8.42.28.jpg",
-        category: "sky_care",
-      },
-      {
-        title: "ТЮБИНГИ",
-        img: "09491dd5-4982-448d-8ed7-d424eb2b2545.webp",
-        category: "air_sky",
-      },
-      {
-        title: "ПЕРЧАТКИ",
-        img: "055723de-45b0-47c6-988f-6ecd99853b53.avif",
-        category: "gloves_sky",
-      },
-      {
-        title: "СНЕГОСТУПЫ",
-        category: "snowshoes",
-        img: "202514.50.50.jpg",
-      },
-      {
-        title: "РЮКЗАКИ И ЧЕХЛЫ",
-        category: "bag_sky",
-        img: "kayak-cantasi-siyah-100.png",
       },
     ],
   },

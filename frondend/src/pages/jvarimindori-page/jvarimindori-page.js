@@ -1,7 +1,6 @@
 import React from "react";
-import "./jvarimindori-page.css";
+// import "./jvarimindori-page.css";
 import { IoIosArrowBack } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useInView } from "react-intersection-observer";
 import photo1 from "./imagegoHikhani/1.webp";
@@ -11,18 +10,19 @@ import photo4 from "./imagegoHikhani/4.webp";
 import photo5 from "./imagegoHikhani/5.webp";
 import photo6 from "./imagegoHikhani/6.webp";
 import { Navigation, Pagination } from "swiper/modules";
+import { useRouter } from "next/router";
 
 const photos = [photo5, photo3, photo2, photo4, photo1, photo6];
 
 export const JvarimindoriTripPage = () => {
-  const history = useNavigate();
+  const router = useRouter();
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0,
   });
   return (
     <div className="trip-container">
-      <button className="back-button" onClick={() => history(-1)}>
+      <button className="back-button" onClick={() => router.back()}>
         <IoIosArrowBack size={"25px"} /> Назад
       </button>
       <h1 className="trip-title"> ДЖВАРИМИНДОРИ </h1>

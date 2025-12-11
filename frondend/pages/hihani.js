@@ -1,2 +1,2 @@
-import { HihaniPage } from "../src/pages/hihani-page";
-export default HihaniPage;
+import { HikhaniTripPage } from "../src/pages/hihani-page";
+export default HikhaniTripPage;

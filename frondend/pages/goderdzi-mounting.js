@@ -1,2 +1,2 @@
-import { GoderdziMountingPage } from "../src/pages/goderdzi_mounting-page";
-export default GoderdziMountingPage;
+import { GoderdziMountingTripPage } from "../src/pages/goderdzi_mounting-page";
+export default GoderdziMountingTripPage;

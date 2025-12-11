@@ -1,2 +1,2 @@
-import { UchkhoPage } from "../src/pages/uchkho-page";
-export default UchkhoPage;
+import { UchkhoTripPage } from "../src/pages/uchkho-page";
+export default UchkhoTripPage;

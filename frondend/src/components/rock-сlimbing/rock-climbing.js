@@ -1,7 +1,6 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
-import videoFile from "./mov1.mp4";
 import styles from "./rock-climbing.module.css";
 
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
@@ -16,7 +15,7 @@ export const RockClimbing = () => {
     <div className={styles.climbingContainer}>
       <div className={styles.climbingContent}>
         <ReactPlayer
-          url={videoFile}
+          url="/image/mov1.mp4"
           playing
           controls={false}
           muted

@@ -1,7 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
 import styles from "./SaleBanner.module.css";
-import saleB from "./saleB.JPG";
 
 export const SaleBanner = () => {
   const router = useRouter();
@@ -9,7 +8,11 @@ export const SaleBanner = () => {
   const handleClickSale = () => router.push("/discount");
 
   return (
-    <section onClick={handleClickSale} className={styles.saleHero} aria-label="Акция">
+    <section
+      onClick={handleClickSale}
+      className={styles.saleHero}
+      aria-label="Акция"
+    >
       <div className={styles.saleHeroContent}>
         <span className={styles.saleHeroBadge}>Акция до 30.09</span>
 
@@ -32,7 +35,7 @@ export const SaleBanner = () => {
       </div>
 
       <div className={styles.saleHeroArt} aria-hidden="true">
-        <img src={saleB} alt="" loading="lazy" />
+        <img src="/image/saleB.JPG" alt="" loading="lazy" />
       </div>
     </section>
   );

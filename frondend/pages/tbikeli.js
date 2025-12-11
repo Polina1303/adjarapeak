@@ -1,2 +1,2 @@
-import { TbikeliPage } from "../src/pages/tbikeli-page";
-export default TbikeliPage;
+import { TbikeliTripPage } from "../src/pages/tbikeli-page";
+export default TbikeliTripPage;

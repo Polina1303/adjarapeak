@@ -1,7 +1,6 @@
 import React from "react";
-// import "../hihani-page/hihani-page.css";
 import { IoIosArrowBack } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useInView } from "react-intersection-observer";
 // import photo1 from "./img/photo1.webp";
@@ -14,7 +13,7 @@ import photo7 from "./img/photo7.webp";
 import photo8 from "./img/photo8.webp";
 import photo9 from "./img/photo9.webp";
 import { Navigation, Pagination } from "swiper/modules";
-
+import styles from "./svaneti-page.module.css";
 const photos = [
   //   photo1,
   photo2,
@@ -28,20 +27,20 @@ const photos = [
 ];
 
 export const SvanetiTripPage = () => {
-  const history = useNavigate();
+  const router = useRouter();
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0,
   });
   return (
-    <div className="trip-container">
-      <button className="back-button" onClick={() => history(-1)}>
+    <div className={styles["trip-container"]}>
+      <button className={styles["back-button"]} onClick={() => router.back()}>
         <IoIosArrowBack size={"25px"} /> Назад
       </button>
-      <h1 className="trip-title">
+      <h1 className={styles["trip-title"]}>
         СВАНЕТИ — Местия и Мазери за одни выходные!{" "}
       </h1>
-      <p className="trip-subtitle">
+      <p className={styles["trip-subtitle"]}>
         Двухдневный выезд в высокогорный регион на северо-западе Сакартвело,
         который известен своими живописными пейзажами, средневековыми башнями и
         богатой культурой и историей.
@@ -107,7 +106,7 @@ export const SvanetiTripPage = () => {
           ))}
         </Swiper>
       </div>
-      <section className="trip-section">
+      <section className={styles["trip-section"]}>
         <h2>Программа:</h2>
         <p>
           День 1 <br />- Выезжаем рано утром, по пути делаем несколько
@@ -128,7 +127,7 @@ export const SvanetiTripPage = () => {
         </p>
       </section>
 
-      <section className="trip-section">
+      <section className={styles["trip-section"]}>
         <h2>❓ Что включено</h2>
         <ul>
           <li>
@@ -141,7 +140,7 @@ export const SvanetiTripPage = () => {
           <li>Завтрак на 2-й день</li>
         </ul>
       </section>
-      <section className="trip-section">
+      <section className={styles["trip-section"]}>
         <h2>❓ Что не включено в стоимость</h2>
         <ul>
           <li>Входные билеты в музей Хергиани</li>
@@ -149,7 +148,7 @@ export const SvanetiTripPage = () => {
         </ul>
       </section>
 
-      <section className="trip-section">
+      <section className={styles["trip-section"]}>
         <h2>📅 Детали</h2>
         <p>
           <strong>Место сбора:</strong> магазин AdjaraPeak
@@ -160,7 +159,7 @@ export const SvanetiTripPage = () => {
         </p>
       </section>
 
-      <section className="trip-section">
+      <section className={styles["trip-section"]}>
         <h2>⚠️ Что взять с собой</h2>
         <ul>
           <li>Дождевик (можно купить у нас) </li>
@@ -180,7 +179,7 @@ export const SvanetiTripPage = () => {
         </ul>
       </section>
 
-      <div className="trip-contact">
+      <div className={styles["trip-contact"]}>
         🔗 Чтобы записаться или задать вопрос — пиши Юле:{" "}
         <a href="https://t.me/YulikosTailor" target="_blank" rel="noreferrer">
           @YulikosTailor

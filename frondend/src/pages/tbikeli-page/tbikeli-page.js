@@ -1,7 +1,7 @@
 import React from "react";
-import "./tbikeli-page.css";
+
 import { IoIosArrowBack } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useInView } from "react-intersection-observer";
 import photo1 from "./imagegoHikhani/1.webp";
@@ -11,22 +11,23 @@ import photo4 from "./imagegoHikhani/4.webp";
 import photo5 from "./imagegoHikhani/5.webp";
 import photo6 from "./imagegoHikhani/6.webp";
 import { Navigation, Pagination } from "swiper/modules";
+import styles from "./tbikeli-page.module.css";
 
 const photos = [photo1, photo2, photo3, photo4, photo5, photo6];
 
 export const TbikeliTripPage = () => {
-  const history = useNavigate();
+  const router = useRouter();
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0,
   });
   return (
-    <div className="trip-container">
-      <button className="back-button" onClick={() => history(-1)}>
+    <div className={styles["trip-container"]}>
+      <button className={styles["back-button"]} onClick={() => router.back()}>
         <IoIosArrowBack size={"25px"} /> Назад
       </button>
-      <h1 className="trip-title"> ОЗЕРО ТБИКЕЛИ </h1>
-      <p className="trip-subtitle">
+      <h1 className={styles["trip-title"]}> ОЗЕРО ТБИКЕЛИ </h1>
+      <p className={styles["trip-subtitle"]}>
         До Тбикели ведут три маршрута: из Гомисмта, Хино и Джвариминдори. Мы
         выбираем самый живописный и доступный в августе — через Джвариминдори.
       </p>
@@ -43,19 +44,15 @@ export const TbikeliTripPage = () => {
           navigation
           pagination={{ clickable: true }}
           spaceBetween={10}
-          slidesPerView={3} // По умолчанию показываем 3 фото
+          slidesPerView={3}
           breakpoints={{
-            // Адаптивные настройки
             0: {
-              // Для маленьких экранов
               slidesPerView: 1,
             },
             768: {
-              // Для планшетов
               slidesPerView: 2,
             },
             1024: {
-              // Для больших экранов
               slidesPerView: 3,
             },
           }}
@@ -66,14 +63,14 @@ export const TbikeliTripPage = () => {
               <div
                 style={{
                   width: "100%",
-                  height: "350px", // Устанавливаем фиксированную высоту для слайдов
+                  height: "350px",
                   overflow: "hidden",
                   borderRadius: "8px",
                   boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
-                  backgroundColor: "#f0f0f0", // Фон для пустого пространства
+                  backgroundColor: "#f0f0f0",
                 }}
               >
                 <img
@@ -91,7 +88,7 @@ export const TbikeliTripPage = () => {
           ))}
         </Swiper>
       </div>
-      <section className="trip-section">
+      <section className={styles["trip-section"]}>
         <p>
           Озеро Тбикели — одно из самых высокогорных в Аджарии, оно расположено
           на высоте более 2200 метров у подножия горы Кибадзири.
@@ -103,7 +100,7 @@ export const TbikeliTripPage = () => {
         </p>
         <p>Этот выезд проходит в коллаборации с натуралистом Арвидасом</p>
       </section>
-      <section className="trip-section">
+      <section className={styles["trip-section"]}>
         <h2>Программа:</h2>
         <p>
           Выезжаем в 7:00. Дорога с остановкой займет около 2,5–3 часов.
@@ -131,7 +128,7 @@ export const TbikeliTripPage = () => {
         </p>
       </section>
 
-      <section className="trip-section">
+      <section className={styles["trip-section"]}>
         <h2>❓ Что включено</h2>
         <ul>
           <li>Трансфер Батуми — Джвариминдори — Батуми</li>
@@ -156,7 +153,7 @@ export const TbikeliTripPage = () => {
         </ul>
       </section>
 
-      <section className="trip-section">
+      <section className={styles["trip-section"]}>
         <h2>📅 Детали</h2>
         <p>
           <strong>Место сбора:</strong>в 07:00, магазин AdjaraPeak
@@ -167,7 +164,7 @@ export const TbikeliTripPage = () => {
         </p>
       </section>
 
-      <section className="trip-section">
+      <section className={styles["trip-section"]}>
         <h2>⚠️ Что взять с собой</h2>
         <ul>
           <li>Спальную систему — палатку, коврик, спальник</li>
@@ -184,7 +181,7 @@ export const TbikeliTripPage = () => {
         </ul>
       </section>
 
-      <div className="trip-contact">
+      <div className={styles["trip-contact"]}>
         🔗 Чтобы записаться или задать вопрос — пиши Лео:
         <a href="https://t.me/molmeena" target="_blank" rel="noreferrer">
           @molmeena

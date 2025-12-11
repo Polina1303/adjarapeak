@@ -1,26 +1,26 @@
 import React, { useState } from "react";
-import "./uchkho-page.css";
+
 import { Navigation, Pagination } from "swiper/modules";
 import { IoIosArrowBack } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useInView } from "react-intersection-observer";
 import photo1 from "./imgUchkho/Uchkho1.jpg";
-
+import styles from "./uchkho-page.module.css";
 export const UchkhoTripPage = () => {
   const photos = [photo1];
 
-  const history = useNavigate();
+  const router = useRouter();
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0,
   });
   return (
-    <div className="uchkho-container">
-      <button className="back-button" onClick={() => history(-1)}>
+    <div className={styles["uchkho-container"]}>
+      <button className={styles["back-button"]} onClick={() => router.back()}>
         <IoIosArrowBack size={"25px"} /> Назад
       </button>
-      <h1 className="title-uch">
+      <h1 className={styles["title-uch"]}>
         ОЗЕРО УЧХО — поход к одному из самых высокогорных озёр Аджарии
       </h1>
       <div
@@ -36,19 +36,15 @@ export const UchkhoTripPage = () => {
           navigation
           pagination={{ clickable: true }}
           spaceBetween={10}
-          slidesPerView={3} // По умолчанию показываем 3 фото
+          slidesPerView={3}
           breakpoints={{
-            // Адаптивные настройки
             0: {
-              // Для маленьких экранов
               slidesPerView: 1,
             },
             768: {
-              // Для планшетов
               slidesPerView: 2,
             },
             1024: {
-              // Для больших экранов
               slidesPerView: 3,
             },
           }}
@@ -59,14 +55,14 @@ export const UchkhoTripPage = () => {
               <div
                 style={{
                   width: "100%",
-                  height: "350px", // Устанавливаем фиксированную высоту для слайдов
+                  height: "350px",
                   overflow: "hidden",
                   borderRadius: "8px",
                   boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
-                  backgroundColor: "#f0f0f0", // Фон для пустого пространства
+                  backgroundColor: "#f0f0f0",
                 }}
               >
                 <img
@@ -89,7 +85,7 @@ export const UchkhoTripPage = () => {
         самых живописных озёр Аджарии, расположенному на высоте 1700 метров и
         окружённому густым хвойным лесом 🌲
       </p>
-      <section className="description">
+      <section className={styles["description"]}>
         <p>
           🚐 Добираемся до села Учхо, где сделаем короткий перерыв перед началом
           маршрута.
@@ -103,9 +99,9 @@ export const UchkhoTripPage = () => {
 
       <hr />
 
-      <section className="included">
-        <h2 className="subtitle-uch">Что включено ❓</h2>
-        <ul>
+      <section className={styles["included"]}>
+        <h2 className={styles["subtitle-uch"]}>Что включено ❓</h2>
+        <ul className={styles["uchkho-list"]}>
           <li>• Трансфер с ожиданием: Батуми — село Учхо — Батуми</li>
           <li>• Сопровождение гида (2 гида при группе 10+ участников)</li>
           <li>• Хайкинг до озера и обратно (~18 км, ~1200 м набора)</li>
@@ -116,22 +112,22 @@ export const UchkhoTripPage = () => {
         </ul>
       </section>
 
-      <section className="info">
+      <section className={styles["info"]}>
         <p>
           <strong>Место сбора:</strong> магазин AdjaraPeak
         </p>
         <p>
           💰 <strong>Стоимость:</strong> 80₾ лари
         </p>
-        <p className="note">
+        <p className={styles["note"]}>
           (бронь по 50% предоплате, не возвращается при отмене)
         </p>
       </section>
 
       <hr />
 
-      <section className="checklist">
-        <h2 className="subtitle-uch">⚠️ Что взять с собой:</h2>
+      <section className={styles["checklist"]}>
+        <h2 className={styles["subtitle-uch"]}>⚠️ Что взять с собой:</h2>
         <ul>
           <li>• Удобную треккинговую обувь</li>
           <li>• Воду (1.5 л), лёгкий перекус</li>
@@ -141,7 +137,7 @@ export const UchkhoTripPage = () => {
         </ul>
       </section>
 
-      <p className="contact">
+      <p className={styles["contact"]}>
         🔗 Чтобы записаться или задать вопрос — пиши{" "}
         <strong>
           Лео |{" "}

@@ -1,2 +1,2 @@
-import { JvarimindoriPage } from "../src/pages/jvarimindori-page";
-export default JvarimindoriPage;
+import { JvarimindoriTripPage } from "../src/pages/jvarimindori-page";
+export default JvarimindoriTripPage;

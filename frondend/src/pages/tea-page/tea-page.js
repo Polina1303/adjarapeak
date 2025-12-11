@@ -1,7 +1,6 @@
 import React from "react";
-// import "./hihani-page.css";
 import { IoIosArrowBack } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useInView } from "react-intersection-observer";
 import tea1 from "./img/tea1.webp";
@@ -10,22 +9,23 @@ import tea3 from "./img/tea3.webp";
 import tea4 from "./img/tea4.webp";
 import tea5 from "./img/tea5.webp";
 import { Navigation, Pagination } from "swiper/modules";
+import styles from "./tea-page.module.css";
 
 const teas = [tea1, tea2, tea3, tea4, tea5];
 
 export const TeaTripPage = () => {
-  const history = useNavigate();
+  const router = useRouter();
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0,
   });
   return (
-    <div className="trip-container">
-      <button className="back-button" onClick={() => history(-1)}>
+    <div className={styles["trip-container"]}>
+      <button className={styles["back-button"]} onClick={() => router.back()}>
         <IoIosArrowBack size={"25px"} /> Назад
       </button>
-      <h1 className="trip-title">ДЕНЬ ЧАЯ В ГОРАХ ГУРИИ </h1>
-      <p className="trip-subtitle">
+      <h1 className={styles["trip-title"]}>ДЕНЬ ЧАЯ В ГОРАХ ГУРИИ </h1>
+      <p className={styles["trip-subtitle"]}>
         🇬🇪Приглашаем вас в самое сердце чайных плантаций Грузии — туда, где горы
         пахнут солнцем, а чай рождается под чистым небом.
       </p>
@@ -90,7 +90,7 @@ export const TeaTripPage = () => {
           ))}
         </Swiper>
       </div>
-      <section className="trip-section">
+      <section className={styles["trip-section"]}>
         <h2>🚐 Что нас ждёт</h2>
         <p>Утренний старт из Батуми.</p>
         <p>
@@ -106,7 +106,7 @@ export const TeaTripPage = () => {
         <p>Возвращение обратно в Батуми</p>
       </section>
 
-      <section className="trip-section">
+      <section className={styles["trip-section"]}>
         <h2>🎒 Что взять с собой</h2>
         <p>
           Одежду и обувь стоит подбирать в зависимости от времени года и
@@ -116,7 +116,7 @@ export const TeaTripPage = () => {
         </p>
       </section>
 
-      <div className="trip-contact">
+      <div className={styles["trip-contact"]}>
         🔗 Чтобы записаться или задать вопрос — пиши Лео:
         <a href="https://t.me/molmeena" target="_blank" rel="noreferrer">
           @molmeena

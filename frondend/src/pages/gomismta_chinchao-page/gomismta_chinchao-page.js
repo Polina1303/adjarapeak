@@ -1,28 +1,27 @@
 import React from "react";
 import { IoIosArrowBack } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useInView } from "react-intersection-observer";
+import { useRouter } from "next/router";
 import photo1 from "./img/1.webp";
 import photo2 from "./img/2.webp";
 import photo3 from "./img/3.webp";
 import photo4 from "./img/4.webp";
 import photo5 from "./img/5.webp";
 import photo6 from "./img/6.webp";
-
 import { Navigation, Pagination } from "swiper/modules";
 
 const photos = [photo1, photo3, photo5, photo6, photo4, photo2];
 
 export const GomismtaChinchaoPage = () => {
-  const history = useNavigate();
+  const router = useRouter();
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0,
   });
   return (
     <div className="trip-container">
-      <button className="back-button" onClick={() => history(-1)}>
+      <button className="back-button" onClick={() => router.back()}>
         <IoIosArrowBack size={"25px"} /> Назад
       </button>
       <h1 className="trip-title"> ГОМИС МТА - ОЗЕРО ЧИНЧАО </h1>
