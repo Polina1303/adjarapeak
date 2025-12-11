@@ -1,10 +1,10 @@
 import { ProductItems } from "../../components/product-items";
 import { CLOTHES } from "../../components/product-range/clothes";
 import { IoIosArrowBack } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
 import { Menu } from "antd";
 import { CATEGORY_CLOTHES } from "../../components/product-range/categoryClothes";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 const items = CATEGORY_CLOTHES.map((item, index) => ({
   key: index,
@@ -13,13 +13,16 @@ const items = CATEGORY_CLOTHES.map((item, index) => ({
 }));
 
 export const ClothesPage = () => {
-  const history = useNavigate();
+  const router = useRouter();
   const [activeType, setActiveType] = useState(0);
   const [active, setActive] = useState(CLOTHES);
-  const [searchQuery, setSearchQuery] = useState(() => {
-    return localStorage.getItem("searchQuery") || "";
-  });
+  const [searchQuery, setSearchQuery] = useState("");
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setSearchQuery(localStorage.getItem("searchQuery") || "");
+    }
+  }, []);
   useEffect(() => {
     const storedActiveType = localStorage.getItem("activeTypeSale");
     if (storedActiveType) {
@@ -65,7 +68,7 @@ export const ClothesPage = () => {
   return (
     <>
       <div className="back-button-cover">
-        <button className="back-button" onClick={() => history(-1)}>
+        <button className="back-button" onClick={() => router.back()}>
           <IoIosArrowBack size={"25px"} /> Назад
         </button>
       </div>

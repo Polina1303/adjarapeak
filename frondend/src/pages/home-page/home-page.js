@@ -1,22 +1,18 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import Image from "next/image";
-import { HitSales } from "../../components/hit-sales";
-import { LycianWay } from "../../components/lycian-way";
 import { RockClimbing } from "../../components/rock-сlimbing";
-import { CertificatesSection } from "../../components/сertificates-section/сertificates-section";
 import { ChooseUs } from "../../components/chooseus";
 import { Routes } from "../../components/routes/routes";
 import { useInView } from "react-intersection-observer";
 import RulesPage from "../rules-page";
 import styles from "./home-page.module.css";
-import { SaleBanner } from "./SaleBanner";
+// import { SaleBanner } from "./SaleBanner";
 
-import sport from "./sport.webp";
-import clothes from "./sea.webp";
-import sea from "./sea2.webp";
-import food from "./food2.webp";
+// import sport from "./sport.webp";
+// import clothes from "./sea.webp";
+// import sea from "./sea2.webp";
+// import food from "./food2.webp";
 
 import { useSelector } from "react-redux";
 

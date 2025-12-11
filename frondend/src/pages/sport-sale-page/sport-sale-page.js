@@ -1,11 +1,11 @@
 import { ProductItems } from "../../components/product-items";
 import { SPORT_PRODUCT } from "../../components/product-range/sportProduct";
 import { IoIosArrowBack } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
-import "./sport-sale-page.css";
+import { useRouter } from "next/router";
 import { Menu } from "antd";
 import { CATEGORY_SPORT_PRODUCT } from "../../components/product-range/categorySportProduct";
 import { useEffect, useState } from "react";
+import styles from "./sport-sale-page.module.css";
 
 const items = CATEGORY_SPORT_PRODUCT.map((item, index) => ({
   key: index,
@@ -14,12 +14,16 @@ const items = CATEGORY_SPORT_PRODUCT.map((item, index) => ({
 }));
 
 export const SportSalePage = () => {
-  const history = useNavigate();
+  const router = useRouter();
   const [activeType, setActiveType] = useState(0);
   const [active, setActive] = useState(SPORT_PRODUCT);
-  const [searchQuery, setSearchQuery] = useState(() => {
-    return localStorage.getItem("searchQuery") || "";
-  });
+  const [searchQuery, setSearchQuery] = useState("");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setSearchQuery(localStorage.getItem("searchQuery") || "");
+    }
+  }, []);
 
   useEffect(() => {
     const storedActiveType = localStorage.getItem("activeTypeSale");
@@ -66,7 +70,7 @@ export const SportSalePage = () => {
   return (
     <>
       <div className="back-button-cover">
-        <button className="back-button" onClick={() => history(-1)}>
+        <button className="back-button" onClick={() => router.back()}>
           <IoIosArrowBack size={"25px"} /> Назад
         </button>
       </div>

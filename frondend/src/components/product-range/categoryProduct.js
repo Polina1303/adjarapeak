@@ -456,7 +456,8 @@ export const CATEGORY_PRODUCT = [
       },
       {
         title: "ШЛЕМЫ",
-        img: "3df0404c-6656-471a-a89c-7a13e24d7bc0.webp",
+        img: "mountain-bike-helmet-black-expl-50-ro.png",
+
         category: "helmet",
       },
       {

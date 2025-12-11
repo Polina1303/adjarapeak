@@ -1,7 +1,6 @@
 import React from "react";
-import "./goderdzi_mounting-page.css";
 import { IoIosArrowBack } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useInView } from "react-intersection-observer";
 import photo1 from "./img/1.webp";
@@ -9,24 +8,25 @@ import photo2 from "./img/2.webp";
 import photo3 from "./img/3.webp";
 import photo4 from "./img/4.webp";
 import photo5 from "./img/5.webp";
-
 import { Navigation, Pagination } from "swiper/modules";
-
+import styles from "./goderdzi_mounting-page.module.css";
 const photos = [photo1, photo2, photo3, photo4, photo5];
 
 export const GoderdziMountingTripPage = () => {
-  const history = useNavigate();
+  const router = useRouter();
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0,
   });
   return (
-    <div className="trip-container">
-      <button className="back-button" onClick={() => history(-1)}>
+    <div className={styles["trip-container"]}>
+      <button className={styles["back-button"]} onClick={() => router.back()}>
         <IoIosArrowBack size={"25px"} /> Назад
       </button>
-      <h1 className="trip-title"> ГОДЕРДЗИ — ГОРА МУХЕЛТА (2340 МЕТРОВ) </h1>
-      <p className="trip-subtitle">
+      <h1 className={styles["trip-title"]}>
+        ГОДЕРДЗИ — ГОРА МУХЕЛТА (2340 МЕТРОВ)
+      </h1>
+      <p className={styles["trip-subtitle"]}>
         Живописный обзорный маршрут с панорамными видами — от крепости Хихани до
         хребтов Бахмаро.
       </p>
@@ -91,7 +91,7 @@ export const GoderdziMountingTripPage = () => {
           ))}
         </Swiper>
       </div>
-      <section className="trip-section">
+      <section className={styles["trip-section"]}>
         <p>
           Добираемся до высокогорного курорта Годердзи и делаем короткий перерыв
           возле работающего местного кафе.
@@ -105,7 +105,7 @@ export const GoderdziMountingTripPage = () => {
         <p>Маршрут — средней сложности, ближе к лёгкому.</p>
       </section>
 
-      <section className="trip-section">
+      <section className={styles["trip-section"]}>
         <h2>➕ Что включено</h2>
         <ul>
           <li>Трансфер с ожиданием Батуми — Годердзи — Батуми</li>
@@ -121,7 +121,7 @@ export const GoderdziMountingTripPage = () => {
         </ul>
       </section>
 
-      <section className="trip-section">
+      <section className={styles["trip-section"]}>
         <h2>📅 Детали</h2>
         <p>
           <strong>Место сбора:</strong>в 08:00, магазин AdjaraPeak
@@ -132,7 +132,7 @@ export const GoderdziMountingTripPage = () => {
         </p>
       </section>
 
-      <section className="trip-section">
+      <section className={styles["trip-section"]}>
         <h2>⚠️ Что взять с собой</h2>
         <ul>
           <li>Воду 2 литра</li>
@@ -144,7 +144,7 @@ export const GoderdziMountingTripPage = () => {
         </ul>
       </section>
 
-      <div className="trip-contact">
+      <div className={styles["trip-contact"]}>
         🔗 Чтобы записаться или задать вопрос — пиши Лео:
         <a href="https://t.me/molmeena" target="_blank" rel="noreferrer">
           @molmeena

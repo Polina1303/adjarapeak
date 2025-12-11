@@ -1,8 +1,7 @@
 import { ProductItems } from "../../components/product-items";
 import { FOOD } from "../../components/product-range/food";
 import { IoIosArrowBack } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
-
+import { useRouter } from "next/router";
 import { Menu } from "antd";
 import { CATEGORY_FOOD } from "../../components/product-range/categoryFood";
 import { useEffect, useState } from "react";
@@ -14,12 +13,16 @@ const items = CATEGORY_FOOD.map((item, index) => ({
 }));
 
 export const SaleFoodPage = () => {
-  const history = useNavigate();
+  const router = useRouter();
   const [activeType, setActiveType] = useState(0);
   const [active, setActive] = useState(FOOD);
-  const [searchQuery, setSearchQuery] = useState(() => {
-    return localStorage.getItem("searchQuery") || "";
-  });
+  const [searchQuery, setSearchQuery] = useState("");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setSearchQuery(localStorage.getItem("searchQuery") || "");
+    }
+  }, []);
 
   useEffect(() => {
     const storedActiveType = localStorage.getItem("activeTypeSale");
@@ -66,7 +69,7 @@ export const SaleFoodPage = () => {
   return (
     <>
       <div className="back-button-cover">
-        <button className="back-button" onClick={() => history(-1)}>
+        <button className="back-button" onClick={() => router.back()}>
           <IoIosArrowBack size={"25px"} /> Назад
         </button>
       </div>

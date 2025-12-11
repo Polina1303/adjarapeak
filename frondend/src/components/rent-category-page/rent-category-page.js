@@ -36,21 +36,7 @@ export default function RentCategoryPage({ section, type }) {
     types: [],
   };
 
-  // useEffect(() => {
-  //   const params = new URLSearchParams();
-
-  //   if (inStockOnly) params.set("stock", "true");
-  //   if (sortBy && sortBy !== "default") params.set("sort", sortBy);
-
-  //   const query = params.toString();
-  //   const url = query ? `${pathname}?${query}` : pathname;
-
-  //   router.replace(url, { scroll: false });
-  // }, [inStockOnly, sortBy, pathname, router]);
-
   useEffect(() => {
-    if (!pathname) return; // без pathname ничего не делаем
-
     const params = new URLSearchParams();
 
     if (inStockOnly) params.set("stock", "true");
@@ -59,7 +45,7 @@ export default function RentCategoryPage({ section, type }) {
     const query = params.toString();
     const url = query ? `${pathname}?${query}` : pathname;
 
-    router.replace(url, undefined, { scroll: false });
+    router.replace(url, { scroll: false });
   }, [inStockOnly, sortBy, pathname, router]);
 
   let filteredProducts = [];

@@ -1,26 +1,26 @@
 import React from "react";
-import "./hihani-page.css";
+// import "./hihani-page.css";
 import { IoIosArrowBack } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useInView } from "react-intersection-observer";
 import photo1 from "./imagegoHikhani/IMG_9655.webp";
 import photo2 from "./imagegoHikhani/IMG_9682.webp";
 import photo3 from "./imagegoHikhani/IMG_9702.webp";
 import photo4 from "./imagegoHikhani/IMG_9804.webp";
+import { useRouter } from "next/router";
 import { Navigation, Pagination } from "swiper/modules";
 
 const photos = [photo1, photo2, photo3, photo4];
 
 export const HikhaniTripPage = () => {
-  const history = useNavigate();
+  const router = useRouter();
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0,
   });
   return (
     <div className="trip-container">
-      <button className="back-button" onClick={() => history(-1)}>
+      <button className="back-button" onClick={() => router.back()}>
         <IoIosArrowBack size={"25px"} /> Назад
       </button>
       <h1 className="trip-title">КРЕПОСТЬ ХИХАНИ и озёра ШУАМТА</h1>
