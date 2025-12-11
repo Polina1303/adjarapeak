@@ -5,7 +5,7 @@ export const CATEGORY_PRODUCT = [
     types: [
       {
         title: "ШЛЕМЫ",
-        img: "32c41b55-7fce-41c2-9d6e-8d6e3f027d34.webp",
+        img: "7527039974.png",
         category: "helmet_sky",
       },
       {
@@ -456,8 +456,9 @@ export const CATEGORY_PRODUCT = [
       },
       {
         title: "ШЛЕМЫ",
-        img: "7527039974.png",
-        category: "helmet_sky",
+        img: "mountain-bike-helmet-black-expl-50-ro.png",
+
+        category: "helmet",
       },
       {
         title: "АКСЕССУАРЫ ДЛЯ ВЕЛОСИПЕДА",
