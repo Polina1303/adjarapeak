@@ -20,7 +20,7 @@ export default function ContactPage() {
       <div className={style["back-button-cover"]}>
         <button className={style["back-button"]} onClick={() => router.back()}>
           <IoIosArrowBack size={"25px"} />{" "}
-          {languages === "RU" ? "Назад" : "Back"}
+          {/* {languages === "RU" ? "Назад" : "Back"} */}
         </button>
       </div>
       <Container sx={{ py: 5 }}>
