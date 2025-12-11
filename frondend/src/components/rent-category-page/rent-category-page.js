@@ -37,6 +37,8 @@ export default function RentCategoryPage({ section, type }) {
   };
 
   useEffect(() => {
+    if (!pathname) return; // без pathname ничего не делаем
+
     const params = new URLSearchParams();
 
     if (inStockOnly) params.set("stock", "true");
@@ -45,7 +47,7 @@ export default function RentCategoryPage({ section, type }) {
     const query = params.toString();
     const url = query ? `${pathname}?${query}` : pathname;
 
-    router.replace(url, { scroll: false });
+    router.replace(url, undefined, { scroll: false });
   }, [inStockOnly, sortBy, pathname, router]);
 
   let filteredProducts = [];

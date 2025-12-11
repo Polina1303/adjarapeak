@@ -72,6 +72,7 @@ const nextConfig = {
   compiler: {
     removeConsole: false,
   },
+  trailingSlash: true,
 };
 
 module.exports = nextConfig;
