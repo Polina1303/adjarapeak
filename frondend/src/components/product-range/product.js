@@ -17502,7 +17502,7 @@ export const PRODUCT = [
   },
   {
     order: true,
-    id: 382312456661431221,
+    id: 212877878317,
     title: "Куртка горнолыжная",
     img: "S91d74b8bcbbd4f2b9fc74985618fa3a9i.jpg_640x640.png",
     desc: "COPOZZ pink",
@@ -17520,7 +17520,7 @@ export const PRODUCT = [
   },
   {
     order: true,
-    id: 3823124566614312214,
+    id: 74848278787842,
     title: "Анорак (куртка с капюшоном)",
     img: "S7c2ae4f6cd294cb6aed304b658e2816a1.jpg_640x640.png",
     desc: "COPOZZ black&white",
@@ -17539,7 +17539,7 @@ export const PRODUCT = [
   },
   {
     order: true,
-    id: 3823124566614312214,
+    id: 987662526272,
     title: "Анорак (куртка с капюшоном)",
     img: "H765f2924a5514725ba37e0c9d6cef0eai.jpg_640x640.png",
     desc: "COPOZZ pink",
@@ -17557,7 +17557,7 @@ export const PRODUCT = [
   },
   {
     order: true,
-    id: 382312456661433212214,
+    id: 123456986,
     title: "Анорак (куртка с капюшоном)",
     img: "Sda827f92d85d426689c1ea39bb49427dP.png",
     desc: "COPOZZ camouflage",
@@ -17575,7 +17575,7 @@ export const PRODUCT = [
   },
   {
     order: true,
-    id: 382312456661433212214,
+    id: 36787901313556,
     title: "Куртка горнолыжная",
     img: "HTB1Ta9ieTTI8KJjSsphq6AFppXaw.jpg_640x640.png",
     desc: " COPOZZ orange",
@@ -17593,7 +17593,7 @@ export const PRODUCT = [
   },
   {
     order: true,
-    id: 382312456661433212214,
+    id: 53382312456661433212214,
     title: "Куртка горнолыжная",
     img: "H8c19483f3b8e415aa86e4879fa4116315.png",
     desc: " COPOZZ blue",
