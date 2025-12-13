@@ -270,7 +270,14 @@ export default function SaleCategoryPage({ section, type, subcategory }) {
                     transition: "transform 0.2s ease",
                     "&:hover": { transform: "scale(1.03)" },
                   }}
-                  onClick={() => router.push(`/app/${product.id}`)}
+                  onClick={() => {
+                    console.log("CLICK PRODUCT:", product);
+                    console.log("GO TO:", `/app/${product?.id}`);
+                    const id =
+                      product?.id ?? product?.productId ?? product?._id;
+                    router.push(`/app/${id}`);
+                  }}
+                  // onClick={() => router.push(`/app/${product.id}`)}
                 >
                   <CardActionArea>
                     {!!isLoaded ? (

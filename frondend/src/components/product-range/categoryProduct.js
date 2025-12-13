@@ -4,6 +4,16 @@ export const CATEGORY_PRODUCT = [
     path: "alpinesking",
     types: [
       {
+        title: "Сноуборды",
+        img: "IMG_3744.PNG",
+        category: "snowboardsky",
+      },
+      {
+        title: "Одежда",
+        img: "Hd899fa17d8b647e0a55154c27a102dc0d.png",
+        category: "closes_ski",
+      },
+      {
         title: "ШЛЕМЫ",
         img: "7527039974.png",
         category: "helmet_sky",
@@ -352,6 +362,21 @@ export const CATEGORY_PRODUCT = [
     path: "fitness",
     types: [
       // { title: "УТЯЖЕЛИТЕЛИ", img: "weights.jpg", category: "weights" },
+      {
+        title: "Перчатки для фитнеса",
+        img: "sarung-tangan-gym-fitness-latihan-beban-100-corength-8595161.jpg",
+        category: "fitness_gloves",
+      },
+      {
+        title: "Гантели и гири",
+        img: "90798593_gantel-v-vinilovoj.webp",
+        category: "kettlebells",
+      },
+      {
+        title: "Спортивные аксессуары",
+        img: "siyah-kas-gelistirm.png",
+        category: "accessories_fitnes",
+      },
       { title: "ШЕЙКЕР", img: "eb87bf73-7c37-44.png", category: "shaker" },
       {
         title: "ЭСПАНДЕР",
@@ -545,11 +570,11 @@ export const CATEGORY_PRODUCT = [
         img: "19.38.07.jpg",
         category: "thermalUnderwear",
       },
-      {
-        title: "НИЖНЕЕ БЕЛЬЕ",
-        img: "",
-        category: "underwear",
-      },
+      // {
+      //   title: "НИЖНЕЕ БЕЛЬЕ",
+      //   img: "",
+      //   category: "underwear",
+      // },
 
       // "clothes",
       // "shoes",
