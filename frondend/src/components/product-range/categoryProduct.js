@@ -14,6 +14,11 @@ export const CATEGORY_PRODUCT = [
         category: "closes_ski",
       },
       {
+        title: "ТЕРМОБЕЛЬЕ",
+        img: "19.38.07.jpg",
+        category: "thermalUnderwear",
+      },
+      {
         title: "ШЛЕМЫ",
         img: "7527039974.png",
         category: "helmet_sky",
@@ -331,7 +336,7 @@ export const CATEGORY_PRODUCT = [
         ],
       },
       {
-        title: "ВОЛЙЕБОЛ",
+        title: "ВОЛЕЙБОЛ",
         category: "volleyball",
         img: "beach-volleyball-size-5-bv100-classic-turquoise-kipsta.png",
       },
