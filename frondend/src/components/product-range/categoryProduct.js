@@ -83,7 +83,6 @@ export const CATEGORY_PRODUCT = [
         title: "ОБУВЬ",
         img: "e83324e4-59ac-468c-9fbe-c32307.png",
         category: "shoes",
-
         subcategories: [
           {
             title: "Непромокаемая обувь",
@@ -573,10 +572,16 @@ export const CATEGORY_PRODUCT = [
       },
       { title: "ПЛАВНИКИ", img: "73684021.png", category: "fin" },
       {
-        title: "ЖИЛЕТЫ",
+        title: "СПАСАТЕЛЬНЫЕ АКСЕССУАРЫ",
         img: "Most-Popular-EPE-Foam-Life-Jacket-Full-Size-for-Adult-and-Children.avif",
         category: "vest",
+        subcategories: [
+          { title: "ЖИЛЕТЫ", subcategory: "vest" },
+          { title: "НАРУКАВНИКИ", subcategory: "armbands" },
+          { title: "КРУГИ", subcategory: "pool" },
+        ],
       },
+
       {
         title: "КОМПЛЕКТУЮЩИЕ САПБОРД",
         img: "strahovochnyj-lish-coil-leash-8-7mm.webp",
@@ -616,6 +621,7 @@ export const CATEGORY_PRODUCT = [
       { title: "ПОЛОТЕНЦЕ", img: "259cd_1300x1300.webp", category: "towel" },
     ],
   },
+
   {
     title: "ВЕЛОСПОРТ И РОЛИКИ",
     path: "cyclingRoller",
