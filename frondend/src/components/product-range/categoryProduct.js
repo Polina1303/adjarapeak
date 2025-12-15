@@ -56,6 +56,156 @@ export const CATEGORY_PRODUCT = [
     ],
   },
   {
+    title: "ОДЕЖДА И ОБУВЬ",
+    path: "clothesAndShoes",
+    types: [
+      {
+        title: "ВЕТРОВКИ",
+        img: "21.33.22.jpg",
+        category: "windbreaker",
+      },
+      {
+        title: "ФЛИСОВЫЕ КОФТЫ",
+        img: "fleece3.png",
+        category: "fleece_jacket",
+      },
+      {
+        title: "ПУХОВИКИ",
+        img: "24423424.17.13.jpg",
+        category: "down_jackets",
+      },
+      {
+        title: "ШТАНЫ",
+        img: "picture42111.png",
+        category: "pants",
+      },
+      {
+        title: "ОБУВЬ",
+        img: "e83324e4-59ac-468c-9fbe-c32307.png",
+        category: "shoes",
+
+        subcategories: [
+          {
+            title: "Непромокаемая обувь",
+            subcategory: "waterprouf",
+          },
+          {
+            title: "Треккинговая обувь",
+            subcategory: "trekking_shoes",
+          },
+          {
+            title: "Сандали",
+            subcategory: "sandals",
+          },
+          {
+            title: "АКСЕССУАРЫ ДЛЯ ОБУВИ",
+            subcategory: "shoes_accessories",
+          },
+        ],
+      },
+      {
+        title: "БАФФЫ И БАЛАКЛАВЫ",
+        img: "adult-ski-neck-warmer.avif",
+        category: "buff",
+      },
+      {
+        title: "ПЕРЧАТКИ",
+        img: "001405-2-yinhe.png_468x468Q75.jpg_.avif",
+        category: "clothes_gloves",
+      },
+      {
+        title: "ГОЛОВНЫЕ УБОРЫ",
+        img: "6dab6bea-7b17-4462.png",
+        category: "hat",
+      },
+      {
+        title: "УХОД ЗА ОБУВЬЮ И ОДЕЖДОЙ",
+        img: "d2ae7e6c-goods.webp",
+        category: "care",
+      },
+      {
+        title: "НОСКИ",
+        img: "sock-hike-50-mid-2-pack-navy.png",
+        category: "socks",
+      },
+      {
+        title: "ТЕРМОБЕЛЬЕ",
+        img: "19.38.07.jpg",
+        category: "thermalUnderwear",
+      },
+      // {
+      //   title: "НИЖНЕЕ БЕЛЬЕ",
+      //   img: "",
+      //   category: "underwear",
+      // },
+
+      // "clothes",
+      // "shoes",
+      // "shoesSea",
+      // "buff",
+      // "hat",
+      // "socks",
+      // "care",
+      // "thermalUnderwear",
+    ],
+  },
+  {
+    title: "ЕДИНОБОРСТВА",
+    path: "martial",
+    types: [
+      {
+        title: "ПЕРЧАТКИ ДЛЯ БОКСА",
+        img: "4ad8c5df-b673-45ee-ace5-d68c7fdc6937.webp",
+        category: "boxing_gloves",
+      },
+      {
+        title: "ШЛЕМЫ",
+        img: "32c41b55-7fce-41c2-9d6e-8d6e3f027d34.webp",
+        category: "martialart_helmet",
+      },
+      {
+        title: "КАПЫ",
+        img: "f25e9788-d2ab-4ded-97de-1240e1866629.webp",
+        category: "martialart_mouth_guard",
+      },
+      {
+        title: "ЗАЩИТА",
+        img: "9d89ae16-8e53-4cae-b62a-79392297469b-Photoroom.png",
+        category: "martialart_protection",
+      },
+      {
+        title: "ЛАПЫ",
+        img: "ccfa5a8ec047466ca6a4789ea12fcbc4-goods-Photoroom.png",
+        category: "paws",
+      },
+      {
+        title: "БИНТЫ ДЛЯ РУК",
+        img: "a3094f4d-9d76-4776.png",
+        category: "bandages",
+      },
+      {
+        title: "ОДЕЖДА И ОБУВЬ ДЛЯ ЕДИНОБОРСТВ",
+        img: "ac3ab5679fd87.avif",
+        category: "martialart_clothes",
+      },
+      {
+        title: "РЕЗИНА И ЖГУТЫ",
+        img: "d848075d-92ea.png",
+        category: "martialart_rubber",
+      },
+      {
+        title: "ПЕРЧАТКИ ММА",
+        img: "b54f-206290edcc2.png",
+        category: "martialart_mma",
+      },
+      {
+        title: "ТРЕНАЖЕРЫ",
+        img: "b8556d1a-1dde-470e-9858-de257ebabaf5.avif",
+        category: "martialart_exercise",
+      },
+    ],
+  },
+  {
     title: "ТУРИЗМ И КЕМПИНГ",
     path: "tourismCamping",
     types: [
@@ -494,157 +644,6 @@ export const CATEGORY_PRODUCT = [
         title: "АКСЕССУАРЫ ДЛЯ ВЕЛОСИПЕДА",
         img: "bc1cc4f6-0205-11ef-9217-0a580a68309d.png",
         category: "bike_accessories",
-      },
-    ],
-  },
-
-  {
-    title: "ОДЕЖДА И ОБУВЬ",
-    path: "clothesAndShoes",
-    types: [
-      {
-        title: "ВЕТРОВКИ",
-        img: "21.33.22.jpg",
-        category: "windbreaker",
-      },
-      {
-        title: "ФЛИСОВЫЕ КОФТЫ",
-        img: "fleece3.png",
-        category: "fleece_jacket",
-      },
-      {
-        title: "ПУХОВИКИ",
-        img: "24423424.17.13.jpg",
-        category: "down_jackets",
-      },
-      {
-        title: "ШТАНЫ",
-        img: "picture42111.png",
-        category: "pants",
-      },
-      {
-        title: "ОБУВЬ",
-        img: "e83324e4-59ac-468c-9fbe-c32307.png",
-        category: "shoes",
-        subcategories: [
-          {
-            title: "Непромокаемая обувь",
-            subcategories: "waterprouf",
-          },
-          {
-            title: "Треккинговая обувь",
-            subcategories: "trekking_shoes",
-          },
-          {
-            title: "Сандали",
-            subcategories: "sandals",
-          },
-          {
-            title: "АКСЕССУАРЫ ДЛЯ ОБУВИ",
-            subcategories: "shoes_accessories",
-          },
-        ],
-      },
-      {
-        title: "БАФФЫ И БАЛАКЛАВЫ",
-        img: "adult-ski-neck-warmer.avif",
-        category: "buff",
-      },
-      {
-        title: "ПЕРЧАТКИ",
-        img: "001405-2-yinhe.png_468x468Q75.jpg_.avif",
-        category: "clothes_gloves",
-      },
-      {
-        title: "ГОЛОВНЫЕ УБОРЫ",
-        img: "6dab6bea-7b17-4462.png",
-        category: "hat",
-      },
-      {
-        title: "УХОД ЗА ОБУВЬЮ И ОДЕЖДОЙ",
-        img: "d2ae7e6c-goods.webp",
-        category: "care",
-      },
-      {
-        title: "НОСКИ",
-        img: "sock-hike-50-mid-2-pack-navy.png",
-        category: "socks",
-      },
-      {
-        title: "ТЕРМОБЕЛЬЕ",
-        img: "19.38.07.jpg",
-        category: "thermalUnderwear",
-      },
-      // {
-      //   title: "НИЖНЕЕ БЕЛЬЕ",
-      //   img: "",
-      //   category: "underwear",
-      // },
-
-      // "clothes",
-      // "shoes",
-      // "shoesSea",
-      // "buff",
-      // "hat",
-      // "socks",
-      // "care",
-      // "thermalUnderwear",
-    ],
-  },
-
-  {
-    title: "ЕДИНОБОРСТВА",
-    path: "martial",
-    types: [
-      {
-        title: "ПЕРЧАТКИ ДЛЯ БОКСА",
-        img: "4ad8c5df-b673-45ee-ace5-d68c7fdc6937.webp",
-        category: "boxing_gloves",
-      },
-      {
-        title: "ШЛЕМЫ",
-        img: "32c41b55-7fce-41c2-9d6e-8d6e3f027d34.webp",
-        category: "martialart_helmet",
-      },
-      {
-        title: "КАПЫ",
-        img: "f25e9788-d2ab-4ded-97de-1240e1866629.webp",
-        category: "martialart_mouth_guard",
-      },
-      {
-        title: "ЗАЩИТА",
-        img: "9d89ae16-8e53-4cae-b62a-79392297469b-Photoroom.png",
-        category: "martialart_protection",
-      },
-      {
-        title: "ЛАПЫ",
-        img: "ccfa5a8ec047466ca6a4789ea12fcbc4-goods-Photoroom.png",
-        category: "paws",
-      },
-      {
-        title: "БИНТЫ ДЛЯ РУК",
-        img: "a3094f4d-9d76-4776.png",
-        category: "bandages",
-      },
-      {
-        title: "ОДЕЖДА И ОБУВЬ ДЛЯ ЕДИНОБОРСТВ",
-        img: "ac3ab5679fd87.avif",
-        category: "martialart_clothes",
-      },
-      {
-        title: "РЕЗИНА И ЖГУТЫ",
-        img: "d848075d-92ea.png",
-        category: "martialart_rubber",
-      },
-      {
-        title: "ПЕРЧАТКИ ММА",
-        img: "b54f-206290edcc2.png",
-        category: "martialart_mma",
-      },
-      {
-        title: "ТРЕНАЖЕРЫ",
-        img: "b8556d1a-1dde-470e-9858-de257ebabaf5.avif",
-        category: "martialart_exercise",
       },
     ],
   },
