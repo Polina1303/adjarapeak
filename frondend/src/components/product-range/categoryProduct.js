@@ -9,6 +9,11 @@ export const CATEGORY_PRODUCT = [
         category: "snowboardsky",
       },
       {
+        title: "Cноубордические ботинки",
+        img: "IMG_3974.PNG",
+        category: "snowboardsky_boots",
+      },
+      {
         title: "Одежда",
         img: "Hd899fa17d8b647e0a55154c27a102dc0d.png",
         category: "closes_ski",

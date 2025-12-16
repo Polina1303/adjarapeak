@@ -2623,7 +2623,7 @@ export const PRODUCT = [
     desc: "KOETSU Полный комплект",
     category: "supboard",
     price: 719,
-
+    salePrice: 570,
     column: [
       "Надувная SUP-доска KOETSU длиной 3,2 м — универсальная модель для серфинга, гребли и отдыха.",
       "Изготовлена из прочного двухслойного ПВХ-сетчатого материала, устойчивого к износу и повреждениям.",
@@ -2643,7 +2643,7 @@ export const PRODUCT = [
     desc: "KOETSU Полный комплект",
     category: "supboard",
     price: 719,
-
+    salePrice: 570,
     column: [
       "Надувная SUP-доска KOETSU длиной 3,2 м — универсальная модель для серфинга, гребли и отдыха.",
       "Изготовлена из прочного двухслойного ПВХ-сетчатого материала, устойчивого к износу и повреждениям.",
@@ -7530,7 +7530,7 @@ export const PRODUCT = [
     subcategory: "tent",
 
     price: 99,
-
+    salePrice: 59,
     shortlyEng: "",
     shortly: "",
     column: [
@@ -7800,7 +7800,7 @@ export const PRODUCT = [
     subcategory: "tent",
     order: true,
     price: 390,
-
+    salePrice: 290,
     shortlyEng: "Ultralight backpacking tent with a skirt.",
     shortly:
       "Ультралегкая одноместная палатка Naturehike Cloud UP1 для пеших, водных и вело-походов. Полный вес 1,57 кг. Легкий вес, компактность в сложенном виде и просторность в разложенном - отличный выбор независимого одиночки.",
@@ -7827,6 +7827,7 @@ export const PRODUCT = [
     category: "tent",
     subcategory: "tent",
     price: 440,
+    salePrice: 340,
     order: true,
     shortlyEng:
       "Ultralight two-person tent for hiking, water, and biking trips. The spacious vestibule can accommodate a couple of large-sized backpacks.",
@@ -7986,7 +7987,7 @@ export const PRODUCT = [
     subcategory: "tent",
     order: true,
     price: 580,
-
+    salePrice: 480,
     shortlyEng: "Ultralight backpacking tent with a skirt.",
     shortly: "Ультралёгкая туристическая палатка с юбкой.",
     column: [
@@ -8177,7 +8178,7 @@ export const PRODUCT = [
     category: "tent",
     subcategory: "tent_accessories",
     price: 190,
-
+    salePrice: 130,
     column: [
       "Naturehike Foldable Changing Tent — лёгкая и удобная палатка для душа, туалета и переодевания",
       "Быстрая установка, компактна при транспортировке — вес 2.67 кг",
@@ -8270,7 +8271,7 @@ export const PRODUCT = [
     category: "tent",
     subcategory: "tent_accessories",
     price: 88,
-
+    salePrice: 68,
     column: [
       "Алюминиевые стойки для палатки Naturehike — надёжная опора в походах и кемпинге",
       "Длина: 2.4 м, конструкция из 4 секций — регулируется по высоте",
@@ -8292,6 +8293,7 @@ export const PRODUCT = [
     category: "tent",
     subcategory: "tent_accessories",
     price: 99,
+    salePrice: 79,
 
     column: [
       "Алюминиевые стойки для палатки Naturehike — надёжная опора в походах и кемпинге",
@@ -8580,7 +8582,7 @@ export const PRODUCT = [
     category: "sleepingbag",
 
     price: 199,
-
+    salePrice: 139,
     order: true,
     columnEng: [""],
     column: [
@@ -8601,7 +8603,7 @@ export const PRODUCT = [
     category: "sleepingbag",
 
     price: 230,
-
+    salePrice: 159,
     order: true,
     columnEng: [""],
     column: [
@@ -9101,7 +9103,7 @@ export const PRODUCT = [
     category: "sleepingbag",
 
     price: 22,
-
+    salePrice: 11,
     order: true,
     columnEng: [""],
     column: [
@@ -9123,7 +9125,7 @@ export const PRODUCT = [
     category: "sleepingbag",
 
     price: 32,
-
+    salePrice: 16,
     order: true,
     columnEng: [""],
     column: [
@@ -10473,13 +10475,13 @@ export const PRODUCT = [
     id: 191006398,
     title: "Самонадувающийся коврик",
     titleEng: "",
-    img: "HIKING119*53*2,5.jpg",
+    img: "BM-00206079__1__jpg.webp",
     desc: "HIKING 119*53*2,5 см",
     descEng: "",
     category: "mat",
     subcategory: "self-inflating",
     price: 99,
-
+    salePrice: 49,
     column: [
       "Походный надувной коврик HI KING 119×53×2.5 см",
       "Идеален для кемпинга, туризма и пикников",
@@ -15964,6 +15966,7 @@ export const PRODUCT = [
     desc: " в чехле (черный/серый)",
     category: "chair",
     price: 99,
+    salePrice: 69,
     subcategory: "chair",
     column: [
       "Складной стул Naturehike",
@@ -15996,7 +15999,7 @@ export const PRODUCT = [
     category: "chair",
     price: 45,
     subcategory: "chair",
-
+    salePrice: 32,
     column: [
       "Вес: 1кг",
       "2 подлокотника | 1 подстаканник | Высота сиденья: 40 см",
@@ -16125,7 +16128,7 @@ export const PRODUCT = [
     category: "chair",
     subcategory: "tables",
     price: 130,
-
+    salePrice: 89,
     column: [],
   },
   {
@@ -16137,7 +16140,7 @@ export const PRODUCT = [
     category: "chair",
     subcategory: "chair",
     price: 210,
-
+    salePrice: 160,
     column: [
       "Максимальная нагрузка: 200 кг",
       "Материал каркаса: усиленный алюминий",
@@ -16157,7 +16160,7 @@ export const PRODUCT = [
     category: "chair",
     price: 199,
     subcategory: "chair",
-
+    salePrice: 140,
     column: [
       "Регулировка наклона: есть",
       "Материал ткани: 600D Оксфорд",
@@ -18103,6 +18106,25 @@ export const PRODUCT = [
   },
   {
     order: false,
+    id: 987212273232329393176,
+    title: "Сноуборд STEPSNOW",
+    img: "IMG_3871.PNG",
+    desc: "Star Trek 154, 157, 159 см",
+    category: "snowboardsky",
+    price: null,
+    column: [
+      " Предназначение: All Mountain",
+      " Жесткость: 5/10",
+      " Форма: TWIN TIP",
+      " Усиление: Стекловолокно",
+      " Закладные: Нержавеющая сталь",
+      " База: Экструдированный полиэтилен",
+      " Сердечник: Тополь",
+      " Sidewall: ABS",
+    ],
+  },
+  {
+    order: false,
     id: 98721465227323293931,
     title: "Сноуборд STEPSNOW",
     img: "IMG_3877.PNG",
@@ -18149,6 +18171,89 @@ export const PRODUCT = [
       " Вес: 3000г",
     ],
   },
+  {
+    order: false,
+    id: 98764383193943331211,
+    title: "Cноубордические ботинки",
+    img: "IMG_3974.PNG",
+    desc: "SNOWCATCH D70 black ",
+    category: "snowboardsky_boots",
+    price: null,
+    column: [
+      "Размеры: 38-47",
+      "Коллекция: 2024",
+      "Материалы внешнего ботинка: полимерный материал",
+      "Материалы внутреннего ботинка: вспененный полимер, SBR-высокая эластичная амортизация",
+      "Полнота: 8",
+      "Страна-изготовитель: Китай",
+      "Подошва: резиновая износостойкая TPR",
+    ],
+  },
+  {
+    order: false,
+    id: 9876438319394333121145,
+    title: "Cноубордические ботинки",
+    img: "IMG_3978.PNG",
+    desc: "SNOWCATCH D70 white",
+    category: "snowboardsky_boots",
+    price: null,
+    column: [
+      "Размеры: 41-44",
+      "Коллекция: 2024",
+      "Материалы внешнего ботинка: полимерный материал",
+      "Материалы внутреннего ботинка: вспененный полимер, SBR-высокая эластичная амортизация ",
+      "Полнота: 8",
+      "Страна-изготовитель: Китай",
+      "Подошва: резиновая износостойкая TPR",
+    ],
+  },
+  {
+    order: false,
+    id: 126787333121145,
+    title: "Cноубордические ботинки",
+    img: "IMG_3976.PNG",
+    desc: "SNOWCATCH D70 black&white",
+    category: "snowboardsky_boots",
+    price: null,
+    column: [
+      "Размеры: 40-44",
+      "Коллекция: 2024",
+      "Материалы внешнего ботинка: полимерный материал",
+      "Материалы внутреннего ботинка: вспененный полимер, SBR-высокая эластичная амортизация ",
+      "Полнота: 8",
+      "Страна-изготовитель: Китай",
+      "Подошва: резиновая износостойкая TPR",
+    ],
+  },
+  {
+    order: false,
+    id: 45126787333121145,
+    title: "Cноубордические ботинки",
+    img: "IMG_3961.JPG",
+    desc: "SNOWCATCH D50 black",
+    category: "snowboardsky_boots",
+    price: null,
+    column: [
+      "Размеры: 37-46",
+      "Описание: Сноубордические ботинки на шнуровке, дышащий верх с противоударным носком, анти-скользящая подошва.",
+      "Вкладыш: внутренние ботинки с термоформовкой.",
+    ],
+  },
+  {
+    order: false,
+    id: 451267487333121145,
+    title: "Cноубордические ботинки",
+    img: "IMG_3959.JPG",
+    desc: "SSNOWCATCH D50 black&white",
+    category: "snowboardsky_boots",
+    price: null,
+    column: [
+      "Размеры: 39-47",
+      "Описание: Сноубордические ботинки на шнуровке, дышащий верх с противоударным носком, анти-скользящая подошва.",
+      "Вкладыш: внутренние ботинки с термоформовкой.",
+    ],
+  },
+
   {
     order: true,
     id: 987643839393143,
