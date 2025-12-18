@@ -141,7 +141,7 @@ export const Header = () => {
           <Box className={styles.logoContainer}>
             <Link href="/">
               <Image
-                src="/img/adjara2.png"
+                src="/img/adjara3.png"
                 alt="adjarapeak"
                 width={130}
                 height={50}
@@ -190,7 +190,7 @@ export const Header = () => {
             <Box className={styles.logoContainer}>
               <Link href="/">
                 <Image
-                  src="/img/adjara2.png"
+                  src="/img/adjara3.png"
                   alt="adjarapeak"
                   width={130}
                   height={50}

@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { useRouter } from "next/router";
 import { PRODUCT } from "../product-range/product";
 import { Menu } from "antd";
@@ -42,6 +42,23 @@ export default function SalePage({ children }) {
     return () => clearTimeout(timer);
   }, [searchValue]);
 
+  const menuContainerRef = useRef(null);
+
+  useEffect(() => {
+    if (!menuContainerRef.current) return;
+
+    const container = menuContainerRef.current; // scrollable div
+    const activeItem = container.querySelector(".ant-menu-item-selected");
+    if (!activeItem) return;
+
+    const containerWidth = container.offsetWidth;
+    const itemLeft = activeItem.offsetLeft;
+    const itemWidth = activeItem.offsetWidth;
+
+    const scrollPos = itemLeft - containerWidth / 2 + itemWidth / 2;
+    container.scrollTo({ left: scrollPos, behavior: "smooth" });
+  }, [activeCategory]);
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       const saved = localStorage.getItem("searchQuery");
@@ -49,6 +66,15 @@ export default function SalePage({ children }) {
       setIsInitialized(true);
     }
   }, []);
+
+  useEffect(() => {
+    const pathParts = router.asPath.split("/");
+    const categoryPath = pathParts[2];
+    const categoryIndex = CATEGORY_PRODUCT.findIndex(
+      (c) => c.path === categoryPath
+    );
+    if (categoryIndex !== -1) setActiveCategory(categoryIndex);
+  }, [router.asPath]);
 
   useEffect(() => {
     const checkScreen = () => {
@@ -165,7 +191,10 @@ export default function SalePage({ children }) {
   return (
     <>
       <div className={styles["search-container"]} style={{ margin: "20px 0" }}>
-        <div className={styles["filters-scroll-container"]}>
+        <div
+          className={styles["filters-scroll-container"]}
+          ref={menuContainerRef}
+        >
           <Menu
             mode="horizontal"
             selectedKeys={[`${activeCategory}`]}
@@ -180,6 +209,7 @@ export default function SalePage({ children }) {
             onClick={handleCategoryClick}
           />
         </div>
+
         <input
           type="text"
           placeholder="Поиск"
@@ -199,7 +229,17 @@ export default function SalePage({ children }) {
             <div className={styles["filter-category"]}>
               {isMobileView ? (
                 <>
-                  <FilterListIcon onClick={toggleMobileMenu} />
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "10px",
+                    }}
+                  >
+                    <FilterListIcon onClick={toggleMobileMenu} />
+                    <p>Фильтр</p>
+                  </div>
+
                   <Drawer
                     anchor="top"
                     open={isMobileMenuOpen}
@@ -256,12 +296,14 @@ export default function SalePage({ children }) {
                             height: "95%",
                             overflow: "hidden",
                             cursor: "pointer",
-                            transition: "transform 0.2s ease",
-                            "&:hover": { transform: "scale(1.03)" },
+                            transform: "none",
+                            "&:hover": { transform: "none", boxShadow: 3 },
+                            "&:focus": { outline: "none" },
+                            "&:active": { transform: "none" },
                           }}
                           onClick={() => router.push(`/app/${product.id}`)}
                         >
-                          <CardActionArea>
+                          <CardActionArea disableRipple disableTouchRipple>
                             {isLoaded ? (
                               <Skeleton variant="rectangular" height={450} />
                             ) : (

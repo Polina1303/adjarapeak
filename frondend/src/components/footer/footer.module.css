@@ -23,10 +23,11 @@
 }
 
 .footer-heading {
-  margin: 8px 0; /* Уменьшает отступы сверху и снизу */
-  font-size: 16px; /* При необходимости уменьшает шрифт */
-  line-height: 1.8; /* Уменьшает высоту строки */
+  margin: 8px 0;
+  font-size: 16px; 
+  line-height: 1.8; 
   font-family: "RoadRadio-Light";
+  color:#de682d
 }
 
 .footer-info h4,
@@ -113,6 +114,8 @@
     justify-content: center;
     gap: 10px;
   }
+
+ 
 }
 
 @media (max-width: 480px) {
@@ -172,6 +175,9 @@
 @media (max-width: 768px) {
   .footer-content-wrapper {
     grid-template-columns: 1fr;
+  }
+  .footer-content {
+    margin-left: 6px;
   }
 }
 

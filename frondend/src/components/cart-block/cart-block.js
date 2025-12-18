@@ -1,3 +1,4 @@
+// "use client";
 // import { useCallback, useEffect, useState } from "react";
 // import { BsCart3 } from "react-icons/bs";
 // import { useSelector, useDispatch } from "react-redux";
@@ -7,7 +8,6 @@
 // import { ItemsInCart } from "../items-in-cart";
 // import { calcTotalPrice } from "../utils";
 // import { hydrateCart } from "../../redux/cart/reducer";
-// import { useMemo } from "react";
 
 // import styles from "./cart-block.module.css";
 
@@ -17,23 +17,13 @@
 //   const [isCartMenuVisible, setIsCartMenuVisible] = useState(false);
 //   const [mounted, setMounted] = useState(false);
 //   const dispatch = useDispatch();
+//   const router = useRouter();
 
 //   const items = useSelector((state) => state.cart.itemsInCart);
 
-//   const router = useRouter();
-
-//   const handleClick = useCallback(() => {
-//     setIsCartMenuVisible(false);
-//     router.push("/order");
-//   }, [router]);
-
-//   const totalPrice = calcTotalPrice(items);
-//   const totalCount = items?.reduce((acc, item) => acc + item.count, 0) || 0;
-
 //   useEffect(() => {
-//     setMounted(true);
-//     // Загружаем данные из localStorage после монтирования
 //     if (typeof window !== "undefined") {
+//       setMounted(true);
 //       const storedItems = JSON.parse(localStorage.getItem(CART_KEY) || "[]");
 //       if (storedItems.length > 0) {
 //         dispatch(hydrateCart(storedItems));
@@ -47,57 +37,45 @@
 //     }
 //   }, [items, mounted]);
 
-//   useEffect(() => {
-//     if (mounted && typeof window !== "undefined") {
-//       const handleBeforeUnload = () => {
-//         localStorage.setItem(CART_KEY, JSON.stringify(items));
-//       };
+//   const handleClick = useCallback(() => {
+//     setIsCartMenuVisible(false);
+//     router.push("/order");
+//   }, [router]);
 
-//       window.addEventListener("beforeunload", handleBeforeUnload);
-//       return () =>
-//         window.removeEventListener("beforeunload", handleBeforeUnload);
-//     }
-//   }, [items, mounted]);
+//   const totalPrice = calcTotalPrice(items);
+//   const totalCount = items?.reduce((acc, item) => acc + item.count, 0) || 0;
 
-//   const localCartData = useMemo(() => {
-//     if (mounted && typeof window !== "undefined") {
-//       return JSON.parse(localStorage.getItem(CART_KEY) || "[]");
-//     }
-//     return [];
-//   }, [mounted]);
-
-//   // useEffect(() => {
-//   //   if (items.length === 0 && localCartData.length > 0) {
-//   //     localStorage.setItem(CART_KEY, JSON.stringify([]));
-//   //   }
-//   // }, [items, localCartData]);
+//   if (!mounted) return null;
 
 //   return (
-//     <div className="cart-block">
+//     <div className={styles.cartBlock}>
 //       <Button
-//         className="cart-btn"
-//         variant="ghost"
+//         className={styles.cartBtn}
 //         onClick={() => setIsCartMenuVisible(!isCartMenuVisible)}
 //       >
-//         <BsCart3 size={22} className="cart-icon" />
+//         <BsCart3 size={22} className={styles.cartIcon} />
 //         {totalCount > 0 && <ItemsInCart quantity={totalCount} />}
-//         {totalPrice > 0 && <span className="cart-price">{totalPrice}₾</span>}
+//         {totalPrice > 0 && (
+//           <span className={styles.cartPrice}>{totalPrice}₾</span>
+//         )}
 //       </Button>
 
-//       {isCartMenuVisible && <CartMenu items={items} onClick={handleClick} />}
+//       {/* {isCartMenuVisible && <CartMenu items={items} onClick={handleClick} />} */}
 //     </div>
 //   );
 // };
+
 "use client";
 import { useCallback, useEffect, useState } from "react";
 import { BsCart3 } from "react-icons/bs";
 import { useSelector, useDispatch } from "react-redux";
 import { useRouter } from "next/router";
-import { Button } from "../button";
 import { CartMenu } from "../cart-menu";
 import { ItemsInCart } from "../items-in-cart";
 import { calcTotalPrice } from "../utils";
 import { hydrateCart } from "../../redux/cart/reducer";
+import { Button } from "../button";
+import { IconButton, Drawer, Box, Toolbar, Typography } from "@mui/material";
 
 import styles from "./cart-block.module.css";
 
@@ -138,19 +116,54 @@ export const CartBlock = () => {
   if (!mounted) return null;
 
   return (
-    <div className={styles.cartBlock}>
-      <Button
-        className={styles.cartBtn}
-        onClick={() => setIsCartMenuVisible(!isCartMenuVisible)}
-      >
-        <BsCart3 size={22} className={styles.cartIcon} />
-        {totalCount > 0 && <ItemsInCart quantity={totalCount} />}
-        {totalPrice > 0 && (
-          <span className={styles.cartPrice}>{totalPrice}₾</span>
-        )}
-      </Button>
+    <>
+      <div className={styles.cartBlock}>
+        <Button
+          className={styles.cartBtn}
+          onClick={() => setIsCartMenuVisible(!isCartMenuVisible)}
+        >
+          <BsCart3 size={22} className={styles.cartIcon} />
+          {totalCount > 0 && <ItemsInCart quantity={totalCount} />}
+          {totalPrice > 0 && (
+            <span className={styles.cartPrice}>{totalPrice}₾</span>
+          )}
+        </Button>
+      </div>
 
-      {isCartMenuVisible && <CartMenu items={items} onClick={handleClick} />}
-    </div>
+      <Drawer
+        anchor="top"
+        open={isCartMenuVisible}
+        onClose={() => setIsCartMenuVisible(false)}
+        PaperProps={{
+          sx: { width: "100%", maxWidth: "100%", padding: 2 },
+        }}
+        ModalProps={{
+          BackdropProps: { style: { backgroundColor: "rgba(0,0,0,0.5)" } },
+        }}
+      >
+        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+          <Typography
+            variant="h6"
+            sx={{
+              color: " #de682d",
+              fontWeight: "bold",
+              letterSpacing: 1,
+              textAlign: "center",
+              flexGrow: 1,
+              fontFamily: "RoadRadio-Thin, sans-serif",
+            }}
+          >
+            КОРЗИНА
+          </Typography>
+          <IconButton onClick={() => setIsCartMenuVisible(false)}>✕</IconButton>
+        </Toolbar>
+
+        <CartMenu
+          items={items}
+          onClick={handleClick}
+          closeMenu={() => setIsCartMenuVisible(false)}
+        />
+      </Drawer>
+    </>
   );
 };

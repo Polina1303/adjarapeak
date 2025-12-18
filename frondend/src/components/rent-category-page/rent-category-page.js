@@ -37,15 +37,23 @@ export default function RentCategoryPage({ section, type }) {
   };
 
   useEffect(() => {
+    if (!pathname) return;
+
     const params = new URLSearchParams();
 
     if (inStockOnly) params.set("stock", "true");
     if (sortBy && sortBy !== "default") params.set("sort", sortBy);
 
-    const query = params.toString();
-    const url = query ? `${pathname}?${query}` : pathname;
+    const queryObj = Object.fromEntries(params.entries());
 
-    router.replace(url, { scroll: false });
+    router.replace(
+      {
+        pathname: pathname,
+        query: queryObj,
+      },
+      undefined,
+      { scroll: false }
+    );
   }, [inStockOnly, sortBy, pathname, router]);
 
   let filteredProducts = [];
@@ -75,7 +83,7 @@ export default function RentCategoryPage({ section, type }) {
           return (
             <div
               key={t.category}
-              className={styles["category-product"]}
+              // className={styles["category-product"]}
               onClick={() => router.push(routePath)}
               style={{ cursor: "pointer" }}
             >
@@ -84,17 +92,14 @@ export default function RentCategoryPage({ section, type }) {
                   boxShadow: 3,
                   height: "100%",
                   overflow: "hidden",
-                  transition: "transform 0.2s ease",
-                  "&:hover": { transform: "scale(1.03)" },
                 }}
               >
-                <CardActionArea>
+                <CardActionArea disableRipple disableTouchRipple>
                   {!isLoaded && <Skeleton variant="rectangular" height={250} />}
                   {t.img && (
                     <div
                       style={{
                         position: "relative",
-                        height: 300,
                         display: isLoaded ? "block" : "none",
                       }}
                     >
@@ -259,12 +264,10 @@ export default function RentCategoryPage({ section, type }) {
                     height: "95%",
                     overflow: "hidden",
                     cursor: "pointer",
-                    transition: "transform 0.2s ease",
-                    "&:hover": { transform: "scale(1.03)" },
                   }}
                   onClick={() => router.push(`/app/${product.id}`)}
                 >
-                  <CardActionArea>
+                  <CardActionArea disableRipple disableTouchRipple>
                     {!!isLoaded ? (
                       <Skeleton variant="rectangular" height={450} />
                     ) : (

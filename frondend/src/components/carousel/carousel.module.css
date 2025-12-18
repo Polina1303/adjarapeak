@@ -85,6 +85,15 @@
   align-items: stretch;
 }
 
+.my-swiper {
+  overflow: visible;
+}
+
+.my-swiper :global(.swiper-pagination) {
+  bottom: -10px;
+}
+
+
 @media (max-width: 768px) {
   .swiper-button-next,
   .swiper-button-prev {

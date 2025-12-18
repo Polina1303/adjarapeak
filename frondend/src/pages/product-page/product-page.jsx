@@ -16,6 +16,7 @@ import Typography from "@mui/material/Typography";
 import DoneIcon from "@mui/icons-material/Done";
 import { RecommendedCarousel } from "../../components/carousel";
 import { getProductById } from "../../../lib/cache";
+import ReactImageMagnify from "react-image-magnify";
 import styles from "./product-page.module.css";
 
 export const ProductPage = () => {
@@ -109,13 +110,32 @@ export const ProductPage = () => {
       <Card className={styles["product-card"]}>
         <Box className={styles["product-top"]}>
           <Box className={styles["product-image-box"]}>
-            <img
+            <ReactImageMagnify
+              {...{
+                smallImage: {
+                  alt: product.title,
+                  isFluidWidth: false,
+                  src: "/img/" + product.img,
+                  width: 350,
+                  height: 350,
+                  className: styles["product-image"],
+                },
+                largeImage: {
+                  src: "/img/" + product.img,
+                  width: 1000, // размер увеличенного изображения
+                  height: 1400,
+                },
+                lensStyle: { backgroundColor: "rgba(255,255,255,0.3)" },
+                enlargedImageContainerStyle: { zIndex: 999 },
+              }}
+            />
+            {/* <img
               ref={imageRef}
               src={"/img/" + product.img}
               alt={product.title}
               className={styles["product-image"]}
               style={{ cursor: "zoom-in" }}
-            />
+            /> */}
           </Box>
 
           <Box className={styles["product-info"]}>
@@ -143,9 +163,11 @@ export const ProductPage = () => {
             </Box>
 
             <Box>
-              <Link className={styles["product-link"]} href="delivery_terms">
-                Условия доставки
-              </Link>
+              {isRentProduct ? null : (
+                <Link className={styles["product-link"]} href="delivery_terms">
+                  Условия доставки
+                </Link>
+              )}
             </Box>
           </Box>
         </Box>

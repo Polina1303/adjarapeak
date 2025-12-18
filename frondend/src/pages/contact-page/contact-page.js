@@ -23,7 +23,7 @@ export default function ContactPage() {
           {languages === "RU" ? "Назад" : "Back"}
         </button>
       </div>
-      <Container sx={{ py: 5 }}>
+      <Container sx={{ py: 5, px: { xs: 0.5, sm: 1 } }}>
         <Paper elevation={3} sx={{ p: 4 }}>
           <Typography
             variant="h4"
@@ -81,7 +81,7 @@ export default function ContactPage() {
                       },
                     }}
                   >
-                    +995 511 147 586 (RU)
+                    +995 511 147 586
                   </Link>
                   <br />
                   <Link
@@ -96,22 +96,7 @@ export default function ContactPage() {
                       },
                     }}
                   >
-                    +995 551 132 803 (RU)
-                  </Link>
-                  <br />
-                  <Link
-                    href="tel:+995557229348"
-                    underline="hover"
-                    sx={{
-                      color: "#000000ff",
-                      fontFamily: "RoadRadio",
-                      "&:hover": {
-                        color: "#bf561f",
-                        textDecoration: "underline",
-                      },
-                    }}
-                  >
-                    +995 557 229 348 (ENG/GE)
+                    +995 551 132 803
                   </Link>
                 </Typography>
               </Box>

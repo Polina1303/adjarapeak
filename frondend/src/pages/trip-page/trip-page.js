@@ -1051,13 +1051,28 @@ export const TripPage = () => {
 
           <button
             className={classNames(style["filter-button"], {
-              [style.active]: filter === "group",
+              [style.active]: filter === "dzip",
             })}
-            onClick={() => handleFilter("group")}
+            onClick={() => handleFilter("dzip")}
           >
-            Групповые
+            Джип-тур
           </button>
-
+          <button
+            className={classNames(style["filter-button"], {
+              [style.active]: filter === "skiTour",
+            })}
+            onClick={() => handleFilter("skiTour")}
+          >
+            Горнолыжный тур
+          </button>
+          <button
+            className={classNames(style["filter-button"], {
+              [style.active]: filter === "hiking",
+            })}
+            onClick={() => handleFilter("hiking")}
+          >
+            Хайкинг
+          </button>
           <button
             className={classNames(style["filter-button"], {
               [style.active]: filter === "rockClimbing",

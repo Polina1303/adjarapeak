@@ -1,6 +1,6 @@
 export const CATEGORY_RENT = [
   {
-    title: "ПРОКАТ ГОРНОЛЫЖНОГО СНАРЯЖЕНИЯ ",
+    title: "ГОРНОЛЫЖНОЕ",
     path: "skiRental",
     types: [
       // {
@@ -72,7 +72,7 @@ export const CATEGORY_RENT = [
   },
 
   {
-    title: "ПРОКАТ ТУРИСТИЧЕСКОГО СНАРЯЖЕНИЯ",
+    title: "ТУРИСТИЧЕСКОЕ",
     path: "tourismRental",
     types: [
       // {

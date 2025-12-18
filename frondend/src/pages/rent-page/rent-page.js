@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { useRouter } from "next/router";
 import { RENT } from "../../components/product-range/rent";
 import { Menu } from "antd";
@@ -46,6 +46,15 @@ export default function RentPage({ children }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [isInitialized, setIsInitialized] = useState(false);
 
+  useEffect(() => {
+    const pathParts = router.asPath.split("/");
+    const categoryPath = pathParts[2];
+    const categoryIndex = CATEGORY_RENT.findIndex(
+      (c) => c.path === categoryPath
+    );
+    if (categoryIndex !== -1) setActiveCategory(categoryIndex);
+  }, [router.asPath]);
+
   const filteredProducts = useMemo(() => {
     if (!isInitialized || !searchQuery.trim()) {
       return [];
@@ -67,6 +76,22 @@ export default function RentPage({ children }) {
 
     return results;
   }, [searchQuery, isInitialized]);
+  const menuContainerRef = useRef(null);
+
+  useEffect(() => {
+    if (!menuContainerRef.current) return;
+
+    const container = menuContainerRef.current; // scrollable div
+    const activeItem = container.querySelector(".ant-menu-item-selected");
+    if (!activeItem) return;
+
+    const containerWidth = container.offsetWidth;
+    const itemLeft = activeItem.offsetLeft;
+    const itemWidth = activeItem.offsetWidth;
+
+    const scrollPos = itemLeft - containerWidth / 2 + itemWidth / 2;
+    container.scrollTo({ left: scrollPos, behavior: "smooth" });
+  }, [activeCategory]);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -97,6 +122,13 @@ export default function RentPage({ children }) {
     setSearchValue(e.target.value);
   };
 
+  // const handleCategoryClick = (e) => {
+  //   const categoryIndex = Number(e.key);
+  //   setActiveCategory(categoryIndex);
+  //   const category = CATEGORY_RENT[categoryIndex];
+  //   setExpandedAccordion(null);
+  //   router.push(`/rent/${category.path}`);
+  // };
   const handleCategoryClick = (e) => {
     const categoryIndex = Number(e.key);
     setActiveCategory(categoryIndex);
@@ -130,7 +162,10 @@ export default function RentPage({ children }) {
   return (
     <>
       <div className={styles["search-container"]} style={{ margin: "20px 0" }}>
-        <div className={styles["filters-scroll-container"]}>
+        <div
+          className={styles["filters-scroll-container"]}
+          ref={menuContainerRef}
+        >
           <Menu
             mode="horizontal"
             selectedKeys={[`${activeCategory}`]}
@@ -168,7 +203,16 @@ export default function RentPage({ children }) {
             <div className={styles["filter-category"]}>
               {isMobileView ? (
                 <>
-                  <FilterListIcon onClick={toggleMobileMenu} />
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "10px",
+                    }}
+                  >
+                    <FilterListIcon onClick={toggleMobileMenu} />
+                    <p>Фильтр</p>
+                  </div>
 
                   <Drawer
                     anchor="top"
@@ -361,9 +405,28 @@ export default function RentPage({ children }) {
                                 transition: "transform 0.2s ease",
                                 "&:hover": { transform: "scale(1.03)" },
                               }}
-                              onClick={() => router.push(`/app/${product.id}`)}
+                              onClick={() => {
+                                // Сохраняем текущую категорию и развернутый аккордеон
+                                localStorage.setItem(
+                                  "rentState",
+                                  JSON.stringify({
+                                    activeCategory,
+                                    expandedAccordion,
+                                  })
+                                );
+
+                                router.push(`/app/${product.id}`);
+                              }}
+
+                              // onClick={() => router.push(`/app/${product.id}`)}
                             >
-                              <CardActionArea>
+                              <CardActionArea
+                                sx={{
+                                  flexGrow: 1,
+                                  display: "flex",
+                                  flexDirection: "column",
+                                }}
+                              >
                                 {!!isLoaded ? (
                                   <Skeleton
                                     variant="rectangular"

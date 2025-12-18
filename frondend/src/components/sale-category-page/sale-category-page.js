@@ -33,17 +33,23 @@ export default function SaleCategoryPage({ section, type, subcategory }) {
   };
 
   useEffect(() => {
-    if (!pathname) return; // без pathname ничего не делаем
+    if (!pathname) return;
 
     const params = new URLSearchParams();
 
     if (inStockOnly) params.set("stock", "true");
     if (sortBy && sortBy !== "default") params.set("sort", sortBy);
 
-    const query = params.toString();
-    const url = query ? `${pathname}?${query}` : pathname;
+    const queryObj = Object.fromEntries(params.entries());
 
-    router.replace(url, undefined, { scroll: false });
+    router.replace(
+      {
+        pathname: pathname,
+        query: queryObj,
+      },
+      undefined,
+      { scroll: false }
+    );
   }, [inStockOnly, sortBy, pathname, router]);
 
   let filteredProducts = [];
@@ -82,7 +88,7 @@ export default function SaleCategoryPage({ section, type, subcategory }) {
           return (
             <div
               key={t.category}
-              className={styles["category-product"]}
+              // className={styles["category-product"]}
               onClick={() => router.push(routePath)}
               style={{ cursor: "pointer" }}
             >
@@ -91,17 +97,14 @@ export default function SaleCategoryPage({ section, type, subcategory }) {
                   boxShadow: 3,
                   height: "100%",
                   overflow: "hidden",
-                  transition: "transform 0.2s ease",
-                  "&:hover": { transform: "scale(1.03)" },
                 }}
               >
-                <CardActionArea>
+                <CardActionArea disableRipple disableTouchRipple>
                   {!isLoaded && <Skeleton variant="rectangular" height={250} />}
                   {t.img && (
                     <div
                       style={{
                         position: "relative",
-                        height: 300,
                         display: isLoaded ? "block" : "none",
                       }}
                     >
@@ -267,12 +270,11 @@ export default function SaleCategoryPage({ section, type, subcategory }) {
                     height: "95%",
                     overflow: "hidden",
                     cursor: "pointer",
-                    transition: "transform 0.2s ease",
-                    "&:hover": { transform: "scale(1.03)" },
+                    minWidth: 0,
                   }}
                   onClick={() => router.push(`/app/${product.id}`)}
                 >
-                  <CardActionArea>
+                  <CardActionArea disableRipple disableTouchRipple>
                     {!!isLoaded ? (
                       <Skeleton variant="rectangular" height={450} />
                     ) : (

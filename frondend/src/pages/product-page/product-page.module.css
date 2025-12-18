@@ -55,15 +55,14 @@
 }
 
 .product-link {
-  color: #3d3d3d;
+  color: #f37638;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 800;
 }
 
 .product-link:hover {
   color: #de682d;
   text-decoration: underline #de682d;
-
 }
 
 .product-description {
@@ -141,7 +140,7 @@
   }
   
   .product-image-box {
-    width: 35%; 
+    width: 65%; 
   }
   
   .product-link {
