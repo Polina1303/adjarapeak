@@ -29,23 +29,24 @@ export const ProductItems = ({ product }) => {
   const href = `/product?id=${product.id}`;
 
   return (
-    <Link href={href} passHref>
+    <>
       <div className={styles["product-items"]}>
         <div ref={ref} className={styles["product-items__details"]}>
-          <img
-            className={styles["product-items__img"]}
-            src={"/img/" + product.img}
-            alt={product.title}
-            loading="lazy"
-          />
-          <span className={styles["product-items__title"]}>
-            {product.title.toUpperCase()}
-          </span>
-
+          <Link href={href} passHref>
+            <img
+              className={styles["product-items__img"]}
+              src={"/img/" + product.img}
+              alt={product.title}
+              loading="lazy"
+            />
+            <span className={styles["product-items__title"]}>
+              {product.title.toUpperCase()}
+            </span>
+          </Link>
           <p className={styles["product-items__desc"]}>{product.desc}</p>
           <Buy product={product} />
         </div>
       </div>
-    </Link>
+    </>
   );
 };
