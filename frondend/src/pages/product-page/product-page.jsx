@@ -9,14 +9,14 @@ import { Buy } from "../../components/buy/buy";
 import { PRODUCT } from "../../components/product-range/product";
 import { RENT } from "../../components/product-range/rent";
 import { RENT_SKY } from "../../components/product-range/rent-sky";
-import mediumZoom from "medium-zoom";
+// import mediumZoom from "medium-zoom";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
 import DoneIcon from "@mui/icons-material/Done";
 import { RecommendedCarousel } from "../../components/carousel";
 import { getProductById } from "../../../lib/cache";
-import ReactImageMagnify from "react-image-magnify";
+// import ReactImageMagnify from "react-image-magnify";
 import styles from "./product-page.module.css";
 
 export const ProductPage = () => {
@@ -65,16 +65,16 @@ export const ProductPage = () => {
 
     zoomRef.current?.detach();
 
-    zoomRef.current = mediumZoom(image, {
-      background: "rgba(113, 109, 109, 0.75)",
-      margin: 24,
-      scrollOffset: 120,
-      container: {
-        top: 120,
-      },
+    // zoomRef.current = mediumZoom(image, {
+    //   background: "rgba(113, 109, 109, 0.75)",
+    //   margin: 24,
+    //   scrollOffset: 120,
+    //   container: {
+    //     top: 120,
+    //   },
 
-      zIndex: 999,
-    });
+    //   zIndex: 999,
+    // });
 
     return () => {
       zoomRef.current?.detach();
@@ -110,7 +110,7 @@ export const ProductPage = () => {
       <Card className={styles["product-card"]}>
         <Box className={styles["product-top"]}>
           <Box className={styles["product-image-box"]}>
-            <ReactImageMagnify
+            {/* <ReactImageMagnify
               {...{
                 smallImage: {
                   alt: product.title,
@@ -128,14 +128,14 @@ export const ProductPage = () => {
                 lensStyle: { backgroundColor: "rgba(255,255,255,0.3)" },
                 enlargedImageContainerStyle: { zIndex: 999 },
               }}
-            />
-            {/* <img
+            /> */}
+            <img
               ref={imageRef}
               src={"/img/" + product.img}
               alt={product.title}
               className={styles["product-image"]}
               style={{ cursor: "zoom-in" }}
-            /> */}
+            />
           </Box>
 
           <Box className={styles["product-info"]}>
