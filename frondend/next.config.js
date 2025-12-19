@@ -36,6 +36,8 @@
 // module.exports = nextConfig;
 
 /** @type {import('next').NextConfig} */
+
+
 const path = require("path");
 
 const nextConfig = {
@@ -72,6 +74,8 @@ const nextConfig = {
   compiler: {
     removeConsole: false,
   },
+  trailingSlash: true,
+
 };
 
 module.exports = nextConfig;

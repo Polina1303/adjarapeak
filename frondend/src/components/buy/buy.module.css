@@ -66,8 +66,9 @@
   font-family: "RoadRadio-Light", sans-serif !important;
 }
 
-.product-items__price_page{
+.product-items__price_page {
   font-size: 24px;
+  font-weight: 900;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   font-family: "RoadRadio-Light", sans-serif !important;
   font-weight: 100;
@@ -101,7 +102,7 @@
   margin-bottom: 10px;
   margin-right: 10px;
   font-size: 10px;
- font-family: "RoadRadio-Light", sans-serif !important;
+  font-family: "RoadRadio-Light", sans-serif !important;
 }
 
 .add-to-cart-title {
@@ -110,8 +111,8 @@
   display: inline-block;
   vertical-align: middle;
   margin-bottom: 10px;
-  margin-right: 10px; 
- font-family: "RoadRadio-Light", sans-serif !important;
+  margin-right: 10px;
+  font-family: "RoadRadio-Light", sans-serif !important;
 }
 
 .add-to-cart-icon {
@@ -134,25 +135,23 @@
   color: white;
 }
 @media only screen and (max-width: 700px) {
- 
-  .add-to-cart-cover{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  .add-to-cart-cover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  .add-to-cart-page{
+  .add-to-cart-page {
     width: 400px;
   }
-
-  .add-to-cart-cover button{
-     display: flex;
-     flex-direction: row;
+  .add-to-cart-cover button {
+    display: flex;
+    flex-direction: row;
   }
 
   .add-to-cart-title,
   .add-to-cart-title.discounted {
     font-size: 12px;
-    white-space: nowrap;  
+    white-space: nowrap;
   }
 
   .add-to-cart-icon,
@@ -160,11 +159,10 @@
     width: 18px;
     height: 18px;
     margin: 0;
-    flex-shrink: 0;           
+    flex-shrink: 0;
   }
 
   .product-items__count {
-    display: none;             
+    display: none;
   }
 }
-

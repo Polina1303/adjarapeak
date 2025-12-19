@@ -8,8 +8,11 @@ export const initProductCache = () => {
   if (typeof window === "undefined") return;
 
   const cached = localStorage.getItem("cachedProductsV1");
-  if (!cached) {
-    localStorage.setItem("cachedProductsV1", JSON.stringify(allProducts));
+
+  const next = JSON.stringify(allProducts);
+
+  if (cached !== next) {
+    localStorage.setItem("cachedProductsV1", next);
   }
 };
 

@@ -209,9 +209,10 @@ export default function RentPage({ children }) {
                       alignItems: "center",
                       gap: "10px",
                     }}
+                    onClick={toggleMobileMenu}
                   >
-                    <FilterListIcon onClick={toggleMobileMenu} />
-                    <p>Фильтр</p>
+                    <FilterListIcon />
+                    <p>Фильтры</p>
                   </div>
 
                   <Drawer
@@ -234,7 +235,7 @@ export default function RentPage({ children }) {
                   >
                     <Toolbar className={styles.toolbarMobile}>
                       <Typography className={styles.filterTitle}>
-                        Фильтр
+                        Фильтры
                       </Typography>
                       <IconButton
                         edge="start"

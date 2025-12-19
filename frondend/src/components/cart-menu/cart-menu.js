@@ -34,8 +34,16 @@ export const CartMenu = ({ items, onClick, closeMenu }) => {
             p={2}
             sx={{ fontFamily: "RoadRadio-Light, sans-serif" }}
           >
-            <Typography variant="subtitle1">ИТОГО:</Typography>
-            <Typography variant="subtitle1">
+            <Typography
+              sx={{ fontFamily: "RoadRadio-Light, sans-serif" }}
+              variant="subtitle1"
+            >
+              ИТОГО:
+            </Typography>
+            <Typography
+              sx={{ fontFamily: "RoadRadio-Light, sans-serif" }}
+              variant="subtitle1"
+            >
               {calcTotalPrice(items)}.00₾
             </Typography>
           </Box>
@@ -44,7 +52,7 @@ export const CartMenu = ({ items, onClick, closeMenu }) => {
               size="m"
               onClick={onClick}
               sx={{
-                width: "20%",
+                width: "60%",
                 backgroundColor: "#f87736",
                 color: "#fff",
                 marginTop: "10px",

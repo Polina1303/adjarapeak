@@ -98,7 +98,7 @@ export const Footer = () => {
                   <BsInstagram />
                 </a>
                 <a
-                  href="https://t.me/adjarapeak/229"
+                  href="https://t.me/adjarapeak"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Telegram"

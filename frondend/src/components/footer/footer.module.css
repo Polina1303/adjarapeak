@@ -24,10 +24,10 @@
 
 .footer-heading {
   margin: 8px 0;
-  font-size: 16px; 
-  line-height: 1.8; 
+  font-size: 16px;
+  line-height: 1.8;
   font-family: "RoadRadio-Light";
-  color:#de682d
+  color: #de682d;
 }
 
 .footer-info h4,
@@ -114,8 +114,6 @@
     justify-content: center;
     gap: 10px;
   }
-
- 
 }
 
 @media (max-width: 480px) {

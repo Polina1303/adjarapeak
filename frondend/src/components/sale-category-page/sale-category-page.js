@@ -16,6 +16,7 @@ import {
 } from "@mui/material";
 import { FormControl, Select, MenuItem, InputLabel } from "@mui/material";
 import styles from "../sale-page/sale-page.module.css";
+import Link from "next/link";
 
 export default function SaleCategoryPage({ section, type, subcategory }) {
   const router = useRouter();
@@ -86,11 +87,10 @@ export default function SaleCategoryPage({ section, type, subcategory }) {
           const isLoaded = loadedIds.includes(t.category);
 
           return (
-            <div
+            <Link
               key={t.category}
-              // className={styles["category-product"]}
-              onClick={() => router.push(routePath)}
-              style={{ cursor: "pointer" }}
+              href={`/sale/${section}/${t.category}`}
+              style={{ textDecoration: "none", color: "inherit" }}
             >
               <Card
                 sx={{
@@ -146,7 +146,7 @@ export default function SaleCategoryPage({ section, type, subcategory }) {
                   </CardContent>
                 </CardActionArea>
               </Card>
-            </div>
+            </Link>
           );
         })}
       </div>

@@ -82,7 +82,7 @@ export const HomePage = () => {
         aria-label={isRU ? "Разделы магазина" : "Store sections"}
       >
         <article ref={ref} className={styles.saleItem}>
-          <Link href="sale/tourismCamping" className={styles.saleCard}>
+          <Link href="sale/alpinesking" className={styles.saleCard}>
             <img
               loading="lazy"
               src="/img/sale.webp"
