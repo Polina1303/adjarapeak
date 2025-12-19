@@ -2,6 +2,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import style from "./rock-climbing-page.module.css";
+import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 
 export const RockClimbingPage = () => {
@@ -102,38 +103,50 @@ export const RockClimbingPage = () => {
           <li>Скальные туфли - для лучшего удержания на скале.</li>
         </ul>
         <div className={style["image-gallery"]}>
-          <img
+          <Image
             ref={ref}
             src="/rockClimbingImage/IMG_5450.JPG"
             alt="Снаряжение 1"
+            width={200}
+            height={200}
             className={style["gallery-image"]}
           />
-          <img
+          <Image
             ref={ref}
+            width={200}
+            height={200}
             src="/rockClimbingImage/IMG_5451.JPG"
             alt="Снаряжение 2"
             className={style["gallery-image"]}
           />
-          <img
+          <Image
             ref={ref}
+            width={200}
+            height={200}
             src="/rockClimbingImage/IMG_5464.JPG"
             alt="Снаряжение 5"
             className={style["gallery-image"]}
           />
-          <img
+          <Image
             ref={ref}
+            width={200}
+            height={200}
             src="/rockClimbingImage/IMG_5459.JPG"
             alt="Снаряжение 3"
             className={style["gallery-image"]}
           />
-          <img
+          <Image
             ref={ref}
+            width={200}
+            height={200}
             src="/rockClimbingImage/IMG_5462.JPG"
             alt="Снаряжение 4"
             className={style["gallery-image"]}
           />
-          <img
+          <Image
             ref={ref}
+            width={200}
+            height={200}
             src="/rockClimbingImage/IMG_5465.JPG"
             alt="Снаряжение 6"
             className={style["gallery-image"]}
@@ -165,12 +178,18 @@ export const RockClimbingPage = () => {
           у вас точно получится! Слушайте инструктора и наслаждайтесь!
         </p>
         <div className={style["image-gallery"]}>
-          <img
+          <Image
+            ref={ref}
+            width={200}
+            height={200}
             src="/rockClimbingImage/al.JPG"
             alt="Снаряжение 1"
             className={style["gallery-image-instructor"]}
           />
-          <img
+          <Image
+            ref={ref}
+            width={200}
+            height={200}
             src="/rockClimbingImage/eg.JPG"
             alt="Снаряжение 2"
             className={style["gallery-image-instructor"]}
@@ -211,7 +230,7 @@ export const RockClimbingPage = () => {
           href="https://t.me/shpaksn"
           target="_blank"
           rel="noreferrer"
-          className="register-button"
+          className={style["register-button"]}
         >
           Записаться
         </a>

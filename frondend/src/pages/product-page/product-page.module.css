@@ -1,4 +1,3 @@
-
 .product-card {
   padding: 24px;
   margin: 0 auto;
@@ -18,7 +17,6 @@
   gap: 32px;
   width: 100%;
 }
-
 
 .product-image-box {
   flex: 1 1 50%;
@@ -55,22 +53,21 @@
 }
 
 .product-link {
-  color: #3d3d3d;
+  color: #f37638;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 800;
 }
 
 .product-link:hover {
   color: #de682d;
   text-decoration: underline #de682d;
-
 }
 
 .product-description {
   width: 100%;
   margin-top: 16px;
 }
-.product-info-additional{
+.product-info-additional {
   color: rgb(132, 132, 132);
   font-family: "RoadRadio-Thin", sans-serif !important;
 }
@@ -80,7 +77,6 @@
   font-weight: 600;
   text-decoration: underline #de682d 2px;
 }
-
 
 .product-list {
   padding-left: 0;
@@ -92,8 +88,8 @@
   margin-bottom: 8px;
   padding-left: 0;
   display: flex;
-  align-items: flex-start; 
-  gap: 8px; 
+  align-items: flex-start;
+  gap: 8px;
 }
 
 .product-list ul {
@@ -106,14 +102,13 @@
   font-weight: 600;
 }
 
-.product-related-title{
-   margin-bottom: 16px;
+.product-related-title {
+  margin-bottom: 16px;
   font-weight: 600;
 }
 
-
-.active:hover{
-  color:#f87736;
+.active:hover {
+  color: #f87736;
   font-family: "RoadRadio-Thin";
   font-weight: 500;
 }
@@ -129,25 +124,24 @@
   color: #222;
 }
 
-
 @media only screen and (max-width: 785px) {
   .product-info {
     justify-content: flex-start;
-    align-items: flex-start; 
+    align-items: flex-start;
     width: 100%;
   }
-  .product-title{
+  .product-title {
     font-size: 10px;
   }
-  
+
   .product-image-box {
-    width: 35%; 
+    width: 65%;
   }
-  
+
   .product-link {
     text-align: left;
     width: 100%;
-    align-self: flex-start; 
+    align-self: flex-start;
   }
 }
 @media only screen and (max-width: 610px) {
@@ -168,11 +162,8 @@
 @media (max-width: 900px) {
   .product-top {
     flex-direction: column;
-
   }
   .product-description {
-  width: 80%;
- 
-}
- 
+    width: 80%;
+  }
 }

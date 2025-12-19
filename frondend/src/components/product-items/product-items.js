@@ -6,6 +6,7 @@ import { setCurrentProduct } from "../../redux/product/reducer";
 import { BsSearch } from "react-icons/bs";
 import { Buy } from "../buy/buy";
 import styles from "./product-items.module.css";
+import Link from "next/link";
 
 export const ProductItems = ({ product }) => {
   const [mounted, setMounted] = useState(false);
@@ -25,8 +26,10 @@ export const ProductItems = ({ product }) => {
     setMounted(true);
   }, []);
 
+  const href = `/product?id=${product.id}`;
+
   return (
-    <>
+    <Link href={href} passHref>
       <div className={styles["product-items"]}>
         <div ref={ref} className={styles["product-items__details"]}>
           <img
@@ -43,6 +46,6 @@ export const ProductItems = ({ product }) => {
           <Buy product={product} />
         </div>
       </div>
-    </>
+    </Link>
   );
 };

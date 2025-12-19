@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { IoIosArrowBack } from "react-icons/io";
 import { useRouter } from "next/router";
+import Image from "next/image";
 import style from "./service-center-page.module.css";
 
 function ServiceCenterPage() {
@@ -75,26 +76,34 @@ function ServiceCenterPage() {
         </h2>
 
         <div className={style["images-container"]}>
-          <img
+          <Image
             src="/serviceImage/IMG_4590.PNG"
             alt="Image 1"
+            width={200}
+            height={200}
             className={style["modal-image"]}
           />
-          <img
+          <Image
             src="/serviceImage/IMG_4591.JPG"
             alt="Image 2"
+            width={200}
+            height={200}
             className={style["modal-image"]}
           />
         </div>
         <div className={style["images-container"]}>
-          <img
+          <Image
             src="/serviceImage/IMG_4592.JPG"
             alt="Image 3"
+            width={200}
+            height={200}
             className={style["modal-image"]}
           />
-          <img
+          <Image
             src="/serviceImage/IMG_4589.JPG"
             alt="Image 4"
+            width={200}
+            height={200}
             className={style["modal-image"]}
           />
         </div>

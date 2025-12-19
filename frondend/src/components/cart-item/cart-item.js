@@ -55,13 +55,13 @@ export const CartItem = ({ img, title, price, id, count }) => {
         <div className={styles["cart-item__price"]}>
           <span>{price * count}.00₾</span>
         </div>
-        <div>
+        {/* <div>
           <TiDeleteOutline
             size={25}
             className={styles["cart-item__delete"]}
             onClick={handleClick}
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );

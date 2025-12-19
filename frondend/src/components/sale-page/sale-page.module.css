@@ -1,12 +1,15 @@
-.filters-scroll-container :global(.ant-menu-horizontal .ant-menu-item-selected) {
+.filters-scroll-container
+  :global(.ant-menu-horizontal .ant-menu-item-selected) {
   color: #de682d !important;
 }
 
-.filters-scroll-container :global(.ant-menu-horizontal > .ant-menu-item-selected::after) {
+.filters-scroll-container
+  :global(.ant-menu-horizontal > .ant-menu-item-selected::after) {
   border-bottom: 2px solid #de682d !important;
 }
 
-.filters-scroll-container :global(.ant-menu-horizontal > .ant-menu-item:hover::after) {
+.filters-scroll-container
+  :global(.ant-menu-horizontal > .ant-menu-item:hover::after) {
   border-bottom: 2px solid #de682d !important;
 }
 
@@ -17,7 +20,6 @@
 .filters-scroll-container :global(.sticky-horizontal-menu.ant-menu-horizontal) {
   gap: 3px !important;
 }
-
 
 .search-container > div:first-child {
   width: 100%;
@@ -35,36 +37,35 @@
 /* .search-container{
    position: fixed;
     z-index: 1000;
-    top: 90px;           
- 
+    top: 90px;
+
 } */
-.filter-scroll-container{
-   width: 100%;
+.filter-scroll-container {
+  width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
-  -webkit-overflow-scrolling: touch; 
+  -webkit-overflow-scrolling: touch;
   white-space: nowrap;
   padding: 10px 15px;
   background: white;
 }
 
-.title{
-    font-family: "RoadRadio", sans-serif !important;
-    font-size: 24px;
-    text-align: left;
+.title {
+  font-family: "RoadRadio", sans-serif !important;
+  font-size: 24px;
+  text-align: left;
 }
 
 .filter-scroll-container::-webkit-scrollbar {
-  display: none; 
+  display: none;
 }
-
 
 .sticky-horizontal-menu {
   display: inline-flex !important;
   flex-wrap: nowrap;
 }
 
-.filterTitle{
+.filterTitle {
   color: black;
   font-family: "RoadRadio", sans-serif !important;
   font-weight: 400;
@@ -73,9 +74,9 @@
 
 .toolbarMobile {
   display: flex;
-  justify-content: center; 
-  position: relative;     
-  padding-right: 40px;     
+  justify-content: center;
+  position: relative;
+  padding-right: 40px;
 }
 
 .mobileMenuButton {
@@ -87,7 +88,7 @@
 
 .sale-page-content {
   display: grid;
-  grid-template-columns: 20% 1fr; 
+  grid-template-columns: 20% 1fr;
   gap: 24px;
   align-items: flex-start;
   width: 100%;
@@ -108,17 +109,16 @@
   border-color: #ff6f00;
 }
 
-
-.not-found{
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
+.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.category-product{
+.category-product {
   display: grid;
-  grid-template-rows: 3fr; 
+  grid-template-rows: 3fr;
   align-items: flex-start;
   width: 100%;
 }
@@ -132,30 +132,61 @@
 
 @media (max-width: 800px) {
   .sale-page-content {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
- .home-page-product {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 12px;
-  }
- 
-
-  .category-product {
+    display: flex;
+    flex-direction: column;
     width: 100%;
+    margin-top: 5px;
+    margin-bottom: 10px;
   }
 
-  .category-product img{
+  .home-page-product {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
     width: 100%;
+    padding: 0 5px;
+    box-sizing: border-box;
   }
-.searchInput {
+
+  .home-page-product > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background: #fff;
+    gap: 5px;
+  }
+
+  .home-page-product img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .home-page-product p {
+    font-size: 14px;
+    text-align: center;
+    margin: 0;
+  }
+
+  .searchInput {
     font-size: 14px;
     padding: 8px 10px;
     border-radius: 5px;
     width: 97%;
+    box-sizing: border-box;
+  }
+
+  .home-page-product {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .category-product {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: auto;
   }
 }
-

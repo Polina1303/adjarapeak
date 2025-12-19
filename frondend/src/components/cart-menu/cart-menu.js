@@ -1,42 +1,71 @@
-import { Button } from "../button";
+import { Box, Typography, Divider, Button } from "@mui/material";
+// import { Button } from "../button";
 import { CartItem } from "../cart-item";
 import { calcTotalPrice } from "../utils";
-import styles from "./cart-menu.module.css";
 
-export const CartMenu = ({ items, onClick }) => {
-  console.log("items,", items);
+export const CartMenu = ({ items, onClick, closeMenu }) => {
   return (
-    <div className={styles["cart-menu"]}>
-      <div className={styles["cart-menu__list"]}>
-        {items && items.length > 0
-          ? items.map((item) => (
-              <CartItem
-                key={item.id}
-                img={item.img}
-                price={item.price}
-                title={item.title}
-                id={item.id}
-                count={item.count}
-              />
-            ))
-          : "Корзина пуста"}
-      </div>
+    <Box p={2}>
+      <Divider />
+      <Box my={2} pl={2}>
+        {items && items.length > 0 ? (
+          items.map((item) => (
+            <CartItem
+              key={item.id}
+              img={item.img}
+              price={item.price}
+              title={item.title}
+              id={item.id}
+              count={item.count}
+            />
+          ))
+        ) : (
+          <Typography>Корзина пуста</Typography>
+        )}
+      </Box>
 
-      {items && items.length > 0 ? (
-        <div className={styles["cart-menu__arranged"]}>
-          <div className={styles["cart-menu__total-price"]}>
-            <span>Итого:</span> <span>{calcTotalPrice(items)}.00₾</span>
-          </div>
-          <Button
-            type="secondary"
-            size="m"
-            onClick={onClick}
-            style={{ color: "#f87736" }}
+      {items && items.length > 0 && (
+        <>
+          <Divider />
+          <Box
+            display="flex"
+            justifyContent="space-between"
+            my={2}
+            p={2}
+            sx={{ fontFamily: "RoadRadio-Light, sans-serif" }}
           >
-            Оформить заказ
-          </Button>
-        </div>
-      ) : null}
-    </div>
+            <Typography
+              sx={{ fontFamily: "RoadRadio-Light, sans-serif" }}
+              variant="subtitle1"
+            >
+              ИТОГО:
+            </Typography>
+            <Typography
+              sx={{ fontFamily: "RoadRadio-Light, sans-serif" }}
+              variant="subtitle1"
+            >
+              {calcTotalPrice(items)}.00₾
+            </Typography>
+          </Box>
+          <Box display="flex" justifyContent="center">
+            <Button
+              size="m"
+              onClick={onClick}
+              sx={{
+                width: "60%",
+                backgroundColor: "#f87736",
+                color: "#fff",
+                marginTop: "10px",
+                fontFamily: "RoadRadio-Light, sans-serif",
+                fontWeight: "400",
+              }}
+              pl={2}
+            >
+              Оформить заказ
+            </Button>
+          </Box>
+        </>
+      )}
+    </Box>
   );
 };

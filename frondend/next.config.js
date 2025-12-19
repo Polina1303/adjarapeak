@@ -37,6 +37,7 @@
 
 /** @type {import('next').NextConfig} */
 
+
 const path = require("path");
 
 const nextConfig = {
@@ -74,6 +75,7 @@ const nextConfig = {
     removeConsole: false,
   },
   trailingSlash: true,
+
 };
 
 module.exports = nextConfig;

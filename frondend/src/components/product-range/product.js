@@ -2643,6 +2643,7 @@ export const PRODUCT = [
     desc: "KOETSU Полный комплект",
     category: "supboard",
     price: 719,
+
     salePrice: 570,
     column: [
       "Надувная SUP-доска KOETSU длиной 3,2 м — универсальная модель для серфинга, гребли и отдыха.",
@@ -3283,6 +3284,7 @@ export const PRODUCT = [
     desc: "и сапа",
     category: "vest",
     subcategory: "vest",
+
     price: 99,
 
     column: [
@@ -3588,6 +3590,7 @@ export const PRODUCT = [
 
   {
     order: true,
+
     id: 244076767234,
     title: "Роликовые коньки",
     img: "product_img_693c7386cbd0a.webp",
@@ -3772,6 +3775,7 @@ export const PRODUCT = [
     img: "picture2442.png",
     desc: " OXELO 100 S",
     category: "roller",
+
     subcategory: "roller_accessories",
     price: 49,
     column: [
@@ -3790,6 +3794,7 @@ export const PRODUCT = [
     desc: " OXELO 500 L",
     category: "roller",
     subcategory: "roller_accessories",
+
     price: 70,
     column: [
       "Сумка для хранения и переноски роликовых и ледовых коньков с экипировкой.",
@@ -3806,6 +3811,7 @@ export const PRODUCT = [
     desc: "для хранения и переноски",
     category: "roller",
     subcategory: "roller_accessories",
+
     price: 55,
     column: [],
   },
@@ -3816,7 +3822,9 @@ export const PRODUCT = [
     img: "fa4c6149-d0c.png",
     desc: "8x22x7mm",
     category: "roller",
+
     subcategory: "roller_accessories",
+
     price: 2,
     column: [" из углеродистой стали 608ZZ ", " с двойным экранированием"],
   },
@@ -3828,6 +3836,7 @@ export const PRODUCT = [
     desc: "8шт в кейсе",
     category: "roller",
     subcategory: "roller_accessories",
+
     price: 52,
     column: ["Подшипники abec9"],
   },
@@ -4386,6 +4395,7 @@ export const PRODUCT = [
   },
   {
     order: true,
+
     id: 28713894384273323,
     title: "Боксерские бинты",
     img: "cg7f082l6k7q3rnl8isg.png",
@@ -4404,6 +4414,7 @@ export const PRODUCT = [
   },
   {
     order: true,
+
     id: 28712313143342341211323,
     title: "Бинты SPARTACUS",
     img: "a3094f4d-9d76-4776.png",
@@ -5350,6 +5361,7 @@ export const PRODUCT = [
   },
   {
     order: true,
+
     id: 244243944496766548912390,
     title: "Теннисная сумка на плечо",
     img: "71H8zP9VCFL._AC_UF8.png",
@@ -5956,6 +5968,7 @@ export const PRODUCT = [
   },
   {
     order: true,
+
     id: 2440909549994,
     title: "Мяч футбольный",
     img: "size-4-football-sunny-300-green-kipsta.png",
@@ -6470,11 +6483,13 @@ export const PRODUCT = [
   },
   {
     order: true,
+
     id: 244243909799432,
     title: "Перчатки для фитнеса",
     img: "sarung-tangan-gym-fitness-latihan-beban-100-corength-8595161.jpg",
     desc: "CORENGTH S,L,XL",
     category: "fitness_gloves",
+
     price: 35,
     column: [
       "Эти перчатки для силовых тренировок — идеальный помощник, который поможет сохранить руки чистыми во время силовых тренировок в спортзале.",
@@ -6522,6 +6537,7 @@ export const PRODUCT = [
     img: "d36048d6-d66d-4db7-b791-b1e86af0bc0f.avif",
     desc: "",
     category: "fitness_gloves",
+
     price: 40,
     column: [
       "Женские спортивные перчатки с антискользящим покрытием",
@@ -6540,6 +6556,7 @@ export const PRODUCT = [
     img: "ad382d6b-7286-4ee6-a8f3-1bd3d7277525.avif",
     desc: "",
     category: "fitness_gloves",
+
     price: 40,
     column: [
       "Женские спортивные перчатки с антискользящим покрытием",
@@ -6557,7 +6574,9 @@ export const PRODUCT = [
     title: "Пояс для тренировок",
     img: "siyah-kas-gelistirm.png",
     desc: "CORENGTH M~L, X~2XL",
-    category: "",
+
+    category: "accessories_fitnes",
+
     price: 85,
     column: [
       "Пояс для силовых тренировок, тяжёлой атлетики и кросс-тренинга.",
@@ -6573,6 +6592,7 @@ export const PRODUCT = [
     title: "Лямки для штанги",
     img: "896dfaa3-d811-4053-8c8a-da77279f1baf.webp",
     desc: "SKDK ",
+
     category: "accessories_fitnes",
     price: 30,
     column: [
@@ -6627,9 +6647,20 @@ export const PRODUCT = [
     title: "Ролик для пресса",
     img: "rolik-dlya-pressa-ab-power.jpg",
     desc: "укрепляет пресс, спину и руки",
-    category: "accessories_fitnes",
+    category: "fitness",
     price: 32,
     column: [],
+  },
+  {
+    order: true,
+    id: 194097994325466,
+    title: "Гантели",
+    img: "90798593_gantel-v-vinilovoj.webp",
+    desc: "1кг",
+    category: "fitness",
+    price: 19,
+    column: [],
+    category: "accessories_fitnes",
   },
 
   {
@@ -6659,6 +6690,7 @@ export const PRODUCT = [
     img: "b274dc09-24.png",
     desc: "на платформе",
     category: "accessories_fitnes",
+
     price: 60,
     column: [
       "Многофункциональная доска для отжиманий с 28 отверстиями для различных хватов.",
@@ -6690,16 +6722,7 @@ export const PRODUCT = [
       "Новый продукт высокого качества.",
     ],
   },
-  {
-    order: true,
-    id: 194097994325466,
-    title: "Гантели",
-    img: "90798593_gantel-v-vinilovoj.webp",
-    desc: "1кг",
-    category: "kettlebells",
-    price: 19,
-    column: [],
-  },
+
   {
     order: true,
     id: 1940979943254661212,
@@ -7233,6 +7256,7 @@ export const PRODUCT = [
     order: true,
     id: 10340054541,
     title: "Коврик для йоги DOMYOS",
+
     img: "picture3424.png",
     desc: "140*650*66,5 MM",
     category: "mats",
@@ -7248,7 +7272,9 @@ export const PRODUCT = [
   {
     order: true,
     id: 1004054,
+
     title: "Коврик для йоги",
+
     img: "coccuga83ve66.png",
     desc: "тонкие ( цвета в ассортименте )",
     category: "mats",
@@ -7258,7 +7284,9 @@ export const PRODUCT = [
   {
     order: true,
     id: 10430324054,
+
     title: "Коврик для йоги",
+
     img: "721324-beec093052ac9fb4048819c27909dc01.webp",
     desc: "средней толщины ( цвета в ассортименте )",
     category: "mats",
@@ -7280,6 +7308,7 @@ export const PRODUCT = [
     order: true,
     id: 134300054,
     title: "Коврик для йоги",
+
     titleEng: "MAT",
     img: "13.18.4398.png",
     desc: "6 мм ( цвета в ассортименте )",
@@ -7289,6 +7318,7 @@ export const PRODUCT = [
     column: ["Нескользящий"],
     columnEng: ["Non-slip"],
   },
+
   {
     order: true,
     id: 13431200054,
@@ -8582,7 +8612,9 @@ export const PRODUCT = [
     category: "sleepingbag",
 
     price: 199,
+
     salePrice: 139,
+
     order: true,
     columnEng: [""],
     column: [
@@ -8603,7 +8635,9 @@ export const PRODUCT = [
     category: "sleepingbag",
 
     price: 230,
+
     salePrice: 159,
+
     order: true,
     columnEng: [""],
     column: [
@@ -9103,6 +9137,7 @@ export const PRODUCT = [
     category: "sleepingbag",
 
     price: 22,
+
     salePrice: 11,
     order: true,
     columnEng: [""],
@@ -9125,6 +9160,7 @@ export const PRODUCT = [
     category: "sleepingbag",
 
     price: 32,
+
     salePrice: 16,
     order: true,
     columnEng: [""],
@@ -10475,13 +10511,16 @@ export const PRODUCT = [
     id: 191006398,
     title: "Самонадувающийся коврик",
     titleEng: "",
+
     img: "BM-00206079__1__jpg.webp",
     desc: "HIKING 119*53*2,5 см",
     descEng: "",
     category: "mat",
     subcategory: "self-inflating",
     price: 99,
+
     salePrice: 49,
+
     column: [
       "Походный надувной коврик HI KING 119×53×2.5 см",
       "Идеален для кемпинга, туризма и пикников",
@@ -13268,6 +13307,7 @@ export const PRODUCT = [
   {
     order: true,
     id: 191444538872431249,
+
     title: "Детские солнечные очки",
     img: "3cc7f90d-8cff-41ab-abf7-243862898cd7.png",
     desc: "GIFTINBOX 3-8 лет",
@@ -13288,6 +13328,7 @@ export const PRODUCT = [
   {
     order: true,
     id: 19144098882431249,
+
     title: "Солнцезащитные очки",
     img: "362ef7ae-0642-4122-acd6.png",
     desc: "фотохромные",
@@ -14234,6 +14275,7 @@ export const PRODUCT = [
   },
   {
     order: true,
+
     id: 104971466748843523,
     title: "Фляжка из нержавеющей стали",
     img: "5fa06e74-9ebf-4318-8c9a-da064ac87bef.png",
@@ -14267,6 +14309,7 @@ export const PRODUCT = [
   },
   {
     order: true,
+
     id: 1044554543004884435,
     title: "Фляжка подарочная",
     img: "14.25.24999.png",
@@ -14311,6 +14354,7 @@ export const PRODUCT = [
       "Инструкции по уходу: только ручная мойка.",
     ],
   },
+
   {
     order: true,
     id: 10445214300488443598,
@@ -14331,6 +14375,7 @@ export const PRODUCT = [
       "Матовая поверхность",
     ],
   },
+
   {
     order: true,
     id: 903829904391214,
@@ -15966,6 +16011,7 @@ export const PRODUCT = [
     desc: " в чехле (черный/серый)",
     category: "chair",
     price: 99,
+
     salePrice: 69,
     subcategory: "chair",
     column: [
@@ -15999,6 +16045,7 @@ export const PRODUCT = [
     category: "chair",
     price: 45,
     subcategory: "chair",
+
     salePrice: 32,
     column: [
       "Вес: 1кг",
@@ -16140,7 +16187,9 @@ export const PRODUCT = [
     category: "chair",
     subcategory: "chair",
     price: 210,
+
     salePrice: 160,
+
     column: [
       "Максимальная нагрузка: 200 кг",
       "Материал каркаса: усиленный алюминий",
@@ -16160,6 +16209,7 @@ export const PRODUCT = [
     category: "chair",
     price: 199,
     subcategory: "chair",
+
     salePrice: 140,
     column: [
       "Регулировка наклона: есть",
@@ -16475,6 +16525,74 @@ export const PRODUCT = [
   //   ],
   // },
 
+  // {
+  //   order: true,
+  //   id: 101001413343,
+  //   title: "Нарукавники INTEX",
+  //   img: "6640411556.png",
+  //   desc: "6-12 лет",
+  //   category: "air",
+  //   price: 15,
+  //   column: [
+  //     "Яркие детские нарукавники для плавания – помогают ребёнку быстро и безопасно освоить навыки плавания без стресса.",
+  //     "Подходят для детей 6–12 лет (вес 15–60 кг), можно использовать как в бассейне, так и в открытой воде – море, река, озеро, аквапарк.",
+  //     "Изготовлены из мягкого и прочного винила (ПВХ) толщиной 0,25 мм, гипоаллергенный материал, устойчивый к повреждениям и перепадам температуры.",
+  //     "Нарукавники состоят из двух независимых воздушных камер с надёжными клапанами, что обеспечивает дополнительную безопасность.",
+  //     "Поверхность приятна к коже, без царапающих и режущих швов, не натирают и не давят на руки.",
+  //     "Лёгко надуваются без использования насоса, удобно брать с собой на отдых или в поездку.",
+  //     "Обеспечивают крепкий, но мягкий захват руки, не соскальзывают и не мешают движениям ребёнка.",
+  //   ],
+  // },
+  // {
+  //   order: true,
+  //   id: 103001413343,
+  //   title: "Нарукавники INTEX",
+  //   img: "3313.jpg",
+  //   desc: "3-6 лет",
+  //   category: "air",
+  //   price: 12,
+  //   column: [
+  //     "Яркие детские нарукавники для плавания – помогают ребёнку быстро и безопасно освоить навыки плавания без стресса.",
+  //     "Подходят для детей 3–6 лет (вес до 30 кг), можно использовать как в бассейне, так и в открытой воде – море, река, озеро, аквапарк.",
+  //     "Изготовлены из мягкого и прочного винила (ПВХ) толщиной 0,25 мм, гипоаллергенный материал, устойчивый к повреждениям и перепадам температуры.",
+  //     "Нарукавники состоят из двух независимых воздушных камер с надёжными клапанами, что обеспечивает дополнительную безопасность.",
+  //     "Поверхность приятна к коже, без царапающих и режущих швов, не натирают и не давят на руки.",
+  //     "Лёгко надуваются без использования насоса, удобно брать с собой на отдых или в поездку.",
+  //     "Обеспечивают крепкий, но мягкий захват руки, не соскальзывают и не мешают движениям ребёнка.",
+  //   ],
+  // },
+  // {
+  //   order: true,
+  //   id: 1030014133443,
+  //   title: "Надувной круг INTEX",
+  //   img: "afe58f67-d338-4edb-a841-1b6164facc29.webp",
+  //   desc: "97 см ",
+  //   category: "air",
+  //   price: 25,
+
+  //   column: [],
+  // },
+  // {
+  //   order: true,
+  //   id: 10300141334434,
+  //   title: "Надувной круг Арбуз",
+  //   img: "krug-arbuz-2-800x800.jpeg",
+  //   desc: "80 см",
+  //   category: "air",
+  //   price: 15,
+  //   column: [],
+  // },
+  // {
+  //   order: true,
+  //   id: 103001414334434,
+  //   title: "Надувной круг Пончик",
+  //   img: "6657623820.jpg",
+  //   desc: "70 см",
+  //   category: "air",
+  //   price: 15,
+  //   column: [],
+  // },
+
   {
     order: true,
     id: 101001413343,
@@ -16547,6 +16665,7 @@ export const PRODUCT = [
     price: 15,
     column: [],
   },
+
   // {
   //   order: true,
   //   id: 144343016795347,
@@ -16765,6 +16884,7 @@ export const PRODUCT = [
   },
   {
     order: true,
+
     id: 103001413343,
     title: "Нарукавники",
     img: "3313.jpg",
@@ -16818,6 +16938,7 @@ export const PRODUCT = [
   },
   {
     order: true,
+
     id: 107700137,
     title: "Ультразвуковой отпугиватель",
     img: "18.51.22.jpg",
@@ -16855,6 +16976,7 @@ export const PRODUCT = [
 
   {
     order: true,
+
     id: 2999909023342,
     title: "Пластиковый свисток",
     img: "plastik-duduk-siyah.avif",
@@ -16873,6 +16995,7 @@ export const PRODUCT = [
   },
   {
     order: true,
+
     id: 999909023342,
     title: "Свисток 3в1",
     img: "b6-18a41e7916f6.webp",
@@ -17312,7 +17435,9 @@ export const PRODUCT = [
     order: true,
     id: 1033488411013131,
     title: "Снегоступы ML300 рамные",
+
     img: "6841924907099.png",
+
     desc: "до 120 кг",
     category: "snowshoes",
     price: 292,
@@ -17976,7 +18101,9 @@ export const PRODUCT = [
     order: true,
     id: 103003234311013,
     title: "Горнолыжная маска",
+
     img: "2025-12-13 13.31.35.jpg",
+
     desc: "COPOZZ",
     category: "skigoggles",
     price: 190,
@@ -19220,10 +19347,12 @@ export const PRODUCT = [
   },
   {
     order: true,
+
     id: 933009344141003265,
     title: "Защитные шорты, защита копчика",
     img: "picture112236.jpg",
     desc: "DREAMSCAPEDSH 100",
+
     category: "sky_care",
     price: 145,
     column: [
@@ -19283,7 +19412,88 @@ export const PRODUCT = [
       "92% Полиэстер,8% Спандекс",
     ],
   },
+  // {
+  //   order: true,
+  //   id: 93300344141006754,
+  //   title: "Защита спины",
+  //   img: "18.38.22.jpg",
+  //   desc: "DBCK 100 DREAMSCAPE ",
+  //   category: "sky_care",
+  //   price: 149,
+
+  //   column: [
+
+  //   ],
+  // },
   {
+    order: true,
+    id: 99333441100,
+    title: "Термобелье",
+    img: "19.38.07.jpg",
+    desc: "зеленое, серое, черное от 48 до 54",
+    category: "thermalUnderwear",
+    price: 132,
+
+    column: [
+      "Состав комплекта: кальсоны, лонгслив",
+      "Состав материала: полиэстер 92%, спандекс 8%",
+      "Особенности: быстросохнущая, влагоотведение, плоские швы",
+    ],
+  },
+  {
+    order: true,
+    id: 109932333441100,
+    title: "Термобелье мужское",
+    img: "5dbd5040c34.png",
+    desc: "S, M, L, XL, XXL",
+    category: "thermalUnderwear",
+    price: 58,
+    column: [
+      "94% Полиэстер,6% Эластан",
+      "Машинная стирка, не подвергать химчистке",
+    ],
+  },
+
+  {
+    order: true,
+    id: 100032333441100,
+    title: "Термобелье мужское Viking",
+    img: " 21.04.10.jpg",
+    desc: "M, L, XL, XXL",
+    category: "thermalUnderwear",
+    price: 210,
+    column: [
+      "Термобелье Fusion Man Set от Viking – отличный выбор для тех, кто ищет исключительную защиту от холода и комфорт во время активного отдыха.",
+      "Материал быстро сохнет, поэтому кожа остается сухой даже при интенсивных нагрузках.",
+      "Благодаря своей гибкости и прилегающему крою он идеально моделирует фигуру и обеспечивает свободу движений в любой ситуации.",
+      "В комплект также входит дополнительная маска, защищающая шею и подбородок от холода и ветра.",
+      "Комплект термобелья имеет плотность материала 320 г/м2.",
+      "59% полиамид: обеспечивает прочность, устойчивость к износу и эффективное отведение влаги.",
+      "33% полипропилен: улучшает теплоизоляцию и ускоряет процесс высыхания.",
+      "8% эластан: добавляет эластичность, обеспечивая плотное прилегание и свободу движений.",
+    ],
+  },
+  {
+    order: true,
+    id: 1000323334414100,
+    title: "Термобелье мужское Viking",
+    img: "2024-12000.png",
+    desc: "M, L, XL",
+    category: "thermalUnderwear",
+    price: 180,
+    column: [
+      "Термобелье Lockness Man Set от Viking – решение для тех, кто ценит качество, комфорт и защиту во время активного отдыха.",
+      "Главной особенностью Lockness Man Set является использование пряжи из бамбукового волокна, которая обладает природными антибактериальными, гипоаллергенными и дезодорирующими свойствами",
+      "Бесшовная конструкция обеспечивает максимальный комфорт во время движения.",
+      "Плотность ткани комплекта составляет 135 г/м2.",
+      "65% полиэстер: отвечает за быстрое отведение влаги от тела и сохранение тепла.",
+      "30% вискоза (бамбуковое волокно): добавляет мягкость, улучшает терморегуляцию и обладает антибактериальными свойствами.",
+      "5% эластан: обеспечивает эластичность и комфорт при движении.",
+    ],
+  },
+  {
+    order: true,
+
     order: true,
     id: 9330034414100123,
     title: "Защита спины и позвоночника",
@@ -19297,6 +19507,7 @@ export const PRODUCT = [
 
   {
     order: false,
+
     id: 100999953334414100,
     title: "Термобелье женское Viking",
     img: "gCEXMm7YJAle16EPmlI0ZGtmM14tfX.jpg",
@@ -19312,6 +19523,7 @@ export const PRODUCT = [
   },
   {
     order: false,
+
     id: 93334414100,
     title: "Термобелье женское Viking",
     img: "nqhspqU6Qytpx1xvIBTu4ycpUqkhTV.jpg",
