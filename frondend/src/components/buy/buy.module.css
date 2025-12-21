@@ -1,16 +1,22 @@
 .product-items__price {
   padding-left: 7px;
-  font-family: "RoadRadio-Light", sans-serif;
+  font-family: "RoadRadio", sans-serif;
   font-weight: 100;
-  font-family: "RoadRadio" !important;
+
+}
+
+.product-items__price,
+.product-items__old-price,
+.product-items__price.discounted,
+.product-items__old-price.discounted {
+  font-family: "RoadRadio", sans-serif;
+  font-weight: 100;
+  font-size: 14px; 
 }
 
 .product-items__old-price.discounted {
-  font-size: 12px;
-  font-family: "RoadRadio" !important;
-}
-.product-items__price.discounted {
-  font-size: 12px;
+  font-size: 16px;
+  font-weight: 100;
   font-family: "RoadRadio" !important;
 }
 
@@ -22,6 +28,7 @@
   padding: 1px 5px;
   font-family: "RoadRadio", sans-serif;
 }
+
 
 .container-items-price {
   display: flex;
@@ -165,4 +172,12 @@
   .product-items__count {
     display: none;
   }
+}
+
+.product-items__old-price {
+  font-family: "RoadRadio", sans-serif;
+  font-weight: 100;
+  font-size: 14px; 
+  text-decoration: line-through;
+  color: #9f9d9d;
 }

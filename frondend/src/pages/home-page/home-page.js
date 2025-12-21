@@ -17,6 +17,8 @@ import styles from "./home-page.module.css";
 
 import { useSelector } from "react-redux";
 import { RecommendedCarousel } from "../../components/carousel";
+import { Typography } from "@mui/material";
+import { Sales } from "../sales";
 
 export const HomePage = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -165,7 +167,7 @@ export const HomePage = () => {
           </Link>
         </article>
       </section>
-      {/* <RecommendedCarousel products={product} /> */}
+      <Sales />
       <RockClimbing />
       <Routes />
       <RulesPage />
