@@ -1,6 +1,7 @@
 export const CATEGORY_RENT = [
   {
     title: "ГОРНОЛЫЖНОЕ",
+
     path: "skiRental",
     types: [
       // {
@@ -73,6 +74,7 @@ export const CATEGORY_RENT = [
 
   {
     title: "ТУРИСТИЧЕСКОЕ",
+
     path: "tourismRental",
     types: [
       // {

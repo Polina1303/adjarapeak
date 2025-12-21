@@ -72,7 +72,7 @@ export const ChooseUs = () => {
                 ? "Подписчики нашего"
                 : "To all our followers"}
               <a
-                href="https://t.me/adjarapeak/229"
+                href="https://t.me/adjarapeak"
                 target="_blank"
                 rel="noreferrer"
                 style={{ color: "rgba(0, 136, 204)" }}

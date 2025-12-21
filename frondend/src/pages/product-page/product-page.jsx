@@ -332,7 +332,10 @@ export const ProductPage = () => {
 
             <Box>
               {isRentProduct ? null : (
-                <Link className={styles["product-link"]} href="delivery_terms">
+                <Link
+                  className={styles["product-link"]}
+                  href="app/delivery_terms/"
+                >
                   Условия доставки
                 </Link>
               )}

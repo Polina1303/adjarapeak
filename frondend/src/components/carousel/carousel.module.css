@@ -1,9 +1,8 @@
-
-  .carousel-container {
+.carousel-container {
   position: relative;
   width: 100%;
-  overflow: hidden;           
-  padding: 0 10px;          
+  overflow: hidden;
+  padding: 0 10px;
   box-sizing: border-box;
 }
 
@@ -23,11 +22,15 @@
 }
 
 .my-swiper :global(.swiper-pagination-bullet-active) {
-  background: #ff6600 !important; 
+  background: #ff6600 !important;
 }
 
-.swiper-button-prev { left: -10px; }
-.swiper-button-next { right: -10px; }
+.swiper-button-prev {
+  left: -10px;
+}
+.swiper-button-next {
+  right: -10px;
+}
 
 .swiper-button-prev,
 .swiper-button-next {
@@ -38,7 +41,6 @@
   justify-content: center;
   cursor: pointer;
 }
-
 
 .swiper-button-prev::after,
 .swiper-button-next::after {
@@ -54,7 +56,6 @@
 .swiper-button-next::after {
   content: "›";
 }
-
 
 .carousel-container {
   position: relative;
@@ -93,13 +94,13 @@
   bottom: -10px;
 }
 
-
 @media (max-width: 768px) {
   .swiper-button-next,
   .swiper-button-prev {
     display: none !important;
   }
-  .carousel-container,.my-swiper {
+  .carousel-container,
+  .my-swiper {
     margin: 0;
   }
 }
