@@ -19,14 +19,22 @@ const cartSlice = createSlice({
       const findItem = state.itemsInCart.find(
         (item) => item.id === action.payload.id
       );
+
       if (findItem) {
         findItem.count++;
+        findItem.salePrice = action.payload.salePrice ?? action.payload.price;
       } else {
-        state.itemsInCart.push({ ...action.payload, count: 1 });
+        state.itemsInCart.push({
+          ...action.payload,
+          salePrice: action.payload.salePrice ?? action.payload.price,
+          count: 1,
+        });
       }
+
       if (isClient)
         localStorage.setItem(CART_KEY, JSON.stringify(state.itemsInCart));
     },
+
     deletItemFromCart: (state, action) => {
       state.itemsInCart = state.itemsInCart.filter(
         (item) => item.id !== action.payload

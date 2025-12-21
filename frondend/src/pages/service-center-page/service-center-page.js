@@ -90,8 +90,6 @@ function ServiceCenterPage() {
             height={100}
             className={style["modal-image"]}
           />
-        </div>
-        <div className={style["images-container"]}>
           <Image
             src="/serviceImage/IMG_4592.JPG"
             alt="Image 3"

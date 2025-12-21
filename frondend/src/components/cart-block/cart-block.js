@@ -143,7 +143,7 @@ export const CartBlock = () => {
             },
             maxWidth: { xs: "100%", md: "600px" },
             padding: 2,
-            height: { xs: "60%", sm: "90%", md: "75%" },
+            height: { xs: "60%", sm: "90%", md: "57%" },
             boxSizing: "border-box",
           },
         }}

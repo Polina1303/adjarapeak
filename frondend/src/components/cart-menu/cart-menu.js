@@ -13,7 +13,7 @@ export const CartMenu = ({ items, onClick, closeMenu }) => {
             <CartItem
               key={item.id}
               img={item.img}
-              price={item.price}
+              price={item.salePrice ?? item.price}
               title={item.title}
               id={item.id}
               count={item.count}

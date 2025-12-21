@@ -2,6 +2,7 @@ import { Typography } from "@mui/material";
 import { RecommendedCarousel } from "../../components/carousel";
 import { PRODUCT } from "../../components/product-range/product";
 import { useMemo } from "react";
+import style from "./sales.module.css";
 
 export const Sales = () => {
   const products = useMemo(
@@ -10,21 +11,8 @@ export const Sales = () => {
   );
 
   return (
-    <div style={{ margin: "50px 0", textAlign: "center" }}>
-      <Typography
-        variant="h4"
-        component="h2"
-        style={{
-          fontWeight: 700,
-          textTransform: "uppercase",
-          letterSpacing: "2px",
-          color: "#de682d",
-          fontFamily: "RoadRadio-Thin, sans-serif",
-          margin: "10px 0px",
-        }}
-      >
-        Акции
-      </Typography>
+    <div style={{ margin: "50px 0", textAlign: "left" }}>
+      <h4 className={style["sales-title"]}>Акции</h4>
       <RecommendedCarousel products={products} />
     </div>
   );
