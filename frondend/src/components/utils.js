@@ -1,12 +1,18 @@
-export const calcTotalPrice = (items) => {
-  if (!items || items.length === 0) {
-    return 0;
-  }
-  return items.reduce(
-    (acc, product) => (acc += product.price * product.count),
+// export const calcTotalPrice = (items) => {
+//   if (!items || items.length === 0) {
+//     return 0;
+//   }
+//   return items.reduce(
+//     (acc, product) => (acc += product.price * product.count),
+//     0
+//   );
+// };
+
+export const calcTotalPrice = (items) =>
+  items.reduce(
+    (acc, item) => acc + (item.salePrice ?? item.price) * item.count,
     0
   );
-};
 
 export const enumerate = (num, dec) => {
   if (num > 100) num = num % 100;

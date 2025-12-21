@@ -56,13 +56,13 @@ export const Buy = ({ product, page, discount }) => {
               }
             : {
                 display: "flex",
-                flexDirection: "column",
-                gap: "5px",
+                flexDirection: "row",
+                gap: "10px",
                 justifyContent: "center",
               }
         }
       >
-        {product.order && product.newPrice && (
+        {product.order && product.salePrice && (
           <>
             <b
               className={
@@ -71,7 +71,7 @@ export const Buy = ({ product, page, discount }) => {
                   : styles["product-items__price"]
               }
             >
-              {product.newPrice}.00₾
+              {product.salePrice}.00₾
             </b>
             <s className={styles["product-items__old-price"]}>
               {product.price}.00₾
@@ -79,7 +79,7 @@ export const Buy = ({ product, page, discount }) => {
           </>
         )}
 
-        {product.order && !product.newPrice && (
+        {product.order && !product.salePrice && (
           <b
             className={
               page

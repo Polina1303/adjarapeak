@@ -1,5 +1,6 @@
 import { Provider, useSelector } from "react-redux";
 import { store } from "../src/redux";
+import Snow from "../src/components/snow";
 import { Footer } from "../src/components/footer";
 import { ScrollToTop } from "../src/pages/product-page/ScrollToTop";
 import dynamic from "next/dynamic";
@@ -24,6 +25,7 @@ export default function App({ Component, pageProps }) {
       <Header />
       <ScrollToTop />
       <main className="App">
+        <Snow />
         <Component {...pageProps} />
       </main>
       <Footer />

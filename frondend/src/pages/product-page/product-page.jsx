@@ -1,6 +1,6 @@
 "use client";
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect, useCallback, useRef } from "react";
+import { useEffect, useCallback, useRef, useState } from "react";
 import Link from "next/link";
 import { setCurrentProduct } from "../../redux/product/reducer";
 import { useRouter } from "next/router";
@@ -9,29 +9,180 @@ import { Buy } from "../../components/buy/buy";
 import { PRODUCT } from "../../components/product-range/product";
 import { RENT } from "../../components/product-range/rent";
 import { RENT_SKY } from "../../components/product-range/rent-sky";
-// import mediumZoom from "medium-zoom";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
 import DoneIcon from "@mui/icons-material/Done";
 import { RecommendedCarousel } from "../../components/carousel";
 import { getProductById } from "../../../lib/cache";
-// import ReactImageMagnify from "react-image-magnify";
 import styles from "./product-page.module.css";
 
 export const ProductPage = () => {
   const product = useSelector((state) => state.products.currentProduct);
   const router = useRouter();
   const { id } = router.query;
+  const [zoomLevel, setZoomLevel] = useState(1);
+  const [isZoomed, setIsZoomed] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
+  const [imageSize, setImageSize] = useState({ width: 0, height: 0 });
+
+  const imageRef = useRef(null);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    window.addEventListener("mouseup", handleMouseUp);
+    return () => window.removeEventListener("mouseup", handleMouseUp);
+  }, []);
+
+  const handleZoomIn = () => {
+    const newZoom = Math.min(zoomLevel + 0.5, 3);
+    setZoomLevel(newZoom);
+    setIsZoomed(newZoom > 1);
+  };
+
+  const handleZoomOut = () => {
+    const newZoom = Math.max(zoomLevel - 0.5, 1);
+    setZoomLevel(newZoom);
+    setIsZoomed(newZoom > 1);
+
+    if (newZoom <= 1) {
+      setPosition({ x: 0, y: 0 });
+    }
+  };
+
+  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+
+  const handleMouseDown = (e) => {
+    if (!isZoomed) return;
+
+    e.preventDefault();
+    setIsDragging(true);
+
+    setDragStart({
+      mouseX: e.clientX,
+      mouseY: e.clientY,
+      imageX: position.x,
+      imageY: position.y,
+    });
+  };
+
+  const handleMouseMove = (e) => {
+    e.preventDefault();
+    if (!imageSize.width || !containerSize.width) return;
+
+    if (!isDragging || !isZoomed) return;
+
+    const deltaX = e.clientX - dragStart.mouseX;
+    const deltaY = e.clientY - dragStart.mouseY;
+
+    const newX = dragStart.imageX + deltaX;
+    const newY = dragStart.imageY + deltaY;
+
+    const scaledWidth = imageSize.width * zoomLevel;
+    const scaledHeight = imageSize.height * zoomLevel;
+
+    const maxX = Math.max((scaledWidth - containerSize.width) / 2, 0);
+    const maxY = Math.max((scaledHeight - containerSize.height) / 2, 0);
+
+    const clampedX = Math.max(Math.min(newX, maxX), -maxX);
+    const clampedY = Math.max(Math.min(newY, maxY), -maxY);
+
+    setPosition({
+      x: clampedX,
+      y: clampedY,
+    });
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleResetZoom = () => {
+    setZoomLevel(1);
+    setIsZoomed(false);
+    setPosition({ x: 0, y: 0 });
+  };
+
+  const handleWheel = (e) => {
+    if (isZoomed) {
+      e.preventDefault();
+      if (e.deltaY < 0) {
+        handleZoomIn();
+      } else {
+        handleZoomOut();
+      }
+    }
+  };
+
+  // useEffect(() => {
+  //   const updateSizes = () => {
+  //     if (containerRef.current && imageRef.current) {
+  //       setContainerSize({
+  //         width: containerRef.current.offsetWidth,
+  //         height: containerRef.current.offsetHeight,
+  //       });
+
+  //       const rect = imageRef.current.getBoundingClientRect();
+  //       setImageSize({
+  //         width: rect.width,
+  //         height: rect.height,
+  //       });
+  //     }
+  //   };
+
+  //   updateSizes();
+  //   window.addEventListener("resize", updateSizes);
+
+  //   return () => {
+  //     window.removeEventListener("resize", updateSizes);
+  //   };
+  // }, [product]);
+
+  useEffect(() => {
+    if (!imageRef.current || !containerRef.current) return;
+
+    const img = imageRef.current;
+
+    const updateSizes = () => {
+      setContainerSize({
+        width: containerRef.current.offsetWidth,
+        height: containerRef.current.offsetHeight,
+      });
+
+      setImageSize({
+        width: img.naturalWidth,
+        height: img.naturalHeight,
+      });
+    };
+
+    if (img.complete) {
+      updateSizes();
+    } else {
+      img.onload = updateSizes;
+    }
+
+    window.addEventListener("resize", updateSizes);
+    return () => window.removeEventListener("resize", updateSizes);
+  }, [product?.img]);
+
+  // const handleResetZoom = () => {
+  //   setZoomLevel(1);
+  //   setIsZoomed(false);
+  //   setPosition({ x: 0, y: 0 });
+  // };
+
+  const handleImageClick = () => {
+    if (!isZoomed) handleZoomIn();
+  };
 
   const dispatch = useDispatch();
 
   const isRentProduct =
     RENT.some((p) => p.id === product.id) ||
     RENT_SKY.some((p) => p.id === product.id);
-
-  const imageRef = useRef(null);
-  const zoomRef = useRef(null);
 
   const relatedTitle = isRentProduct
     ? "С этим товаром арендуют"
@@ -57,28 +208,6 @@ export const ProductPage = () => {
     }
 
     return sameCategoryProducts;
-  }, [product]);
-
-  useEffect(() => {
-    const image = imageRef.current;
-    if (!image) return;
-
-    zoomRef.current?.detach();
-
-    // zoomRef.current = mediumZoom(image, {
-    //   background: "rgba(113, 109, 109, 0.75)",
-    //   margin: 24,
-    //   scrollOffset: 120,
-    //   container: {
-    //     top: 120,
-    //   },
-
-    //   zIndex: 999,
-    // });
-
-    return () => {
-      zoomRef.current?.detach();
-    };
   }, [product]);
 
   const recommendedProducts = getRecommendedProducts();
@@ -109,35 +238,74 @@ export const ProductPage = () => {
 
       <Card className={styles["product-card"]}>
         <Box className={styles["product-top"]}>
-          <Box className={styles["product-image-box"]}>
-            {/* <ReactImageMagnify
-              {...{
-                smallImage: {
-                  alt: product.title,
-                  isFluidWidth: false,
-                  src: "/img/" + product.img,
-                  width: 350,
-                  height: 350,
-                  className: styles["product-image"],
-                },
-                largeImage: {
-                  src: "/img/" + product.img,
-                  width: 1000, // размер увеличенного изображения
-                  height: 1400,
-                },
-                lensStyle: { backgroundColor: "rgba(255,255,255,0.3)" },
-                enlargedImageContainerStyle: { zIndex: 999 },
-              }}
-            /> */}
+          {/* <Box className={styles["product-image-box"]}>
             <img
-              ref={imageRef}
               src={"/img/" + product.img}
               alt={product.title}
               className={styles["product-image"]}
-              style={{ cursor: "zoom-in" }}
+              // style={{ cursor: "zoom-in" }}
             />
-          </Box>
+          </Box> */}
+          <Box className={styles["product-image-box"]}>
+            <div
+              ref={containerRef}
+              className={`${styles["zoom-container"]} ${
+                isZoomed ? styles.zoomed : ""
+              } ${isDragging ? styles.dragging : ""}`}
+              onWheel={handleWheel}
+            >
+              <img
+                ref={imageRef}
+                src={"/img/" + product.img}
+                alt={product.title}
+                className={styles["product-image"]}
+                style={{
+                  transform: `translate(${position.x}px, ${position.y}px) scale(${zoomLevel})`,
+                  transformOrigin: "center center",
+                }}
+                onClick={handleImageClick}
+                onMouseDown={handleMouseDown}
+                onMouseMove={handleMouseMove}
+                draggable="false"
+              />
+            </div>
 
+            {isZoomed && (
+              <div className={styles["zoom-controls"]}>
+                <button
+                  className={styles["zoom-button"]}
+                  onClick={handleZoomOut}
+                  disabled={zoomLevel <= 1}
+                  title="Уменьшить"
+                >
+                  −
+                </button>
+
+                <div className={styles["zoom-info"]}>
+                  <span className={styles["zoom-level"]}>
+                    {zoomLevel.toFixed(1)}x
+                  </span>
+                </div>
+
+                <button
+                  className={styles["zoom-button"]}
+                  onClick={handleZoomIn}
+                  disabled={zoomLevel >= 3}
+                  title="Увеличить"
+                >
+                  +
+                </button>
+
+                <button
+                  className={styles["zoom-reset"]}
+                  onClick={handleResetZoom}
+                  title="Сбросить зум"
+                >
+                  ↺
+                </button>
+              </div>
+            )}
+          </Box>
           <Box className={styles["product-info"]}>
             <Typography
               component="h1"

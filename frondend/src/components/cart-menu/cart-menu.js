@@ -13,7 +13,7 @@ export const CartMenu = ({ items, onClick, closeMenu }) => {
             <CartItem
               key={item.id}
               img={item.img}
-              price={item.price}
+              price={item.salePrice ?? item.price}
               title={item.title}
               id={item.id}
               count={item.count}
@@ -26,7 +26,6 @@ export const CartMenu = ({ items, onClick, closeMenu }) => {
 
       {items && items.length > 0 && (
         <>
-          <Divider />
           <Box
             display="flex"
             justifyContent="space-between"
@@ -52,12 +51,16 @@ export const CartMenu = ({ items, onClick, closeMenu }) => {
               size="m"
               onClick={onClick}
               sx={{
-                width: "60%",
+                width: "50%",
                 backgroundColor: "#f87736",
                 color: "#fff",
                 marginTop: "10px",
                 fontFamily: "RoadRadio-Light, sans-serif",
                 fontWeight: "400",
+                fontSize: {
+                  xs: "12px",
+                  sm: "14px",
+                },
               }}
               pl={2}
             >

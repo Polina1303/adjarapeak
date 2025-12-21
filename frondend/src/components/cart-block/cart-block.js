@@ -131,11 +131,21 @@ export const CartBlock = () => {
       </div>
 
       <Drawer
-        anchor="top"
+        anchor="right"
         open={isCartMenuVisible}
         onClose={() => setIsCartMenuVisible(false)}
         PaperProps={{
-          sx: { width: "100%", maxWidth: "100%", padding: 2 },
+          sx: {
+            width: {
+              xs: "100%",
+              sm: "100%",
+              md: "50%",
+            },
+            maxWidth: { xs: "100%", md: "600px" },
+            padding: 2,
+            height: { xs: "60%", sm: "90%", md: "57%" },
+            boxSizing: "border-box",
+          },
         }}
         ModalProps={{
           BackdropProps: { style: { backgroundColor: "rgba(0,0,0,0.5)" } },
@@ -167,3 +177,6 @@ export const CartBlock = () => {
     </>
   );
 };
+/**{
+          sx: { width: "50%", maxWidth: "50%", padding: 2, height: "70%" },
+        } */
