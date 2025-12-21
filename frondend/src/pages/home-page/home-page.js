@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import { PRODUCT } from "../../components/product-range/product";
 import Link from "next/link";
 import { RockClimbing } from "../../components/rock-сlimbing";
 import { ChooseUs } from "../../components/chooseus";
@@ -15,6 +16,7 @@ import styles from "./home-page.module.css";
 // import food from "./food2.webp";
 
 import { useSelector } from "react-redux";
+import { RecommendedCarousel } from "../../components/carousel";
 
 export const HomePage = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -163,7 +165,7 @@ export const HomePage = () => {
           </Link>
         </article>
       </section>
-
+      {/* <RecommendedCarousel products={product} /> */}
       <RockClimbing />
       <Routes />
       <RulesPage />

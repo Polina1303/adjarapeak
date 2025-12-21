@@ -1,21 +1,21 @@
 
 
-.images-container {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  margin: 20px 0px;
-  width: 100%;
-  height: calc(100% - 20px);
-}
-
 .works-photos-title{
   font-family: "RoadRadio", sans-serif;
   text-align: center;
 }
 
+.images-container {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin: 20px 0px;
+  width: 100%;
+  height: calc(100% - 20px);
+}
+
 .modal-image {
-  width: 48%;
+  width: 38%;
   height: auto;
   border-radius: 5px;
   object-fit: cover;

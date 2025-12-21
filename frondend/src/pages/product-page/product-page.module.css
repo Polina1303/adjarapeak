@@ -1,4 +1,107 @@
 
+
+.zoom-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: zoom-in;
+}
+
+.zoom-container.zoomed {
+  cursor: move;
+  overflow: auto;
+  max-height: 500px;
+  border: 2px solid #de682d;
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 100%;
+}
+
+.zoom-controls {
+  position: absolute;
+  top: 460px;
+  right: 540px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px 15px;
+  border-radius: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.zoom-button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #de682d;
+  background: white;
+  color: #de682d;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.zoom-button:hover:not(:disabled) {
+  background: #de682d;
+  color: white;
+}
+
+.zoom-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.zoom-level {
+  font-weight: bold;
+  color: #333;
+  min-width: 40px;
+  text-align: center;
+}
+
+.zoom-reset {
+  background: #de682d;
+  color: white;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 10px;
+  transition: all 0.2s ease;
+}
+
+.zoom-reset:hover {
+  background: #c55a26;
+}
+
+@media (max-width: 768px) {
+  .zoom-controls {
+    bottom: 10px;
+    right: 10px;
+    padding: 8px 12px;
+  }
+  
+  .zoom-button {
+    width: 25px;
+    height: 25px;
+    font-size: 16px;
+  }
+  
+  .zoom-reset {
+    padding: 4px 10px;
+    font-size: 12px;
+  }
+}
 .product-card {
   padding: 24px;
   margin: 0 auto;

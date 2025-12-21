@@ -79,15 +79,15 @@ function ServiceCenterPage() {
           <Image
             src="/serviceImage/IMG_4590.PNG"
             alt="Image 1"
-            width={200}
-            height={200}
+            width={100}
+            height={100}
             className={style["modal-image"]}
           />
           <Image
             src="/serviceImage/IMG_4591.JPG"
             alt="Image 2"
-            width={200}
-            height={200}
+            width={100}
+            height={100}
             className={style["modal-image"]}
           />
         </div>
@@ -95,15 +95,15 @@ function ServiceCenterPage() {
           <Image
             src="/serviceImage/IMG_4592.JPG"
             alt="Image 3"
-            width={200}
-            height={200}
+            width={100}
+            height={100}
             className={style["modal-image"]}
           />
           <Image
             src="/serviceImage/IMG_4589.JPG"
             alt="Image 4"
-            width={200}
-            height={200}
+            width={100}
+            height={100}
             className={style["modal-image"]}
           />
         </div>

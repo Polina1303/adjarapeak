@@ -26,7 +26,6 @@ export const CartMenu = ({ items, onClick, closeMenu }) => {
 
       {items && items.length > 0 && (
         <>
-          <Divider />
           <Box
             display="flex"
             justifyContent="space-between"
@@ -44,12 +43,16 @@ export const CartMenu = ({ items, onClick, closeMenu }) => {
               size="m"
               onClick={onClick}
               sx={{
-                width: "20%",
+                width: "50%",
                 backgroundColor: "#f87736",
                 color: "#fff",
                 marginTop: "10px",
                 fontFamily: "RoadRadio-Light, sans-serif",
                 fontWeight: "400",
+                fontSize: {
+                  xs: "12px",
+                  sm: "14px",
+                },
               }}
               pl={2}
             >
