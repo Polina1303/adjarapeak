@@ -32,6 +32,10 @@ export const ProductPage = () => {
   const imageRef = useRef(null);
   const containerRef = useRef(null);
 
+  const handleBackClick = () => {
+    router.back();
+  };
+
   useEffect(() => {
     window.addEventListener("mouseup", handleMouseUp);
     return () => window.removeEventListener("mouseup", handleMouseUp);
@@ -231,7 +235,7 @@ export const ProductPage = () => {
   return (
     <>
       <div className={styles["back-button-cover"]}>
-        <button className="back-button" onClick={() => router.back()}>
+        <button className="back-button" onClick={handleBackClick}>
           <IoIosArrowBack size={"25px"} /> Назад
         </button>
       </div>
@@ -334,7 +338,7 @@ export const ProductPage = () => {
               {isRentProduct ? null : (
                 <Link
                   className={styles["product-link"]}
-                  href="app/delivery_terms/"
+                  href="/app/delivery_terms"
                 >
                   Условия доставки
                 </Link>
