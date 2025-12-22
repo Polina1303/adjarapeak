@@ -1,21 +1,41 @@
+
 .filters-scroll-container
-  :global(.ant-menu-horizontal .ant-menu-item-selected) {
+  :global(.ant-menu-horizontal > .ant-menu-item:not(.ant-menu-item-selected)::after) {
+  border-bottom: none !important;
+  content: none !important;
+}
+
+
+.filters-scroll-container
+  :global(.ant-menu-horizontal > .ant-menu-item:not(.ant-menu-item-selected):hover::after) {
+  border-bottom: none !important;
+  content: none !important;
+}
+
+
+.filters-scroll-container
+  :global(.ant-menu-horizontal > .ant-menu-item-selected) {
   color: #de682d !important;
 }
 
 .filters-scroll-container
   :global(.ant-menu-horizontal > .ant-menu-item-selected::after) {
   border-bottom: 2px solid #de682d !important;
+  content: "" !important;
+}
+
+
+.filters-scroll-container
+  :global(.ant-menu-horizontal > .ant-menu-item-selected:hover) {
+  color: #de682d !important;
 }
 
 .filters-scroll-container
-  :global(.ant-menu-horizontal > .ant-menu-item:hover::after) {
+  :global(.ant-menu-horizontal > .ant-menu-item-selected:hover::after) {
   border-bottom: 2px solid #de682d !important;
+  content: "" !important;
 }
 
-.filters-scroll-container :global(.ant-menu-horizontal > .ant-menu-item:hover) {
-  color: #de682d !important;
-}
 
 .filters-scroll-container :global(.sticky-horizontal-menu.ant-menu-horizontal) {
   gap: 3px !important;
@@ -131,14 +151,8 @@
 }
 
 
-.filters-scroll-container :global(.ant-menu-horizontal > .ant-menu-item:hover) {
-  color: inherit !important;
-}
 
-.filters-scroll-container
-  :global(.ant-menu-horizontal > .ant-menu-item:hover::after) {
-  border-bottom: none !important;
-}
+
 
 @media (max-width: 800px) {
   .sale-page-content {

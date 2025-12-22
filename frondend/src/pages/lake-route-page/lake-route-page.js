@@ -3,6 +3,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import styles from "./lake-route-page.module.css";
+import Image from "next/image";
 
 export const LakeRoutePage = () => {
   const languages = useSelector((state) => state.languages.currentLanguages);
@@ -27,31 +28,43 @@ export const LakeRoutePage = () => {
       <div className={styles["lake-route-page-cover"]}>
         <div ref={ref} className={styles["lake-route-page-cover-img"]}>
           <div>
-            <img
+            <Image
               src="/image/lake1.jpg"
               alt="lake"
               className={styles["route-page-img"]}
+              width={300}
+              height={300}
+              priority
             />
           </div>
           <div>
-            <img
+            <Image
               src="/image/lake2.jpg"
               alt="lake"
               className={styles["route-page-img"]}
+              width={300}
+              height={300}
+              priority
             />
           </div>
           <div>
-            <img
+            <Image
               src="/image/lake3.jpg"
               alt="lake"
               className={styles["route-page-img"]}
+              width={300}
+              height={300}
+              priority
             />
           </div>
           <div>
-            <img
+            <Image
               src="/image/lake4.jpg"
               alt="lake"
               className={styles["route-page-img"]}
+              width={300}
+              height={300}
+              priority
             />
           </div>
         </div>

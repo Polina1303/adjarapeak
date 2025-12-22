@@ -15,6 +15,7 @@ import Typography from "@mui/material/Typography";
 import DoneIcon from "@mui/icons-material/Done";
 import { RecommendedCarousel } from "../../components/carousel";
 import { getProductById } from "../../../lib/cache";
+import Image from "next/image";
 import styles from "./product-page.module.css";
 
 export const ProductPage = () => {
@@ -258,7 +259,7 @@ export const ProductPage = () => {
               } ${isDragging ? styles.dragging : ""}`}
               onWheel={handleWheel}
             >
-              <img
+              <Image
                 ref={imageRef}
                 src={"/img/" + product.img}
                 alt={product.title}
@@ -267,6 +268,9 @@ export const ProductPage = () => {
                   transform: `translate(${position.x}px, ${position.y}px) scale(${zoomLevel})`,
                   transformOrigin: "center center",
                 }}
+                width={300}
+                height={300}
+                priority
                 onClick={handleImageClick}
                 onMouseDown={handleMouseDown}
                 onMouseMove={handleMouseMove}

@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
+import Image from "next/image";
 import styles from "./lycian-way.module.css";
 
 export const LycianWay = () => {
@@ -28,11 +29,14 @@ export const LycianWay = () => {
       </p>
       <div className={styles["routes-cover-block"]} onClick={handleClickLake}>
         <Link href="/lycianWay">
-          <img
+          <Image
             ref={ref}
             src="/image/lycian.webp"
             alt="lycian"
             className={styles["routes-image"]}
+            width={100}
+            height={100}
+            priority
           />
           <div className={styles["routes-cover-title"]}>
             <p>Ликийская тропа</p>

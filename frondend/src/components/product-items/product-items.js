@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { useInView } from "react-intersection-observer";
 import { setCurrentProduct } from "../../redux/product/reducer";
 import { BsSearch } from "react-icons/bs";
+import Image from "next/image";
 import { Buy } from "../buy/buy";
 import styles from "./product-items.module.css";
 import Link from "next/link";
@@ -33,11 +34,14 @@ export const ProductItems = ({ product }) => {
       <div className={styles["product-items"]}>
         <div ref={ref} className={styles["product-items__details"]}>
           <Link href={href} passHref>
-            <img
+            <Image
               className={styles["product-items__img"]}
               src={"/img/" + product.img}
               alt={product.title}
-              loading="lazy"
+              width={100}
+              height={100}
+              // loading="lazy"
+              priority
             />
             <span className={styles["product-items__title"]}>
               {product.title.toUpperCase()}

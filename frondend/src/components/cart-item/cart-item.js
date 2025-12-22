@@ -1,6 +1,7 @@
 import { TiDeleteOutline } from "react-icons/ti";
 import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
 import { useDispatch } from "react-redux";
+import Image from "next/image";
 import {
   deletItemFromCart,
   minusItem,
@@ -25,11 +26,13 @@ export const CartItem = ({ img, title, price, id, count }) => {
   return (
     <div className={styles["cover"]}>
       <div className={styles["cart-item"]}>
-        <img
+        <Image
           className={styles["cart-item__img"]}
           src={"/img/" + img}
           alt={title}
-        ></img>
+          width={200}
+          height={200}
+        ></Image>
         <div className={styles["cart-item__title"]}>
           <span>{title}</span>
         </div>

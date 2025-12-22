@@ -1,10 +1,10 @@
 import { useRouter } from "next/router";
-import styles from './slider.module.css';
+import styles from "./slider.module.css";
+import Image from "next/image";
 import { MdOutlineArrowLeft, MdArrowRight } from "react-icons/md";
-import { sliderItem,sliderItemEng } from "./data";
+import { sliderItem, sliderItemEng } from "./data";
 import { useState } from "react";
 import { useSelector } from "react-redux";
-
 
 export const SliderMain = () => {
   const router = useRouter();
@@ -26,7 +26,7 @@ export const SliderMain = () => {
     router.push("/rent");
   };
 
-  const slider=languages==="RU" ?sliderItem:sliderItemEng
+  const slider = languages === "RU" ? sliderItem : sliderItemEng;
 
   return (
     <div className="container-slider ">
@@ -41,15 +41,17 @@ export const SliderMain = () => {
           transform: `translateX(${sliderIndex * -1250}px)`,
         }}
       >
-         { slider.map((item) => (
+        {slider.map((item) => (
           <div className="slide" key={item.id}>
             <div className="images-container">
-              <img
+              <Image
                 className="slider-image"
                 src={"/img/" + item.img}
                 alt="viewTent"
                 width={"500px"}
+                height={300}
                 loading="lazy"
+                priority
               />
             </div>
             <div className="infocontainer">
@@ -62,13 +64,13 @@ export const SliderMain = () => {
                     className="infocontainer-button"
                     onClick={handleClickSale}
                   >
-                   {languages==="RU"?  'КУПИТЬ': 'BUY'}
+                    {languages === "RU" ? "КУПИТЬ" : "BUY"}
                   </button>
                   <button
                     className="infocontainer-button"
                     onClick={handleClickRent}
                   >
-                  {languages==="RU"?  'АРЕНДОВАТЬ': 'RENT'}  
+                    {languages === "RU" ? "АРЕНДОВАТЬ" : "RENT"}
                   </button>
                 </div>
               )}

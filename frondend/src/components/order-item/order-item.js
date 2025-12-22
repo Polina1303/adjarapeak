@@ -3,6 +3,7 @@ import { TiDeleteOutline } from "react-icons/ti";
 import { deletItemFromCart } from "../../redux/cart/reducer";
 import { Button } from "../button";
 import styles from "./order-item.module.css";
+import Image from "next/image";
 
 export const OrderItem = ({ item }) => {
   const dispatch = useDispatch();
@@ -14,10 +15,13 @@ export const OrderItem = ({ item }) => {
   return (
     <div className={styles["order-item"]}>
       <div className={styles["order-item__cover"]}>
-        <img
+        <Image
           className={styles["order-items__img"]}
           src={"/img/" + item.img}
           alt={item.title}
+          width={200}
+          height={150}
+          priority
         />
       </div>
       <div className={styles["order-item__title"]}>{item.title}</div>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { PRODUCT } from "../../components/product-range/product";
 import { useDispatch } from "react-redux";
 import { useInView } from "react-intersection-observer";
+import Image from "next/image";
 import { setCurrentProduct } from "../../redux/product/reducer";
 import { BsSearch } from "react-icons/bs";
 import { Buy } from "../buy/buy";
@@ -34,10 +35,13 @@ export const HitSales = () => {
               <div className="discount-items__details">
                 <Link href={`/product?id=${product.id}`}>
                   {/* {inView ? ( */}
-                  <img
+                  <Image
                     className="product-items__img"
                     src={"/img/" + product.img}
                     alt={product.title}
+                    width={100}
+                    height={100}
+                    priority
                   />
                   {/* ) : ( */}
                   {/* <div className="product-items__img-unvisible"></div> */}
