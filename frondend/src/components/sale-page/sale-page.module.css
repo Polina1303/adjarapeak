@@ -130,6 +130,16 @@
   width: 100%;
 }
 
+
+.filters-scroll-container :global(.ant-menu-horizontal > .ant-menu-item:hover) {
+  color: inherit !important;
+}
+
+.filters-scroll-container
+  :global(.ant-menu-horizontal > .ant-menu-item:hover::after) {
+  border-bottom: none !important;
+}
+
 @media (max-width: 800px) {
   .sale-page-content {
     display: flex;

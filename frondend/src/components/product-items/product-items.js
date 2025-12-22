@@ -14,7 +14,7 @@ export const ProductItems = ({ product }) => {
   const router = useRouter();
   const handelClickImg = () => {
     dispatch(setCurrentProduct(product));
-    router.push(`/product?id=${product.id}`);
+    router.push(`/app/${product.id}`);
   };
 
   const { ref, inView } = useInView({
@@ -26,7 +26,7 @@ export const ProductItems = ({ product }) => {
     setMounted(true);
   }, []);
 
-  const href = `/product?id=${product.id}`;
+  const href = `/app/${product.id}`;
 
   return (
     <>

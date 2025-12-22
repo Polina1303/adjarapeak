@@ -12,6 +12,8 @@
   display: none;
 }
 
+
+
 .filters-scroll-container :global(.ant-menu-horizontal) {
   display: inline-flex !important;
   flex-wrap: nowrap !important;
@@ -129,6 +131,15 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   width: 100%;
+}
+
+.filters-scroll-container :global(.ant-menu-horizontal > .ant-menu-item:hover) {
+  color: inherit !important;
+}
+
+.filters-scroll-container
+  :global(.ant-menu-horizontal > .ant-menu-item:hover::after) {
+  border-bottom: none !important;
 }
 
 @media (max-width: 800px) {
