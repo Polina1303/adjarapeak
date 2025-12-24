@@ -15,6 +15,7 @@ import Typography from "@mui/material/Typography";
 import DoneIcon from "@mui/icons-material/Done";
 import { RecommendedCarousel } from "../../components/carousel";
 import { getProductById } from "../../../lib/cache";
+import Image from "next/image";
 import styles from "./product-page.module.css";
 
 export const ProductPage = () => {
@@ -31,6 +32,10 @@ export const ProductPage = () => {
 
   const imageRef = useRef(null);
   const containerRef = useRef(null);
+
+  const handleBackClick = () => {
+    router.back();
+  };
 
   useEffect(() => {
     window.addEventListener("mouseup", handleMouseUp);
@@ -231,7 +236,7 @@ export const ProductPage = () => {
   return (
     <>
       <div className={styles["back-button-cover"]}>
-        <button className="back-button" onClick={() => router.back()}>
+        <button className="back-button" onClick={handleBackClick}>
           <IoIosArrowBack size={"25px"} /> Назад
         </button>
       </div>
@@ -254,7 +259,7 @@ export const ProductPage = () => {
               } ${isDragging ? styles.dragging : ""}`}
               onWheel={handleWheel}
             >
-              <img
+              <Image
                 ref={imageRef}
                 src={"/img/" + product.img}
                 alt={product.title}
@@ -263,6 +268,9 @@ export const ProductPage = () => {
                   transform: `translate(${position.x}px, ${position.y}px) scale(${zoomLevel})`,
                   transformOrigin: "center center",
                 }}
+                width={300}
+                height={300}
+                priority
                 onClick={handleImageClick}
                 onMouseDown={handleMouseDown}
                 onMouseMove={handleMouseMove}
@@ -334,7 +342,7 @@ export const ProductPage = () => {
               {isRentProduct ? null : (
                 <Link
                   className={styles["product-link"]}
-                  href="app/delivery_terms/"
+                  href="/app/delivery_terms"
                 >
                   Условия доставки
                 </Link>

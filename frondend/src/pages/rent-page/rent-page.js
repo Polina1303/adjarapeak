@@ -81,7 +81,7 @@ export default function RentPage({ children }) {
   useEffect(() => {
     if (!menuContainerRef.current) return;
 
-    const container = menuContainerRef.current; // scrollable div
+    const container = menuContainerRef.current;
     const activeItem = container.querySelector(".ant-menu-item-selected");
     if (!activeItem) return;
 
@@ -134,6 +134,9 @@ export default function RentPage({ children }) {
     setActiveCategory(categoryIndex);
     const category = CATEGORY_RENT[categoryIndex];
     setExpandedAccordion(null);
+    setSearchValue("");
+    setSearchQuery("");
+    localStorage.removeItem("searchQuery");
     router.push(`/rent/${category.path}`);
   };
 

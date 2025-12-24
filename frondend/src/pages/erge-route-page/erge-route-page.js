@@ -3,6 +3,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import styles from "./erge-route-page.module.css";
+import Image from "next/image";
 
 export const ErgeRoutePage = () => {
   const languages = useSelector((state) => state.languages.currentLanguages);
@@ -23,31 +24,47 @@ export const ErgeRoutePage = () => {
       <div className={styles["lake-route-page-cover"]}>
         <div ref={ref} className={styles["lake-route-page-cover-img"]}>
           <div>
-            <img
+            <Image
               src="/image/erge1.jpg"
               alt="erge"
               className={styles["route-page-img"]}
+              width={500}
+              height={500}
+              layout="responsive"
+              priority
             />
           </div>
           <div>
-            <img
+            <Image
               src="/image/erge2.jpg"
               alt="erge"
+              width={500}
+              height={500}
+              layout="responsive"
+              priority
               className={styles["route-page-img"]}
             />
           </div>
           <div>
-            <img
+            <Image
               src="/image/erge3.jpg"
               alt="erge"
               className={styles["route-page-img"]}
+              width={500}
+              height={500}
+              layout="responsive"
+              priority
             />
           </div>
           <div>
-            <img
+            <Image
               src="/image/erge4.jpg"
               alt="erge"
               className={styles["route-page-img"]}
+              width={500}
+              height={500}
+              layout="responsive"
+              priority
             />
           </div>
         </div>

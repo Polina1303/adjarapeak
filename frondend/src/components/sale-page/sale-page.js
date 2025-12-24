@@ -104,6 +104,9 @@ export default function SalePage({ children }) {
     const idx = Number(e.key);
     setActiveCategory(idx);
     setExpandedAccordion(null);
+    setSearchValue("");
+    setSearchQuery("");
+    localStorage.removeItem("searchQuery");
     router.push(`/sale/${CATEGORY_PRODUCT[idx].path}`);
   };
 

@@ -12,6 +12,7 @@
   margin: 20px 0px;
   width: 100%;
   height: calc(100% - 20px);
+ 
 }
 
 .modal-image {
@@ -54,7 +55,6 @@
   font-size: 16px;
   display: flex;
   align-items: center;
-  /* gap: 6px; */
   cursor: pointer;
 }
 
@@ -64,4 +64,28 @@
 
 .back-button-cover {
   color: #000; 
+}
+
+@media (max-width: 768px) {
+  .images-container {
+    gap: 15px; 
+     flex-wrap: wrap;
+  }
+  
+  .modal-image {
+    width: calc(50% - 8px);
+    min-width: calc(50% - 8px); 
+  }
+}
+
+@media (max-width: 480px) {
+  .images-container {
+    gap: 10px; 
+     flex-wrap: wrap;
+  }
+  
+  .modal-image {
+    width: calc(50% - 5px);
+    min-width: calc(50% - 5px);
+  }
 }

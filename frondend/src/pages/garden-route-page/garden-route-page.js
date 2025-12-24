@@ -2,6 +2,7 @@ import { useInView } from "react-intersection-observer";
 import { IoIosArrowBack } from "react-icons/io";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
+import Image from "next/image";
 import styles from "./garden-route-page.module.css";
 
 export const GardenRoutePage = () => {
@@ -28,31 +29,47 @@ export const GardenRoutePage = () => {
       <div className={styles["lake-route-page-cover"]}>
         <div ref={ref} className={styles["lake-route-page-cover-img"]}>
           <div>
-            <img
+            <Image
               src="/image/garden1.jpg"
               alt="erge"
               className={styles["route-page-img"]}
+              width={500}
+              height={300}
+              layout="responsive"
+              priority
             />
           </div>
           <div>
-            <img
+            <Image
               src="/image/garden2.jpg"
               alt="erge"
               className={styles["route-page-img"]}
+              width={500}
+              height={300}
+              layout="responsive"
+              priority
             />
           </div>
           <div>
-            <img
+            <Image
               src="/image/garden3.jpg"
               alt="erge"
               className={styles["route-page-img"]}
+              width={500}
+              height={300}
+              layout="responsive"
+              priority
             />
           </div>
           <div>
-            <img
+            <Image
               src="/image/garden4.jpg"
               alt="erge"
               className={styles["route-page-img"]}
+              width={500}
+              height={300}
+              layout="responsive"
+              priority
             />
           </div>
         </div>

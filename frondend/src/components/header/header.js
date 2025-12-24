@@ -145,6 +145,7 @@ export const Header = () => {
                 alt="adjarapeak"
                 width={130}
                 height={50}
+                priority
               />
             </Link>
           </Box>
@@ -194,6 +195,7 @@ export const Header = () => {
                   alt="adjarapeak"
                   width={130}
                   height={50}
+                  priority
                 />
               </Link>
             </Box>

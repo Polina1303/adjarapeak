@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { setCurrentProduct } from "../../redux/product/reducer";
 import { BsSearch } from "react-icons/bs";
 import styles from "./rent-items.module.css";
+import Image from "next/image";
 
 export const RentItems = ({ rent }) => {
   const dispatch = useDispatch();
@@ -24,11 +25,14 @@ export const RentItems = ({ rent }) => {
       <div ref={ref} className={styles["rent-items__details"]}>
         <a href={`/app/${rent.id}`}>
           {inView ? (
-            <img
+            <Image
               onClick={handelClickImg}
               className={styles["rent-items__img"]}
               src={"/img/" + rent.img}
               alt={rent.title}
+              height={100}
+              width={100}
+              priority
             />
           ) : (
             <div className={styles["product-items__img-unvisible"]}></div>

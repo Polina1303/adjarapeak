@@ -81,6 +81,7 @@ function ServiceCenterPage() {
             alt="Image 1"
             width={100}
             height={100}
+            priority
             className={style["modal-image"]}
           />
           <Image
@@ -88,6 +89,7 @@ function ServiceCenterPage() {
             alt="Image 2"
             width={100}
             height={100}
+            priority
             className={style["modal-image"]}
           />
           <Image
@@ -95,6 +97,7 @@ function ServiceCenterPage() {
             alt="Image 3"
             width={100}
             height={100}
+            priority
             className={style["modal-image"]}
           />
           <Image
@@ -102,6 +105,7 @@ function ServiceCenterPage() {
             alt="Image 4"
             width={100}
             height={100}
+            priority
             className={style["modal-image"]}
           />
         </div>
