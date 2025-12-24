@@ -679,9 +679,9 @@ export const PRODUCT = [
     title: "Бытовая сушилка (сушка для обуви)",
     img: "39ffe1a3-780d-4ae7.png",
     desc: "и носков",
-    category: "shoes",
+    category: "care",
     price: 45,
-    subcategory: "shoes_accessories",
+
     order: true,
     column: [
       "Бытовая умная складная сушилка для обуви и носков.",
@@ -698,9 +698,9 @@ export const PRODUCT = [
     title: "Портативная сушилка (сушка для обуви)",
     img: "9c5eaa8599f74b3cb659c278dd83fbd9.png",
     desc: "и носков ABUDODO 360°",
-    category: "shoes",
+    category: "care",
     price: 90,
-    subcategory: "shoes_accessories",
+
     order: true,
     column: [
       "Автоматическая сушилка для обуви с таймером и функцией быстрой дезодорации.",
@@ -718,9 +718,9 @@ export const PRODUCT = [
     title: "сушилка (сушка для обуви)",
     img: "92d2c337-3ad3-4f70-ad97-b243896.png",
     desc: "с таймером 220-240В",
-    category: "shoes",
+    category: "care",
     price: 95,
-    subcategory: "shoes_accessories",
+
     order: true,
     column: [
       "Умная сушилка для обуви и ботинок с интеллектуальным контролем температуры и защитой от перегрева.",
@@ -740,7 +740,7 @@ export const PRODUCT = [
     desc: "водонепроницаемые",
     category: "shoes",
     price: 42,
-    subcategory: "shoes_accessories",
+    subcategory: "shoes_covers",
     order: true,
     column: [
       "Прочные высокие чехлы для обуви",
@@ -759,7 +759,7 @@ export const PRODUCT = [
     desc: "водонепроницаемые снегозащитные",
     category: "shoes",
     price: 47,
-    subcategory: "shoes_accessories",
+    subcategory: "shoes_covers",
     salePrice: 37,
     order: true,
     column: [
@@ -779,7 +779,7 @@ export const PRODUCT = [
     desc: "Носки пуховые",
     category: "shoes",
     price: 64,
-    subcategory: "shoes_accessories",
+    subcategory: "shoes_covers",
     order: true,
     column: [
       "Тёплые нейлоновые полусапожки Kamperbox AQ3",
@@ -12475,8 +12475,8 @@ export const PRODUCT = [
     desc: "300 люмен",
     category: "lantern",
     subcategory: "headlamp",
-    order: false,
-    price: 114,
+    order: true,
+    price: 135,
     column: [
       "Световой поток: до 300 люмен",
       "Температура света: белый холодный 6000-7000К",
@@ -13873,8 +13873,8 @@ export const PRODUCT = [
     desc: "Vacuum Bottle",
     category: "termoryukzak",
     subcategory: "thermos",
-    order: false,
-    price: 159,
+    order: true,
+    price: 195,
     column: [
       "Имеет прочный двухслойный корпус, вакуумную термоизоляцию, устойчив к ударам и падениям",
       "Оснащен складной ручкой, поэтому термос удобно держать в одной руке, а также наливать напитки",
@@ -19543,7 +19543,7 @@ export const PRODUCT = [
     img: "21.04.10.jpg",
     desc: "M, L, XL, XXL",
     category: "thermalUnderwear",
-    price: 210,
+    price: 235,
     column: [
       "Термобелье Fusion Man Set от Viking – отличный выбор для тех, кто ищет исключительную защиту от холода и комфорт во время активного отдыха.",
       "Материал быстро сохнет, поэтому кожа остается сухой даже при интенсивных нагрузках.",
