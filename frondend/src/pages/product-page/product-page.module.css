@@ -22,7 +22,7 @@
 
 .zoom-controls {
   position: absolute;
-  top: 460px;
+  top: 400px;
   right: 540px;
   display: flex;
   gap: 10px;
@@ -83,22 +83,24 @@
   background: #c55a26;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 788px) {
   .zoom-controls {
-    bottom: 10px;
+    /* bottom: 10px; */
     right: 10px;
     padding: 8px 12px;
+    height: 20px;
+    top: 480px;
   }
   
   .zoom-button {
-    width: 25px;
-    height: 25px;
-    font-size: 16px;
+    width: 15px;
+    height: 15px;
+    font-size: 12px;
   }
   
   .zoom-reset {
-    padding: 4px 10px;
-    font-size: 12px;
+    padding: 4px 6px;
+    font-size: 10px;
   }
 }
 .product-card {
