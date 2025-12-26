@@ -42,6 +42,14 @@
   font-family: "Montserrat", sans-serif;
 }
 
+.button:hover,
+.button:focus{
+  background-color: #f68632 !important;
+  border-color: #f68632 !important;
+  color: white !important;
+}
+
+
 .event-schedule-title {
   font-size: 1.5rem;
   font-weight: bold;
@@ -58,7 +66,7 @@
 }
 
 .card-item {
-  box-shadow: 0 4px 12px rgba(247, 112, 45, 0.933);
+  box-shadow: 0 4px 12px #f68632;
   border-radius: 12px;
   padding: 16px;
   font-family: "RoadRadio", sans-serif;
@@ -157,14 +165,14 @@
 }
 
 .filter-button:hover {
-  background: #ff7f50;
+  background: #f68632;
   color: white;
 }
 
 .filter-button.active {
-  background: #ff7f50;
+  background: #f68632;
   color: white;
-  border-color: #ff7f50;
+  border-color: #f68632;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 

@@ -951,7 +951,7 @@ const events = [
       "Продолжаем катать по горам и зимой. Можно заказать индивидуальный джип-трансфер — идеально для семьи 3–4 человека. Формат - 1,2 дня",
     price: "от 600 до 900",
     image: "/imageTrip/dzip.jpg",
-    link: "/dzip",
+    link: "/dzip-page",
     type: "dzip",
   },
   {
@@ -961,7 +961,7 @@ const events = [
       "Продолжаем катать по горам и зимой.Можно заказать индивидуальный джип-трансфер — идеально для семьи 3–4 человека.Формат - 1,2 дня",
     price: "120",
     image: "/imageTrip/skitour.jpg",
-    link: "/skiTour",
+    link: "/ski-tour",
     type: "skiTour",
     seasonEnd: "29 февраля 2026",
   },
@@ -1060,10 +1060,10 @@ function parseEventDate(dateStr) {
   const eventDate = new Date(year, month, day);
   eventDate.setHours(0, 0, 0, 0);
 
-  const now = new Date();
-  if (eventDate < now) {
-    return null;
-  }
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  eventDate.setHours(0, 0, 0, 0);
 
   return eventDate;
 }
