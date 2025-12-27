@@ -915,7 +915,7 @@ const events = [
   },
 
   {
-    date: "28 декабря  (вс)",
+    date: "28 декабря (вс)",
     title: "Скалолазание в Гонио",
     description:
       "Тренировки и маршруты для любого уровня – от новичков до любителей.",
@@ -924,7 +924,49 @@ const events = [
     link: "/rockClimbing",
     type: "rockClimbing",
   },
+  {
+    date: "3 января (сб)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: "/imageTrip/rock2.JPG",
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
+  {
+    date: "4 января (вс)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: "/imageTrip/rock2.JPG",
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
+  {
+    date: "everyday",
+    title: "ДЖИППИНГ",
+    description:
+      "Продолжаем катать по горам и зимой. Можно заказать индивидуальный джип-трансфер — идеально для семьи 3–4 человека. Формат - 1,2 дня",
+    price: "от 600 до 900",
+    image: "/imageTrip/dzip.jpg",
+    link: "/dzip-page",
+    type: "dzip",
+  },
+  {
+    date: "weekend",
+    title: "ГОРНОЛЫЖНЫЙ ТУР ОДНОДНЕВНЫЙ",
+    description:
+      "Продолжаем катать по горам и зимой.Можно заказать индивидуальный джип-трансфер — идеально для семьи 3–4 человека.Формат - 1,2 дня",
+    price: "120",
+    image: "/imageTrip/skitour.jpg",
+    link: "/ski-tour",
+    type: "skiTour",
+    seasonEnd: "29 февраля 2026",
+  },
 ];
+
 const monthMap = {
   января: 0,
   февраля: 1,
@@ -940,28 +982,87 @@ const monthMap = {
   декабря: 11,
 };
 
-function parseEventDate(dateStr) {
-  const trimmed = dateStr.trim();
+const monthNames = [
+  "января",
+  "февраля",
+  "марта",
+  "апреля",
+  "мая",
+  "июня",
+  "июля",
+  "августа",
+  "сентября",
+  "октября",
+  "ноября",
+  "декабря",
+];
 
-  if (trimmed.includes("В любой из дней") || trimmed.includes("по запросу")) {
-    return null;
-  }
-  const clean = trimmed.replace(/\s*\([^)]*\)$/, "").trim();
+function isWeekend(date) {
+  const day = date.getDay();
+  return day === 0 || day === 6;
+}
 
-  const parts = clean.split(/\s+/);
-  const dayStr = parts[0].split("-")[0];
+function parseSeasonEnd(seasonEndStr) {
+  const parts = seasonEndStr.split(" ");
+  const dayStr = parts[0];
   const monthStr = parts[1]?.toLowerCase();
+  const yearStr = parts[2] || new Date().getFullYear().toString();
 
   const day = parseInt(dayStr, 10);
   const month = monthMap[monthStr];
+  const year = parseInt(yearStr, 10);
+
+  if (isNaN(day) || month === undefined || isNaN(year)) {
+    console.warn("Не удалось распарсить дату окончания сезона:", seasonEndStr);
+    return null;
+  }
+
+  const seasonEndDate = new Date(year, month, day);
+  seasonEndDate.setHours(23, 59, 59, 999);
+
+  return seasonEndDate;
+}
+function parseEventDate(dateStr) {
+  const trimmed = dateStr.trim();
+
+  if (
+    trimmed.includes("В любой из дней") ||
+    trimmed.includes("по запросу") ||
+    trimmed === "everyday" ||
+    trimmed === "weekend"
+  ) {
+    return null;
+  }
+
+  const clean = trimmed.replace(/\s*\([^)]*\)$/, "").trim();
+
+  const parts = clean.split(/\s+/);
+
+  const dayStr = parts[0];
+  const monthStr = parts[1]?.toLowerCase();
+
+  const day = parseInt(dayStr.replace(/\D/g, ""), 10);
+  const month = monthMap[monthStr];
 
   if (isNaN(day) || month === undefined) {
-    console.warn("Не удалось распарсить дату:", dateStr);
+    console.warn(
+      "Не удалось распарсить дату:",
+      dateStr,
+      "day:",
+      dayStr,
+      "month:",
+      monthStr
+    );
     return null;
   }
 
   const year = new Date().getFullYear();
   const eventDate = new Date(year, month, day);
+  eventDate.setHours(0, 0, 0, 0);
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
   eventDate.setHours(0, 0, 0, 0);
 
   return eventDate;
@@ -990,15 +1091,96 @@ export const TripPage = () => {
     if (filter === "rockClimbing") {
       return "Скалолазание временно приостановлено. Скоро появятся новые даты!";
     }
+    if (filter === "dzip") {
+      return "На данный момент джип-туры недоступны. Скоро появятся новые даты!";
+    }
+    if (filter === "skiTour") {
+      return "На данный момент горнолыжные туры недоступны. Скоро появятся новые даты!";
+    }
+    if (filter === "hiking") {
+      return "На данный момент хайкинг-туры недоступны. Скоро появятся новые даты!";
+    }
     return "Ближайших мероприятий пока нет. Скоро появятся новые даты!";
+  };
+
+  const generateSkiTourDates = () => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const skiTourEvent = events.find((event) => event.type === "skiTour");
+    const seasonEndDate = skiTourEvent?.seasonEnd
+      ? parseSeasonEnd(skiTourEvent.seasonEnd)
+      : null;
+
+    if (seasonEndDate && today > seasonEndDate) {
+      return [];
+    }
+
+    const weekendDates = [];
+    const endDate = seasonEndDate || new Date(today.getFullYear(), 1, 29);
+
+    for (let i = 0; i < 14; i++) {
+      const futureDate = new Date(today);
+      futureDate.setDate(today.getDate() + i);
+      futureDate.setHours(0, 0, 0, 0);
+
+      if (futureDate <= endDate && isWeekend(futureDate)) {
+        weekendDates.push(futureDate);
+      }
+    }
+
+    return weekendDates.sort((a, b) => a - b);
   };
 
   const filteredEvents = useMemo(() => {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
-    return events
+    const dzipEvent = events.find(
+      (event) => event.type === "dzip" && event.date === "everyday"
+    );
+    const skiTourEvent = events.find(
+      (event) => event.type === "skiTour" && event.date === "weekend"
+    );
+
+    const skiTourWeekendDates = generateSkiTourDates();
+
+    let skiTourCards = [];
+    if (skiTourEvent && skiTourWeekendDates.length > 0) {
+      const uniqueDatesSet = new Set();
+
+      const nearestTwoDates = skiTourWeekendDates.slice(0, 2);
+
+      skiTourCards = nearestTwoDates
+        .map((date) => {
+          const formattedDate = `${date.getDate()} ${
+            monthNames[date.getMonth()]
+          } (${date.getDay() === 0 ? "вс" : "сб"})`;
+
+          if (uniqueDatesSet.has(formattedDate)) {
+            return null;
+          }
+          uniqueDatesSet.add(formattedDate);
+
+          return {
+            ...skiTourEvent,
+            date: formattedDate,
+            generated: true,
+            sortDate: date,
+          };
+        })
+        .filter(Boolean);
+    }
+
+    const allFutureEvents = events
       .filter((event) => {
+        if (event.type === "dzip" && event.date === "everyday") {
+          return false;
+        }
+        if (event.type === "skiTour" && event.date === "weekend") {
+          return false;
+        }
+
         if (
           event.date.includes("В любой из дней") ||
           event.date.includes("по запросу")
@@ -1007,13 +1189,176 @@ export const TripPage = () => {
         }
 
         const eventDate = parseEventDate(event.date);
-        if (!eventDate) return true;
+
+        if (!eventDate) {
+          return false;
+        }
 
         return eventDate >= today;
       })
-      .filter((event) => {
-        if (filter === "all") return event.type !== "rockClimbing";
-        return event.type === filter;
+      .map((event) => {
+        let displayDate = event.date;
+
+        if (
+          !event.date.includes("(") &&
+          !event.date.includes("В любой из дней") &&
+          !event.date.includes("по запросу")
+        ) {
+          const eventDate = parseEventDate(event.date);
+          if (eventDate) {
+            displayDate = `${eventDate.getDate()} ${
+              monthNames[eventDate.getMonth()]
+            } (${eventDate.getDay() === 0 ? "вс" : "сб"})`;
+          }
+        }
+
+        if (
+          event.date.includes("В любой из дней") ||
+          event.date.includes("по запросу")
+        ) {
+          return {
+            ...event,
+            date: displayDate,
+            sortDate: new Date(9999, 11, 31),
+          };
+        }
+
+        const eventDate = parseEventDate(event.date);
+        return {
+          ...event,
+          date: displayDate,
+          sortDate: eventDate || new Date(9999, 11, 31),
+        };
+      });
+
+    const rockClimbingEvents = allFutureEvents
+      .filter((event) => event.type === "rockClimbing")
+      .sort((a, b) => a.sortDate - b.sortDate);
+
+    const otherEvents = allFutureEvents
+      .filter((event) => event.type !== "rockClimbing")
+      .sort((a, b) => a.sortDate - b.sortDate);
+
+    if (filter === "all") {
+      const result = [];
+
+      if (dzipEvent) {
+        result.push({
+          ...dzipEvent,
+          date: "Ежедневно",
+          generated: true,
+          sortDate: today,
+        });
+      }
+
+      result.push(...skiTourCards);
+
+      const nearestRockClimbing = rockClimbingEvents.slice(0, 4);
+      result.push(...nearestRockClimbing);
+
+      result.push(...otherEvents);
+
+      return result.sort((a, b) => {
+        if (a.sortDate < b.sortDate) return -1;
+        if (a.sortDate > b.sortDate) return 1;
+
+        const dayOrder = { "(сб)": 0, "(вс)": 1 };
+        const aDay = a.date.includes("(сб)")
+          ? "(сб)"
+          : a.date.includes("(вс)")
+          ? "(вс)"
+          : "";
+        const bDay = b.date.includes("(сб)")
+          ? "(сб)"
+          : b.date.includes("(вс)")
+          ? "(вс)"
+          : "";
+
+        if (dayOrder[aDay] !== undefined && dayOrder[bDay] !== undefined) {
+          return dayOrder[aDay] - dayOrder[bDay];
+        }
+
+        return 0;
+      });
+    }
+
+    if (filter === "dzip") {
+      if (dzipEvent) {
+        return [
+          {
+            ...dzipEvent,
+            date: "Ежедневно",
+            generated: true,
+          },
+        ];
+      }
+      return [];
+    }
+
+    if (filter === "skiTour") {
+      let allSkiTourCards = [];
+
+      if (skiTourEvent && skiTourWeekendDates.length > 0) {
+        const uniqueDatesSet = new Set();
+
+        const nearestTwoDates = skiTourWeekendDates.slice(0, 2);
+
+        allSkiTourCards = nearestTwoDates
+          .map((date) => {
+            const formattedDate = `${date.getDate()} ${
+              monthNames[date.getMonth()]
+            } (${date.getDay() === 0 ? "вс" : "сб"})`;
+
+            if (uniqueDatesSet.has(formattedDate)) {
+              return null;
+            }
+            uniqueDatesSet.add(formattedDate);
+
+            return {
+              ...skiTourEvent,
+              date: formattedDate,
+              generated: true,
+              sortDate: date,
+            };
+          })
+          .filter(Boolean);
+      }
+
+      return allSkiTourCards.sort((a, b) => {
+        if (a.sortDate < b.sortDate) return -1;
+        if (a.sortDate > b.sortDate) return 1;
+
+        const dayOrder = { "(сб)": 0, "(вс)": 1 };
+        const aDay = a.date.includes("(сб)") ? "(сб)" : "(вс)";
+        const bDay = b.date.includes("(сб)") ? "(сб)" : "(вс)";
+
+        return dayOrder[aDay] - dayOrder[bDay];
+      });
+    }
+
+    if (filter === "rockClimbing") {
+      return rockClimbingEvents.sort((a, b) => {
+        if (a.sortDate < b.sortDate) return -1;
+        if (a.sortDate > b.sortDate) return 1;
+
+        const dayOrder = { "(сб)": 0, "(вс)": 1 };
+        const aDay = a.date.includes("(сб)") ? "(сб)" : "(вс)";
+        const bDay = b.date.includes("(сб)") ? "(сб)" : "(вс)";
+
+        if (dayOrder[aDay] !== undefined && dayOrder[bDay] !== undefined) {
+          return dayOrder[aDay] - dayOrder[bDay];
+        }
+
+        return 0;
+      });
+    }
+
+    return otherEvents
+      .filter((event) => event.type === filter)
+      .sort((a, b) => {
+        if (a.sortDate < b.sortDate) return -1;
+        if (a.sortDate > b.sortDate) return 1;
+        return 0;
       });
   }, [filter]);
 
@@ -1032,23 +1377,6 @@ export const TripPage = () => {
         </h2>
 
         <div className={style["filter-buttons"]}>
-          {/* <button
-            className={classNames(style["filter-button"], {
-              [style.active]: filter === "all",
-            })}
-            onClick={() => handleFilter("all")}
-          >
-            Все туры
-          </button>
-          <button
-            className={classNames(style["filter-button"], {
-              [style.active]: filter === "individual",
-            })}
-            onClick={() => handleFilter("individual")}
-          >
-            Индивидуальные
-          </button> */}
-
           <button
             className={classNames(style["filter-button"], {
               [style.active]: filter === "dzip",
@@ -1091,7 +1419,7 @@ export const TripPage = () => {
           ) : (
             filteredEvents.map((event, index) => (
               <motion.div
-                key={index}
+                key={`${event.type}-${index}-${event.date}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -1162,7 +1490,6 @@ export const TripPage = () => {
           )}
         </div>
       </div>
-      {/* <GuidesSection /> */}
     </div>
   );
 };
