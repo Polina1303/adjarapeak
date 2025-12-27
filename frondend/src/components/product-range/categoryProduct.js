@@ -105,6 +105,10 @@ export const CATEGORY_PRODUCT = [
             title: "АКСЕССУАРЫ ДЛЯ ОБУВИ",
             subcategory: "shoes_accessories",
           },
+          {
+            title: "Чехлы для обуви",
+            subcategory: "shoes_covers",
+          },
         ],
       },
       {
