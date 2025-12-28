@@ -337,25 +337,6 @@ export const PRODUCT = [
       " Sidewall: ABS",
     ],
   },
-  {
-    order: false,
-    id: 219872216438393931,
-    title: "Сноуборд STEPSNOW",
-    img: "IMG_3880.PNG",
-    desc: "Pink Angel 140, 145 см.РАСПРОДАНО",
-    category: "snowboardsky",
-    price: null,
-    column: [
-      " Предназначение: All Mountain",
-      " Жесткость: 5/10",
-      " Форма: TWIN TIP",
-      " Усиление: Стекловолокно",
-      " Закладные: Нержавеющая сталь",
-      " База: Экструдированный полиэтилен",
-      " Сердечник: Тополь",
-      " Sidewall: ABS",
-    ],
-  },
 
   {
     order: true,
@@ -441,7 +422,7 @@ export const PRODUCT = [
     title: "Крепления для сноуборда",
     img: "optimize.webp",
     desc: "Skifree S1 Black",
-    category: "snowboardsky",
+    category: "fasteners_sky",
     price: 379,
     column: [
       " Год: 2025",
@@ -468,9 +449,9 @@ export const PRODUCT = [
     order: true,
     id: 1398764383193931211,
     title: "Крепления для сноуборда",
-    img: "IMG_4072.PNG",
+    img: "IMG_4681.JPEG",
     desc: "Skifree S1 White",
-    category: "snowboardsky",
+    category: "fasteners_sky",
     price: 379,
 
     column: [
