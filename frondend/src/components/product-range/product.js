@@ -17995,7 +17995,7 @@ export const PRODUCT = [
   },
   {
     order: true,
-    id: 1203994110191,
+    id: 120399411019431,
     title: "Перчатки - варежки",
     img: "Sf53db1799c8643a7af410443ecdf3f3d95eG.jpg_640x640.png",
     desc: "COPOZZ 3M",
@@ -19171,13 +19171,13 @@ export const PRODUCT = [
   },
 
   {
-    order: false,
+    order: true,
     id: 9876438393931,
     title: "Сноуборд STEPSNOW Dream",
     img: "IMG_3744.PNG",
     desc: "140, 145, 151см",
     category: "snowboardsky",
-    price: null,
+    price: 649,
     column: [
       " Предназначение: All Mountain",
       " Жесткость: 5/10",
@@ -19190,13 +19190,13 @@ export const PRODUCT = [
     ],
   },
   {
-    order: false,
+    order: true,
     id: 987221643839393112,
     title: "Сноуборд STEPSNOW",
     img: "IMG_3857.PNG",
     desc: "Blue Angel 148, 151 см",
     category: "snowboardsky",
-    price: null,
+    price: 649,
     column: [
       " Предназначение: All Mountain",
       " Жесткость: 5/10",
@@ -19213,7 +19213,7 @@ export const PRODUCT = [
     id: 219872216438393931,
     title: "Сноуборд STEPSNOW",
     img: "IMG_3880.PNG",
-    desc: "Pink Angel 140, 145 см",
+    desc: "Pink Angel 140, 145 см.РАСПРОДАНО",
     category: "snowboardsky",
     price: null,
     column: [
@@ -19228,13 +19228,14 @@ export const PRODUCT = [
     ],
   },
   {
-    order: false,
+    order: true,
     id: 98721221643839393145,
     title: "Сноуборд STEPSNOW",
     img: "IMG_3863.PNG",
-    desc: "Black Flower 148, 159 см",
+    desc: "Black Flower 140, 145, 148, 159, 163 см",
     category: "snowboardsky",
-    price: null,
+    price: 649,
+    salePrice: 549,
     column: [
       " Предназначение: All Mountain",
       " Жесткость: 5/10",
@@ -19790,25 +19791,7 @@ export const PRODUCT = [
       "Материал: полиэстер",
     ],
   },
-  {
-    order: true,
-    id: 123456986,
-    title: "Анорак (куртка горнолыжная)",
-    img: "8ee39653246dc43c89ebe147ae3a65f3ef21cfdf.png",
-    desc: "NAPAPIJRI YELLOW",
-    category: "closes_ski",
-    price: 229,
-    column: [
-      "Анорак Napapijri Rainforest без пуха",
-      "Ветрозащитная конструкция для защиты от непогоды",
-      "Водоотталкивающее покрытие PFC-Free",
-      "Дышащая мембранная ткань — комфортный микроклимат",
-      "Утеплитель Comfortemp® — тёплый, лёгкий и удобный",
-      "Содержит не менее 30% переработанных материалов",
-      "Материал верха: полиамид",
-      "Подкладка: полиэстер",
-    ],
-  },
+
   {
     order: true,
     id: 36787901313556,
