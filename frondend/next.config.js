@@ -37,7 +37,6 @@
 
 /** @type {import('next').NextConfig} */
 
-
 const path = require("path");
 
 const nextConfig = {
@@ -47,6 +46,9 @@ const nextConfig = {
     resolveAlias: {
       "@": path.join(__dirname, "src"),
     },
+  },
+  images: {
+    unoptimized: true,
   },
   webpack: (config, { isServer }) => {
     config.module.rules.push({
@@ -66,16 +68,15 @@ const nextConfig = {
 
     return config;
   },
-  images: {
-    formats: ["image/avif", "image/webp"],
-    unoptimized: false,
-  },
+  // images: {
+  //   formats: ["image/avif", "image/webp"],
+  //   unoptimized: false,
+  // },
   reactStrictMode: true,
   compiler: {
     removeConsole: false,
   },
   trailingSlash: true,
-
 };
 
 module.exports = nextConfig;

@@ -8,10 +8,16 @@ export const CATEGORY_PRODUCT = [
         img: "IMG_3744.PNG",
         category: "snowboardsky",
       },
+
       {
         title: "Cноубордические ботинки",
         img: "IMG_3974.PNG",
         category: "snowboardsky_boots",
+      },
+      {
+        title: "Крепления",
+        img: "optimize.webp",
+        category: "fasteners_sky",
       },
       {
         title: "Одежда",
@@ -50,7 +56,7 @@ export const CATEGORY_PRODUCT = [
       },
       {
         title: "НОСКИ",
-        img: "055723de-45b0-47c6-988f-6ecd99853b53.avif",
+        img: "owboard-corabi-mavi-100.png",
         category: "socks_sky",
       },
       {
@@ -607,7 +613,7 @@ export const CATEGORY_PRODUCT = [
         category: "sup_accessories",
       },
       {
-        title: "МАСКИ ДЛЯ НЫРЯНИЯ",
+        title: "МАСКИ и трубки ДЛЯ НЫРЯНИЯ",
         img: "diving-mask-100-grey-subea-8491466.jpg",
         category: "mask",
       },
