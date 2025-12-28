@@ -19306,13 +19306,13 @@ export const PRODUCT = [
     ],
   },
   {
-    order: false,
+    order: true,
     id: 98764383193931211,
     title: "Крепления для сноуборда",
     img: "optimize.webp",
-    desc: "Prime F1 Black",
+    desc: "Skifree S1 Black",
     category: "snowboardsky",
-    price: null,
+    price: 380,
     column: [
       " Год: 2025",
       " Жесткость: средняя",
@@ -19335,13 +19335,13 @@ export const PRODUCT = [
     ],
   },
   {
-    order: false,
+    order: true,
     id: 1398764383193931211,
     title: "Крепления для сноуборда",
     img: "IMG_4072.PNG",
-    desc: "Prime F1 White",
+    desc: "Skifree S1 White",
     category: "snowboardsky",
-    price: null,
+    price: 380,
     column: [
       "Год: 2025",
       "Жесткость: средняя",
