@@ -9,11 +9,11 @@ export const CATEGORY_RENT = [
       //   // type:'all',
       // },
 
-      {
-        title: "КОМПЛЕКТЫ",
-        category: "set",
-        img: "19.45.11.jpg",
-      },
+      // {
+      //   title: "КОМПЛЕКТЫ",
+      //   category: "set",
+      //   img: "19.45.11.jpg",
+      // },
       {
         title: "ЛЫЖИ",
         category: "sky",
@@ -25,25 +25,42 @@ export const CATEGORY_RENT = [
         img: "19.52.32.jpg",
       },
       {
-        title: "КУРТКИ",
-        category: "jacket",
-        img: "IMG_5871.JPG",
-      },
-      {
-        title: "КОМБИНЕЗОНЫ",
-        category: "overall",
+        title: "одежда",
+        category: "clothes",
         img: "IMG_5903.PNG",
+        subcategories: [
+          { title: "КОМБИНЕЗОНЫ", subcategory: "overall" },
+          { title: "КУРТКИ", subcategory: "jacket" },
+          { title: "ШТАНЫ", subcategory: "pants" },
+          { title: "ПЕРЧАТКИ", subcategory: "gloves" },
+        ],
       },
-      {
-        title: "ШТАНЫ",
-        category: "pants",
-        img: "IMG_5870.JPG",
-      },
-      {
-        title: "ПЕРЧАТКИ",
-        category: "gloves",
-        img: "IMG_586.png",
-      },
+      // category: "tent",
+      // subcategories: [
+      //   { title: "Палатки", subcategory: "tent" },
+      //   { title: "Аксессуары для палаток", subcategory: "tent_accessories" },
+      // ],
+      // },
+      // {
+      //   title: "КУРТКИ",
+      //   category: "jacket",
+      //   img: "IMG_5871.JPG",
+      // },
+      // {
+      //   title: "КОМБИНЕЗОНЫ",
+      //   category: "overall",
+      //   img: "IMG_5903.PNG",
+      // },
+      // {
+      //   title: "ШТАНЫ",
+      //   category: "pants",
+      //   img: "IMG_5870.JPG",
+      // },
+      // {
+      //   title: "ПЕРЧАТКИ",
+      //   category: "gloves",
+      //   img: "IMG_586.png",
+      // },
       {
         title: "ШЛЕМ",
         category: "helmet",

@@ -22,7 +22,7 @@ import { useSearchParams, usePathname } from "next/navigation";
 import { FormControl, Select, MenuItem, InputLabel } from "@mui/material";
 import styles from "../sale-page/sale-page.module.css";
 
-export default function RentCategoryPage({ section, type }) {
+export default function RentCategoryPage({ section, type, subcategory }) {
   const router = useRouter();
   const [loadedIds, setLoadedIds] = useState([]);
   const pathname = usePathname();
@@ -56,15 +56,85 @@ export default function RentCategoryPage({ section, type }) {
     );
   }, [inStockOnly, sortBy, pathname, router]);
 
-  let filteredProducts = [];
+  // let filteredProducts = [];
 
-  if (type) {
-    filteredProducts = [...RENT, ...RENT_SKY].filter(
-      (p) => p.type === type || p.category === type
+  // if (subcategory) {
+  //   filteredProducts = [...RENT, ...RENT_SKY].filter(
+  //     (p) => p.subcategory === subcategory
+  //   );
+  // } else if (type) {
+  //   filteredProducts = [...RENT, ...RENT_SKY].filter(
+  //     (p) => p.category === type || p.subcategory === type
+  //   );
+  // } else {
+  //   filteredProducts = [...RENT, ...RENT_SKY].filter((p) =>
+  //     sectionData.types.some(
+  //       (t) => t.category === p.category || t.category === p.subcategory
+  //     )
+  //   );
+  // }
+
+  // if (type) {
+  //   filteredProducts = [...RENT, ...RENT_SKY].filter(
+  //     (p) => p.type === type || p.category === type
+  //   );
+  // }
+  // if (inStockOnly) {
+  //   filteredProducts = filteredProducts.filter((p) => p.order === true);
+  // }
+
+  const allProducts = [...RENT, ...RENT_SKY];
+
+  const sectionTypes = sectionData?.types ?? [];
+
+  // decode на всякий случай (если в URL что-то кодируется)
+  const typeParam = type ? decodeURIComponent(type) : undefined;
+  const subcategoryParam = subcategory
+    ? decodeURIComponent(subcategory)
+    : undefined;
+
+  // все subcategories из секции + запоминаем родительский type
+  const allSubcats = sectionTypes.flatMap((t) =>
+    (t.subcategories ?? []).map((sc) => ({
+      slug: sc.subcategory, // "pants"
+      parentType: t.category, // "clothes"
+    }))
+  );
+
+  const isType =
+    typeParam && sectionTypes.some((t) => t.category === typeParam);
+  const isSubcatInTypeParam =
+    typeParam && allSubcats.some((sc) => sc.slug === typeParam);
+
+  // выбираем, что реально выбрано
+  let selectedType = isType ? typeParam : undefined;
+  let selectedSubcategory =
+    subcategoryParam || (isSubcatInTypeParam ? typeParam : undefined);
+
+  if (!selectedType && selectedSubcategory) {
+    selectedType = allSubcats.find(
+      (sc) => sc.slug === selectedSubcategory
+    )?.parentType;
+  }
+
+  let filteredProducts = allProducts;
+
+  // если выбрали type — фильтруем по p.type (у тебя это "clothes")
+  if (selectedType) {
+    filteredProducts = filteredProducts.filter((p) => p.type === selectedType);
+  }
+
+  // если выбрали subcategory — фильтруем по p.subcategory ("pants")
+  if (selectedSubcategory) {
+    filteredProducts = filteredProducts.filter(
+      (p) => p.subcategory === selectedSubcategory
     );
   }
-  if (inStockOnly) {
-    filteredProducts = filteredProducts.filter((p) => p.order === true);
+
+  // если вообще ничего не выбрано (ни type, ни subcategory) — показываем всё по секции
+  if (!selectedType && !selectedSubcategory) {
+    const allowed = new Set(sectionTypes.map((t) => t.category));
+    filteredProducts = filteredProducts.filter((p) => allowed.has(p.type));
   }
 
   const sortedProducts = [...filteredProducts].sort((a, b) => {
@@ -73,7 +143,7 @@ export default function RentCategoryPage({ section, type }) {
     return 0;
   });
 
-  if (!type && sectionData?.types?.length > 0) {
+  if (!type && !subcategory && sectionData?.types?.length > 0) {
     return (
       <div className={styles["home-page-product"]}>
         {sectionData.types.map((t) => {
@@ -283,7 +353,7 @@ export default function RentCategoryPage({ section, type }) {
     );
   }
 
-  if (type) {
+  if (type || subcategory) {
     return <p style={{ textAlign: "center" }}>Товары не найдены</p>;
   }
 
