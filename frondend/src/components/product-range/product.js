@@ -19248,13 +19248,13 @@ export const PRODUCT = [
     ],
   },
   {
-    order: false,
+    order: true,
     id: 9872122732329393176,
     title: "Сноуборд STEPSNOW",
     img: "IMG_3867.PNG",
-    desc: "Space 154, 163, 163W см",
+    desc: "Space 154, 163W см",
     category: "snowboardsky",
-    price: null,
+    price: 649,
     column: [
       " Предназначение: All Mountain",
       " Жесткость: 5/10",
