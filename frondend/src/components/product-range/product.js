@@ -19267,13 +19267,13 @@ export const PRODUCT = [
     ],
   },
   {
-    order: false,
+    order: true,
     id: 987212273232329393176,
     title: "Сноуборд STEPSNOW",
     img: "IMG_3871.PNG",
     desc: "Star Trek 154, 157, 159 см",
     category: "snowboardsky",
-    price: null,
+    price: 649,
     column: [
       " Предназначение: All Mountain",
       " Жесткость: 5/10",
@@ -19286,13 +19286,14 @@ export const PRODUCT = [
     ],
   },
   {
-    order: false,
+    order: true,
     id: 98721465227323293931,
     title: "Сноуборд STEPSNOW",
     img: "IMG_3877.PNG",
     desc: "Dark Spectrum 154, 157, 159, 163 см",
     category: "snowboardsky",
-    price: null,
+    price: 649,
+    salePrice: 549,
     column: [
       " Предназначение: All Mountain",
       " Жесткость: 5/10",
