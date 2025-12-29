@@ -107,7 +107,7 @@
   }
 
   .product-items__title {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .product-items__desc {
@@ -131,7 +131,7 @@
   }
 
   .product-items__desc {
-    font-size: 12px;
+    font-size: 11px;
   }
 }
 
@@ -147,10 +147,10 @@
   }
 
   .product-items__title {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .product-items__desc {
-    font-size: 12px;
+    font-size: 11px;
   }
 }
