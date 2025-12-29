@@ -20584,7 +20584,6 @@ export const PRODUCT = [
 
   {
     order: true,
-
     id: 987643839393143,
     title: "Штаны горнолыжные с подтяжками",
     img: "HTB1MCxbXeOSBuNjy0Fdq6zDnVXa3.png",
