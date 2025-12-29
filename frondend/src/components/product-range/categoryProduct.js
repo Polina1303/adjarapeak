@@ -56,7 +56,7 @@ export const CATEGORY_PRODUCT = [
       },
       {
         title: "НОСКИ",
-        img: "owboard-corabi-mavi-100.png",
+        img: "055723de-45b0-47c6-988f-6ecd99853b53.avif",
         category: "socks_sky",
       },
       {
