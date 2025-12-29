@@ -442,7 +442,7 @@ export const PRODUCT = [
     img: "optimize.webp",
     desc: "Skifree S1 Black",
     category: "snowboardsky",
-    price: 380,
+    price: 379,
     column: [
       " Год: 2025",
       " Жесткость: средняя",
@@ -471,7 +471,7 @@ export const PRODUCT = [
     img: "IMG_4072.PNG",
     desc: "Skifree S1 White",
     category: "snowboardsky",
-    price: 380,
+    price: 379,
 
     column: [
       "Год: 2025",
@@ -566,14 +566,13 @@ export const PRODUCT = [
     ],
   },
   {
-    order: false,
+    order: true,
     id: 451267487333121145,
     title: "Cноубордические ботинки",
     img: "IMG_4024.PNG",
     desc: "SSNOWCATCH D50 black&white",
     category: "snowboardsky_boots",
-    price: null,
-
+    price: 380,
     column: [
       "Размеры: 39-47",
       "Описание: Сноубордические ботинки на шнуровке, дышащий верх с противоударным носком, анти-скользящая подошва.",
