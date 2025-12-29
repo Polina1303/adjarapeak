@@ -100,30 +100,34 @@ export default function SaleCategoryPage({ section, type, subcategory }) {
                 }}
               >
                 <CardActionArea disableRipple disableTouchRipple>
-                  {!isLoaded && <Skeleton variant="rectangular" height={250} />}
+                  {!isLoaded && <Skeleton variant="rectangular" height={300} />}
                   {t.img && (
                     <div
                       style={{
                         position: "relative",
+                        width: "100%",
+                        aspectRatio: "1 / 1",
                         display: isLoaded ? "block" : "none",
                       }}
                     >
                       <Image
                         src={`/img/${t.img}`}
                         alt={t.title}
-                        priority
-                        width={300}
-                        height={300}
+                        fill
+                        sizes="(max-width: 600px) 100vw,
+                 (max-width: 900px) 50vw,
+                 300px"
                         style={{
                           objectFit: "cover",
-                          objectPosition: "center",
                         }}
                         onLoadingComplete={() =>
                           setLoadedIds((prev) => [...prev, t.category])
                         }
+                        priority
                       />
                     </div>
                   )}
+
                   <CardContent
                     sx={{
                       textAlign: "center",

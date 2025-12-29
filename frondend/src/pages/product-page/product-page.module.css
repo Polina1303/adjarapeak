@@ -67,6 +67,7 @@
   text-align: center;
 }
 
+
 .zoom-reset {
   background: #de682d;
   color: white;
@@ -112,6 +113,7 @@
   align-items: stretch;
   box-sizing: border-box;
   gap: 24px;
+  box-shadow: none !important;
 }
 
 .product-top {
@@ -247,6 +249,11 @@
     text-align: left;
     width: 100%;
     align-self: flex-start;
+  }
+  .product-card{
+
+    max-width: 100%;
+   
   }
 }
 @media only screen and (max-width: 610px) {
