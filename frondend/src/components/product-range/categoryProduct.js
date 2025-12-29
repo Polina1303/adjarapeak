@@ -8,10 +8,16 @@ export const CATEGORY_PRODUCT = [
         img: "IMG_3744.PNG",
         category: "snowboardsky",
       },
+
       {
         title: "Cноубордические ботинки",
         img: "IMG_3974.PNG",
         category: "snowboardsky_boots",
+      },
+      {
+        title: "Крепления",
+        img: "optimize.webp",
+        category: "fasteners_sky",
       },
       {
         title: "Одежда",
@@ -47,6 +53,11 @@ export const CATEGORY_PRODUCT = [
         title: "ПЕРЧАТКИ",
         img: "055723de-45b0-47c6-988f-6ecd99853b53.avif",
         category: "gloves_sky",
+      },
+      {
+        title: "НОСКИ",
+        img: "owboard-corabi-mavi-100.png",
+        category: "socks_sky",
       },
       {
         title: "СНЕГОСТУПЫ",
@@ -178,7 +189,7 @@ export const CATEGORY_PRODUCT = [
       },
       {
         title: "ЗАЩИТА",
-        img: "9d89ae16-8e53-4cae-b62a-79392297469b-Photoroom.png",
+        img: "e0dd9940-6135-448d-ab1a-d69cccb58add.avif",
         category: "martialart_protection",
       },
       {
@@ -192,23 +203,28 @@ export const CATEGORY_PRODUCT = [
         category: "bandages",
       },
       {
-        title: "ОДЕЖДА И ОБУВЬ ДЛЯ ЕДИНОБОРСТВ",
-        img: "ac3ab5679fd87.avif",
+        title: "ОДЕЖДА ДЛЯ ЕДИНОБОРСТВ",
+        img: "4aa86b2f-b61c-4bd4-80c5-30d56.png",
         category: "martialart_clothes",
       },
       {
+        title: "ОБУВЬ ДЛЯ ЕДИНОБОРСТВ",
+        img: "b4a5-68313d694eb1a61.avif",
+        category: "martialart_shoes",
+      },
+      {
         title: "РЕЗИНА И ЖГУТЫ",
-        img: "d848075d-92ea.png",
+        img: "11lotka.jpg.webp",
         category: "martialart_rubber",
       },
       {
         title: "ПЕРЧАТКИ ММА",
-        img: "b54f-206290edcc2.png",
+        img: "8d8f2dec-4dc8-47fd-bac9-36a40e0dcf75.avif",
         category: "martialart_mma",
       },
       {
         title: "ТРЕНАЖЕРЫ",
-        img: "b8556d1a-1dde-470e-9858-de257ebabaf5.avif",
+        img: "b8556d1a-1dde-470e-9858-de257ebabaf5.png",
         category: "martialart_exercise",
       },
     ],
@@ -597,7 +613,7 @@ export const CATEGORY_PRODUCT = [
         category: "sup_accessories",
       },
       {
-        title: "МАСКИ ДЛЯ НЫРЯНИЯ",
+        title: "МАСКИ и трубки ДЛЯ НЫРЯНИЯ",
         img: "diving-mask-100-grey-subea-8491466.jpg",
         category: "mask",
       },
@@ -611,6 +627,7 @@ export const CATEGORY_PRODUCT = [
         img: "mesh-swim-cap-printed-fabric-size.png",
         category: "hat_sea",
       },
+
       {
         title: "ЛАСТЫ И ЛОПАТКИ",
         img: "picture8989.png",
