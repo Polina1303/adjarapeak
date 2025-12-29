@@ -280,7 +280,7 @@ export default function SaleCategoryPage({ section, type, subcategory }) {
                 >
                   <CardActionArea disableRipple disableTouchRipple>
                     {!!isLoaded ? (
-                      <Skeleton variant="rectangular" height={450} />
+                      <Skeleton variant="rectangular" height={300} />
                     ) : (
                       <ProductItems product={product} />
                     )}

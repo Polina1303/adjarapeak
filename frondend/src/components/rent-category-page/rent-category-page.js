@@ -108,7 +108,9 @@ export default function RentCategoryPage({ section, type }) {
                       <Image
                         src={`/img/${t.img}`}
                         alt={t.title}
-                        fill
+                        priority
+                        width={300}
+                        height={300}
                         sizes="(max-width: 600px) 100vw,
                                    (max-width: 900px) 50vw,
                                    300px"
@@ -118,7 +120,6 @@ export default function RentCategoryPage({ section, type }) {
                         onLoadingComplete={() =>
                           setLoadedIds((prev) => [...prev, t.category])
                         }
-                        priority
                       />
                     </div>
                   )}

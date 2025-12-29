@@ -5,9 +5,19 @@ import { calcTotalPrice } from "../utils";
 
 export const CartMenu = ({ items, onClick, closeMenu }) => {
   return (
-    <Box p={2}>
+    <Box>
       <Divider />
-      <Box my={2} pl={2}>
+      <Box
+        my={2}
+        pl={2}
+        sx={{
+          maxHeight: {
+            xs: "50vh",
+            sm: "35vh",
+          },
+          overflowY: "auto",
+        }}
+      >
         {items && items.length > 0 ? (
           items.map((item) => (
             <CartItem
@@ -29,8 +39,8 @@ export const CartMenu = ({ items, onClick, closeMenu }) => {
           <Box
             display="flex"
             justifyContent="space-between"
-            my={2}
-            p={2}
+            my={0.5}
+            // p={1}
             sx={{ fontFamily: "RoadRadio-Light, sans-serif" }}
           >
             <Typography

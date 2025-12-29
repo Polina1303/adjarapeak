@@ -270,7 +270,7 @@ export default function RentPage({ children }) {
       <div className={styles["home-page__container-product"]}>
         <div>
           <div className={styles["title"]} id="home-page-buy">
-            {currentCategory?.title?.toUpperCase() || "ПРОДАЖА ТОВАРОВ"}
+            {currentCategory?.title?.toUpperCase() || "АРЕНДА ТОВАРОВ"}
           </div>
 
           <div className={styles["sale-page-content"]}>
@@ -371,7 +371,7 @@ export default function RentPage({ children }) {
                                   flexDirection: "column",
                                 }}
                               >
-                                {!!isLoaded ? (
+                                {!isLoaded ? (
                                   <Skeleton
                                     variant="rectangular"
                                     height={450}

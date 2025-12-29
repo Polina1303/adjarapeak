@@ -38,8 +38,8 @@ export const ProductItems = ({ product }) => {
               className={styles["product-items__img"]}
               src={"/img/" + product.img}
               alt={product.title}
-              width={100}
-              height={100}
+              width={300}
+              height={300}
               // loading="lazy"
               priority
             />

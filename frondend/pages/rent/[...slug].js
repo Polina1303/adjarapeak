@@ -8,6 +8,7 @@ export default function RentSlug() {
 
   const section = slug?.[0] || null;
   const type = slug?.[1] || null;
+  if (!slug) return null;
 
   return (
     <RentPage>
