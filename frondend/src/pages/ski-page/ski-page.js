@@ -1,8 +1,17 @@
 import { IoIosArrowBack } from "react-icons/io";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
-import Image from "next/image";
 import style from "./ski-page.module.css";
+import { SwiperPhoto } from "../../components/swiper";
+
+const photos = [
+  "/imageTrip/skitour1.jpg",
+  "/imageTrip/skitour2.jpg",
+  "/imageTrip/skitour3.jpg",
+  "/imageTrip/skitour4.jpg",
+  "/imageTrip/skitour5.jpg",
+  "/imageTrip/skitour6.jpg",
+];
 
 export const SkiPage = () => {
   const languages = useSelector((state) => state.languages.currentLanguages);
@@ -18,6 +27,8 @@ export const SkiPage = () => {
       </div>
 
       <h2>ГОРНОЛЫЖНЫЙ ТУР В ГОДЕРДЗИ</h2>
+
+      <SwiperPhoto photos={photos} />
       <section className={style["format-section"]}>
         <h2>Формат тура</h2>
 
@@ -69,40 +80,6 @@ export const SkiPage = () => {
           Комфортный горнолыжный день без толп, спешки и хаоса. Вы катаетесь —
           мы организуем всё остальное.
         </p>
-      </section>
-
-      <section className={style["gallery-section"]}>
-        <h2>Как это выглядит</h2>
-        <div className={style["image-gallery"]}>
-          <Image
-            className={style["gallery-image"]}
-            src="/imageTrip/skitour1.jpg"
-            alt="ski1"
-            width={400}
-            height={400}
-          />
-          <Image
-            className={style["gallery-image"]}
-            src="/imageTrip/skitour2.jpg"
-            alt="ski1"
-            width={400}
-            height={400}
-          />
-          <Image
-            className={style["gallery-image"]}
-            src="/imageTrip/skitour3.jpg"
-            alt="ski2"
-            width={400}
-            height={400}
-          />
-          <Image
-            className={style["gallery-image"]}
-            src="/imageTrip/skitour4.jpg"
-            alt="ski3"
-            width={400}
-            height={400}
-          />
-        </div>
       </section>
 
       <div className={style["booking-section"]}>

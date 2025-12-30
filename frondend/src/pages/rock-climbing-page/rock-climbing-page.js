@@ -2,8 +2,19 @@ import { IoIosArrowBack } from "react-icons/io";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import style from "./rock-climbing-page.module.css";
-import Image from "next/image";
 import { useInView } from "react-intersection-observer";
+import { SwiperPhoto } from "../../components/swiper";
+
+const photos = [
+  "/rockClimbingImage/al.JPG",
+  "/rockClimbingImage/eg.JPG",
+  "/rockClimbingImage/IMG_5450.JPG",
+  "/rockClimbingImage/IMG_5451.JPG",
+  "/rockClimbingImage/IMG_5464.JPG",
+  "/rockClimbingImage/IMG_5459.JPG",
+  "/rockClimbingImage/IMG_5462.JPG",
+  "/rockClimbingImage/IMG_5465.JPG",
+];
 
 export const RockClimbingPage = () => {
   const languages = useSelector((state) => state.languages.currentLanguages);
@@ -102,7 +113,7 @@ export const RockClimbingPage = () => {
           <li>Магнезия - поглощает влагу и усиливает сцепление со скалой.</li>
           <li>Скальные туфли - для лучшего удержания на скале.</li>
         </ul>
-        <div className={style["image-gallery"]}>
+        {/* <div className={style["image-gallery"]}>
           <Image
             ref={ref}
             src="/rockClimbingImage/IMG_5450.JPG"
@@ -151,7 +162,7 @@ export const RockClimbingPage = () => {
             alt="Снаряжение 6"
             className={style["gallery-image"]}
           />
-        </div>
+        </div> */}
       </section>
 
       <section className={style["point"]}>
@@ -167,6 +178,7 @@ export const RockClimbingPage = () => {
           часто там можно заметить даже детей и инструктора из местной школы
           скалолазания.
         </p>
+        <SwiperPhoto photos={photos} />
       </section>
 
       <section className={style["point"]}>
@@ -177,7 +189,7 @@ export const RockClimbingPage = () => {
           тренировки. Да, скалы - это нелегко и не для всех, но с нашей командой
           у вас точно получится! Слушайте инструктора и наслаждайтесь!
         </p>
-        <div className={style["image-gallery"]}>
+        {/* <div className={style["image-gallery"]}>
           <Image
             ref={ref}
             width={200}
@@ -194,7 +206,7 @@ export const RockClimbingPage = () => {
             alt="Снаряжение 2"
             className={style["gallery-image-instructor"]}
           />
-        </div>
+        </div> */}
       </section>
       <h2>🧗🏻‍♂️График и расписание</h2>
       <div className={style["day-card"]}>
