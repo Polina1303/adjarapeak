@@ -9,6 +9,7 @@ import { Buy } from "../../components/buy/buy";
 import { PRODUCT } from "../../components/product-range/product";
 import { RENT } from "../../components/product-range/rent";
 import { RENT_SKY } from "../../components/product-range/rent-sky";
+import { CATEGORY_PRODUCT } from "../../components/product-range/categoryProduct";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
@@ -197,22 +198,39 @@ export const ProductPage = () => {
     router.push("/error");
   }, [router]);
 
+  const getSectionByCategory = (category) => {
+    for (const section of CATEGORY_PRODUCT) {
+      const found = section.types.some((type) => type.category === category);
+
+      if (found) return section;
+    }
+    return null;
+  };
+
   const getRecommendedProducts = useCallback(() => {
-    if (!product || !product.category) return [];
+    if (!product) return [];
+
+    const section = getSectionByCategory(product.category);
+    if (!section) return [];
+
+    const sectionCategories = section.types.map((type) => type.category);
 
     const allProducts = [...PRODUCT, ...RENT, ...RENT_SKY].filter(
-      (item) => item.id !== product.id
+      (item) =>
+        item.id !== product.id && sectionCategories.includes(item.category)
     );
 
-    const sameCategoryProducts = allProducts
-      .filter((item) => item.category === product.category)
-      .sort(() => Math.random() - 0.5);
+    const priorityCategory = product.category;
+    const priorityItems = allProducts
+      .filter((item) => item.category === priorityCategory)
+      .slice(0, 3);
 
-    if (sameCategoryProducts.length >= 10) {
-      return sameCategoryProducts.slice(0, 10);
-    }
+    const otherItems = allProducts
+      .filter((item) => item.category !== priorityCategory)
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 7);
 
-    return sameCategoryProducts;
+    return [...priorityItems, ...otherItems];
   }, [product]);
 
   const recommendedProducts = getRecommendedProducts();
