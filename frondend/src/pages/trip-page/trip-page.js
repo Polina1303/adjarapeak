@@ -976,75 +976,60 @@ const events = [
     seasonEnd: "28 февраля 2026",
   },
   {
-    date: "17-18.01",
+    date: "17.01-18.01",
     title: "ГОРНОЛЫЖНЫЙ ТУР ДВУХДНЕВНЫЙ",
     description: "В разработке",
-    price: null,
+    price: "-",
     image: "/imageTrip/skitour1.jpg",
-    link: "/ski-tour",
+    link: "",
     type: "skiTour",
   },
   {
-    date: "24-25.01",
+    date: "24.01-25.01",
     title: "ГОРНОЛЫЖНЫЙ ТУР ДВУХДНЕВНЫЙ",
     description: "В разработке",
-    price: null,
+    price: "-",
     image: "/imageTrip/skitour1.jpg",
-    link: "/ski-tour",
+    link: "",
     type: "skiTour",
   },
   {
-    date: "31-01.02",
+    date: "31.01-01.02",
     title: "ГОРНОЛЫЖНЫЙ ТУР ДВУХДНЕВНЫЙ",
     description: "В разработке",
-    price: null,
+    price: "-",
     image: "/imageTrip/skitour1.jpg",
-    link: "/ski-tour",
+    link: "",
     type: "skiTour",
   },
   {
-    date: "17-18.01",
+    date: "17.01-18.01",
     title: "ТУР ДВУХДНЕВНЫЙ БАКУРИАНИ",
     description: "В разработке",
-    price: null,
+    price: "-",
     image: "/imageTrip/skitour3.jpg",
-    link: "/ski-tour",
+    link: "",
     type: "skiTour",
   },
   {
-    date: "24-25.01",
+    date: "24.01-25.01",
     title: "ТУР ДВУХДНЕВНЫЙ БАКУРИАНИ",
     description: "В разработке",
-    price: null,
+    price: "-",
     image: "/imageTrip/skitour3.jpg",
-    link: "/ski-tour",
+    link: "",
     type: "skiTour",
   },
   {
-    date: "31-01.02",
+    date: "31.01-01.02",
     title: "ТУР ДВУХДНЕВНЫЙ БАКУРИАНИ",
     description: "В разработке",
-    price: null,
+    price: "-",
     image: "/imageTrip/skitour3.jpg",
-    link: "/ski-tour",
+    link: "",
     type: "skiTour",
   },
 ];
-
-const monthMap = {
-  января: 0,
-  февраля: 1,
-  марта: 2,
-  апреля: 3,
-  мая: 4,
-  июня: 5,
-  июля: 6,
-  августа: 7,
-  сентября: 8,
-  октября: 9,
-  ноября: 10,
-  декабря: 11,
-};
 
 const monthNames = [
   "января",
@@ -1065,6 +1050,20 @@ function isWeekend(date) {
   const day = date.getDay();
   return day === 0 || day === 6;
 }
+const monthMap = {
+  января: 0,
+  февраля: 1,
+  марта: 2,
+  апреля: 3,
+  мая: 4,
+  июня: 5,
+  июля: 6,
+  августа: 7,
+  сентября: 8,
+  октября: 9,
+  ноября: 10,
+  декабря: 11,
+};
 
 function parseSeasonEnd(seasonEndStr) {
   const parts = seasonEndStr.split(" ");
@@ -1086,50 +1085,68 @@ function parseSeasonEnd(seasonEndStr) {
 
   return seasonEndDate;
 }
+
 function parseEventDate(dateStr) {
-  const trimmed = dateStr.trim();
+  const trimmed = dateStr.trim().replace(/\s*\([^)]*\)$/, ""); // убираем (сб)/(вс)
 
   if (
-    trimmed.includes("В любой из дней") ||
-    trimmed.includes("по запросу") ||
     trimmed === "everyday" ||
-    trimmed === "weekend"
+    trimmed === "weekend" ||
+    trimmed.includes("В любой из дней") ||
+    trimmed.includes("по запросу")
   ) {
     return null;
   }
 
-  const clean = trimmed.replace(/\s*\([^)]*\)$/, "").trim();
-
-  const parts = clean.split(/\s+/);
-
-  const dayStr = parts[0];
-  const monthStr = parts[1]?.toLowerCase();
-
-  const day = parseInt(dayStr.replace(/\D/g, ""), 10);
-  const month = monthMap[monthStr];
-
-  if (isNaN(day) || month === undefined) {
-    console.warn(
-      "Не удалось распарсить дату:",
-      dateStr,
-      "day:",
-      dayStr,
-      "month:",
-      monthStr
-    );
-    return null;
+  const shortRegex = /^(\d{1,2})(?:-(\d{1,2}))?\.(\d{1,2})$/;
+  const shortMatch = trimmed.match(shortRegex);
+  if (shortMatch) {
+    const day1 = parseInt(shortMatch[1], 10);
+    const day2 = shortMatch[2] ? parseInt(shortMatch[2], 10) : day1;
+    const month = parseInt(shortMatch[3], 10) - 1;
+    const year = new Date().getFullYear();
+    const date = new Date(year, month, day1);
+    if (!isNaN(date.getTime())) return date;
   }
 
-  const year = new Date().getFullYear();
-  const eventDate = new Date(year, month, day);
-  eventDate.setHours(0, 0, 0, 0);
+  const parts = trimmed.split(/\s+/);
+  if (parts.length >= 2) {
+    const day = parseInt(parts[0].replace(/\D/g, ""), 10);
+    const monthStr = parts[1].toLowerCase();
+    const month = monthMap[monthStr];
+    if (!isNaN(day) && month !== undefined) {
+      const year = new Date().getFullYear();
+      const date = new Date(year, month, day);
+      if (!isNaN(date.getTime())) return date;
+    }
+  }
 
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
+  console.warn("Не удалось распарсить дату:", dateStr);
+  return null;
+}
+function parseEventDateRange(dateStr) {
+  const trimmed = dateStr.trim();
 
-  eventDate.setHours(0, 0, 0, 0);
+  let m = trimmed.match(/^(\d{1,2})-(\d{1,2})\.(\d{1,2})$/);
+  if (m) {
+    const year = new Date().getFullYear();
+    const month = parseInt(m[3], 10) - 1;
+    return {
+      startDate: new Date(year, month, +m[1]),
+      endDate: new Date(year, month, +m[2]),
+    };
+  }
 
-  return eventDate;
+  m = trimmed.match(/^(\d{1,2})-(\d{1,2})\.(\d{1,2})$/);
+  if (m && +m[1] > +m[2]) {
+    const year = new Date().getFullYear();
+    return {
+      startDate: new Date(year, 0, +m[1]),
+      endDate: new Date(year, 1, +m[2]),
+    };
+  }
+
+  return null;
 }
 
 export const TripPage = () => {
@@ -1256,14 +1273,53 @@ export const TripPage = () => {
       skiTourCards.push(...weekendCards);
     }
 
+    const fixedSkiTourEvents = skiTourEvents.filter(
+      (event) =>
+        event.date !== "everyday" &&
+        event.date !== "weekend" &&
+        event.date.includes("-")
+    );
+
+    const fixedSkiTourCards = fixedSkiTourEvents.map((event) => {
+      const range = parseEventDateRange(event.date);
+      const sortDate = range ? range.startDate : new Date(9999, 11, 31);
+
+      let displayDate = event.date;
+      if (range) {
+        const startDay = range.startDate.getDate();
+        const startMonth = monthNames[range.startDate.getMonth()];
+        const endDay = range.endDate.getDate();
+        const endMonth = monthNames[range.endDate.getMonth()];
+
+        if (startMonth === endMonth) {
+          displayDate = `${startDay}–${endDay} ${startMonth}`;
+        } else {
+          displayDate = `${startDay} ${startMonth} – ${endDay} ${endMonth}`;
+        }
+      }
+
+      return {
+        ...event,
+        date: displayDate,
+        sortDate,
+        generated: false,
+      };
+    });
+
+    const futureFixedSkiTourCards = fixedSkiTourCards.filter(
+      (card) => card.sortDate >= today
+    );
+
+    skiTourCards.push(...futureFixedSkiTourCards);
+
     const allFutureEvents = events
       .filter((event) => {
         if (event.type === "dzip" && event.date === "everyday") {
           return false;
         }
-        if (event.type === "skiTour") {
-          return false;
-        }
+        // if (event.type === "skiTour") {
+        //   return false;
+        // }
 
         if (
           event.date.includes("В любой из дней") ||
@@ -1329,12 +1385,24 @@ export const TripPage = () => {
     if (filter === "all") {
       const result = [];
 
+      const dailySkiTourEvent = skiTourEvents.find(
+        (event) => event.date === "everyday"
+      );
+      if (dailySkiTourEvent) {
+        result.push({
+          ...dailySkiTourEvent,
+          date: "Ежедневно",
+          sortDate: new Date(-1),
+          generated: true,
+        });
+      }
+
       if (dzipEvent) {
         result.push({
           ...dzipEvent,
           date: "Ежедневно",
           generated: true,
-          sortDate: today,
+          sortDate: new Date(0),
         });
       }
 
@@ -1519,14 +1587,16 @@ export const TripPage = () => {
                   )}
 
                   <div className={style["card-buttons"]}>
-                    {event.link !== "/" && (
-                      <Button
-                        className={style["button"]}
-                        onClick={() => router.push(event.link)}
-                      >
-                        Узнать больше
-                      </Button>
-                    )}
+                    {event.link !== "/" &&
+                      !(event.type === "skiTour" && !event.generated) && (
+                        <Button
+                          className={style["button"]}
+                          onClick={() => router.push(event.link)}
+                        >
+                          Узнать больше
+                        </Button>
+                      )}
+
                     <Button className={style["custom-button"]}>
                       {event.gide === 1 ? (
                         <a
