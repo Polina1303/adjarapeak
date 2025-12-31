@@ -10,6 +10,8 @@ export default function RentSlug() {
   const type = slug?.[1] || null;
   const subcategory = slug?.[2] || null;
 
+  if (!slug) return null;
+
   return (
     <RentPage>
       <RentCategoryPage

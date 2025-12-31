@@ -204,6 +204,13 @@
 .review-button:hover {
   background-color: #e64a19;
 }
+.slide {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  border-radius: 12px;
+}
 
 .back-button {
   background: transparent;

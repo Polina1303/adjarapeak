@@ -4,7 +4,7 @@
   width: 100%;
   box-sizing: border-box;
   padding: 12px 0;
-  gap: 16px; /* Равномерные отступы между элементами */
+  gap: 16px; 
 }
 
 .cover {
@@ -21,8 +21,8 @@
 }
 
 .cart-item__title {
-  flex: 1; /* Растягивается на всё доступное пространство */
-  min-width: 0; /* Позволяет тексту обрезаться */
+  flex: 1; 
+  min-width: 0; 
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

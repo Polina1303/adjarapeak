@@ -713,217 +713,217 @@ const events = [
   //   type: "rockClimbing",
   // },
 
-  {
-    date: "15 ноября (сб)",
-    title: "Крепость Кавиани",
-    description:
-      "Повторный выезд к исторической крепости Кавиани с хайкингом по осеннему лесу. Сложность - 1 из 5.",
-    price: "99",
-    image: "/imageTrip/kaviani.JPG",
-    link: "/",
-    type: "group",
-    leo: true,
-  },
-  {
-    date: "15 ноября (сб)",
-    title: "Скалолазание в Гонио",
-    description:
-      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-    price: "49",
-    image: "/imageTrip/rock1.WEBP",
-    link: "/rockClimbing",
-    type: "rockClimbing",
-  },
-  {
-    date: "16 ноября (вс)",
-    title: "Гулеби",
-    description:
-      "Маршрут с заброской для сокращения набора высоты. Подойдёт даже новичкам. Пройдём через осенний лес и поднимемся на вершину к крепости Гулеби, где устроим пикник с панорамными видами. Сложность - 1 из 5.",
-    price: "99",
-    image: "/imageTrip/gulebi.webp",
-    link: "/",
-    type: "group",
-    leo: true,
-  },
-  {
-    date: "16 ноября (вс)",
-    title: "Скалолазание в Гонио",
-    description:
-      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-    price: "49",
-    image: "/imageTrip/rock2.JPG",
-    link: "/rockClimbing",
-    type: "rockClimbing",
-  },
-  {
-    date: "22 ноября (сб)",
-    title: "Водопад Джочо",
-    description:
-      "Маршрут, в котором мы зайдём прямо за водопад и устроим там пикник. Сложность - 2 из 5.",
-    price: "99",
-    image: "/imageTrip/djo.JPG",
-    link: "/",
-    type: "group",
-    leo: true,
-  },
-  {
-    date: "22 ноября (сб)",
-    title: "Скалолазание в Гонио",
-    description:
-      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-    price: "49",
-    image: "/imageTrip/rock1.WEBP",
-    link: "/rockClimbing",
-    type: "rockClimbing",
-  },
-  {
-    date: "23 ноября (вс)",
-    title: "Водопад Чинкадзебе",
-    description:
-      "Атмосферный маршрут к редко посещаемому водопаду Чинкадзебе. Сложность - 2 из 5.",
-    price: "99",
-    image: "/imageTrip/waterfall.JPG",
-    link: "/",
-    type: "group",
-    leo: true,
-  },
-  {
-    date: "23 ноября (вс)",
-    title: "Скалолазание в Гонио",
-    description:
-      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-    price: "49",
-    image: "/imageTrip/rock2.JPG",
-    link: "/rockClimbing",
-    type: "rockClimbing",
-  },
-  {
-    date: "29 ноября (сб)",
-    title: "Архангела",
-    description:
-      "Маршрут с заброской до уютного кемпинга с качелями, беседкой и костровищем. Сходим в радиальный хайк до смотровой площадки на пик горы Архангела. Сложность - 2 из 5",
-    price: "99",
-    image: "/imageTrip/archangela.webp",
-    link: "/",
-    type: "group",
-    leo: true,
-  },
-  {
-    date: "29 ноября (вс)",
-    title: "Скалолазание в Гонио",
-    description:
-      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-    price: "49",
-    image: "/imageTrip/rock1.WEBP",
-    link: "/rockClimbing",
-    type: "rockClimbing",
-  },
-  {
-    date: "30 ноября (сб)",
-    title: "Мтирала",
-    description:
-      "Живописный маршрут с посещением водопада и озера. Подойдёт даже новичкам. Сложность - 2 из 5.",
-    price: "99",
-    image: "/imageTrip/mtirala.webp",
-    link: "/",
-    type: "group",
-    leo: true,
-  },
-  {
-    date: "30 ноября (вс)",
-    title: "Скалолазание в Гонио",
-    description:
-      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-    price: "49",
-    image: "/imageTrip/rock2.JPG",
-    link: "/rockClimbing",
-    type: "rockClimbing",
-  },
-  {
-    date: "6 декабря (сб)",
-    title: "Скалолазание в Гонио",
-    description:
-      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-    price: "49",
-    image: "/imageTrip/rock1.WEBP",
-    link: "/rockClimbing",
-    type: "rockClimbing",
-  },
+  // {
+  //   date: "15 ноября (сб)",
+  //   title: "Крепость Кавиани",
+  //   description:
+  //     "Повторный выезд к исторической крепости Кавиани с хайкингом по осеннему лесу. Сложность - 1 из 5.",
+  //   price: "99",
+  //   image: "/imageTrip/kaviani.JPG",
+  //   link: "/",
+  //   type: "group",
+  //   leo: true,
+  // },
+  // {
+  //   date: "15 ноября (сб)",
+  //   title: "Скалолазание в Гонио",
+  //   description:
+  //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+  //   price: "49",
+  //   image: "/imageTrip/rock1.WEBP",
+  //   link: "/rockClimbing",
+  //   type: "rockClimbing",
+  // },
+  // {
+  //   date: "16 ноября (вс)",
+  //   title: "Гулеби",
+  //   description:
+  //     "Маршрут с заброской для сокращения набора высоты. Подойдёт даже новичкам. Пройдём через осенний лес и поднимемся на вершину к крепости Гулеби, где устроим пикник с панорамными видами. Сложность - 1 из 5.",
+  //   price: "99",
+  //   image: "/imageTrip/gulebi.webp",
+  //   link: "/",
+  //   type: "group",
+  //   leo: true,
+  // },
+  // {
+  //   date: "16 ноября (вс)",
+  //   title: "Скалолазание в Гонио",
+  //   description:
+  //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+  //   price: "49",
+  //   image: "/imageTrip/rock2.JPG",
+  //   link: "/rockClimbing",
+  //   type: "rockClimbing",
+  // },
+  // {
+  //   date: "22 ноября (сб)",
+  //   title: "Водопад Джочо",
+  //   description:
+  //     "Маршрут, в котором мы зайдём прямо за водопад и устроим там пикник. Сложность - 2 из 5.",
+  //   price: "99",
+  //   image: "/imageTrip/djo.JPG",
+  //   link: "/",
+  //   type: "group",
+  //   leo: true,
+  // },
+  // {
+  //   date: "22 ноября (сб)",
+  //   title: "Скалолазание в Гонио",
+  //   description:
+  //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+  //   price: "49",
+  //   image: "/imageTrip/rock1.WEBP",
+  //   link: "/rockClimbing",
+  //   type: "rockClimbing",
+  // },
+  // {
+  //   date: "23 ноября (вс)",
+  //   title: "Водопад Чинкадзебе",
+  //   description:
+  //     "Атмосферный маршрут к редко посещаемому водопаду Чинкадзебе. Сложность - 2 из 5.",
+  //   price: "99",
+  //   image: "/imageTrip/waterfall.JPG",
+  //   link: "/",
+  //   type: "group",
+  //   leo: true,
+  // },
+  // {
+  //   date: "23 ноября (вс)",
+  //   title: "Скалолазание в Гонио",
+  //   description:
+  //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+  //   price: "49",
+  //   image: "/imageTrip/rock2.JPG",
+  //   link: "/rockClimbing",
+  //   type: "rockClimbing",
+  // },
+  // {
+  //   date: "29 ноября (сб)",
+  //   title: "Архангела",
+  //   description:
+  //     "Маршрут с заброской до уютного кемпинга с качелями, беседкой и костровищем. Сходим в радиальный хайк до смотровой площадки на пик горы Архангела. Сложность - 2 из 5",
+  //   price: "99",
+  //   image: "/imageTrip/archangela.webp",
+  //   link: "/",
+  //   type: "group",
+  //   leo: true,
+  // },
+  // {
+  //   date: "29 ноября (вс)",
+  //   title: "Скалолазание в Гонио",
+  //   description:
+  //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+  //   price: "49",
+  //   image: "/imageTrip/rock1.WEBP",
+  //   link: "/rockClimbing",
+  //   type: "rockClimbing",
+  // },
+  // {
+  //   date: "30 ноября (сб)",
+  //   title: "Мтирала",
+  //   description:
+  //     "Живописный маршрут с посещением водопада и озера. Подойдёт даже новичкам. Сложность - 2 из 5.",
+  //   price: "99",
+  //   image: "/imageTrip/mtirala.webp",
+  //   link: "/",
+  //   type: "group",
+  //   leo: true,
+  // },
+  // {
+  //   date: "30 ноября (вс)",
+  //   title: "Скалолазание в Гонио",
+  //   description:
+  //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+  //   price: "49",
+  //   image: "/imageTrip/rock2.JPG",
+  //   link: "/rockClimbing",
+  //   type: "rockClimbing",
+  // },
+  // {
+  //   date: "6 декабря (сб)",
+  //   title: "Скалолазание в Гонио",
+  //   description:
+  //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+  //   price: "49",
+  //   image: "/imageTrip/rock1.WEBP",
+  //   link: "/rockClimbing",
+  //   type: "rockClimbing",
+  // },
 
-  {
-    date: "7 декабря  (вс)",
-    title: "Скалолазание в Гонио",
-    description:
-      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-    price: "49",
-    image: "/imageTrip/rock2.JPG",
-    link: "/rockClimbing",
-    type: "rockClimbing",
-  },
-  {
-    date: "13 декабря (сб)",
-    title: "Скалолазание в Гонио",
-    description:
-      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-    price: "49",
-    image: "/imageTrip/rock1.WEBP",
-    link: "/rockClimbing",
-    type: "rockClimbing",
-  },
+  // {
+  //   date: "7 декабря  (вс)",
+  //   title: "Скалолазание в Гонио",
+  //   description:
+  //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+  //   price: "49",
+  //   image: "/imageTrip/rock2.JPG",
+  //   link: "/rockClimbing",
+  //   type: "rockClimbing",
+  // },
+  // {
+  //   date: "13 декабря (сб)",
+  //   title: "Скалолазание в Гонио",
+  //   description:
+  //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+  //   price: "49",
+  //   image: "/imageTrip/rock1.WEBP",
+  //   link: "/rockClimbing",
+  //   type: "rockClimbing",
+  // },
 
-  {
-    date: "14 декабря  (вс)",
-    title: "Скалолазание в Гонио",
-    description:
-      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-    price: "49",
-    image: "/imageTrip/rock2.JPG",
-    link: "/rockClimbing",
-    type: "rockClimbing",
-  },
-  {
-    date: "20 декабря (сб)",
-    title: "Скалолазание в Гонио",
-    description:
-      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-    price: "49",
-    image: "/imageTrip/rock1.WEBP",
-    link: "/rockClimbing",
-    type: "rockClimbing",
-  },
+  // {
+  //   date: "14 декабря  (вс)",
+  //   title: "Скалолазание в Гонио",
+  //   description:
+  //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+  //   price: "49",
+  //   image: "/imageTrip/rock2.JPG",
+  //   link: "/rockClimbing",
+  //   type: "rockClimbing",
+  // },
+  // {
+  //   date: "20 декабря (сб)",
+  //   title: "Скалолазание в Гонио",
+  //   description:
+  //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+  //   price: "49",
+  //   image: "/imageTrip/rock1.WEBP",
+  //   link: "/rockClimbing",
+  //   type: "rockClimbing",
+  // },
 
-  {
-    date: "21 декабря  (вс)",
-    title: "Скалолазание в Гонио",
-    description:
-      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-    price: "49",
-    image: "/imageTrip/rock2.JPG",
-    link: "/rockClimbing",
-    type: "rockClimbing",
-  },
+  // {
+  //   date: "21 декабря  (вс)",
+  //   title: "Скалолазание в Гонио",
+  //   description:
+  //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+  //   price: "49",
+  //   image: "/imageTrip/rock2.JPG",
+  //   link: "/rockClimbing",
+  //   type: "rockClimbing",
+  // },
 
-  {
-    date: "27 декабря (сб)",
-    title: "Скалолазание в Гонио",
-    description:
-      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-    price: "49",
-    image: "/imageTrip/rock1.WEBP",
-    link: "/rockClimbing",
-    type: "rockClimbing",
-  },
+  // {
+  //   date: "27 декабря (сб)",
+  //   title: "Скалолазание в Гонио",
+  //   description:
+  //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+  //   price: "49",
+  //   image: "/imageTrip/rock1.WEBP",
+  //   link: "/rockClimbing",
+  //   type: "rockClimbing",
+  // },
 
-  {
-    date: "28 декабря (вс)",
-    title: "Скалолазание в Гонио",
-    description:
-      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-    price: "49",
-    image: "/imageTrip/rock2.JPG",
-    link: "/rockClimbing",
-    type: "rockClimbing",
-  },
+  // {
+  //   date: "28 декабря (вс)",
+  //   title: "Скалолазание в Гонио",
+  //   description:
+  //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+  //   price: "49",
+  //   image: "/imageTrip/rock2.JPG",
+  //   link: "/rockClimbing",
+  //   type: "rockClimbing",
+  // },
   {
     date: "3 января (сб)",
     title: "Скалолазание в Гонио",
@@ -946,13 +946,23 @@ const events = [
   },
   {
     date: "everyday",
-    title: "ДЖИППИНГ",
+    title: "ДЖИП-ТУР",
+    description:
+      "Зимний джиппинг-тур из Батуми: мощные машины, свежий снег и никакой толпы. Перезагрузитесь за один день среди горных пейзажей.",
+    price: null,
+    image: "/imageTrip/dziptour2.jpg",
+    link: "/dzip-tour",
+    type: "dzip",
+  },
+  {
+    date: "everyday",
+    title: "ТРАНСФЕР НА ДЖИПАХ",
     description:
       "Продолжаем катать по горам и зимой. Можно заказать индивидуальный джип-трансфер — идеально для семьи 3–4 человека. Формат - 1,2 дня",
     price: "от 600 до 900",
-    image: "/imageTrip/dzip.jpg",
-    link: "/dzip-page",
-    type: "dzip",
+    image: "/imageTrip/dzipimportant.jpg",
+    link: "/ski-tour",
+    type: "skiTour",
   },
   {
     date: "weekend",
@@ -963,24 +973,63 @@ const events = [
     image: "/imageTrip/skitour.jpg",
     link: "/ski-tour",
     type: "skiTour",
-    seasonEnd: "29 февраля 2026",
+    seasonEnd: "28 февраля 2026",
+  },
+  {
+    date: "17.01-18.01",
+    title: "ГОРНОЛЫЖНЫЙ ТУР ДВУХДНЕВНЫЙ",
+    description: "В разработке",
+    price: "-",
+    image: "/imageTrip/skitour1.jpg",
+    link: "",
+    type: "skiTour",
+  },
+  {
+    date: "24.01-25.01",
+    title: "ГОРНОЛЫЖНЫЙ ТУР ДВУХДНЕВНЫЙ",
+    description: "В разработке",
+    price: "-",
+    image: "/imageTrip/skitour1.jpg",
+    link: "",
+    type: "skiTour",
+  },
+  {
+    date: "31.01-01.02",
+    title: "ГОРНОЛЫЖНЫЙ ТУР ДВУХДНЕВНЫЙ",
+    description: "В разработке",
+    price: "-",
+    image: "/imageTrip/skitour1.jpg",
+    link: "",
+    type: "skiTour",
+  },
+  {
+    date: "17.01-18.01",
+    title: "ТУР ДВУХДНЕВНЫЙ БАКУРИАНИ",
+    description: "В разработке",
+    price: "-",
+    image: "/imageTrip/skitour3.jpg",
+    link: "",
+    type: "skiTour",
+  },
+  {
+    date: "24.01-25.01",
+    title: "ТУР ДВУХДНЕВНЫЙ БАКУРИАНИ",
+    description: "В разработке",
+    price: "-",
+    image: "/imageTrip/skitour3.jpg",
+    link: "",
+    type: "skiTour",
+  },
+  {
+    date: "31.01-01.02",
+    title: "ТУР ДВУХДНЕВНЫЙ БАКУРИАНИ",
+    description: "В разработке",
+    price: "-",
+    image: "/imageTrip/skitour3.jpg",
+    link: "",
+    type: "skiTour",
   },
 ];
-
-const monthMap = {
-  января: 0,
-  февраля: 1,
-  марта: 2,
-  апреля: 3,
-  мая: 4,
-  июня: 5,
-  июля: 6,
-  августа: 7,
-  сентября: 8,
-  октября: 9,
-  ноября: 10,
-  декабря: 11,
-};
 
 const monthNames = [
   "января",
@@ -1001,6 +1050,20 @@ function isWeekend(date) {
   const day = date.getDay();
   return day === 0 || day === 6;
 }
+const monthMap = {
+  января: 0,
+  февраля: 1,
+  марта: 2,
+  апреля: 3,
+  мая: 4,
+  июня: 5,
+  июля: 6,
+  августа: 7,
+  сентября: 8,
+  октября: 9,
+  ноября: 10,
+  декабря: 11,
+};
 
 function parseSeasonEnd(seasonEndStr) {
   const parts = seasonEndStr.split(" ");
@@ -1022,50 +1085,68 @@ function parseSeasonEnd(seasonEndStr) {
 
   return seasonEndDate;
 }
+
 function parseEventDate(dateStr) {
-  const trimmed = dateStr.trim();
+  const trimmed = dateStr.trim().replace(/\s*\([^)]*\)$/, ""); // убираем (сб)/(вс)
 
   if (
-    trimmed.includes("В любой из дней") ||
-    trimmed.includes("по запросу") ||
     trimmed === "everyday" ||
-    trimmed === "weekend"
+    trimmed === "weekend" ||
+    trimmed.includes("В любой из дней") ||
+    trimmed.includes("по запросу")
   ) {
     return null;
   }
 
-  const clean = trimmed.replace(/\s*\([^)]*\)$/, "").trim();
-
-  const parts = clean.split(/\s+/);
-
-  const dayStr = parts[0];
-  const monthStr = parts[1]?.toLowerCase();
-
-  const day = parseInt(dayStr.replace(/\D/g, ""), 10);
-  const month = monthMap[monthStr];
-
-  if (isNaN(day) || month === undefined) {
-    console.warn(
-      "Не удалось распарсить дату:",
-      dateStr,
-      "day:",
-      dayStr,
-      "month:",
-      monthStr
-    );
-    return null;
+  const shortRegex = /^(\d{1,2})(?:-(\d{1,2}))?\.(\d{1,2})$/;
+  const shortMatch = trimmed.match(shortRegex);
+  if (shortMatch) {
+    const day1 = parseInt(shortMatch[1], 10);
+    const day2 = shortMatch[2] ? parseInt(shortMatch[2], 10) : day1;
+    const month = parseInt(shortMatch[3], 10) - 1;
+    const year = new Date().getFullYear();
+    const date = new Date(year, month, day1);
+    if (!isNaN(date.getTime())) return date;
   }
 
-  const year = new Date().getFullYear();
-  const eventDate = new Date(year, month, day);
-  eventDate.setHours(0, 0, 0, 0);
+  const parts = trimmed.split(/\s+/);
+  if (parts.length >= 2) {
+    const day = parseInt(parts[0].replace(/\D/g, ""), 10);
+    const monthStr = parts[1].toLowerCase();
+    const month = monthMap[monthStr];
+    if (!isNaN(day) && month !== undefined) {
+      const year = new Date().getFullYear();
+      const date = new Date(year, month, day);
+      if (!isNaN(date.getTime())) return date;
+    }
+  }
 
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
+  console.warn("Не удалось распарсить дату:", dateStr);
+  return null;
+}
+function parseEventDateRange(dateStr) {
+  const trimmed = dateStr.trim();
 
-  eventDate.setHours(0, 0, 0, 0);
+  let m = trimmed.match(/^(\d{1,2})-(\d{1,2})\.(\d{1,2})$/);
+  if (m) {
+    const year = new Date().getFullYear();
+    const month = parseInt(m[3], 10) - 1;
+    return {
+      startDate: new Date(year, month, +m[1]),
+      endDate: new Date(year, month, +m[2]),
+    };
+  }
 
-  return eventDate;
+  m = trimmed.match(/^(\d{1,2})-(\d{1,2})\.(\d{1,2})$/);
+  if (m && +m[1] > +m[2]) {
+    const year = new Date().getFullYear();
+    return {
+      startDate: new Date(year, 0, +m[1]),
+      endDate: new Date(year, 1, +m[2]),
+    };
+  }
+
+  return null;
 }
 
 export const TripPage = () => {
@@ -1107,7 +1188,9 @@ export const TripPage = () => {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
-    const skiTourEvent = events.find((event) => event.type === "skiTour");
+    const skiTourEvent = events.find(
+      (event) => event.type === "skiTour" && event.date === "weekend"
+    );
     const seasonEndDate = skiTourEvent?.seasonEnd
       ? parseSeasonEnd(skiTourEvent.seasonEnd)
       : null;
@@ -1117,9 +1200,9 @@ export const TripPage = () => {
     }
 
     const weekendDates = [];
-    const endDate = seasonEndDate || new Date(today.getFullYear(), 1, 29);
+    const endDate = seasonEndDate || new Date(today.getFullYear(), 1, 28);
 
-    for (let i = 0; i < 14; i++) {
+    for (let i = 0; i <= 180; i++) {
       const futureDate = new Date(today);
       futureDate.setDate(today.getDate() + i);
       futureDate.setHours(0, 0, 0, 0);
@@ -1139,19 +1222,35 @@ export const TripPage = () => {
     const dzipEvent = events.find(
       (event) => event.type === "dzip" && event.date === "everyday"
     );
-    const skiTourEvent = events.find(
-      (event) => event.type === "skiTour" && event.date === "weekend"
+
+    const skiTourEvents = events.filter((event) => event.type === "skiTour");
+
+    const weekendSkiTourEvent = skiTourEvents.find(
+      (event) => event.date === "weekend"
+    );
+    const dailySkiTourEvent = skiTourEvents.find(
+      (event) => event.date === "everyday"
     );
 
     const skiTourWeekendDates = generateSkiTourDates();
 
     let skiTourCards = [];
-    if (skiTourEvent && skiTourWeekendDates.length > 0) {
+
+    if (dailySkiTourEvent) {
+      skiTourCards.push({
+        ...dailySkiTourEvent,
+        date: "Ежедневно",
+        generated: true,
+        sortDate: today,
+      });
+    }
+
+    if (weekendSkiTourEvent && skiTourWeekendDates.length > 0) {
       const uniqueDatesSet = new Set();
 
-      const nearestTwoDates = skiTourWeekendDates.slice(0, 2);
+      const allWeekendDates = skiTourWeekendDates;
 
-      skiTourCards = nearestTwoDates
+      const weekendCards = allWeekendDates
         .map((date) => {
           const formattedDate = `${date.getDate()} ${
             monthNames[date.getMonth()]
@@ -1163,23 +1262,64 @@ export const TripPage = () => {
           uniqueDatesSet.add(formattedDate);
 
           return {
-            ...skiTourEvent,
+            ...weekendSkiTourEvent,
             date: formattedDate,
             generated: true,
             sortDate: date,
           };
         })
         .filter(Boolean);
+
+      skiTourCards.push(...weekendCards);
     }
+
+    const fixedSkiTourEvents = skiTourEvents.filter(
+      (event) =>
+        event.date !== "everyday" &&
+        event.date !== "weekend" &&
+        event.date.includes("-")
+    );
+
+    const fixedSkiTourCards = fixedSkiTourEvents.map((event) => {
+      const range = parseEventDateRange(event.date);
+      const sortDate = range ? range.startDate : new Date(9999, 11, 31);
+
+      let displayDate = event.date;
+      if (range) {
+        const startDay = range.startDate.getDate();
+        const startMonth = monthNames[range.startDate.getMonth()];
+        const endDay = range.endDate.getDate();
+        const endMonth = monthNames[range.endDate.getMonth()];
+
+        if (startMonth === endMonth) {
+          displayDate = `${startDay}–${endDay} ${startMonth}`;
+        } else {
+          displayDate = `${startDay} ${startMonth} – ${endDay} ${endMonth}`;
+        }
+      }
+
+      return {
+        ...event,
+        date: displayDate,
+        sortDate,
+        generated: false,
+      };
+    });
+
+    const futureFixedSkiTourCards = fixedSkiTourCards.filter(
+      (card) => card.sortDate >= today
+    );
+
+    skiTourCards.push(...futureFixedSkiTourCards);
 
     const allFutureEvents = events
       .filter((event) => {
         if (event.type === "dzip" && event.date === "everyday") {
           return false;
         }
-        if (event.type === "skiTour" && event.date === "weekend") {
-          return false;
-        }
+        // if (event.type === "skiTour") {
+        //   return false;
+        // }
 
         if (
           event.date.includes("В любой из дней") ||
@@ -1192,6 +1332,9 @@ export const TripPage = () => {
 
         if (!eventDate) {
           return false;
+        }
+        if (eventDate < today) {
+          eventDate.setFullYear(eventDate.getFullYear() + 1);
         }
 
         return eventDate >= today;
@@ -1242,12 +1385,24 @@ export const TripPage = () => {
     if (filter === "all") {
       const result = [];
 
+      const dailySkiTourEvent = skiTourEvents.find(
+        (event) => event.date === "everyday"
+      );
+      if (dailySkiTourEvent) {
+        result.push({
+          ...dailySkiTourEvent,
+          date: "Ежедневно",
+          sortDate: new Date(-1),
+          generated: true,
+        });
+      }
+
       if (dzipEvent) {
         result.push({
           ...dzipEvent,
           date: "Ежедневно",
           generated: true,
-          sortDate: today,
+          sortDate: new Date(0),
         });
       }
 
@@ -1296,43 +1451,27 @@ export const TripPage = () => {
     }
 
     if (filter === "skiTour") {
-      let allSkiTourCards = [];
-
-      if (skiTourEvent && skiTourWeekendDates.length > 0) {
-        const uniqueDatesSet = new Set();
-
-        const nearestTwoDates = skiTourWeekendDates.slice(0, 2);
-
-        allSkiTourCards = nearestTwoDates
-          .map((date) => {
-            const formattedDate = `${date.getDate()} ${
-              monthNames[date.getMonth()]
-            } (${date.getDay() === 0 ? "вс" : "сб"})`;
-
-            if (uniqueDatesSet.has(formattedDate)) {
-              return null;
-            }
-            uniqueDatesSet.add(formattedDate);
-
-            return {
-              ...skiTourEvent,
-              date: formattedDate,
-              generated: true,
-              sortDate: date,
-            };
-          })
-          .filter(Boolean);
-      }
-
-      return allSkiTourCards.sort((a, b) => {
+      return skiTourCards.sort((a, b) => {
         if (a.sortDate < b.sortDate) return -1;
         if (a.sortDate > b.sortDate) return 1;
 
         const dayOrder = { "(сб)": 0, "(вс)": 1 };
-        const aDay = a.date.includes("(сб)") ? "(сб)" : "(вс)";
-        const bDay = b.date.includes("(сб)") ? "(сб)" : "(вс)";
+        const aDay = a.date.includes("(сб)")
+          ? "(сб)"
+          : a.date.includes("(вс)")
+          ? "(вс)"
+          : "";
+        const bDay = b.date.includes("(сб)")
+          ? "(сб)"
+          : b.date.includes("(вс)")
+          ? "(вс)"
+          : "";
 
-        return dayOrder[aDay] - dayOrder[bDay];
+        if (dayOrder[aDay] !== undefined && dayOrder[bDay] !== undefined) {
+          return dayOrder[aDay] - dayOrder[bDay];
+        }
+
+        return 0;
       });
     }
 
@@ -1448,14 +1587,16 @@ export const TripPage = () => {
                   )}
 
                   <div className={style["card-buttons"]}>
-                    {event.link !== "/" && (
-                      <Button
-                        className={style["button"]}
-                        onClick={() => router.push(event.link)}
-                      >
-                        Узнать больше
-                      </Button>
-                    )}
+                    {event.link !== "/" &&
+                      !(event.type === "skiTour" && !event.generated) && (
+                        <Button
+                          className={style["button"]}
+                          onClick={() => router.push(event.link)}
+                        >
+                          Узнать больше
+                        </Button>
+                      )}
+
                     <Button className={style["custom-button"]}>
                       {event.gide === 1 ? (
                         <a

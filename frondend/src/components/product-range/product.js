@@ -337,6 +337,7 @@ export const PRODUCT = [
       " Sidewall: ABS",
     ],
   },
+
   // {
   //   order: false,
   //   id: 219872216438393931,
@@ -471,6 +472,7 @@ export const PRODUCT = [
     desc: "Skifree S1 White",
     category: "fasteners_sky",
     price: 379,
+
     column: [
       "Год: 2025",
       "Жесткость: средняя",
@@ -1817,6 +1819,7 @@ export const PRODUCT = [
   },
   {
     order: true,
+
     id: 10430210148459043,
     title: "Лонгслив / рашгард",
     img: "8b579f03-d325-49c2-8b12-05bc8bc9ed91.avif",
@@ -13066,6 +13069,7 @@ export const PRODUCT = [
     ],
     columnEng: [],
   },
+
   // {
   //   order: true,
   //   id: 1023450069512,

@@ -92,28 +92,7 @@ export const Buy = ({ product, page, discount }) => {
         )}
 
         {!product.order && (
-          <p
-            style={
-              page
-                ? {
-                    color: "#9f9d9df5",
-                    lineHeight: "1",
-                    position: "relative",
-                    margin: 0,
-                    fontFamily: "RoadRadio-Thin",
-                    fontSize: "14px",
-                  }
-                : {
-                    margin: "0 0 0 20px",
-                    color: "#9f9d9df5",
-                    lineHeight: "1",
-                    position: "relative",
-                    top: "-2px",
-                    fontFamily: "RoadRadio-Thin",
-                    fontSize: "14px",
-                  }
-            }
-          >
+          <p className={page ? styles.pageStyle : styles.noPageStyle}>
             (скоро в наличии)
           </p>
         )}

@@ -47,7 +47,7 @@ export default function SalePage({ children }) {
   useEffect(() => {
     if (!menuContainerRef.current) return;
 
-    const container = menuContainerRef.current; // scrollable div
+    const container = menuContainerRef.current;
     const activeItem = container.querySelector(".ant-menu-item-selected");
     if (!activeItem) return;
 
@@ -147,6 +147,10 @@ export default function SalePage({ children }) {
             ) : null
           }
           sx={{ cursor: "pointer" }}
+          onClick={() => {
+            handleTypeClick(type.category);
+            closeMobileMenu();
+          }}
         >
           <span
             style={{
@@ -154,15 +158,11 @@ export default function SalePage({ children }) {
               fontFamily: "RoadRadio, sans-serif",
               fontSize: 14,
             }}
-            onClick={(e) => {
-              e.stopPropagation();
-              handleTypeClick(type.category);
-              closeMobileMenu();
-            }}
           >
             {type.title}
           </span>
         </AccordionSummary>
+
         {type.subcategories?.length > 0 && (
           <AccordionDetails sx={{ p: 0 }}>
             <List>

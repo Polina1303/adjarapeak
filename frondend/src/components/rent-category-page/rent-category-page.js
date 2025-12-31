@@ -170,6 +170,8 @@ export default function RentCategoryPage({ section, type, subcategory }) {
                     <div
                       style={{
                         position: "relative",
+                        width: "100%",
+                        aspectRatio: "1 / 1",
                         display: isLoaded ? "block" : "none",
                       }}
                     >
@@ -179,9 +181,11 @@ export default function RentCategoryPage({ section, type, subcategory }) {
                         priority
                         width={300}
                         height={300}
+                        sizes="(max-width: 600px) 100vw,
+                                   (max-width: 900px) 50vw,
+                                   300px"
                         style={{
                           objectFit: "cover",
-                          objectPosition: "center",
                         }}
                         onLoadingComplete={() =>
                           setLoadedIds((prev) => [...prev, t.category])

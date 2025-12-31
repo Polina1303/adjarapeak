@@ -159,32 +159,141 @@
 }
 
 
-@media (max-width: 800px) {
-  .sale-page-content {
+.title {
+  font-family: "RoadRadio", sans-serif !important;
+  font-size: 24px;
+  text-align: left;
+}
+
+
+.filterTitle {
+  color: black;
+  font-family: "RoadRadio", sans-serif !important;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.toolbarMobile {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding-right: 40px;
+}
+
+.mobileMenuButton {
+  position: absolute !important;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.sale-page-content {
+  display: grid;
+  grid-template-columns: 20% 1fr;
+  gap: 24px;
+  align-items: flex-start;
   width: 100%;
   margin-top: 20px;
   margin-bottom: 20px;
 }
- .home-page-product {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 12px;
-  }
- 
-
-  .category-product {
-    width: 100%;
-  }
-
-  .category-product img{
-    width: 100%;
-  }
 .searchInput {
+  width: 98%;
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+.searchInput:focus {
+  border-color: #ff6f00;
+}
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.category-product {
+  display: grid;
+  grid-template-rows: 3fr;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.home-page-product {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+
+
+
+@media (max-width: 800px) {
+  .sale-page-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+
+  .home-page-product {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    width: 100%;
+    padding: 0 5px;
+    box-sizing: border-box;
+  }
+
+  .home-page-product > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background: #fff;
+    gap: 5px;
+  }
+
+  .home-page-product img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .home-page-product p {
+    font-size: 14px;
+    text-align: center;
+    margin: 0;
+  }
+
+  .searchInput {
     font-size: 14px;
     padding: 8px 10px;
     border-radius: 5px;
     width: 97%;
+    box-sizing: border-box;
   }
-}
+  
 
+  .home-page-product {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .category-product {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: auto;
+  }
+
+  
+}

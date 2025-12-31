@@ -46,6 +46,77 @@ export default function RentPage({ children }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [isInitialized, setIsInitialized] = useState(false);
 
+  const renderAccordion = () =>
+    currentCategory?.types?.map((type) => (
+      <Accordion
+        key={type.category}
+        expanded={expandedAccordion === type.category}
+        onChange={
+          type.subcategories?.length
+            ? () =>
+                setExpandedAccordion((prev) =>
+                  prev === type.category ? null : type.category
+                )
+            : undefined
+        }
+        disableGutters
+        sx={{
+          boxShadow: "none",
+          borderBottom: "1px solid #eee",
+          "&:before": { display: "none" },
+        }}
+      >
+        <AccordionSummary
+          expandIcon={
+            type.subcategories?.length ? (
+              <ExpandMoreIcon style={{ color: "#ff6f00" }} />
+            ) : null
+          }
+          sx={{ cursor: "pointer" }}
+          onClick={() => {
+            handleTypeClick(type.category);
+            closeMobileMenu();
+          }}
+        >
+          <span
+            style={{
+              fontWeight: 700,
+              fontFamily: "RoadRadio, sans-serif",
+              fontSize: 14,
+            }}
+          >
+            {type.title}
+          </span>
+        </AccordionSummary>
+
+        {type.subcategories?.length > 0 && (
+          <AccordionDetails sx={{ p: 0 }}>
+            <List>
+              {type.subcategories.map((sub) => (
+                <ListItemButton
+                  key={sub.subcategory}
+                  sx={{ pl: 3 }}
+                  onClick={() => {
+                    handleSubcategoryClick(sub.subcategory);
+                    closeMobileMenu();
+                  }}
+                >
+                  <span
+                    style={{
+                      fontFamily: "RoadRadio, sans-serif",
+                      fontSize: 14,
+                    }}
+                  >
+                    {sub.title}
+                  </span>
+                </ListItemButton>
+              ))}
+            </List>
+          </AccordionDetails>
+        )}
+      </Accordion>
+    ));
+
   useEffect(() => {
     const pathParts = router.asPath.split("/");
     const categoryPath = pathParts[2];
@@ -199,7 +270,7 @@ export default function RentPage({ children }) {
       <div className={styles["home-page__container-product"]}>
         <div>
           <div className={styles["title"]} id="home-page-buy">
-            {currentCategory?.title?.toUpperCase() || "ПРОДАЖА ТОВАРОВ"}
+            {currentCategory?.title?.toUpperCase() || "АРЕНДА ТОВАРОВ"}
           </div>
 
           <div className={styles["sale-page-content"]}>
@@ -226,13 +297,13 @@ export default function RentPage({ children }) {
                     PaperProps={{
                       className: styles.mobileDrawerPaper,
                       style: {
-                        boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
+                        boxShadow: "0 4px 20px rgba(0,0,0,0.15)",
                         borderBottom: "2px solid #e0e0e0",
                       },
                     }}
                     ModalProps={{
                       BackdropProps: {
-                        style: { backgroundColor: "rgba(0, 0, 0, 0.5)" },
+                        style: { backgroundColor: "rgba(0,0,0,0.5)" },
                       },
                     }}
                   >
@@ -248,143 +319,13 @@ export default function RentPage({ children }) {
                         <TfiClose />
                       </IconButton>
                     </Toolbar>
-
                     <List className={styles.mobileMenuList}>
-                      {currentCategory?.types?.map((type) => (
-                        <Accordion
-                          key={type.category}
-                          expanded={expandedAccordion === type.category}
-                          onChange={() =>
-                            setExpandedAccordion((prev) =>
-                              prev === type.category ? null : type.category
-                            )
-                          }
-                          disableGutters
-                          sx={{
-                            boxShadow: "none",
-                            borderBottom: "1px solid #eee",
-                            "&:before": { display: "none" },
-                          }}
-                        >
-                          <AccordionSummary
-                            expandIcon={
-                              type.subcategories?.length ? (
-                                <ExpandMoreIcon style={{ color: "#ff6f00" }} />
-                              ) : null
-                            }
-                            sx={{ cursor: "pointer" }}
-                          >
-                            <span
-                              style={{
-                                fontWeight: "700",
-                                fontFamily: "RoadRadio, sans-serif",
-                                fontSize: "14px",
-                              }}
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                handleTypeClick(type.category);
-                                closeMobileMenu();
-                              }}
-                            >
-                              {type.title}
-                            </span>
-                          </AccordionSummary>
-
-                          <AccordionDetails sx={{ p: 0 }}>
-                            <List>
-                              {type.subcategories?.map((sub) => (
-                                <ListItemButton
-                                  key={sub.subcategory}
-                                  sx={{ pl: 3 }}
-                                  onClick={() =>
-                                    handleSubcategoryClick(sub.subcategory)
-                                  }
-                                >
-                                  <span
-                                    style={{
-                                      fontFamily: "RoadRadio, sans-serif",
-                                      fontSize: "14px",
-                                    }}
-                                    onClick={closeMobileMenu}
-                                  >
-                                    {sub.title}
-                                  </span>
-                                </ListItemButton>
-                              ))}
-                            </List>
-                          </AccordionDetails>
-                        </Accordion>
-                      ))}
+                      {renderAccordion()}
                     </List>
                   </Drawer>
                 </>
               ) : (
-                currentCategory?.types?.map((type) => (
-                  <Accordion
-                    key={type.category}
-                    expanded={expandedAccordion === type.category}
-                    onChange={
-                      type.subcategories?.length
-                        ? () =>
-                            setExpandedAccordion((prev) =>
-                              prev === type.category ? null : type.category
-                            )
-                        : undefined
-                    }
-                    disableGutters
-                    sx={{
-                      boxShadow: "none",
-                      borderBottom: "1px solid #eee",
-                      "&:before": { display: "none" },
-                    }}
-                  >
-                    <AccordionSummary
-                      expandIcon={
-                        type.subcategories?.length ? (
-                          <ExpandMoreIcon style={{ color: "#ff6f00" }} />
-                        ) : null
-                      }
-                      sx={{ cursor: "pointer" }}
-                    >
-                      <span
-                        style={{
-                          fontWeight: "700",
-                          fontFamily: "RoadRadio, sans-serif",
-                          fontSize: "14px",
-                        }}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleTypeClick(type.category);
-                        }}
-                      >
-                        {type.title}
-                      </span>
-                    </AccordionSummary>
-
-                    <AccordionDetails sx={{ p: 0 }}>
-                      <List>
-                        {type.subcategories?.map((sub) => (
-                          <ListItemButton
-                            key={sub.subcategory}
-                            sx={{ pl: 3 }}
-                            onClick={() =>
-                              handleSubcategoryClick(sub.subcategory)
-                            }
-                          >
-                            <span
-                              style={{
-                                fontFamily: "RoadRadio, sans-serif",
-                                fontSize: "14px",
-                              }}
-                            >
-                              {sub.title}
-                            </span>
-                          </ListItemButton>
-                        ))}
-                      </List>
-                    </AccordionDetails>
-                  </Accordion>
-                ))
+                renderAccordion()
               )}
             </div>
 
@@ -410,7 +351,6 @@ export default function RentPage({ children }) {
                                 "&:hover": { transform: "scale(1.03)" },
                               }}
                               onClick={() => {
-                                // Сохраняем текущую категорию и развернутый аккордеон
                                 localStorage.setItem(
                                   "rentState",
                                   JSON.stringify({
@@ -431,7 +371,7 @@ export default function RentPage({ children }) {
                                   flexDirection: "column",
                                 }}
                               >
-                                {!!isLoaded ? (
+                                {!isLoaded ? (
                                   <Skeleton
                                     variant="rectangular"
                                     height={450}
