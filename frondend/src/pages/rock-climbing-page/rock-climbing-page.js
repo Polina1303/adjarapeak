@@ -4,10 +4,8 @@ import { useSelector } from "react-redux";
 import style from "./rock-climbing-page.module.css";
 import { useInView } from "react-intersection-observer";
 import { SwiperPhoto } from "../../components/swiper";
-
+import Image from "next/image";
 const photos = [
-  "/rockClimbingImage/al.JPG",
-  "/rockClimbingImage/eg.JPG",
   "/rockClimbingImage/IMG_5450.JPG",
   "/rockClimbingImage/IMG_5451.JPG",
   "/rockClimbingImage/IMG_5464.JPG",
@@ -189,7 +187,14 @@ export const RockClimbingPage = () => {
           тренировки. Да, скалы - это нелегко и не для всех, но с нашей командой
           у вас точно получится! Слушайте инструктора и наслаждайтесь!
         </p>
-        {/* <div className={style["image-gallery"]}>
+
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+          className={style["image-gallery"]}
+        >
           <Image
             ref={ref}
             width={200}
@@ -197,6 +202,7 @@ export const RockClimbingPage = () => {
             src="/rockClimbingImage/al.JPG"
             alt="Снаряжение 1"
             className={style["gallery-image-instructor"]}
+            style={{ objectFit: "contain" }}
           />
           <Image
             ref={ref}
@@ -205,11 +211,12 @@ export const RockClimbingPage = () => {
             src="/rockClimbingImage/eg.JPG"
             alt="Снаряжение 2"
             className={style["gallery-image-instructor"]}
+            style={{ objectFit: "contain" }}
           />
-        </div> */}
+        </div>
       </section>
       <h2>🧗🏻‍♂️График и расписание</h2>
-      <div className={style["day-card"]}>
+      {/* <div className={style["day-card"]}>
         <h5 className={style["day-title"]}>Суббота</h5>
         <p className={style["price"]}>Стоимость тренировки: 49 лари</p>
 
@@ -227,16 +234,16 @@ export const RockClimbingPage = () => {
         >
           Записаться
         </a>
-      </div>
+      </div> */}
       <div className={style["day-card"]}>
         <h5 className={style["day-title"]}>Воскресенье</h5>
         <p className={style["price"]}>Стоимость тренировки: 49 лари</p>
 
         <div className={style["session"]}>
-          <span className={style["group-time"]}>1 группа — 10:00-13:00</span>
+          <span className={style["group-time"]}>1 группа — 11:00</span>
         </div>
         <div className={style["session"]}>
-          <span className={style["group-time"]}>2 группа — 15:00-18:00</span>
+          <span className={style["group-time"]}>2 группа — 14:00</span>
         </div>
         <a
           href="https://t.me/shpaksn"

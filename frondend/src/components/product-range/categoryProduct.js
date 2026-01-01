@@ -25,6 +25,11 @@ export const CATEGORY_PRODUCT = [
         category: "closes_ski",
       },
       {
+        title: "БАФФЫ И БАЛАКЛАВЫ",
+        img: "adult-ski-neck-warmer.avif",
+        category: "buff",
+      },
+      {
         title: "ТЕРМОБЕЛЬЕ",
         img: "19.38.07.jpg",
         category: "thermalUnderwear",

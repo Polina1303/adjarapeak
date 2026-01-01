@@ -17,7 +17,7 @@ export const CATEGORY_RENT = [
       {
         title: "ЛЫЖИ",
         category: "sky",
-        img: "19.08.22.jpg",
+        img: "2026-01-01 15.38.20.jpg",
       },
       {
         title: "СНОУБОРД",
