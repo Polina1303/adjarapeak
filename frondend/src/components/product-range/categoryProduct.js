@@ -607,6 +607,11 @@ export const CATEGORY_PRODUCT = [
         img: "769866.png",
         category: "gymnastic",
       },
+      // {
+      //   title: "Баланс - борд",
+      //   img: "IMG_4474.PNG",
+      //   category: "balance_board",
+      // },
     ],
   },
   {

@@ -3654,6 +3654,16 @@ export const PRODUCT = [
     price: 18,
     column: ["Состав:75% Хлопок,25% Акрил"],
   },
+  // {
+  //   order: true,
+  //   id: 91103097659123,
+  //   title: "СЛЕДКИ FILA UNISEX SILICONE HEEL",
+  //   img: "132323.jpg",
+  //   desc: "3 пары 35-38",
+  //   category: "socks",
+  //   price: 39,
+  //   column: [],
+  // },
 
   {
     order: true,
@@ -9396,6 +9406,17 @@ export const PRODUCT = [
     desc: "96 см",
     category: "gymnastic",
     price: 52,
+
+    column: [],
+  },
+  {
+    order: true,
+    id: 2989754091012912975,
+    title: "Баланс - борд 'Сноуборд' & 'Лыжи' ",
+    img: "IMG_4474.PNG",
+    desc: "70х27 см, с чехлом",
+    category: "balance_board",
+    price: 239,
 
     column: [],
   },
