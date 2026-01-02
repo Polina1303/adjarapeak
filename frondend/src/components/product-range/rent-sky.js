@@ -282,7 +282,7 @@ export const RENT_SKY = [
   },
   {
     order: true,
-    id: 30003544,
+    id: 30987003544,
     title: "Лыжи, ботинки, шлем, палки",
     img: "IMG_4714.PNG",
     desc: "от 90 см до 177 см",

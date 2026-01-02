@@ -77,7 +77,7 @@ export const CATEGORY_RENT = [
         img: "19.24.57.jpg",
       },
       {
-        title: "ИНОЕ",
+        title: "ТЮБИНГ, САНКИ, СНЕГОСТУПЫ",
         category: "dif",
         img: "Gn31w.jpg",
       },

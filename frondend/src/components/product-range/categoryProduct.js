@@ -23,6 +23,20 @@ export const CATEGORY_PRODUCT = [
         title: "Одежда",
         img: "Hd899fa17d8b647e0a55154c27a102dc0d.png",
         category: "closes_ski",
+        subcategories: [
+          {
+            title: "штаны",
+            subcategory: "pants_ski",
+          },
+          {
+            title: "куртки",
+            subcategory: "jackets_ski",
+          },
+          {
+            title: "комплекты",
+            subcategory: "set_ski",
+          },
+        ],
       },
       {
         title: "БАФФЫ И БАЛАКЛАВЫ",
@@ -73,6 +87,11 @@ export const CATEGORY_PRODUCT = [
         title: "РЮКЗАКИ И ЧЕХЛЫ",
         category: "bag_sky",
         img: "kayak-cantasi-siyah-100.png",
+      },
+      {
+        title: "Зимние цепи",
+        category: "winter_chains",
+        img: "IMG_5012.PNG",
       },
     ],
   },
@@ -584,8 +603,8 @@ export const CATEGORY_PRODUCT = [
         category: "hoop",
       },
       {
-        title: "ГИМНАСТИКА И ПИЛАТЕС",
-        img: "2vefe5.jpg",
+        title: "Обруч / хулахуп ",
+        img: "769866.png",
         category: "gymnastic",
       },
     ],
