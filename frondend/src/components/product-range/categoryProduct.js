@@ -166,21 +166,22 @@ export const CATEGORY_PRODUCT = [
         img: "d2ae7e6c-goods.webp",
         category: "care",
       },
+
+      {
+        title: "ТЕРМОБЕЛЬЕ",
+        img: "19.38.07.jpg",
+        category: "thermalUnderwear",
+      },
       {
         title: "НОСКИ",
         img: "sock-hike-50-mid-2-pack-navy.png",
         category: "socks",
       },
       {
-        title: "ТЕРМОБЕЛЬЕ",
-        img: "19.38.07.jpg",
-        category: "thermalUnderwear",
+        title: "НИЖНЕЕ БЕЛЬЕ",
+        img: "fila-man-boxers-2-pack_1.jpg",
+        category: "underwear",
       },
-      // {
-      //   title: "НИЖНЕЕ БЕЛЬЕ",
-      //   img: "",
-      //   category: "underwear",
-      // },
 
       // "clothes",
       // "shoes",
@@ -557,6 +558,12 @@ export const CATEGORY_PRODUCT = [
         img: "ocr.jpeg",
         category: "air",
         subcategories: [{ title: "Насосы", subcategory: "pump" }],
+      },
+      {
+        title: "Изотоник",
+        img: "on-the-go-elektrolit-limon-tablet.avif",
+        category: "isotonic",
+        // subcategories: [{ title: "Насосы", subcategory: "pump" }],
       },
     ],
   },
