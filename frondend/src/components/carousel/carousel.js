@@ -20,6 +20,16 @@ export const RecommendedCarousel = ({ products }) => {
   const router = useRouter();
   if (!products || products.length === 0) return null;
 
+  const basePath = (() => {
+    const parts = router.asPath.split("/");
+    const appIndex = parts.findIndex((p) => p === "app");
+    if (appIndex > 0) {
+      return parts.slice(0, appIndex).join("/");
+    }
+
+    return "/sale";
+  })();
+
   return (
     <div className={styles["carousel-container"]}>
       <Swiper
@@ -41,31 +51,16 @@ export const RecommendedCarousel = ({ products }) => {
         slidesPerView={4}
         spaceBetween={12}
         breakpoints={{
-          0: {
-            slidesPerView: 2,
-            spaceBetween: 6,
-          },
-          600: {
-            slidesPerView: 2,
-            spaceBetween: 6,
-          },
-          900: {
-            slidesPerView: 3,
-            spaceBetween: 14,
-          },
-          1200: {
-            slidesPerView: 4,
-            spaceBetween: 16,
-          },
+          0: { slidesPerView: 2, spaceBetween: 6 },
+          600: { slidesPerView: 2, spaceBetween: 6 },
+          900: { slidesPerView: 3, spaceBetween: 14 },
+          1200: { slidesPerView: 4, spaceBetween: 16 },
         }}
         className={styles["my-swiper"]}
       >
         {products.map((item) => (
-          <SwiperSlide
-            key={item.id}
-            onClick={() => router.push(`/app/${item.id}`)}
-          >
-            <ProductItems product={item} />
+          <SwiperSlide key={item.id}>
+            <ProductItems product={item} href={`${basePath}/app/${item.id}`} />
           </SwiperSlide>
         ))}
       </Swiper>

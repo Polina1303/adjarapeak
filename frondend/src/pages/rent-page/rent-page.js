@@ -29,22 +29,21 @@ export default function RentPage({ children }) {
 
   const [searchValue, setSearchValue] = useState("");
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setSearchQuery(searchValue);
-      localStorage.setItem("searchQuery", searchValue);
-    }, 200);
-
-    return () => clearTimeout(timer);
-  }, [searchValue]);
-
   const [activeCategory, setActiveCategory] = useState(0);
   const [expandedAccordion, setExpandedAccordion] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileView, setIsMobileView] = useState(false);
-
+  const menuContainerRef = useRef(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [isInitialized, setIsInitialized] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("searchQuery");
+      if (saved) setSearchQuery(saved);
+      setIsInitialized(true);
+    }
+  }, []);
 
   const renderAccordion = () =>
     currentCategory?.types?.map((type) => (
@@ -147,7 +146,24 @@ export default function RentPage({ children }) {
 
     return results;
   }, [searchQuery, isInitialized]);
-  const menuContainerRef = useRef(null);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setSearchQuery(searchValue);
+      localStorage.setItem("searchQuery", searchValue);
+    }, 200);
+    return () => clearTimeout(timer);
+  }, [searchValue]);
+
+  useEffect(() => {
+    if (!router.isReady) return;
+    const pathParts = router.asPath.split("/");
+    const categoryPath = pathParts[2];
+    const categoryIndex = CATEGORY_RENT.findIndex(
+      (c) => c.path === categoryPath
+    );
+    if (categoryIndex !== -1) setActiveCategory(categoryIndex);
+  }, [router.isReady, router.asPath]);
 
   useEffect(() => {
     if (!menuContainerRef.current) return;
@@ -193,31 +209,30 @@ export default function RentPage({ children }) {
     setSearchValue(e.target.value);
   };
 
-  // const handleCategoryClick = (e) => {
-  //   const categoryIndex = Number(e.key);
-  //   setActiveCategory(categoryIndex);
-  //   const category = CATEGORY_RENT[categoryIndex];
-  //   setExpandedAccordion(null);
-  //   router.push(`/rent/${category.path}`);
-  // };
-  const handleCategoryClick = (e) => {
-    const categoryIndex = Number(e.key);
-    setActiveCategory(categoryIndex);
-    const category = CATEGORY_RENT[categoryIndex];
-    setExpandedAccordion(null);
-    setSearchValue("");
-    setSearchQuery("");
-    localStorage.removeItem("searchQuery");
-    router.push(`/rent/${category.path}`);
-  };
-
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   const currentCategory = CATEGORY_RENT[activeCategory];
 
+  const handleCategoryClick = (e) => {
+    if (!router.isReady) return;
+    const idx = Number(e.key);
+    setActiveCategory(idx);
+    setExpandedAccordion(null);
+    setSearchValue("");
+    setSearchQuery("");
+    localStorage.removeItem("searchQuery");
+
+    router.push(`/rent/${CATEGORY_RENT[idx].path}`, undefined, {
+      shallow: true,
+    });
+  };
+
   const handleTypeClick = (typeCategory) => {
-    const category = CATEGORY_RENT[activeCategory];
-    router.push(`/rent/${category.path}/${typeCategory}`);
+    setExpandedAccordion(typeCategory);
+    if (!router.isReady || !currentCategory) return;
+    router.push(`/rent/${currentCategory.path}/${typeCategory}`, undefined, {
+      shallow: true,
+    });
   };
 
   const toggleMobileMenu = () => {

@@ -15,46 +15,47 @@ import {
 
 import { useEffect } from "react";
 
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
 
 import { useSearchParams, usePathname } from "next/navigation";
 
 import { FormControl, Select, MenuItem, InputLabel } from "@mui/material";
 import styles from "../sale-page/sale-page.module.css";
 
-export default function RentCategoryPage({ section, type }) {
+export default function RentCategoryPage({ section, type, subcategory }) {
   const router = useRouter();
+  const { isReady, query } = router;
   const [loadedIds, setLoadedIds] = useState([]);
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const [inStockOnly, setInStockOnly] = useState(
-    searchParams.get("stock") === "true" || false
-  );
-  const [sortBy, setSortBy] = useState(searchParams.get("sort") || "default");
+  const [inStockOnly, setInStockOnly] = useState(false);
+  const [sortBy, setSortBy] = useState("default");
+
+  useEffect(() => {
+    if (!isReady) return;
+    setInStockOnly(query.stock === "true");
+    setSortBy(query.sort || "default");
+  }, [isReady, query.stock, query.sort]);
 
   const sectionData = CATEGORY_RENT.find((s) => s.path === section) || {
     types: [],
   };
 
   useEffect(() => {
-    if (!pathname) return;
+    if (!isReady) return;
 
-    const params = new URLSearchParams();
+    const basePath = router.asPath.split("?")[0];
+    const nextQuery = {
+      ...(inStockOnly ? { stock: "true" } : {}),
+      ...(sortBy !== "default" ? { sort: sortBy } : {}),
+    };
 
-    if (inStockOnly) params.set("stock", "true");
-    if (sortBy && sortBy !== "default") params.set("sort", sortBy);
+    if (query.stock === nextQuery.stock && query.sort === nextQuery.sort)
+      return;
 
-    const queryObj = Object.fromEntries(params.entries());
-
-    router.replace(
-      {
-        pathname: pathname,
-        query: queryObj,
-      },
-      undefined,
-      { scroll: false }
-    );
-  }, [inStockOnly, sortBy, pathname, router]);
+    router.replace({ pathname: basePath, query: nextQuery }, undefined, {
+      shallow: true,
+      scroll: false,
+    });
+  }, [inStockOnly, sortBy, isReady, query, router]);
 
   let filteredProducts = [];
 
@@ -73,7 +74,7 @@ export default function RentCategoryPage({ section, type }) {
     return 0;
   });
 
-  if (!type && sectionData?.types?.length > 0) {
+  if (!type && !subcategory && sectionData?.types?.length > 0) {
     return (
       <div className={styles["home-page-product"]}>
         {sectionData.types.map((t) => {
@@ -102,7 +103,7 @@ export default function RentCategoryPage({ section, type }) {
                         position: "relative",
                         width: "100%",
                         aspectRatio: "1 / 1",
-                        display: isLoaded ? "block" : "none",
+                        // display: isLoaded ? "block" : "none",
                       }}
                     >
                       <Image
@@ -269,7 +270,11 @@ export default function RentCategoryPage({ section, type }) {
                     overflow: "hidden",
                     cursor: "pointer",
                   }}
-                  onClick={() => router.push(`/app/${product.id}`)}
+                  onClick={() =>
+                    router.push(
+                      `/rent/${section}/${product.category}/app/${product.id}`
+                    )
+                  }
                 >
                   <CardActionArea disableRipple disableTouchRipple>
                     {!!isLoaded ? (

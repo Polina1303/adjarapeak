@@ -16,6 +16,7 @@ import Typography from "@mui/material/Typography";
 import DoneIcon from "@mui/icons-material/Done";
 import { RecommendedCarousel } from "../../components/carousel";
 import { getProductById } from "../../../lib/cache";
+import { CATEGORY_RENT } from "../../components/product-range/categoryRent";
 import Image from "next/image";
 import styles from "./product-page.module.css";
 
@@ -198,35 +199,23 @@ export const ProductPage = () => {
     router.push("/error");
   }, [router]);
 
-  const getSectionByCategory = (category) => {
-    for (const section of CATEGORY_PRODUCT) {
-      const found = section.types.some((type) => type.category === category);
-
-      if (found) return section;
-    }
-    return null;
-  };
-
   const getRecommendedProducts = useCallback(() => {
     if (!product) return [];
 
-    const section = getSectionByCategory(product.category);
-    if (!section) return [];
+    const isRent =
+      RENT.some((p) => p.id === product.id) ||
+      RENT_SKY.some((p) => p.id === product.id);
 
-    const sectionCategories = section.types.map((type) => type.category);
+    const allSource = isRent ? [...RENT, ...RENT_SKY] : [...PRODUCT];
 
-    const allProducts = [...PRODUCT, ...RENT, ...RENT_SKY].filter(
-      (item) =>
-        item.id !== product.id && sectionCategories.includes(item.category)
-    );
+    let filtered = allSource.filter((item) => item.id !== product.id);
 
-    const priorityCategory = product.category;
-    const priorityItems = allProducts
-      .filter((item) => item.category === priorityCategory)
+    const priorityItems = filtered
+      .filter((item) => item.category === product.category)
       .slice(0, 3);
 
-    const otherItems = allProducts
-      .filter((item) => item.category !== priorityCategory)
+    const otherItems = filtered
+      .filter((item) => item.category !== product.category)
       .sort(() => Math.random() - 0.5)
       .slice(0, 7);
 
@@ -358,10 +347,7 @@ export const ProductPage = () => {
 
             <Box>
               {isRentProduct ? null : (
-                <Link
-                  className={styles["product-link"]}
-                  href="/app/delivery_terms"
-                >
+                <Link className={styles["product-link"]} href="/delivery-terms">
                   Условия доставки
                 </Link>
               )}

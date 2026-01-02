@@ -1,8 +1,10 @@
+"use client";
+
 import { useState, useEffect, useMemo, useRef } from "react";
 import { useRouter } from "next/router";
 import { PRODUCT } from "../product-range/product";
-import { Menu } from "antd";
 import { CATEGORY_PRODUCT } from "../product-range/categoryProduct";
+import { Menu } from "antd";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import { ProductItems } from "../product-items";
 import { TfiClose } from "react-icons/tfi";
@@ -21,7 +23,7 @@ import { Card, CardActionArea, Skeleton } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import styles from "./sale-page.module.css";
 
-export default function SalePage({ children }) {
+export default function SalePage({ section, children }) {
   const router = useRouter();
   const [loadedIds, setLoadedIds] = useState([]);
   const [availabilityFilter, setAvailabilityFilter] = useState(false);
@@ -34,30 +36,7 @@ export default function SalePage({ children }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileView, setIsMobileView] = useState(false);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setSearchQuery(searchValue);
-      localStorage.setItem("searchQuery", searchValue);
-    }, 200);
-    return () => clearTimeout(timer);
-  }, [searchValue]);
-
   const menuContainerRef = useRef(null);
-
-  useEffect(() => {
-    if (!menuContainerRef.current) return;
-
-    const container = menuContainerRef.current;
-    const activeItem = container.querySelector(".ant-menu-item-selected");
-    if (!activeItem) return;
-
-    const containerWidth = container.offsetWidth;
-    const itemLeft = activeItem.offsetLeft;
-    const itemWidth = activeItem.offsetWidth;
-
-    const scrollPos = itemLeft - containerWidth / 2 + itemWidth / 2;
-    container.scrollTo({ left: scrollPos, behavior: "smooth" });
-  }, [activeCategory]);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -68,13 +47,35 @@ export default function SalePage({ children }) {
   }, []);
 
   useEffect(() => {
+    const timer = setTimeout(() => {
+      setSearchQuery(searchValue);
+      localStorage.setItem("searchQuery", searchValue);
+    }, 200);
+    return () => clearTimeout(timer);
+  }, [searchValue]);
+
+  useEffect(() => {
+    if (!router.isReady) return;
     const pathParts = router.asPath.split("/");
     const categoryPath = pathParts[2];
     const categoryIndex = CATEGORY_PRODUCT.findIndex(
       (c) => c.path === categoryPath
     );
     if (categoryIndex !== -1) setActiveCategory(categoryIndex);
-  }, [router.asPath]);
+  }, [router.isReady, router.asPath]);
+
+  useEffect(() => {
+    if (!menuContainerRef.current) return;
+    const container = menuContainerRef.current;
+    const activeItem = container.querySelector(".ant-menu-item-selected");
+    if (!activeItem) return;
+
+    const scrollPos =
+      activeItem.offsetLeft -
+      container.offsetWidth / 2 +
+      activeItem.offsetWidth / 2;
+    container.scrollTo({ left: scrollPos, behavior: "smooth" });
+  }, [activeCategory]);
 
   useEffect(() => {
     const checkScreen = () => {
@@ -87,34 +88,49 @@ export default function SalePage({ children }) {
     return () => window.removeEventListener("resize", checkScreen);
   }, []);
 
-  const filteredProducts = useMemo(() => {
-    if (!isInitialized || !searchQuery.trim()) return [];
-    const query = searchQuery.toLowerCase().trim();
-    let results = PRODUCT.filter((p) => p.title?.toLowerCase().includes(query));
-    if (availabilityFilter) results = results.filter((p) => p.order === true);
-    if (priceSort === "asc") results.sort((a, b) => a.price - b.price);
-    if (priceSort === "desc") results.sort((a, b) => b.price - a.price);
-    return results;
-  }, [searchQuery, isInitialized, availabilityFilter, priceSort]);
-
   const currentCategory = CATEGORY_PRODUCT[activeCategory];
-  const getProductKey = (product, index) => `product-${product.id}-${index}`;
 
   const handleCategoryClick = (e) => {
+    if (!router.isReady) return;
     const idx = Number(e.key);
     setActiveCategory(idx);
     setExpandedAccordion(null);
     setSearchValue("");
     setSearchQuery("");
     localStorage.removeItem("searchQuery");
-    router.push(`/sale/${CATEGORY_PRODUCT[idx].path}`);
+
+    router.push(`/sale/${CATEGORY_PRODUCT[idx].path}`, undefined, {
+      shallow: true,
+    });
   };
 
-  const handleTypeClick = (typeCategory) =>
-    router.push(`/sale/${currentCategory.path}/${typeCategory}`);
+  const handleTypeClick = (typeCategory) => {
+    setExpandedAccordion(typeCategory);
+    if (!router.isReady || !currentCategory) return;
+    router.push(`/sale/${currentCategory.path}/${typeCategory}`, undefined, {
+      shallow: true,
+    });
+  };
 
-  const handleSubcategoryClick = (subPath) =>
-    router.push(`/sale/${currentCategory.path}/${subPath}`);
+  const filteredProducts = useMemo(() => {
+    if (!isInitialized || !searchQuery.trim()) return [];
+    let results = PRODUCT.filter((p) =>
+      p.title?.toLowerCase().includes(searchQuery.toLowerCase().trim())
+    );
+    if (availabilityFilter) results = results.filter((p) => p.order === true);
+    if (priceSort === "asc") results.sort((a, b) => a.price - b.price);
+    if (priceSort === "desc") results.sort((a, b) => b.price - a.price);
+    return results;
+  }, [searchQuery, isInitialized, availabilityFilter, priceSort]);
+
+  const getProductKey = (product, index) => `product-${product.id}-${index}`;
+
+  const handleSubcategoryClick = (subPath) => {
+    if (!router.isReady || !currentCategory) return;
+    router.push(`/sale/${currentCategory.path}/${subPath}`, undefined, {
+      shallow: true,
+    });
+  };
 
   const toggleMobileMenu = () =>
     isMobileView && setIsMobileMenuOpen((prev) => !prev);
@@ -170,10 +186,7 @@ export default function SalePage({ children }) {
                 <ListItemButton
                   key={sub.subcategory}
                   sx={{ pl: 3 }}
-                  onClick={() => {
-                    handleSubcategoryClick(sub.subcategory);
-                    closeMobileMenu();
-                  }}
+                  onClick={() => handleSubcategoryClick(sub.subcategory)}
                 >
                   <span
                     style={{
@@ -243,7 +256,6 @@ export default function SalePage({ children }) {
                     <FilterListIcon />
                     <p>Фильтры</p>
                   </div>
-
                   <Drawer
                     anchor="top"
                     open={isMobileMenuOpen}
@@ -300,10 +312,6 @@ export default function SalePage({ children }) {
                             height: "95%",
                             overflow: "hidden",
                             cursor: "pointer",
-                            transform: "none",
-                            "&:hover": { transform: "none", boxShadow: 3 },
-                            "&:focus": { outline: "none" },
-                            "&:active": { transform: "none" },
                           }}
                           onClick={() => router.push(`/app/${product.id}`)}
                         >

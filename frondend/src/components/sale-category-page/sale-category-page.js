@@ -1,11 +1,10 @@
 "use client";
-import { useEffect } from "react";
+
+import { useState, useEffect, useMemo } from "react";
+import Image from "next/image";
+import { useRouter } from "next/router";
 import { PRODUCT } from "../product-range/product";
 import { CATEGORY_PRODUCT } from "../product-range/categoryProduct";
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import Image from "next/image";
-import { useSearchParams, usePathname } from "next/navigation";
 import { ProductItems } from "../product-items";
 import {
   Card,
@@ -13,146 +12,122 @@ import {
   CardContent,
   Skeleton,
   ToggleButton,
+  FormControl,
+  Select,
+  MenuItem,
+  InputLabel,
 } from "@mui/material";
-import { FormControl, Select, MenuItem, InputLabel } from "@mui/material";
 import styles from "../sale-page/sale-page.module.css";
 import Link from "next/link";
 
 export default function SaleCategoryPage({ section, type, subcategory }) {
   const router = useRouter();
+  const { isReady, query } = router;
+
+  const [inStockOnly, setInStockOnly] = useState(false);
+  const [sortBy, setSortBy] = useState("default");
   const [loadedIds, setLoadedIds] = useState([]);
 
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const [inStockOnly, setInStockOnly] = useState(
-    searchParams.get("stock") === "true" || false
-  );
-  const [sortBy, setSortBy] = useState(searchParams.get("sort") || "default");
+  useEffect(() => {
+    if (!isReady) return;
+    setInStockOnly(query.stock === "true");
+    setSortBy(query.sort || "default");
+  }, [isReady, query.stock, query.sort]);
 
   const sectionData = CATEGORY_PRODUCT.find((s) => s.path === section) || {
     types: [],
   };
 
   useEffect(() => {
-    if (!pathname) return;
+    if (!isReady) return;
 
-    const params = new URLSearchParams();
+    const basePath = router.asPath.split("?")[0];
+    const nextQuery = {
+      ...(inStockOnly ? { stock: "true" } : {}),
+      ...(sortBy !== "default" ? { sort: sortBy } : {}),
+    };
 
-    if (inStockOnly) params.set("stock", "true");
-    if (sortBy && sortBy !== "default") params.set("sort", sortBy);
+    if (query.stock === nextQuery.stock && query.sort === nextQuery.sort)
+      return;
 
-    const queryObj = Object.fromEntries(params.entries());
+    router.replace({ pathname: basePath, query: nextQuery }, undefined, {
+      shallow: true,
+      scroll: false,
+    });
+  }, [inStockOnly, sortBy, isReady, query, router]);
 
-    router.replace(
-      {
-        pathname: pathname,
-        query: queryObj,
-      },
-      undefined,
-      { scroll: false }
-    );
-  }, [inStockOnly, sortBy, pathname, router]);
+  const filteredProducts = useMemo(() => {
+    if (!sectionData) return [];
 
-  let filteredProducts = [];
-
-  if (subcategory) {
-    filteredProducts = PRODUCT.filter((p) => p.subcategory === subcategory);
-  } else if (type) {
-    filteredProducts = PRODUCT.filter(
-      (p) => p.category === type || p.subcategory === type
-    );
-  } else {
-    filteredProducts = PRODUCT.filter((p) =>
-      sectionData.types.some(
+    let products = PRODUCT.filter((p) => {
+      if (subcategory) return p.subcategory === subcategory;
+      if (type) return p.category === type || p.subcategory === type;
+      return sectionData.types.some(
         (t) => t.category === p.category || t.category === p.subcategory
-      )
-    );
-  }
+      );
+    });
 
-  if (inStockOnly) {
-    filteredProducts = filteredProducts.filter((p) => p.order === true);
-  }
+    if (inStockOnly) products = products.filter((p) => p.order === true);
 
-  const sortedProducts = [...filteredProducts].sort((a, b) => {
-    if (sortBy === "price-asc") return a.price - b.price;
-    if (sortBy === "price-desc") return b.price - a.price;
-    return 0;
-  });
+    if (sortBy === "price-asc") products.sort((a, b) => a.price - b.price);
+    if (sortBy === "price-desc") products.sort((a, b) => b.price - a.price);
+
+    return products;
+  }, [sectionData, type, subcategory, inStockOnly, sortBy]);
 
   if (!type && !subcategory && sectionData?.types?.length > 0) {
     return (
       <div className={styles["home-page-product"]}>
-        {sectionData.types.map((t) => {
-          const routePath = `/sale/${section}/${t.category}`;
-          const isLoaded = loadedIds.includes(t.category);
-
-          return (
-            <Link
-              key={t.category}
-              href={`/sale/${section}/${t.category}`}
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
-              <Card
-                sx={{
-                  boxShadow: 3,
-                  height: "100%",
-                  overflow: "hidden",
-                }}
-              >
-                <CardActionArea disableRipple disableTouchRipple>
-                  {!isLoaded && <Skeleton variant="rectangular" height={300} />}
-                  {t.img && (
-                    <div
-                      style={{
-                        position: "relative",
-                        width: "100%",
-                        aspectRatio: "1 / 1",
-                        display: isLoaded ? "block" : "none",
-                      }}
-                    >
-                      <Image
-                        src={`/img/${t.img}`}
-                        alt={t.title}
-                        fill
-                        sizes="(max-width: 600px) 100vw,
-                 (max-width: 900px) 50vw,
-                 300px"
-                        style={{
-                          objectFit: "cover",
-                        }}
-                        onLoadingComplete={() =>
-                          setLoadedIds((prev) => [...prev, t.category])
-                        }
-                        priority
-                      />
-                    </div>
-                  )}
-
-                  <CardContent
-                    sx={{
-                      textAlign: "center",
-                      p: 1.5,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
+        {sectionData.types.map((t) => (
+          <Link
+            key={t.category}
+            href={`/sale/${section}/${t.category}`}
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <Card sx={{ boxShadow: 3, height: "100%", overflow: "hidden" }}>
+              <CardActionArea disableRipple disableTouchRipple>
+                {!loadedIds.includes(t.category) && (
+                  <Skeleton variant="rectangular" height={300} />
+                )}
+                {t.img && (
+                  <div
+                    style={{
+                      position: "relative",
+                      width: "100%",
+                      aspectRatio: "1 / 1",
+                      // display: isLoaded ? "block" : "none",
                     }}
                   >
-                    <p
-                      style={{
-                        fontFamily: "RoadRadio-Thin, sans-serif",
-                        fontSize: "14px",
-                        fontWeight: 700,
-                        margin: 0,
-                      }}
-                    >
-                      {t.title}
-                    </p>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
-            </Link>
-          );
-        })}
+                    <Image
+                      src={`/img/${t.img}`}
+                      alt={t.title}
+                      fill
+                      sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 300px"
+                      style={{ objectFit: "cover" }}
+                      onLoadingComplete={() =>
+                        setLoadedIds((prev) => [...prev, t.category])
+                      }
+                      priority
+                    />
+                  </div>
+                )}
+
+                <CardContent sx={{ textAlign: "center", p: 1.5 }}>
+                  <p
+                    style={{
+                      fontFamily: "RoadRadio-Thin, sans-serif",
+                      fontSize: "14px",
+                      fontWeight: 700,
+                      margin: 0,
+                    }}
+                  >
+                    {t.title}
+                  </p>
+                </CardContent>
+              </CardActionArea>
+            </Card>
+          </Link>
+        ))}
       </div>
     );
   }
@@ -160,13 +135,7 @@ export default function SaleCategoryPage({ section, type, subcategory }) {
   if (filteredProducts.length > 0) {
     return (
       <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            gap: "4px",
-          }}
-        >
+        <div style={{ display: "flex", gap: "4px" }}>
           <FormControl
             variant="outlined"
             size="small"
@@ -176,9 +145,7 @@ export default function SaleCategoryPage({ section, type, subcategory }) {
               sx={{
                 color: "#d87d4a",
                 fontWeight: 200,
-                "&.Mui-focused": {
-                  color: "#d87d4a !important",
-                },
+                "&.Mui-focused": { color: "#d87d4a !important" },
               }}
             >
               Цена
@@ -235,7 +202,7 @@ export default function SaleCategoryPage({ section, type, subcategory }) {
           <ToggleButton
             value="check"
             selected={inStockOnly}
-            onChange={() => setInStockOnly(!inStockOnly)}
+            onChange={() => setInStockOnly((prev) => !prev)}
             size="small"
             sx={{
               border: "1px solid #f0b89a",
@@ -263,32 +230,27 @@ export default function SaleCategoryPage({ section, type, subcategory }) {
         </div>
 
         <div className={styles["home-page-product"]}>
-          {sortedProducts.map((product) => {
-            const isLoaded = loadedIds.includes(product.id);
-
-            return (
-              <div key={product.id} className={styles["category-product"]}>
-                <Card
-                  sx={{
-                    boxShadow: 3,
-                    height: "95%",
-                    overflow: "hidden",
-                    cursor: "pointer",
-                    minWidth: 0,
-                  }}
-                  onClick={() => router.push(`/app/${product.id}`)}
-                >
-                  <CardActionArea disableRipple disableTouchRipple>
-                    {!!isLoaded ? (
-                      <Skeleton variant="rectangular" height={300} />
-                    ) : (
-                      <ProductItems product={product} />
-                    )}
-                  </CardActionArea>
-                </Card>
-              </div>
-            );
-          })}
+          {filteredProducts.map((product) => (
+            <div key={product.id} className={styles["category-product"]}>
+              <Card
+                sx={{
+                  boxShadow: 3,
+                  height: "95%",
+                  overflow: "hidden",
+                  cursor: "pointer",
+                }}
+                onClick={() =>
+                  router.push(
+                    `/sale/${section}/${product.category}/app/${product.id}`
+                  )
+                }
+              >
+                <CardActionArea disableRipple disableTouchRipple>
+                  <ProductItems product={product} />
+                </CardActionArea>
+              </Card>
+            </div>
+          ))}
         </div>
       </div>
     );
