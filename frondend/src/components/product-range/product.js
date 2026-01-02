@@ -740,7 +740,7 @@ export const PRODUCT = [
     desc: "горнолыжный",
     category: "helmet_sky",
     price: 165,
-    salePrice: 148,
+
     column: ["Регулируемый шлем для сноуборда и лыж", "Материал: EPS + PC"],
   },
   {
