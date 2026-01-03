@@ -1124,30 +1124,54 @@ function parseEventDate(dateStr) {
   console.warn("Не удалось распарсить дату:", dateStr);
   return null;
 }
+
 function parseEventDateRange(dateStr) {
   const trimmed = dateStr.trim();
+  const year = new Date().getFullYear();
 
-  let m = trimmed.match(/^(\d{1,2})-(\d{1,2})\.(\d{1,2})$/);
+  let m = trimmed.match(/^(\d{1,2})\.(\d{1,2})-(\d{1,2})\.(\d{1,2})$/);
   if (m) {
-    const year = new Date().getFullYear();
-    const month = parseInt(m[3], 10) - 1;
     return {
-      startDate: new Date(year, month, +m[1]),
-      endDate: new Date(year, month, +m[2]),
+      startDate: new Date(year, +m[2] - 1, +m[1]),
+      endDate: new Date(year, +m[4] - 1, +m[3]),
     };
   }
 
   m = trimmed.match(/^(\d{1,2})-(\d{1,2})\.(\d{1,2})$/);
-  if (m && +m[1] > +m[2]) {
-    const year = new Date().getFullYear();
+  if (m) {
     return {
-      startDate: new Date(year, 0, +m[1]),
-      endDate: new Date(year, 1, +m[2]),
+      startDate: new Date(year, +m[3] - 1, +m[1]),
+      endDate: new Date(year, +m[3] - 1, +m[2]),
     };
   }
 
   return null;
 }
+
+// function parseEventDateRange(dateStr) {
+//   const trimmed = dateStr.trim();
+
+//   let m = trimmed.match(/^(\d{1,2})-(\d{1,2})\.(\d{1,2})$/);
+//   if (m) {
+//     const year = new Date().getFullYear();
+//     const month = parseInt(m[3], 10) - 1;
+//     return {
+//       startDate: new Date(year, month, +m[1]),
+//       endDate: new Date(year, month, +m[2]),
+//     };
+//   }
+
+//   m = trimmed.match(/^(\d{1,2})-(\d{1,2})\.(\d{1,2})$/);
+//   if (m && +m[1] > +m[2]) {
+//     const year = new Date().getFullYear();
+//     return {
+//       startDate: new Date(year, 0, +m[1]),
+//       endDate: new Date(year, 1, +m[2]),
+//     };
+//   }
+
+//   return null;
+// }
 
 export const TripPage = () => {
   const router = useRouter();

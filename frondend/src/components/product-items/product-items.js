@@ -30,28 +30,51 @@ export const ProductItems = ({ product, href }) => {
   return (
     <div className={styles["product-items"]}>
       <div className={styles["product-items__details"]}>
-        <Link href={href || "#"} passHref legacyBehavior>
-          <a
-            onClick={handleClickImg}
-            style={{ textDecoration: "none", color: "inherit" }}
-          >
-            <Image
-              className={styles["product-items__img"]}
-              src={"/img/" + product.img}
-              alt={product.title}
-              width={300}
-              height={300}
-              onLoadingComplete={() => setLoaded(true)}
-            />
+        <div className={styles["product-items__img-container"]}>
+          <Link href={href || "#"} passHref legacyBehavior>
+            <a
+              onClick={handleClickImg}
+              style={{
+                textDecoration: "none",
+                color: "inherit",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                width: "100%",
+                height: "100%",
+              }}
+            >
+              <Image
+                className={styles["product-items__img"]}
+                src={"/img/" + product.img}
+                alt={product.title}
+                width={300}
+                height={300}
+                onLoadingComplete={() => setLoaded(true)}
+                style={{
+                  width: "auto",
+                  height: "auto",
+                  maxWidth: "90%",
+                  maxHeight: "180px",
+                  objectFit: "contain",
+                  display: "block",
+                  margin: "0 auto",
+                }}
+                unoptimized={true}
+              />
+            </a>
+          </Link>
+        </div>
 
-            <span className={styles["product-items__title"]}>
-              {product.title.toUpperCase()}
-            </span>
-          </a>
-        </Link>
+        <span className={styles["product-items__title"]}>
+          {product.title.toUpperCase()}
+        </span>
 
         <p className={styles["product-items__desc"]}>{product.desc}</p>
-        <Buy product={product} />
+
+        <div className={styles["product-items__button-container"]}>
+          <Buy product={product} />
+        </div>
       </div>
     </div>
   );

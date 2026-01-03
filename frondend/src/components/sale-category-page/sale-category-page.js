@@ -54,28 +54,155 @@ export default function SaleCategoryPage({ section, type, subcategory }) {
       shallow: true,
       scroll: false,
     });
-  }, [inStockOnly, sortBy, isReady, query, router]);
+  }, [inStockOnly, sortBy, isReady]);
+
+  const getActualPrice = (product) => {
+    return product.salePrice || product.price;
+  };
 
   const filteredProducts = useMemo(() => {
-    if (!sectionData) return [];
+    let products = [];
 
-    let products = PRODUCT.filter((p) => {
-      if (subcategory) return p.subcategory === subcategory;
-      if (type) return p.category === type || p.subcategory === type;
-      return sectionData.types.some(
-        (t) => t.category === p.category || t.category === p.subcategory
+    if (subcategory) {
+      products = PRODUCT.filter((p) => p.subcategory === subcategory);
+    } else if (type) {
+      products = PRODUCT.filter(
+        (p) => p.category === type || p.subcategory === type
       );
-    });
+    } else if (sectionData) {
+      products = PRODUCT.filter((p) =>
+        sectionData.types.some(
+          (t) => t.category === p.category || t.category === p.subcategory
+        )
+      );
+    }
 
     if (inStockOnly) products = products.filter((p) => p.order === true);
 
-    if (sortBy === "price-asc") products.sort((a, b) => a.price - b.price);
-    if (sortBy === "price-desc") products.sort((a, b) => b.price - a.price);
+    if (sortBy === "price-asc") {
+      products.sort((a, b) => getActualPrice(a) - getActualPrice(b));
+    }
+    if (sortBy === "price-desc") {
+      products.sort((a, b) => getActualPrice(b) - getActualPrice(a));
+    }
 
     return products;
   }, [sectionData, type, subcategory, inStockOnly, sortBy]);
 
-  if (!type && !subcategory && sectionData?.types?.length > 0) {
+  const shouldShowCategories =
+    !type && !subcategory && sectionData?.types?.length > 0;
+
+  const hasProducts = filteredProducts.length > 0;
+
+  const renderFilters = () => (
+    <div style={{ display: "flex", gap: "4px", marginBottom: "10px" }}>
+      <FormControl
+        variant="outlined"
+        size="small"
+        sx={{ minWidth: 100, bgcolor: "white" }}
+      >
+        <InputLabel
+          sx={{
+            color: "#d87d4a",
+            fontWeight: 200,
+            "&.Mui-focused": { color: "#d87d4a !important" },
+          }}
+        >
+          Цена
+        </InputLabel>
+        <Select
+          value={sortBy}
+          onChange={(e) => setSortBy(e.target.value)}
+          displayEmpty
+          inputProps={{ "aria-label": "Цена" }}
+          label="Цена"
+          sx={{
+            bgcolor: sortBy ? "#fef3ed" : "white",
+            "& .MuiOutlinedInput-notchedOutline": {
+              borderColor: sortBy ? "#d87d4a" : "#f0b89a",
+              borderWidth: sortBy ? 2 : 1.5,
+            },
+            "&:hover .MuiOutlinedInput-notchedOutline": {
+              borderColor: "#d87d4a",
+            },
+            "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+              borderColor: "#d87d4a",
+              boxShadow: "0 0 0 3px rgba(216, 125, 74, 0.2)",
+            },
+            px: 2,
+          }}
+        >
+          <MenuItem
+            value="default"
+            sx={{
+              color: "#d87d4a",
+              bgcolor: sortBy === "default" ? "#fef3ed" : "transparent",
+              "&:hover": { bgcolor: "#fef3ed" },
+              "&.Mui-selected": { bgcolor: "#fef3ed" },
+              "&.Mui-selected:hover": { bgcolor: "#fde8db" },
+            }}
+          >
+            По умолчанию
+          </MenuItem>
+          <MenuItem
+            value="price-desc"
+            sx={{
+              color: "#d87d4a",
+              bgcolor: sortBy === "price-desc" ? "#fef3ed" : "transparent",
+              "&:hover": { bgcolor: "#fef3ed" },
+              "&.Mui-selected": { bgcolor: "#fef3ed" },
+              "&.Mui-selected:hover": { bgcolor: "#fde8db" },
+            }}
+          >
+            По убыванию
+          </MenuItem>
+          <MenuItem
+            value="price-asc"
+            sx={{
+              color: "#d87d4a",
+              bgcolor: sortBy === "price-asc" ? "#fef3ed" : "transparent",
+              "&:hover": { bgcolor: "#fef3ed" },
+              "&.Mui-selected": { bgcolor: "#fef3ed" },
+              "&.Mui-selected:hover": { bgcolor: "#fde8db" },
+            }}
+          >
+            По возрастанию
+          </MenuItem>
+        </Select>
+      </FormControl>
+
+      <ToggleButton
+        value="check"
+        selected={inStockOnly}
+        onChange={() => setInStockOnly((prev) => !prev)}
+        size="small"
+        sx={{
+          border: "1px solid #f0b89a",
+          color: inStockOnly ? "white" : "#d87d4a",
+          bgcolor: inStockOnly ? "#d87d4a" : "white",
+          fontWeight: 200,
+          px: 2,
+          textTransform: "none",
+          transition: "all 0.2s ease",
+          "&:hover": {
+            bgcolor: inStockOnly ? "#c96a3a" : "#fef3ed",
+            borderColor: "#d87d4a",
+          },
+          "&.Mui-selected": {
+            bgcolor: "#d87d4a",
+            color: "white",
+            "&:hover": {
+              bgcolor: "#c96a3a",
+            },
+          },
+        }}
+      >
+        В наличии
+      </ToggleButton>
+    </div>
+  );
+
+  if (shouldShowCategories) {
     return (
       <div className={styles["home-page-product"]}>
         {sectionData.types.map((t) => (
@@ -95,7 +222,6 @@ export default function SaleCategoryPage({ section, type, subcategory }) {
                       position: "relative",
                       width: "100%",
                       aspectRatio: "1 / 1",
-                      // display: isLoaded ? "block" : "none",
                     }}
                   >
                     <Image
@@ -132,103 +258,11 @@ export default function SaleCategoryPage({ section, type, subcategory }) {
     );
   }
 
-  if (filteredProducts.length > 0) {
-    return (
-      <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-        <div style={{ display: "flex", gap: "4px" }}>
-          <FormControl
-            variant="outlined"
-            size="small"
-            sx={{ minWidth: 100, bgcolor: "white" }}
-          >
-            <InputLabel
-              sx={{
-                color: "#d87d4a",
-                fontWeight: 200,
-                "&.Mui-focused": { color: "#d87d4a !important" },
-              }}
-            >
-              Цена
-            </InputLabel>
-            <Select
-              value={sortBy}
-              onChange={(e) => setSortBy(e.target.value)}
-              displayEmpty
-              inputProps={{ "aria-label": "Цена" }}
-              label="Цена"
-              sx={{
-                bgcolor: sortBy ? "#fef3ed" : "white",
-                "& .MuiOutlinedInput-notchedOutline": {
-                  borderColor: sortBy ? "#d87d4a" : "#f0b89a",
-                  borderWidth: sortBy ? 2 : 1.5,
-                },
-                "&:hover .MuiOutlinedInput-notchedOutline": {
-                  borderColor: "#d87d4a",
-                },
-                "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                  borderColor: "#d87d4a",
-                  boxShadow: "0 0 0 3px rgba(216, 125, 74, 0.2)",
-                },
-                px: 2,
-              }}
-            >
-              <MenuItem
-                value="price-desc"
-                sx={{
-                  color: "#d87d4a",
-                  bgcolor: sortBy === "price-desc" ? "#fef3ed" : "transparent",
-                  "&:hover": { bgcolor: "#fef3ed" },
-                  "&.Mui-selected": { bgcolor: "#fef3ed" },
-                  "&.Mui-selected:hover": { bgcolor: "#fde8db" },
-                }}
-              >
-                По убыванию
-              </MenuItem>
-              <MenuItem
-                value="price-asc"
-                sx={{
-                  color: "#d87d4a",
-                  bgcolor: sortBy === "price-asc" ? "#fef3ed" : "transparent",
-                  "&:hover": { bgcolor: "#fef3ed" },
-                  "&.Mui-selected": { bgcolor: "#fef3ed" },
-                  "&.Mui-selected:hover": { bgcolor: "#fde8db" },
-                }}
-              >
-                По возрастанию
-              </MenuItem>
-            </Select>
-          </FormControl>
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+      {renderFilters()}
 
-          <ToggleButton
-            value="check"
-            selected={inStockOnly}
-            onChange={() => setInStockOnly((prev) => !prev)}
-            size="small"
-            sx={{
-              border: "1px solid #f0b89a",
-              color: inStockOnly ? "white" : "#d87d4a",
-              bgcolor: inStockOnly ? "#d87d4a" : "white",
-              fontWeight: 200,
-              px: 2,
-              textTransform: "none",
-              transition: "all 0.2s ease",
-              "&:hover": {
-                bgcolor: inStockOnly ? "#c96a3a" : "#fef3ed",
-                borderColor: "#d87d4a",
-              },
-              "&.Mui-selected": {
-                bgcolor: "#d87d4a",
-                color: "white",
-                "&:hover": {
-                  bgcolor: "#c96a3a",
-                },
-              },
-            }}
-          >
-            В наличии
-          </ToggleButton>
-        </div>
-
+      {hasProducts ? (
         <div className={styles["home-page-product"]}>
           {filteredProducts.map((product) => (
             <div key={product.id} className={styles["category-product"]}>
@@ -252,13 +286,9 @@ export default function SaleCategoryPage({ section, type, subcategory }) {
             </div>
           ))}
         </div>
-      </div>
-    );
-  }
-
-  if (type || subcategory) {
-    return <p style={{ textAlign: "center" }}>Товары не найдены</p>;
-  }
-
-  return null;
+      ) : (
+        <p style={{ textAlign: "center" }}>Товары не найдены</p>
+      )}
+    </div>
+  );
 }

@@ -6,10 +6,8 @@ export default function SaleTypePage() {
   const router = useRouter();
   const { section, type } = router.query;
 
-  //   if (!router.isReady) return null;
-
   return (
-    <SalePage>
+    <SalePage section={section}>
       <SaleCategoryPage section={section} type={type} />
     </SalePage>
   );
