@@ -1,8 +1,10 @@
+"use client";
+
 import { useState, useEffect, useMemo, useRef } from "react";
 import { useRouter } from "next/router";
 import { PRODUCT } from "../product-range/product";
-import { Menu } from "antd";
 import { CATEGORY_PRODUCT } from "../product-range/categoryProduct";
+import { Menu } from "antd";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import { ProductItems } from "../product-items";
 import { TfiClose } from "react-icons/tfi";
@@ -23,41 +25,76 @@ import styles from "./sale-page.module.css";
 
 export default function SalePage({ children }) {
   const router = useRouter();
+
   const [loadedIds, setLoadedIds] = useState([]);
-  const [availabilityFilter, setAvailabilityFilter] = useState(false);
-  const [priceSort, setPriceSort] = useState(null);
+  const [activeType, setActiveType] = useState(null);
+  const [activeSubcategory, setActiveSubcategory] = useState(null);
   const [searchValue, setSearchValue] = useState("");
-  const [searchQuery, setSearchQuery] = useState("");
-  const [isInitialized, setIsInitialized] = useState(false);
   const [activeCategory, setActiveCategory] = useState(0);
   const [expandedAccordion, setExpandedAccordion] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileView, setIsMobileView] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setSearchQuery(searchValue);
-      localStorage.setItem("searchQuery", searchValue);
-    }, 200);
-    return () => clearTimeout(timer);
-  }, [searchValue]);
-
   const menuContainerRef = useRef(null);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [isInitialized, setIsInitialized] = useState(false);
 
-  useEffect(() => {
-    if (!menuContainerRef.current) return;
+  const findProductCategoryInfo = (productId) => {
+    for (const category of CATEGORY_PRODUCT) {
+      for (const type of category.types) {
+        if (type.products?.some((p) => p.id === productId)) {
+          return {
+            categoryPath: category.path,
+            typePath: type.category,
+            subcategoryPath: null,
+          };
+        }
 
-    const container = menuContainerRef.current;
-    const activeItem = container.querySelector(".ant-menu-item-selected");
-    if (!activeItem) return;
+        if (type.subcategories) {
+          for (const sub of type.subcategories) {
+            if (sub.products?.some((p) => p.id === productId)) {
+              return {
+                categoryPath: category.path,
+                typePath: type.category,
+                subcategoryPath: sub.subcategory,
+              };
+            }
+          }
+        }
+      }
+    }
 
-    const containerWidth = container.offsetWidth;
-    const itemLeft = activeItem.offsetLeft;
-    const itemWidth = activeItem.offsetWidth;
+    const product = PRODUCT.find((p) => p.id === productId);
+    if (product && product.category) {
+      return {
+        categoryPath: product.category,
+        typePath: product.type || null,
+        subcategoryPath: product.subcategory || null,
+      };
+    }
 
-    const scrollPos = itemLeft - containerWidth / 2 + itemWidth / 2;
-    container.scrollTo({ left: scrollPos, behavior: "smooth" });
-  }, [activeCategory]);
+    return null;
+  };
+
+  const getProductUrl = (productId) => {
+    const categoryInfo = findProductCategoryInfo(productId);
+
+    if (categoryInfo) {
+      let path = `/sale/${categoryInfo.categoryPath}`;
+
+      if (categoryInfo.typePath) {
+        path += `/${categoryInfo.typePath}`;
+      }
+
+      if (categoryInfo.subcategoryPath) {
+        path += `/${categoryInfo.subcategoryPath}`;
+      }
+
+      path += `/app/${productId}`;
+      return path;
+    }
+
+    return `/app/${productId}`;
+  };
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -66,59 +103,6 @@ export default function SalePage({ children }) {
       setIsInitialized(true);
     }
   }, []);
-
-  useEffect(() => {
-    const pathParts = router.asPath.split("/");
-    const categoryPath = pathParts[2];
-    const categoryIndex = CATEGORY_PRODUCT.findIndex(
-      (c) => c.path === categoryPath
-    );
-    if (categoryIndex !== -1) setActiveCategory(categoryIndex);
-  }, [router.asPath]);
-
-  useEffect(() => {
-    const checkScreen = () => {
-      const mobile = window.innerWidth <= 1200;
-      setIsMobileView(mobile);
-      if (!mobile) setIsMobileMenuOpen(false);
-    };
-    checkScreen();
-    window.addEventListener("resize", checkScreen);
-    return () => window.removeEventListener("resize", checkScreen);
-  }, []);
-
-  const filteredProducts = useMemo(() => {
-    if (!isInitialized || !searchQuery.trim()) return [];
-    const query = searchQuery.toLowerCase().trim();
-    let results = PRODUCT.filter((p) => p.title?.toLowerCase().includes(query));
-    if (availabilityFilter) results = results.filter((p) => p.order === true);
-    if (priceSort === "asc") results.sort((a, b) => a.price - b.price);
-    if (priceSort === "desc") results.sort((a, b) => b.price - a.price);
-    return results;
-  }, [searchQuery, isInitialized, availabilityFilter, priceSort]);
-
-  const currentCategory = CATEGORY_PRODUCT[activeCategory];
-  const getProductKey = (product, index) => `product-${product.id}-${index}`;
-
-  const handleCategoryClick = (e) => {
-    const idx = Number(e.key);
-    setActiveCategory(idx);
-    setExpandedAccordion(null);
-    setSearchValue("");
-    setSearchQuery("");
-    localStorage.removeItem("searchQuery");
-    router.push(`/sale/${CATEGORY_PRODUCT[idx].path}`);
-  };
-
-  const handleTypeClick = (typeCategory) =>
-    router.push(`/sale/${currentCategory.path}/${typeCategory}`);
-
-  const handleSubcategoryClick = (subPath) =>
-    router.push(`/sale/${currentCategory.path}/${subPath}`);
-
-  const toggleMobileMenu = () =>
-    isMobileView && setIsMobileMenuOpen((prev) => !prev);
-  const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   const renderAccordion = () =>
     currentCategory?.types?.map((type) => (
@@ -146,21 +130,28 @@ export default function SalePage({ children }) {
               <ExpandMoreIcon style={{ color: "#ff6f00" }} />
             ) : null
           }
-          sx={{ cursor: "pointer" }}
+          sx={{
+            cursor: "pointer",
+            minHeight: 40,
+            "&.Mui-expanded": { minHeight: 40 },
+            "& .MuiAccordionSummary-content": { margin: 0 },
+            "& .MuiAccordionSummary-content.Mui-expanded": { margin: 0 },
+          }}
           onClick={() => {
             handleTypeClick(type.category);
             closeMobileMenu();
           }}
         >
-          <span
-            style={{
-              fontWeight: 700,
+          <Typography
+            sx={{
               fontFamily: "RoadRadio, sans-serif",
               fontSize: 14,
+              fontWeight: activeType === type.category ? 700 : 500,
+              color: activeType === type.category ? "#d87d4a" : "inherit",
             }}
           >
             {type.title}
-          </span>
+          </Typography>
         </AccordionSummary>
 
         {type.subcategories?.length > 0 && (
@@ -170,19 +161,27 @@ export default function SalePage({ children }) {
                 <ListItemButton
                   key={sub.subcategory}
                   sx={{ pl: 3 }}
-                  onClick={() => {
+                  onMouseDown={(e) => e.stopPropagation()}
+                  onClick={(e) => {
+                    e.stopPropagation();
                     handleSubcategoryClick(sub.subcategory);
                     closeMobileMenu();
                   }}
                 >
-                  <span
-                    style={{
+                  <Typography
+                    sx={{
                       fontFamily: "RoadRadio, sans-serif",
                       fontSize: 14,
+                      fontWeight:
+                        activeSubcategory === sub.subcategory ? 600 : 400,
+                      color:
+                        activeSubcategory === sub.subcategory
+                          ? "#d87d4a"
+                          : "inherit",
                     }}
                   >
                     {sub.title}
-                  </span>
+                  </Typography>
                 </ListItemButton>
               ))}
             </List>
@@ -190,6 +189,143 @@ export default function SalePage({ children }) {
         )}
       </Accordion>
     ));
+
+  useEffect(() => {
+    const pathParts = router.asPath.split("/");
+    const categoryPath = pathParts[2];
+    const categoryIndex = CATEGORY_PRODUCT.findIndex(
+      (c) => c.path === categoryPath
+    );
+    if (categoryIndex !== -1) setActiveCategory(categoryIndex);
+  }, [router.asPath]);
+
+  const filteredProducts = useMemo(() => {
+    if (!isInitialized || !searchQuery.trim()) return [];
+    const query = searchQuery.toLowerCase().trim();
+    return PRODUCT.filter((p) => p.title?.toLowerCase().includes(query));
+  }, [searchQuery, isInitialized]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setSearchQuery(searchValue);
+      localStorage.setItem("searchQuery", searchValue);
+    }, 200);
+    return () => clearTimeout(timer);
+  }, [searchValue]);
+
+  useEffect(() => {
+    if (!router.isReady) return;
+
+    const [, , categoryPath, typeOrSub] = router.asPath.split("/");
+
+    const categoryIndex = CATEGORY_PRODUCT.findIndex(
+      (c) => c.path === categoryPath
+    );
+
+    if (categoryIndex !== -1) {
+      setActiveCategory(categoryIndex);
+    }
+
+    const category = CATEGORY_PRODUCT[categoryIndex];
+    if (!category) return;
+
+    let foundType = null;
+    let foundSub = null;
+
+    category.types?.forEach((type) => {
+      if (type.category === typeOrSub) {
+        foundType = type.category;
+      }
+      type.subcategories?.forEach((sub) => {
+        if (sub.subcategory === typeOrSub) {
+          foundType = type.category;
+          foundSub = sub.subcategory;
+        }
+      });
+    });
+
+    setActiveType(foundType);
+    setActiveSubcategory(foundSub);
+    setExpandedAccordion(foundType);
+  }, [router.isReady, router.asPath]);
+
+  useEffect(() => {
+    if (!menuContainerRef.current) return;
+
+    const container = menuContainerRef.current;
+    const activeItem = container.querySelector(".ant-menu-item-selected");
+    if (!activeItem) return;
+
+    const containerWidth = container.offsetWidth;
+    const itemLeft = activeItem.offsetLeft;
+    const itemWidth = activeItem.offsetWidth;
+
+    const scrollPos = itemLeft - containerWidth / 2 + itemWidth / 2;
+    container.scrollTo({ left: scrollPos, behavior: "smooth" });
+  }, [activeCategory]);
+
+  useEffect(() => {
+    const checkScreen = () => {
+      const mobile = window.innerWidth <= 1200;
+      setIsMobileView(mobile);
+      if (!mobile) setIsMobileMenuOpen(false);
+    };
+
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
+  const handleSearchChange = (e) => {
+    const value = e.target.value;
+    setSearchQuery(value);
+    localStorage.setItem("searchQuery", value);
+    setSearchValue(e.target.value);
+  };
+
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
+
+  const currentCategory = CATEGORY_PRODUCT[activeCategory];
+
+  const handleCategoryClick = (e) => {
+    if (!router.isReady) return;
+    const idx = Number(e.key);
+    setActiveCategory(idx);
+    setExpandedAccordion(null);
+    setSearchValue("");
+    setSearchQuery("");
+    localStorage.removeItem("searchQuery");
+
+    router.push(`/sale/${CATEGORY_PRODUCT[idx].path}`, undefined, {
+      shallow: true,
+    });
+  };
+
+  const toggleMobileMenu = () => {
+    if (isMobileView) setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleTypeClick = (typeCategory) => {
+    setActiveType(typeCategory);
+    setActiveSubcategory(null);
+    setExpandedAccordion(typeCategory);
+
+    if (!router.isReady || !currentCategory) return;
+
+    router.push(`/sale/${currentCategory.path}/${typeCategory}`, undefined, {
+      shallow: true,
+    });
+  };
+
+  const handleSubcategoryClick = (subcategoryPath) => {
+    const category = CATEGORY_PRODUCT[activeCategory];
+
+    setActiveSubcategory(subcategoryPath);
+
+    router.push(`/sale/${category.path}/${subcategoryPath}`);
+  };
+
+  const getProductKey = (product, index) => `product-${product.id}-${index}`;
 
   return (
     <>
@@ -201,11 +337,15 @@ export default function SalePage({ children }) {
           <Menu
             mode="horizontal"
             selectedKeys={[`${activeCategory}`]}
-            items={CATEGORY_PRODUCT.map((c, i) => ({ key: i, label: c.title }))}
+            items={CATEGORY_PRODUCT.map((c, i) => ({
+              key: i,
+              label: c.title.trim(),
+            }))}
             className={styles["sticky-horizontal-menu"]}
             style={{
               flex: 1,
               marginBottom: 10,
+
               fontSize: isMobileView ? 18 : 14.5,
               fontFamily: "RoadRadio",
             }}
@@ -285,46 +425,64 @@ export default function SalePage({ children }) {
             </div>
 
             {searchQuery.trim() ? (
-              filteredProducts.length > 0 ? (
-                <div className={styles["home-page-product"]}>
-                  {filteredProducts.map((product, index) => {
-                    const isLoaded = loadedIds.includes(product.id);
-                    return (
-                      <div
-                        key={getProductKey(product, index)}
-                        className={styles["category-product"]}
-                      >
-                        <Card
-                          sx={{
-                            boxShadow: 3,
-                            height: "95%",
-                            overflow: "hidden",
-                            cursor: "pointer",
-                            transform: "none",
-                            "&:hover": { transform: "none", boxShadow: 3 },
-                            "&:focus": { outline: "none" },
-                            "&:active": { transform: "none" },
-                          }}
-                          onClick={() => router.push(`/app/${product.id}`)}
-                        >
-                          <CardActionArea disableRipple disableTouchRipple>
-                            {isLoaded ? (
-                              <Skeleton variant="rectangular" height={450} />
-                            ) : (
-                              <ProductItems product={product} />
-                            )}
-                          </CardActionArea>
-                        </Card>
-                      </div>
-                    );
-                  })}
-                </div>
-              ) : (
-                <div className={styles["not-found"]}>
-                  <p>Ничего не найдено по запросу "{searchQuery}"</p>
-                  <p>Попробуйте изменить запрос</p>
-                </div>
-              )
+              <div>
+                {filteredProducts.length > 0 ? (
+                  <>
+                    <div className={styles["home-page-product"]}>
+                      {filteredProducts.map((product, index) => {
+                        const isLoaded = loadedIds.includes(product.id);
+                        const productUrl = getProductUrl(product.id);
+
+                        return (
+                          <div
+                            key={getProductKey(product, index)}
+                            className={styles["category-product"]}
+                          >
+                            <Card
+                              sx={{
+                                boxShadow: 3,
+                                height: "95%",
+                                overflow: "hidden",
+                                cursor: "pointer",
+                                transition: "transform 0.2s ease",
+                                "&:hover": { transform: "scale(1.03)" },
+                              }}
+                              onClick={() => {
+                                localStorage.setItem(
+                                  "saleState",
+                                  JSON.stringify({
+                                    activeCategory,
+                                    expandedAccordion,
+                                  })
+                                );
+                                router.push(productUrl);
+                              }}
+                            >
+                              <CardActionArea
+                                sx={{
+                                  flexGrow: 1,
+                                  display: "flex",
+                                  flexDirection: "column",
+                                }}
+                              >
+                                <ProductItems
+                                  product={product}
+                                  href={productUrl}
+                                />
+                              </CardActionArea>
+                            </Card>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </>
+                ) : (
+                  <div className={styles["not-found"]}>
+                    <p>Ничего не найдено по запросу "{searchQuery}"</p>
+                    <p>Попробуйте изменить запрос</p>
+                  </div>
+                )}
+              </div>
             ) : (
               <div className={styles["content"]}>{children}</div>
             )}
