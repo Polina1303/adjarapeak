@@ -93,6 +93,11 @@ export const CATEGORY_PRODUCT = [
         category: "winter_chains",
         img: "IMG_5012.PNG",
       },
+      {
+        title: "Солнцезащитный крем",
+        category: "sunscreen",
+        img: "gunes-kremi-200-ml-active-spf50.png",
+      },
     ],
   },
   {
@@ -385,6 +390,7 @@ export const CATEGORY_PRODUCT = [
           { title: "Топоры", subcategory: "axe" },
           { title: "Пилы", subcategory: "saw" },
           { title: "Лопаты", subcategory: "shovel" },
+          { title: "плоскогубцы", subcategory: "pliers" },
           { title: "Аксессуары", subcategory: "knife_accessories" },
         ],
       },
@@ -518,7 +524,7 @@ export const CATEGORY_PRODUCT = [
       },
       {
         title: "ФУТБОЛ",
-        img: "size-4-football-sunny-300-green-kipsta.png",
+        img: "ogretici-futbol-topu-5-numara-sari-pembe-learning-ball.png",
         category: "football",
         subcategories: [
           { title: "Мячи", subcategory: "football" },
