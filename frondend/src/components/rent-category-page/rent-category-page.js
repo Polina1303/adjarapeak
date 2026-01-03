@@ -130,14 +130,16 @@ export default function RentCategoryPage({ section, type, subcategory }) {
                 }}
               >
                 <CardActionArea disableRipple disableTouchRipple>
-                  {!isLoaded && <Skeleton variant="rectangular" height={250} />}
+                  {!isLoaded && <Skeleton variant="rectangular" height={300} />}
                   {t.img && (
                     <div
                       style={{
                         position: "relative",
                         width: "100%",
                         aspectRatio: "1 / 1",
-                        display: isLoaded ? "block" : "none",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
                       }}
                     >
                       <Image
@@ -151,6 +153,7 @@ export default function RentCategoryPage({ section, type, subcategory }) {
                                    300px"
                         style={{
                           objectFit: "cover",
+                          objectPosition: "center",
                         }}
                         onLoadingComplete={() =>
                           setLoadedIds((prev) => [...prev, t.category])
