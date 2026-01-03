@@ -23,6 +23,25 @@ export const CATEGORY_PRODUCT = [
         title: "Одежда",
         img: "Hd899fa17d8b647e0a55154c27a102dc0d.png",
         category: "closes_ski",
+        subcategories: [
+          {
+            title: "штаны",
+            subcategory: "pants_ski",
+          },
+          {
+            title: "куртки",
+            subcategory: "jackets_ski",
+          },
+          {
+            title: "комплекты",
+            subcategory: "set_ski",
+          },
+        ],
+      },
+      {
+        title: "БАФФЫ И БАЛАКЛАВЫ",
+        img: "adult-ski-neck-warmer.avif",
+        category: "buff",
       },
       {
         title: "ТЕРМОБЕЛЬЕ",
@@ -68,6 +87,16 @@ export const CATEGORY_PRODUCT = [
         title: "РЮКЗАКИ И ЧЕХЛЫ",
         category: "bag_sky",
         img: "kayak-cantasi-siyah-100.png",
+      },
+      {
+        title: "Зимние цепи",
+        category: "winter_chains",
+        img: "IMG_5012.PNG",
+      },
+      {
+        title: "Солнцезащитный крем",
+        category: "sunscreen",
+        img: "gunes-kremi-200-ml-active-spf50.png",
       },
     ],
   },
@@ -142,21 +171,22 @@ export const CATEGORY_PRODUCT = [
         img: "d2ae7e6c-goods.webp",
         category: "care",
       },
+
+      {
+        title: "ТЕРМОБЕЛЬЕ",
+        img: "19.38.07.jpg",
+        category: "thermalUnderwear",
+      },
       {
         title: "НОСКИ",
         img: "sock-hike-50-mid-2-pack-navy.png",
         category: "socks",
       },
       {
-        title: "ТЕРМОБЕЛЬЕ",
-        img: "19.38.07.jpg",
-        category: "thermalUnderwear",
+        title: "НИЖНЕЕ БЕЛЬЕ",
+        img: "fila-man-boxers-2-pack_1.jpg",
+        category: "underwear",
       },
-      // {
-      //   title: "НИЖНЕЕ БЕЛЬЕ",
-      //   img: "",
-      //   category: "underwear",
-      // },
 
       // "clothes",
       // "shoes",
@@ -360,6 +390,7 @@ export const CATEGORY_PRODUCT = [
           { title: "Топоры", subcategory: "axe" },
           { title: "Пилы", subcategory: "saw" },
           { title: "Лопаты", subcategory: "shovel" },
+          { title: "плоскогубцы", subcategory: "pliers" },
           { title: "Аксессуары", subcategory: "knife_accessories" },
         ],
       },
@@ -493,7 +524,7 @@ export const CATEGORY_PRODUCT = [
       },
       {
         title: "ФУТБОЛ",
-        img: "size-4-football-sunny-300-green-kipsta.png",
+        img: "ogretici-futbol-topu-5-numara-sari-pembe-learning-ball.png",
         category: "football",
         subcategories: [
           { title: "Мячи", subcategory: "football" },
@@ -533,6 +564,12 @@ export const CATEGORY_PRODUCT = [
         img: "ocr.jpeg",
         category: "air",
         subcategories: [{ title: "Насосы", subcategory: "pump" }],
+      },
+      {
+        title: "Изотоник",
+        img: "on-the-go-elektrolit-limon-tablet.avif",
+        category: "isotonic",
+        // subcategories: [{ title: "Насосы", subcategory: "pump" }],
       },
     ],
   },
@@ -579,9 +616,14 @@ export const CATEGORY_PRODUCT = [
         category: "hoop",
       },
       {
-        title: "ГИМНАСТИКА И ПИЛАТЕС",
-        img: "2vefe5.jpg",
+        title: "Обруч / хулахуп ",
+        img: "769866.png",
         category: "gymnastic",
+      },
+      {
+        title: "Баланс - борд",
+        img: "IMG_4474.PNG",
+        category: "balance_board",
       },
     ],
   },
