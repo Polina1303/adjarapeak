@@ -33,6 +33,8 @@ export default function SalePage({ children }) {
   const [expandedAccordion, setExpandedAccordion] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileView, setIsMobileView] = useState(false);
+  const [activeSubcategory, setActiveSubcategory] = useState(null);
+  const [activeType, setActiveType] = useState(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -43,6 +45,42 @@ export default function SalePage({ children }) {
   }, [searchValue]);
 
   const menuContainerRef = useRef(null);
+
+  useEffect(() => {
+    if (!router.isReady) return;
+
+    const [, , categoryPath, typeOrSub] = router.asPath.split("/");
+
+    const categoryIndex = CATEGORY_PRODUCT.findIndex(
+      (c) => c.path === categoryPath
+    );
+
+    if (categoryIndex !== -1) {
+      setActiveCategory(categoryIndex);
+    }
+
+    const category = CATEGORY_PRODUCT[categoryIndex];
+    if (!category) return;
+
+    let foundType = null;
+    let foundSub = null;
+
+    category.types?.forEach((type) => {
+      if (type.category === typeOrSub) {
+        foundType = type.category;
+      }
+      type.subcategories?.forEach((sub) => {
+        if (sub.subcategory === typeOrSub) {
+          foundType = type.category;
+          foundSub = sub.subcategory;
+        }
+      });
+    });
+
+    setActiveType(foundType);
+    setActiveSubcategory(foundSub);
+    setExpandedAccordion(foundType);
+  }, [router.isReady, router.asPath]);
 
   useEffect(() => {
     if (!menuContainerRef.current) return;
@@ -100,6 +138,25 @@ export default function SalePage({ children }) {
   const currentCategory = CATEGORY_PRODUCT[activeCategory];
   const getProductKey = (product, index) => `product-${product.id}-${index}`;
 
+  const handleTypeClick = (typeCategory) => {
+    setActiveType(typeCategory);
+    setActiveSubcategory(null);
+    setExpandedAccordion(typeCategory);
+
+    if (!router.isReady || !currentCategory) return;
+
+    router.push(`/sale/${currentCategory.path}/${typeCategory}`, undefined, {
+      shallow: true,
+    });
+  };
+
+  const handleSubcategoryClick = (subPath) => {
+    const category = CATEGORY_PRODUCT[activeCategory];
+
+    setActiveSubcategory(subPath);
+    router.push(`/sale/${currentCategory.path}/${subPath}`);
+  };
+
   const handleCategoryClick = (e) => {
     const idx = Number(e.key);
     setActiveCategory(idx);
@@ -109,12 +166,6 @@ export default function SalePage({ children }) {
     localStorage.removeItem("searchQuery");
     router.push(`/sale/${CATEGORY_PRODUCT[idx].path}`);
   };
-
-  const handleTypeClick = (typeCategory) =>
-    router.push(`/sale/${currentCategory.path}/${typeCategory}`);
-
-  const handleSubcategoryClick = (subPath) =>
-    router.push(`/sale/${currentCategory.path}/${subPath}`);
 
   const toggleMobileMenu = () =>
     isMobileView && setIsMobileMenuOpen((prev) => !prev);
@@ -146,21 +197,28 @@ export default function SalePage({ children }) {
               <ExpandMoreIcon style={{ color: "#ff6f00" }} />
             ) : null
           }
-          sx={{ cursor: "pointer" }}
+          sx={{
+            cursor: "pointer",
+            minHeight: 40,
+            "&.Mui-expanded": { minHeight: 40 },
+            "& .MuiAccordionSummary-content": { margin: 0 },
+            "& .MuiAccordionSummary-content.Mui-expanded": { margin: 0 },
+          }}
           onClick={() => {
             handleTypeClick(type.category);
             closeMobileMenu();
           }}
         >
-          <span
-            style={{
-              fontWeight: 700,
+          <Typography
+            sx={{
               fontFamily: "RoadRadio, sans-serif",
               fontSize: 14,
+              fontWeight: activeType === type.category ? 700 : 500,
+              color: activeType === type.category ? "#d87d4a" : "inherit",
             }}
           >
             {type.title}
-          </span>
+          </Typography>
         </AccordionSummary>
 
         {type.subcategories?.length > 0 && (
@@ -170,19 +228,27 @@ export default function SalePage({ children }) {
                 <ListItemButton
                   key={sub.subcategory}
                   sx={{ pl: 3 }}
-                  onClick={() => {
+                  onMouseDown={(e) => e.stopPropagation()}
+                  onClick={(e) => {
+                    e.stopPropagation();
                     handleSubcategoryClick(sub.subcategory);
                     closeMobileMenu();
                   }}
                 >
-                  <span
-                    style={{
+                  <Typography
+                    sx={{
                       fontFamily: "RoadRadio, sans-serif",
                       fontSize: 14,
+                      fontWeight:
+                        activeSubcategory === sub.subcategory ? 600 : 400,
+                      color:
+                        activeSubcategory === sub.subcategory
+                          ? "#d87d4a"
+                          : "inherit",
                     }}
                   >
                     {sub.title}
-                  </span>
+                  </Typography>
                 </ListItemButton>
               ))}
             </List>

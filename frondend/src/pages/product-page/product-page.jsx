@@ -9,12 +9,14 @@ import { Buy } from "../../components/buy/buy";
 import { PRODUCT } from "../../components/product-range/product";
 import { RENT } from "../../components/product-range/rent";
 import { RENT_SKY } from "../../components/product-range/rent-sky";
+import { CATEGORY_PRODUCT } from "../../components/product-range/categoryProduct";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
 import DoneIcon from "@mui/icons-material/Done";
 import { RecommendedCarousel } from "../../components/carousel";
 import { getProductById } from "../../../lib/cache";
+import { CATEGORY_RENT } from "../../components/product-range/categoryRent";
 import Image from "next/image";
 import styles from "./product-page.module.css";
 
@@ -198,21 +200,26 @@ export const ProductPage = () => {
   }, [router]);
 
   const getRecommendedProducts = useCallback(() => {
-    if (!product || !product.category) return [];
+    if (!product) return [];
 
-    const allProducts = [...PRODUCT, ...RENT, ...RENT_SKY].filter(
-      (item) => item.id !== product.id
-    );
+    const isRent =
+      RENT.some((p) => p.id === product.id) ||
+      RENT_SKY.some((p) => p.id === product.id);
 
-    const sameCategoryProducts = allProducts
+    const allSource = isRent ? [...RENT, ...RENT_SKY] : [...PRODUCT];
+
+    let filtered = allSource.filter((item) => item.id !== product.id);
+
+    const priorityItems = filtered
       .filter((item) => item.category === product.category)
-      .sort(() => Math.random() - 0.5);
+      .slice(0, 3);
 
-    if (sameCategoryProducts.length >= 10) {
-      return sameCategoryProducts.slice(0, 10);
-    }
+    const otherItems = filtered
+      .filter((item) => item.category !== product.category)
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 7);
 
-    return sameCategoryProducts;
+    return [...priorityItems, ...otherItems];
   }, [product]);
 
   const recommendedProducts = getRecommendedProducts();
@@ -340,10 +347,7 @@ export const ProductPage = () => {
 
             <Box>
               {isRentProduct ? null : (
-                <Link
-                  className={styles["product-link"]}
-                  href="/app/delivery_terms"
-                >
+                <Link className={styles["product-link"]} href="/delivery-terms">
                   Условия доставки
                 </Link>
               )}

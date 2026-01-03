@@ -12,6 +12,13 @@
 .back-button:hover {
   color: rgba(247, 112, 45, 0.933);
 }
+.slide {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  border-radius: 12px;
+}
 
 .back-button-cover {
   color: #000; 

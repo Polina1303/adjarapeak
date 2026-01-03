@@ -22,7 +22,7 @@ import { useSearchParams, usePathname } from "next/navigation";
 import { FormControl, Select, MenuItem, InputLabel } from "@mui/material";
 import styles from "../sale-page/sale-page.module.css";
 
-export default function RentCategoryPage({ section, type }) {
+export default function RentCategoryPage({ section, type, subcategory }) {
   const router = useRouter();
   const [loadedIds, setLoadedIds] = useState([]);
   const pathname = usePathname();
@@ -56,24 +56,64 @@ export default function RentCategoryPage({ section, type }) {
     );
   }, [inStockOnly, sortBy, pathname, router]);
 
-  let filteredProducts = [];
+  const allProducts = [...RENT, ...RENT_SKY];
 
-  if (type) {
-    filteredProducts = [...RENT, ...RENT_SKY].filter(
-      (p) => p.type === type || p.category === type
+  const sectionTypes = sectionData?.types ?? [];
+
+  const typeParam = type ? decodeURIComponent(type) : undefined;
+  const subcategoryParam = subcategory
+    ? decodeURIComponent(subcategory)
+    : undefined;
+
+  const allSubcats = sectionTypes.flatMap((t) =>
+    (t.subcategories ?? []).map((sc) => ({
+      slug: sc.subcategory,
+      parentType: t.category,
+    }))
+  );
+
+  const isType =
+    typeParam && sectionTypes.some((t) => t.category === typeParam);
+  const isSubcatInTypeParam =
+    typeParam && allSubcats.some((sc) => sc.slug === typeParam);
+
+  let selectedType = isType ? typeParam : undefined;
+  let selectedSubcategory =
+    subcategoryParam || (isSubcatInTypeParam ? typeParam : undefined);
+
+  if (!selectedType && selectedSubcategory) {
+    selectedType = allSubcats.find(
+      (sc) => sc.slug === selectedSubcategory
+    )?.parentType;
+  }
+
+  let filteredProducts = allProducts;
+
+  if (selectedType) {
+    filteredProducts = filteredProducts.filter((p) => p.type === selectedType);
+  }
+
+  if (selectedSubcategory) {
+    filteredProducts = filteredProducts.filter(
+      (p) => p.subcategory === selectedSubcategory
     );
   }
-  if (inStockOnly) {
-    filteredProducts = filteredProducts.filter((p) => p.order === true);
+
+  if (!selectedType && !selectedSubcategory) {
+    const allowed = new Set(sectionTypes.map((t) => t.category));
+    filteredProducts = filteredProducts.filter((p) => allowed.has(p.type));
   }
+  const getActualPrice = (product) => {
+    return product.salePrice || product.price;
+  };
 
   const sortedProducts = [...filteredProducts].sort((a, b) => {
-    if (sortBy === "price-asc") return a.price - b.price;
-    if (sortBy === "price-desc") return b.price - a.price;
+    if (sortBy === "price-asc") return getActualPrice(a) - getActualPrice(b);
+    if (sortBy === "price-desc") return getActualPrice(b) - getActualPrice(a);
     return 0;
   });
 
-  if (!type && sectionData?.types?.length > 0) {
+  if (!type && !subcategory && sectionData?.types?.length > 0) {
     return (
       <div className={styles["home-page-product"]}>
         {sectionData.types.map((t) => {
@@ -83,7 +123,7 @@ export default function RentCategoryPage({ section, type }) {
           return (
             <div
               key={t.category}
-              // className={styles["category-product"]}
+              className={styles["category-product"]}
               onClick={() => router.push(routePath)}
               style={{ cursor: "pointer" }}
             >
@@ -95,30 +135,34 @@ export default function RentCategoryPage({ section, type }) {
                 }}
               >
                 <CardActionArea disableRipple disableTouchRipple>
-                  {!isLoaded && <Skeleton variant="rectangular" height={250} />}
+                  {!isLoaded && <Skeleton variant="rectangular" height={300} />}
                   {t.img && (
                     <div
                       style={{
                         position: "relative",
                         width: "100%",
                         aspectRatio: "1 / 1",
-                        display: isLoaded ? "block" : "none",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
                       }}
                     >
                       <Image
                         src={`/img/${t.img}`}
                         alt={t.title}
-                        fill
+                        priority
+                        width={300}
+                        height={300}
                         sizes="(max-width: 600px) 100vw,
                                    (max-width: 900px) 50vw,
                                    300px"
                         style={{
                           objectFit: "cover",
+                          objectPosition: "center",
                         }}
                         onLoadingComplete={() =>
                           setLoadedIds((prev) => [...prev, t.category])
                         }
-                        priority
                       />
                     </div>
                   )}
@@ -286,7 +330,7 @@ export default function RentCategoryPage({ section, type }) {
     );
   }
 
-  if (type) {
+  if (type || subcategory) {
     return <p style={{ textAlign: "center" }}>Товары не найдены</p>;
   }
 

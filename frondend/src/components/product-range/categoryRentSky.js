@@ -3,10 +3,10 @@ export const CATEGORY_RENT_SKY = [
     title: "ВСЁ",
     // type:'all',
   },
-  {
-    title: "КОМПЛЕКТЫ",
-    type: "set",
-  },
+  // {
+  //   title: "КОМПЛЕКТЫ",
+  //   type: "set",
+  // },
   {
     title: "ЛЫЖИ",
     type: "sky",
@@ -15,22 +15,28 @@ export const CATEGORY_RENT_SKY = [
     title: "СНОУБОРД",
     type: "snowboard",
   },
+
   {
-    title: "КУРТКИ",
-    type: "jacket",
+    title: "одежда",
+    type: "clothes",
+    subcategories: [
+      { title: "КОМБИНЕЗОНЫ", subcategory: "overall" },
+      { title: "ШТАНЫ", subcategory: "pants" },
+      { title: "ПЕРЧАТКИ", subcategory: "gloves" },
+    ],
   },
-  {
-    title: "КОМБИНЕЗОНЫ",
-    type: "overall",
-  },
-  {
-    title: "ШТАНЫ",
-    type: "pants",
-  },
-  {
-    title: "ПЕРЧАТКИ",
-    type: "gloves",
-  },
+  // {
+  //   title: "КОМБИНЕЗОНЫ",
+  //   type: "overall",
+  // },
+  // {
+  //   title: "ШТАНЫ",
+  //   type: "pants",
+  // },
+  // {
+  //   title: "ПЕРЧАТКИ",
+  //   type: "gloves",
+  // },
   {
     title: "ШЛЕМ",
     type: "helmet",
@@ -44,7 +50,7 @@ export const CATEGORY_RENT_SKY = [
     type: "protection",
   },
   {
-    title: "ИНОЕ",
+    title: "ТЮБИНГ, САНКИ, СНЕГОСТУПЫ",
     type: "dif",
   },
 ];

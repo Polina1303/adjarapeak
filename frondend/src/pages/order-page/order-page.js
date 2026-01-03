@@ -43,9 +43,7 @@ export const OrderPage = () => {
         Доставка по Батуми — 10 лари, бесплатно от 300. По Грузии — от 20 лари,
         бесплатно от 500.❗️Не распространяется на аренду.
         <br />
-        <span style={{ fontFamily: "RoadRadio-Thin" }}>
-          Cамовывоз по адресу:
-        </span>
+        <span>Cамовывоз по адресу:</span>
         <MdLocationPin size={25} color={"#de682d"} />
         <a
           href="https://www.google.com/maps/place/Adjara+Peak+%7C+Sport,+Hiking,+Ski+%26+Outdoor+Equipment+-+rental+and+sales/@41.6333505,41.614659,177m/data=!3m1!1e3!4m14!1m7!3m6!1s0x4067858105d2e915:0x5a619f050a0a9584!2sAdjara+Peak+%7C+Sport,+Hiking,+Ski+%26+Outdoor+Equipment+-+rental+and+sales!8m2!3d41.6333992!4d41.615391!16s%2Fg%2F11t40_rjr5!3m5!1s0x4067858105d2e915:0x5a619f050a0a9584!8m2!3d41.6333992!4d41.615391!16s%2Fg%2F11t40_rjr5?entry=ttu&g_ep=EgoyMDI1MDQyNy4xIKXMDSoASAFQAw%3D%3D"
@@ -59,7 +57,7 @@ export const OrderPage = () => {
           <br /> В ближайшее время наш представитель свяжется с вами.
           <br /> С уважением, Adjara Peak.
         </p>
-        <div style={{ marginTop: 10, fontFamily: "RoadRadio-Thin" }}>
+        <div style={{ marginTop: 10 }}>
           Всем подписчикам нашего
           <span>
             {" "}
