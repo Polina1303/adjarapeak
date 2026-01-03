@@ -345,7 +345,8 @@ export default function SalePage({ children }) {
             style={{
               flex: 1,
               marginBottom: 10,
-              fontSize: "14.5px",
+
+              fontSize: isMobileView ? 18 : 14.5,
               fontFamily: "RoadRadio",
             }}
             onClick={handleCategoryClick}

@@ -50,7 +50,7 @@ export const CATEGORY_RENT_SKY = [
     type: "protection",
   },
   {
-    title: "ИНОЕ",
+    title: "ТЮБИНГ, САНКИ, СНЕГОСТУПЫ",
     type: "dif",
   },
 ];

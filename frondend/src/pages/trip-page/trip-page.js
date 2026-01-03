@@ -961,7 +961,7 @@ const events = [
       "Продолжаем катать по горам и зимой. Можно заказать индивидуальный джип-трансфер — идеально для семьи 3–4 человека. Формат - 1,2 дня",
     price: "от 600 до 900",
     image: "/imageTrip/dzipimportant.jpg",
-    link: "/ski-tour",
+    link: "/dzip-page",
     type: "skiTour",
   },
   {
