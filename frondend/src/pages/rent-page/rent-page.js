@@ -26,8 +26,51 @@ export default function RentPage({ children }) {
   const router = useRouter();
 
   const [loadedIds, setLoadedIds] = useState([]);
-
+  const [activeType, setActiveType] = useState(null);
+  const [activeSubcategory, setActiveSubcategory] = useState(null);
   const [searchValue, setSearchValue] = useState("");
+  const [activeCategory, setActiveCategory] = useState(0);
+  const [expandedAccordion, setExpandedAccordion] = useState(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileView, setIsMobileView] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [isInitialized, setIsInitialized] = useState(false);
+
+  useEffect(() => {
+    if (!router.isReady) return;
+
+    const [, , categoryPath, typeOrSub] = router.asPath.split("/");
+
+    const categoryIndex = CATEGORY_RENT.findIndex(
+      (c) => c.path === categoryPath
+    );
+
+    if (categoryIndex !== -1) {
+      setActiveCategory(categoryIndex);
+    }
+
+    const category = CATEGORY_RENT[categoryIndex];
+    if (!category) return;
+
+    let foundType = null;
+    let foundSub = null;
+
+    category.types?.forEach((type) => {
+      if (type.category === typeOrSub) {
+        foundType = type.category;
+      }
+      type.subcategories?.forEach((sub) => {
+        if (sub.subcategory === typeOrSub) {
+          foundType = type.category;
+          foundSub = sub.subcategory;
+        }
+      });
+    });
+
+    setActiveType(foundType);
+    setActiveSubcategory(foundSub);
+    setExpandedAccordion(foundType);
+  }, [router.isReady, router.asPath]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -37,14 +80,6 @@ export default function RentPage({ children }) {
 
     return () => clearTimeout(timer);
   }, [searchValue]);
-
-  const [activeCategory, setActiveCategory] = useState(0);
-  const [expandedAccordion, setExpandedAccordion] = useState(null);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isMobileView, setIsMobileView] = useState(false);
-
-  const [searchQuery, setSearchQuery] = useState("");
-  const [isInitialized, setIsInitialized] = useState(false);
 
   const renderAccordion = () =>
     currentCategory?.types?.map((type) => (
@@ -72,21 +107,28 @@ export default function RentPage({ children }) {
               <ExpandMoreIcon style={{ color: "#ff6f00" }} />
             ) : null
           }
-          sx={{ cursor: "pointer" }}
+          sx={{
+            cursor: "pointer",
+            minHeight: 40,
+            "&.Mui-expanded": { minHeight: 40 },
+            "& .MuiAccordionSummary-content": { margin: 0 },
+            "& .MuiAccordionSummary-content.Mui-expanded": { margin: 0 },
+          }}
           onClick={() => {
             handleTypeClick(type.category);
             closeMobileMenu();
           }}
         >
-          <span
-            style={{
-              fontWeight: 700,
+          <Typography
+            sx={{
               fontFamily: "RoadRadio, sans-serif",
               fontSize: 14,
+              fontWeight: activeType === type.category ? 700 : 500,
+              color: activeType === type.category ? "#d87d4a" : "inherit",
             }}
           >
             {type.title}
-          </span>
+          </Typography>
         </AccordionSummary>
 
         {type.subcategories?.length > 0 && (
@@ -96,19 +138,27 @@ export default function RentPage({ children }) {
                 <ListItemButton
                   key={sub.subcategory}
                   sx={{ pl: 3 }}
-                  onClick={() => {
+                  onMouseDown={(e) => e.stopPropagation()}
+                  onClick={(e) => {
+                    e.stopPropagation();
                     handleSubcategoryClick(sub.subcategory);
                     closeMobileMenu();
                   }}
                 >
-                  <span
-                    style={{
+                  <Typography
+                    sx={{
                       fontFamily: "RoadRadio, sans-serif",
                       fontSize: 14,
+                      fontWeight:
+                        activeSubcategory === sub.subcategory ? 600 : 400,
+                      color:
+                        activeSubcategory === sub.subcategory
+                          ? "#d87d4a"
+                          : "inherit",
                     }}
                   >
                     {sub.title}
-                  </span>
+                  </Typography>
                 </ListItemButton>
               ))}
             </List>
@@ -193,13 +243,6 @@ export default function RentPage({ children }) {
     setSearchValue(e.target.value);
   };
 
-  // const handleCategoryClick = (e) => {
-  //   const categoryIndex = Number(e.key);
-  //   setActiveCategory(categoryIndex);
-  //   const category = CATEGORY_RENT[categoryIndex];
-  //   setExpandedAccordion(null);
-  //   router.push(`/rent/${category.path}`);
-  // };
   const handleCategoryClick = (e) => {
     const categoryIndex = Number(e.key);
     setActiveCategory(categoryIndex);
@@ -215,22 +258,42 @@ export default function RentPage({ children }) {
 
   const currentCategory = CATEGORY_RENT[activeCategory];
 
-  const handleTypeClick = (typeCategory) => {
-    const category = CATEGORY_RENT[activeCategory];
-    router.push(`/rent/${category.path}/${typeCategory}`);
-  };
+  // const handleTypeClick = (typeCategory) => {
+  //   const category = CATEGORY_RENT[activeCategory];
+  //   router.push(`/rent/${category.path}/${typeCategory}`);
+  // };
 
   const toggleMobileMenu = () => {
     if (isMobileView) setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const handleSubcategoryClick = (subcategoryPath) => {
-    const category = CATEGORY_RENT[activeCategory];
-    router.push(`/rent/${category.path}/${subcategoryPath}`);
-  };
+  // const handleSubcategoryClick = (subcategoryPath) => {
+  //   const category = CATEGORY_RENT[activeCategory];
+  //   router.push(`/rent/${category.path}/${subcategoryPath}`);
+  // };
 
   const getProductKey = (product, index) => {
     return `product-${product.id}-${index}`;
+  };
+
+  const handleTypeClick = (typeCategory) => {
+    setActiveType(typeCategory);
+    setActiveSubcategory(null);
+    setExpandedAccordion(typeCategory);
+
+    if (!router.isReady || !currentCategory) return;
+
+    router.push(`/rent/${currentCategory.path}/${typeCategory}`, undefined, {
+      shallow: true,
+    });
+  };
+
+  const handleSubcategoryClick = (subcategoryPath) => {
+    const category = CATEGORY_RENT[activeCategory];
+
+    setActiveSubcategory(subcategoryPath);
+
+    router.push(`/rent/${category.path}/${subcategoryPath}`);
   };
 
   return (

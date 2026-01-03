@@ -56,48 +56,19 @@ export default function RentCategoryPage({ section, type, subcategory }) {
     );
   }, [inStockOnly, sortBy, pathname, router]);
 
-  // let filteredProducts = [];
-
-  // if (subcategory) {
-  //   filteredProducts = [...RENT, ...RENT_SKY].filter(
-  //     (p) => p.subcategory === subcategory
-  //   );
-  // } else if (type) {
-  //   filteredProducts = [...RENT, ...RENT_SKY].filter(
-  //     (p) => p.category === type || p.subcategory === type
-  //   );
-  // } else {
-  //   filteredProducts = [...RENT, ...RENT_SKY].filter((p) =>
-  //     sectionData.types.some(
-  //       (t) => t.category === p.category || t.category === p.subcategory
-  //     )
-  //   );
-  // }
-
-  // if (type) {
-  //   filteredProducts = [...RENT, ...RENT_SKY].filter(
-  //     (p) => p.type === type || p.category === type
-  //   );
-  // }
-  // if (inStockOnly) {
-  //   filteredProducts = filteredProducts.filter((p) => p.order === true);
-  // }
-
   const allProducts = [...RENT, ...RENT_SKY];
 
   const sectionTypes = sectionData?.types ?? [];
 
-  // decode на всякий случай (если в URL что-то кодируется)
   const typeParam = type ? decodeURIComponent(type) : undefined;
   const subcategoryParam = subcategory
     ? decodeURIComponent(subcategory)
     : undefined;
 
-  // все subcategories из секции + запоминаем родительский type
   const allSubcats = sectionTypes.flatMap((t) =>
     (t.subcategories ?? []).map((sc) => ({
-      slug: sc.subcategory, // "pants"
-      parentType: t.category, // "clothes"
+      slug: sc.subcategory,
+      parentType: t.category,
     }))
   );
 
@@ -106,7 +77,6 @@ export default function RentCategoryPage({ section, type, subcategory }) {
   const isSubcatInTypeParam =
     typeParam && allSubcats.some((sc) => sc.slug === typeParam);
 
-  // выбираем, что реально выбрано
   let selectedType = isType ? typeParam : undefined;
   let selectedSubcategory =
     subcategoryParam || (isSubcatInTypeParam ? typeParam : undefined);
@@ -119,27 +89,27 @@ export default function RentCategoryPage({ section, type, subcategory }) {
 
   let filteredProducts = allProducts;
 
-  // если выбрали type — фильтруем по p.type (у тебя это "clothes")
   if (selectedType) {
     filteredProducts = filteredProducts.filter((p) => p.type === selectedType);
   }
 
-  // если выбрали subcategory — фильтруем по p.subcategory ("pants")
   if (selectedSubcategory) {
     filteredProducts = filteredProducts.filter(
       (p) => p.subcategory === selectedSubcategory
     );
   }
 
-  // если вообще ничего не выбрано (ни type, ни subcategory) — показываем всё по секции
   if (!selectedType && !selectedSubcategory) {
     const allowed = new Set(sectionTypes.map((t) => t.category));
     filteredProducts = filteredProducts.filter((p) => allowed.has(p.type));
   }
+  const getActualPrice = (product) => {
+    return product.salePrice || product.price;
+  };
 
   const sortedProducts = [...filteredProducts].sort((a, b) => {
-    if (sortBy === "price-asc") return a.price - b.price;
-    if (sortBy === "price-desc") return b.price - a.price;
+    if (sortBy === "price-asc") return getActualPrice(a) - getActualPrice(b);
+    if (sortBy === "price-desc") return getActualPrice(b) - getActualPrice(a);
     return 0;
   });
 
@@ -153,7 +123,7 @@ export default function RentCategoryPage({ section, type, subcategory }) {
           return (
             <div
               key={t.category}
-              // className={styles["category-product"]}
+              className={styles["category-product"]}
               onClick={() => router.push(routePath)}
               style={{ cursor: "pointer" }}
             >
@@ -165,14 +135,16 @@ export default function RentCategoryPage({ section, type, subcategory }) {
                 }}
               >
                 <CardActionArea disableRipple disableTouchRipple>
-                  {!isLoaded && <Skeleton variant="rectangular" height={250} />}
+                  {!isLoaded && <Skeleton variant="rectangular" height={300} />}
                   {t.img && (
                     <div
                       style={{
                         position: "relative",
                         width: "100%",
                         aspectRatio: "1 / 1",
-                        display: isLoaded ? "block" : "none",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
                       }}
                     >
                       <Image
@@ -186,6 +158,7 @@ export default function RentCategoryPage({ section, type, subcategory }) {
                                    300px"
                         style={{
                           objectFit: "cover",
+                          objectPosition: "center",
                         }}
                         onLoadingComplete={() =>
                           setLoadedIds((prev) => [...prev, t.category])

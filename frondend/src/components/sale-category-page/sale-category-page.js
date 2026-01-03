@@ -33,6 +33,10 @@ export default function SaleCategoryPage({ section, type, subcategory }) {
     types: [],
   };
 
+  const getActualPrice = (product) => {
+    return product.salePrice || product.price;
+  };
+
   useEffect(() => {
     if (!pathname) return;
 
@@ -74,8 +78,8 @@ export default function SaleCategoryPage({ section, type, subcategory }) {
   }
 
   const sortedProducts = [...filteredProducts].sort((a, b) => {
-    if (sortBy === "price-asc") return a.price - b.price;
-    if (sortBy === "price-desc") return b.price - a.price;
+    if (sortBy === "price-asc") return getActualPrice(a) - getActualPrice(b);
+    if (sortBy === "price-desc") return getActualPrice(b) - getActualPrice(a);
     return 0;
   });
 
