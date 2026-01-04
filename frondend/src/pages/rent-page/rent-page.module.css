@@ -12,8 +12,6 @@
   display: none;
 }
 
-
-
 .filters-scroll-container :global(.ant-menu-horizontal) {
   display: inline-flex !important;
   flex-wrap: nowrap !important;
@@ -37,134 +35,17 @@
   flex-shrink: 0 !important;
 }
 
-
-
-
-
 .sticky-horizontal-menu {
   display: inline-flex !important;
   flex-wrap: nowrap;
   gap: 3px !important;
 }
 
-
-.title{
-    font-family: "RoadRadio", sans-serif !important;
-    font-size: 24px;
-    text-align: left;
-}
-
-.filterTitle{
-  color: black;
-  font-family: "RoadRadio", sans-serif !important;
-  font-weight: 400;
-  font-size: 16px;
-}
-
-.toolbarMobile {
-  display: flex;
-  justify-content: center; 
-  position: relative;     
-  padding-right: 40px;     
-}
-
-.mobileMenuButton {
-  position: absolute !important;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.sale-page-content {
-  display: grid;
-  grid-template-columns: 20% 1fr; 
-  gap: 24px;
-  align-items: flex-start;
-  width: 100%;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-.searchInput {
-  width: 98%;
-  padding: 10px 12px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  outline: none;
-  transition: border 0.2s ease;
-}
-
-.searchInput:focus {
-  border-color: #ff6f00;
-}
-
-
-.not-found{
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
-}
-
-.category-product{
-  display: grid;
-  grid-template-rows: 3fr; 
-  align-items: flex-start;
-  width: 100%;
-}
-
-.home-page-product {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  width: 100%;
-}
-
-
-.filters-scroll-container
-  :global(.ant-menu-horizontal > .ant-menu-item:not(.ant-menu-item-selected)::after) {
-  border-bottom: none !important;
-  content: none !important;
-}
-
-
-.filters-scroll-container
-  :global(.ant-menu-horizontal > .ant-menu-item:not(.ant-menu-item-selected):hover::after) {
-  border-bottom: none !important;
-  content: none !important;
-}
-
-
-.filters-scroll-container
-  :global(.ant-menu-horizontal > .ant-menu-item-selected) {
-  color: #de682d !important;
-}
-
-.filters-scroll-container
-  :global(.ant-menu-horizontal > .ant-menu-item-selected::after) {
-  border-bottom: 2px solid #de682d !important;
-  content: "" !important;
-}
-
-
-.filters-scroll-container
-  :global(.ant-menu-horizontal > .ant-menu-item-selected:hover) {
-  color: #de682d !important;
-}
-
-.filters-scroll-container
-  :global(.ant-menu-horizontal > .ant-menu-item-selected:hover::after) {
-  border-bottom: 2px solid #de682d !important;
-  content: "" !important;
-}
-
-
 .title {
   font-family: "RoadRadio", sans-serif !important;
   font-size: 24px;
   text-align: left;
 }
-
 
 .filterTitle {
   color: black;
@@ -231,8 +112,115 @@
   width: 100%;
 }
 
+.filters-scroll-container
+  :global(
+    .ant-menu-horizontal > .ant-menu-item:not(.ant-menu-item-selected)::after
+  ) {
+  border-bottom: none !important;
+  content: none !important;
+}
 
+.filters-scroll-container
+  :global(
+    .ant-menu-horizontal
+      > .ant-menu-item:not(.ant-menu-item-selected):hover::after
+  ) {
+  border-bottom: none !important;
+  content: none !important;
+}
 
+.filters-scroll-container
+  :global(.ant-menu-horizontal > .ant-menu-item-selected) {
+  color: #de682d !important;
+}
+
+.filters-scroll-container
+  :global(.ant-menu-horizontal > .ant-menu-item-selected::after) {
+  border-bottom: 2px solid #de682d !important;
+  content: "" !important;
+}
+
+.filters-scroll-container
+  :global(.ant-menu-horizontal > .ant-menu-item-selected:hover) {
+  color: #de682d !important;
+}
+
+.filters-scroll-container
+  :global(.ant-menu-horizontal > .ant-menu-item-selected:hover::after) {
+  border-bottom: 2px solid #de682d !important;
+  content: "" !important;
+}
+
+.title {
+  font-family: "RoadRadio", sans-serif !important;
+  font-size: 24px;
+  text-align: left;
+}
+
+.filterTitle {
+  color: black;
+  font-family: "RoadRadio", sans-serif !important;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.toolbarMobile {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding-right: 40px;
+}
+
+.mobileMenuButton {
+  position: absolute !important;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.sale-page-content {
+  display: grid;
+  grid-template-columns: 20% 1fr;
+  gap: 24px;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.searchInput {
+  width: 98%;
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+.searchInput:focus {
+  border-color: #ff6f00;
+}
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.category-product {
+  display: grid;
+  grid-template-rows: 3fr;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.home-page-product {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+}
 
 @media (max-width: 800px) {
   .sale-page-content {
@@ -280,7 +268,6 @@
     width: 97%;
     box-sizing: border-box;
   }
-  
 
   .home-page-product {
     display: grid;
@@ -294,6 +281,4 @@
     min-width: 0;
     height: auto;
   }
-
-  
 }
