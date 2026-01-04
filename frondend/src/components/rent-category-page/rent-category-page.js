@@ -14,45 +14,47 @@ import {
 } from "@mui/material";
 
 import { useEffect } from "react";
-import { useRouter } from "next/router";
-import Link from "next/link";
+
+import { useRouter } from "next/navigation";
+
+import { useSearchParams, usePathname } from "next/navigation";
+
 import { FormControl, Select, MenuItem, InputLabel } from "@mui/material";
 import styles from "../sale-page/sale-page.module.css";
 
 export default function RentCategoryPage({ section, type, subcategory }) {
   const router = useRouter();
-  const { isReady, query } = router;
   const [loadedIds, setLoadedIds] = useState([]);
-  const [inStockOnly, setInStockOnly] = useState(false);
-  const [sortBy, setSortBy] = useState("default");
-
-  useEffect(() => {
-    if (!isReady) return;
-    setInStockOnly(query.stock === "true");
-    setSortBy(query.sort || "default");
-  }, [isReady, query.stock, query.sort]);
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const [inStockOnly, setInStockOnly] = useState(
+    searchParams.get("stock") === "true" || false
+  );
+  const [sortBy, setSortBy] = useState(searchParams.get("sort") || "default");
 
   const sectionData = CATEGORY_RENT.find((s) => s.path === section) || {
     types: [],
   };
 
   useEffect(() => {
-    if (!isReady) return;
+    if (!pathname) return;
 
-    const basePath = router.asPath.split("?")[0];
-    const nextQuery = {
-      ...(inStockOnly ? { stock: "true" } : {}),
-      ...(sortBy !== "default" ? { sort: sortBy } : {}),
-    };
+    const params = new URLSearchParams();
 
-    if (query.stock === nextQuery.stock && query.sort === nextQuery.sort)
-      return;
+    if (inStockOnly) params.set("stock", "true");
+    if (sortBy && sortBy !== "default") params.set("sort", sortBy);
 
-    router.replace({ pathname: basePath, query: nextQuery }, undefined, {
-      shallow: true,
-      scroll: false,
-    });
-  }, [inStockOnly, sortBy, isReady]);
+    const queryObj = Object.fromEntries(params.entries());
+
+    router.replace(
+      {
+        pathname: pathname,
+        query: queryObj,
+      },
+      undefined,
+      { scroll: false }
+    );
+  }, [inStockOnly, sortBy, pathname, router]);
 
   const allProducts = [...RENT, ...RENT_SKY];
 
@@ -101,10 +103,13 @@ export default function RentCategoryPage({ section, type, subcategory }) {
     const allowed = new Set(sectionTypes.map((t) => t.category));
     filteredProducts = filteredProducts.filter((p) => allowed.has(p.type));
   }
+  const getActualPrice = (product) => {
+    return product.salePrice || product.price;
+  };
 
   const sortedProducts = [...filteredProducts].sort((a, b) => {
-    if (sortBy === "price-asc") return a.price - b.price;
-    if (sortBy === "price-desc") return b.price - a.price;
+    if (sortBy === "price-asc") return getActualPrice(a) - getActualPrice(b);
+    if (sortBy === "price-desc") return getActualPrice(b) - getActualPrice(a);
     return 0;
   });
 
@@ -307,11 +312,7 @@ export default function RentCategoryPage({ section, type, subcategory }) {
                     overflow: "hidden",
                     cursor: "pointer",
                   }}
-                  onClick={() =>
-                    router.push(
-                      `/rent/${section}/${product.category}/app/${product.id}`
-                    )
-                  }
+                  onClick={() => router.push(`/app/${product.id}`)}
                 >
                   <CardActionArea disableRipple disableTouchRipple>
                     {!!isLoaded ? (

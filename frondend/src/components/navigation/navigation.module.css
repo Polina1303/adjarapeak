@@ -1,0 +1,58 @@
+.breadcrumbs a{
+color: rgb(133, 132, 132);
+}
+.breadcrumbs {
+color: rgb(133, 132, 132);
+}
+.breadcrumbs {
+  font-size: 14px;
+  cursor: pointer;
+  /* user-select: none; */
+}
+.arrow {
+  padding: 6px;
+  cursor: pointer;
+}
+
+
+.mobile {
+  display: none;
+  align-items: center;
+  gap: 6px;
+}
+
+.arrow {
+  font-size: 10px;
+  opacity: 0.6;
+}
+
+/* ---------- full ---------- */
+.full {
+  display: inline;
+}
+
+/* ---------- adaptive ---------- */
+@media (max-width: 768px) {
+  .full {
+    display: none;
+  }
+
+  .mobile {
+    display: inline-flex;
+  }
+
+  .breadcrumbs.open .full {
+    display: inline;
+  }
+
+  .arrow {
+  font-size: 10px;
+  opacity: 0.6;
+  cursor: pointer;
+  
+}
+
+  .breadcrumbs.open .mobile {
+    display: none;
+  }
+}

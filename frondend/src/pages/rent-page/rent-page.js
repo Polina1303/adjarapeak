@@ -33,76 +33,53 @@ export default function RentPage({ children }) {
   const [expandedAccordion, setExpandedAccordion] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileView, setIsMobileView] = useState(false);
-  const menuContainerRef = useRef(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [isInitialized, setIsInitialized] = useState(false);
 
-  const findProductCategoryInfo = (productId) => {
-    for (const category of CATEGORY_RENT) {
-      for (const type of category.types) {
-        if (type.products?.some((p) => p.id === productId)) {
-          return {
-            categoryPath: category.path,
-            typePath: type.category,
-            subcategoryPath: null,
-          };
+  useEffect(() => {
+    if (!router.isReady) return;
+
+    const [, , categoryPath, typeOrSub] = router.asPath.split("/");
+
+    const categoryIndex = CATEGORY_RENT.findIndex(
+      (c) => c.path === categoryPath
+    );
+
+    if (categoryIndex !== -1) {
+      setActiveCategory(categoryIndex);
+    }
+
+    const category = CATEGORY_RENT[categoryIndex];
+    if (!category) return;
+
+    let foundType = null;
+    let foundSub = null;
+
+    category.types?.forEach((type) => {
+      if (type.category === typeOrSub) {
+        foundType = type.category;
+      }
+      type.subcategories?.forEach((sub) => {
+        if (sub.subcategory === typeOrSub) {
+          foundType = type.category;
+          foundSub = sub.subcategory;
         }
+      });
+    });
 
-        if (type.subcategories) {
-          for (const sub of type.subcategories) {
-            if (sub.products?.some((p) => p.id === productId)) {
-              return {
-                categoryPath: category.path,
-                typePath: type.category,
-                subcategoryPath: sub.subcategory,
-              };
-            }
-          }
-        }
-      }
-    }
-
-    const allProducts = [...(RENT || []), ...(RENT_SKY || [])];
-    const product = allProducts.find((p) => p.id === productId);
-    if (product && product.category) {
-      return {
-        categoryPath: product.category,
-        typePath: product.type || null,
-        subcategoryPath: product.subcategory || null,
-      };
-    }
-
-    return null;
-  };
-
-  const getProductUrl = (productId) => {
-    const categoryInfo = findProductCategoryInfo(productId);
-
-    if (categoryInfo) {
-      let path = `/rent/${categoryInfo.categoryPath}`;
-
-      if (categoryInfo.typePath) {
-        path += `/${categoryInfo.typePath}`;
-      }
-
-      if (categoryInfo.subcategoryPath) {
-        path += `/${categoryInfo.subcategoryPath}`;
-      }
-
-      path += `/app/${productId}`;
-      return path;
-    }
-
-    return `/app/${productId}`;
-  };
+    setActiveType(foundType);
+    setActiveSubcategory(foundSub);
+    setExpandedAccordion(foundType);
+  }, [router.isReady, router.asPath]);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const saved = localStorage.getItem("searchQuery");
-      if (saved) setSearchQuery(saved);
-      setIsInitialized(true);
-    }
-  }, []);
+    const timer = setTimeout(() => {
+      setSearchQuery(searchValue);
+      localStorage.setItem("searchQuery", searchValue);
+    }, 200);
+
+    return () => clearTimeout(timer);
+  }, [searchValue]);
 
   const renderAccordion = () =>
     currentCategory?.types?.map((type) => (
@@ -200,69 +177,27 @@ export default function RentPage({ children }) {
   }, [router.asPath]);
 
   const filteredProducts = useMemo(() => {
-    if (!isInitialized || !searchQuery.trim()) return [];
+    if (!isInitialized || !searchQuery.trim()) {
+      return [];
+    }
 
     const query = searchQuery.toLowerCase().trim();
-    const allProducts = [...(RENT || []), ...(RENT_SKY || [])];
-    const seenIds = new Set();
-    const results = [];
 
-    for (const product of allProducts) {
-      if (
-        product.title?.toLowerCase().includes(query) &&
-        !seenIds.has(product.id)
-      ) {
-        seenIds.add(product.id);
-        results.push(product);
+    const results = [];
+    const seenIds = new Set();
+
+    for (const product of RENT || RENT_SKY) {
+      if (product.title?.toLowerCase().includes(query)) {
+        if (!seenIds.has(product.id)) {
+          seenIds.add(product.id);
+          results.push(product);
+        }
       }
     }
 
     return results;
   }, [searchQuery, isInitialized]);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setSearchQuery(searchValue);
-      localStorage.setItem("searchQuery", searchValue);
-    }, 200);
-    return () => clearTimeout(timer);
-  }, [searchValue]);
-
-  useEffect(() => {
-    if (!router.isReady) return;
-
-    const [, , categoryPath, typeOrSub] = router.asPath.split("/");
-
-    const categoryIndex = CATEGORY_RENT.findIndex(
-      (c) => c.path === categoryPath
-    );
-
-    if (categoryIndex !== -1) {
-      setActiveCategory(categoryIndex);
-    }
-
-    const category = CATEGORY_RENT[categoryIndex];
-    if (!category) return;
-
-    let foundType = null;
-    let foundSub = null;
-
-    category.types?.forEach((type) => {
-      if (type.category === typeOrSub) {
-        foundType = type.category;
-      }
-      type.subcategories?.forEach((sub) => {
-        if (sub.subcategory === typeOrSub) {
-          foundType = type.category;
-          foundSub = sub.subcategory;
-        }
-      });
-    });
-
-    setActiveType(foundType);
-    setActiveSubcategory(foundSub);
-    setExpandedAccordion(foundType);
-  }, [router.isReady, router.asPath]);
+  const menuContainerRef = useRef(null);
 
   useEffect(() => {
     if (!menuContainerRef.current) return;
@@ -278,6 +213,16 @@ export default function RentPage({ children }) {
     const scrollPos = itemLeft - containerWidth / 2 + itemWidth / 2;
     container.scrollTo({ left: scrollPos, behavior: "smooth" });
   }, [activeCategory]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("searchQuery");
+      if (saved) {
+        setSearchQuery(saved);
+      }
+      setIsInitialized(true);
+    }
+  }, []);
 
   useEffect(() => {
     const checkScreen = () => {
@@ -298,26 +243,37 @@ export default function RentPage({ children }) {
     setSearchValue(e.target.value);
   };
 
-  const closeMobileMenu = () => setIsMobileMenuOpen(false);
-
-  const currentCategory = CATEGORY_RENT[activeCategory];
-
   const handleCategoryClick = (e) => {
-    if (!router.isReady) return;
-    const idx = Number(e.key);
-    setActiveCategory(idx);
+    const categoryIndex = Number(e.key);
+    setActiveCategory(categoryIndex);
+    const category = CATEGORY_RENT[categoryIndex];
     setExpandedAccordion(null);
     setSearchValue("");
     setSearchQuery("");
     localStorage.removeItem("searchQuery");
-
-    router.push(`/rent/${CATEGORY_RENT[idx].path}`, undefined, {
-      shallow: true,
-    });
+    router.push(`/rent/${category.path}`);
   };
+
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
+
+  const currentCategory = CATEGORY_RENT[activeCategory];
+
+  // const handleTypeClick = (typeCategory) => {
+  //   const category = CATEGORY_RENT[activeCategory];
+  //   router.push(`/rent/${category.path}/${typeCategory}`);
+  // };
 
   const toggleMobileMenu = () => {
     if (isMobileView) setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  // const handleSubcategoryClick = (subcategoryPath) => {
+  //   const category = CATEGORY_RENT[activeCategory];
+  //   router.push(`/rent/${category.path}/${subcategoryPath}`);
+  // };
+
+  const getProductKey = (product, index) => {
+    return `product-${product.id}-${index}`;
   };
 
   const handleTypeClick = (typeCategory) => {
@@ -339,8 +295,6 @@ export default function RentPage({ children }) {
 
     router.push(`/rent/${category.path}/${subcategoryPath}`);
   };
-
-  const getProductKey = (product, index) => `product-${product.id}-${index}`;
 
   return (
     <>
@@ -444,8 +398,7 @@ export default function RentPage({ children }) {
                   <>
                     <div className={styles["home-page-product"]}>
                       {filteredProducts.map((product, index) => {
-                        const productUrl = getProductUrl(product.id);
-
+                        const isLoaded = loadedIds.includes(product.id);
                         return (
                           <div
                             key={getProductKey(product, index)}
@@ -468,8 +421,11 @@ export default function RentPage({ children }) {
                                     expandedAccordion,
                                   })
                                 );
-                                router.push(productUrl);
+
+                                router.push(`/app/${product.id}`);
                               }}
+
+                              // onClick={() => router.push(`/app/${product.id}`)}
                             >
                               <CardActionArea
                                 sx={{
@@ -478,10 +434,14 @@ export default function RentPage({ children }) {
                                   flexDirection: "column",
                                 }}
                               >
-                                <ProductItems
-                                  product={product}
-                                  href={productUrl}
-                                />
+                                {!isLoaded ? (
+                                  <Skeleton
+                                    variant="rectangular"
+                                    height={450}
+                                  />
+                                ) : (
+                                  <ProductItems product={product} />
+                                )}
                               </CardActionArea>
                             </Card>
                           </div>
