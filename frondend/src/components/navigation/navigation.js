@@ -61,10 +61,12 @@ export const getBreadcrumbsByProduct = (product, isRentClick = false) => {
   return [{ title: rootTitle, href: DEFAULT_PATHS[isRent ? "rent" : "sale"] }];
 };
 
-export const Navigation = ({ items }) => {
+export const Navigation = ({ items, title }) => {
   const [open, setOpen] = useState(false);
 
   if (!items?.length) return null;
+
+  console.log("items", items);
 
   const last = items[items.length - 1];
 
@@ -76,7 +78,7 @@ export const Navigation = ({ items }) => {
   return (
     <nav className={`${styles.breadcrumbs} ${open ? styles.open : ""}`}>
       <span className={styles.mobile}>
-        <Link href={last.href}>{last.title}</Link>
+        <span>{title}</span>
 
         <span className={styles.arrow} onClick={toggle} role="button">
           {open ? "▲" : "▼"}
@@ -90,6 +92,7 @@ export const Navigation = ({ items }) => {
             {i < items.length - 1 && " — "}
           </span>
         ))}
+        <span> - {title}</span>
       </span>
     </nav>
   );

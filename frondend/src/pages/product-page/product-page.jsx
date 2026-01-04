@@ -253,7 +253,7 @@ export const ProductPage = () => {
         </button>
       </div>
       <Box className={styles["breadcrumbs-box"]}>
-        <Navigation items={breadcrumbs} />
+        <Navigation items={breadcrumbs} title={product.title} />
       </Box>
 
       <Card className={styles["product-card"]}>
@@ -348,6 +348,11 @@ export const ProductPage = () => {
             >
               {product.title}
             </Typography>
+            {product.desc && (
+              <Typography className={styles["product-info-additional"]}>
+                {product.desc}
+              </Typography>
+            )}
 
             <Box className={styles["product-buy"]}>
               <Buy product={product} page={true} />
@@ -373,11 +378,6 @@ export const ProductPage = () => {
             Описание
           </Typography>
 
-          {product.desc && (
-            <Typography className={styles["product-info-additional"]}>
-              {product.desc}
-            </Typography>
-          )}
           {product.shortly && (
             <Typography className={styles["product-info-additional"]}>
               {product.shortly}
