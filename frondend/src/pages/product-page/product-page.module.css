@@ -229,7 +229,10 @@
   cursor: pointer;
   color: #222;
 }
-
+.breadcrumbs-box{
+  margin: 15px;
+ color: #807f7f;
+}
 @media only screen and (max-width: 785px) {
   .product-info {
     justify-content: flex-start;

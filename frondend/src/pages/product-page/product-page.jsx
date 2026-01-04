@@ -19,6 +19,10 @@ import { getProductById } from "../../../lib/cache";
 import { CATEGORY_RENT } from "../../components/product-range/categoryRent";
 import Image from "next/image";
 import styles from "./product-page.module.css";
+import {
+  Navigation,
+  getBreadcrumbsByProduct,
+} from "../../components/navigation/navigation";
 
 export const ProductPage = () => {
   const product = useSelector((state) => state.products.currentProduct);
@@ -239,6 +243,7 @@ export const ProductPage = () => {
 
   if (!product || !product.column) return null;
   const column = product.column;
+  const breadcrumbs = getBreadcrumbsByProduct(product);
 
   return (
     <>
@@ -247,6 +252,9 @@ export const ProductPage = () => {
           <IoIosArrowBack size={"25px"} /> Назад
         </button>
       </div>
+      <Box className={styles["breadcrumbs-box"]}>
+        <Navigation items={breadcrumbs} />
+      </Box>
 
       <Card className={styles["product-card"]}>
         <Box className={styles["product-top"]}>
