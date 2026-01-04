@@ -27,7 +27,7 @@ export default function SaleCategoryPage({ section, type, subcategory }) {
   const [inStockOnly, setInStockOnly] = useState(
     searchParams.get("stock") === "true" || false
   );
-  const [sortBy, setSortBy] = useState(searchParams.get("sort") || "default");
+  const [sortBy, setSortBy] = useState(searchParams.get("sort") ?? "default");
 
   const sectionData = CATEGORY_PRODUCT.find((s) => s.path === section) || {
     types: [],
@@ -209,6 +209,15 @@ export default function SaleCategoryPage({ section, type, subcategory }) {
                 px: 2,
               }}
             >
+              <MenuItem
+                value="default"
+                sx={{
+                  color: "#d87d4a",
+                  "&:hover": { bgcolor: "#fef3ed" },
+                }}
+              >
+                По умолчанию
+              </MenuItem>
               <MenuItem
                 value="price-desc"
                 sx={{
