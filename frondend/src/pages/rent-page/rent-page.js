@@ -6,6 +6,7 @@ import { CATEGORY_RENT } from "../../components/product-range/categoryRent";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import { ProductItems } from "../../components/product-items/product-items";
 import { TfiClose } from "react-icons/tfi";
+import { startTransition } from "react";
 import {
   Accordion,
   Toolbar,
@@ -177,26 +178,19 @@ export default function RentPage({ children }) {
   }, [router.asPath]);
 
   const filteredProducts = useMemo(() => {
-    if (!isInitialized || !searchQuery.trim()) {
-      return [];
-    }
+    if (!isInitialized || !searchQuery.trim()) return [];
 
     const query = searchQuery.toLowerCase().trim();
 
-    const results = [];
-    const seenIds = new Set();
+    const all = [...RENT, ...RENT_SKY];
 
-    for (const product of RENT || RENT_SKY) {
-      if (product.title?.toLowerCase().includes(query)) {
-        if (!seenIds.has(product.id)) {
-          seenIds.add(product.id);
-          results.push(product);
-        }
-      }
-    }
-
-    return results;
+    return all.filter(
+      (p, idx, arr) =>
+        p.title?.toLowerCase().includes(query) &&
+        arr.findIndex((x) => x.id === p.id) === idx
+    );
   }, [searchQuery, isInitialized]);
+
   const menuContainerRef = useRef(null);
 
   useEffect(() => {
@@ -244,14 +238,20 @@ export default function RentPage({ children }) {
   };
 
   const handleCategoryClick = (e) => {
-    const categoryIndex = Number(e.key);
-    setActiveCategory(categoryIndex);
-    const category = CATEGORY_RENT[categoryIndex];
-    setExpandedAccordion(null);
-    setSearchValue("");
-    setSearchQuery("");
-    localStorage.removeItem("searchQuery");
-    router.push(`/rent/${category.path}`);
+    const idx = Number(e.key);
+
+    startTransition(() => {
+      setActiveCategory(idx);
+      setActiveType(null);
+      setActiveSubcategory(null);
+      setExpandedAccordion(null);
+
+      setSearchValue("");
+      setSearchQuery("");
+      localStorage.removeItem("searchQuery");
+    });
+
+    router.push(`/rent/${CATEGORY_RENT[idx].path}`);
   };
 
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
@@ -434,14 +434,7 @@ export default function RentPage({ children }) {
                                   flexDirection: "column",
                                 }}
                               >
-                                {!isLoaded ? (
-                                  <Skeleton
-                                    variant="rectangular"
-                                    height={450}
-                                  />
-                                ) : (
-                                  <ProductItems product={product} />
-                                )}
+                                <ProductItems product={product} />
                               </CardActionArea>
                             </Card>
                           </div>

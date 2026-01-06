@@ -19,6 +19,7 @@ import {
   IconButton,
 } from "@mui/material";
 import styles from "./header.module.css";
+import { LangSwitcher } from "../lang-switcher";
 
 export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -161,6 +162,8 @@ export const Header = () => {
           <Box className={styles.cartContainer}>
             <CartBlock />
           </Box>
+          {/* 
+          <LangSwitcher /> */}
         </Toolbar>
 
         <Drawer

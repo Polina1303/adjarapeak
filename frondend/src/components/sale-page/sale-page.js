@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo, useRef } from "react";
 import { useRouter } from "next/router";
 import { PRODUCT } from "../product-range/product";
+import { startTransition } from "react";
 import { Menu } from "antd";
 import { CATEGORY_PRODUCT } from "../product-range/categoryProduct";
 import FilterListIcon from "@mui/icons-material/FilterList";
@@ -36,13 +37,20 @@ export default function SalePage({ children }) {
   const [activeSubcategory, setActiveSubcategory] = useState(null);
   const [activeType, setActiveType] = useState(null);
 
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setSearchQuery(searchValue);
+  //     localStorage.setItem("searchQuery", searchValue);
+  //   }, 200);
+  //   return () => clearTimeout(timer);
+  // }, [searchValue]);
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setSearchQuery(searchValue);
-      localStorage.setItem("searchQuery", searchValue);
-    }, 200);
-    return () => clearTimeout(timer);
-  }, [searchValue]);
+    if (!router.isReady) return;
+
+    // если путь меняется → не ждать debounce, гасим поиск сразу
+    setSearchQuery(searchValue);
+    localStorage.setItem("searchQuery", searchValue);
+  }, [searchValue, router.asPath]);
 
   const menuContainerRef = useRef(null);
 
@@ -105,14 +113,14 @@ export default function SalePage({ children }) {
     }
   }, []);
 
-  useEffect(() => {
-    const pathParts = router.asPath.split("/");
-    const categoryPath = pathParts[2];
-    const categoryIndex = CATEGORY_PRODUCT.findIndex(
-      (c) => c.path === categoryPath
-    );
-    if (categoryIndex !== -1) setActiveCategory(categoryIndex);
-  }, [router.asPath]);
+  // useEffect(() => {
+  //   const pathParts = router.asPath.split("/");
+  //   const categoryPath = pathParts[2];
+  //   const categoryIndex = CATEGORY_PRODUCT.findIndex(
+  //     (c) => c.path === categoryPath
+  //   );
+  //   if (categoryIndex !== -1) setActiveCategory(categoryIndex);
+  // }, [router.asPath]);
 
   useEffect(() => {
     const checkScreen = () => {
@@ -145,9 +153,7 @@ export default function SalePage({ children }) {
 
     if (!router.isReady || !currentCategory) return;
 
-    router.push(`/sale/${currentCategory.path}/${typeCategory}`, undefined, {
-      shallow: true,
-    });
+    router.push(`/sale/${currentCategory.path}/${typeCategory}`);
   };
 
   const handleSubcategoryClick = (subPath) => {
@@ -157,13 +163,44 @@ export default function SalePage({ children }) {
     router.push(`/sale/${currentCategory.path}/${subPath}`);
   };
 
+  // const handleCategoryClick = (e) => {
+  //   const idx = Number(e.key);
+  //   setActiveCategory(idx);
+  //   setExpandedAccordion(null);
+  //   setSearchValue("");
+  //   setSearchQuery("");
+  //   localStorage.removeItem("searchQuery");
+  //   router.push(`/sale/${CATEGORY_PRODUCT[idx].path}`);
+  // };
+
+  // const handleCategoryClick = (e) => {
+  //   const idx = Number(e.key);
+
+  //   setActiveCategory(idx);
+  //   setActiveType(null);
+  //   setActiveSubcategory(null);
+  //   setExpandedAccordion(null);
+
+  //   setSearchValue("");
+  //   setSearchQuery("");
+  //   localStorage.removeItem("searchQuery");
+
+  //   router.push(`/sale/${CATEGORY_PRODUCT[idx].path}`);
+  // };
   const handleCategoryClick = (e) => {
     const idx = Number(e.key);
-    setActiveCategory(idx);
-    setExpandedAccordion(null);
-    setSearchValue("");
-    setSearchQuery("");
-    localStorage.removeItem("searchQuery");
+
+    startTransition(() => {
+      setActiveCategory(idx);
+      setActiveType(null);
+      setActiveSubcategory(null);
+      setExpandedAccordion(null);
+
+      setSearchValue("");
+      setSearchQuery("");
+      localStorage.removeItem("searchQuery");
+    });
+
     router.push(`/sale/${CATEGORY_PRODUCT[idx].path}`);
   };
 

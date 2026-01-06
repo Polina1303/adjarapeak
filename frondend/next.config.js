@@ -36,10 +36,11 @@
 // module.exports = nextConfig;
 
 /** @type {import('next').NextConfig} */
-
+const { i18n } = require("./next-i18next.config");
 const path = require("path");
 
 const nextConfig = {
+  i18n,
   outputFileTracingRoot: path.join(__dirname),
 
   turbopack: {
@@ -68,10 +69,6 @@ const nextConfig = {
 
     return config;
   },
-  // images: {
-  //   formats: ["image/avif", "image/webp"],
-  //   unoptimized: false,
-  // },
   reactStrictMode: true,
   compiler: {
     removeConsole: false,
