@@ -924,26 +924,26 @@ const events = [
   //   link: "/rockClimbing",
   //   type: "rockClimbing",
   // },
-  {
-    date: "3 января (сб)",
-    title: "Скалолазание в Гонио",
-    description:
-      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-    price: "49",
-    image: "/imageTrip/rock2.JPG",
-    link: "/rockClimbing",
-    type: "rockClimbing",
-  },
-  {
-    date: "4 января (вс)",
-    title: "Скалолазание в Гонио",
-    description:
-      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-    price: "49",
-    image: "/imageTrip/rock2.JPG",
-    link: "/rockClimbing",
-    type: "rockClimbing",
-  },
+  // {
+  //   date: "3 января (сб)",
+  //   title: "Скалолазание в Гонио",
+  //   description:
+  //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+  //   price: "49",
+  //   image: "/imageTrip/rock2.JPG",
+  //   link: "/rockClimbing",
+  //   type: "rockClimbing",
+  // },
+  // {
+  //   date: "4 января (вс)",
+  //   title: "Скалолазание в Гонио",
+  //   description:
+  //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+  //   price: "49",
+  //   image: "/imageTrip/rock2.JPG",
+  //   link: "/rockClimbing",
+  //   type: "rockClimbing",
+  // },
   {
     date: "everyday",
     title: "ДЖИП-ТУР",
