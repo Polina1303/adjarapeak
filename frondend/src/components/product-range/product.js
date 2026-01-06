@@ -4059,7 +4059,7 @@ export const PRODUCT = [
   {
     order: true,
     id: 457968003184591234,
-    title: "Мужское белье ViKing Baselayer ",
+    title: "Мужское белье ViKing Base Layer ",
     img: "xstablam_20250217_182507-800x800.jpg",
     desc: "Eiger Man Boxers ",
     category: "underwear",
@@ -8471,6 +8471,43 @@ export const PRODUCT = [
       "Его можно использовать в траве, песке и воде.",
     ],
   },
+  // {
+  //   order: true,
+  //   id: 9876964254532232970,
+  //   title: "Щитки футбольные",
+  //   img: "0dc50b88-9dcf-4473-beb1-f339e0c14545.avif",
+  //   desc: "детские",
+  //   category: "football",
+  //   subcategory: "football_accessories",
+  //   price: 47,
+  //   column: [
+
+  //   ],
+  // },
+  {
+    order: true,
+    id: 987696425453223297021,
+    title: "Капитанская повязка",
+    img: "6405764768.jpg",
+    desc: "C-apitan",
+    category: "football",
+    subcategory: "football_accessories",
+    price: 12,
+    column: [],
+  },
+  // {
+  //   order: true,
+  //   id: 9876964254532232970,
+  //   title: "Щитки футбольные",
+  //   img: "0dc50b88-9dcf-4473-beb1-f339e0c14545.avif",
+  //   desc: "детские",
+  //   category: "football",
+  //   subcategory: "football_accessories",
+  //   price: 47,
+  //   column: [
+
+  //   ],
+  // },
   {
     order: true,
     id: 987654532232970,
@@ -22593,7 +22630,7 @@ export const PRODUCT = [
   {
     order: true,
     id: 100032333441100,
-    title: "Термобелье мужское Viking",
+    title: "Термобелье мужское Viking Fusion Man Set",
     img: "21.04.10.jpg",
     desc: "M, L, XL, XXL",
     category: "thermalUnderwear",
@@ -22697,7 +22734,7 @@ export const PRODUCT = [
   {
     order: true,
     id: 198339899314141378,
-    title: "Термобелье женское ViKing Baselayer",
+    title: "Термобелье женское ViKing Base Layer",
     img: "13123312.webp",
     desc: "M, L, XL",
     category: "thermalUnderwear",
@@ -22718,7 +22755,7 @@ export const PRODUCT = [
   {
     order: true,
     id: 19833989931414137832,
-    title: "Термобелье женское ViKing Baselayer 500",
+    title: "Термобелье женское ViKing Base Layer 500",
     img: "malastbx_20250217_175516-800x800.png",
     desc: "S, M, L, XL",
     category: "thermalUnderwear",
@@ -22864,7 +22901,7 @@ export const PRODUCT = [
   //   category: "thermalUnderwear",
   //   price: 165,
   //   column: [
-  //     "Термобелье женское ViKing Baselayer Dante Man Set",
+  //     "Термобелье женское ViKing Base Layer Dante Man Set",
   //     "Нижнее белье имеет полоски от пота и усиления на коленях и локтях, защищающие от ударов.",
   //     "Техническое и эластичное термоактивное белье гарантирует хороший отвод влаги и правильное сохранение тепла в холодные и морозные дни.",
   //     "Его можно использовать как дополнительный слой или как самостоятельную одежду для различных занятий.",
@@ -22881,7 +22918,7 @@ export const PRODUCT = [
     category: "thermalUnderwear",
     price: 180,
     column: [
-      "Термобелье мужское Термобелье ViKing Baselayer Arcto Man",
+      "Термобелье мужское Термобелье ViKing Base Layer Arcto Man",
       "Viking Arcto — модель мужского нижнего белья, выполненная из особого вида флиса Polartec",
       "Благодаря этому сохраняется идеальная теплоизоляция, воздухопроницаемость и отвод влаги в виде водяного пара.",
       "Изделие быстро сохнет, минимизируя потери тепла во время занятий спортом",
