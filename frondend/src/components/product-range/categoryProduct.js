@@ -569,7 +569,6 @@ export const CATEGORY_PRODUCT = [
         title: "Изотоник",
         img: "on-the-go-elektrolit-limon-tablet.avif",
         category: "isotonic",
-        // subcategories: [{ title: "Насосы", subcategory: "pump" }],
       },
     ],
   },
