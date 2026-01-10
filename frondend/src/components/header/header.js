@@ -2,11 +2,8 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { CartBlock } from "../cart-block";
-import { useSelector, useDispatch } from "react-redux";
-import {
-  updateCurrentLanguages,
-  hydrateLanguages,
-} from "../../redux/languages/reducer";
+import { useDispatch } from "react-redux";
+import { useTranslation } from "react-i18next";
 import { TfiAlignJustify, TfiClose } from "react-icons/tfi";
 import {
   AppBar,
@@ -19,34 +16,24 @@ import {
   IconButton,
 } from "@mui/material";
 import styles from "./header.module.css";
+import { LangSwitcher } from "../lang-switcher";
 
 export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileView, setIsMobileView] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const { t, ready, i18n } = useTranslation("header");
+
+  console.log(
+    "Header translations loaded:",
+    ready ? t("delivery-batumi") : "not ready"
+  );
+  console.log("Header resources:", i18n.getResourceBundle("en", "header"));
 
   const dispatch = useDispatch();
-  const languages = useSelector((state) => state.languages.currentLanguages);
-
-  const defaultLanguage = "RU";
-  const [checked, setChecked] = useState(defaultLanguage === "RU");
 
   useEffect(() => {
     setMounted(true);
-
-    const storedLang = localStorage.getItem("languages");
-    if (storedLang) {
-      try {
-        const parsed = JSON.parse(storedLang);
-        if (parsed === "ENG" || parsed === "RU") {
-          dispatch(hydrateLanguages(parsed));
-          setChecked(parsed === "RU");
-        }
-      } catch (e) {
-        console.error("Error parsing stored language:", e);
-      }
-    }
-
     const checkScreenSize = () => {
       const mobile = window.innerWidth <= 1200;
       setIsMobileView(mobile);
@@ -65,14 +52,6 @@ export const Header = () => {
   }, [dispatch, isMobileMenuOpen]);
 
   useEffect(() => {
-    if (mounted) setChecked(languages === "RU");
-  }, [languages, mounted]);
-
-  useEffect(() => {
-    if (mounted) dispatch(updateCurrentLanguages(checked ? "RU" : "ENG"));
-  }, [checked, dispatch, mounted]);
-
-  useEffect(() => {
     if (mounted)
       document.body.style.overflow = isMobileMenuOpen ? "hidden" : "";
   }, [isMobileMenuOpen, mounted]);
@@ -84,48 +63,29 @@ export const Header = () => {
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   const menuItems = [
-    { path: "/sale/alpinesking", text: { RU: "МАГАЗИН", ENG: "SHOP" } },
-    { path: "/rent/skiRental", text: { RU: "ПРОКАТ", ENG: "CAMPING" } },
-    { path: "/trip", text: { RU: "ТУРЫ", ENG: "TOURS" } },
-    {
-      path: "/rockClimbing",
-      text: { RU: "СКАЛОЛАЗАНИЕ", ENG: "ROCK CLIMBING" },
-    },
-    { path: "/service", text: { RU: "СЕРВИС-ЦЕНТР", ENG: "SERVICE CENTER" } },
-    { path: "/contact", text: { RU: "КОНТАКТЫ", ENG: "CONTACTS" } },
+    { path: "/sale/alpinesking", key: "shop" },
+    { path: "/rent/skiRental", key: "rental" },
+    { path: "/trip", key: "tours" },
+    { path: "/rockClimbing", key: "rock-climbing" },
+    { path: "/service", key: "service-center" },
+    { path: "/contact", key: "contacts" },
   ];
 
   const menuItemsMobile = [
-    { path: "/sale/alpinesking", text: { RU: "МАГАЗИН", ENG: "SHOP" } },
-
-    { path: "/rent/skiRental", text: { RU: "ПРОКАТ", ENG: "CAMPING" } },
-    // {
-    //   path: "/rent",
-    //   text: {
-    //     RU: "ПРОКАТ ТУРИСТИЧЕСКОГО СНАРЯЖЕНИЯ",
-    //     ENG: "CAMPING EQUIPMENT RENTAL",
-    //   },
-    // },
-    { path: "/trip", text: { RU: "ТУРЫ", ENG: "TOURS" } },
-    {
-      path: "/rockClimbing",
-      text: { RU: "СКАЛОЛАЗАНИЕ", ENG: "ROCK CLIMBING" },
-    },
-    { path: "/service", text: { RU: "СЕРВИС-ЦЕНТР", ENG: "SERVICE CENTER" } },
-    { path: "/contact", text: { RU: "КОНТАКТЫ", ENG: "CONTACTS" } },
+    { path: "/sale/alpinesking", key: "shop" },
+    { path: "/rent/skiRental", key: "rental" },
+    { path: "/trip", key: "tours" },
+    { path: "/rockClimbing", key: "rock-climbing" },
+    { path: "/service", key: "service-center" },
+    { path: "/contact", key: "contacts" },
   ];
-
-  const currentLanguage = mounted ? languages : defaultLanguage;
-
-  const deliveryText =
-    currentLanguage === "RU"
-      ? "Доставка по Батуми — 10 лари, бесплатно от 300. По Грузии — от 20 лари, бесплатно от 500. Не распространяется на аренду."
-      : "Delivery in Batumi - 10 GEL, free from 300. In Georgia - from 20 GEL, free from 500. Not applicable for rental.";
 
   return (
     <>
       <div className={styles.deliveryStrip}>
-        <div className={styles.deliveryText}>{deliveryText}</div>
+        <div className={styles.deliveryText}>
+          {ready ? t("delivery-batumi") : "Loading..."}
+        </div>
       </div>
 
       <AppBar position="fixed" className={styles.appBar}>
@@ -153,10 +113,12 @@ export const Header = () => {
           <Box className={styles.desktopNav}>
             {menuItems.map((item, index) => (
               <Link key={index} href={item.path} className={styles.navLink}>
-                {currentLanguage === "RU" ? item.text.RU : item.text.ENG}
+                {t(item.key)}
               </Link>
             ))}
           </Box>
+
+          <LangSwitcher />
 
           <Box className={styles.cartContainer}>
             <CartBlock />
@@ -220,9 +182,7 @@ export const Header = () => {
                   }}
                 >
                   <ListItemText
-                    primary={
-                      currentLanguage === "RU" ? item.text.RU : item.text.ENG
-                    }
+                    primary={t(item.key)}
                     classes={{ primary: styles.mobileMenuPrimary }}
                     sx={{ textAlign: "center" }}
                   />

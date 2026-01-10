@@ -1,0 +1,54 @@
+{
+  "skiing": {
+    "title": "ГОРНОЛЫЖНОЕ",
+    "category": {
+      "sky": {
+        "title": "ЛЫЖИ",
+        "subcategories": {
+          "sky": "ЛЫЖИ",
+          "sky_sticks": "ПАЛКИ",
+          "sky_boots": "БОТИНКИ",
+          "sky_accessories": "АКСЕССУАРЫ"
+        }
+      },
+      "snowboard": {
+        "title": "СНОУБОРД",
+        "subcategories": {
+          "snowboard": "ДОСКИ",
+          "snowboard_boots": "БОТИНКИ",
+          "snowboard_bindings": "КРЕПЛЕНИЯ",
+          "snowboard_accessories": "АКСЕССУАРЫ"
+        }
+      },
+      "clothes": {
+        "title": "ОДЕЖДА",
+        "subcategories": {
+          "overall": "КОМБИНЕЗОНЫ",
+          "jacket": "КУРТКИ",
+          "pants": "ШТАНЫ",
+          "gloves": "ПЕРЧАТКИ"
+        }
+      },
+      "helmet": { "title": "ШЛЕМ" },
+      "mask": { "title": "МАСКА" },
+      "protection": { "title": "ЗАЩИТА" },
+      "dif": { "title": "ТЮБИНГ, САНКИ, СНЕГОСТУПЫ" }
+    }
+  },
+  "tourism": {
+    "title": "ТУРИСТИЧЕСКОЕ",
+    "category": {
+      "rentTent": { "title": "ПАЛАТКИ" },
+      "rentSleeping": { "title": "СПАЛЬНЫЕ МЕШКИ" },
+      "rentBack": { "title": "РЮКЗАКИ" },
+      "rentFURNITURE": { "title": "КЕМПИНГОВАЯ МЕБЕЛЬ" },
+      "rentDISHES": { "title": "ПОСУДА" },
+      "rentBURNER": { "title": "ГОРЕЛКИ" },
+      "rentTOOLS": { "title": "ИНСТРУМЕНТЫ" },
+      "rentHIKING": { "title": "ПРЕДМЕТЫ ПОХОДА" },
+      "rentCLIMBING": { "title": "ДЛЯ АЛЬПИНИЗМА" },
+      "rentSUP": { "title": "САП-БОРДЫ И АКСЕССУАРЫ" },
+      "rentTECHNICS": { "title": "ТЕХНИКА" }
+    }
+  }
+}

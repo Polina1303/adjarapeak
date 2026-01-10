@@ -6,6 +6,7 @@ import { CATEGORY_RENT } from "../../components/product-range/categoryRent";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import { ProductItems } from "../../components/product-items/product-items";
 import { TfiClose } from "react-icons/tfi";
+import { startTransition } from "react";
 import {
   Accordion,
   Toolbar,
@@ -17,6 +18,7 @@ import {
   ListItemButton,
   Typography,
 } from "@mui/material";
+import { useTranslation } from "next-i18next";
 import { RENT_SKY } from "../../components/product-range/rent-sky";
 import { Card, CardActionArea, Skeleton } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -24,32 +26,45 @@ import styles from "./rent-page.module.css";
 
 export default function RentPage({ children }) {
   const router = useRouter();
-
   const [loadedIds, setLoadedIds] = useState([]);
   const [activeType, setActiveType] = useState(null);
   const [activeSubcategory, setActiveSubcategory] = useState(null);
   const [searchValue, setSearchValue] = useState("");
-  const [activeCategory, setActiveCategory] = useState(0);
+  const [activeCategory, setActiveCategory] = useState(null);
   const [expandedAccordion, setExpandedAccordion] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileView, setIsMobileView] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [isInitialized, setIsInitialized] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const { t, i18n, ready } = useTranslation("rent", "sale");
+  useEffect(() => {
+    i18n.loadNamespaces("rent");
+  }, []);
+
+  useEffect(() => {
+    setMounted(true);
+    const saved = localStorage.getItem("searchQuery");
+    if (saved) setSearchQuery(saved);
+  }, []);
+
+  useEffect(() => {
+    if (!router.isReady) return;
+
+    setSearchQuery(searchValue);
+    localStorage.setItem("searchQuery", searchValue);
+  }, [searchValue, router.asPath]);
 
   useEffect(() => {
     if (!router.isReady) return;
 
     const [, , categoryPath, typeOrSub] = router.asPath.split("/");
 
-    const categoryIndex = CATEGORY_RENT.findIndex(
-      (c) => c.path === categoryPath
-    );
+    if (!categoryPath) return;
 
-    if (categoryIndex !== -1) {
-      setActiveCategory(categoryIndex);
-    }
+    setActiveCategory(categoryPath);
 
-    const category = CATEGORY_RENT[categoryIndex];
+    const category = CATEGORY_RENT.find((c) => c.path === categoryPath);
     if (!category) return;
 
     let foundType = null;
@@ -71,15 +86,6 @@ export default function RentPage({ children }) {
     setActiveSubcategory(foundSub);
     setExpandedAccordion(foundType);
   }, [router.isReady, router.asPath]);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setSearchQuery(searchValue);
-      localStorage.setItem("searchQuery", searchValue);
-    }, 200);
-
-    return () => clearTimeout(timer);
-  }, [searchValue]);
 
   const renderAccordion = () =>
     currentCategory?.types?.map((type) => (
@@ -127,7 +133,7 @@ export default function RentPage({ children }) {
               color: activeType === type.category ? "#d87d4a" : "inherit",
             }}
           >
-            {type.title}
+            {t(type.title)}
           </Typography>
         </AccordionSummary>
 
@@ -157,7 +163,7 @@ export default function RentPage({ children }) {
                           : "inherit",
                     }}
                   >
-                    {sub.title}
+                    {t(sub.title)}
                   </Typography>
                 </ListItemButton>
               ))}
@@ -167,36 +173,35 @@ export default function RentPage({ children }) {
       </Accordion>
     ));
 
+  // useEffect(() => {
+  //   const pathParts = router.asPath.split("/");
+  //   const categoryPath = pathParts[2];
+  //   const categoryIndex = CATEGORY_RENT.findIndex(
+  //     (c) => c.path === categoryPath
+  //   );
+  //   if (categoryIndex !== -1) setActiveCategory(categoryIndex);
+  // }, [router.asPath]);
+
   useEffect(() => {
-    const pathParts = router.asPath.split("/");
-    const categoryPath = pathParts[2];
-    const categoryIndex = CATEGORY_RENT.findIndex(
-      (c) => c.path === categoryPath
-    );
-    if (categoryIndex !== -1) setActiveCategory(categoryIndex);
-  }, [router.asPath]);
+    if (!router.isReady) return;
+    const categoryPath = router.query.category || router.asPath.split("/")[2];
+    if (categoryPath) setActiveCategory(categoryPath);
+  }, [router.isReady, router.query.category, router.asPath]);
 
   const filteredProducts = useMemo(() => {
-    if (!isInitialized || !searchQuery.trim()) {
-      return [];
-    }
+    if (!isInitialized || !searchQuery.trim()) return [];
 
     const query = searchQuery.toLowerCase().trim();
 
-    const results = [];
-    const seenIds = new Set();
+    const all = [...RENT, ...RENT_SKY];
 
-    for (const product of RENT || RENT_SKY) {
-      if (product.title?.toLowerCase().includes(query)) {
-        if (!seenIds.has(product.id)) {
-          seenIds.add(product.id);
-          results.push(product);
-        }
-      }
-    }
-
-    return results;
+    return all.filter(
+      (p, idx, arr) =>
+        p.title?.toLowerCase().includes(query) &&
+        arr.findIndex((x) => x.id === p.id) === idx
+    );
   }, [searchQuery, isInitialized]);
+
   const menuContainerRef = useRef(null);
 
   useEffect(() => {
@@ -243,20 +248,25 @@ export default function RentPage({ children }) {
     setSearchValue(e.target.value);
   };
 
-  const handleCategoryClick = (e) => {
-    const categoryIndex = Number(e.key);
-    setActiveCategory(categoryIndex);
-    const category = CATEGORY_RENT[categoryIndex];
-    setExpandedAccordion(null);
-    setSearchValue("");
-    setSearchQuery("");
-    localStorage.removeItem("searchQuery");
-    router.push(`/rent/${category.path}`);
+  const handleCategoryClick = (path) => {
+    if (!path) return;
+
+    startTransition(() => {
+      setActiveCategory(path);
+      setActiveType(null);
+      setActiveSubcategory(null);
+      setExpandedAccordion(null);
+      setSearchValue("");
+      setSearchQuery("");
+      localStorage.removeItem("searchQuery");
+    });
+
+    router.push(`/rent/${path}`);
   };
 
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
-  const currentCategory = CATEGORY_RENT[activeCategory];
+  const currentCategory = CATEGORY_RENT.find((c) => c.path === activeCategory);
 
   // const handleTypeClick = (typeCategory) => {
   //   const category = CATEGORY_RENT[activeCategory];
@@ -303,27 +313,29 @@ export default function RentPage({ children }) {
           className={styles["filters-scroll-container"]}
           ref={menuContainerRef}
         >
-          <Menu
-            mode="horizontal"
-            selectedKeys={[`${activeCategory}`]}
-            items={CATEGORY_RENT.map((c, i) => ({
-              key: i,
-              label: c.title.trim(),
-            }))}
-            className={styles["sticky-horizontal-menu"]}
-            style={{
-              flex: 1,
-              marginBottom: 10,
-              fontSize: "14.5px",
-              fontFamily: "RoadRadio",
-            }}
-            onClick={handleCategoryClick}
-          />
+          {ready && (
+            <Menu
+              mode="horizontal"
+              selectedKeys={[`${activeCategory}`]}
+              items={CATEGORY_RENT.map((c) => ({
+                key: c.path,
+                label: t(c.title),
+              }))}
+              className={styles["sticky-horizontal-menu"]}
+              style={{
+                flex: 1,
+                marginBottom: 10,
+                fontSize: "14.5px",
+                fontFamily: "RoadRadio",
+              }}
+              onClick={({ key }) => handleCategoryClick(key)}
+            />
+          )}
         </div>
 
         <input
           type="text"
-          placeholder="Поиск"
+          placeholder={t("search.placeholder", { ns: "sale" })}
           value={searchValue}
           onChange={handleSearchChange}
           className={styles.searchInput}
@@ -333,7 +345,9 @@ export default function RentPage({ children }) {
       <div className={styles["home-page__container-product"]}>
         <div>
           <div className={styles["title"]} id="home-page-buy">
-            {currentCategory?.title?.toUpperCase() || "АРЕНДА ТОВАРОВ"}
+            {currentCategory
+              ? t(currentCategory.title).toUpperCase()
+              : t("rent.title")}
           </div>
 
           <div className={styles["sale-page-content"]}>
@@ -349,7 +363,7 @@ export default function RentPage({ children }) {
                     onClick={toggleMobileMenu}
                   >
                     <FilterListIcon />
-                    <p>Фильтры</p>
+                    <p>{t("filters.title", { ns: "sale" })}</p>
                   </div>
 
                   <Drawer
@@ -372,7 +386,7 @@ export default function RentPage({ children }) {
                   >
                     <Toolbar className={styles.toolbarMobile}>
                       <Typography className={styles.filterTitle}>
-                        Фильтры
+                        {t("filters.title", { ns: "sale" })}
                       </Typography>
                       <IconButton
                         edge="start"
@@ -434,14 +448,7 @@ export default function RentPage({ children }) {
                                   flexDirection: "column",
                                 }}
                               >
-                                {!isLoaded ? (
-                                  <Skeleton
-                                    variant="rectangular"
-                                    height={450}
-                                  />
-                                ) : (
-                                  <ProductItems product={product} />
-                                )}
+                                <ProductItems product={product} />
                               </CardActionArea>
                             </Card>
                           </div>
@@ -451,8 +458,14 @@ export default function RentPage({ children }) {
                   </>
                 ) : (
                   <div className={styles["not-found"]}>
-                    <p>Ничего не найдено по запросу "{searchQuery}"</p>
-                    <p>Попробуйте изменить запрос</p>
+                    <p>
+                      {t(
+                        "search.notFound",
+                        { query: searchQuery },
+                        { ns: "sale" }
+                      )}
+                    </p>
+                    <p>{t("search.tryChange", { ns: "sale" })}</p>
                   </div>
                 )}
               </div>

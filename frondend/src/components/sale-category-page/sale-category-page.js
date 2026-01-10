@@ -4,6 +4,7 @@ import { PRODUCT } from "../product-range/product";
 import { CATEGORY_PRODUCT } from "../product-range/categoryProduct";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useTranslation } from "next-i18next";
 import Image from "next/image";
 import { useSearchParams, usePathname } from "next/navigation";
 import { ProductItems } from "../product-items";
@@ -21,13 +22,14 @@ import Link from "next/link";
 export default function SaleCategoryPage({ section, type, subcategory }) {
   const router = useRouter();
   const [loadedIds, setLoadedIds] = useState([]);
-
+  const { t } = useTranslation(["common", "sale"]);
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [inStockOnly, setInStockOnly] = useState(
     searchParams.get("stock") === "true" || false
   );
   const [sortBy, setSortBy] = useState(searchParams.get("sort") ?? "default");
+
   const sectionData = CATEGORY_PRODUCT.find((s) => s.path === section) || {
     types: [],
   };
@@ -85,26 +87,20 @@ export default function SaleCategoryPage({ section, type, subcategory }) {
   if (!type && !subcategory && sectionData?.types?.length > 0) {
     return (
       <div className={styles["home-page-product"]}>
-        {sectionData.types.map((t) => {
-          const routePath = `/sale/${section}/${t.category}`;
-          const isLoaded = loadedIds.includes(t.category);
+        {sectionData.types.map((item) => {
+          const isLoaded = loadedIds.includes(item.category);
 
           return (
             <Link
-              key={t.category}
-              href={`/sale/${section}/${t.category}`}
+              key={item.category}
+              href={`/sale/${section}/${item.category}`}
               style={{ textDecoration: "none", color: "inherit" }}
             >
-              <Card
-                sx={{
-                  boxShadow: 3,
-                  height: "100%",
-                  overflow: "hidden",
-                }}
-              >
+              <Card sx={{ boxShadow: 3, height: "100%", overflow: "hidden" }}>
                 <CardActionArea disableRipple disableTouchRipple>
                   {!isLoaded && <Skeleton variant="rectangular" height={300} />}
-                  {t.img && (
+
+                  {item.img && (
                     <div
                       style={{
                         position: "relative",
@@ -114,17 +110,11 @@ export default function SaleCategoryPage({ section, type, subcategory }) {
                       }}
                     >
                       <Image
-                        src={`/img/${t.img}`}
-                        alt={t.title}
+                        src={`/img/${item.img}`}
+                        alt={item.title}
                         fill
-                        sizes="(max-width: 600px) 100vw,
-                 (max-width: 900px) 50vw,
-                 300px"
-                        style={{
-                          objectFit: "cover",
-                        }}
                         onLoadingComplete={() =>
-                          setLoadedIds((prev) => [...prev, t.category])
+                          setLoadedIds((prev) => [...prev, item.category])
                         }
                         priority
                       />
@@ -148,7 +138,7 @@ export default function SaleCategoryPage({ section, type, subcategory }) {
                         margin: 0,
                       }}
                     >
-                      {t.title}
+                      {t(item.title)}
                     </p>
                   </CardContent>
                 </CardActionArea>
@@ -184,7 +174,7 @@ export default function SaleCategoryPage({ section, type, subcategory }) {
                 },
               }}
             >
-              Цена
+              {t("price", { ns: "sale" })}
             </InputLabel>
             <Select
               value={sortBy}
@@ -215,6 +205,7 @@ export default function SaleCategoryPage({ section, type, subcategory }) {
                   "&:hover": { bgcolor: "#fef3ed" },
                 }}
               >
+                {t("default", { ns: "sale" })}
                 По умолчанию
               </MenuItem>
               <MenuItem
@@ -227,7 +218,7 @@ export default function SaleCategoryPage({ section, type, subcategory }) {
                   "&.Mui-selected:hover": { bgcolor: "#fde8db" },
                 }}
               >
-                По убыванию
+                {t("price-desc", { ns: "sale" })}
               </MenuItem>
               <MenuItem
                 value="price-asc"
@@ -239,7 +230,7 @@ export default function SaleCategoryPage({ section, type, subcategory }) {
                   "&.Mui-selected:hover": { bgcolor: "#fde8db" },
                 }}
               >
-                По возрастанию
+                {t("price-asc", { ns: "sale" })}
               </MenuItem>
             </Select>
           </FormControl>
@@ -270,7 +261,7 @@ export default function SaleCategoryPage({ section, type, subcategory }) {
               },
             }}
           >
-            В наличии
+            {t("in-stock", { ns: "sale" })}
           </ToggleButton>
         </div>
 
@@ -307,7 +298,11 @@ export default function SaleCategoryPage({ section, type, subcategory }) {
   }
 
   if (type || subcategory) {
-    return <p style={{ textAlign: "center" }}>Товары не найдены</p>;
+    return (
+      <p style={{ textAlign: "center" }}>
+        {t("no-products-found", { ns: "sale" })}
+      </p>
+    );
   }
 
   return null;

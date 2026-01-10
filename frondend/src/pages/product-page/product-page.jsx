@@ -16,7 +16,7 @@ import Typography from "@mui/material/Typography";
 import DoneIcon from "@mui/icons-material/Done";
 import { RecommendedCarousel } from "../../components/carousel";
 import { getProductById } from "../../../lib/cache";
-import { CATEGORY_RENT } from "../../components/product-range/categoryRent";
+import { useTranslation } from "react-i18next";
 import Image from "next/image";
 import styles from "./product-page.module.css";
 import {
@@ -32,7 +32,7 @@ export const ProductPage = () => {
   const [isZoomed, setIsZoomed] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
-
+  const { t, ready } = useTranslation(["common", "rent"]);
   const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
   const [imageSize, setImageSize] = useState({ width: 0, height: 0 });
 
@@ -243,7 +243,7 @@ export const ProductPage = () => {
 
   if (!product || !product.column) return null;
   const column = product.column;
-  const breadcrumbs = getBreadcrumbsByProduct(product);
+  const breadcrumbs = getBreadcrumbsByProduct(product, false, t);
 
   return (
     <>

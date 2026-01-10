@@ -1,5 +1,6 @@
 import RentPage from "../../src/pages/rent-page/rent-page";
 import RentCategoryPage from "../../src/components/rent-category-page/rent-category-page";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
 
 export default function RentSlug() {
@@ -21,4 +22,11 @@ export default function RentSlug() {
       />
     </RentPage>
   );
+}
+export async function getServerSideProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["rent"])),
+    },
+  };
 }

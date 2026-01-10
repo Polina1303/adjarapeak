@@ -4,6 +4,7 @@ import { CATEGORY_PRODUCT } from "../product-range/categoryProduct";
 import { CATEGORY_RENT } from "../product-range/categoryRent";
 import { RENT } from "../product-range/rent";
 import { RENT_SKY } from "../product-range/rent-sky";
+import { useTranslation } from "react-i18next";
 import styles from "./navigation.module.css";
 
 export const isRentProduct = (product) =>
@@ -15,10 +16,12 @@ const DEFAULT_PATHS = {
   sale: "/sale/alpinesking",
 };
 
-export const getBreadcrumbsByProduct = (product, isRentClick = false) => {
+export const getBreadcrumbsByProduct = (product, isRentClick = false, t) => {
   const isRent = product ? isRentProduct(product) : isRentClick;
   const basePath = isRent ? "/rent" : "/sale";
-  const rootTitle = isRent ? "Аренда" : "Магазин";
+  const rootTitle = isRent
+    ? t("rent", { ns: "common" })
+    : t("sale", { ns: "common" });
 
   if (!product) {
     return [
@@ -33,11 +36,16 @@ export const getBreadcrumbsByProduct = (product, isRentClick = false) => {
     for (const type of section.types) {
       if (type.category !== productCategory) continue;
 
+      const ns = isRent ? "rent" : "common";
+
       const items = [
         { title: rootTitle, href: DEFAULT_PATHS[isRent ? "rent" : "sale"] },
-        { title: section.title, href: `${basePath}/${section.path}` },
         {
-          title: type.title,
+          title: t(section.title, { ns }),
+          href: `${basePath}/${section.path}`,
+        },
+        {
+          title: t(type.title, { ns }),
           href: `${basePath}/${section.path}/${type.category}`,
         },
       ];
@@ -48,7 +56,7 @@ export const getBreadcrumbsByProduct = (product, isRentClick = false) => {
         );
         if (sub) {
           items.push({
-            title: sub.title,
+            title: t(sub.title, { ns }),
             href: `${basePath}/${section.path}/${type.category}/${sub.subcategory}`,
           });
         }
@@ -61,12 +69,16 @@ export const getBreadcrumbsByProduct = (product, isRentClick = false) => {
   return [{ title: rootTitle, href: DEFAULT_PATHS[isRent ? "rent" : "sale"] }];
 };
 
-export const Navigation = ({ items, title }) => {
+export const Navigation = ({ product, title, items: itemsProp }) => {
+  const { t, ready } = useTranslation(["common", "rent"]);
+
   const [open, setOpen] = useState(false);
 
-  if (!items?.length) return null;
+  if (!ready) return null;
 
-  console.log("items", items);
+  const items = itemsProp || getBreadcrumbsByProduct(product, false, t);
+
+  if (!items?.length) return null;
 
   const last = items[items.length - 1];
 
@@ -78,6 +90,8 @@ export const Navigation = ({ items, title }) => {
   return (
     <nav className={`${styles.breadcrumbs} ${open ? styles.open : ""}`}>
       <span className={styles.mobile}>
+        <Link href={last.href}>{last.title}</Link>
+
         <span>{title}</span>
 
         <span className={styles.arrow} onClick={toggle} role="button">

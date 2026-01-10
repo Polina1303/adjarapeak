@@ -1,0 +1,24 @@
+{
+  "search": {
+    "placeholder": "Search",
+    "notFound": "No results found for \"{{query}}\"",
+    "tryChange": "Try modifying your query"
+  },
+  "filters": {
+    "title": "Filters"
+  },
+  "sale": {
+    "title": "PRODUCT SALE"
+  },
+  "rent": {
+    "title": "RENTAL OF GOODS"
+  },
+  "price": "Price",
+  "default": "Default",
+  "price-desc": "Descending",
+  "price-asc": "Ascending",
+  "in-stock": "In Stock",
+  "no-products-found": "No products found",
+  "add-to-cart": "Add to Cart",
+  "coming-soon": "(coming soon)"
+}

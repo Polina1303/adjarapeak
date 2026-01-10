@@ -12,11 +12,10 @@ import {
   Skeleton,
   ToggleButton,
 } from "@mui/material";
-
+import { useTranslation } from "next-i18next";
 import { useEffect } from "react";
 
 import { useRouter } from "next/navigation";
-
 import { useSearchParams, usePathname } from "next/navigation";
 
 import { FormControl, Select, MenuItem, InputLabel } from "@mui/material";
@@ -25,12 +24,16 @@ import styles from "../sale-page/sale-page.module.css";
 export default function RentCategoryPage({ section, type, subcategory }) {
   const router = useRouter();
   const [loadedIds, setLoadedIds] = useState([]);
+
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [inStockOnly, setInStockOnly] = useState(
     searchParams.get("stock") === "true" || false
   );
   const [sortBy, setSortBy] = useState(searchParams.get("sort") ?? "default");
+
+  const { t } = useTranslation("rent", "sale");
+
   const sectionData = CATEGORY_RENT.find((s) => s.path === section) || {
     types: [],
   };
@@ -115,13 +118,13 @@ export default function RentCategoryPage({ section, type, subcategory }) {
   if (!type && !subcategory && sectionData?.types?.length > 0) {
     return (
       <div className={styles["home-page-product"]}>
-        {sectionData.types.map((t) => {
-          const routePath = `/rent/${section}/${t.category}`;
-          const isLoaded = loadedIds.includes(t.category);
+        {sectionData.types.map((item) => {
+          const routePath = `/rent/${section}/${item.category}`;
+          const isLoaded = loadedIds.includes(item.category);
 
           return (
             <div
-              key={t.category}
+              key={item.category}
               className={styles["category-product"]}
               onClick={() => router.push(routePath)}
               style={{ cursor: "pointer" }}
@@ -135,7 +138,7 @@ export default function RentCategoryPage({ section, type, subcategory }) {
               >
                 <CardActionArea disableRipple disableTouchRipple>
                   {!isLoaded && <Skeleton variant="rectangular" height={300} />}
-                  {t.img && (
+                  {item.img && (
                     <div
                       style={{
                         position: "relative",
@@ -147,8 +150,8 @@ export default function RentCategoryPage({ section, type, subcategory }) {
                       }}
                     >
                       <Image
-                        src={`/img/${t.img}`}
-                        alt={t.title}
+                        src={`/img/${item.img}`}
+                        alt={item.title}
                         priority
                         width={300}
                         height={300}
@@ -160,7 +163,7 @@ export default function RentCategoryPage({ section, type, subcategory }) {
                           objectPosition: "center",
                         }}
                         onLoadingComplete={() =>
-                          setLoadedIds((prev) => [...prev, t.category])
+                          setLoadedIds((prev) => [...prev, item.category])
                         }
                       />
                     </div>
@@ -182,7 +185,7 @@ export default function RentCategoryPage({ section, type, subcategory }) {
                         margin: 0,
                       }}
                     >
-                      {t.title}
+                      {t(item.title)}
                     </p>
                   </CardContent>
                 </CardActionArea>
@@ -218,7 +221,7 @@ export default function RentCategoryPage({ section, type, subcategory }) {
                 },
               }}
             >
-              Цена
+              {t("price", { ns: "sale" })}
             </InputLabel>
             <Select
               value={sortBy}
@@ -249,6 +252,7 @@ export default function RentCategoryPage({ section, type, subcategory }) {
                   "&:hover": { bgcolor: "#fef3ed" },
                 }}
               >
+                {t("default", { ns: "sale" })}
                 По умолчанию
               </MenuItem>
               <MenuItem
@@ -261,7 +265,7 @@ export default function RentCategoryPage({ section, type, subcategory }) {
                   "&.Mui-selected:hover": { bgcolor: "#fde8db" },
                 }}
               >
-                По убыванию
+                {t("price-desc", { ns: "sale" })}
               </MenuItem>
               <MenuItem
                 value="price-asc"
@@ -273,7 +277,7 @@ export default function RentCategoryPage({ section, type, subcategory }) {
                   "&.Mui-selected:hover": { bgcolor: "#fde8db" },
                 }}
               >
-                По возрастанию
+                {t("price-asc", { ns: "sale" })}
               </MenuItem>
             </Select>
           </FormControl>
@@ -304,7 +308,7 @@ export default function RentCategoryPage({ section, type, subcategory }) {
               },
             }}
           >
-            В наличии
+            {t("in-stock", { ns: "sale" })}
           </ToggleButton>
         </div>
         <div className={styles["home-page-product"]}>
@@ -339,7 +343,11 @@ export default function RentCategoryPage({ section, type, subcategory }) {
   }
 
   if (type || subcategory) {
-    return <p style={{ textAlign: "center" }}>Товары не найдены</p>;
+    return (
+      <p style={{ textAlign: "center" }}>
+        {t("no-products-found", { ns: "sale" })}
+      </p>
+    );
   }
 
   return null;

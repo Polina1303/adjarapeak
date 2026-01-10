@@ -1,0 +1,72 @@
+{
+  "skiing": {
+    "title": "სათხილამურო",
+    "category": {
+      "sky": {
+        "title": "თხილამურები"
+      },
+      "snowboard": {
+        "title": "სნოუბორდი"
+      },
+      "clothes": {
+        "title": "ტანსაცმელი",
+        "subcategories": {
+          "overall": "კომბინიზონი",
+          "jacket": "ქურთუკი",
+          "pants": "შარვალი",
+          "gloves": "ხელთათმანი"
+        }
+      },
+      "helmet": {
+        "title": "ჩაფხუტი"
+      },
+      "mask": {
+        "title": "ნიღაბი"
+      },
+      "protection": {
+        "title": "დამცავი"
+      },
+      "dif": {
+        "title": "ტიუბინგი, სასაცილე, თოვლის მოსიარულეები"
+      }
+    }
+  },
+  "tourism": {
+    "title": "ტურისტული",
+    "category": {
+      "rentTent": {
+        "title": "კარავი"
+      },
+      "rentSleeping": {
+        "title": "საძილე ტომარა"
+      },
+      "rentBack": {
+        "title": "ზურგჩანთა"
+      },
+      "rentFURNITURE": {
+        "title": "კემპინგის ავეჯი"
+      },
+      "rentDISHES": {
+        "title": "ჭურჭელი"
+      },
+      "rentBURNER": {
+        "title": "ქურა"
+      },
+      "rentTOOLS": {
+        "title": "ინსტრუმენტები"
+      },
+      "rentHIKING": {
+        "title": "სალაშქრო აღჭურვილობა"
+      },
+      "rentCLIMBING": {
+        "title": "ალპინიზმისთვის"
+      },
+      "rentSUP": {
+        "title": "საპ-ბორდი და აქსესუარები"
+      },
+      "rentTECHNICS": {
+        "title": "ტექნიკა"
+      }
+    }
+  }
+}

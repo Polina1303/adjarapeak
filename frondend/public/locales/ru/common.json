@@ -1,0 +1,352 @@
+{
+  "alpinesking": {
+    "title": "ГОРНОЛЫЖНЫЙ СПОРТ",
+    "category": {
+      "snowboardsky": "СНОУБОРДЫ",
+      "snowboardsky_boots": "СНОУБОРДИЧЕСКИЕ БОТИНКИ",
+      "fasteners_sky": "КРЕПЛЕНИЯ",
+      "closes_ski": {
+        "title": "ОДЕЖДА",
+        "subcategories": {
+          "pants_ski": "ШТАНЫ",
+          "jackets_ski": "КУРТКИ",
+          "set_ski": "КОМПЛЕКТЫ"
+        }
+      },
+      "buff": "БАФФЫ И БАЛАКЛАВЫ",
+      "thermalUnderwear": "ТЕРМОБЕЛЬЕ",
+      "helmet_sky": "ШЛЕМЫ",
+      "skigoggles": "МАСКИ",
+      "sky_care": "ЗАЩИТА",
+      "air_sky": "ТЮБИНГИ",
+      "gloves_sky": "ПЕРЧАТКИ",
+      "socks_sky": "НОСКИ",
+      "snowshoes": "СНЕГОСТУПЫ",
+      "bag_sky": "РЮКЗАКИ И ЧЕХЛЫ",
+      "winter_chains": "ЗИМНИЕ ЦЕПИ",
+      "sunscreen": "СОЛНЦЕЗАЩИТНЫЙ КРЕМ"
+    }
+  },
+
+  "clothesAndShoes": {
+    "title": "ОДЕЖДА И ОБУВЬ",
+    "category": {
+      "windbreaker": "ВЕТРОВКИ",
+      "fleece_jacket": "ФЛИСОВЫЕ КОФТЫ",
+      "down_jackets": "ПУХОВИКИ",
+      "pants": "ШТАНЫ",
+      "shoes": {
+        "title": "ОБУВЬ",
+        "subcategories": {
+          "waterprouf": "Непромокаемая обувь",
+          "trekking_shoes": "Треккинговая обувь",
+          "sandals": "Сандали",
+          "shoes_accessories": "АКСЕССУАРЫ ДЛЯ ОБУВИ",
+          "shoes_covers": "Чехлы для обуви"
+        }
+      },
+      "buff": "БАФФЫ И БАЛАКЛАВЫ",
+      "clothes_gloves": "ПЕРЧАТКИ",
+      "hat": "ГОЛОВНЫЕ УБОРЫ",
+      "care": "УХОД ЗА ОБУВЬЮ И ОДЕЖДОЙ",
+      "thermalUnderwear": "ТЕРМОБЕЛЬЕ",
+      "socks": "НОСКИ",
+      "underwear": "НИЖНЕЕ БЕЛЬЕ"
+    }
+  },
+  "martial": {
+    "title": "ЕДИНОБОРСТВА",
+    "category": {
+      "boxing_gloves": "ПЕРЧАТКИ ДЛЯ БОКСА",
+      "martialart_helmet": "ШЛЕМЫ",
+      "martialart_mouth_guard": "КАПЫ",
+      "martialart_protection": "ЗАЩИТА",
+      "paws": "ЛАПЫ",
+      "bandages": "БИНТЫ ДЛЯ РУК",
+      "martialart_clothes": "ОДЕЖДА ДЛЯ ЕДИНОБОРСТВ",
+      "martialart_shoes": "ОБУВЬ ДЛЯ ЕДИНОБОРСТВ",
+      "martialart_rubber": "РЕЗИНА И ЖГУТЫ",
+      "martialart_mma": "ПЕРЧАТКИ ММА",
+      "martialart_exercise": "ТРЕНАЖЕРЫ"
+    }
+  },
+  "tourismCamping": {
+    "title": "ТУРИЗМ И КЕМПИНГ",
+    "category": {
+      "tent": {
+        "title": "ПАЛАТКИ",
+        "subcategories": {
+          "tent": "Палатки",
+          "tent_accessories": "Аксессуары для палаток"
+        }
+      },
+      "sleepingbag": {
+        "title": "СПАЛЬНЫЕ МЕШКИ",
+        "subcategories": {
+          "sleepingbag": "Спальные мешки"
+        }
+      },
+      "backpack": {
+        "title": "РЮКЗАКИ",
+        "subcategories": {
+          "backpack": "Рюкзаки",
+          "fannypack": "Поясные сумки",
+          "gymbag": "Спортивные сумки"
+        }
+      },
+      "mat": {
+        "title": "КОВРИКИ И СИДУШКИ",
+        "subcategories": {
+          "mat": "Пенки",
+          "self-inflating": "Самонадувающиеся",
+          "inflatable": "Надувные",
+          "seats": "Сидушки",
+          "mat_accessories": "Аксессуары"
+        }
+      },
+      "trekkingsticks": {
+        "title": "ПАЛКИ ДЛЯ ТРЕКИНГА",
+        "subcategories": {
+          "trekkingsticks": "Палки",
+          "trekkingsticks_accessories": "Аксессуары"
+        }
+      },
+      "hermo": {
+        "title": "ДОЖДЕВИКИ",
+        "subcategories": {
+          "hermo": "Дождевики и пончо",
+          "raincoat": "Дождевики на рюкзак"
+        }
+      },
+      "gas/burner": {
+        "title": "ГОРЕЛКИ И ГАЗ",
+        "subcategories": {
+          "gas/burner": "Газовые баллоны",
+          "burner": "Горелки",
+          "gas/burner_accessories": "Аксессуары"
+        }
+      },
+      "lantern": {
+        "title": "ФОНАРИ",
+        "subcategories": {
+          "headlamp": "Фонари налобные",
+          "lamps": "Фонари ручные и лампы"
+        }
+      },
+      "sunglasses": {
+        "title": "СОЛНЦЕЗАЩИТНЫЕ ОЧКИ",
+        "subcategories": {
+          "sunglasses": "Очки",
+          "sunglasses_accessories": "Аксессуары"
+        }
+      },
+      "termoryukzak": {
+        "title": "ТЕРМОСЫ И ТЕРМОКРУЖКИ и ТЕРМОРЮКЗАКИ",
+        "subcategories": {
+          "thermos": "Термосы",
+          "cup": "Термокружки",
+          "termoryukzak": "Терморюкзаки"
+        }
+      },
+      "bottle": "БУТЫЛКИ",
+      "dishes": {
+        "title": "ПОСУДА",
+        "subcategories": {
+          "mug": "Кружки",
+          "plate": "Тарелки",
+          "setdishes": "Наборы посуды",
+          "teapot": "Чайники",
+          "pot": "Кастрюли, котелки, сковороды",
+          "cutlery": "Столовые приборы и аксессуары"
+        }
+      },
+      "barbecue": "МАНГАЛЫ, ШАМПУРЫ, РЕШЕТКИ",
+      "knife": {
+        "title": "ИНСТРУМЕНТЫ И НОЖИ",
+        "subcategories": {
+          "knife": "Ножи",
+          "axe": "Топоры",
+          "saw": "Пилы",
+          "shovel": "Лопаты",
+          "pliers": "плоскогубцы",
+          "knife_accessories": "Аксессуары"
+        }
+      },
+      "binoculars": {
+        "title": "ОПТИКА",
+        "subcategories": {
+          "binoculars": "Бинокли",
+          "monocular": "Монокуляры",
+          "binoculars_accessories": "Аксессуары"
+        }
+      },
+      "chair": {
+        "title": "МЕБЕЛЬ ДЛЯ КЕМПИНГА",
+        "subcategories": {
+          "chair": "Стулья",
+          "tables": "Столы"
+        }
+      },
+      "hammock": "ГАМАКИ",
+      "rope": "ВЕРЕВКА И КАРАБИНЫ",
+      "air": {
+        "title": "НАДУВНАЯ ПРОДУКЦИЯ",
+        "subcategories": {
+          "mattress": "Матрасы",
+          "pillows": "Подушки",
+          "pump": "Насосы"
+        }
+      },
+      "safety": {
+        "title": "БЕЗОПАСНОСТЬ",
+        "subcategories": {
+          "bracelet": "Браслеты",
+          "thermalblanket": "Спасодеяло",
+          "aid": "Аптечки",
+          "compass": "Компасы и свистки",
+          "repeller": "Отпугиватели",
+          "repellent": "Репелленты"
+        }
+      },
+      "technic": {
+        "title": "ТЕХНИКА и ЧАСЫ",
+        "subcategories": {
+          "watch": "Часы",
+          "technic": "Техника"
+        }
+      },
+      "medal": "БРЕЛКИ, ПОПЛАВКИ, МЕДАЛИ, КАРТЫ",
+      "food": {
+        "title": "ЕДА",
+        "subcategories": {
+          "lazy": "Сушёная походная еда (Lazy Snark)",
+          "izy": "Сушёная походная еда (IZY)",
+          "coffe": "Кофе в дрип-пакетах"
+        }
+      }
+    }
+  },
+  "sports": {
+    "title": "ИГРОВОЙ СПОРТ",
+    "category": {
+      "tennis": {
+        "title": "ТЕННИС",
+        "subcategories": {
+          "tennis": "Ракетки",
+          "tennis_accessories": "Аксессуары"
+        }
+      },
+      "padel": {
+        "title": "ПАДДЕЛ",
+        "subcategories": {
+          "padel": "Ракетки",
+          "padel_accessories": "Аксессуары"
+        }
+      },
+      "mini": {
+        "title": "МИНИ-ТЕННИС",
+        "subcategories": {
+          "mini": "Ракетки",
+          "mini_accessories": "Аксессуары"
+        }
+      },
+      "badminton": {
+        "title": "БАДМИНТОН",
+        "subcategories": {
+          "badminton": "Ракетки",
+          "badminton_accessories": "Аксессуары"
+        }
+      },
+      "baseball": "БЕЙСБОЛ",
+      "frisbee": "ФРИЗБИ",
+      "football": {
+        "title": "ФУТБОЛ",
+        "subcategories": {
+          "football": "Мячи",
+          "football_accessories": "Аксессуары"
+        }
+      },
+      "basketball": {
+        "title": "БАСКЕТБОЛ",
+        "subcategories": {
+          "basketball": "Мячи",
+          "basketball_accessories": "Аксессуары"
+        }
+      },
+      "volleyball": "ВОЛЕЙБОЛ",
+      "rugby": "РЕГБИ И АМЕРИКАНСКИЙ ФУТБОЛ",
+      "kneePads": {
+        "title": "Защита",
+        "subcategories": {
+          "kneePads": "Наколенники",
+          "elbowPads": "Налокотники"
+        }
+      },
+      "air": {
+        "title": "НАСОСЫ",
+        "subcategories": {
+          "pump": "Насосы"
+        }
+      },
+      "isotonic": "Изотоник"
+    }
+  },
+  "fitness": {
+    "title": "ФИТНЕС И ЙОГА",
+    "category": {
+      "fitness_gloves": "Перчатки для фитнеса",
+      "kettlebells": "Гантели и гири",
+      "accessories_fitnes": "Спортивные аксессуары",
+      "shaker": "ШЕЙКЕР",
+      "extender": "ЭСПАНДЕР",
+      "jumprope": "СКАКАЛКИ",
+      "elasticbands": "ФИТНЕС РЕЗИНКИ",
+      "mats": "КОВРИКИ ДЛЯ СПОРТА И ЙОГИ",
+      "hoop": "МАССАЖНЫЕ МЯЧИ И РОЛЛЫ",
+      "gymnastic": "Обруч / хулахуп",
+      "balance_board": "Баланс - борд"
+    }
+  },
+  "swimmingSup": {
+    "title": "ПЛАВАНИЕ И САПЫ",
+    "category": {
+      "supboard": "САПБОРДЫ",
+      "oar": "ВЕСЛА",
+      "fin": "ПЛАВНИКИ",
+      "vest": {
+        "title": "СПАСАТЕЛЬНЫЕ АКСЕССУАРЫ",
+        "subcategories": {
+          "vest": "ЖИЛЕТЫ",
+          "armbands": "НАРУКАВНИКИ",
+          "pool": "КРУГИ"
+        }
+      },
+      "sup_accessories": "КОМПЛЕКТУЮЩИЕ САПБОРД",
+      "mask": "МАСКИ и трубки ДЛЯ НЫРЯНИЯ",
+      "goggles": "ОЧКИ И БЕРУШИ ДЛЯ ПЛАВАНИЯ",
+      "hat_sea": "ШАПКА ДЛЯ ПЛАВАНИЯ",
+      "flippers": "ЛАСТЫ И ЛОПАТКИ",
+      "hermo2": "ГЕРМОМЕШКИ",
+      "shoesSea": "ПЛЯЖНАЯ ОБУВЬ И ОДЕЖДА",
+      "beach": "МЕБЕЛЬ ДЛЯ ПЛЯЖА",
+      "towel": "ПОЛОТЕНЦЕ"
+    }
+  },
+  "cyclingRoller": {
+    "title": "ВЕЛОСПОРТ И РОЛИКИ",
+    "category": {
+      "roller": {
+        "title": "РОЛИКИ",
+        "subcategories": {
+          "roller": "РОЛИКИ",
+          "roller_accessories": "АКСЕССУАРЫ"
+        }
+      },
+      "protection": "ЗАЩИТА",
+      "helmet": "ШЛЕМЫ",
+      "bike_accessories": "АКСЕССУАРЫ ДЛЯ ВЕЛОСИПЕДА"
+    }
+  },
+  "rent": "ПРОКАТ",
+  "sale": "МАГАЗИН"
+}
