@@ -31,7 +31,9 @@ export default function RentCategoryPage({ section, type, subcategory }) {
     searchParams.get("stock") === "true" || false
   );
   const [sortBy, setSortBy] = useState(searchParams.get("sort") ?? "default");
+
   const { t } = useTranslation("rent", "sale");
+
   const sectionData = CATEGORY_RENT.find((s) => s.path === section) || {
     types: [],
   };
@@ -251,8 +253,8 @@ export default function RentCategoryPage({ section, type, subcategory }) {
                 }}
               >
                 {t("default", { ns: "sale" })}
+                По умолчанию
               </MenuItem>
-
               <MenuItem
                 value="price-desc"
                 sx={{

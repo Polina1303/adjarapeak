@@ -69,8 +69,9 @@ export const getBreadcrumbsByProduct = (product, isRentClick = false, t) => {
   return [{ title: rootTitle, href: DEFAULT_PATHS[isRent ? "rent" : "sale"] }];
 };
 
-export const Navigation = ({ product, items: itemsProp }) => {
+export const Navigation = ({ product, title, items: itemsProp }) => {
   const { t, ready } = useTranslation(["common", "rent"]);
+
   const [open, setOpen] = useState(false);
 
   if (!ready) return null;
@@ -90,6 +91,9 @@ export const Navigation = ({ product, items: itemsProp }) => {
     <nav className={`${styles.breadcrumbs} ${open ? styles.open : ""}`}>
       <span className={styles.mobile}>
         <Link href={last.href}>{last.title}</Link>
+
+        <span>{title}</span>
+
         <span className={styles.arrow} onClick={toggle} role="button">
           {open ? "▲" : "▼"}
         </span>
@@ -102,6 +106,7 @@ export const Navigation = ({ product, items: itemsProp }) => {
             {i < items.length - 1 && " — "}
           </span>
         ))}
+        <span> - {title}</span>
       </span>
     </nav>
   );

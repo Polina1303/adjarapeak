@@ -26,7 +26,7 @@ export const SkiPage = () => {
         </button>
       </div>
 
-      <h2>ГОРНОЛЫЖНЫЙ ТУР В ГОДЕРДЗИ</h2>
+      <h2>ГОРНОЛЫЖНЫЙ ТУР В ГОДЕРДЗИ ОДНОДНЕВНЫЙ</h2>
 
       <SwiperPhoto photos={photos} />
       <section className={style["format-section"]}>

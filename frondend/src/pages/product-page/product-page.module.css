@@ -66,7 +66,6 @@
   text-align: center;
 }
 
-
 .zoom-reset {
   background: #de682d;
   color: white;
@@ -91,13 +90,13 @@
     height: 20px;
     top: 480px;
   }
-  
+
   .zoom-button {
     width: 15px;
     height: 15px;
     font-size: 12px;
   }
-  
+
   .zoom-reset {
     padding: 4px 6px;
     font-size: 10px;
@@ -229,9 +228,9 @@
   cursor: pointer;
   color: #222;
 }
-.breadcrumbs-box{
+.breadcrumbs-box {
   margin: 15px;
- color: #807f7f;
+  color: #807f7f;
 }
 @media only screen and (max-width: 785px) {
   .product-info {
@@ -252,10 +251,8 @@
     width: 100%;
     align-self: flex-start;
   }
-  .product-card{
-
+  .product-card {
     max-width: 100%;
-   
   }
 }
 @media only screen and (max-width: 610px) {
