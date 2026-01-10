@@ -253,7 +253,6 @@ export default function RentCategoryPage({ section, type, subcategory }) {
                 }}
               >
                 {t("default", { ns: "sale" })}
-                По умолчанию
               </MenuItem>
               <MenuItem
                 value="price-desc"

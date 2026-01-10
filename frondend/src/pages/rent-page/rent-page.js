@@ -36,14 +36,12 @@ export default function RentPage({ children }) {
   const [isMobileView, setIsMobileView] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [isInitialized, setIsInitialized] = useState(false);
-  const [mounted, setMounted] = useState(false);
   const { t, i18n, ready } = useTranslation("rent", "sale");
   useEffect(() => {
     i18n.loadNamespaces("rent");
   }, []);
 
   useEffect(() => {
-    setMounted(true);
     const saved = localStorage.getItem("searchQuery");
     if (saved) setSearchQuery(saved);
   }, []);
@@ -87,91 +85,6 @@ export default function RentPage({ children }) {
     setExpandedAccordion(foundType);
   }, [router.isReady, router.asPath]);
 
-  // const renderAccordion = () =>
-  //   currentCategory?.types?.map((type) => (
-  //     <Accordion
-  //       key={type.category}
-  //       expanded={expandedAccordion === type.category}
-  //       onChange={
-  //         type.subcategories?.length
-  //           ? () =>
-  //               setExpandedAccordion((prev) =>
-  //                 prev === type.category ? null : type.category
-  //               )
-  //           : undefined
-  //       }
-  //       disableGutters
-  //       sx={{
-  //         boxShadow: "none",
-  //         borderBottom: "1px solid #eee",
-  //         "&:before": { display: "none" },
-  //       }}
-  //     >
-  //       <AccordionSummary
-  //         expandIcon={
-  //           type.subcategories?.length ? (
-  //             <ExpandMoreIcon style={{ color: "#ff6f00" }} />
-  //           ) : null
-  //         }
-  //         sx={{
-  //           cursor: "pointer",
-  //           minHeight: 40,
-  //           "&.Mui-expanded": { minHeight: 40 },
-  //           "& .MuiAccordionSummary-content": { margin: 0 },
-  //           "& .MuiAccordionSummary-content.Mui-expanded": { margin: 0 },
-  //         }}
-  //         onClick={() => {
-  //           handleTypeClick(type.category);
-  //           closeMobileMenu();
-  //         }}
-  //       >
-  //         <Typography
-  //           sx={{
-  //             fontFamily: "RoadRadio, sans-serif",
-  //             fontSize: 14,
-  //             fontWeight: activeType === type.category ? 700 : 500,
-  //             color: activeType === type.category ? "#d87d4a" : "inherit",
-  //           }}
-  //         >
-  //           {t(type.title)}
-  //         </Typography>
-  //       </AccordionSummary>
-
-  //       {type.subcategories?.length > 0 && (
-  //         <AccordionDetails sx={{ p: 0 }}>
-  //           <List>
-  //             {type.subcategories.map((sub) => (
-  //               <ListItemButton
-  //                 key={sub.subcategory}
-  //                 sx={{ pl: 3 }}
-  //                 onMouseDown={(e) => e.stopPropagation()}
-  //                 onClick={(e) => {
-  //                   e.stopPropagation();
-  //                   handleSubcategoryClick(sub.subcategory);
-  //                   closeMobileMenu();
-  //                 }}
-  //               >
-  //                 <Typography
-  //                   sx={{
-  //                     fontFamily: "RoadRadio, sans-serif",
-  //                     fontSize: 14,
-  //                     fontWeight:
-  //                       activeSubcategory === sub.subcategory ? 600 : 400,
-  //                     color:
-  //                       activeSubcategory === sub.subcategory
-  //                         ? "#d87d4a"
-  //                         : "inherit",
-  //                   }}
-  //                 >
-  //                   {t(sub.title)}
-  //                 </Typography>
-  //               </ListItemButton>
-  //             ))}
-  //           </List>
-  //         </AccordionDetails>
-  //       )}
-  //     </Accordion>
-  //   ));
   const renderAccordion = () =>
     currentCategory?.types?.map((type) => (
       <Accordion
