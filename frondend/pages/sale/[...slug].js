@@ -1,5 +1,6 @@
 import SalePage from "../../src/components/sale-page/sale-page";
 import SaleCategoryPage from "../../src/components/sale-category-page/sale-category-page";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
 
 export default function SaleSlug() {
@@ -19,4 +20,12 @@ export default function SaleSlug() {
       />
     </SalePage>
   );
+}
+
+export async function getServerSideProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common", "sale", "header"])),
+    },
+  };
 }

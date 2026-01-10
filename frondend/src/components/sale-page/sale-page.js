@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo, useRef } from "react";
 import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
 import { PRODUCT } from "../product-range/product";
 import { startTransition } from "react";
 import { Menu } from "antd";
@@ -30,24 +31,25 @@ export default function SalePage({ children }) {
   const [searchValue, setSearchValue] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
   const [isInitialized, setIsInitialized] = useState(false);
-  const [activeCategory, setActiveCategory] = useState(0);
+  const [activeCategory, setActiveCategory] = useState(null);
   const [expandedAccordion, setExpandedAccordion] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileView, setIsMobileView] = useState(false);
   const [activeSubcategory, setActiveSubcategory] = useState(null);
   const [activeType, setActiveType] = useState(null);
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setSearchQuery(searchValue);
-  //     localStorage.setItem("searchQuery", searchValue);
-  //   }, 200);
-  //   return () => clearTimeout(timer);
-  // }, [searchValue]);
+  const [mounted, setMounted] = useState(false);
+  const { t, ready } = useTranslation(["common", "sale"]);
+
+  useEffect(() => {
+    setMounted(true);
+    const saved = localStorage.getItem("searchQuery");
+    if (saved) setSearchQuery(saved);
+  }, []);
+
   useEffect(() => {
     if (!router.isReady) return;
 
-    // если путь меняется → не ждать debounce, гасим поиск сразу
     setSearchQuery(searchValue);
     localStorage.setItem("searchQuery", searchValue);
   }, [searchValue, router.asPath]);
@@ -55,19 +57,21 @@ export default function SalePage({ children }) {
   const menuContainerRef = useRef(null);
 
   useEffect(() => {
+    if (router.query.category) {
+      setActiveCategory(router.query.category);
+    }
+  }, [router.query.category]);
+
+  useEffect(() => {
     if (!router.isReady) return;
 
     const [, , categoryPath, typeOrSub] = router.asPath.split("/");
 
-    const categoryIndex = CATEGORY_PRODUCT.findIndex(
-      (c) => c.path === categoryPath
-    );
+    if (!categoryPath) return;
 
-    if (categoryIndex !== -1) {
-      setActiveCategory(categoryIndex);
-    }
+    setActiveCategory(categoryPath);
 
-    const category = CATEGORY_PRODUCT[categoryIndex];
+    const category = CATEGORY_PRODUCT.find((c) => c.path === categoryPath);
     if (!category) return;
 
     let foundType = null;
@@ -113,15 +117,6 @@ export default function SalePage({ children }) {
     }
   }, []);
 
-  // useEffect(() => {
-  //   const pathParts = router.asPath.split("/");
-  //   const categoryPath = pathParts[2];
-  //   const categoryIndex = CATEGORY_PRODUCT.findIndex(
-  //     (c) => c.path === categoryPath
-  //   );
-  //   if (categoryIndex !== -1) setActiveCategory(categoryIndex);
-  // }, [router.asPath]);
-
   useEffect(() => {
     const checkScreen = () => {
       const mobile = window.innerWidth <= 1200;
@@ -143,7 +138,10 @@ export default function SalePage({ children }) {
     return results;
   }, [searchQuery, isInitialized, availabilityFilter, priceSort]);
 
-  const currentCategory = CATEGORY_PRODUCT[activeCategory];
+  const currentCategory = CATEGORY_PRODUCT.find(
+    (c) => c.path === activeCategory
+  );
+
   const getProductKey = (product, index) => `product-${product.id}-${index}`;
 
   const handleTypeClick = (typeCategory) => {
@@ -163,45 +161,22 @@ export default function SalePage({ children }) {
     router.push(`/sale/${currentCategory.path}/${subPath}`);
   };
 
-  // const handleCategoryClick = (e) => {
-  //   const idx = Number(e.key);
-  //   setActiveCategory(idx);
-  //   setExpandedAccordion(null);
-  //   setSearchValue("");
-  //   setSearchQuery("");
-  //   localStorage.removeItem("searchQuery");
-  //   router.push(`/sale/${CATEGORY_PRODUCT[idx].path}`);
-  // };
+  if (!mounted || !ready) return null;
 
-  // const handleCategoryClick = (e) => {
-  //   const idx = Number(e.key);
-
-  //   setActiveCategory(idx);
-  //   setActiveType(null);
-  //   setActiveSubcategory(null);
-  //   setExpandedAccordion(null);
-
-  //   setSearchValue("");
-  //   setSearchQuery("");
-  //   localStorage.removeItem("searchQuery");
-
-  //   router.push(`/sale/${CATEGORY_PRODUCT[idx].path}`);
-  // };
-  const handleCategoryClick = (e) => {
-    const idx = Number(e.key);
+  const handleCategoryClick = (path) => {
+    if (!path) return;
 
     startTransition(() => {
-      setActiveCategory(idx);
+      setActiveCategory(path);
       setActiveType(null);
       setActiveSubcategory(null);
       setExpandedAccordion(null);
-
       setSearchValue("");
       setSearchQuery("");
       localStorage.removeItem("searchQuery");
     });
 
-    router.push(`/sale/${CATEGORY_PRODUCT[idx].path}`);
+    router.push(`/sale/${path}`);
   };
 
   const toggleMobileMenu = () =>
@@ -254,7 +229,7 @@ export default function SalePage({ children }) {
               color: activeType === type.category ? "#d87d4a" : "inherit",
             }}
           >
-            {type.title}
+            {t(type.title)}
           </Typography>
         </AccordionSummary>
 
@@ -284,7 +259,7 @@ export default function SalePage({ children }) {
                           : "inherit",
                     }}
                   >
-                    {sub.title}
+                    {t(sub.title)}
                   </Typography>
                 </ListItemButton>
               ))}
@@ -303,8 +278,11 @@ export default function SalePage({ children }) {
         >
           <Menu
             mode="horizontal"
-            selectedKeys={[`${activeCategory}`]}
-            items={CATEGORY_PRODUCT.map((c, i) => ({ key: i, label: c.title }))}
+            selectedKeys={activeCategory ? [activeCategory] : []}
+            items={CATEGORY_PRODUCT.map((c) => ({
+              key: c.path,
+              label: t(c.title),
+            }))}
             className={styles["sticky-horizontal-menu"]}
             style={{
               flex: 1,
@@ -312,13 +290,13 @@ export default function SalePage({ children }) {
               fontSize: isMobileView ? 16 : 14.5,
               fontFamily: "RoadRadio",
             }}
-            onClick={handleCategoryClick}
+            onClick={({ key }) => handleCategoryClick(key)}
           />
         </div>
 
         <input
           type="text"
-          placeholder="Поиск"
+          placeholder={t("search.placeholder", { ns: "sale" })}
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
           className={styles.searchInput}
@@ -328,7 +306,9 @@ export default function SalePage({ children }) {
       <div className={styles["home-page__container-product"]}>
         <div>
           <div className={styles["title"]} id="home-page-buy">
-            {currentCategory?.title?.toUpperCase() || "ПРОДАЖА ТОВАРОВ"}
+            {currentCategory
+              ? t(currentCategory.title).toUpperCase()
+              : t("sale.title")}
           </div>
 
           <div className={styles["sale-page-content"]}>
@@ -344,7 +324,7 @@ export default function SalePage({ children }) {
                     onClick={toggleMobileMenu}
                   >
                     <FilterListIcon />
-                    <p>Фильтры</p>
+                    <p>{t("filters.title", { ns: "sale" })}</p>
                   </div>
 
                   <Drawer
@@ -367,7 +347,7 @@ export default function SalePage({ children }) {
                   >
                     <Toolbar className={styles.toolbarMobile}>
                       <Typography className={styles.filterTitle}>
-                        Фильтры
+                        <p>{t("filters.title", { ns: "sale" })}</p>
                       </Typography>
                       <IconButton
                         edge="start"
@@ -424,8 +404,14 @@ export default function SalePage({ children }) {
                 </div>
               ) : (
                 <div className={styles["not-found"]}>
-                  <p>Ничего не найдено по запросу "{searchQuery}"</p>
-                  <p>Попробуйте изменить запрос</p>
+                  <p>
+                    {t(
+                      "search.notFound",
+                      { query: searchQuery },
+                      { ns: "sale" }
+                    )}
+                  </p>
+                  <p>{t("search.tryChange", { ns: "sale" })}</p>
                 </div>
               )
             ) : (

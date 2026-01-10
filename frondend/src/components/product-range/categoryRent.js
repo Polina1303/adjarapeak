@@ -1,163 +1,121 @@
 export const CATEGORY_RENT = [
   {
-    title: "ГОРНОЛЫЖНОЕ",
-
+    title: "skiing.title",
     path: "skiRental",
     types: [
-      // {
-      //   title: "ВСЁ",
-      //   // type:'all',
-      // },
-
-      // {
-      //   title: "КОМПЛЕКТЫ",
-      //   category: "set",
-      //   img: "19.45.11.jpg",
-      // },
       {
-        title: "ЛЫЖИ",
+        title: "skiing.category.sky.title",
         category: "sky",
         img: "2026-01-01 15.38.20.jpg",
       },
       {
-        title: "СНОУБОРД",
+        title: "skiing.category.snowboard.title",
         category: "snowboard",
         img: "19.52.32.jpg",
       },
       {
-        title: "одежда",
+        title: "skiing.category.clothes.title",
         category: "clothes",
         img: "IMG_5903.PNG",
         subcategories: [
-          { title: "КОМБИНЕЗОНЫ", subcategory: "overall" },
-          { title: "КУРТКИ", subcategory: "jacket" },
-          { title: "ШТАНЫ", subcategory: "pants" },
-          { title: "ПЕРЧАТКИ", subcategory: "gloves" },
+          {
+            title: "skiing.category.clothes.subcategories.overall",
+            subcategory: "overall",
+          },
+          {
+            title: "skiing.category.clothes.subcategories.jacket",
+            subcategory: "jacket",
+          },
+          {
+            title: "skiing.category.clothes.subcategories.pants",
+            subcategory: "pants",
+          },
+          {
+            title: "skiing.category.clothes.subcategories.gloves",
+            subcategory: "gloves",
+          },
         ],
       },
-      // category: "tent",
-      // subcategories: [
-      //   { title: "Палатки", subcategory: "tent" },
-      //   { title: "Аксессуары для палаток", subcategory: "tent_accessories" },
-      // ],
-      // },
-      // {
-      //   title: "КУРТКИ",
-      //   category: "jacket",
-      //   img: "IMG_5871.JPG",
-      // },
-      // {
-      //   title: "КОМБИНЕЗОНЫ",
-      //   category: "overall",
-      //   img: "IMG_5903.PNG",
-      // },
-      // {
-      //   title: "ШТАНЫ",
-      //   category: "pants",
-      //   img: "IMG_5870.JPG",
-      // },
-      // {
-      //   title: "ПЕРЧАТКИ",
-      //   category: "gloves",
-      //   img: "IMG_586.png",
-      // },
       {
-        title: "ШЛЕМ",
+        title: "skiing.category.helmet.title",
         category: "helmet",
         img: "IMG_58.png",
       },
       {
-        title: "МАСКА",
+        title: "skiing.category.mask.title",
         category: "mask",
         img: "IMG_5865-.png",
       },
       {
-        title: "ЗАЩИТА",
+        title: "skiing.category.protection.title",
         category: "protection",
         img: "19.24.57.jpg",
       },
       {
-        title: "ТЮБИНГ, САНКИ, СНЕГОСТУПЫ",
+        title: "skiing.category.dif.title",
         category: "dif",
         img: "Gn31w.jpg",
       },
-      // {
-      //   title: "CПОРТ",
-      //   type: "rentSPORTS",
-      //   id: 13,
-      // },
     ],
   },
-
   {
-    title: "ТУРИСТИЧЕСКОЕ",
-
+    title: "tourism.title",
     path: "tourismRental",
     types: [
-      // {
-      //   title: "ВСЁ",
-      //   // type:'all',
-      // },
       {
-        title: "ПАЛАТКИ",
+        title: "tourism.category.rentTent.title",
         category: "rentTent",
         img: "tent2Mesuca.jpg",
       },
       {
-        title: "СПАЛЬНЫЕ МЕШКИ",
+        title: "tourism.category.rentSleeping.title",
         category: "rentSleeping",
         img: "sleeping_bag_green.jpg",
       },
       {
-        title: "РЮКЗАКИ",
+        title: "tourism.category.rentBack.title",
         category: "rentBack",
         img: "IMG_8135.jpg",
       },
       {
-        title: "КЕМПИНГОВАЯ МЕБЕЛЬ",
+        title: "tourism.category.rentFURNITURE.title",
         category: "rentFURNITURE",
         img: "9858034f125a76b5679055e7b28c27aa.webp",
       },
       {
-        title: "ПОСУДА",
+        title: "tourism.category.rentDISHES.title",
         category: "rentDISHES",
         img: "00.13.37.jpg",
       },
       {
-        title: "ГОРЕЛКИ",
+        title: "tourism.category.rentBURNER.title",
         category: "rentBURNER",
         img: "adapter.jpg",
-        id: 7,
       },
       {
-        title: "ИНСТРУМЕНТЫ",
+        title: "tourism.category.rentTOOLS.title",
         category: "rentTOOLS",
         img: "product_1207_1.jpg",
-        id: 8,
       },
       {
-        title: "ПРЕДМЕТЫ ПОХОДА",
+        title: "tourism.category.rentHIKING.title",
         category: "rentHIKING",
         img: "sitting_DECATHLON.png",
-        id: 9,
       },
       {
-        title: "ДЛЯ АЛЬПИНИЗМА",
+        title: "tourism.category.rentCLIMBING.title",
         category: "rentCLIMBING",
         img: "VERTEXVENT.jpg",
-        id: 10,
       },
       {
-        title: "САП-БОРДЫ И АКСЕССУАРЫ",
+        title: "tourism.category.rentSUP.title",
         category: "rentSUP",
         img: "18a131f8-02f0-47bc-b2a5-88b58d52642d.438bc7c551289ad8284aa8b118c9bc5a.webp",
-        id: 11,
       },
       {
-        title: "ТЕХНИКА",
+        title: "tourism.category.rentTECHNICS.title",
         category: "rentTECHNICS",
         img: "xiaomi-redmi-fast-charge-power-bank-20000-mah-18w.png",
-        id: 12,
       },
     ],
   },

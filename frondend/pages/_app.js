@@ -7,6 +7,10 @@ import dynamic from "next/dynamic";
 import { useEffect } from "react";
 import { initProductCache } from "../lib/cache";
 import "../src/index.css";
+import { appWithTranslation } from "next-i18next";
+import "../src/i18n.js";
+
+import nextI18NextConfig from "../next-i18next.config.js";
 
 const Header = dynamic(
   () => import("../src/components/header").then((mod) => mod.Header),
@@ -15,7 +19,7 @@ const Header = dynamic(
   }
 );
 
-export default function App({ Component, pageProps }) {
+function App({ Component, pageProps }) {
   useEffect(() => {
     initProductCache();
   }, []);
@@ -32,3 +36,5 @@ export default function App({ Component, pageProps }) {
     </Provider>
   );
 }
+
+export default appWithTranslation(App, nextI18NextConfig);

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setItemInCart } from "../../redux/cart/reducer";
+import { useTranslation } from "react-i18next";
 import { MdAddShoppingCart } from "react-icons/md";
 import { Button } from "../button";
 import styles from "./buy.module.css";
@@ -12,6 +13,7 @@ export const Buy = ({ product, page, discount }) => {
       state.cart.itemsInCart.find((item) => item.id === product.id)
   );
   const addedCount = cartItem ? cartItem.count : 0;
+  const { t, ready } = useTranslation(["sale"]);
 
   const dispatch = useDispatch();
   const handleAddToCart = (e) => {
@@ -93,7 +95,7 @@ export const Buy = ({ product, page, discount }) => {
 
         {!product.order && (
           <p className={page ? styles.pageStyle : styles.noPageStyle}>
-            (скоро в наличии)
+            {t("coming-soon", { ns: "sale" })}
           </p>
         )}
       </div>
@@ -124,7 +126,7 @@ export const Buy = ({ product, page, discount }) => {
                   discount ? styles["discounted"] : ""
                 }`}
               >
-                В корзину
+                {t("add-to-cart", { ns: "sale" })}
               </div>
 
               <div className={styles["add-to-cart-icon"]}>

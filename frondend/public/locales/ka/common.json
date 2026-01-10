@@ -1,0 +1,403 @@
+{
+  "alpinesking": {
+    "title": "ალპინური სკი",
+    "category": {
+      "snowboardsky": "სნოუბორდები",
+      "snowboardsky_boots": "სნოუბორდის ჩექმები",
+      "fasteners_sky": "დაჭერილობები",
+      "closes_ski": {
+        "title": "ტანსაცმელი",
+        "subcategories": {
+          "pants_ski": "შარვლები",
+          "jackets_ski": "კურტკები",
+          "set_ski": "კომპლექტები"
+        }
+      },
+      "buff": "ბაფები და ბალაკლავები",
+      "thermalUnderwear": "თერმული საცვლები",
+      "helmet_sky": "ხელსახურები",
+      "skigoggles": "ჩაფხუტები",
+      "sky_care": "დაცვა",
+      "air_sky": "ტუბინგი",
+      "gloves_sky": "ხელთათმანები",
+      "socks_sky": "ნაქსოვი წინდები",
+      "snowshoes": "ყინულის ფეხსაცმელი",
+      "bag_sky": "საკმარი ჩანთები და ზურგჩანთები",
+      "winter_chains": "ზამთრის ჯაჭვები",
+      "sunscreen": "მზისგან დამცავი კრემი"
+    }
+  },
+  "clothesAndShoes": {
+    "title": "ტანსაცმელი და ფეხსაცმელი",
+    "category": {
+      "windbreaker": "ქურთუკები",
+      "fleece_jacket": "ფლიზის კურტკები",
+      "down_jackets": "მსუბუქი ქურთუკები",
+      "pants": "შარვლები",
+      "shoes": {
+        "title": "ფეხსაცმელი",
+        "subcategories": {
+          "waterprouf": "წყალგაუმტარი ფეხსაცმელი",
+          "trekking_shoes": "ტრეკინგის ფეხსაცმელი",
+          "sandals": "სანდლები",
+          "shoes_accessories": "ფეხსაცმლის აქსესუარები",
+          "shoes_covers": "ფეხსაცმლის საფარები"
+        }
+      },
+      "buff": "ბაფები და ბალაკლავები",
+      "clothes_gloves": "ხელთათმანები",
+      "hat": "თავის სამოსი",
+      "care": "ტანსაცმლისა და ფეხსაცმლის მოვლა",
+      "thermalUnderwear": "თერმული საცვლები",
+      "socks": "ნაქსოვი წინდები",
+      "underwear": "შინდის საცვლები"
+    }
+  },
+  "martial": {
+    "title": "მარტიალ არტი",
+    "category": {
+      "boxing_gloves": "ბოქსის ხელთათმანები",
+      "martialart_helmet": "ხელსახურები",
+      "martialart_mouth_guard": "პაროდონტალური დაცვის საშუალებები",
+      "martialart_protection": "დაცვა",
+      "paws": "თათები",
+      "bandages": "ხელის ბინტები",
+      "martialart_clothes": "მარტიალ არტის ტანსაცმელი",
+      "martialart_shoes": "მარტიალ არტის ფეხსაცმელი",
+      "martialart_rubber": "ლასტიკები და ელასტიური ნაჭრები",
+      "martialart_mma": "MMA-ის ხელთათმანები",
+      "martialart_exercise": "სამწვრთნელო მოწყობილობები"
+    }
+  },
+  "tourismCamping": {
+    "title": "ტურიზმი და კემპინგი",
+    "category": {
+      "tent": {
+        "title": "მაშტრები",
+        "subcategories": {
+          "tent": "მაშტრები",
+          "tent_accessories": "მაშტრების აქსესუარები"
+        }
+      },
+      "sleepingbag": {
+        "title": "ძილის საფენები",
+        "subcategories": {
+          "sleepingbag": "ძილის საფენები"
+        }
+      },
+      "backpack": {
+        "title": "ზურგჩანთები",
+        "subcategories": {
+          "backpack": "ზურგჩანთები",
+          "fannypack": "მუცლის ჩანთები",
+          "gymbag": "სპორტული ჩანთები"
+        }
+      },
+      "mat": {
+        "title": "მატები და სავარძლები",
+        "subcategories": {
+          "mat": "პენკები",
+          "self-inflating": "ავტომატურად გამოფუვადი მატები",
+          "inflatable": "გამოფუვადი მატები",
+          "seats": "სავარძლები",
+          "mat_accessories": "აქსესუარები"
+        }
+      },
+      "trekkingsticks": {
+        "title": "ტრეკინგის ჯოხები",
+        "subcategories": {
+          "trekkingsticks": "ჯოხები",
+          "trekkingsticks_accessories": "აქსესუარები"
+        }
+      },
+      "hermo": {
+        "title": "წვიმისგან დამცავი ქურთუკები",
+        "subcategories": {
+          "hermo": "წვიმის ქურთუკები და პონჩო",
+          "raincoat": "ზურგჩანთის ქურთუკები"
+        }
+      },
+      "gas/burner": {
+        "title": "გაზი და დანადგარები",
+        "subcategories": {
+          "gas/burner": "გაზის ბალონები",
+          "burner": "დანადგარები",
+          "gas/burner_accessories": "აქსესუარები"
+        }
+      },
+      "lantern": {
+        "title": "ფანრები",
+        "subcategories": {
+          "headlamp": "თავის ფანრები",
+          "lamps": "ხელის ფანრები და სანათები"
+        }
+      },
+      "sunglasses": {
+        "title": "ზაფხულის სათვალეები",
+        "subcategories": {
+          "sunglasses": "სათვალეები",
+          "sunglasses_accessories": "აქსესუარები"
+        }
+      },
+      "termoryukzak": {
+        "title": "თერმოსები, თერმოკაპები და თერმოზურგჩანთები",
+        "subcategories": {
+          "thermos": "თერმოსები",
+          "cup": "თერმოკაპები",
+          "termoryukzak": "თერმოზურგჩანთები"
+        }
+      },
+      "bottle": "ბოთლები",
+      "dishes": {
+        "title": "ჭურჭელი",
+        "subcategories": {
+          "mug": "ჭიქები",
+          "plate": "ფირფიტები",
+          "setdishes": "ჭურჭლის ნაკრები",
+          "teapot": "ჩაიდნები",
+          "pot": "ქვაბები, ჭურჭლები, ტაფები",
+          "cutlery": "სამზარეულო აქსესუარები"
+        }
+      },
+      "barbecue": "ბარბექიუს, შამპურები, გრისლები",
+      "knife": {
+        "title": "ტოლები და დანები",
+        "subcategories": {
+          "knife": "დანები",
+          "axe": "ყანჩები",
+          "saw": "ღერძები",
+          "shovel": "ფარი",
+          "pliers": "მჭიდები",
+          "knife_accessories": "აქსესუარები"
+        }
+      },
+      "binoculars": {
+        "title": "ოპტიკა",
+        "subcategories": {
+          "binoculars": "ბინოკლები",
+          "monocular": "მონოკლები",
+          "binoculars_accessories": "აქსესუარები"
+        }
+      },
+      "chair": {
+        "title": "კემპინგის ავეჯი",
+        "subcategories": {
+          "chair": "კავები",
+          "tables": "მაგიდები"
+        }
+      },
+      "hammock": "ჰამაკები",
+      "rope": "ხაზი და კარაბინერები",
+      "air": {
+        "title": "გამოფუვადი პროდუქცია",
+        "subcategories": {
+          "mattress": "საწოლები",
+          "pillows": "დამამშვიდებელი ბალიშები",
+          "pump": "პომპები"
+        }
+      },
+      "safety": {
+        "title": "უსაფრთხოება",
+        "subcategories": {
+          "bracelet": "ბრასლეტები",
+          "thermalblanket": "თერმული გადასაფარებლები",
+          "aid": "სამედიცინო ნაკრები",
+          "compass": "კომპასები და სიფონები",
+          "repeller": "გაქცევის საშუალებები",
+          "repellent": "რეპელენტები"
+        }
+      },
+      "technic": {
+        "title": "ტექნიკა და საათები",
+        "subcategories": {
+          "watch": "საათები",
+          "technic": "ტექნიკური მოწყობილობები"
+        }
+      },
+      "medal": "ბრელოკები, ფლოტები, მედლები, რუკები",
+      "food": {
+        "title": "საჭმელი",
+        "subcategories": {
+          "lazy": "გამშრალი ტურისტული საჭმელი (Lazy Snark)",
+          "izy": "გამშრალი ტურისტული საჭმელი (IZY)",
+          "coffe": "კოფე დრიპ პაკეტებში"
+        }
+      }
+    }
+  },
+  "sports": {
+    "title": "ბურთით და რაკეტით სპორტი",
+    "category": {
+      "tennis": {
+        "title": "ტენისი",
+        "subcategories": {
+          "tennis": "რაკეტები",
+          "tennis_accessories": "აქსესუარები"
+        }
+      },
+      "padel": {
+        "title": "პადელი",
+        "subcategories": {
+          "padel": "რაკეტები",
+          "padel_accessories": "აქსესუარები"
+        }
+      },
+      "mini": {
+        "title": "მინი-ტენისი",
+        "subcategories": {
+          "mini": "რაკეტები",
+          "mini_accessories": "აქსესუარები"
+        }
+      },
+      "badminton": {
+        "title": "ბადმინტონი",
+        "subcategories": {
+          "badminton": "რაკეტები",
+          "badminton_accessories": "აქსესუარები"
+        }
+      },
+      "baseball": "ბეისბოლი",
+      "frisbee": "ფრიზბი",
+      "football": {
+        "title": "ფეხბურთი",
+        "subcategories": {
+          "football": "ბურთები",
+          "football_accessories": "აქსესუარები"
+        }
+      },
+      "basketball": {
+        "title": "ბასკეტბოლი",
+        "subcategories": {
+          "basketball": "ბურთები",
+          "basketball_accessories": "აქსესუარები"
+        }
+      },
+      "volleyball": "ვოლეიბოლი",
+      "rugby": "რაგბი და ამერიკული ფეხბურთი",
+      "kneePads": {
+        "title": "დაცვა",
+        "subcategories": {
+          "kneePads": "მუხლის დამცავები",
+          "elbowPads": "კვანძის დამცავები"
+        }
+      },
+      "air": {
+        "title": "პომპები",
+        "subcategories": {
+          "pump": "პომპები"
+        }
+      },
+      "isotonic": "იზოტონიკური სასმელები"
+    }
+  },
+  "fitness": {
+    "title": "ფიტნესი და იოგა",
+    "category": {
+      "fitness_gloves": "ფიტნესის ხელთათმანები",
+      "kettlebells": "დამბელები და კეტლბელები",
+      "accessories_fitnes": "ფიტნეს აქსესუარები",
+      "shaker": "შეიკერი",
+      "extender": "ექსპანდერი",
+      "jumprope": "ხტუნის თოკი",
+      "elasticbands": "ფიტნეს რეზინკები",
+      "mats": "სპორტული და იოგას მატები",
+      "hoop": "მასაჟის ბურთები და როლები",
+      "gymnastic": "ბორბალი / ჰულაჰუპი",
+      "balance_board": "ბალანსის დაფა"
+    }
+  },
+  "swimmingSup": {
+    "title": "საპ-ბორდი და ცურვა",
+    "category": {
+      "supboard": " საპბორდი",
+      "oar": "კოცნები",
+      "fin": "ფინები",
+      "vest": {
+        "title": "უსაფრთხოების აქსესუარები",
+        "subcategories": {
+          "vest": "საგარდი ჟილეტები",
+          "armbands": "ბალიშები",
+          "pool": "ბურთები"
+        }
+      },
+      "sup_accessories": "SUP აქსესუარები",
+      "mask": "დაივინგის ნიღბები და სნორკელები",
+      "goggles": "ცურვის სათვალეები და ყურის საცობები",
+      "hat_sea": "ცურვის ქუდები",
+      "flippers": "ფლიპერები და ლოპატკები",
+      "hermo2": "საშრობი ჩანთები",
+      "shoesSea": "სანაპიროს ფეხსაცმელი და ტანსაცმელი",
+      "beach": "სანაპიროს ავეჯი",
+      "towel": "ტილოები"
+    }
+  },
+  "cyclingRoller": {
+    "title": "ველოსპორტი და როლიკები",
+    "category": {
+      "roller": {
+        "title": "როლიკები",
+        "subcategories": {
+          "roller": "როლიკები",
+          "roller_accessories": "აქსესუარები"
+        }
+      },
+      "protection": "დაცვა",
+      "helmet": "ხელსახურები",
+      "bike_accessories": "ველოსიპედის აქსესუარები"
+    }
+  },
+  "skiing": {
+    "title": "თხილამურებით სრიალი",
+    "category": {
+      "sky": {
+        "title": "თხილამურები",
+        "subcategories": {
+          "sky": "თხილამურები",
+          "sky_sticks": "ჩოგანი",
+          "sky_boots": "ფეხსაცმელი",
+          "sky_accessories": "აქსესუარები"
+        }
+      },
+      "snowboard": {
+        "title": "სნოუბორდი",
+        "subcategories": {
+          "snowboard": "სნოუბორდები",
+          "snowboard_boots": "ფეხსაცმელი",
+          "snowboard_bindings": "მიმაგრებები",
+          "snowboard_accessories": "აქსესუარები"
+        }
+      },
+      "clothes": {
+        "title": "ტანსაცმელი",
+        "subcategories": {
+          "overall": "კომბინიზონები",
+          "jacket": "ქურთუკები",
+          "pants": "შარვლები",
+          "gloves": "ხელთათმანები"
+        }
+      },
+      "helmet": "ჩაფხუტი",
+      "mask": "სათვალე (ნიღაბი)",
+      "protection": "დაცვა",
+      "dif": "ტიუბინგი, სასნოუბორდე, ფირფიტები"
+    }
+  },
+  "tourism": {
+    "title": "ტურისტული",
+    "category": {
+      "rentTent": "კარავები",
+      "rentSleeping": "საძილე ტომრები",
+      "rentBack": "ზურგჩანთები",
+      "rentFURNITURE": "კემპინგის ავეჯი",
+      "rentDISHES": "ჭურჭელი",
+      "rentBURNER": "ქურები",
+      "rentTOOLS": "ინსტრუმენტები",
+      "rentHIKING": "სალაშქრო აღჭურვილობა",
+      "rentCLIMBING": "ალპინიზმისთვის",
+      "rentSUP": "საპ-ბორდები და აქსესუარები",
+      "rentTECHNICS": "ტექნიკა"
+    }
+  },
+  "rent": "ქირაობა",
+  "sale": "მაღაზია"
+}

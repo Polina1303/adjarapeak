@@ -1,0 +1,403 @@
+{
+  "alpinesking": {
+    "title": "ALPINE SKIING",
+    "category": {
+      "snowboardsky": "SNOWBOARDS",
+      "snowboardsky_boots": "SNOWBOARD BOOTS",
+      "fasteners_sky": "BINDINGS",
+      "closes_ski": {
+        "title": "CLOTHING",
+        "subcategories": {
+          "pants_ski": "PANTS",
+          "jackets_ski": "JACKETS",
+          "set_ski": "SETS"
+        }
+      },
+      "buff": "BUFFS AND BALACLAVAS",
+      "thermalUnderwear": "THERMAL UNDERWEAR",
+      "helmet_sky": "HELMETS",
+      "skigoggles": "GOGGLES",
+      "sky_care": "PROTECTION",
+      "air_sky": "TUBING",
+      "gloves_sky": "GLOVES",
+      "socks_sky": "SOCKS",
+      "snowshoes": "SNOWSHOES",
+      "bag_sky": "BACKPACKS AND BAGS",
+      "winter_chains": "WINTER CHAINS",
+      "sunscreen": "SUNSCREEN"
+    }
+  },
+  "clothesAndShoes": {
+    "title": "CLOTHING AND SHOES",
+    "category": {
+      "windbreaker": "WINDBREAKERS",
+      "fleece_jacket": "FLEECE JACKETS",
+      "down_jackets": "DOWN JACKETS",
+      "pants": "PANTS",
+      "shoes": {
+        "title": "SHOES",
+        "subcategories": {
+          "waterprouf": "WATERPROOF SHOES",
+          "trekking_shoes": "TREKKING SHOES",
+          "sandals": "SANDALS",
+          "shoes_accessories": "SHOE ACCESSORIES",
+          "shoes_covers": "SHOE COVERS"
+        }
+      },
+      "buff": "BUFFS AND BALACLAVAS",
+      "clothes_gloves": "GLOVES",
+      "hat": "HATS",
+      "care": "CLOTHING AND SHOE CARE",
+      "thermalUnderwear": "THERMAL UNDERWEAR",
+      "socks": "SOCKS",
+      "underwear": "UNDERWEAR"
+    }
+  },
+  "martial": {
+    "title": "MARTIAL ARTS",
+    "category": {
+      "boxing_gloves": "BOXING GLOVES",
+      "martialart_helmet": "HELMETS",
+      "martialart_mouth_guard": "MOUTH GUARDS",
+      "martialart_protection": "PROTECTION",
+      "paws": "PAWS",
+      "bandages": "HAND WRAPS",
+      "martialart_clothes": "MARTIAL ARTS CLOTHING",
+      "martialart_shoes": "MARTIAL ARTS SHOES",
+      "martialart_rubber": "BANDS AND RESISTANCE TUBES",
+      "martialart_mma": "MMA GLOVES",
+      "martialart_exercise": "TRAINING EQUIPMENT"
+    }
+  },
+  "tourismCamping": {
+    "title": "TOURISM AND CAMPING",
+    "category": {
+      "tent": {
+        "title": "TENTS",
+        "subcategories": {
+          "tent": "TENTS",
+          "tent_accessories": "TENT ACCESSORIES"
+        }
+      },
+      "sleepingbag": {
+        "title": "SLEEPING BAGS",
+        "subcategories": {
+          "sleepingbag": "SLEEPING BAGS"
+        }
+      },
+      "backpack": {
+        "title": "BACKPACKS",
+        "subcategories": {
+          "backpack": "BACKPACKS",
+          "fannypack": "FANNY PACKS",
+          "gymbag": "SPORT BAGS"
+        }
+      },
+      "mat": {
+        "title": "MATS AND SEATS",
+        "subcategories": {
+          "mat": "FOAM MATS",
+          "self-inflating": "SELF-INFLATING MATS",
+          "inflatable": "INFLATABLE MATS",
+          "seats": "SEATS",
+          "mat_accessories": "ACCESSORIES"
+        }
+      },
+      "trekkingsticks": {
+        "title": "TREKKING POLES",
+        "subcategories": {
+          "trekkingsticks": "POLES",
+          "trekkingsticks_accessories": "ACCESSORIES"
+        }
+      },
+      "hermo": {
+        "title": "RAINCOATS",
+        "subcategories": {
+          "hermo": "RAINCOATS AND PONCHOS",
+          "raincoat": "RAINCOATS FOR BACKPACKS"
+        }
+      },
+      "gas/burner": {
+        "title": "BURNERS AND GAS",
+        "subcategories": {
+          "gas/burner": "GAS CYLINDERS",
+          "burner": "BURNERS",
+          "gas/burner_accessories": "ACCESSORIES"
+        }
+      },
+      "lantern": {
+        "title": "LANTERNS",
+        "subcategories": {
+          "headlamp": "HEADLAMPS",
+          "lamps": "HAND LANTERNS AND LAMPS"
+        }
+      },
+      "sunglasses": {
+        "title": "SUNGLASSES",
+        "subcategories": {
+          "sunglasses": "GLASSES",
+          "sunglasses_accessories": "ACCESSORIES"
+        }
+      },
+      "termoryukzak": {
+        "title": "THERMO FLASKS, MUGS AND BACKPACKS",
+        "subcategories": {
+          "thermos": "THERMOS",
+          "cup": "THERMO MUGS",
+          "termoryukzak": "THERMO BACKPACKS"
+        }
+      },
+      "bottle": "BOTTLES",
+      "dishes": {
+        "title": "DISHES",
+        "subcategories": {
+          "mug": "MUGS",
+          "plate": "PLATES",
+          "setdishes": "DISH SETS",
+          "teapot": "TEAPOTS",
+          "pot": "POTS, KETTLES, FRYING PANS",
+          "cutlery": "CUTLERY AND ACCESSORIES"
+        }
+      },
+      "barbecue": "BARBECUES, SKEWERS, GRILLS",
+      "knife": {
+        "title": "TOOLS AND KNIVES",
+        "subcategories": {
+          "knife": "KNIVES",
+          "axe": "AXES",
+          "saw": "SAWS",
+          "shovel": "SHOVELS",
+          "pliers": "PLIERS",
+          "knife_accessories": "ACCESSORIES"
+        }
+      },
+      "binoculars": {
+        "title": "OPTICS",
+        "subcategories": {
+          "binoculars": "BINOCULARS",
+          "monocular": "MONOCULARS",
+          "binoculars_accessories": "ACCESSORIES"
+        }
+      },
+      "chair": {
+        "title": "CAMPING FURNITURE",
+        "subcategories": {
+          "chair": "CHAIRS",
+          "tables": "TABLES"
+        }
+      },
+      "hammock": "HAMMOCKS",
+      "rope": "ROPES AND CARABINERS",
+      "air": {
+        "title": "INFLATABLE PRODUCTS",
+        "subcategories": {
+          "mattress": "MATTRESSES",
+          "pillows": "PILLOWS",
+          "pump": "PUMPS"
+        }
+      },
+      "safety": {
+        "title": "SAFETY",
+        "subcategories": {
+          "bracelet": "BRACELETS",
+          "thermalblanket": "THERMAL BLANKETS",
+          "aid": "FIRST AID KITS",
+          "compass": "COMPASSES AND WHISTLES",
+          "repeller": "DETERRENTS",
+          "repellent": "REPELLENTS"
+        }
+      },
+      "technic": {
+        "title": "TECH AND WATCHES",
+        "subcategories": {
+          "watch": "WATCHES",
+          "technic": "TECH EQUIPMENT"
+        }
+      },
+      "medal": "KEYCHAINS, FLOATS, MEDALS, MAPS",
+      "food": {
+        "title": "FOOD",
+        "subcategories": {
+          "lazy": "DRIED HIKING FOOD (Lazy Snark)",
+          "izy": "DRIED HIKING FOOD (IZY)",
+          "coffe": "DRIP COFFEE"
+        }
+      }
+    }
+  },
+  "sports": {
+    "title": "RACKET AND BALL SPORTS",
+    "category": {
+      "tennis": {
+        "title": "TENNIS",
+        "subcategories": {
+          "tennis": "RACKETS",
+          "tennis_accessories": "ACCESSORIES"
+        }
+      },
+      "padel": {
+        "title": "PADEL",
+        "subcategories": {
+          "padel": "RACKETS",
+          "padel_accessories": "ACCESSORIES"
+        }
+      },
+      "mini": {
+        "title": "MINI-TENNIS",
+        "subcategories": {
+          "mini": "RACKETS",
+          "mini_accessories": "ACCESSORIES"
+        }
+      },
+      "badminton": {
+        "title": "BADMINTON",
+        "subcategories": {
+          "badminton": "RACKETS",
+          "badminton_accessories": "ACCESSORIES"
+        }
+      },
+      "baseball": "BASEBALL",
+      "frisbee": "FRISBEE",
+      "football": {
+        "title": "FOOTBALL",
+        "subcategories": {
+          "football": "BALLS",
+          "football_accessories": "ACCESSORIES"
+        }
+      },
+      "basketball": {
+        "title": "BASKETBALL",
+        "subcategories": {
+          "basketball": "BALLS",
+          "basketball_accessories": "ACCESSORIES"
+        }
+      },
+      "volleyball": "VOLLEYBALL",
+      "rugby": "RUGBY AND AMERICAN FOOTBALL",
+      "kneePads": {
+        "title": "PROTECTION",
+        "subcategories": {
+          "kneePads": "KNEE PADS",
+          "elbowPads": "ELBOW PADS"
+        }
+      },
+      "air": {
+        "title": "PUMPS",
+        "subcategories": {
+          "pump": "PUMPS"
+        }
+      },
+      "isotonic": "ISOTONIC DRINKS"
+    }
+  },
+  "fitness": {
+    "title": "FITNESS AND YOGA",
+    "category": {
+      "fitness_gloves": "FITNESS GLOVES",
+      "kettlebells": "DUMBBELLS AND KETTLEBELLS",
+      "accessories_fitnes": "FITNESS ACCESSORIES",
+      "shaker": "SHAKER",
+      "extender": "EXPANDER",
+      "jumprope": "JUMP ROPE",
+      "elasticbands": "FITNESS BANDS",
+      "mats": "SPORT AND YOGA MATS",
+      "hoop": "MASSAGE BALLS AND ROLLERS",
+      "gymnastic": "HOOP / HULA HOOP",
+      "balance_board": "BALANCE BOARD"
+    }
+  },
+  "swimmingSup": {
+    "title": "SWIMMING AND SUP",
+    "category": {
+      "supboard": "SUPBOARDS",
+      "oar": "OARS",
+      "fin": "FINS",
+      "vest": {
+        "title": "SAFETY ACCESSORIES",
+        "subcategories": {
+          "vest": "LIFE VESTS",
+          "armbands": "ARMBANDS",
+          "pool": "FLOATS"
+        }
+      },
+      "sup_accessories": "SUP ACCESSORIES",
+      "mask": "DIVING MASKS AND SNORKELS",
+      "goggles": "SWIMMING GOGGLES AND EARPLUGS",
+      "hat_sea": "SWIMMING CAPS",
+      "flippers": "FLIPPERS AND PADDLES",
+      "hermo2": "DRY BAGS",
+      "shoesSea": "BEACH SHOES AND CLOTHING",
+      "beach": "BEACH FURNITURE",
+      "towel": "TOWELS"
+    }
+  },
+  "cyclingRoller": {
+    "title": "CYCLING AND ROLLERS",
+    "category": {
+      "roller": {
+        "title": "ROLLER SKATES",
+        "subcategories": {
+          "roller": "ROLLER SKATES",
+          "roller_accessories": "ACCESSORIES"
+        }
+      },
+      "protection": "PROTECTION",
+      "helmet": "HELMETS",
+      "bike_accessories": "BIKE ACCESSORIES"
+    }
+  },
+  "skiing": {
+    "title": "SKIING",
+    "category": {
+      "sky": {
+        "title": "SKIS",
+        "subcategories": {
+          "sky": "SKIS",
+          "sky_sticks": "POLES",
+          "sky_boots": "BOOTS",
+          "sky_accessories": "ACCESSORIES"
+        }
+      },
+      "snowboard": {
+        "title": "SNOWBOARD",
+        "subcategories": {
+          "snowboard": "BOARDS",
+          "snowboard_boots": "BOOTS",
+          "snowboard_bindings": "BINDINGS",
+          "snowboard_accessories": "ACCESSORIES"
+        }
+      },
+      "clothes": {
+        "title": "CLOTHING",
+        "subcategories": {
+          "overall": "OVERALLS",
+          "jacket": "JACKETS",
+          "pants": "PANTS",
+          "gloves": "GLOVES"
+        }
+      },
+      "helmet": "HELMET",
+      "mask": "GOGGLES",
+      "protection": "PROTECTION",
+      "dif": "TUBING, SLEDS, SNOWSHOES"
+    }
+  },
+  "tourism": {
+    "title": "TOURISM",
+    "category": {
+      "rentTent": "TENTS",
+      "rentSleeping": "SLEEPING BAGS",
+      "rentBack": "BACKPACKS",
+      "rentFURNITURE": "CAMPING FURNITURE",
+      "rentDISHES": "COOKWARE",
+      "rentBURNER": "STOVES",
+      "rentTOOLS": "TOOLS",
+      "rentHIKING": "CAMPING EQUIPMENT",
+      "rentCLIMBING": "MOUNTAINEERING",
+      "rentSUP": "SUP BOARDS AND ACCESSORIES",
+      "rentTECHNICS": "EQUIPMENT"
+    }
+  },
+  "rent": "CAMPING",
+  "sale": "SHOP"
+}

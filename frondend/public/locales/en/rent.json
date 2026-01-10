@@ -1,0 +1,72 @@
+{
+  "skiing": {
+    "title": "SKI RENTAL",
+    "category": {
+      "sky": {
+        "title": "SKIS"
+      },
+      "snowboard": {
+        "title": "SNOWBOARD"
+      },
+      "clothes": {
+        "title": "CLOTHES",
+        "subcategories": {
+          "overall": "OVERALLS",
+          "jacket": "JACKETS",
+          "pants": "PANTS",
+          "gloves": "GLOVES"
+        }
+      },
+      "helmet": {
+        "title": "HELMETS"
+      },
+      "mask": {
+        "title": "MASKS"
+      },
+      "protection": {
+        "title": "PROTECTION"
+      },
+      "dif": {
+        "title": "TUBING, SLEDS, SNOWSHOES"
+      }
+    }
+  },
+  "tourism": {
+    "title": "TOURISM RENTAL",
+    "category": {
+      "rentTent": {
+        "title": "TENTS"
+      },
+      "rentSleeping": {
+        "title": "SLEEPING BAGS"
+      },
+      "rentBack": {
+        "title": "BACKPACKS"
+      },
+      "rentFURNITURE": {
+        "title": "CAMPING FURNITURE"
+      },
+      "rentDISHES": {
+        "title": "DISHWARE"
+      },
+      "rentBURNER": {
+        "title": "BURNERS"
+      },
+      "rentTOOLS": {
+        "title": "TOOLS"
+      },
+      "rentHIKING": {
+        "title": "HIKING ITEMS"
+      },
+      "rentCLIMBING": {
+        "title": "FOR CLIMBING"
+      },
+      "rentSUP": {
+        "title": "SUP BOARDS & ACCESSORIES"
+      },
+      "rentTECHNICS": {
+        "title": "TECHNICS"
+      }
+    }
+  }
+}
