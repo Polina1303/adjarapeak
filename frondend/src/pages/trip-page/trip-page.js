@@ -924,6 +924,7 @@ const events = [
   //   link: "/rockClimbing",
   //   type: "rockClimbing",
   // },
+
   // {
   //   date: "3 января (сб)",
   //   title: "Скалолазание в Гонио",
@@ -944,6 +945,17 @@ const events = [
   //   link: "/rockClimbing",
   //   type: "rockClimbing",
   // },
+
+  {
+    date: "4 января (вс)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: "/imageTrip/rock2.JPG",
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
   {
     date: "everyday",
     title: "ДЖИП-ТУР",
@@ -966,7 +978,7 @@ const events = [
   },
   {
     date: "weekend",
-    title: "ГОРНОЛЫЖНЫЙ ТУР ОДНОДНЕВНЫЙ",
+    title: "ГОРНОЛЫЖНЫЙ ТУР ОДНОДНЕВНЫЙ в Годердзи",
     description:
       "Продолжаем катать по горам и зимой.Можно заказать индивидуальный джип-трансфер — идеально для семьи 3–4 человека.Формат - 1,2 дня",
     price: "120",
@@ -976,41 +988,75 @@ const events = [
     seasonEnd: "28 февраля 2026",
   },
   {
+    date: "11 января (вс)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: "/imageTrip/rock2.JPG",
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
+  {
+    date: "18 января (вс)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: "/imageTrip/rock2.JPG",
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
+  {
+    date: "25 января (вс)",
+    title: "Скалолазание в Гонио",
+    description:
+      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+    price: "49",
+    image: "/imageTrip/rock2.JPG",
+    link: "/rockClimbing",
+    type: "rockClimbing",
+  },
+  {
     date: "17.01-18.01",
-    title: "ГОРНОЛЫЖНЫЙ ТУР ДВУХДНЕВНЫЙ",
-    description: "В разработке",
-    price: "-",
-    image: "/imageTrip/skitour1.jpg",
-    link: "",
+    title: "ГОРНОЛЫЖНЫЙ ТУР ДВУХДНЕВНЫЙ в Годердзи",
+    description:
+      "Раннее заселение. Комфортный новый отель. Сауна. Завтраки «шведский стол». — 3 места в двухместных студиях с раздельными кроватями ~ 400 лари.  2 места в двухместной студии с общей кроватью и небольшой раскладным креслом (для пар и семей) ~ 720 за двоих  / 870 за троих ",
+    price: "от 290 ",
+    image: "/imageTrip/90IMG_8510.JPG",
+    link: "/two-day-trip-page",
+
     type: "skiTour",
   },
   {
     date: "24.01-25.01",
-    title: "ГОРНОЛЫЖНЫЙ ТУР ДВУХДНЕВНЫЙ",
-    description: "В разработке",
-    price: "-",
-    image: "/imageTrip/skitour1.jpg",
-    link: "",
+    title: "ГОРНОЛЫЖНЫЙ ТУР ДВУХДНЕВНЫЙ в Годердзи",
+    description:
+      "Раннее заселение. Комфортный новый отель. Сауна. Завтраки «шведский стол». — 3 места в двухместных студиях с раздельными кроватями ~ 400 лари.  2 места в двухместной студии с общей кроватью и небольшой раскладным креслом (для пар и семей) ~ 720 за двоих  / 870 за троих ",
+    price: "от 290 ",
+    image: "/imageTrip/90IMG_8510.JPG",
+    link: "/two-day-trip-page",
     type: "skiTour",
   },
   {
     date: "31.01-01.02",
-    title: "ГОРНОЛЫЖНЫЙ ТУР ДВУХДНЕВНЫЙ",
-    description: "В разработке",
-    price: "-",
-    image: "/imageTrip/skitour1.jpg",
-    link: "",
+    title: "ГОРНОЛЫЖНЫЙ ТУР ДВУХДНЕВНЫЙ в Годердзи",
+    description:
+      "Раннее заселение. Комфортный новый отель. Сауна. Завтраки «шведский стол». — 3 места в двухместных студиях с раздельными кроватями ~ 400 лари.  2 места в двухместной студии с общей кроватью и небольшой раскладным креслом (для пар и семей) ~ 720 за двоих  / 870 за троих ",
+    price: "от 290 ",
+    image: "/imageTrip/90IMG_8510.JPG",
+    link: "/two-day-trip-page",
     type: "skiTour",
   },
-  {
-    date: "17.01-18.01",
-    title: "ТУР ДВУХДНЕВНЫЙ БАКУРИАНИ",
-    description: "В разработке",
-    price: "-",
-    image: "/imageTrip/skitour3.jpg",
-    link: "",
-    type: "skiTour",
-  },
+  // {
+  //   date: "17.01-18.01",
+  //   title: "ТУР ДВУХДНЕВНЫЙ БАКУРИАНИ",
+  //   description: "В разработке",
+  //   price: "-",
+  //   image: "/imageTrip/skitour3.jpg",
+  //   link: "",
+  //   type: "skiTour",
+  // },
   {
     date: "24.01-25.01",
     title: "ТУР ДВУХДНЕВНЫЙ БАКУРИАНИ",
@@ -1611,15 +1657,14 @@ export const TripPage = () => {
                   )}
 
                   <div className={style["card-buttons"]}>
-                    {event.link !== "/" &&
-                      !(event.type === "skiTour" && !event.generated) && (
-                        <Button
-                          className={style["button"]}
-                          onClick={() => router.push(event.link)}
-                        >
-                          Узнать больше
-                        </Button>
-                      )}
+                    {event.link && event.link !== "/" && (
+                      <Button
+                        className={style["button"]}
+                        onClick={() => router.push(event.link)}
+                      >
+                        Узнать больше
+                      </Button>
+                    )}
 
                     <Button className={style["custom-button"]}>
                       {event.gide === 1 ? (

@@ -206,6 +206,7 @@ export default function SaleCategoryPage({ section, type, subcategory }) {
                 }}
               >
                 {t("default", { ns: "sale" })}
+                По умолчанию
               </MenuItem>
               <MenuItem
                 value="price-desc"
