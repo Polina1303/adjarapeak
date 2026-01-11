@@ -16,7 +16,7 @@ import Typography from "@mui/material/Typography";
 import DoneIcon from "@mui/icons-material/Done";
 import { RecommendedCarousel } from "../../components/carousel";
 import { getProductById } from "../../../lib/cache";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 import Image from "next/image";
 import styles from "./product-page.module.css";
 import {

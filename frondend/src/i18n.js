@@ -1,5 +1,5 @@
 import i18n from "i18next";
-import { initReactI18next } from "react-i18next";
+import { initReactI18next } from "next-i18next";
 import commonRu from "../public/locales/ru/common.json";
 import commonEn from "../public/locales/en/common.json";
 import commonKa from "../public/locales/ka/common.json";

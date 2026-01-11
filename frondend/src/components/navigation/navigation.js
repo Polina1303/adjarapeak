@@ -4,7 +4,7 @@ import { CATEGORY_PRODUCT } from "../product-range/categoryProduct";
 import { CATEGORY_RENT } from "../product-range/categoryRent";
 import { RENT } from "../product-range/rent";
 import { RENT_SKY } from "../product-range/rent-sky";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 import styles from "./navigation.module.css";
 
 export const isRentProduct = (product) =>
