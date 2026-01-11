@@ -18,13 +18,10 @@
   width: 100%;
 }
 
-
-/* .climbingVideo {
-  width: 460px;
-  height: 355px;
-  display: flex;
-  flex-direction: row;
-} */
+.climbingVideo video[style*="width: 100%"] {
+  width: auto !important;
+  height: auto !important;
+}
 
 .climbingVideo {
   width: 100%;
@@ -37,7 +34,7 @@
 .climbingDetails {
   display: flex;
   flex-direction: column;
-  max-width: 900px;
+  max-width: 1200px;
 }
 
 .climbingText {

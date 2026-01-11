@@ -22,7 +22,7 @@ export const RockClimbing = () => {
             muted
             loop
             playsinline
-            width="460px"
+            width="270px"
             height="355px"
             config={{
               file: {
