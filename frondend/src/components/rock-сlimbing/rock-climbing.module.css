@@ -30,7 +30,6 @@
   flex-direction: row;
 }
 
-
 .climbingDetails {
   display: flex;
   flex-direction: column;
@@ -116,6 +115,12 @@
     height: auto;
   }
 
+  .climbingVideo video[style*="width: 100%"] {
+    width: 100% !important; 
+    height: auto !important;
+    object-fit: contain !important; 
+    max-width: 100%;
+  }
   .climbingDetails {
     margin: 0;
     padding: 0 20px;
