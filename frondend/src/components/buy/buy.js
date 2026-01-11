@@ -104,7 +104,9 @@ export const Buy = ({ product, page, discount }) => {
         {page ? (
           <div className={styles["add-to-cart-page"]}>
             <Button type="primary">
-              <div className={styles["add-to-cart-title"]}> В корзину</div>
+              <div className={styles["add-to-cart-title"]}>
+                {/* <p> {t("add-to-cart", { ns: "sale" })}</p> */}
+              </div>
               <div className={styles["add-to-cart-icon"]}>
                 <MdAddShoppingCart className={styles["shopping-cart-icon"]} />
               </div>
@@ -126,7 +128,7 @@ export const Buy = ({ product, page, discount }) => {
                   discount ? styles["discounted"] : ""
                 }`}
               >
-                {t("add-to-cart", { ns: "sale" })}
+                {/* <p> {t("add-to-cart", { ns: "sale" })}</p> */}
               </div>
 
               <div className={styles["add-to-cart-icon"]}>

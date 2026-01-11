@@ -245,7 +245,7 @@ export default function RentCategoryPage({ section, type, subcategory }) {
                 px: 2,
               }}
             >
-              <MenuItem
+              {/* <MenuItem
                 value="default"
                 sx={{
                   color: "#d87d4a",
@@ -254,7 +254,7 @@ export default function RentCategoryPage({ section, type, subcategory }) {
               >
                 {t("default", { ns: "sale" })}
                 По умолчанию
-              </MenuItem>
+              </MenuItem> */}
               <MenuItem
                 value="price-desc"
                 sx={{
