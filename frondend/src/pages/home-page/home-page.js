@@ -11,7 +11,7 @@ import styles from "./home-page.module.css";
 import { useSelector } from "react-redux";
 import { Sales } from "../sales";
 
-export const HomePage = () => {
+const HomePage = () => {
   const [isMobile, setIsMobile] = useState(false);
   const languages = useSelector((state) => state.languages.currentLanguages);
 
@@ -165,3 +165,5 @@ export const HomePage = () => {
     </div>
   );
 };
+
+export default HomePage;

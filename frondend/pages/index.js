@@ -1,5 +1,6 @@
-import { HomePage } from "../src/pages/home-page";
+import HomePage from "../src/pages/home-page";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
 export default HomePage;
 
 export async function getServerSideProps({ locale }) {
@@ -9,6 +10,7 @@ export async function getServerSideProps({ locale }) {
     },
   };
 }
+
 // import HomePage from "../src/pages/home-page";
 // import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
@@ -26,7 +28,11 @@ export async function getServerSideProps({ locale }) {
 
 //   return {
 //     props: {
-//       ...(await serverSideTranslations(locale ?? "ru", ["common", "rent", "sale", "header"], config)),
+//       ...(await serverSideTranslations(
+//         locale ?? "ru",
+//         ["common", "rent", "sale", "header"],
+//         config
+//       )),
 //     },
 //   };
 // }
