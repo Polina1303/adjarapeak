@@ -14,25 +14,26 @@ export const RockClimbing = () => {
   return (
     <div className={styles.climbingContainer}>
       <div className={styles.climbingContent}>
-        <ReactPlayer
-          url="/image/mov1.mp4"
-          playing
-          controls={false}
-          muted
-          loop
-          playsinline
-          width="460px"
-          height="355px"
-          config={{
-            file: {
-              attributes: {
-                preload: "metadata",
+        <div className={styles.videoWrapper}>
+          <ReactPlayer
+            url="/image/mov1.mp4"
+            playing
+            controls={false}
+            muted
+            loop
+            playsinline
+            width="460px"
+            height="355px"
+            config={{
+              file: {
+                attributes: {
+                  preload: "metadata",
+                },
               },
-            },
-          }}
-          className={styles.climbingVideo}
-        />
-
+            }}
+            className={styles.climbingVideo}
+          />
+        </div>
         <div className={styles.climbingDetails}>
           <h2 className={styles.routesTitleText}>Скалолазаниe</h2>
           <p className={styles.climbingText}>

@@ -6,6 +6,8 @@
   margin-bottom: 40px;
 }
 
+
+
 .routes-cover-block {
   background-color: #fff;
   border-radius: 8px;
@@ -26,6 +28,7 @@
 
 .routes-title{
   font-family: "RoadRadio";
+  margin: 40px 0px;
 }
 
 .routes-cover-title {

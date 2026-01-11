@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import { PRODUCT } from "../../components/product-range/product";
+
 import Link from "next/link";
 import { RockClimbing } from "../../components/rock-сlimbing";
 import { ChooseUs } from "../../components/chooseus";
@@ -8,22 +8,12 @@ import { Routes } from "../../components/routes/routes";
 import { useInView } from "react-intersection-observer";
 import RulesPage from "../rules-page";
 import styles from "./home-page.module.css";
-// import { SaleBanner } from "./SaleBanner";
-
-// import sport from "./sport.webp";
-// import clothes from "./sea.webp";
-// import sea from "./sea2.webp";
-// import food from "./food2.webp";
-
 import { useSelector } from "react-redux";
-import { RecommendedCarousel } from "../../components/carousel";
-import { Typography } from "@mui/material";
 import { Sales } from "../sales";
 
 export const HomePage = () => {
   const [isMobile, setIsMobile] = useState(false);
   const languages = useSelector((state) => state.languages.currentLanguages);
-  const router = useRouter();
 
   useEffect(() => {
     if (typeof window !== "undefined") {
