@@ -24,12 +24,6 @@ export const Header = () => {
   const [mounted, setMounted] = useState(false);
   const { t, ready, i18n } = useTranslation("header");
 
-  // console.log(
-  //   "Header translations loaded:",
-  //   ready ? t("delivery-batumi") : "not ready"
-  // );
-  // console.log("Header resources:", i18n.getResourceBundle("en", "header"));
-
   const dispatch = useDispatch();
 
   useEffect(() => {

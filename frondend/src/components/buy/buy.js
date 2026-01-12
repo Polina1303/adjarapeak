@@ -128,7 +128,7 @@ export const Buy = ({ product, page, discount }) => {
                   discount ? styles["discounted"] : ""
                 }`}
               >
-                {/* <p> {t("add-to-cart", { ns: "sale" })}</p> */}
+                <p> {t("add-to-cart", { ns: "sale" })}</p>
               </div>
 
               <div className={styles["add-to-cart-icon"]}>
