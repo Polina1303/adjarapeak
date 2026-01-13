@@ -35,38 +35,38 @@ export const ProductItems = ({ product }) => {
       <div className={styles["product-items"]}>
         <div className={styles["product-items__details"]}>
           <div className={styles["product-items__img-container"]}>
-            <Link href={href || "#"} passHref legacyBehavior>
-              <a
-                onClick={handelClickImg}
+            <Link
+              href={href || "#"}
+              passHref
+              onClick={handelClickImg}
+              style={{
+                textDecoration: "none",
+                color: "inherit",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                width: "100%",
+                height: "100%",
+              }}
+            >
+              <Image
+                className={styles["product-items__img"]}
+                src={"/img/" + product.img}
+                alt={product.title}
+                width={300}
+                height={300}
+                onLoadingComplete={() => setLoaded(true)}
                 style={{
-                  textDecoration: "none",
-                  color: "inherit",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  width: "100%",
-                  height: "100%",
+                  width: "auto",
+                  height: "auto",
+                  maxWidth: "90%",
+                  maxHeight: "180px",
+                  objectFit: "contain",
+                  display: "block",
+                  margin: "0 auto",
                 }}
-              >
-                <Image
-                  className={styles["product-items__img"]}
-                  src={"/img/" + product.img}
-                  alt={product.title}
-                  width={300}
-                  height={300}
-                  onLoadingComplete={() => setLoaded(true)}
-                  style={{
-                    width: "auto",
-                    height: "auto",
-                    maxWidth: "90%",
-                    maxHeight: "180px",
-                    objectFit: "contain",
-                    display: "block",
-                    margin: "0 auto",
-                  }}
-                  unoptimized={true}
-                />
-              </a>
+                unoptimized={true}
+              />
             </Link>
           </div>
 
@@ -77,7 +77,7 @@ export const ProductItems = ({ product }) => {
           <p className={styles["product-items__desc"]}>{product.desc}</p>
 
           <div className={styles["product-items__button-container"]}>
-            <Buy product={product} />
+            {/* <Buy product={product} /> */}
           </div>
         </div>
       </div>
