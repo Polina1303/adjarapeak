@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
-const { i18n } = require("./next-i18next.config");
 const path = require("path");
+
+const i18n = {
+  defaultLocale: "ka",
+  locales: ["ka", "en", "ru"],
+};
 
 const nextConfig = {
   i18n,
@@ -12,6 +16,8 @@ const nextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === "production",
   },
+
+  turbopack: {},
 
   webpack: (config, { isServer }) => {
     config.resolve.alias = {
