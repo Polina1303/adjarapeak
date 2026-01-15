@@ -77,7 +77,7 @@ export const ProductItems = ({ product }) => {
           <p className={styles["product-items__desc"]}>{product.desc}</p>
 
           <div className={styles["product-items__button-container"]}>
-            {/* <Buy product={product} /> */}
+            <Buy product={product} />
           </div>
         </div>
       </div>

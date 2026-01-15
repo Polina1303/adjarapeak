@@ -105,7 +105,7 @@ export const Buy = ({ product, page, discount }) => {
           <div className={styles["add-to-cart-page"]}>
             <Button type="primary">
               <div className={styles["add-to-cart-title"]}>
-                {/* <p> {t("add-to-cart", { ns: "sale" })}</p> */}
+                <p> {t("add-to-cart", { ns: "sale" })}</p>
               </div>
               <div className={styles["add-to-cart-icon"]}>
                 <MdAddShoppingCart className={styles["shopping-cart-icon"]} />

@@ -12,7 +12,6 @@
   margin: 20px 0px;
   width: 100%;
   height: calc(100% - 20px);
- 
 }
 
 .modal-image {
@@ -70,12 +69,31 @@
   .images-container {
     gap: 15px; 
      flex-wrap: wrap;
+     
   }
   
   .modal-image {
     width: calc(50% - 8px);
     min-width: calc(50% - 8px); 
   }
+}
+
+@media (max-width: 1308px) {
+  .images-container {
+    gap: 15px; 
+     margin: 40px 0px;
+     
+  }
+  
+}
+
+@media (max-width: 1208px) {
+  .images-container {
+    gap: 15px; 
+     margin: 40px 0px;
+     
+  }
+  
 }
 
 @media (max-width: 480px) {
