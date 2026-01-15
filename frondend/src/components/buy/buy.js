@@ -13,7 +13,8 @@ export const Buy = ({ product, page, discount }) => {
       state.cart.itemsInCart.find((item) => item.id === product.id)
   );
   const addedCount = cartItem ? cartItem.count : 0;
-  const { t, ready } = useTranslation("sale");
+
+  const { t } = useTranslation("sale");
 
   const dispatch = useDispatch();
   const handleAddToCart = (e) => {
@@ -23,8 +24,10 @@ export const Buy = ({ product, page, discount }) => {
 
   const [itemsInCart, setItemsInCart] = useState([]);
   const [mounted, setMounted] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    setIsClient(true);
     setMounted(true);
     if (typeof window !== "undefined") {
       const storedItemsInCart = JSON.parse(
@@ -41,6 +44,20 @@ export const Buy = ({ product, page, discount }) => {
       localStorage.setItem("productInCart", JSON.stringify(itemsInCart));
     }
   }, [itemsInCart, mounted]);
+
+  const getTranslation = (key) => {
+    const fallbacks = {
+      "add-to-cart": "В корзину",
+      "coming-soon": "скоро в наличии",
+    };
+
+    if (!isClient) {
+      return fallbacks[key] || key;
+    }
+
+    const translation = t(key);
+    return translation === key ? fallbacks[key] || key : translation;
+  };
 
   return (
     <div
@@ -95,7 +112,7 @@ export const Buy = ({ product, page, discount }) => {
 
         {!product.order && (
           <p className={page ? styles.pageStyle : styles.noPageStyle}>
-            {t("coming-soon", { ns: "sale" })}
+            {getTranslation("coming-soon")}
           </p>
         )}
       </div>
@@ -105,7 +122,7 @@ export const Buy = ({ product, page, discount }) => {
           <div className={styles["add-to-cart-page"]}>
             <Button type="primary">
               <div className={styles["add-to-cart-title"]}>
-                <p> {t("add-to-cart", { ns: "sale" })}</p>
+                {getTranslation("add-to-cart")}
               </div>
               <div className={styles["add-to-cart-icon"]}>
                 <MdAddShoppingCart className={styles["shopping-cart-icon"]} />
@@ -128,7 +145,7 @@ export const Buy = ({ product, page, discount }) => {
                   discount ? styles["discounted"] : ""
                 }`}
               >
-                <p> {t("add-to-cart", { ns: "sale" })}</p>
+                {getTranslation("add-to-cart")}
               </div>
 
               <div className={styles["add-to-cart-icon"]}>

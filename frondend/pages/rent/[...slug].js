@@ -26,7 +26,7 @@ export default function RentSlug() {
 export async function getServerSideProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["rent"])),
+      ...(await serverSideTranslations(locale, ["rent", "sale"])),
     },
   };
 }

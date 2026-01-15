@@ -145,7 +145,10 @@ export const Header = () => {
               <TfiClose />
             </IconButton>
 
-            <Box className={styles.logoContainer}>
+            <Box
+              className={styles.logoContainer}
+              style={{ flex: 1, justifyContent: "center" }}
+            >
               <Link href="/">
                 <Image
                   src="/img/adjara3.png"
@@ -157,8 +160,11 @@ export const Header = () => {
               </Link>
             </Box>
 
-            <Box className={styles.cartContainer}>
-              <CartBlock />
+            <Box className={styles.headerActions}>
+              <LangSwitcher />
+              <Box className={styles.cartContainer}>
+                <CartBlock />
+              </Box>
             </Box>
           </Toolbar>
 

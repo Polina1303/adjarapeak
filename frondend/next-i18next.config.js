@@ -1,10 +1,11 @@
-﻿/** @type {import('next-i18next').UserConfig} */
-
-module.exports = {
+﻿module.exports = {
   i18n: {
-    defaultLocale: "ka",
-    locales: ["ka", "en", "ru"],
+    defaultLocale: "ru",
+    locales: ["ru", "en", "ka"],
+    localeDetection: false,
   },
+  ns: ["common", "sale"],
+  defaultNS: "common",
   localePath:
     typeof window === "undefined"
       ? require("path").resolve("./public/locales")
