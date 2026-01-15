@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: 10px 0px;
+  margin: 50px 0px;
   padding: 0;
   width: 100%;
 }
@@ -18,10 +18,14 @@
   width: 100%;
 }
 
+.climbingVideo video[style*="width: 100%"] {
+  width: auto !important;
+  height: auto !important;
+}
 
 .climbingVideo {
-  width: 460px;
-  height: 355px;
+  width: 100%;
+  height: auto;
   display: flex;
   flex-direction: row;
 }
@@ -29,16 +33,14 @@
 .climbingDetails {
   display: flex;
   flex-direction: column;
-  /* justify-content: center;
-  text-align: center; */
-  max-width: 900px;
+  max-width: 1200px;
 }
 
 .climbingText {
   font-size: 18px;
   line-height: 1.4;
   margin-bottom: 16px;
-  /* font-family: "RoadRadio-Light", sans-serif; */
+
 }
 
 .routesTitleText {
@@ -46,8 +48,7 @@
   display: flex;
   justify-content: flex-start;
   font-family: "RoadRadio";
-  /* color: "red"; */
-  /* margin-bottom: 30px; */
+
 }
 
 .climbingButton {
@@ -109,6 +110,13 @@
     width: 90%;
     max-width: 460px; 
     height: auto;
+  }
+
+  .climbingVideo video[style*="width: 100%"] {
+    width: 100% !important; 
+    height: auto !important;
+    object-fit: contain !important; 
+    max-width: 100%;
   }
 
   .climbingDetails {
