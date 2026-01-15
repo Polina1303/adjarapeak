@@ -17,16 +17,16 @@ export const LycianWay = () => {
   });
   return (
     <>
-      <h2 className={styles["routes-title"]}>
+      {/* <h2 className={styles["routes-title"]}>
         Ликийская тропа: путешествие по Турции с Adjarapeak в режиме реального
         времени
-      </h2>
-      <p>
+      </h2> */}
+      {/* <p>
         Ликийская тропа — один из самых красивых пеших маршрутов в мире,
         пролегающий по юго-западному побережью Турции. Наше путешествие обещает
         стать незабываемым, и мы приглашаем вас следить за ним в реальном
         времени!
-      </p>
+      </p> */}
       <div className={styles["routes-cover-block"]} onClick={handleClickLake}>
         <Link href="/lycianWay">
           <Image
