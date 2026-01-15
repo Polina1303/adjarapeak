@@ -1,11 +1,13 @@
 import { useRouter } from "next/router";
 import { useState, useRef, useEffect } from "react";
+import { useTranslation } from "react-i18next"; // Добавьте этот импорт
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
 export const LangSwitcher = () => {
   const router = useRouter();
   const { locale, pathname, query, asPath } = router;
+  const { i18n } = useTranslation();
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
 
@@ -15,10 +17,24 @@ export const LangSwitcher = () => {
     { code: "ka", label: "GE" },
   ];
 
-  const changeLang = (lang) => {
+  const changeLang = async (lang) => {
     setOpen(false);
+
+    await i18n.changeLanguage(lang);
+
+    localStorage.setItem("i18nextLng", lang);
+
     router.push({ pathname, query }, asPath, { locale: lang });
+
+    document.documentElement.lang = lang;
   };
+
+  useEffect(() => {
+    if (locale && i18n.language !== locale) {
+      i18n.changeLanguage(locale);
+      localStorage.setItem("i18nextLng", locale);
+    }
+  }, [locale, i18n]);
 
   const currentLangLabel =
     languages.find((l) => l.code === locale)?.label || locale.toUpperCase();
