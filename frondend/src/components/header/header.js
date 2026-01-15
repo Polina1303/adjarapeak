@@ -112,10 +112,11 @@ export const Header = () => {
             ))}
           </Box>
 
-          <LangSwitcher />
-
-          <Box className={styles.cartContainer}>
-            <CartBlock />
+          <Box className={styles.headerActions}>
+            <LangSwitcher />
+            <Box className={styles.cartContainer}>
+              <CartBlock />
+            </Box>
           </Box>
         </Toolbar>
 

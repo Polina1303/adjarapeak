@@ -214,7 +214,7 @@
     justify-content: flex-start;
   }
 } */
-.deliveryStrip {
+/* .deliveryStrip {
   background-color: #000;
   color: #fff;
   padding: 10px 10px;
@@ -423,5 +423,374 @@
 @media (min-width: 1601px) {
   .desktopNav {
     gap: 110px;
+  }
+} */
+
+.deliveryStrip {
+  background-color: #000;
+  color: #fff;
+  padding: 8px 10px;
+  font-size: 14px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1400;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 30px;
+  box-sizing: border-box;
+}
+
+.deliveryText {
+  text-align: center;
+  line-height: 1;
+}
+
+.appBar {
+  background-color: #fff !important;
+  color: #000 !important;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1) !important;
+  top: 30px !important;
+  z-index: 1300 !important;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.toolbar {
+  justify-content: space-between;
+  padding: 0 20px !important;
+  gap: 15px; 
+  min-height: 80px !important;
+  width: 100%;
+  box-sizing: border-box;
+  flex-wrap: nowrap;
+}
+
+.mobileMenuButton {
+  display: none !important;
+  margin-left: 0 !important;
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 8px !important;
+}
+
+.mobileMenuButton svg {
+  font-size: 20px;
+}
+
+.logoContainer {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto; 
+}
+
+.logoContainer img {
+  width: 130px !important;
+  height: auto !important;
+  object-fit: contain;
+}
+
+.desktopNav {
+  display: none;
+  flex: 1; 
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap; 
+  overflow: hidden; 
+  min-width: 0; 
+  gap: 20px; 
+}
+
+.navLink {
+  color: #000;
+  text-decoration: none;
+  font-size: 16px; 
+  font-family: "RoadRadio";
+  cursor: pointer;
+  padding: 5px 3px; 
+  white-space: nowrap; 
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.navLink:hover,
+.navLink.active {
+  color: #de682d;
+}
+
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-shrink: 0; 
+}
+
+.cartContainer {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.mobileDrawerPaper {
+  background-color: #ffffff !important;
+  box-shadow: none !important;
+  animation: slideDown 0.3s ease-out;
+  margin-top: 30px !important;
+}
+
+.mobileMenuList {
+  padding: 0;
+}
+
+.mobileMenuItem {
+  color: #000 !important;
+  text-decoration: none;
+  text-align: center;
+  padding: 12px 14px !important;
+}
+
+.mobileMenuItem:hover {
+  background-color: transparent !important;
+}
+
+.mobileMenuPrimary {
+  font-weight: 300;
+  font-size: 16px;
+  font-family: "RoadRadio", sans-serif !important;
+  transition: color 0.3s ease;
+}
+
+.mobileMenuItem:hover .mobileMenuPrimary,
+.mobileMenuItem.active .mobileMenuPrimary {
+  color: #de682d;
+}
+
+.headerSpacer {
+  height: 110px;
+}
+
+
+@media (max-width: 1200px) {
+  .mobileMenuButton {
+    display: flex !important;
+  }
+
+  .desktopNav {
+    display: none;
+     font-family: "RoadRadio", sans-serif !important;
+  }
+
+  .toolbar {
+    padding: 0 15px !important;
+    gap: 10px;
+  }
+
+  .logoContainer img {
+    width: 110px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .toolbar {
+    padding: 0 10px !important;
+    min-height: 70px !important;
+    gap: 8px;
+  }
+
+  .appBar {
+    height: 70px;
+  }
+
+  .headerSpacer {
+    height: 100px;
+  }
+
+  .logoContainer img {
+    width: 100px !important;
+  }
+
+  .mobileMenuButton {
+    padding: 6px !important;
+  }
+
+  .mobileMenuButton svg {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 360px) {
+  .logoContainer img {
+    width: 90px !important;
+  }
+
+  .headerActions {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .deliveryText {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll-left 15s linear infinite;
+    font-size: 12px;
+  }
+
+  .deliveryStrip {
+    height: 26px;
+    padding: 6px 10px;
+  }
+
+  .appBar {
+    top: 26px !important;
+  }
+
+  .mobileDrawerPaper {
+    margin-top: 26px !important;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+@media (min-width: 1201px) {
+  .desktopNav {
+    display: flex !important; 
+    gap: 40px; 
+    padding: 0 10px; 
+  }
+
+  .navLink {
+    font-size: 18px; 
+    padding: 5px 2px;
+     font-family: "RoadRadio", sans-serif !important;
+  }
+
+  .toolbar {
+    gap: 15px; 
+  }
+
+  .logoContainer {
+    flex: 0 0 auto; 
+    width: 130px;
+  }
+}
+
+
+@media (min-width: 1300px) {
+  .desktopNav {
+    gap: 35px;
+  }
+  
+  .navLink {
+    font-size: 16px;
+    padding: 5px 4px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .desktopNav {
+    gap: 45px;
+  }
+  
+  .navLink {
+    font-size: 17px;
+  }
+  
+  .toolbar {
+    gap: 15px;
+  }
+}
+
+@media (min-width: 1500px) {
+  .desktopNav {
+    gap: 55px;
+  }
+  
+  .navLink {
+    font-size: 18px;
+    padding: 5px 6px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .desktopNav {
+    gap: 65px;
+  }
+}
+
+@media (min-width: 1700px) {
+  .desktopNav {
+    gap: 75px;
+  }
+  
+  .navLink {
+    font-size: 19px;
+  }
+}
+
+@media (min-width: 1800px) {
+  .desktopNav {
+    gap: 85px;
+  }
+}
+
+
+@media (min-width: 1201px) and (max-width: 1250px) {
+  .desktopNav {
+    gap: 15px; 
+  }
+  
+  .navLink {
+    font-size: 16px; 
+    padding: 5px 1px;
+  }
+  
+  .logoContainer img {
+    width: 120px !important;
+  }
+}
+
+
+@media (max-width: 320px) {
+  .toolbar {
+    padding: 0 6px !important;
+    gap: 5px;
+  }
+
+  .logoContainer img {
+    width: 80px !important;
+  }
+
+  .cartContainer {
+    transform: scale(0.85);
+  }
+  
+  .headerActions {
+    gap: 8px;
   }
 }
