@@ -1,5 +1,5 @@
 {
   "buildCommand": "npm ci --legacy-peer-deps",
-  "outputDirectory": "frondend/.next",
+  "outputDirectory": ".next",
   "installCommand": "npm install"
 }
