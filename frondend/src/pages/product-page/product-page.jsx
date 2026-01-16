@@ -39,6 +39,39 @@ export const ProductPage = () => {
   const imageRef = useRef(null);
   const containerRef = useRef(null);
 
+  //
+  // useEffect(() => {
+  //   // Сохраняем состояние перед переходом
+  //   const saveState = () => {
+  //     const searchContainer = document.querySelector(".search-container");
+  //     if (searchContainer) {
+  //       const searchInput = searchContainer.querySelector('input[type="text"]');
+  //       if (searchInput && searchInput.value) {
+  //         localStorage.setItem("searchQuery", searchInput.value);
+  //       }
+  //     }
+  //   };
+
+  //   // Вызываем при уходе со страницы
+  //   window.addEventListener("beforeunload", saveState);
+
+  //   // Также сохраняем при нажатии на ссылку
+  //   document.addEventListener(
+  //     "click",
+  //     (e) => {
+  //       if (e.target.closest('a[href^="/app/"]')) {
+  //         saveState();
+  //       }
+  //     },
+  //     true
+  //   );
+
+  //   return () => {
+  //     window.removeEventListener("beforeunload", saveState);
+  //   };
+  // }, []);
+  //
+
   const handleBackClick = () => {
     router.back();
   };

@@ -377,11 +377,11 @@
 
 @media (min-width: 1201px) and (max-width: 1250px) {
   .desktopNav {
-    gap: 65px;
+    gap: 55px;
   }
   
   .navLink {
-    font-size: 18px;
+    font-size: 17px;
   }
   
   
