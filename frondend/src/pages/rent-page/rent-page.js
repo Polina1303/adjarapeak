@@ -36,7 +36,9 @@ export default function RentPage({ children }) {
   const [isMobileView, setIsMobileView] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [isInitialized, setIsInitialized] = useState(false);
+  const [priceSort, setPriceSort] = useState(null);
   const [mounted, setMounted] = useState(false);
+  const [availabilityFilter, setAvailabilityFilter] = useState(false);
   const { t, i18n, ready } = useTranslation("rent", "sale");
   useEffect(() => {
     i18n.loadNamespaces("rent");
@@ -173,14 +175,7 @@ export default function RentPage({ children }) {
       </Accordion>
     ));
 
-  // useEffect(() => {
-  //   const pathParts = router.asPath.split("/");
-  //   const categoryPath = pathParts[2];
-  //   const categoryIndex = CATEGORY_RENT.findIndex(
-  //     (c) => c.path === categoryPath
-  //   );
-  //   if (categoryIndex !== -1) setActiveCategory(categoryIndex);
-  // }, [router.asPath]);
+  const currentCategory = CATEGORY_RENT.find((c) => c.path === activeCategory);
 
   useEffect(() => {
     if (!router.isReady) return;
@@ -188,19 +183,86 @@ export default function RentPage({ children }) {
     if (categoryPath) setActiveCategory(categoryPath);
   }, [router.isReady, router.query.category, router.asPath]);
 
+  // const filteredProducts = useMemo(() => {
+  //   if (!isInitialized || !searchQuery.trim()) return [];
+
+  //   const query = searchQuery.toLowerCase().trim();
+
+  //   const all = [...RENT, ...RENT_SKY];
+
+  //   return all.filter(
+  //     (p, idx, arr) =>
+  //       p.title?.toLowerCase().includes(query) &&
+  //       arr.findIndex((x) => x.id === p.id) === idx
+  //   );
+  // }, [searchQuery, isInitialized]);
+
   const filteredProducts = useMemo(() => {
-    if (!isInitialized || !searchQuery.trim()) return [];
-
-    const query = searchQuery.toLowerCase().trim();
-
+    if (!isInitialized) return [];
     const all = [...RENT, ...RENT_SKY];
 
-    return all.filter(
-      (p, idx, arr) =>
-        p.title?.toLowerCase().includes(query) &&
-        arr.findIndex((x) => x.id === p.id) === idx
-    );
-  }, [searchQuery, isInitialized]);
+    if (searchQuery.trim()) {
+      const currentPath = router.asPath.split("?")[0];
+      const params = new URLSearchParams();
+
+      if (activeCategory) {
+        params.set("category", activeCategory);
+      }
+      params.set("q", encodeURIComponent(searchQuery));
+
+      const newUrl = `${currentPath}?${params.toString()}`;
+      if (newUrl !== router.asPath) {
+        router.replace(newUrl, undefined, { shallow: true, scroll: false });
+      }
+    } else if (router.query.q) {
+      const currentPath = router.asPath.split("?")[0];
+      const params = new URLSearchParams(router.query);
+      params.delete("q");
+
+      const newUrl = params.toString()
+        ? `${currentPath}?${params.toString()}`
+        : currentPath;
+      if (newUrl !== router.asPath) {
+        router.replace(newUrl, undefined, { shallow: true, scroll: false });
+      }
+    }
+
+    if (!searchQuery.trim()) return [];
+
+    const query = searchQuery.toLowerCase().trim();
+    let results = all.filter((p) => p.title?.toLowerCase().includes(query));
+
+    if (activeCategory && currentCategory) {
+      const categoryTypes = currentCategory.types || [];
+      const categoryProductIds = new Set();
+
+      categoryTypes.forEach((type) => {
+        type.subcategories?.forEach((sub) => {
+          sub.products?.forEach((productId) => {
+            categoryProductIds.add(productId);
+          });
+        });
+      });
+
+      if (categoryProductIds.size > 0) {
+        results = results.filter((p) => categoryProductIds.has(p.id));
+      }
+    }
+
+    if (availabilityFilter) results = results.filter((p) => p.order === true);
+    if (priceSort === "asc") results.sort((a, b) => a.price - b.price);
+    if (priceSort === "desc") results.sort((a, b) => b.price - a.price);
+
+    return results;
+  }, [
+    searchQuery,
+    isInitialized,
+    availabilityFilter,
+    priceSort,
+    router,
+    activeCategory,
+    currentCategory,
+  ]);
 
   const menuContainerRef = useRef(null);
 
@@ -248,6 +310,21 @@ export default function RentPage({ children }) {
     setSearchValue(e.target.value);
   };
 
+  // const handleCategoryClick = (path) => {
+  //   if (!path) return;
+
+  //   startTransition(() => {
+  //     setActiveCategory(path);
+  //     setActiveType(null);
+  //     setActiveSubcategory(null);
+  //     setExpandedAccordion(null);
+  //     setSearchValue("");
+  //     setSearchQuery("");
+  //     localStorage.removeItem("searchQuery");
+  //   });
+
+  //   router.push(`/rent/${path}`);
+  // };
   const handleCategoryClick = (path) => {
     if (!path) return;
 
@@ -258,29 +335,55 @@ export default function RentPage({ children }) {
       setExpandedAccordion(null);
       setSearchValue("");
       setSearchQuery("");
-      localStorage.removeItem("searchQuery");
-    });
 
-    router.push(`/rent/${path}`);
+      localStorage.removeItem("searchQuery");
+      localStorage.setItem("activeCategory", path);
+
+      const cleanUrl = `/rent/${path}`;
+      router.push(cleanUrl, undefined, { shallow: true });
+    });
   };
 
+  useEffect(() => {
+    if (!router.isReady || !isInitialized) return;
+
+    if (router.query.q) {
+      const queryFromUrl = decodeURIComponent(router.query.q);
+      if (queryFromUrl !== searchValue) {
+        setSearchValue(queryFromUrl);
+        setSearchQuery(queryFromUrl);
+        localStorage.setItem("searchQuery", queryFromUrl);
+      }
+    }
+
+    if (router.query.category) {
+      const category = router.query.category;
+      setActiveCategory(category);
+      localStorage.setItem("activeCategory", category);
+    }
+  }, [router.isReady, router.query.q, router.query.category, isInitialized]);
+
+  useEffect(() => {
+    const handlePopState = () => {
+      if (router.query.q) {
+        const queryFromUrl = decodeURIComponent(router.query.q);
+        setSearchValue(queryFromUrl);
+        setSearchQuery(queryFromUrl);
+      } else {
+        setSearchValue("");
+        setSearchQuery("");
+      }
+    };
+
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, [router.query.q]);
+
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
-
-  const currentCategory = CATEGORY_RENT.find((c) => c.path === activeCategory);
-
-  // const handleTypeClick = (typeCategory) => {
-  //   const category = CATEGORY_RENT[activeCategory];
-  //   router.push(`/rent/${category.path}/${typeCategory}`);
-  // };
 
   const toggleMobileMenu = () => {
     if (isMobileView) setIsMobileMenuOpen(!isMobileMenuOpen);
   };
-
-  // const handleSubcategoryClick = (subcategoryPath) => {
-  //   const category = CATEGORY_RENT[activeCategory];
-  //   router.push(`/rent/${category.path}/${subcategoryPath}`);
-  // };
 
   const getProductKey = (product, index) => {
     return `product-${product.id}-${index}`;
