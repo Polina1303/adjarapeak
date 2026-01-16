@@ -40,96 +40,36 @@ export default function SalePage({ children }) {
 
   const [mounted, setMounted] = useState(false);
   const { t, ready } = useTranslation(["common", "sale"]);
-  const searchTimeoutRef = useRef(null);
 
   useEffect(() => {
     setMounted(true);
-
-    const savedSearch = localStorage.getItem("searchQuery");
-    const savedCategory = localStorage.getItem("activeCategory");
-
-    if (savedSearch) {
-      setSearchValue(savedSearch);
-      setSearchQuery(savedSearch);
-    }
-
-    if (savedCategory) {
-      setActiveCategory(savedCategory);
-    }
-
-    if (router.isReady && router.query.q) {
-      const queryFromUrl = decodeURIComponent(router.query.q);
-      if (queryFromUrl !== savedSearch) {
-        setSearchValue(queryFromUrl);
-        setSearchQuery(queryFromUrl);
-        localStorage.setItem("searchQuery", queryFromUrl);
-      }
-    }
-
-    setIsInitialized(true);
+    const saved = localStorage.getItem("searchQuery");
+    if (saved) setSearchQuery(saved);
   }, []);
 
   useEffect(() => {
-    if (!isInitialized) return;
+    if (!router.isReady) return;
 
-    if (searchQuery.trim()) {
-      localStorage.setItem("searchQuery", searchQuery);
-    }
-
-    if (activeCategory) {
-      localStorage.setItem("activeCategory", activeCategory);
-    }
-  }, [searchQuery, activeCategory, isInitialized]);
-
-  useEffect(() => {
-    if (!router.isReady || !isInitialized) return;
-
-    const handleRouteChangeComplete = () => {
-      setTimeout(() => {
-        const savedSearch = localStorage.getItem("searchQuery");
-        if (savedSearch && savedSearch !== searchValue) {
-          setSearchValue(savedSearch);
-          setSearchQuery(savedSearch);
-        }
-      }, 50);
-    };
-
-    router.events.on("routeChangeComplete", handleRouteChangeComplete);
-
-    return () => {
-      router.events.off("routeChangeComplete", handleRouteChangeComplete);
-    };
-  }, [router, isInitialized, searchValue]);
-
-  useEffect(() => {
-    const handlePopState = () => {
-      setTimeout(() => {
-        const savedSearch = localStorage.getItem("searchQuery");
-        if (savedSearch && savedSearch !== searchValue) {
-          setSearchValue(savedSearch);
-          setSearchQuery(savedSearch);
-        }
-      }, 100);
-    };
-
-    window.addEventListener("popstate", handlePopState);
-
-    return () => {
-      window.removeEventListener("popstate", handlePopState);
-    };
-  }, [searchValue]);
+    setSearchQuery(searchValue);
+    localStorage.setItem("searchQuery", searchValue);
+  }, [searchValue, router.asPath]);
 
   const menuContainerRef = useRef(null);
 
   useEffect(() => {
-    if (!router.isReady || !router.asPath) return;
+    if (router.query.category) {
+      setActiveCategory(router.query.category);
+    }
+  }, [router.query.category]);
+
+  useEffect(() => {
+    if (!router.isReady) return;
 
     const [, , categoryPath, typeOrSub] = router.asPath.split("/");
 
     if (!categoryPath) return;
 
     setActiveCategory(categoryPath);
-    localStorage.setItem("activeCategory", categoryPath);
 
     const category = CATEGORY_PRODUCT.find((c) => c.path === categoryPath);
     if (!category) return;
@@ -170,6 +110,14 @@ export default function SalePage({ children }) {
   }, [activeCategory]);
 
   useEffect(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("searchQuery");
+      if (saved) setSearchQuery(saved);
+      setIsInitialized(true);
+    }
+  }, []);
+
+  useEffect(() => {
     const checkScreen = () => {
       const mobile = window.innerWidth <= 1200;
       setIsMobileView(mobile);
@@ -180,125 +128,15 @@ export default function SalePage({ children }) {
     return () => window.removeEventListener("resize", checkScreen);
   }, []);
 
-  const handleCategoryClick = (path) => {
-    if (!path) return;
-
-    startTransition(() => {
-      setActiveCategory(path);
-      setActiveType(null);
-      setActiveSubcategory(null);
-      setExpandedAccordion(null);
-      setSearchValue("");
-      setSearchQuery("");
-
-      localStorage.removeItem("searchQuery");
-      localStorage.setItem("activeCategory", path);
-
-      const cleanUrl = `/sale/${path}`;
-      router.push(cleanUrl, undefined, { shallow: true });
-    });
-  };
-
-  useEffect(() => {
-    if (!router.isReady || !isInitialized) return;
-
-    if (router.query.q) {
-      const queryFromUrl = decodeURIComponent(router.query.q);
-      if (queryFromUrl !== searchValue) {
-        setSearchValue(queryFromUrl);
-        setSearchQuery(queryFromUrl);
-        localStorage.setItem("searchQuery", queryFromUrl);
-      }
-    }
-
-    if (router.query.category) {
-      const category = router.query.category;
-      setActiveCategory(category);
-      localStorage.setItem("activeCategory", category);
-    }
-  }, [router.isReady, router.query.q, router.query.category, isInitialized]);
-
-  useEffect(() => {
-    const handlePopState = () => {
-      if (router.query.q) {
-        const queryFromUrl = decodeURIComponent(router.query.q);
-        setSearchValue(queryFromUrl);
-        setSearchQuery(queryFromUrl);
-      } else {
-        setSearchValue("");
-        setSearchQuery("");
-      }
-    };
-
-    window.addEventListener("popstate", handlePopState);
-    return () => window.removeEventListener("popstate", handlePopState);
-  }, [router.query.q]);
-
   const filteredProducts = useMemo(() => {
-    if (!isInitialized) return [];
-
-    if (searchQuery.trim()) {
-      const currentPath = router.asPath.split("?")[0];
-      const params = new URLSearchParams();
-
-      if (activeCategory) {
-        params.set("category", activeCategory);
-      }
-      params.set("q", encodeURIComponent(searchQuery));
-
-      const newUrl = `${currentPath}?${params.toString()}`;
-      if (newUrl !== router.asPath) {
-        router.replace(newUrl, undefined, { shallow: true, scroll: false });
-      }
-    } else if (router.query.q) {
-      const currentPath = router.asPath.split("?")[0];
-      const params = new URLSearchParams(router.query);
-      params.delete("q");
-
-      const newUrl = params.toString()
-        ? `${currentPath}?${params.toString()}`
-        : currentPath;
-      if (newUrl !== router.asPath) {
-        router.replace(newUrl, undefined, { shallow: true, scroll: false });
-      }
-    }
-
-    if (!searchQuery.trim()) return [];
-
+    if (!isInitialized || !searchQuery.trim()) return [];
     const query = searchQuery.toLowerCase().trim();
     let results = PRODUCT.filter((p) => p.title?.toLowerCase().includes(query));
-
-    if (activeCategory && currentCategory) {
-      const categoryTypes = currentCategory.types || [];
-      const categoryProductIds = new Set();
-
-      categoryTypes.forEach((type) => {
-        type.subcategories?.forEach((sub) => {
-          sub.products?.forEach((productId) => {
-            categoryProductIds.add(productId);
-          });
-        });
-      });
-
-      if (categoryProductIds.size > 0) {
-        results = results.filter((p) => categoryProductIds.has(p.id));
-      }
-    }
-
     if (availabilityFilter) results = results.filter((p) => p.order === true);
     if (priceSort === "asc") results.sort((a, b) => a.price - b.price);
     if (priceSort === "desc") results.sort((a, b) => b.price - a.price);
-
     return results;
-  }, [
-    searchQuery,
-    isInitialized,
-    availabilityFilter,
-    priceSort,
-    router,
-    activeCategory,
-    currentCategory,
-  ]);
+  }, [searchQuery, isInitialized, availabilityFilter, priceSort]);
 
   const currentCategory = CATEGORY_PRODUCT.find(
     (c) => c.path === activeCategory
@@ -317,7 +155,7 @@ export default function SalePage({ children }) {
   };
 
   const handleSubcategoryClick = (subPath) => {
-    if (!currentCategory) return;
+    const category = CATEGORY_PRODUCT[activeCategory];
 
     setActiveSubcategory(subPath);
     router.push(`/sale/${currentCategory.path}/${subPath}`);
@@ -325,17 +163,20 @@ export default function SalePage({ children }) {
 
   if (!mounted || !ready) return null;
 
-  const handleSearchChange = (e) => {
-    const value = e.target.value;
-    setSearchValue(value);
+  const handleCategoryClick = (path) => {
+    if (!path) return;
 
-    if (searchTimeoutRef.current) {
-      clearTimeout(searchTimeoutRef.current);
-    }
+    startTransition(() => {
+      setActiveCategory(path);
+      setActiveType(null);
+      setActiveSubcategory(null);
+      setExpandedAccordion(null);
+      setSearchValue("");
+      setSearchQuery("");
+      localStorage.removeItem("searchQuery");
+    });
 
-    searchTimeoutRef.current = setTimeout(() => {
-      setSearchQuery(value);
-    }, 300);
+    router.push(`/sale/${path}`);
   };
 
   const toggleMobileMenu = () =>
@@ -457,17 +298,8 @@ export default function SalePage({ children }) {
           type="text"
           placeholder={t("search.placeholder", { ns: "sale" })}
           value={searchValue}
-          onChange={handleSearchChange}
+          onChange={(e) => setSearchValue(e.target.value)}
           className={styles.searchInput}
-          onKeyPress={(e) => {
-            if (e.key === "Enter") {
-              e.preventDefault();
-              if (searchTimeoutRef.current) {
-                clearTimeout(searchTimeoutRef.current);
-              }
-              setSearchQuery(searchValue);
-            }
-          }}
         />
       </div>
 
@@ -556,18 +388,7 @@ export default function SalePage({ children }) {
                             "&:focus": { outline: "none" },
                             "&:active": { transform: "none" },
                           }}
-                          onClick={() => {
-                            sessionStorage.setItem(
-                              "scrollPosition",
-                              window.pageYOffset
-                            );
-                            sessionStorage.setItem("searchQuery", searchQuery);
-                            sessionStorage.setItem(
-                              "activeCategory",
-                              activeCategory
-                            );
-                            router.push(`/app/${product.id}`);
-                          }}
+                          onClick={() => router.push(`/app/${product.id}`)}
                         >
                           <CardActionArea disableRipple disableTouchRipple>
                             {isLoaded ? (
