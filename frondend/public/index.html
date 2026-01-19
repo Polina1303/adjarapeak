@@ -53,12 +53,11 @@
           f.parentNode.insertBefore(j, f);
         })(window, document, "script", "dataLayer", "GTM-M6PTBQG6");
       };
+         window.addEventListener('load', () => {
+           setTimeout(() => window.gtmLoad(), 1500);
+         });
+</script>
 
-      if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", window.gtmLoad);
-      } else {
-        window.gtmLoad();
-      }
     </script>
   </head>
 

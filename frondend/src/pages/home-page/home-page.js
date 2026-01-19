@@ -319,6 +319,8 @@ const HomePage = () => {
                 width={item.width}
                 height={item.height}
                 className={styles.saleImg}
+                placeholder="blur"
+                blurDataURL="/img/placeholder-small.webp"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
                 quality={85}
                 loading={index === 0 ? "eager" : "lazy"}

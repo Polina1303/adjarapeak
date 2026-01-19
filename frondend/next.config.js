@@ -120,11 +120,21 @@ const nextConfig = {
     return config;
   },
 
+  // webpack(config) {
+  //   if (process.env.ANALYZE) {
+  //     const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
+  //     config.plugins.push(new BundleAnalyzerPlugin());
+  //   }
+  //   return config;
+  // },
+
   experimental: {
     optimizeCss: true,
     scrollRestoration: true,
-
     esmExternals: "loose",
+
+    // workerThreads: false,
+    // cpus: 1,
   },
 };
 
