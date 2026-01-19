@@ -128,7 +128,7 @@ export const Footer = () => {
           // referrerPolicy="no-referrer"
           src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=41.63342805662303,%2041.61548271005293+(Adjara%20Peak%20%7C%20Sport,%20Hiking,%20Ski%20&amp;%20Outdoor%20Equipment%20-%20rental%20and%20sales)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
         />
-        <a href="https://www.gps.ie/">gps vehicle tracker</a>
+        {/* <a href="https://www.gps.ie/">gps vehicle tracker</a> */}
       </div>
       <div className={styles["footer-bottom"]}>
         <p>
