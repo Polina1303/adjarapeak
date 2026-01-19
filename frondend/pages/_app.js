@@ -1,4 +1,5 @@
 import { Provider, useSelector } from "react-redux";
+import Head from "next/head";
 import { store } from "../src/redux";
 import Snow from "../src/components/snow";
 import { Footer } from "../src/components/footer";
@@ -19,12 +20,16 @@ const Header = dynamic(
 );
 
 function App({ Component, pageProps }) {
+  const title = pageProps?.title || "Adjarapeak - Главная страница";
   useEffect(() => {
     initProductCache();
   }, []);
 
   return (
     <Provider store={store}>
+      <Head>
+        <title>{title}</title>
+      </Head>
       <I18nextProvider i18n={i18n}>
         <Header />
         <ScrollToTop />

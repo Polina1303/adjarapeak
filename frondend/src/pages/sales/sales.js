@@ -1,4 +1,3 @@
-import { Typography } from "@mui/material";
 import { RecommendedCarousel } from "../../components/carousel";
 import { PRODUCT } from "../../components/product-range/product";
 import { useMemo } from "react";

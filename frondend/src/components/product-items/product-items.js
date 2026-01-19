@@ -55,7 +55,7 @@ export const ProductItems = ({ product }) => {
                 alt={product.title}
                 width={300}
                 height={300}
-                onLoadingComplete={() => setLoaded(true)}
+                onLoad={() => setLoaded(true)}
                 style={{
                   width: "auto",
                   height: "auto",

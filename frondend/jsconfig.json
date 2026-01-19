@@ -1,6 +1,0 @@
-{
-  "compilerOptions": {
-    "jsx": "react-jsx"
-  },
-  "include": ["src", "pages/sale", "pages/sale/[section]/[type]/app"]
-}
