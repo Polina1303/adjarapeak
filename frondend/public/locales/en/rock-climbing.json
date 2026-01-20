@@ -1,0 +1,58 @@
+{
+  "back": "Back",
+
+  "titles": {
+    "locationInfo": "🧗🏻‍♂️Training Location Information",
+    "instructors": "🧗🏻‍♂️Instructors & Safety",
+    "schedule": "🧗🏻‍♂️Schedule & Timetable"
+  },
+
+  "location": {
+    "place": "📍 Location: Gonio–Kvariati area",
+    "howToGet": "You can get there by your own car, taxi, minibus, or bus №16.",
+    "reviewPrompt": "Write a review about your rock climbing training:",
+    "leaveReview": "Leave a review"
+  },
+
+  "points": {
+    "equipment": {
+      "title": "POINT 1 (EQUIPMENT)",
+      "list": {
+        "li1": "We use only high-quality equipment from world-renowned and reliable brands.",
+        "li2": "All equipment is regularly inspected and updated.",
+        "li3": "We fully provide all the necessary gear for a comfortable and safe training session."
+      },
+      "detailsTitle": "More details:",
+      "details": {
+        "li1": "Dynamic rope — breaking strength 22 kN (2200 kg).",
+        "li2": "Helmet — withstands a direct vertical impact of 50 J.",
+        "li3": "Harness — secured on the body at three points and suitable for people up to 150 kg.",
+        "li4": "Belay station — consists of two anchor points and is reinforced with two opposing carabiners.",
+        "li5": "Chalk — absorbs moisture and improves grip on the rock.",
+        "li6": "Climbing shoes — for better traction on the rock."
+      }
+    },
+
+    "accessibility": {
+      "title": "POINT 2 (ACCESSIBILITY)",
+      "description": "We conduct a safety briefing before every training session. For beginners, we clearly explain what should not be done. Top-rope belaying is used, and on difficult sections the instructor provides assistance. The Gonio–Kvariati crag features routes of grades 5 and 6 that are suitable for beginners."
+    },
+
+    "experience": {
+      "title": "POINT 3 (EXPERIENCE)",
+      "description": "Our team (Sasha and Egor) has extensive experience on this terrain and takes care of you throughout the entire training session."
+    }
+  },
+
+  "schedule": {
+    "saturday": {
+      "title": "Saturday"
+    },
+    "sunday": {
+      "title": "Sunday"
+    },
+    "price": "Training session cost: 49 GEL",
+    "groups": ["Group 1 — 10:00 / 13:00", "Group 2 — 15:00 / 18:00"],
+    "signup": "Sign up"
+  }
+}

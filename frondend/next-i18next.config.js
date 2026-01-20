@@ -4,7 +4,7 @@
     locales: ["ru", "en", "ka"],
     localeDetection: false,
   },
-  ns: ["common", "sale"],
+  ns: ["common", "sale", "rock-climbing"],
   defaultNS: "common",
   localePath:
     typeof window === "undefined"
