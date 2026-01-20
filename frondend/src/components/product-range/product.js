@@ -5962,17 +5962,7 @@ export const PRODUCT = [
       "Тип покрытия: необработанный для максимальной прочности",
     ],
   },
-  // {
-  //   order: true,
-  //   id: 871231436312,
-  //   title: "Перчатки для бокса ",
-  //   img: "A5e7f82eee5584d6fbb7a490537092760Z.png",
-  //   desc: "Venum replica",
-  //   category: "boxing_gloves",
-  //   salePrice: 88,
-  //   price: 110,
-  //   column: [],
-  // },
+
   {
     order: true,
     id: 8712314364334324,
