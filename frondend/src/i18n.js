@@ -11,6 +11,7 @@ const loadResources = (lng) => {
         sale: require("../public/locales/en/sale.json"),
         header: require("../public/locales/en/header.json"),
         "rock-climbing": require("../public/locales/en/rock-climbing.json"),
+        service: require("../public/locales/en/service.json"),
       };
     case "ka":
       return {
@@ -19,6 +20,7 @@ const loadResources = (lng) => {
         sale: require("../public/locales/ka/sale.json"),
         header: require("../public/locales/ka/header.json"),
         "rock-climbing": require("../public/locales/ka/rock-climbing.json"),
+        service: require("../public/locales/ka/service.json"),
       };
     default:
       return {
@@ -27,6 +29,7 @@ const loadResources = (lng) => {
         sale: require("../public/locales/ru/sale.json"),
         header: require("../public/locales/ru/header.json"),
         "rock-climbing": require("../public/locales/ru/rock-climbing.json"),
+        service: require("../public/locales/ru/service.json"),
       };
   }
 };
@@ -44,7 +47,7 @@ i18n
     resources,
     fallbackLng: "ru",
     defaultNS: "common",
-    ns: ["common", "rent", "sale", "header", "rock-climbing"],
+    ns: ["common", "rent", "sale", "header", "rock-climbing", "service"],
 
     react: {
       useSuspense: false,
