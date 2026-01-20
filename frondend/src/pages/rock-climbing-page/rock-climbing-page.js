@@ -29,13 +29,7 @@ export const RockClimbingPage = () => {
 
   useEffect(() => {
     setIsClient(true);
-    console.log("Current language:", i18n.language);
-    console.log("Available languages:", i18n.languages);
-    console.log("Translation resources:", i18n.store.data);
-  }, [i18n]);
-
-  console.log("Translation test:", t("titles.locationInfo"));
-  console.log("Raw translation:", i18n.exists("titles.locationInfo"));
+  }, []);
 
   if (!isClient) return null;
 
