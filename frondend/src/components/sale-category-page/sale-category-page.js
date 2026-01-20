@@ -113,7 +113,7 @@ export default function SaleCategoryPage({ section, type, subcategory }) {
                         src={`/img/${item.img}`}
                         alt={item.title}
                         fill
-                        onLoadingComplete={() =>
+                        onLoad={() =>
                           setLoadedIds((prev) => [...prev, item.category])
                         }
                         priority

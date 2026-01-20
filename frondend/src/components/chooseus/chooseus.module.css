@@ -1,62 +1,95 @@
 .choose-cover {
   display: flex;
+  
+  /* padding: 2rem 1.5rem; */
+ 
+}
+
+.choose-title h2 {
+  font-family: "RoadRadio-Thin", sans-serif !important;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: left;
+  color: #333;
 }
 
 .choose-checkin {
   color: #de682d;
-  margin-top: 10px;
+  min-width: 25px;
+}
+
+.choose-item-wrapper {
+  margin-bottom: 1.5rem;
 }
 
 .choose-item {
   display: flex;
-  margin-top: -10px;
+  align-items: center;
+  margin-bottom: 0.5rem;
 }
-/* 
-h5 {
-  margin-top: 15px;
-  margin-left: 10px;
-} */
 
-.choose-title h2{
-  font-family: "RoadRadio";
+.choose-item h4 {
+  margin: 0;
+  margin-left: 10px;
+  font-size: 0.9rem;
+  color: #222;
+  font-family: "RoadRadio-Thin", sans-serif;
+  line-height: 1.2;
 }
 
 .choose-item-description {
-  margin-top: -15px;
-  font-weight: 600;
+  margin: 0;
+  /* font-weight: 600; */
   color: rgba(34, 34, 34, 0.788);
-  font-size: 15px;
-  font-family: "RoadRadio-Thin";
+  font-size: 12px;
+  /* font-family: "RoadRadio-Thin", sans-serif; */
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  /* padding-left: 35px;  */
+  text-transform: none !important;
+  font-style: normal;
+  letter-spacing: normal;
 }
 
-.choose-cover-advice {
-  width: 570px;
-  margin-right: 10px;
-}
-
-/* новые стили для двух колонок */
 .choose-columns {
   display: flex;
   justify-content: space-between;
-  /* gap: 20px; */
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .choose-column {
   flex: 1;
 }
 
+/* Для мобильных устройств */
 @media (max-width: 707px) {
   .choose-cover {
     display: flex;
     flex-direction: column;
+    padding: 1.5rem 1rem;
   }
-  .choose-cover-advice {
-    width: 95%;
-  }
+  
   .choose-columns {
     flex-direction: column;
+    gap: 1rem;
   }
+  
+  .choose-title h2 {
+    font-size: 1.8rem;
+  }
+  
+  .choose-item h4 {
+    font-size: 1.2rem;
+  }
+  
   .choose-item-description {
     font-size: 12px;
+    padding-left: 35px;
+  }
+  
+  .choose-checkin {
+    min-width: 25px;
   }
 }
