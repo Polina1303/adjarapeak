@@ -5910,7 +5910,7 @@ export const PRODUCT = [
     id: 929440764376712314364111,
     title: "ДЕРЖАТЕЛИ ДЛЯ ФЛЯГИ",
     img: "ebdc345b-fc1c-42c3-ac5d-b885dbeaea78.avif",
-    desc: "ENLEE пластиковый разные цвета ",
+    desc: "ENLEE пластиковый разные цвета",
     category: "bike_accessories",
     price: 21,
     column: [
