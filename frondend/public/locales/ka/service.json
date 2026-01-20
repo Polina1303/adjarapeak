@@ -4,7 +4,7 @@
   "photosTitle": "შედეგის ფოტოები",
   "table": {
     "service": "სერვისი",
-    "price": "Цена"
+    "price": "ფასი"
   },
   "services": {
     "comprehensive": {
@@ -18,12 +18,12 @@
     },
     "preservation": {
       "name": "კონსერვაცია",
-      "price": "от 20 ლარი"
+      "price": "დან 20 ლარი"
     },
     "surfaceRepair": {
       "name": "სასრიალო ზედაპირის შეკეთება",
       "description": "ნაკაწრების ამოვსება P-Tex 20 ლარიდან",
-      "price": "от 20 ლარი"
+      "price": "დან 20 ლარი"
     },
     "waxApplication": {
       "name": "ტემპერატურული პარაფინის წასმა",
