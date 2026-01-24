@@ -16,8 +16,10 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "www.adjarapeak.ge",
+        pathname: "/**",
       },
     ],
+    minimumCacheTTL: 60 * 60 * 24 * 30,
   },
 
   compiler: {

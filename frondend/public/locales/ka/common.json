@@ -8,18 +8,18 @@
       "closes_ski": {
         "title": "ტანსაცმელი",
         "subcategories": {
-          "pants_ski": "შარვლები",
-          "jackets_ski": "კურტკები",
+          "pants_ski": "შარვალი",
+          "jackets_ski": "ქურთუკი",
           "set_ski": "კომპლექტები"
         }
       },
       "buff": "ბაფები და ბალაკლავები",
-      "thermalUnderwear": "თერმული კომპლექტი",
+      "thermalUnderwear": "თერმული ზედა/ქვედა",
       "helmet_sky": "ჩაფხუტები",
       "skigoggles": "ნიღაბი",
-      "sky_care": "დამცავი კომპლექტი",
+      "sky_care": "დაცვა",
       "air_sky": "გასაბერი ციგა",
-      "gloves_sky": " ხელთათმანები",
+      "gloves_sky": " ხელთათმანი",
       "socks_sky": "წინდები",
       "snowshoes": "თოვლის ფეხსაცმელი",
       "bag_sky": "სათხილამურო ჩანთები და ზურგჩანთები",
@@ -33,7 +33,7 @@
       "windbreaker": "ქურთუკები",
       "fleece_jacket": "ფლისის მოსაცმელი",
       "down_jackets": "მსუბუქი ქურთუკები",
-      "pants": "შარვლები",
+      "pants": "შარვალი",
       "shoes": {
         "title": "ფეხსაცმელი",
         "subcategories": {
@@ -45,10 +45,10 @@
         }
       },
       "buff": "ბაფები და ბალაკლავები",
-      "clothes_gloves": "ხელთათმანები",
+      "clothes_gloves": "ხელთათმანი",
       "hat": "ქუდები",
       "care": "ტანსაცმლისა და ფეხსაცმლის მოვლა",
-      "thermalUnderwear": "თერმული საცვლები",
+      "thermalUnderwear": "თერმული ზედა/ქვედა",
       "socks": "ნაქსოვი წინდები",
       "underwear": "საცვლები"
     }
@@ -372,7 +372,7 @@
         "subcategories": {
           "overall": "კომბინიზონები",
           "jacket": "ქურთუკები",
-          "pants": "შარვლები",
+          "pants": "შარვალი",
           "gloves": "ხელთათმანები"
         }
       },
