@@ -1,0 +1,34 @@
+{
+  "back": "Back",
+  "title": "Maintenance service",
+  "photosTitle": "PHOTO OF THE WORK",
+  "table": {
+    "service": "Service",
+    "price": "Price"
+  },
+  "services": {
+    "comprehensive": {
+      "name": "Comprehensive Service",
+      "description": "edge sharpening, base cleaning, old wax removal, and new wax application (wax range from +3°C to -20°C, in 6-degree increments)",
+      "price": "~ 80 gel"
+    },
+    "edgeSharpening": {
+      "name": "Edge sharpening",
+      "price": "~ 40 gel"
+    },
+    "preservation": {
+      "name": "Preservation",
+      "price": "from 20 gel"
+    },
+    "surfaceRepair": {
+      "name": "Sliding surface repair",
+      "description": "scratch filling R-Tech",
+      "price": "from 20 gel"
+    },
+    "waxApplication": {
+      "name": "Temperature paraffin application",
+      "price": "40 gel"
+    }
+  },
+  "currency": "gel"
+}

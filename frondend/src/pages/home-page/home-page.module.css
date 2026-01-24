@@ -495,7 +495,14 @@
 
 @media (max-width: 630px) {
   .saleTitle {
-    font-size: 14px;
+    font-size: 14px !important;
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 300px) {
+  .saleTitle {
+    font-size: 10px !important;
     line-height: 1.2;
   }
 }
