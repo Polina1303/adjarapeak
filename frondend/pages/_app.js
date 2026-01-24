@@ -29,7 +29,7 @@ function App({ Component, pageProps }) {
         <Header />
         <ScrollToTop />
         <main className="App">
-          <Snow />
+          {/* <Snow /> */}
           <Component {...pageProps} />
         </main>
         <Footer />
