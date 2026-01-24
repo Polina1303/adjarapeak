@@ -42,8 +42,7 @@
     "dev": "next dev",
     "dev:fast": "next dev --no-lint",
     "dev:turbo": "next dev --turbo",
-    "optimize-images": "node scripts/optimize-image.js",
-    "build": "npm run optimize-images && next build",
+    "build": "next build",
     "start": "next start"
   },
   "eslintConfig": {
