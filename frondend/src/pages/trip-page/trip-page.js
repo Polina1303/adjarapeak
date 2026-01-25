@@ -987,26 +987,26 @@ const events = [
     type: "skiTour",
     seasonEnd: "28 февраля 2026",
   },
-  {
-    date: "11 января (вс)",
-    title: "Скалолазание в Гонио",
-    description:
-      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-    price: "49",
-    image: "/imageTrip/rock2.JPG",
-    link: "/rockClimbing",
-    type: "rockClimbing",
-  },
-  {
-    date: "18 января (вс)",
-    title: "Скалолазание в Гонио",
-    description:
-      "Тренировки и маршруты для любого уровня – от новичков до любителей.",
-    price: "49",
-    image: "/imageTrip/rock2.JPG",
-    link: "/rockClimbing",
-    type: "rockClimbing",
-  },
+  // {
+  //   date: "11 января (вс)",
+  //   title: "Скалолазание в Гонио",
+  //   description:
+  //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+  //   price: "49",
+  //   image: "/imageTrip/rock2.JPG",
+  //   link: "/rockClimbing",
+  //   type: "rockClimbing",
+  // },
+  // {
+  //   date: "18 января (вс)",
+  //   title: "Скалолазание в Гонио",
+  //   description:
+  //     "Тренировки и маршруты для любого уровня – от новичков до любителей.",
+  //   price: "49",
+  //   image: "/imageTrip/rock2.JPG",
+  //   link: "/rockClimbing",
+  //   type: "rockClimbing",
+  // },
   {
     date: "25 января (вс)",
     title: "Скалолазание в Гонио",
@@ -1259,7 +1259,7 @@ export const TripPage = () => {
     today.setHours(0, 0, 0, 0);
 
     const skiTourEvent = events.find(
-      (event) => event.type === "skiTour" && event.date === "weekend"
+      (event) => event.type === "skiTour" && event.date === "weekend",
     );
     const seasonEndDate = skiTourEvent?.seasonEnd
       ? parseSeasonEnd(skiTourEvent.seasonEnd)
@@ -1290,16 +1290,16 @@ export const TripPage = () => {
     today.setHours(0, 0, 0, 0);
 
     const dzipEvent = events.find(
-      (event) => event.type === "dzip" && event.date === "everyday"
+      (event) => event.type === "dzip" && event.date === "everyday",
     );
 
     const skiTourEvents = events.filter((event) => event.type === "skiTour");
 
     const weekendSkiTourEvent = skiTourEvents.find(
-      (event) => event.date === "weekend"
+      (event) => event.date === "weekend",
     );
     const dailySkiTourEvent = skiTourEvents.find(
-      (event) => event.date === "everyday"
+      (event) => event.date === "everyday",
     );
 
     const skiTourWeekendDates = generateSkiTourDates();
@@ -1347,7 +1347,7 @@ export const TripPage = () => {
       (event) =>
         event.date !== "everyday" &&
         event.date !== "weekend" &&
-        event.date.includes("-")
+        event.date.includes("-"),
     );
 
     const fixedSkiTourCards = fixedSkiTourEvents.map((event) => {
@@ -1377,7 +1377,7 @@ export const TripPage = () => {
     });
 
     const futureFixedSkiTourCards = fixedSkiTourCards.filter(
-      (card) => card.sortDate >= today
+      (card) => card.sortDate >= today,
     );
 
     skiTourCards.push(...futureFixedSkiTourCards);
@@ -1456,7 +1456,7 @@ export const TripPage = () => {
       const result = [];
 
       const dailySkiTourEvent = skiTourEvents.find(
-        (event) => event.date === "everyday"
+        (event) => event.date === "everyday",
       );
       if (dailySkiTourEvent) {
         result.push({
@@ -1491,13 +1491,13 @@ export const TripPage = () => {
         const aDay = a.date.includes("(сб)")
           ? "(сб)"
           : a.date.includes("(вс)")
-          ? "(вс)"
-          : "";
+            ? "(вс)"
+            : "";
         const bDay = b.date.includes("(сб)")
           ? "(сб)"
           : b.date.includes("(вс)")
-          ? "(вс)"
-          : "";
+            ? "(вс)"
+            : "";
 
         if (dayOrder[aDay] !== undefined && dayOrder[bDay] !== undefined) {
           return dayOrder[aDay] - dayOrder[bDay];
@@ -1529,13 +1529,13 @@ export const TripPage = () => {
         const aDay = a.date.includes("(сб)")
           ? "(сб)"
           : a.date.includes("(вс)")
-          ? "(вс)"
-          : "";
+            ? "(вс)"
+            : "";
         const bDay = b.date.includes("(сб)")
           ? "(сб)"
           : b.date.includes("(вс)")
-          ? "(вс)"
-          : "";
+            ? "(вс)"
+            : "";
 
         if (dayOrder[aDay] !== undefined && dayOrder[bDay] !== undefined) {
           return dayOrder[aDay] - dayOrder[bDay];

@@ -3396,7 +3396,7 @@ export const PRODUCT = [
     order: true,
     id: 13203203204313598734,
     title: "Водостойкий cпрей - пропитка",
-    img: "v8_886A_401.png.webp",
+    img: "v8_886A_401.webp",
     desc: "KUDO, 400 ml",
     category: "care",
     price: 44,

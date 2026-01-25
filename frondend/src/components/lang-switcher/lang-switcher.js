@@ -1,8 +1,9 @@
 import { useRouter } from "next/router";
 import { useState, useRef, useEffect } from "react";
-import { useTranslation } from "react-i18next"; // Добавьте этот импорт
+import { useTranslation } from "react-i18next";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import styles from "./lang-switcher.module.css";
 
 export const LangSwitcher = () => {
   const router = useRouter();
@@ -50,49 +51,30 @@ export const LangSwitcher = () => {
   }, []);
 
   return (
-    <div ref={ref} style={{ position: "relative", cursor: "pointer" }}>
-      <div
-        onClick={() => setOpen(!open)}
-        style={{
-          color: "#101010ff",
-          fontWeight: 500,
-          display: "flex",
-          alignItems: "center",
-          gap: 2,
-        }}
-      >
-        {currentLangLabel}{" "}
+    <div ref={ref} className={styles.container}>
+      <div onClick={() => setOpen(!open)} className={styles.currentLang}>
+        {currentLangLabel}
         {open ? (
-          <KeyboardArrowUpIcon fontSize="small" />
+          <KeyboardArrowUpIcon fontSize="small" className={styles.arrowIcon} />
         ) : (
-          <KeyboardArrowDownIcon fontSize="small" />
+          <KeyboardArrowDownIcon
+            fontSize="small"
+            className={styles.arrowIcon}
+          />
         )}
       </div>
 
       {open && (
-        <div
-          style={{
-            position: "absolute",
-            top: "100%",
-            right: 0,
-            background: "#222",
-            borderRadius: 4,
-            overflow: "hidden",
-            marginTop: 4,
-            minWidth: 50,
-          }}
-        >
+        <div className={styles.dropdown}>
           {languages.map((lang) => (
             <div
               key={lang.code}
               onClick={() => changeLang(lang.code)}
-              style={{
-                padding: "6px 10px",
-                background: "#222",
-                color: locale === lang.code ? "#ff6f00" : "#fff",
-                fontWeight: locale === lang.code ? 600 : 500,
-                textAlign: "center",
-              }}
+              className={`${styles.languageItem} ${
+                locale === lang.code
+                  ? styles.languageItemActive
+                  : styles.languageItemInactive
+              }`}
             >
               {lang.label}
             </div>

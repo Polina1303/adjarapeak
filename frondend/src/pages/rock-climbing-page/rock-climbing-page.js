@@ -95,7 +95,9 @@ export const RockClimbingPage = () => {
         <p className={style["point-description"]}>
           {t("points.accessibility.description")}
         </p>
-        <SwiperPhoto photos={photos} />
+        <div className={style["swiper-container-wrapper"]}>
+          <SwiperPhoto photos={photos} />
+        </div>
       </section>
 
       <section className={style["point"]}>
@@ -104,31 +106,27 @@ export const RockClimbingPage = () => {
           {t("points.experience.description")}
         </p>
 
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-          }}
-          className={style["image-gallery"]}
-        >
-          <Image
-            ref={ref}
-            width={200}
-            height={200}
-            src="/rockClimbingImage/al.JPG"
-            alt="Снаряжение 1"
-            className={style["gallery-image-instructor"]}
-            style={{ objectFit: "contain" }}
-          />
-          <Image
-            ref={ref}
-            width={200}
-            height={200}
-            src="/rockClimbingImage/eg.JPG"
-            alt="Снаряжение 2"
-            className={style["gallery-image-instructor"]}
-            style={{ objectFit: "contain" }}
-          />
+        <div className={style["image-gallery"]}>
+          <div className={style["image-wrapper"]}>
+            <Image
+              ref={ref}
+              fill
+              src="/rockClimbingImage/al.JPG"
+              alt="Снаряжение 1"
+              className={style["gallery-image-instructor"]}
+              sizes="(max-width: 768px) 50vw, 200px"
+            />
+          </div>
+          <div className={style["image-wrapper"]}>
+            <Image
+              ref={ref}
+              fill
+              src="/rockClimbingImage/eg.JPG"
+              alt="Снаряжение 2"
+              className={style["gallery-image-instructor"]}
+              sizes="(max-width: 768px) 50vw, 200px"
+            />
+          </div>
         </div>
       </section>
 
