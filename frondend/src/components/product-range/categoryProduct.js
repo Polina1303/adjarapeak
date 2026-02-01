@@ -35,6 +35,10 @@ export const CATEGORY_PRODUCT = [
             title: "alpinesking.category.closes_ski.subcategories.set_ski",
             subcategory: "set_ski",
           },
+          // {
+          //   title: "alpinesking.category.closes_ski.subcategories.warmHat_ski",
+          //   subcategory: "warmHat_ski",
+          // },
         ],
       },
       {
@@ -163,9 +167,19 @@ export const CATEGORY_PRODUCT = [
         category: "clothes_gloves",
       },
       {
-        title: "clothesAndShoes.category.hat",
+        title: "clothesAndShoes.category.hat.title",
         img: "6dab6bea-7b17-4462.png",
         category: "hat",
+        subcategories: [
+          {
+            title: "clothesAndShoes.category.hat.subcategories.warmHat",
+            subcategory: "warmHat",
+          },
+          {
+            title: "clothesAndShoes.category.hat.subcategories.cap",
+            subcategory: "cap",
+          },
+        ],
       },
       {
         title: "clothesAndShoes.category.care",

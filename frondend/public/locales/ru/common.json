@@ -10,7 +10,8 @@
         "subcategories": {
           "pants_ski": "ШТАНЫ",
           "jackets_ski": "КУРТКИ",
-          "set_ski": "КОМПЛЕКТЫ"
+          "set_ski": "КОМПЛЕКТЫ",
+          "warmHat_ski": "ШАПКИ"
         }
       },
       "buff": "БАФФЫ И БАЛАКЛАВЫ",
@@ -18,7 +19,7 @@
       "helmet_sky": "ШЛЕМЫ",
       "skigoggles": "МАСКИ",
       "sky_care": "ЗАЩИТА",
-      "air_sky": "ТЮБИНГИ",
+      "air_sky": "ТЮБИНГИ/САНКИ",
       "gloves_sky": "ПЕРЧАТКИ",
       "socks_sky": "НОСКИ",
       "snowshoes": "СНЕГОСТУПЫ",
@@ -47,7 +48,14 @@
       },
       "buff": "БАФФЫ И БАЛАКЛАВЫ",
       "clothes_gloves": "ПЕРЧАТКИ",
-      "hat": "ГОЛОВНЫЕ УБОРЫ",
+
+      "hat": {
+        "title": "ГОЛОВНЫЕ УБОРЫ",
+        "subcategories": {
+          "warmHat": "ШАПКИ",
+          "cap": "КЕПКИ И ПАНАМЫ"
+        }
+      },
       "care": "УХОД ЗА ОБУВЬЮ И ОДЕЖДОЙ",
       "thermalUnderwear": "ТЕРМОБЕЛЬЕ",
       "socks": "НОСКИ",

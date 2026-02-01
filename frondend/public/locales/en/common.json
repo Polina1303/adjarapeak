@@ -10,7 +10,8 @@
         "subcategories": {
           "pants_ski": "PANTS",
           "jackets_ski": "JACKETS",
-          "set_ski": "SETS"
+          "set_ski": "SETS",
+          "warmHat_ski": "HATS"
         }
       },
       "buff": "BUFFS AND BALACLAVAS",
@@ -46,7 +47,14 @@
       },
       "buff": "BUFFS AND BALACLAVAS",
       "clothes_gloves": "GLOVES",
-      "hat": "HATS",
+
+      "hat": {
+        "title": "HATS",
+        "subcategories": {
+          "warmHat": "HAT",
+          "cap": "CAP"
+        }
+      },
       "care": "CLOTHING AND SHOE CARE",
       "thermalUnderwear": "THERMAL UNDERWEAR",
       "socks": "SOCKS",
