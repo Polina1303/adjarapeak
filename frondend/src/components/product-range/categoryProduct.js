@@ -654,6 +654,10 @@ export const CATEGORY_PRODUCT = [
             title: "tourismCamping.category.food.subcategories.coffe",
             subcategory: "coffe",
           },
+          {
+            title: "tourismCamping.category.food.subcategories.bars",
+            subcategory: "bars",
+          },
         ],
       },
     ],

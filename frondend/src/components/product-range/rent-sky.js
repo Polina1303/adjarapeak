@@ -342,8 +342,8 @@ export const RENT_SKY = [
   {
     order: true,
     id: 987006433831234393931,
-    title: "Сноуборд RAKU Swallowtail Light Purple",
-    img: "IMG_5955.PNG",
+    title: "Сноуборд с креплениями RAKU Swallowtail Purple",
+    img: "IMG_6317.JPEG",
     desc: "142",
     category: "rent_sky",
     type: "snowboard",
