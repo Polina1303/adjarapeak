@@ -56,6 +56,11 @@ export const CATEGORY_RENT = [
         category: "dif",
         img: "Gn31w.jpg",
       },
+      {
+        title: "skiing.category.avalanche_equipment.title",
+        category: "avalanche_equipment",
+        img: "IMG_6820.PNG",
+      },
     ],
   },
   {

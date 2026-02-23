@@ -32,7 +32,8 @@
       "helmet": { "title": "ШЛЕМ" },
       "mask": { "title": "МАСКА" },
       "protection": { "title": "ЗАЩИТА" },
-      "dif": { "title": "ТЮБИНГ, САНКИ, СНЕГОСТУПЫ" }
+      "dif": { "title": "ТЮБИНГ, САНКИ, СНЕГОСТУПЫ" },
+      "avalanche_equipment": { "title": "Лавинное снаряжение" }
     }
   },
   "tourism": {

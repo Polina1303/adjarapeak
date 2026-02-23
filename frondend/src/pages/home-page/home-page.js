@@ -347,7 +347,7 @@ const HomePage = () => {
         ))}
       </section>
 
-      <Sales />
+      {/* <Sales /> */}
       <RockClimbing />
       <Routes />
       <RulesPage />

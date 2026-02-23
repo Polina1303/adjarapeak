@@ -28,7 +28,8 @@
       },
       "dif": {
         "title": "TUBING, SLEDS, SNOWSHOES"
-      }
+      },
+      "avalanche_equipment": { "title": "avalanche equipment" }
     }
   },
   "tourism": {
