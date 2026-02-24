@@ -976,6 +976,10 @@ export const CATEGORY_PRODUCT = [
               "cyclingRoller.category.roller.subcategories.roller_accessories",
             subcategory: "roller_accessories",
           },
+          {
+            title: "cyclingRoller.category.roller.subcategories.roller_bags",
+            subcategory: "roller_bags",
+          },
         ],
       },
       {
