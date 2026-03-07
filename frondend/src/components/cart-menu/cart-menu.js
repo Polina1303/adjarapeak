@@ -30,7 +30,11 @@ export const CartMenu = ({ items, onClick, closeMenu }) => {
             />
           ))
         ) : (
-          <Typography>Корзина пуста</Typography>
+          <Typography
+            sx={{ mt: "40px", fontFamily: "RoadRadio-Light, sans-serif" }}
+          >
+            Корзина пуста
+          </Typography>
         )}
       </Box>
 

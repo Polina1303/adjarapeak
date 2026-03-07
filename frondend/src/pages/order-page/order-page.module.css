@@ -17,7 +17,7 @@
 .back-button {
   background: transparent;
   border: none;
-  color: #000; 
+  color: #000;
   font-size: 16px;
   display: flex;
   align-items: center;
@@ -29,5 +29,25 @@
 }
 
 .back-button-cover {
-  color: #000; 
+  color: #000;
+}
+
+.successWrapper {
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 0 16px;
+}
+
+.successWrapper p {
+  margin-bottom: 14px;
+}
+
+.rental-warning {
+  background: #f6d6d6;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.cashback {
+  font-family: RoadRadio-Thin;
 }
