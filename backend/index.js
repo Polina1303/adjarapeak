@@ -6,9 +6,23 @@ import { EmailSender } from "./sendEmail.js";
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+
+// Configure CORS properly
+const corsOptions = {
+  origin: ["https://www.adjarapeak.ge", "https://adjarapeak.ge"], // Add your frontend domains
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
+
+// Handle preflight requests explicitly
+app.options("/send", cors(corsOptions));
 
 const PORT = process.env.PORT || 5001;
+
 app.post("/send", async (req, res) => {
   try {
     const {
@@ -24,7 +38,8 @@ app.post("/send", async (req, res) => {
       price,
     } = req.body;
 
-    EmailSender({
+    // Add await if EmailSender is async
+    await EmailSender({
       name,
       phone,
       telegram,
@@ -36,12 +51,13 @@ app.post("/send", async (req, res) => {
       count,
       price,
     });
+
     res.json({ msg: "ok" });
   } catch (error) {
-    res.status(404).json({ msg: "Error" });
+    console.error("Error sending email:", error);
+    res.status(500).json({ msg: "Error sending email", error: error.message });
   }
 });
 
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
-
 export default app;
