@@ -167,7 +167,7 @@
 
 // export default HomePage;
 
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { RockClimbing } from "../../components/rock-сlimbing";
@@ -176,90 +176,66 @@ import { Routes } from "../../components/routes/routes";
 import { useInView } from "react-intersection-observer";
 import RulesPage from "../rules-page";
 import styles from "./home-page.module.css";
-import { useSelector } from "react-redux";
-import { Sales } from "../sales";
-
-const saleItems = [
-  {
-    id: 1,
-    href: "sale/alpinesking",
-    src: "/img/sale.webp",
-    alt: {
-      RU: "Продажа снаряжения для туризма и спорта",
-      EN: "Tourist and sports equipment sale",
-    },
-    title: { RU: "Купить", EN: "Sale" },
-    subtitle: { RU: "снаряжение", EN: "of tourist equipment" },
-    highlight: "rent",
-    width: 400,
-    height: 300,
-  },
-  {
-    id: 2,
-    href: "/rent/skiRental",
-    src: "/img/rent.webp",
-    alt: {
-      RU: "Аренда туристического снаряжения",
-      EN: "Tourist equipment rental",
-    },
-    title: { RU: "Арендовать", EN: "Rental" },
-    subtitle: { RU: "снаряжение", EN: "of tourist equipment" },
-    highlight: "rent",
-    width: 400,
-    height: 300,
-  },
-  {
-    id: 3,
-    href: "/trip",
-    src: "/img/tour.webp",
-    alt: {
-      RU: "Бронирование путешествий и туров",
-      EN: "Travel and tour booking",
-    },
-    title: { RU: "Забронировать", EN: "Schedule" },
-    subtitle: { RU: "путешествие", EN: "of events" },
-    highlight: "sale",
-    width: 400,
-    height: 300,
-  },
-  {
-    id: 4,
-    href: "/rent/skiRental",
-    src: "/img/snow.webp",
-    alt: {
-      RU: "Прокат горнолыжного снаряжения",
-      EN: "Ski equipment rental",
-    },
-    title: { RU: "Прокат", EN: "Rental" },
-    subtitle: {
-      RU: "горнолыжного снаряжения",
-      EN: "of ski equipment",
-    },
-    highlight: "sale",
-    width: 400,
-    height: 300,
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const HomePage = () => {
-  const [isMobile, setIsMobile] = useState(false);
-  const languages = useSelector((state) => state.languages.currentLanguages);
+  const { t } = useTranslation("common");
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      setIsMobile(window.innerWidth <= 630);
       localStorage.removeItem("activeType");
       localStorage.removeItem("activeTypeSale");
       localStorage.removeItem("searchQuery");
-
-      const handleResize = () => setIsMobile(window.innerWidth <= 630);
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
     }
   }, []);
 
   const { ref } = useInView({ threshold: 0, triggerOnce: true });
-  const isRU = languages === "RU";
+  const saleItems = [
+    {
+      id: 1,
+      href: "sale/alpinesking",
+      src: "/img/sale.webp",
+      altKey: "home.cards.sale.alt",
+      titleKey: "home.cards.sale.title",
+      subtitleKey: "home.cards.sale.subtitle",
+      highlight: "rent",
+      width: 400,
+      height: 300,
+    },
+    {
+      id: 2,
+      href: "/rent/skiRental",
+      src: "/img/rent.webp",
+      altKey: "home.cards.rent.alt",
+      titleKey: "home.cards.rent.title",
+      subtitleKey: "home.cards.rent.subtitle",
+      highlight: "rent",
+      width: 400,
+      height: 300,
+    },
+    // {
+    //   id: 3,
+    //   href: "/trip",
+    //   src: "/img/tour.webp",
+    //   altKey: "home.cards.trip.alt",
+    //   titleKey: "home.cards.trip.title",
+    //   subtitleKey: "home.cards.trip.subtitle",
+    //   highlight: "sale",
+    //   width: 400,
+    //   height: 300,
+    // },
+    {
+      id: 4,
+      href: "/rent/skiRental",
+      src: "/img/snow.webp",
+      altKey: "home.cards.ski.alt",
+      titleKey: "home.cards.ski.title",
+      subtitleKey: "home.cards.ski.subtitle",
+      highlight: "sale",
+      width: 400,
+      height: 300,
+    },
+  ];
 
   return (
     <div className={styles.homePageContainer}>
@@ -268,42 +244,26 @@ const HomePage = () => {
 
         <p
           className={styles.mainTitleAlt}
-          aria-label={
-            isRU
-              ? "Туристическое горнолыжное и спортивное снаряжение"
-              : "Tourist, ski and sports equipment"
-          }
+          aria-label={t("home.hero.ariaLabel")}
         >
-          {isRU ? (
-            <>
-              <span className={styles.orangeLine}>Туристическое, </span>
-              <span className={styles.orangeLine}>горнолыжное </span>
-              <span className={styles.orangeBox}>и</span>
-              <span className={styles.orangeLine}> спортивное</span>
-              <span className={styles.orangeLine}> снаряжение</span>
-            </>
-          ) : (
-            <>
-              <span className={styles.orangeLine}>Tourist, </span>
-              <span className={styles.orangeLine}>ski </span>
-              <span className={styles.orangeBox}>and</span>
-              <span className={styles.orangeLine}> sports</span>
-              <span className={styles.orangeLine}> equipment</span>
-            </>
-          )}
+          <span className={styles.orangeLine}>{t("home.hero.line1")}</span>
+          <span className={styles.orangeLine}>{t("home.hero.line2")}</span>
+          <span className={styles.orangeBox}>{t("home.hero.line3")}</span>
+          <span className={styles.orangeLine}>{t("home.hero.line4")}</span>
+          <span className={styles.orangeLine}>{t("home.hero.line5")}</span>
         </p>
 
         <p className={styles.subTitleAlt}>
           <span className={styles.highlightAlt}>
-            {isRU ? "Центр твоих приключений. " : "The hiking season "}
+            {t("home.subtitle.part1")}
           </span>
-          <span>{isRU ? "Всё для спорта и туризма." : "is open!"}</span>
+          <span>{t("home.subtitle.part2")}</span>
         </p>
       </header>
 
       <section
         className={styles.saleContainer}
-        aria-label={isRU ? "Разделы магазина" : "Store sections"}
+        aria-label={t("home.sectionsLabel")}
       >
         {saleItems.map((item, index) => (
           <article
@@ -315,7 +275,7 @@ const HomePage = () => {
               <Image
                 priority={index === 0}
                 src={item.src}
-                alt={isRU ? item.alt.RU : item.alt.EN}
+                alt={t(item.altKey)}
                 width={item.width}
                 height={item.height}
                 className={styles.saleImg}
@@ -336,10 +296,10 @@ const HomePage = () => {
                         : styles.highlightSale
                     }
                   >
-                    {isRU ? item.title.RU : item.title.EN}
+                    {t(item.titleKey)}
                   </span>
                   <br />
-                  {isRU ? item.subtitle.RU : item.subtitle.EN}
+                  {t(item.subtitleKey)}
                 </h3>
               </div>
             </Link>

@@ -1,11 +1,13 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
+import { useTranslation } from "react-i18next";
 import styles from "./rock-climbing.module.css";
 
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
 export const RockClimbing = () => {
+  const { t } = useTranslation("rock-climbing");
   const { ref } = useInView({
     threshold: 0,
     triggerOnce: true,
@@ -34,19 +36,11 @@ export const RockClimbing = () => {
         />
 
         <div className={styles.climbingDetails}>
-          <h2 className={styles.routesTitleText}>Скалолазаниe</h2>
-          <p className={styles.climbingText}>
-            Приглашаем на тренировки по скалолазанию на естественном рельефе в
-            живописном месте Гонио-Квариати! Подходит как новичкам, так и
-            опытным скалолазам.
-          </p>
-          <p className={styles.climbingText}>
-            Тренировки проходят 4 раза в неделю: в субботу и воскресенье (10:00
-            и 15:00). Всё необходимое снаряжение предоставим, включая скальные
-            туфли. Стоимость — 49 лари.
-          </p>
+          <h2 className={styles.routesTitleText}>{t("homeSection.title")}</h2>
+          <p className={styles.climbingText}>{t("homeSection.description1")}</p>
+          <p className={styles.climbingText}>{t("homeSection.description2")}</p>
           <Link href="/rockClimbing" className={styles.climbingButton}>
-            УЗНАТЬ БОЛЬШЕ
+            {t("homeSection.more")}
           </Link>
           <a
             href="https://t.me/shpaksn"
@@ -54,7 +48,7 @@ export const RockClimbing = () => {
             rel="noreferrer"
             className={styles.climbingLink}
           >
-            Записаться на тренировку
+            {t("homeSection.signup")}
           </a>
         </div>
       </div>

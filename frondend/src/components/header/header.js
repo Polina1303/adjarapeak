@@ -59,7 +59,7 @@ export const Header = () => {
   const menuItems = [
     { path: "/sale/alpinesking", key: "shop" },
     { path: "/rent/skiRental", key: "rental" },
-    { path: "/trip", key: "tours" },
+    // { path: "/trip", key: "tours" },
     { path: "/rockClimbing", key: "rock-climbing" },
     { path: "/service", key: "service-center" },
     { path: "/contact", key: "contacts" },
@@ -68,7 +68,7 @@ export const Header = () => {
   const menuItemsMobile = [
     { path: "/sale/alpinesking", key: "shop" },
     { path: "/rent/skiRental", key: "rental" },
-    { path: "/trip", key: "tours" },
+    // { path: "/trip", key: "tours" },
     { path: "/rockClimbing", key: "rock-climbing" },
     { path: "/service", key: "service-center" },
     { path: "/contact", key: "contacts" },

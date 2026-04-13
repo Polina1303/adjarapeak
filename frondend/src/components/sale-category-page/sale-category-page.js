@@ -180,8 +180,8 @@ export default function SaleCategoryPage({ section, type, subcategory }) {
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
               displayEmpty
-              inputProps={{ "aria-label": "Цена" }}
-              label="Цена"
+              inputProps={{ "aria-label": t("price", { ns: "sale" }) }}
+              label={t("price", { ns: "sale" })}
               sx={{
                 bgcolor: sortBy ? "#fef3ed" : "white",
                 "& .MuiOutlinedInput-notchedOutline": {

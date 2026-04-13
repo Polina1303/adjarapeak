@@ -214,19 +214,16 @@
 // };
 
 import { AiOutlineCheckCircle } from "react-icons/ai";
-import { FaHandPointUp } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 import styles from "./chooseus.module.css";
-import { useSelector } from "react-redux";
 
 export const ChooseUs = () => {
-  const languages = useSelector((state) => state.languages.currentLanguages);
+  const { t } = useTranslation("common");
 
   return (
     <div className={styles["choose-cover"]}>
       <div className={styles["choose-title"]}>
-        <h2>
-          {languages === "RU" ? "Почему выбирают нас?" : "Why Choose Us?"}
-        </h2>
+        <h2>{t("chooseUs.title")}</h2>
 
         <div className={styles["choose-columns"]}>
           <div className={styles["choose-column"]}>
@@ -237,15 +234,11 @@ export const ChooseUs = () => {
                   className={styles["choose-checkin"]}
                 />
                 <h4>
-                  {languages === "RU"
-                    ? "ВСЁ В ОДНОМ МЕСТЕ"
-                    : "EVERYTHING IN ONE PLACE"}
+                  {t("chooseUs.items.allInOne.title")}
                 </h4>
               </div>
               <p className={styles["choose-item-description"]}>
-                {languages === "RU"
-                  ? "Магазин, прокат, походы, джиппинг, восхождения и скалолазание — всё в одном месте."
-                  : "Shop, rental, hikes, jeeping, climbing and mountaineering — all in one place."}
+                {t("chooseUs.items.allInOne.description")}
               </p>
             </div>
 
@@ -256,13 +249,11 @@ export const ChooseUs = () => {
                   className={styles["choose-checkin"]}
                 />
                 <h4>
-                  {languages === "RU" ? "ЭКСПЕРТНАЯ КОМАНДА" : "EXPERT TEAM"}
+                  {t("chooseUs.items.expertTeam.title")}
                 </h4>
               </div>
               <p className={styles["choose-item-description"]}>
-                {languages === "RU"
-                  ? "Поможем подобрать всё под маршрут и уровень — даже если вы новичок."
-                  : "We'll help you choose everything according to your route and level — even if you're a beginner."}
+                {t("chooseUs.items.expertTeam.description")}
               </p>
             </div>
 
@@ -273,13 +264,11 @@ export const ChooseUs = () => {
                   className={styles["choose-checkin"]}
                 />
                 <h4>
-                  {languages === "RU" ? "ОТСУТСТВИЕ ЗАЛОГА" : "NO DEPOSIT"}
+                  {t("chooseUs.items.noDeposit.title")}
                 </h4>
               </div>
               <p className={styles["choose-item-description"]}>
-                {languages === "RU"
-                  ? "Для заключения договора нужен только паспорт."
-                  : "Only a passport is needed to sign the contract."}
+                {t("chooseUs.items.noDeposit.description")}
               </p>
             </div>
 
@@ -290,15 +279,11 @@ export const ChooseUs = () => {
                   className={styles["choose-checkin"]}
                 />
                 <h4>
-                  {languages === "RU"
-                    ? "УДОБНОЕ РАСПОЛОЖЕНИЕ"
-                    : "CONVENIENT LOCATION"}
+                  {t("chooseUs.items.location.title")}
                 </h4>
               </div>
               <p className={styles["choose-item-description"]}>
-                {languages === "RU"
-                  ? "Мы находимся недалеко от центрального стадиона и крупнейшего торгового центра в Батуми."
-                  : "We are located near the central stadium and the largest shopping center in Batumi."}
+                {t("chooseUs.items.location.description")}
               </p>
             </div>
 
@@ -308,22 +293,11 @@ export const ChooseUs = () => {
                   size={25}
                   className={styles["choose-checkin"]}
                 />
-                <h4>{languages === "RU" ? "БРОНИРОВАНИЕ" : "BOOKING"}</h4>
+                <h4>{t("chooseUs.items.booking.title")}</h4>
               </div>
               <p className={styles["choose-item-description"]}>
-                {languages === "RU" ? (
-                  <>
-                    Доступно от 2 суток, по предоплате.
-                    <br /> Важно: предоплата не возвращается и не переносится в
-                    случае отмены заказа клиентом.
-                  </>
-                ) : (
-                  <>
-                    Available from 2 days, with prepayment.
-                    <br /> Important: prepayment is non-refundable and
-                    non-transferable if the order is canceled by the client.
-                  </>
-                )}
+                {t("chooseUs.items.booking.line1")}
+                <br /> {t("chooseUs.items.booking.line2")}
               </p>
             </div>
           </div>
@@ -336,23 +310,11 @@ export const ChooseUs = () => {
                   className={styles["choose-checkin"]}
                 />
                 <h4>
-                  {languages === "RU" ? "РЕАЛЬНАЯ ЭКОНОМИЯ" : "REAL SAVINGS"}
+                  {t("chooseUs.items.savings.title")}
                 </h4>
               </div>
               <p className={styles["choose-item-description"]}>
-                {languages === "RU" ? (
-                  <>
-                    Не нужно покупать дорогое снаряжение ради одного похода —
-                    всё можно взять в аренду. Снаряжение — всё чистое,
-                    проверенное и готово к использованию.
-                  </>
-                ) : (
-                  <>
-                    No need to buy expensive equipment for one hike — everything
-                    can be rented. All equipment is clean, tested and ready to
-                    use.
-                  </>
-                )}
+                {t("chooseUs.items.savings.description")}
               </p>
             </div>
 
@@ -363,47 +325,24 @@ export const ChooseUs = () => {
                   className={styles["choose-checkin"]}
                 />
                 <h4>
-                  {languages === "RU"
-                    ? "БОНУС ЗА ПОДПИСКУ"
-                    : "SUBSCRIPTION BONUS"}
+                  {t("chooseUs.items.bonus.title")}
                 </h4>
               </div>
               <p className={styles["choose-item-description"]}>
-                {languages === "RU" ? (
-                  <>
-                    Подписчики нашего{" "}
-                    <a
-                      href="https://t.me/adjarapeak"
-                      target="_blank"
-                      rel="noreferrer"
-                      style={{ color: "rgba(0, 136, 204)" }}
-                    >
-                      Telegram-канала
-                    </a>{" "}
-                    получают скидку 5% на весь прокат снаряжения.
-                    <br />
-                    Если вы отметите нас в социальных сетях, мы добавим ещё 5%
-                    кэшбэка от суммы заказа. Аккаунт должен быть открыт, отметка
-                    — кликабельной.
-                  </>
-                ) : (
-                  <>
-                    Subscribers of our{" "}
-                    <a
-                      href="https://t.me/adjarapeak"
-                      target="_blank"
-                      rel="noreferrer"
-                      style={{ color: "rgba(0, 136, 204)" }}
-                    >
-                      Telegram channel
-                    </a>{" "}
-                    receive a 5% discount on all equipment rental.
-                    <br />
-                    If you tag us on social media, we'll add another 5% cashback
-                    from the order amount. The account must be public, and the
-                    tag — clickable.
-                  </>
-                )}
+                {t("chooseUs.items.bonus.line1")}
+                {" "}
+                <a
+                  href="https://t.me/adjarapeak"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ color: "rgba(0, 136, 204)" }}
+                >
+                  {t("chooseUs.items.bonus.link")}
+                </a>
+                {" "}
+                {t("chooseUs.items.bonus.line2")}
+                <br />
+                {t("chooseUs.items.bonus.line3")}
               </p>
             </div>
 
@@ -414,23 +353,11 @@ export const ChooseUs = () => {
                   className={styles["choose-checkin"]}
                 />
                 <h4>
-                  {languages === "RU"
-                    ? "ОРГАНИЗУЕМ ПРИКЛЮЧЕНИЯ"
-                    : "WE ORGANIZE ADVENTURES"}
+                  {t("chooseUs.items.adventures.title")}
                 </h4>
               </div>
               <p className={styles["choose-item-description"]}>
-                {languages === "RU" ? (
-                  <>
-                    Хочешь в поход или на скалы? Мы не просто прокат — мы
-                    включаем тебя в движение.
-                  </>
-                ) : (
-                  <>
-                    Want to go hiking or climbing? We're not just a rental — we
-                    get you involved.
-                  </>
-                )}
+                {t("chooseUs.items.adventures.description")}
               </p>
             </div>
 
@@ -441,24 +368,13 @@ export const ChooseUs = () => {
                   className={styles["choose-checkin"]}
                 />
                 <h4>
-                  {languages === "RU" ? "ЛОКАЛЬНЫЙ БРЕНД" : "LOCAL BRAND"}
+                  {t("chooseUs.items.localBrand.title")}
                 </h4>
               </div>
               <p className={styles["choose-item-description"]}>
-                {languages === "RU" ? (
-                  <>
-                    Мы развиваем спорт и outdoor-культуру в Аджарии.
-                    <br />
-                    Наша цель — сделать горы ближе. И ты — часть этого пути.
-                  </>
-                ) : (
-                  <>
-                    We develop sports and outdoor culture in Adjara.
-                    <br />
-                    Our goal is to bring the mountains closer. And you are part
-                    of this journey.
-                  </>
-                )}
+                {t("chooseUs.items.localBrand.line1")}
+                <br />
+                {t("chooseUs.items.localBrand.line2")}
               </p>
             </div>
 
@@ -469,21 +385,12 @@ export const ChooseUs = () => {
                   className={styles["choose-checkin"]}
                 />
                 <h4>
-                  {languages === "RU" ? "ГИБКИЕ УСЛОВИЯ" : "FLEXIBLE TERMS"}
+                  {t("chooseUs.items.flexible.title")}
                 </h4>
               </div>
               <p className={styles["choose-item-description"]}>
-                {languages === "RU" ? (
-                  <>
-                    Можно взять снаряжение на день, на выходные или на неделю.
-                    <br /> Минимальный срок аренды — всего одни сутки.
-                  </>
-                ) : (
-                  <>
-                    You can rent equipment for a day, a weekend, or a week.
-                    <br /> Minimum rental period is just one day.
-                  </>
-                )}
+                {t("chooseUs.items.flexible.line1")}
+                <br /> {t("chooseUs.items.flexible.line2")}
               </p>
             </div>
           </div>

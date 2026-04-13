@@ -233,6 +233,173 @@
       }
     }
   },
+  "home": {
+    "hero": {
+      "ariaLabel": "Tourist, ski and sports equipment",
+      "line1": "Tourist, ",
+      "line2": "ski ",
+      "line3": "and",
+      "line4": " sports",
+      "line5": " equipment"
+    },
+    "subtitle": {
+      "part1": "Your adventure hub. ",
+      "part2": "Everything for sport and tourism."
+    },
+    "sectionsLabel": "Store sections",
+    "cards": {
+      "sale": {
+        "alt": "Tourist and sports equipment sale",
+        "title": "Sale",
+        "subtitle": "of tourist equipment"
+      },
+      "rent": {
+        "alt": "Tourist equipment rental",
+        "title": "Rental",
+        "subtitle": "of tourist equipment"
+      },
+      "trip": {
+        "alt": "Travel and tour booking",
+        "title": "Schedule",
+        "subtitle": "of events"
+      },
+      "ski": {
+        "alt": "Ski equipment rental",
+        "title": "Rental",
+        "subtitle": "of ski equipment"
+      }
+    }
+  },
+  "routes": {
+    "title": "Around Batumi: Amazing routes",
+    "explore": "Explore now",
+    "summary": "Discover your love for nature",
+    "items": {
+      "lake": "Batumi - Khulo - Tago - hiking route to the lake",
+      "erge": "Erge summit",
+      "garden": "Botanical Garden"
+    }
+  },
+  "chooseUs": {
+    "title": "Why choose us?",
+    "items": {
+      "allInOne": {
+        "title": "EVERYTHING IN ONE PLACE",
+        "description": "Shop, rental, hikes, jeeping, climbing and mountaineering — all in one place."
+      },
+      "expertTeam": {
+        "title": "EXPERT TEAM",
+        "description": "We'll help you choose everything for your route and level — even if you're a beginner."
+      },
+      "noDeposit": {
+        "title": "NO DEPOSIT",
+        "description": "Only a passport is needed to sign the contract."
+      },
+      "location": {
+        "title": "CONVENIENT LOCATION",
+        "description": "We are located near the central stadium and the largest shopping mall in Batumi."
+      },
+      "booking": {
+        "title": "BOOKING",
+        "line1": "Available from 2 days with prepayment.",
+        "line2": "Important: prepayment is non-refundable and non-transferable if the client cancels the order."
+      },
+      "savings": {
+        "title": "REAL SAVINGS",
+        "description": "No need to buy expensive equipment for one hike — everything can be rented. All equipment is clean, tested and ready to use."
+      },
+      "bonus": {
+        "title": "SUBSCRIPTION BONUS",
+        "line1": "Subscribers of our",
+        "link": "Telegram channel",
+        "line2": "receive a 5% discount on all equipment rental.",
+        "line3": "If you tag us on social media, we'll add another 5% cashback to the order amount. Your account must be public and the tag clickable."
+      },
+      "adventures": {
+        "title": "WE ORGANIZE ADVENTURES",
+        "description": "Want to go hiking or climbing? We're not just a rental — we get you involved."
+      },
+      "localBrand": {
+        "title": "LOCAL BRAND",
+        "line1": "We develop sports and outdoor culture in Adjara.",
+        "line2": "Our goal is to bring the mountains closer. And you are part of this journey."
+      },
+      "flexible": {
+        "title": "FLEXIBLE TERMS",
+        "line1": "You can rent equipment for a day, a weekend or a week.",
+        "line2": "The minimum rental period is just one day."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "address": {
+      "title": "Our address",
+      "value": "Batumi, General Aslan Abashidze Street, 19"
+    },
+    "hours": {
+      "title": "Opening hours",
+      "value": "Daily from 11:00 to 20:00"
+    },
+    "phones": {
+      "title": "Phones"
+    },
+    "reviews": {
+      "title": "Reviews",
+      "google": "Leave a review on Google",
+      "yandex": "Leave a review on Yandex"
+    },
+    "socials": "Follow Adjara Peak:"
+  },
+  "routePages": {
+    "back": "Back",
+    "routeLink": "( route here )",
+    "common": {
+      "mountains": "Go into the mountains, enjoy nature, and feel happy!",
+      "seeYou": "See you at Adjara Peak!",
+      "safetyTitle": "Safety:"
+    },
+    "lake": {
+      "heading": "A lake shaped like 💚 near Batumi!",
+      "title": "Batumi - Khulo - Tago - hiking route to the lake.",
+      "intro1": "If you are in Batumi and looking for an exciting nature excursion, Tago is the perfect place for you!",
+      "intro2": "In this article, we will tell you about the ways to get to Tago and that very lake, along with tips for a safe trip.",
+      "point1": "How to get to Khulo from Batumi:",
+      "busTitle": "By minibus:",
+      "busText": "If you prefer public transport, a minibus is a great option. It departs from the old bus station, and the first trip starts at 8:00 AM. After that, minibuses run every hour, although the schedule may change. The journey takes about 2-3 hours, and the distance to Khulo is around 90 km.",
+      "carTitle": "By car:",
+      "carText": "Another option is to rent or use your own car. This gives you more freedom to move around and the chance to stop along the way to enjoy scenic views or visit other attractions. The road from Batumi to Khulo takes about 2-3 hours depending on traffic and your driving style.",
+      "point2": "Travel from Khulo to Tago:",
+      "point2Text": "After arriving in Khulo, you will need to complete the final part of the journey to Tago. You can choose between going by car or taking the cable car. We recommend the cable car to get the most эмоtions and save time. The fare is 5 GEL, and the ride takes only 10 minutes. On the way, you can enjoy amazing views and the beauty of the surrounding nature.",
+      "point3": "Travel from Tago to the lake:",
+      "coordsTitle": "Lake coordinates (41.614455, 42.34121)",
+      "coordsBefore": " will help you find the exact location. We recommend using the app ",
+      "coordsAfter": " to build the route. It will be your reliable guide during the trip. The total elevation gain is 622 meters. Estimated hiking time is 2-3 hours, and you should allow a little less for the way back, around 1-1.5 hours. For safety and comfort, it is recommended to take trekking poles with you. They will help you keep balance and reduce the strain on your legs, especially if you carry a backpack.",
+      "outro": "But most importantly, take care of yourself. In the mountains, it is always important to be careful and prepared. Check the weather before the trip, use reliable gear, including suitable clothing and footwear. It is essential to follow safety rules and not risk your health. Mountains always offer unforgettable adventures, so enjoy your journey to Tago and the lake. Immerse yourself in the magic of nature, enjoy the views, and create unforgettable memories of your trip to the mountains of Georgia."
+    },
+    "erge": {
+      "heading": "Mount Erge",
+      "title": "A bonus of this hike is the magnificent panoramic view of Batumi!",
+      "intro": "The mountain is almost 900 meters high, and from there you get a great view of the city.",
+      "coords": "Coordinates of the church: 41.601451, 41.720233",
+      "description": "Erge, with its almost 900-meter height, is an exciting mountain with a stunning panoramic view of Batumi. This hiking route is located on the south-west side of the mountain, and its main feature is the gentle ascent. For those who prefer convenience and speed, you can reach the start of the route by car or taxi for about 20 GEL from Batumi via Kvemo Jocho. You can also take minibus No. 199.",
+      "routeBefore": "The total distance is 15.4 km. It took us 6 hours and 57 minutes to complete the route including breaks. The app used for planning and recording this route was ",
+      "routeAfter": ", and it provided all the necessary information and navigation for a successful ascent.",
+      "safety": "Check the weather, prepare accordingly, and carry the necessary equipment. Consider your physical abilities and choose routes based on your experience. Avoid dangerous conditions and let someone know about your plans. Enjoy nature, but remember safety."
+    },
+    "garden": {
+      "heading": "Batumi Botanical Garden",
+      "title": "A route for those who do not have time or opportunity to go to the mountains.",
+      "howToGetTitle": "How to get there:",
+      "howToGet": "Bus No. 10 goes directly to the lower entrance of the park. A taxi from Batumi costs about 10 GEL.",
+      "ticketTitle": "Ticket price:",
+      "ticket": " 20 GEL.",
+      "websiteTitle": "Official website: ",
+      "description1": "The Batumi Botanical Garden is a unique place offering exciting routes for nature lovers. The park is known for its diverse plant life and beautiful landscapes that can be explored through different paths.",
+      "routeBefore": "When visiting the park, it is recommended to start with the main trails that let you see the main attractions and landscapes. Then you can continue along routes leading to different gardens and sectors of the park, including collections of rare and exotic plants. The app used to record the route was ",
+      "safety": "No matter which route you choose, it is important to follow the signs and stay on designated trails to preserve the park and keep it safe. And do not forget to take water, a camera, and binoculars with you so you can fully enjoy the many plants and animals living in the Batumi Botanical Garden."
+    }
+  },
   "sports": {
     "title": "RACKET AND BALL SPORTS",
     "category": {

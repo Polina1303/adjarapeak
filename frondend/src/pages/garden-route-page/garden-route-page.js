@@ -1,12 +1,12 @@
 import { useInView } from "react-intersection-observer";
 import { IoIosArrowBack } from "react-icons/io";
 import { useRouter } from "next/router";
-import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 import Image from "next/image";
 import styles from "./garden-route-page.module.css";
 
 export const GardenRoutePage = () => {
-  const languages = useSelector((state) => state.languages.currentLanguages);
+  const { t } = useTranslation("common");
   const router = useRouter();
   const { ref } = useInView({
     threshold: 0,
@@ -16,16 +16,10 @@ export const GardenRoutePage = () => {
     <>
       <div className={styles["back-button-cover"]}>
         <button className={styles["back-button"]} onClick={() => router.back()}>
-          <IoIosArrowBack size={"25px"} />{" "}
-          {languages === "RU" ? "Назад" : "Back"}
+          <IoIosArrowBack size={"25px"} /> {t("routePages.back")}
         </button>
       </div>
-      <h3>
-        {" "}
-        {languages === "RU"
-          ? "Ботанический сад Батуми"
-          : "Batumi Botanical Garden"}{" "}
-      </h3>
+      <h3>{t("routePages.garden.heading")}</h3>
       <div className={styles["lake-route-page-cover"]}>
         <div ref={ref} className={styles["lake-route-page-cover-img"]}>
           <div>
@@ -75,27 +69,23 @@ export const GardenRoutePage = () => {
         </div>
         <div className={styles["lake-route-page-cover-desc"]}>
           <p className={styles["lake-route-page-cover-title"]}>
-            {languages === "RU"
-              ? "Маршрут для тех, у кого нет времени или возможности выбраться в горы."
-              : "A route for those who don't have the time or opportunity to venture into the mountains."}
+            {t("routePages.garden.title")}
           </p>
           <p>
             <span className={styles["lake-route-page-cover-title"]}>
-              {languages === "RU" ? "Как добраться:" : "How to get there:"}
+              {t("routePages.garden.howToGetTitle")}
             </span>
-            {languages === "RU"
-              ? "10 автобус идёт прямо к нижнему входу в парк. Такси от Батуми примерно 10 лари."
-              : "Bus number 10 goes directly to the lower entrance of the park. Taxi from Batumi costs around 10 lari."}
+            {t("routePages.garden.howToGet")}
           </p>
           <p>
             <span className={styles["lake-route-page-cover-title"]}>
-              {languages === "RU" ? "Цена билета:" : "Ticket price:"}
+              {t("routePages.garden.ticketTitle")}
             </span>
-            {languages === "RU" ? " 20 лари." : " 20 lari."}
+            {t("routePages.garden.ticket")}
           </p>
           <p>
             <span className={styles["lake-route-page-cover-title"]}>
-              {languages === "RU" ? "Официальный сайт: " : "Official website: "}
+              {t("routePages.garden.websiteTitle")}
             </span>
             <a
               className={styles["lake-route-page-url"]}
@@ -107,15 +97,9 @@ export const GardenRoutePage = () => {
             </a>
           </p>
 
+          <p>{t("routePages.garden.description1")}</p>
           <p>
-            {languages === "RU"
-              ? "Ботанический парк в Батуми - уникальное место, предлагающее захватывающие маршруты для любителей природы. Парк известен своим разнообразным растительным миром и красивыми пейзажами, которые могут быть исследованы по различным маршрутам."
-              : "The Batumi Botanical Garden is a unique place offering exciting routes for nature enthusiasts. The park is known for its diverse plant life and beautiful landscapes, which can be explored along various routes."}
-          </p>
-          <p>
-            {languages === "RU"
-              ? "При посещении парка, рекомендуется начать с основных троп, которые позволяют охватить основные достопримечательности и ландшафты. Затем вы можете пройтись по маршрутам, ведущим к различным садам и секторам парка, включая коллекции редких и экзотических растений. Для записи маршрута было использовано приложение "
-              : "When visiting the park, it's recommended to start with the main trails, which allow you to cover the main attractions and landscapes. Then, you can explore routes leading to various gardens and sectors of the park, including collections of rare and exotic plants. An app was used to record the route."}
+            {t("routePages.garden.routeBefore")}
             <a
               className={styles["lake-route-page-url"]}
               href="https://www.komoot.com/"
@@ -130,24 +114,18 @@ export const GardenRoutePage = () => {
               target="_blank"
               rel="noreferrer"
             >
-              {languages === "RU" ? "( маршрут здесь )" : "( route here )"}
+              {t("routePages.routeLink")}
             </a>
             <br />
-            {languages === "RU"
-              ? "Ходите в горы, наслаждайтесь природой и почувствуйте себя счастливыми!"
-              : "Go into the mountains, enjoy nature, and feel happy!"}
+            {t("routePages.common.mountains")}
             <br />
-            {languages === "RU"
-              ? "До встречи в Adjara Peak."
-              : "See you at Adjara Peak!"}
+            {t("routePages.common.seeYou")}
           </p>
           <p>
             <span className={styles["lake-route-page-cover-title"]}>
-              {languages === "RU" ? "Безопасность:" : "Safety:"}
+              {t("routePages.common.safetyTitle")}
             </span>
-            {languages === "RU"
-              ? "Вне зависимости от выбранного маршрута, важно следовать указаниям и оставаться на определенных тропах, чтобы сохранить целостность и безопасность парка. И не забудьте прихватить с собой воду, фотоаппарат и бинокль, чтобы полностью насладиться множеством растений и животных, обитающих в Ботаническом парке Батуми.:"
-              : "Regardless of the chosen route, it's important to follow the signs and stay on designated trails to maintain the integrity and safety of the park. And don't forget to bring water, a camera, and binoculars to fully enjoy the variety of plants and animals inhabiting the Batumi Botanical Garden."}
+            {t("routePages.garden.safety")}
           </p>
         </div>
       </div>

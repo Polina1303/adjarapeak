@@ -1,17 +1,17 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
-import { useSelector } from "react-redux";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Mousewheel, Pagination } from "swiper/modules";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import styles from "./routes.module.css";
 
 export const Routes = () => {
-  const languages = useSelector((state) => state.languages.currentLanguages);
+  const { t } = useTranslation("common");
   const router = useRouter();
 
   const { ref } = useInView({
@@ -34,40 +34,27 @@ export const Routes = () => {
       id: 1,
       href: "/lake-route",
       image: "/image/lake1.jpg",
-      title: {
-        RU: "Батуми - Хуло - Таго - пеший маршрут к озеру",
-        EN: "Batumi - Khulo - Tago - hiking route to the lake",
-      },
+      title: t("routes.items.lake"),
       onClick: handleClickLake,
     },
     {
       id: 2,
       href: "/erge-route",
       image: "/image/erge1.jpg",
-      title: {
-        RU: "Вершина Эрге",
-        EN: "The top of the Erge",
-      },
+      title: t("routes.items.erge"),
       onClick: handleClickErge,
     },
     {
       id: 3,
       href: "/garden-route",
       image: "/image/garden1.jpg",
-      title: {
-        RU: "Ботанический сад",
-        EN: "The Botanical Garden",
-      },
+      title: t("routes.items.garden"),
       onClick: handleClickGarden,
     },
   ];
   return (
     <div>
-      <h2 className={styles["routes-title"]}>
-        {languages === "RU"
-          ? "Вокруг Батуми: Удивительные маршруты"
-          : "Around Batumi: Amazing routes"}
-      </h2>
+      <h2 className={styles["routes-title"]}>{t("routes.title")}</h2>
 
       <Swiper
         modules={[Navigation, Mousewheel, Pagination]}
@@ -123,7 +110,7 @@ export const Routes = () => {
                 <div className={styles["slide-img"]}>
                   <Image
                     src={route.image}
-                    alt={route.title[languages === "RU" ? "RU" : "EN"]}
+                    alt={route.title}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     style={{ objectFit: "cover" }}
@@ -131,9 +118,9 @@ export const Routes = () => {
                   />
                 </div>
                 <div className={styles["routes-cover-title"]}>
-                  <p>{route.title[languages === "RU" ? "RU" : "EN"]}</p>
+                  <p>{route.title}</p>
                   <p className={styles["routes-item-page"]}>
-                    {languages === "RU" ? "Исследуйте сейчас" : "Explore now"}
+                    {t("routes.explore")}
                   </p>
                 </div>
               </Link>
@@ -142,9 +129,7 @@ export const Routes = () => {
         ))}
       </Swiper>
       <p className={styles["routes-cover-summary"]}>
-        {languages === "RU"
-          ? "Откройте для себя любовь к природе"
-          : "Discover your love for natures"}
+        {t("routes.summary")}
       </p>
     </div>
   );

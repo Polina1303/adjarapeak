@@ -2,11 +2,11 @@ import { MdLocationPin } from "react-icons/md";
 import { BsInstagram, BsTelegram } from "react-icons/bs";
 import { AiOutlineWhatsApp, AiOutlinePhone } from "react-icons/ai";
 import { useRouter } from "next/router";
-import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 import styles from "./footer.module.css";
 
 export const Footer = () => {
-  const languages = useSelector((state) => state.languages.currentLanguages);
+  const { t } = useTranslation("footer");
   const router = useRouter();
 
   const handleClick = () => {
@@ -29,13 +29,9 @@ export const Footer = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                {languages === "RU"
-                  ? "Батуми, ул. Ген. Аслана Абашидзе, 19"
-                  : "Batumi, 38 Tbel-Abuseridze Street. (11:00-20:00), closed on Sunday"}
+                {t("address.line1")}
                 <br />
-                {languages === "RU"
-                  ? "11:00-20:00, без выходных"
-                  : "Batumi, 38 Tbel-Abuseridze Street. (11:00-20:00), closed on Sunday"}
+                {t("address.line2")}
               </a>
             </div>
             <div className={styles["footer-phone"]}>
@@ -62,9 +58,7 @@ export const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {languages === "RU"
-                    ? "Оставь отзыв в Google"
-                    : "Leave a review on Google"}
+                  {t("reviews.google")}
                 </a>
               </p>
               <p>
@@ -73,20 +67,16 @@ export const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {languages === "RU"
-                    ? "Оставь отзыв в Яндекс"
-                    : "Leave a review on Yandex"}
+                  {t("reviews.yandex")}
                 </a>
               </p>
             </div>
             <div onClick={handleClick} className={styles["footer-return"]}>
-              Правила возврата товар
+              {t("returnPolicy")}
             </div>
             <div className={styles["footer-socials"]}>
               <h4 className={styles["footer-heading"]}>
-                {languages === "RU"
-                  ? "Соцсети Adjara Peak"
-                  : "Follow Adjara Peak"}
+                {t("socials")}
               </h4>
               <div className={styles["social-icons"]}>
                 <a
@@ -132,8 +122,7 @@ export const Footer = () => {
       </div>
       <div className={styles["footer-bottom"]}>
         <p>
-          &copy; 2022-{new Date().getFullYear()} Adjara Peak.{" "}
-          {languages === "RU" ? "Все права защищены." : "All rights reserved."}
+          &copy; 2022-{new Date().getFullYear()} Adjara Peak. {t("rights")}
         </p>
       </div>
     </footer>

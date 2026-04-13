@@ -1,5 +1,4 @@
-import { useSelector } from "react-redux";
-import { IoIosArrowBack } from "react-icons/io";
+import { useTranslation } from "react-i18next";
 import { useRouter } from "next/router";
 import { Container, Typography, Box, Stack, Link, Paper } from "@mui/material";
 import RoomIcon from "@mui/icons-material/Room";
@@ -12,7 +11,7 @@ import { Title } from "../../components/contact-title";
 import style from "./contact-page.module.css";
 
 export default function ContactPage() {
-  const languages = useSelector((state) => state.languages.currentLanguages);
+  const { t } = useTranslation("common");
   const router = useRouter();
 
   return (
@@ -34,19 +33,15 @@ export default function ContactPage() {
               textAlign="left"
               fontFamily="RoadRadio"
             >
-              {languages === "RU" ? "Контакты" : "Contact"}
+              {t("contact.title")}
             </Typography>
             <Stack spacing={3}>
               <Box display="flex" alignItems="flex-start" gap={2}>
                 <RoomIcon color="primary" sx={{ mt: 0.3, color: "#de682d" }} />
                 <Box>
-                  <Title>
-                    {languages === "RU" ? "Наш адрес" : "Our address"}
-                  </Title>
+                  <Title>{t("contact.address.title")}</Title>
                   <Typography variant="body1" fontFamily="RoadRadio">
-                    {languages === "RU"
-                      ? "Батуми, ул. Генерала Аслана Абашидзе, 19"
-                      : "Batumi, st. General Aslan Abashidze, 19"}
+                    {t("contact.address.value")}
                   </Typography>
                 </Box>
               </Box>
@@ -54,13 +49,9 @@ export default function ContactPage() {
               <Box display="flex" alignItems="flex-start" gap={2}>
                 <AccessTimeIcon sx={{ mt: 0.3, color: "#de682d" }} />
                 <Box>
-                  <Title>
-                    {languages === "RU" ? "Время работы" : "Opening hours"}
-                  </Title>
+                  <Title>{t("contact.hours.title")}</Title>
                   <Typography variant="body1" fontFamily="RoadRadio">
-                    {languages === "RU"
-                      ? "Ежедневно с 11:00 до 20:00"
-                      : " Daily from 11:00 to 20:00"}
+                    {t("contact.hours.value")}
                   </Typography>
                 </Box>
               </Box>
@@ -68,7 +59,7 @@ export default function ContactPage() {
               <Box display="flex" alignItems="flex-start" gap={2}>
                 <PhoneIcon color="primary" sx={{ mt: 0.3, color: "#de682d" }} />
                 <Box>
-                  <Title>{languages === "RU" ? " Телефоны" : "Phones"}</Title>
+                  <Title>{t("contact.phones.title")}</Title>
                   <Typography variant="body1">
                     <Link
                       href="tel:+995511147586"
@@ -124,7 +115,7 @@ export default function ContactPage() {
                   sx={{ mt: 0.3, color: "#de682d" }}
                 />
                 <Box>
-                  <Title>{languages === "RU" ? "Отзывы" : "Reviews"}</Title>
+                  <Title>{t("contact.reviews.title")}</Title>
                   <Stack direction="row" spacing={2}>
                     <Link
                       href="https://www.google.com/maps/place/Adjara+Peak/@41.6330368,41.6104566,17z/data=!4m8!3m7!1s0x4067858105d2e915:0x5a619f050a0a9584!8m2!3d41.6330328!4d41.6130369!9m1!1b1!16s%2Fg%2F11t40_rjr5?entry=ttu&g_ep=EgoyMDI1MDEwMS4wIKXMDSoASAFQAw%3D%3D"
@@ -141,9 +132,7 @@ export default function ContactPage() {
                         },
                       }}
                     >
-                      {languages === "RU"
-                        ? "Оставь отзыв в Google"
-                        : "Leave a review on Google"}
+                      {t("contact.reviews.google")}
                     </Link>
                     <Link
                       href="https://yandex.com.ge/maps/org/adzhara_pik/33060720484/reviews/?ll=41.613251%2C41.633090&mode=search&sll=41.613252%2C41.633089&source=serp_navig&tab=reviews&text=%D0%B0%D0%B4%D0%B6%D0%B0%D1%80%D0%B0%D0%BF%D0%B8%D0%BA&z=16"
@@ -160,20 +149,14 @@ export default function ContactPage() {
                         },
                       }}
                     >
-                      {languages === "RU"
-                        ? "Оставь отзыв в Яндекс"
-                        : "Leave a review on Yandex"}
+                      {t("contact.reviews.yandex")}
                     </Link>
                   </Stack>
                 </Box>
               </Box>
 
               <Box display="flex" alignItems="flex-start" gap={2}>
-                <Title>
-                  {languages === "RU"
-                    ? "Соцсети Adjara Peak:"
-                    : "Follow Adjara Peak:"}
-                </Title>
+                <Title>{t("contact.socials")}</Title>
                 <div className={style["social-icons"]}>
                   <Link
                     href="https://www.instagram.com/adjarapeak/?igshid=YmMyMTA2M2Y%3D"
