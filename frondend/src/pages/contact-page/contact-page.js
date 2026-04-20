@@ -92,6 +92,21 @@ export default function ContactPage() {
                     </Link>
                     <br />
                     <Link
+                      href="tel:+995555997993"
+                      underline="hover"
+                      sx={{
+                        color: "#000000ff",
+                        fontFamily: "RoadRadio",
+                        "&:hover": {
+                          color: "#bf561f",
+                          textDecoration: "underline",
+                        },
+                      }}
+                    >
+                      +995 555 997 993 (RU/GEO/ENG)
+                    </Link>
+                    <br />
+                    <Link
                       href="tel:+995557229348"
                       underline="hover"
                       sx={{

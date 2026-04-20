@@ -342,7 +342,11 @@
       "value": "Daily from 11:00 to 20:00"
     },
     "phones": {
-      "title": "Phones"
+      "title": "Phones",
+      "ru": "+995 511 147 586 (RU)",
+      "ru2": "+995 551 132 803 (RU)",
+      "all": "+995 555 997 993 (RU/GEO/ENG)",
+      "engGeo": "+995 557 229 348 (ENG/GE)"
     },
     "reviews": {
       "title": "Reviews",
@@ -478,7 +482,7 @@
       "mats": "SPORT AND YOGA MATS",
       "hoop": "MASSAGE BALLS AND ROLLERS",
       "gymnastic": "HOOP / HULA HOOP",
-      "balance_board": "BALANCE BOARD"
+      "balance_board": "BALANCE BOARD, SKATEBOARD AND LONGBOARD"
     }
   },
   "swimmingSup": {

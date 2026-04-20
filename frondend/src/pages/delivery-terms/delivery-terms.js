@@ -98,6 +98,14 @@ export default function DeliveryTerms() {
             >
               +995 551 132 803
             </Link>
+            <p>|</p>
+            <Link
+              href="tel:+995555997993"
+              underline="hover"
+              className={styles["phone-link"]}
+            >
+              +995 555 997 993
+            </Link>
           </Box>
         </Stack>
       </Box>
