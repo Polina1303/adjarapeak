@@ -42,22 +42,6 @@ export const Footer = () => {
               />
               <a href="tel:+995511147586">+995 511 147 586 (RU)</a>
             </div>
-            <div className={styles["footer-phone"]}>
-              <AiOutlinePhone
-                size={20}
-                color="#de682d"
-                className={styles.icon}
-              />
-              <a href="tel:+995555997993">+995 555 997 993 (RU/GEO/ENG)</a>
-            </div>
-            <div className={styles["footer-phone"]}>
-              <AiOutlinePhone
-                size={20}
-                color="#de682d"
-                className={styles.icon}
-              />
-              <a href="tel:+995557229348">+995 557 229 348 (ENG/GE)</a>
-            </div>
 
             <div className={styles["reviews-text"]}>
               <p>

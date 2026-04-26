@@ -344,9 +344,9 @@
     "phones": {
       "title": "Phones",
       "ru": "+995 511 147 586 (RU)",
-      "ru2": "+995 551 132 803 (RU)",
-      "all": "+995 555 997 993 (RU/GEO/ENG)",
-      "engGeo": "+995 557 229 348 (ENG/GE)"
+      "ru2": "+995 551 132 803 (RU)"
+      // "all": "",
+      // "engGeo": ""
     },
     "reviews": {
       "title": "Reviews",
