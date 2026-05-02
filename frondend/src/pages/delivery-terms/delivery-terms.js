@@ -88,7 +88,7 @@ export default function DeliveryTerms() {
               underline="hover"
               className={styles["phone-link"]}
             >
-              +995 511 147 586
+              +995-571-208-555 (Geo, Eng, Ru)
             </Link>
             <p>|</p>
             <Link

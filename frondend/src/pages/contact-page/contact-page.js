@@ -73,7 +73,7 @@ export default function ContactPage() {
                         },
                       }}
                     >
-                      +995 511 147 586 (RU)
+                      +995-571-208-555 (Geo, Eng, Ru)
                     </Link>
                     <br />
                     <Link

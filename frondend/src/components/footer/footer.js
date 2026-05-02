@@ -40,7 +40,7 @@ export const Footer = () => {
                 color="#de682d"
                 className={styles.icon}
               />
-              <a href="tel:+995511147586">+995 511 147 586 (RU)</a>
+              <a href="tel:+995511147586">+995-571-208-555 (Geo, Eng, Ru)</a>
             </div>
 
             <div className={styles["reviews-text"]}>
@@ -67,9 +67,7 @@ export const Footer = () => {
               {t("returnPolicy")}
             </div>
             <div className={styles["footer-socials"]}>
-              <h4 className={styles["footer-heading"]}>
-                {t("socials")}
-              </h4>
+              <h4 className={styles["footer-heading"]}>{t("socials")}</h4>
               <div className={styles["social-icons"]}>
                 <a
                   href="https://www.instagram.com/adjarapeak/?igshid=YmMyMTA2M2Y%3D"
