@@ -526,6 +526,15 @@
       "bike_accessories": "BIKE ACCESSORIES"
     }
   },
+  "boards": {
+    "title": "BALANCE AND BOARDS",
+    "category": {
+      "balance_board": "BALANCE BOARDS",
+      "skateboard": "SKATEBOARDS",
+      "longboard": "LONGBOARDS",
+      "surfskate": "SURFSKATES"
+    }
+  },
   "skiing": {
     "title": "SKIING",
     "category": {

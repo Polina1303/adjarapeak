@@ -57,8 +57,8 @@ export const Header = () => {
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   const menuItems = [
-    { path: "/sale/alpinesking", key: "shop" },
-    { path: "/rent/skiRental", key: "rental" },
+    { path: "/sale/cyclingRoller", key: "shop" },
+    { path: "/rent/sportsRental", key: "rental" },
     // { path: "/trip", key: "tours" },
     { path: "/rockClimbing", key: "rock-climbing" },
     { path: "/service", key: "service-center" },
@@ -66,8 +66,8 @@ export const Header = () => {
   ];
 
   const menuItemsMobile = [
-    { path: "/sale/alpinesking", key: "shop" },
-    { path: "/rent/skiRental", key: "rental" },
+    { path: "/sale/cyclingRoller", key: "shop" },
+    { path: "/rent/sportsRental", key: "rental" },
     // { path: "/trip", key: "tours" },
     { path: "/rockClimbing", key: "rock-climbing" },
     { path: "/service", key: "service-center" },

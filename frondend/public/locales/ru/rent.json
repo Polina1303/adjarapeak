@@ -1,4 +1,14 @@
 {
+  "sports": {
+    "title": "СПОРТИВНОЕ",
+    "category": {
+      "rentROLLER": { "title": "РОЛИКИ" },
+      "rentBOARD": { "title": "СКЕЙТЫ И ДОСКИ" },
+      "rentBIKE": { "title": "ВЕЛОСИПЕДЫ" },
+      "rentTEAMSPORT": { "title": "ИГРОВОЙ СПОРТ" },
+      "rentFITNESS": { "title": "ФИТНЕС" }
+    }
+  },
   "skiing": {
     "title": "ГОРНОЛЫЖНОЕ",
     "category": {

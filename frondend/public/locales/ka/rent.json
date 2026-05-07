@@ -1,4 +1,14 @@
 {
+  "sports": {
+    "title": "სპორტული",
+    "category": {
+      "rentROLLER": { "title": "როლიკები" },
+      "rentBOARD": { "title": "სკეიტები და დაფები" },
+      "rentBIKE": { "title": "ველოსიპედები" },
+      "rentTEAMSPORT": { "title": "გუნდური სპორტი" },
+      "rentFITNESS": { "title": "ფიტნესი" }
+    }
+  },
   "skiing": {
     "title": "სამთოსათხილამურო",
     "category": {

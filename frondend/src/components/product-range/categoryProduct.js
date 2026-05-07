@@ -1,5 +1,72 @@
 export const CATEGORY_PRODUCT = [
   {
+    title: "cyclingRoller.title",
+    path: "cyclingRoller",
+    types: [
+      {
+        title: "cyclingRoller.category.roller.title",
+        img: "f3a392a0-9695-41c1-9895-084b1f7b477e-Photoroom.png",
+        category: "roller",
+        subcategories: [
+          {
+            title: "cyclingRoller.category.roller.subcategories.roller",
+            subcategory: "roller",
+          },
+          {
+            title:
+              "cyclingRoller.category.roller.subcategories.roller_accessories",
+            subcategory: "roller_accessories",
+          },
+          {
+            title: "cyclingRoller.category.roller.subcategories.roller_bags",
+            subcategory: "roller_bags",
+          },
+        ],
+      },
+      {
+        title: "cyclingRoller.category.protection",
+        img: "9d89ae16-8e53-4cae-b62a-79392297469b-Photoroom.png",
+        category: "protection",
+      },
+      {
+        title: "cyclingRoller.category.helmet",
+        img: "mountain-bike-helmet-black-expl-50-ro.png",
+        category: "helmet",
+      },
+      {
+        title: "cyclingRoller.category.bike_accessories",
+        img: "bc1cc4f6-0205-11ef-9217-0a580a68309d.png",
+        category: "bike_accessories",
+      },
+    ],
+  },
+  {
+    title: "boards.title",
+    path: "boards",
+    types: [
+      {
+        title: "boards.category.skateboard",
+        img: "i-can-play-skateboard-1-765985237545.png",
+        category: "skateboard",
+      },
+      {
+        title: "boards.category.longboard",
+        img: "IMG_8857.PNG",
+        category: "longboard",
+      },
+      {
+        title: "boards.category.surfskate",
+        img: "wave-rider-surfskate-1-696978481189.png",
+        category: "surfskate",
+      },
+      {
+        title: "boards.category.balance_board",
+        img: "IMG_4474.PNG",
+        category: "balance_board",
+      },
+    ],
+  },
+  {
     title: "alpinesking.title",
     path: "alpinesking",
     types: [
@@ -866,11 +933,6 @@ export const CATEGORY_PRODUCT = [
         img: "769866.png",
         category: "gymnastic",
       },
-      {
-        title: "fitness.category.balance_board",
-        img: "IMG_4474.PNG",
-        category: "balance_board",
-      },
     ],
   },
   {
@@ -955,47 +1017,6 @@ export const CATEGORY_PRODUCT = [
         title: "swimmingSup.category.towel",
         img: "259cd_1300x1300.webp",
         category: "towel",
-      },
-    ],
-  },
-  {
-    title: "cyclingRoller.title",
-    path: "cyclingRoller",
-    types: [
-      {
-        title: "cyclingRoller.category.roller.title",
-        img: "f3a392a0-9695-41c1-9895-084b1f7b477e-Photoroom.png",
-        category: "roller",
-        subcategories: [
-          {
-            title: "cyclingRoller.category.roller.subcategories.roller",
-            subcategory: "roller",
-          },
-          {
-            title:
-              "cyclingRoller.category.roller.subcategories.roller_accessories",
-            subcategory: "roller_accessories",
-          },
-          {
-            title: "cyclingRoller.category.roller.subcategories.roller_bags",
-            subcategory: "roller_bags",
-          },
-        ],
-      },
-      {
-        title: "cyclingRoller.category.protection",
-        img: "9d89ae16-8e53-4cae-b62a-79392297469b-Photoroom.png",
-        category: "protection",
-      },
-      {
-        title: "cyclingRoller.category.helmet",
-        img: "mountain-bike-helmet-black-expl-50-ro.png",
-        category: "helmet",
-      },
-      {
-        title: "cyclingRoller.category.bike_accessories",
-        img: "bc1cc4f6-0205-11ef-9217-0a580a68309d.png",
-        category: "bike_accessories",
       },
     ],
   },

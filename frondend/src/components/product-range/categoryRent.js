@@ -1,65 +1,32 @@
 export const CATEGORY_RENT = [
   {
-    title: "skiing.title",
-    path: "skiRental",
+    title: "sports.title",
+    path: "sportsRental",
     types: [
       {
-        title: "skiing.category.sky.title",
-        category: "sky",
-        img: "2026-01-01 15.38.20.jpg",
+        title: "sports.category.rentROLLER.title",
+        category: "rentROLLER",
+        img: "easy-roll-3in1-skates-1-773445237516.png",
       },
       {
-        title: "skiing.category.snowboard.title",
-        category: "snowboard",
-        img: "19.52.32.jpg",
+        title: "sports.category.rentBOARD.title",
+        category: "rentBOARD",
+        img: "i-can-play-surfskate-947096861241.png",
       },
       {
-        title: "skiing.category.clothes.title",
-        category: "clothes",
-        img: "IMG_5903.PNG",
-        subcategories: [
-          {
-            title: "skiing.category.clothes.subcategories.overall",
-            subcategory: "overall",
-          },
-          {
-            title: "skiing.category.clothes.subcategories.jacket",
-            subcategory: "jacket",
-          },
-          {
-            title: "skiing.category.clothes.subcategories.pants",
-            subcategory: "pants",
-          },
-          {
-            title: "skiing.category.clothes.subcategories.gloves",
-            subcategory: "gloves",
-          },
-        ],
+        title: "sports.category.rentBIKE.title",
+        category: "rentBIKE",
+        img: "trinx-m600-rent.png",
       },
       {
-        title: "skiing.category.helmet.title",
-        category: "helmet",
-        img: "IMG_58.png",
+        title: "sports.category.rentTEAMSPORT.title",
+        category: "rentTEAMSPORT",
+        img: "beach-volleyball-size-5-bv100-classic-turquoise-kipsta.png",
       },
       {
-        title: "skiing.category.mask.title",
-        category: "mask",
-        img: "IMG_5865-.png",
-      },
-      {
-        title: "skiing.category.protection.title",
-        category: "protection",
-        img: "19.24.57.jpg",
-      },
-      {
-        title: "skiing.category.dif.title",
-        category: "dif",
-        img: "Gn31w.jpg",
-      },
-      {
-        title: "skiing.category.avalanche_equipment.title",
-        category: "avalanche_equipment",
-        img: "IMG_6820.PNG",
+        title: "sports.category.rentFITNESS.title",
+        category: "rentFITNESS",
+        img: "mat_with_case.jpg",
       },
     ],
   },
@@ -121,6 +88,70 @@ export const CATEGORY_RENT = [
         title: "tourism.category.rentTECHNICS.title",
         category: "rentTECHNICS",
         img: "xiaomi-redmi-fast-charge-power-bank-20000-mah-18w.png",
+      },
+    ],
+  },
+  {
+    title: "skiing.title",
+    path: "skiRental",
+    types: [
+      {
+        title: "skiing.category.sky.title",
+        category: "sky",
+        img: "2026-01-01 15.38.20.jpg",
+      },
+      {
+        title: "skiing.category.snowboard.title",
+        category: "snowboard",
+        img: "19.52.32.jpg",
+      },
+      {
+        title: "skiing.category.clothes.title",
+        category: "clothes",
+        img: "IMG_5903.PNG",
+        subcategories: [
+          {
+            title: "skiing.category.clothes.subcategories.overall",
+            subcategory: "overall",
+          },
+          {
+            title: "skiing.category.clothes.subcategories.jacket",
+            subcategory: "jacket",
+          },
+          {
+            title: "skiing.category.clothes.subcategories.pants",
+            subcategory: "pants",
+          },
+          {
+            title: "skiing.category.clothes.subcategories.gloves",
+            subcategory: "gloves",
+          },
+        ],
+      },
+      {
+        title: "skiing.category.helmet.title",
+        category: "helmet",
+        img: "IMG_58.png",
+      },
+      {
+        title: "skiing.category.mask.title",
+        category: "mask",
+        img: "IMG_5865-.png",
+      },
+      {
+        title: "skiing.category.protection.title",
+        category: "protection",
+        img: "19.24.57.jpg",
+      },
+      {
+        title: "skiing.category.dif.title",
+        category: "dif",
+        img: "Gn31w.jpg",
+      },
+      {
+        title: "skiing.category.avalanche_equipment.title",
+        category: "avalanche_equipment",
+        img: "IMG_6820.PNG",
       },
     ],
   },

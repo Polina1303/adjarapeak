@@ -193,7 +193,7 @@ const HomePage = () => {
   const saleItems = [
     {
       id: 1,
-      href: "sale/alpinesking",
+      href: "sale/cyclingRoller",
       src: "/img/sale.webp",
       altKey: "home.cards.sale.alt",
       titleKey: "home.cards.sale.title",
@@ -204,7 +204,7 @@ const HomePage = () => {
     },
     {
       id: 2,
-      href: "/rent/skiRental",
+      href: "/rent/sportsRental",
       src: "/img/rent.webp",
       altKey: "home.cards.rent.alt",
       titleKey: "home.cards.rent.title",
@@ -226,7 +226,7 @@ const HomePage = () => {
     // },
     {
       id: 4,
-      href: "/rent/skiRental",
+      href: "/rent/sportsRental",
       src: "/img/snow.webp",
       altKey: "home.cards.ski.alt",
       titleKey: "home.cards.ski.title",

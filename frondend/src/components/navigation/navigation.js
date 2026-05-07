@@ -12,8 +12,8 @@ export const isRentProduct = (product) =>
   RENT_SKY.some((p) => p.id === product.id);
 
 const DEFAULT_PATHS = {
-  rent: "/rent/skiRental",
-  sale: "/sale/alpinesking",
+  rent: "/rent/sportsRental",
+  sale: "/sale/cyclingRoller",
 };
 
 export const getBreadcrumbsByProduct = (product, isRentClick = false, t) => {

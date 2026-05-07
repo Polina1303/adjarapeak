@@ -528,6 +528,15 @@
       "bike_accessories": "АКСЕССУАРЫ ДЛЯ ВЕЛОСИПЕДА"
     }
   },
+  "boards": {
+    "title": "БАЛАНС И ДОСКИ",
+    "category": {
+      "balance_board": "БАЛАНС-БОРДЫ",
+      "skateboard": "СКЕЙТБОРДЫ",
+      "longboard": "ЛОНГБОРДЫ",
+      "surfskate": "СЕРФСКЕЙТЫ"
+    }
+  },
   "rent": "ПРОКАТ",
   "sale": "МАГАЗИН"
 }

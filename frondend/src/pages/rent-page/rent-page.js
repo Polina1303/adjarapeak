@@ -500,7 +500,7 @@ export default function RentPage({ children }) {
   };
 
   const handleSubcategoryClick = (subcategoryPath) => {
-    const category = CATEGORY_RENT[activeCategory];
+    const category = currentCategory;
 
     setActiveSubcategory(subcategoryPath);
 

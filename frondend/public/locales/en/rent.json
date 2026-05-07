@@ -1,4 +1,14 @@
 {
+  "sports": {
+    "title": "SPORTS RENTAL",
+    "category": {
+      "rentROLLER": { "title": "ROLLERS" },
+      "rentBOARD": { "title": "SKATEBOARDS AND BOARDS" },
+      "rentBIKE": { "title": "BICYCLES" },
+      "rentTEAMSPORT": { "title": "TEAM SPORTS" },
+      "rentFITNESS": { "title": "FITNESS" }
+    }
+  },
   "skiing": {
     "title": "SKI RENTAL",
     "category": {

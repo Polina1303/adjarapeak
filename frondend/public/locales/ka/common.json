@@ -527,6 +527,15 @@
       "bike_accessories": "ველოსიპედის აქსესუარები"
     }
   },
+  "boards": {
+    "title": "ბალანსი და დაფები",
+    "category": {
+      "balance_board": "ბალანს-ბორდები",
+      "skateboard": "სკეიტბორდები",
+      "longboard": "ლონგბორდები",
+      "surfskate": "სერფსკეიტები"
+    }
+  },
   "skiing": {
     "title": "თხილამურებით სრიალი",
     "category": {
