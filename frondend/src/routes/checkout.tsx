@@ -1,6 +1,14 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { ChevronUp, ChevronDown, Minus, Plus, Loader2, ShoppingBag, ArrowLeft } from "lucide-react";
+import {
+  ChevronUp,
+  ChevronDown,
+  Minus,
+  Plus,
+  Loader2,
+  ShoppingBag,
+  ArrowLeft,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
@@ -18,7 +26,8 @@ import { useLanguage, type Lang } from "@/lib/i18n";
 import giftCardCart from "@/assets/gift-card-cart.png";
 import { toast } from "sonner";
 
-const DEFAULT_ORDER_API_URL = "http://localhost:5001/api/order";
+const DEFAULT_ORDER_API_URL =
+  "https://adjarapeak-api-production.up.railway.app/api/order";
 
 function getOrderApiUrl() {
   const raw =
@@ -26,7 +35,8 @@ function getOrderApiUrl() {
     (import.meta.env.VITE_API_URL as string | undefined);
   if (!raw) return DEFAULT_ORDER_API_URL;
   const trimmed = raw.replace(/\/$/, "");
-  if (trimmed.endsWith("/api/order") || trimmed.endsWith("/send")) return trimmed;
+  if (trimmed.endsWith("/api/order") || trimmed.endsWith("/send"))
+    return trimmed;
   return `${trimmed}/api/order`;
 }
 
@@ -106,7 +116,8 @@ const CHECKOUT_TEXT: Record<Lang, CheckoutText> = {
     itemCount: (count) => `${count} ${pluralItemsRu(count)}`,
     groupCount: (count) => `${count} шт.`,
     staleOne: "Один товар из корзины больше недоступен и был удалён",
-    staleMany: (count) => `${count} товаров из корзины больше недоступны и были удалены`,
+    staleMany: (count) =>
+      `${count} товаров из корзины больше недоступны и были удалены`,
     selectedRemoved: "Выбранные товары удалены",
     selectOneError: "Выберите хотя бы один товар",
     nameError: "Укажите имя",
@@ -148,7 +159,8 @@ const CHECKOUT_TEXT: Record<Lang, CheckoutText> = {
     itemCount: (count) => `${count} ${count === 1 ? "item" : "items"}`,
     groupCount: (count) => `${count} ${count === 1 ? "item" : "items"}`,
     staleOne: "One item in your cart is no longer available and was removed",
-    staleMany: (count) => `${count} items in your cart are no longer available and were removed`,
+    staleMany: (count) =>
+      `${count} items in your cart are no longer available and were removed`,
     selectedRemoved: "Selected items removed",
     selectOneError: "Select at least one item",
     nameError: "Enter your name",
@@ -190,7 +202,8 @@ const CHECKOUT_TEXT: Record<Lang, CheckoutText> = {
     itemCount: (count) => `${count} ნივთი`,
     groupCount: (count) => `${count} ნივთი`,
     staleOne: "კალათაში ერთი ნივთი აღარ არის ხელმისაწვდომი და წაიშალა",
-    staleMany: (count) => `კალათაში ${count} ნივთი აღარ არის ხელმისაწვდომი და წაიშალა`,
+    staleMany: (count) =>
+      `კალათაში ${count} ნივთი აღარ არის ხელმისაწვდომი და წაიშალა`,
     selectedRemoved: "არჩეული ნივთები წაიშალა",
     selectOneError: "აირჩიეთ მინიმუმ ერთი ნივთი",
     nameError: "შეიყვანეთ სახელი",
@@ -207,7 +220,10 @@ export const Route = createFileRoute("/checkout")({
   head: () => ({
     meta: [
       { title: "Корзина — Adjara Peak" },
-      { name: "description", content: "Оформление заказа в магазине Adjara Peak." },
+      {
+        name: "description",
+        content: "Оформление заказа в магазине Adjara Peak.",
+      },
     ],
   }),
 });
@@ -220,7 +236,10 @@ function CheckoutPage() {
   const [details, setDetails] = useState<Record<string, CartLineItem>>({});
   const [loading, setLoading] = useState(false);
   const [selected, setSelected] = useState<Record<string, boolean>>({});
-  const [expanded, setExpanded] = useState<Record<string, boolean>>({ shop: true, rental: true });
+  const [expanded, setExpanded] = useState<Record<string, boolean>>({
+    shop: true,
+    rental: true,
+  });
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -250,11 +269,13 @@ function CheckoutPage() {
         // URLs were changed). This prevents broken rows with no title/price.
         const resolved = new Set(items.map((it) => it.slug));
         const stale = lines.filter(
-          (l) => missing.includes(l.slug) && !resolved.has(l.slug) && !l.title,
+          (l) => missing.includes(l.slug) && !resolved.has(l.slug) && !l.title
         );
         if (stale.length > 0) {
           for (const l of stale) removeFromCart(l.slug);
-          toast.info(stale.length === 1 ? text.staleOne : text.staleMany(stale.length));
+          toast.info(
+            stale.length === 1 ? text.staleOne : text.staleMany(stale.length)
+          );
         }
       })
       .finally(() => setLoading(false));
@@ -435,7 +456,10 @@ function CheckoutPage() {
           <p className="font-body text-muted-foreground mb-6">
             {text.emptyText}
           </p>
-          <Button asChild className="bg-ember text-ember-foreground hover:bg-ember/90">
+          <Button
+            asChild
+            className="bg-ember text-ember-foreground hover:bg-ember/90"
+          >
             <Link to="/sale">{text.goShopping}</Link>
           </Button>
         </div>
@@ -482,7 +506,9 @@ function CheckoutPage() {
                     onCheckedChange={(v) => toggleAll(Boolean(v))}
                     className="data-[state=checked]:bg-ember data-[state=checked]:border-ember h-5 w-5"
                   />
-                  <span className="font-body text-sm md:text-base text-foreground">{text.selectAll}</span>
+                  <span className="font-body text-sm md:text-base text-foreground">
+                    {text.selectAll}
+                  </span>
                 </label>
                 <button
                   type="button"
@@ -505,7 +531,12 @@ function CheckoutPage() {
                     selected={selected}
                     setSelected={setSelected}
                     expanded={expanded.shop}
-                    setExpanded={(v) => setExpanded((p) => ({ ...p, shop: typeof v === "function" ? v(p.shop) : v }))}
+                    setExpanded={(v) =>
+                      setExpanded((p) => ({
+                        ...p,
+                        shop: typeof v === "function" ? v(p.shop) : v,
+                      }))
+                    }
                   />
                 )}
                 {rentalLines.length > 0 && (
@@ -519,11 +550,15 @@ function CheckoutPage() {
                     selected={selected}
                     setSelected={setSelected}
                     expanded={expanded.rental}
-                    setExpanded={(v) => setExpanded((p) => ({ ...p, rental: typeof v === "function" ? v(p.rental) : v }))}
+                    setExpanded={(v) =>
+                      setExpanded((p) => ({
+                        ...p,
+                        rental: typeof v === "function" ? v(p.rental) : v,
+                      }))
+                    }
                   />
                 )}
               </div>
-
             </section>
 
             {/* Summary column */}
@@ -552,13 +587,18 @@ function CheckoutPage() {
                 </h3>
 
                 <div className="space-y-1.5">
-                  <Label htmlFor="co-name" className="font-display text-xs uppercase tracking-wider">
+                  <Label
+                    htmlFor="co-name"
+                    className="font-display text-xs uppercase tracking-wider"
+                  >
                     {text.nameLabel}
                   </Label>
                   <Input
                     id="co-name"
                     value={form.name}
-                    onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
+                    onChange={(e) =>
+                      setForm((f) => ({ ...f, name: e.target.value }))
+                    }
                     placeholder={text.namePlaceholder}
                     maxLength={100}
                     required
@@ -566,14 +606,19 @@ function CheckoutPage() {
                 </div>
 
                 <div className="space-y-1.5">
-                  <Label htmlFor="co-phone" className="font-display text-xs uppercase tracking-wider">
+                  <Label
+                    htmlFor="co-phone"
+                    className="font-display text-xs uppercase tracking-wider"
+                  >
                     {text.phoneLabel}
                   </Label>
                   <Input
                     id="co-phone"
                     type="tel"
                     value={form.phone}
-                    onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
+                    onChange={(e) =>
+                      setForm((f) => ({ ...f, phone: e.target.value }))
+                    }
                     placeholder="+995 XXX XX XX XX"
                     maxLength={32}
                     required
@@ -581,13 +626,18 @@ function CheckoutPage() {
                 </div>
 
                 <div className="space-y-1.5">
-                  <Label htmlFor="co-telegram" className="font-display text-xs uppercase tracking-wider">
+                  <Label
+                    htmlFor="co-telegram"
+                    className="font-display text-xs uppercase tracking-wider"
+                  >
                     {text.telegramLabel}
                   </Label>
                   <Input
                     id="co-telegram"
                     value={form.telegram}
-                    onChange={(e) => setForm((f) => ({ ...f, telegram: e.target.value }))}
+                    onChange={(e) =>
+                      setForm((f) => ({ ...f, telegram: e.target.value }))
+                    }
                     placeholder="@username"
                     maxLength={64}
                   />
@@ -602,14 +652,18 @@ function CheckoutPage() {
                       <Input
                         type="date"
                         value={form.dateFrom}
-                        onChange={(e) => setForm((f) => ({ ...f, dateFrom: e.target.value }))}
+                        onChange={(e) =>
+                          setForm((f) => ({ ...f, dateFrom: e.target.value }))
+                        }
                         required={hasRental}
                         className={`text-xs md:text-sm ${!form.dateFrom ? "text-muted-foreground/40" : "text-foreground"}`}
                       />
                       <Input
                         type="date"
                         value={form.dateTo}
-                        onChange={(e) => setForm((f) => ({ ...f, dateTo: e.target.value }))}
+                        onChange={(e) =>
+                          setForm((f) => ({ ...f, dateTo: e.target.value }))
+                        }
                         required={hasRental}
                         min={form.dateFrom || undefined}
                         className={`text-xs md:text-sm ${!form.dateTo ? "text-muted-foreground/40" : "text-foreground"}`}
@@ -619,13 +673,18 @@ function CheckoutPage() {
                 )}
 
                 <div className="space-y-1.5">
-                  <Label htmlFor="co-comment" className="font-display text-xs uppercase tracking-wider">
+                  <Label
+                    htmlFor="co-comment"
+                    className="font-display text-xs uppercase tracking-wider"
+                  >
                     {text.commentLabel}
                   </Label>
                   <Textarea
                     id="co-comment"
                     value={form.comment}
-                    onChange={(e) => setForm((f) => ({ ...f, comment: e.target.value }))}
+                    onChange={(e) =>
+                      setForm((f) => ({ ...f, comment: e.target.value }))
+                    }
                     placeholder={text.commentPlaceholder}
                     maxLength={1000}
                     rows={3}
@@ -646,7 +705,6 @@ function CheckoutPage() {
                   {submitting ? text.submitting : text.submit}
                 </Button>
               </form>
-
             </aside>
           </div>
         </div>
@@ -682,14 +740,18 @@ function CheckoutGroup({
   const accentText = accent === "moss" ? "text-moss" : "text-ember";
   const accentBorder = accent === "moss" ? "border-moss/30" : "border-ember/30";
   return (
-    <div className={`rounded-xl bg-background border ${accentBorder} overflow-hidden`}>
+    <div
+      className={`rounded-xl bg-background border ${accentBorder} overflow-hidden`}
+    >
       <button
         type="button"
         onClick={() => setExpanded((v) => !v)}
         className={`w-full flex items-center justify-between px-4 md:px-5 py-3 md:py-4 ${accentBg} hover:opacity-90 transition-opacity`}
       >
         <span className="flex items-center gap-3">
-          <span className={`font-display text-[10px] md:text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded ${accentText} bg-background/70 border ${accentBorder}`}>
+          <span
+            className={`font-display text-[10px] md:text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded ${accentText} bg-background/70 border ${accentBorder}`}
+          >
             {title}
           </span>
           <span className="font-display text-sm md:text-base font-semibold uppercase tracking-wider text-foreground">
@@ -712,9 +774,7 @@ function CheckoutGroup({
               loading={loading && !resolve(line)}
               selected={!!selected[line.slug]}
               text={text}
-              onToggle={(v) =>
-                setSelected((s) => ({ ...s, [line.slug]: v }))
-              }
+              onToggle={(v) => setSelected((s) => ({ ...s, [line.slug]: v }))}
             />
           ))}
         </ul>
@@ -738,7 +798,9 @@ function CheckoutRow({
   text: CheckoutText;
   onToggle: (v: boolean) => void;
 }) {
-  const img = line.slug.startsWith("giftcard-") ? giftCardCart : resolveCatalogImage(detail?.image ?? line.slug);
+  const img = line.slug.startsWith("giftcard-")
+    ? giftCardCart
+    : resolveCatalogImage(detail?.image ?? line.slug);
   const linkTo = "/app/$slug" as const;
   const lineTotal = detail ? detail.price * line.qty : 0;
 
@@ -792,15 +854,21 @@ function CheckoutRow({
               </div>
             )}
             {detail && !detail.available && (
-              <div className="font-body text-xs text-ember mt-2">{text.unavailable}</div>
+              <div className="font-body text-xs text-ember mt-2">
+                {text.unavailable}
+              </div>
             )}
           </div>
 
           <div className="flex items-center justify-between md:flex-col md:items-end md:justify-start md:gap-2 md:self-start">
             <div className="font-display text-base md:text-lg font-bold text-foreground whitespace-nowrap">
-              {detail ? formatPrice(lineTotal) : loading ? (
+              {detail ? (
+                formatPrice(lineTotal)
+              ) : loading ? (
                 <Loader2 className="h-4 w-4 animate-spin text-muted-foreground" />
-              ) : "—"}
+              ) : (
+                "—"
+              )}
             </div>
           </div>
 
@@ -839,6 +907,7 @@ function pluralItemsRu(n: number) {
   const mod10 = n % 10;
   const mod100 = n % 100;
   if (mod10 === 1 && mod100 !== 11) return "товар";
-  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 10 || mod100 >= 20)) return "товара";
+  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 10 || mod100 >= 20))
+    return "товара";
   return "товаров";
 }
