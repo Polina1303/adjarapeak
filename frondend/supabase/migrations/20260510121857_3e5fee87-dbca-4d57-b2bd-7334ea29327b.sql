@@ -1,0 +1,1 @@
+UPDATE public.rental_groups SET image = 'skiing-winter.jpg' WHERE slug = 'skirental';

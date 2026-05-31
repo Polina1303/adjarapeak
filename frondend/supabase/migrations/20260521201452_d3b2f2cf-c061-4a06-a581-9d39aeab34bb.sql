@@ -1,0 +1,2 @@
+UPDATE rental_items SET slug = regexp_replace(slug, '\.0(-\d+)?$', '\1') WHERE slug ~ '\.0(-\d+)?$';
+UPDATE shop_products SET slug = regexp_replace(slug, '\.0(-\d+)?$', '\1') WHERE slug ~ '\.0(-\d+)?$';

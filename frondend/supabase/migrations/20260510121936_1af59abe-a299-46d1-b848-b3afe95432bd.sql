@@ -1,0 +1,1 @@
+INSERT INTO public.rental_groups (slug, title, sort_order) VALUES ('sportsrental', 'Sports', 3);

@@ -1,0 +1,1 @@
+UPDATE public.shop_groups SET title = 'Горнолыжный спорт' WHERE id = '8634c7e3-927a-4df6-aed1-c4522489c664';

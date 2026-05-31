@@ -1,0 +1,1 @@
+update public.shop_groups set image = 'clothes-summer.png' where slug = 'clothesandshoes';
