@@ -1,1 +1,0 @@
-function u(n){const t=Number(n);return Number.isFinite(t)?t:0}function o(n){return Math.round(n*100)/100}function c(n,t){const r=u(n),e=u(t);return r<=0||e<=0||e>=r?null:o(e)}function i(n,t){return c(n,t)??o(u(n))}function s(n,t){const r=u(n),e=c(n,t);return!e||r<=0?null:Math.round((r-e)/r*100)}export{i as a,c as b,s as g};
