@@ -6,12 +6,18 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useCartCount } from "@/lib/cart";
 import { useLanguage, type Lang } from "@/lib/i18n";
 
-const mainNav = [
-  { to: "/sale" as const, labelKey: "shop" },
-  { to: "/rent" as const, labelKey: "rental" },
-  { to: "/rockClimbing" as const, labelKey: "rockClimbing" },
-  { to: "/service" as const, labelKey: "serviceCenter" },
-  { to: "/contact" as const, labelKey: "contacts" },
+type MainNavItem = {
+  to: "/sale" | "/rent" | "/hikes" | "/rockClimbing" | "/service" | "/contact";
+  labelKey: "shop" | "rental" | "hikes" | "rockClimbing" | "serviceCenter" | "contacts";
+};
+
+const mainNav: MainNavItem[] = [
+  { to: "/sale", labelKey: "shop" },
+  { to: "/rent", labelKey: "rental" },
+  { to: "/hikes", labelKey: "hikes" },
+  { to: "/rockClimbing", labelKey: "rockClimbing" },
+  { to: "/service", labelKey: "serviceCenter" },
+  { to: "/contact", labelKey: "contacts" },
 ];
 
 const languages = [
@@ -25,6 +31,7 @@ const headerText: Record<
   {
     shop: string;
     rental: string;
+    hikes: string;
     rockClimbing: string;
     serviceCenter: string;
     contacts: string;
@@ -38,6 +45,7 @@ const headerText: Record<
   RU: {
     shop: "Магазин",
     rental: "Прокат",
+    hikes: "Походы",
     rockClimbing: "Скалолазание",
     serviceCenter: "Сервисный центр",
     contacts: "Контакты",
@@ -50,6 +58,7 @@ const headerText: Record<
   EN: {
     shop: "Shop",
     rental: "Rental",
+    hikes: "Hikes",
     rockClimbing: "Rock climbing",
     serviceCenter: "Service center",
     contacts: "Contacts",
@@ -62,6 +71,7 @@ const headerText: Record<
   GE: {
     shop: "მაღაზია",
     rental: "ქირაობა",
+    hikes: "ლაშქრობები",
     rockClimbing: "კლდეზე ცოცვა",
     serviceCenter: "სერვის-ცენტრი",
     contacts: "კონტაქტები",

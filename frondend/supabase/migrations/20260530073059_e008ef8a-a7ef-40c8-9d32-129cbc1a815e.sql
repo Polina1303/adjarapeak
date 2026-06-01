@@ -1,0 +1,1 @@
+ALTER TABLE public.hikes ADD COLUMN distance_km numeric;

@@ -129,7 +129,7 @@ function ServicePage() {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.04 }}
                   className={`grid sm:grid-cols-[1fr_140px] gap-2 px-6 py-5 border-b border-border last:border-b-0 ${
-                    s.highlight ? "bg-ember/5" : ""
+                    "highlight" in s && s.highlight ? "bg-ember/5" : ""
                   }`}
                 >
                   <div>
@@ -141,7 +141,7 @@ function ServicePage() {
                     </p>
                   </div>
                   <div className="sm:text-right">
-                    <span className={`font-display text-lg font-bold ${s.highlight ? "text-ember" : "text-foreground"}`}>
+                    <span className={`font-display text-lg font-bold ${"highlight" in s && s.highlight ? "text-ember" : "text-foreground"}`}>
                       {s.price}
                     </span>
                   </div>

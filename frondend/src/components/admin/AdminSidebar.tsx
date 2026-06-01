@@ -17,6 +17,7 @@ export function AdminSidebar() {
   const pathname = useRouterState({ select: (r) => r.location.pathname });
   const shop = ADMIN_TABLE_LIST.filter((t) => t.section === "shop");
   const rental = ADMIN_TABLE_LIST.filter((t) => t.section === "rental");
+  const hikes = ADMIN_TABLE_LIST.filter((t) => t.section === "hikes");
 
   const isActive = (url: string) => pathname === url;
 
@@ -69,6 +70,26 @@ export function AdminSidebar() {
                     <SidebarMenuButton asChild isActive={isActive(url)} className="hover:bg-ember hover:text-ember-foreground">
                       <Link to={"/admin/t/$table" as any} params={{ table: t.key } as any}>
                         <span>{t.label.replace("Аренда · ", "")}</span>
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                );
+              })}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+
+        <SidebarGroup>
+          <SidebarGroupLabel>Походы</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {hikes.map((t) => {
+                const url = `/admin/t/${t.key}`;
+                return (
+                  <SidebarMenuItem key={t.key}>
+                    <SidebarMenuButton asChild isActive={isActive(url)} className="hover:bg-ember hover:text-ember-foreground">
+                      <Link to={"/admin/t/$table" as any} params={{ table: t.key } as any}>
+                        <span>{t.label}</span>
                       </Link>
                     </SidebarMenuButton>
                   </SidebarMenuItem>

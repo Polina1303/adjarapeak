@@ -28,7 +28,7 @@ const slideConfig = [
   },
   {
     image: heroAdventure,
-    href: "/rockClimbing" as const,
+    href: "/hikes" as const,
   },
 ];
 

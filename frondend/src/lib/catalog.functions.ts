@@ -65,7 +65,7 @@ export type ShopProduct = {
 
 export type RentalGroup = ShopGroup;
 export type RentalCategory = ShopCategory;
-export type RentalItem = Omit<ShopProduct, "in_stock" | "price"> & {
+export type RentalItem = Omit<ShopProduct, "in_stock" | "price" | "sale_price"> & {
   shortly: string | null;
   price_per_day: number;
   sale_price_per_day: number | null;
@@ -1374,7 +1374,7 @@ export type CartLineItem = {
   title: string;
   image: string | null;
   price: number;
-  unit: "" | "/сутки";
+  unit: "" | "/сутки" | "/day" | "/დღე";
   available: boolean;
   description: string | null;
 };

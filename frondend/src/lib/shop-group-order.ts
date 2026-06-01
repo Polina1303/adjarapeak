@@ -11,7 +11,7 @@ export const SHOP_GROUP_SLUG_ORDER = [
   "alpinesking",
 ] as const;
 
-const SHOP_GROUP_ORDER_INDEX = new Map(
+const SHOP_GROUP_ORDER_INDEX = new Map<string, number>(
   SHOP_GROUP_SLUG_ORDER.map((slug, index) => [slug, index]),
 );
 

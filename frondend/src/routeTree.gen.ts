@@ -17,11 +17,13 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CheckoutRouteImport } from './routes/checkout'
 import { Route as AdminRouteImport } from './routes/_admin'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as HikesIndexRouteImport } from './routes/hikes.index'
 import { Route as SaleSearchRouteImport } from './routes/sale.search'
 import { Route as SaleSaleRouteImport } from './routes/sale.sale'
 import { Route as SaleGroupRouteImport } from './routes/sale.$group'
 import { Route as RentSaleRouteImport } from './routes/rent.sale'
 import { Route as RentGroupRouteImport } from './routes/rent.$group'
+import { Route as HikesSlugRouteImport } from './routes/hikes.$slug'
 import { Route as AppSlugRouteImport } from './routes/app.$slug'
 import { Route as AdminLoginRouteImport } from './routes/admin.login'
 import { Route as AdminAdminIndexRouteImport } from './routes/_admin/admin.index'
@@ -70,6 +72,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HikesIndexRoute = HikesIndexRouteImport.update({
+  id: '/hikes/',
+  path: '/hikes/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SaleSearchRoute = SaleSearchRouteImport.update({
   id: '/search',
   path: '/search',
@@ -94,6 +101,11 @@ const RentGroupRoute = RentGroupRouteImport.update({
   id: '/$group',
   path: '/$group',
   getParentRoute: () => RentRoute,
+} as any)
+const HikesSlugRoute = HikesSlugRouteImport.update({
+  id: '/hikes/$slug',
+  path: '/hikes/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const AppSlugRoute = AppSlugRouteImport.update({
   id: '/app/$slug',
@@ -148,11 +160,13 @@ export interface FileRoutesByFullPath {
   '/service': typeof ServiceRoute
   '/admin/login': typeof AdminLoginRoute
   '/app/$slug': typeof AppSlugRoute
+  '/hikes/$slug': typeof HikesSlugRoute
   '/rent/$group': typeof RentGroupRouteWithChildren
   '/rent/sale': typeof RentSaleRoute
   '/sale/$group': typeof SaleGroupRouteWithChildren
   '/sale/sale': typeof SaleSaleRoute
   '/sale/search': typeof SaleSearchRoute
+  '/hikes/': typeof HikesIndexRoute
   '/rent/$group/$category': typeof RentGroupCategoryRouteWithChildren
   '/sale/$group/$category': typeof SaleGroupCategoryRouteWithChildren
   '/admin/': typeof AdminAdminIndexRoute
@@ -170,11 +184,13 @@ export interface FileRoutesByTo {
   '/service': typeof ServiceRoute
   '/admin/login': typeof AdminLoginRoute
   '/app/$slug': typeof AppSlugRoute
+  '/hikes/$slug': typeof HikesSlugRoute
   '/rent/$group': typeof RentGroupRouteWithChildren
   '/rent/sale': typeof RentSaleRoute
   '/sale/$group': typeof SaleGroupRouteWithChildren
   '/sale/sale': typeof SaleSaleRoute
   '/sale/search': typeof SaleSearchRoute
+  '/hikes': typeof HikesIndexRoute
   '/rent/$group/$category': typeof RentGroupCategoryRouteWithChildren
   '/sale/$group/$category': typeof SaleGroupCategoryRouteWithChildren
   '/admin': typeof AdminAdminIndexRoute
@@ -194,11 +210,13 @@ export interface FileRoutesById {
   '/service': typeof ServiceRoute
   '/admin/login': typeof AdminLoginRoute
   '/app/$slug': typeof AppSlugRoute
+  '/hikes/$slug': typeof HikesSlugRoute
   '/rent/$group': typeof RentGroupRouteWithChildren
   '/rent/sale': typeof RentSaleRoute
   '/sale/$group': typeof SaleGroupRouteWithChildren
   '/sale/sale': typeof SaleSaleRoute
   '/sale/search': typeof SaleSearchRoute
+  '/hikes/': typeof HikesIndexRoute
   '/rent/$group/$category': typeof RentGroupCategoryRouteWithChildren
   '/sale/$group/$category': typeof SaleGroupCategoryRouteWithChildren
   '/_admin/admin/': typeof AdminAdminIndexRoute
@@ -218,11 +236,13 @@ export interface FileRouteTypes {
     | '/service'
     | '/admin/login'
     | '/app/$slug'
+    | '/hikes/$slug'
     | '/rent/$group'
     | '/rent/sale'
     | '/sale/$group'
     | '/sale/sale'
     | '/sale/search'
+    | '/hikes/'
     | '/rent/$group/$category'
     | '/sale/$group/$category'
     | '/admin/'
@@ -240,11 +260,13 @@ export interface FileRouteTypes {
     | '/service'
     | '/admin/login'
     | '/app/$slug'
+    | '/hikes/$slug'
     | '/rent/$group'
     | '/rent/sale'
     | '/sale/$group'
     | '/sale/sale'
     | '/sale/search'
+    | '/hikes'
     | '/rent/$group/$category'
     | '/sale/$group/$category'
     | '/admin'
@@ -263,11 +285,13 @@ export interface FileRouteTypes {
     | '/service'
     | '/admin/login'
     | '/app/$slug'
+    | '/hikes/$slug'
     | '/rent/$group'
     | '/rent/sale'
     | '/sale/$group'
     | '/sale/sale'
     | '/sale/search'
+    | '/hikes/'
     | '/rent/$group/$category'
     | '/sale/$group/$category'
     | '/_admin/admin/'
@@ -287,6 +311,8 @@ export interface RootRouteChildren {
   ServiceRoute: typeof ServiceRoute
   AdminLoginRoute: typeof AdminLoginRoute
   AppSlugRoute: typeof AppSlugRoute
+  HikesSlugRoute: typeof HikesSlugRoute
+  HikesIndexRoute: typeof HikesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -347,6 +373,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/hikes/': {
+      id: '/hikes/'
+      path: '/hikes'
+      fullPath: '/hikes/'
+      preLoaderRoute: typeof HikesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sale/search': {
       id: '/sale/search'
       path: '/search'
@@ -381,6 +414,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/rent/$group'
       preLoaderRoute: typeof RentGroupRouteImport
       parentRoute: typeof RentRoute
+    }
+    '/hikes/$slug': {
+      id: '/hikes/$slug'
+      path: '/hikes/$slug'
+      fullPath: '/hikes/$slug'
+      preLoaderRoute: typeof HikesSlugRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/app/$slug': {
       id: '/app/$slug'
@@ -536,6 +576,8 @@ const rootRouteChildren: RootRouteChildren = {
   ServiceRoute: ServiceRoute,
   AdminLoginRoute: AdminLoginRoute,
   AppSlugRoute: AppSlugRoute,
+  HikesSlugRoute: HikesSlugRoute,
+  HikesIndexRoute: HikesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

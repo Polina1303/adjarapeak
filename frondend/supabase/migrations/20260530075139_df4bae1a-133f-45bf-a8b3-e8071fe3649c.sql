@@ -1,0 +1,1 @@
+ALTER TABLE public.hikes ADD COLUMN start_time time without time zone;

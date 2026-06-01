@@ -1,13 +1,14 @@
 import { Link, useLocation } from "@tanstack/react-router";
-import { Home, Store, ShoppingBag, Tent } from "lucide-react";
+import { Home, Store, ShoppingBag, Tent, Mountain } from "lucide-react";
 import { useCartCount } from "@/lib/cart";
 import { useLanguage } from "@/lib/i18n";
 import { getSiteText } from "@/lib/site-translations";
 
 const items = [
   { to: "/" as const, key: "home", icon: Home, exact: true },
-  { to: "/sale" as const, key: "shop", icon: Store },
-  { to: "/rent" as const, key: "rental", icon: Tent },
+  { to: "/sale" as const, key: "shop", icon: Store, exact: false },
+  { to: "/rent" as const, key: "rental", icon: Tent, exact: false },
+  { to: "/hikes" as const, key: "hikes", icon: Mountain, exact: false },
 ] as const;
 
 export function MobileBottomNav() {
@@ -21,7 +22,7 @@ export function MobileBottomNav() {
       aria-label={text.aria}
       className="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-background border-t border-border pb-[env(safe-area-inset-bottom)]"
     >
-      <ul className="grid grid-cols-4">
+      <ul className="grid grid-cols-5">
         {items.map(({ to, key, icon: Icon, exact }) => {
           const active = exact ? pathname === to : pathname === to || pathname.startsWith(`${to}/`);
           return (

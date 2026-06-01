@@ -1,0 +1,1 @@
+ALTER TABLE public.hikes ADD COLUMN IF NOT EXISTS reasons jsonb NOT NULL DEFAULT '[]'::jsonb;

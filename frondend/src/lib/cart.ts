@@ -13,7 +13,7 @@ export type CartLineMeta = {
   image?: string | null;
   price?: number;
   kind?: "shop" | "rental";
-  unit?: "" | "/сутки";
+  unit?: "" | "/сутки" | "/day" | "/დღე";
 };
 export type CartLine = { slug: string; qty: number } & CartLineMeta;
 
@@ -55,7 +55,12 @@ function readLines(): CartLine[] {
         image: typeof x.image === "string" ? x.image : null,
         price: typeof x.price === "number" ? x.price : undefined,
         kind: x.kind === "rental" || x.kind === "shop" ? x.kind : undefined,
-        unit: x.unit === "/сутки" ? "/сутки" : x.unit === "" ? "" : undefined,
+        unit:
+          x.unit === "/сутки" || x.unit === "/day" || x.unit === "/დღე"
+            ? x.unit
+            : x.unit === ""
+              ? ""
+              : undefined,
       }));
   } catch {
     return [];

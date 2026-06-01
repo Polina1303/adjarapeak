@@ -95,6 +95,7 @@ export const SITE_TEXT = {
       nav: {
         shop: "Магазин",
         rental: "Прокат",
+        hikes: "Походы",
         climbing: "Скалолазание",
         service: "Сервисный центр",
         contacts: "Контакты",
@@ -231,6 +232,7 @@ export const SITE_TEXT = {
       home: "Главная",
       shop: "Магазин",
       rental: "Прокат",
+      hikes: "Походы",
       cart: "Корзина",
     },
   },
@@ -328,6 +330,7 @@ export const SITE_TEXT = {
       nav: {
         shop: "Shop",
         rental: "Rental",
+        hikes: "Hikes",
         climbing: "Rock Climbing",
         service: "Service Center",
         contacts: "Contacts",
@@ -464,6 +467,7 @@ export const SITE_TEXT = {
       home: "Home",
       shop: "Shop",
       rental: "Rental",
+      hikes: "Hikes",
       cart: "Cart",
     },
   },
@@ -561,6 +565,7 @@ export const SITE_TEXT = {
       nav: {
         shop: "მაღაზია",
         rental: "ქირაობა",
+        hikes: "ლაშქრობები",
         climbing: "კლდეზე ცოცვა",
         service: "სერვის-ცენტრი",
         contacts: "კონტაქტები",
@@ -697,6 +702,7 @@ export const SITE_TEXT = {
       home: "მთავარი",
       shop: "მაღაზია",
       rental: "ქირაობა",
+      hikes: "ლაშქრობები",
       cart: "კალათა",
     },
   },

@@ -18,6 +18,7 @@ const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
 const navLinks = [
   { to: "/sale" as const, key: "shop" },
   { to: "/rent" as const, key: "rental" },
+  { to: "/hikes" as const, key: "hikes" },
   { to: "/rockClimbing" as const, key: "climbing" },
   { to: "/service" as const, key: "service" },
   { to: "/contact" as const, key: "contacts" },

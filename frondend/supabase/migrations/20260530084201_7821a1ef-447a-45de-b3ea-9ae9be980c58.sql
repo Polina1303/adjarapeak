@@ -1,0 +1,1 @@
+ALTER TABLE public.hikes ADD COLUMN IF NOT EXISTS packing_list jsonb NOT NULL DEFAULT '[]'::jsonb;

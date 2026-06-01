@@ -5,7 +5,13 @@ export type FieldType =
   | "boolean"
   | "image"
   | "json"
-  | "fk";
+  | "date"
+  | "time"
+  | "fk"
+  | "gallery"
+  | "string_list"
+  | "reasons"
+  | "packing_list";
 
 export type FieldConfig = {
   key: string;
@@ -22,7 +28,7 @@ export type AdminTableConfig = {
   key: AdminTableKey;
   table: string;
   label: string;
-  section: "shop" | "rental";
+  section: "shop" | "rental" | "hikes";
   hasHidden?: boolean;
   hasSortOrder?: boolean;
   sortScopeField?: string;
@@ -38,7 +44,8 @@ export type AdminTableKey =
   | "rental_groups"
   | "rental_categories"
   | "rental_subcategories"
-  | "rental_items";
+  | "rental_items"
+  | "hikes";
 
 export const ADMIN_TABLES: Record<AdminTableKey, AdminTableConfig> = {
   shop_groups: {
@@ -174,6 +181,38 @@ export const ADMIN_TABLES: Record<AdminTableKey, AdminTableConfig> = {
       { key: "hidden", label: "Скрыто", type: "boolean" },
     ],
   },
+  hikes: {
+    key: "hikes",
+    table: "hikes",
+    label: "Походы",
+    section: "hikes",
+    hasHidden: true,
+    hasSortOrder: true,
+    listColumns: ["sort_order", "title", "slug", "price", "hidden"],
+    fields: [
+      { key: "title", label: "Название", type: "text", required: true },
+      { key: "slug", label: "Слаг", type: "text", required: true },
+      { key: "shortly", label: "Краткое описание", type: "text" },
+      { key: "description", label: "Описание", type: "textarea" },
+      { key: "image", label: "Главное изображение", type: "image" },
+      { key: "gallery", label: "Галерея", type: "gallery" },
+      { key: "price", label: "Цена ₾", type: "number", required: true },
+      { key: "sale_price", label: "Цена со скидкой ₾", type: "number" },
+      { key: "start_date", label: "Дата начала", type: "date" },
+      { key: "end_date", label: "Дата окончания", type: "date" },
+      { key: "start_time", label: "Время начала", type: "time" },
+      { key: "duration", label: "Длительность (напр. «2 дня»)", type: "text" },
+      { key: "distance_km", label: "Километраж (км)", type: "number" },
+      { key: "difficulty", label: "Сложность", type: "text" },
+      { key: "group_size", label: "Размер группы", type: "text" },
+      { key: "location", label: "Локация", type: "text" },
+      { key: "features", label: "Что включено", type: "string_list" },
+      { key: "reasons", label: "Причины пойти (фото + текст)", type: "reasons" },
+      { key: "packing_list", label: "Что взять с собой", type: "packing_list" },
+      { key: "sort_order", label: "Порядок сортировки", type: "number" },
+      { key: "hidden", label: "Скрыто", type: "boolean" },
+    ],
+  },
 };
 
 export const ADMIN_TABLE_LIST: AdminTableConfig[] = [
@@ -185,4 +224,5 @@ export const ADMIN_TABLE_LIST: AdminTableConfig[] = [
   ADMIN_TABLES.rental_categories,
   ADMIN_TABLES.rental_subcategories,
   ADMIN_TABLES.rental_items,
+  ADMIN_TABLES.hikes,
 ];

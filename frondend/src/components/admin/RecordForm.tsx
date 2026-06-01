@@ -15,6 +15,10 @@ import {
 } from "@/components/ui/dialog";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ImageUploadField } from "./ImageUploadField";
+import { GalleryField } from "./GalleryField";
+import { StringListField } from "./StringListField";
+import { ReasonsField } from "./ReasonsField";
+import { PackingListField } from "./PackingListField";
 import type { AdminTableConfig, FieldConfig } from "@/lib/admin-tables";
 import { loadAdminSortRefs, sortAdminRows } from "@/lib/admin-sort";
 import { toast } from "sonner";
@@ -109,6 +113,9 @@ export function RecordForm({ config, record, open, onClose, onSaved }: Props) {
     for (const f of config.fields) {
       if (record) {
         initial[f.key] = record[f.key] ?? (f.type === "boolean" ? false : "");
+        if (["gallery", "string_list", "reasons", "packing_list"].includes(f.type)) {
+          initial[f.key] = Array.isArray(record[f.key]) ? record[f.key] : [];
+        }
         if (f.type === "json") {
           initial[f.key] = JSON.stringify(record[f.key] ?? [], null, 2);
         }
@@ -120,7 +127,9 @@ export function RecordForm({ config, record, open, onClose, onSaved }: Props) {
               ? 0
               : f.type === "json"
                 ? "[]"
-                : "";
+                : ["gallery", "string_list", "reasons", "packing_list"].includes(f.type)
+                  ? []
+                  : "";
       }
     }
     setForm(initial);
@@ -179,6 +188,15 @@ export function RecordForm({ config, record, open, onClose, onSaved }: Props) {
             return;
           }
         }
+        if (["gallery", "reasons", "packing_list"].includes(f.type)) {
+          v = Array.isArray(v) ? v : [];
+        }
+        if (f.type === "string_list") {
+          v = Array.isArray(v)
+            ? v.map((item) => String(item).trim()).filter(Boolean)
+            : [];
+        }
+        if ((f.type === "date" || f.type === "time") && (!v || v === "")) v = null;
         if (f.type === "fk" && (!v || v === "")) v = null;
         if (f.type === "text" || f.type === "textarea") {
           if (v === "") v = null;
@@ -294,6 +312,18 @@ export function RecordForm({ config, record, open, onClose, onSaved }: Props) {
             className="font-mono text-xs"
           />
         );
+      case "date":
+        return <Input type="date" value={v ?? ""} onChange={(e) => setVal(f.key, e.target.value)} />;
+      case "time":
+        return <Input type="time" value={v ?? ""} onChange={(e) => setVal(f.key, e.target.value)} />;
+      case "gallery":
+        return <GalleryField value={Array.isArray(v) ? v : []} onChange={(nv) => setVal(f.key, nv)} />;
+      case "string_list":
+        return <StringListField value={Array.isArray(v) ? v : []} onChange={(nv) => setVal(f.key, nv)} />;
+      case "reasons":
+        return <ReasonsField value={Array.isArray(v) ? v : []} onChange={(nv) => setVal(f.key, nv)} />;
+      case "packing_list":
+        return <PackingListField value={Array.isArray(v) ? v : []} onChange={(nv) => setVal(f.key, nv)} />;
       case "fk": {
         const all = fkOptions[f.key] ?? [];
         const parentId = f.fkParentSource ? form[f.fkParentSource] : null;

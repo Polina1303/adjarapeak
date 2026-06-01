@@ -14,6 +14,84 @@ export type Database = {
   }
   public: {
     Tables: {
+      hikes: {
+        Row: {
+          created_at: string
+          description: string | null
+          difficulty: string | null
+          distance_km: number | null
+          duration: string | null
+          end_date: string | null
+          features: Json
+          gallery: Json
+          group_size: string | null
+          hidden: boolean
+          id: string
+          image: string | null
+          location: string | null
+          packing_list: Json
+          price: number
+          reasons: Json
+          sale_price: number | null
+          shortly: string | null
+          slug: string
+          sort_order: number
+          start_date: string | null
+          start_time: string | null
+          title: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          difficulty?: string | null
+          distance_km?: number | null
+          duration?: string | null
+          end_date?: string | null
+          features?: Json
+          gallery?: Json
+          group_size?: string | null
+          hidden?: boolean
+          id?: string
+          image?: string | null
+          location?: string | null
+          packing_list?: Json
+          price?: number
+          reasons?: Json
+          sale_price?: number | null
+          shortly?: string | null
+          slug: string
+          sort_order?: number
+          start_date?: string | null
+          start_time?: string | null
+          title: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          difficulty?: string | null
+          distance_km?: number | null
+          duration?: string | null
+          end_date?: string | null
+          features?: Json
+          gallery?: Json
+          group_size?: string | null
+          hidden?: boolean
+          id?: string
+          image?: string | null
+          location?: string | null
+          packing_list?: Json
+          price?: number
+          reasons?: Json
+          sale_price?: number | null
+          shortly?: string | null
+          slug?: string
+          sort_order?: number
+          start_date?: string | null
+          start_time?: string | null
+          title?: string
+        }
+        Relationships: []
+      }
       rental_categories: {
         Row: {
           created_at: string
