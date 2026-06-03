@@ -1,9 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
 import { MapPin, Calendar, Route as RouteIcon } from "lucide-react";
 import { listHikes } from "@/lib/hikes.functions";
+import { localizeHike } from "@/lib/hike-translations";
+import { useLanguage } from "@/lib/i18n";
+import { getSiteText } from "@/lib/site-translations";
 
 export const Route = createFileRoute("/hikes/")({
   staleTime: 5 * 60 * 1000,
@@ -20,7 +24,16 @@ export const Route = createFileRoute("/hikes/")({
 });
 
 function HikesIndex() {
-  const hikes = Route.useLoaderData();
+  const rawHikes = Route.useLoaderData();
+  const { lang } = useLanguage();
+  const text = getSiteText(lang).hikes;
+  const hikes = rawHikes.map((hike) => localizeHike(hike, lang));
+
+  useEffect(() => {
+    document.title = text.metaTitle;
+    const meta = document.querySelector<HTMLMetaElement>('meta[name="description"]');
+    if (meta) meta.content = text.metaDescription;
+  }, [text.metaDescription, text.metaTitle]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -34,10 +47,10 @@ function HikesIndex() {
               className="max-w-3xl"
             >
               <h1 className="text-3xl sm:text-4xl md:text-5xl leading-[1.05] font-display font-bold text-foreground leading-[1.05] mb-5">
-                Походы по&nbsp;Грузии
+                {text.indexTitle}
               </h1>
               <p className="text-muted-foreground font-body text-base md:text-lg leading-relaxed">
-                Однодневные выезды и многодневные походы с опытными гидами. Полный комплект снаряжения по запросу.
+                {text.indexLead}
               </p>
             </motion.div>
           </div>
@@ -48,7 +61,7 @@ function HikesIndex() {
             {hikes.length === 0 ? (
               <div className="rounded-3xl border border-border bg-card p-12 text-center">
                 <p className="font-body text-muted-foreground">
-                  Походы скоро появятся. Свяжитесь с нами, чтобы обсудить индивидуальный маршрут.
+                  {text.empty}
                 </p>
               </div>
             ) : (
@@ -116,7 +129,7 @@ function HikesIndex() {
                           )}
                           {hike.distance_km != null && (
                             <div className="flex items-center gap-1.5 text-sm text-muted-foreground font-body mb-5 -mt-3">
-                              <RouteIcon className="h-4 w-4" /> ~{hike.distance_km} км
+                              <RouteIcon className="h-4 w-4" /> ~{hike.distance_km} {text.distanceUnit}
                             </div>
                           )}
                           <div className="pt-4 border-t border-border">

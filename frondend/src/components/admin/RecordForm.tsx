@@ -19,6 +19,7 @@ import { GalleryField } from "./GalleryField";
 import { StringListField } from "./StringListField";
 import { ReasonsField } from "./ReasonsField";
 import { PackingListField } from "./PackingListField";
+import { ColorImageListField } from "./ColorImageListField";
 import type { AdminTableConfig, FieldConfig } from "@/lib/admin-tables";
 import { loadAdminSortRefs, sortAdminRows } from "@/lib/admin-sort";
 import { toast } from "sonner";
@@ -39,6 +40,20 @@ function isOptionalManualSaleField(key: string) {
 
 function isMoneyField(key: string) {
   return key === "price" || key === "sale_price" || key === "price_per_day" || key === "sale_price_per_day";
+}
+
+function isInactiveFeaturedField(
+  config: AdminTableConfig,
+  key: string,
+  value: unknown,
+) {
+  if (config.table !== "shop_products") return false;
+  if (!["featured", "featured_priority", "featured_until", "featured_label", "featured_tags"].includes(key)) {
+    return false;
+  }
+  if (key === "featured") return value === false || value === null || value === undefined || value === "";
+  if (Array.isArray(value)) return value.length === 0;
+  return value === null || value === undefined || value === "";
 }
 
 function readErrorField(error: unknown, key: "message" | "details" | "hint") {
@@ -113,7 +128,7 @@ export function RecordForm({ config, record, open, onClose, onSaved }: Props) {
     for (const f of config.fields) {
       if (record) {
         initial[f.key] = record[f.key] ?? (f.type === "boolean" ? false : "");
-        if (["gallery", "string_list", "reasons", "packing_list"].includes(f.type)) {
+        if (["gallery", "string_list", "reasons", "packing_list", "color_image_list"].includes(f.type)) {
           initial[f.key] = Array.isArray(record[f.key]) ? record[f.key] : [];
         }
         if (f.type === "json") {
@@ -127,7 +142,7 @@ export function RecordForm({ config, record, open, onClose, onSaved }: Props) {
               ? 0
               : f.type === "json"
                 ? "[]"
-                : ["gallery", "string_list", "reasons", "packing_list"].includes(f.type)
+                : ["gallery", "string_list", "reasons", "packing_list", "color_image_list"].includes(f.type)
                   ? []
                   : "";
       }
@@ -188,12 +203,27 @@ export function RecordForm({ config, record, open, onClose, onSaved }: Props) {
             return;
           }
         }
-        if (["gallery", "reasons", "packing_list"].includes(f.type)) {
+        if (["gallery", "reasons", "packing_list", "color_image_list"].includes(f.type)) {
           v = Array.isArray(v) ? v : [];
         }
         if (f.type === "string_list") {
           v = Array.isArray(v)
             ? v.map((item) => String(item).trim()).filter(Boolean)
+            : [];
+        }
+        if (f.type === "color_image_list") {
+          v = Array.isArray(v)
+            ? v
+                .map((item) => {
+                  if (typeof item === "string") return { color: item.trim(), image: null };
+                  const color = typeof item?.color === "string" ? item.color.trim() : "";
+                  const image =
+                    typeof item?.image === "string" && item.image.trim().length > 0
+                      ? item.image.trim()
+                      : null;
+                  return { color, image };
+                })
+                .filter((item) => item.color.length > 0)
             : [];
         }
         if ((f.type === "date" || f.type === "time") && (!v || v === "")) v = null;
@@ -207,6 +237,9 @@ export function RecordForm({ config, record, open, onClose, onSaved }: Props) {
           return;
         }
         if (isOptionalManualSaleField(f.key) && v === null && record?.[f.key] == null) {
+          continue;
+        }
+        if (isInactiveFeaturedField(config, f.key, v) && record?.[f.key] == null) {
           continue;
         }
         payload[f.key] = v;
@@ -324,6 +357,8 @@ export function RecordForm({ config, record, open, onClose, onSaved }: Props) {
         return <ReasonsField value={Array.isArray(v) ? v : []} onChange={(nv) => setVal(f.key, nv)} />;
       case "packing_list":
         return <PackingListField value={Array.isArray(v) ? v : []} onChange={(nv) => setVal(f.key, nv)} />;
+      case "color_image_list":
+        return <ColorImageListField value={Array.isArray(v) ? v : []} onChange={(nv) => setVal(f.key, nv)} />;
       case "fk": {
         const all = fkOptions[f.key] ?? [];
         const parentId = f.fkParentSource ? form[f.fkParentSource] : null;

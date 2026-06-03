@@ -11,7 +11,8 @@ export type FieldType =
   | "gallery"
   | "string_list"
   | "reasons"
-  | "packing_list";
+  | "packing_list"
+  | "color_image_list";
 
 export type FieldConfig = {
   key: string;
@@ -28,7 +29,7 @@ export type AdminTableConfig = {
   key: AdminTableKey;
   table: string;
   label: string;
-  section: "shop" | "rental" | "hikes";
+  section: "shop" | "rental" | "hikes" | "service";
   hasHidden?: boolean;
   hasSortOrder?: boolean;
   sortScopeField?: string;
@@ -45,7 +46,9 @@ export type AdminTableKey =
   | "rental_categories"
   | "rental_subcategories"
   | "rental_items"
-  | "hikes";
+  | "hikes"
+  | "service_winter_prices"
+  | "service_summer_prices";
 
 export const ADMIN_TABLES: Record<AdminTableKey, AdminTableConfig> = {
   shop_groups: {
@@ -99,7 +102,7 @@ export const ADMIN_TABLES: Record<AdminTableKey, AdminTableConfig> = {
     label: "Магазин · Товары",
     section: "shop",
     hasHidden: true,
-    listColumns: ["title", "slug", "price", "sale_price", "in_stock", "hidden"],
+    listColumns: ["title", "slug", "price", "sale_price", "featured", "featured_priority", "in_stock", "hidden"],
     fields: [
       { key: "category_id", label: "Категория", type: "fk", fkTable: "shop_categories", required: true },
       { key: "subcategory_id", label: "Подкатегория", type: "fk", fkTable: "shop_subcategories", fkParentField: "category_id", fkParentSource: "category_id" },
@@ -110,6 +113,13 @@ export const ADMIN_TABLES: Record<AdminTableKey, AdminTableConfig> = {
       { key: "description", label: "Описание", type: "textarea" },
       { key: "image", label: "Изображение", type: "image" },
       { key: "features", label: "Характеристики (JSON)", type: "json" },
+      { key: "sizes", label: "Размеры (напр. S, M, L, XL)", type: "string_list" },
+      { key: "colors", label: "Цвета (с изображением для каждого)", type: "color_image_list" },
+      { key: "featured", label: "Показывать в рекомендуемых", type: "boolean" },
+      { key: "featured_priority", label: "Приоритет рекомендации", type: "number" },
+      { key: "featured_until", label: "Показывать до", type: "date" },
+      { key: "featured_label", label: "Подпись рекомендации", type: "text" },
+      { key: "featured_tags", label: "Теги рекомендации (seasonal, hiking, camping, team-pick)", type: "string_list" },
       { key: "in_stock", label: "В наличии", type: "boolean" },
       { key: "hidden", label: "Скрыто", type: "boolean" },
     ],
@@ -191,9 +201,15 @@ export const ADMIN_TABLES: Record<AdminTableKey, AdminTableConfig> = {
     listColumns: ["sort_order", "title", "slug", "price", "hidden"],
     fields: [
       { key: "title", label: "Название", type: "text", required: true },
+      { key: "title_en", label: "Название EN", type: "text" },
+      { key: "title_ka", label: "Название KA", type: "text" },
       { key: "slug", label: "Слаг", type: "text", required: true },
       { key: "shortly", label: "Краткое описание", type: "text" },
+      { key: "shortly_en", label: "Краткое описание EN", type: "text" },
+      { key: "shortly_ka", label: "Краткое описание KA", type: "text" },
       { key: "description", label: "Описание", type: "textarea" },
+      { key: "description_en", label: "Описание EN", type: "textarea" },
+      { key: "description_ka", label: "Описание KA", type: "textarea" },
       { key: "image", label: "Главное изображение", type: "image" },
       { key: "gallery", label: "Галерея", type: "gallery" },
       { key: "price", label: "Цена ₾", type: "number", required: true },
@@ -202,15 +218,71 @@ export const ADMIN_TABLES: Record<AdminTableKey, AdminTableConfig> = {
       { key: "end_date", label: "Дата окончания", type: "date" },
       { key: "start_time", label: "Время начала", type: "time" },
       { key: "duration", label: "Длительность (напр. «2 дня»)", type: "text" },
+      { key: "duration_en", label: "Длительность EN", type: "text" },
+      { key: "duration_ka", label: "Длительность KA", type: "text" },
       { key: "distance_km", label: "Километраж (км)", type: "number" },
       { key: "difficulty", label: "Сложность", type: "text" },
+      { key: "difficulty_en", label: "Сложность EN", type: "text" },
+      { key: "difficulty_ka", label: "Сложность KA", type: "text" },
       { key: "group_size", label: "Размер группы", type: "text" },
+      { key: "group_size_en", label: "Размер группы EN", type: "text" },
+      { key: "group_size_ka", label: "Размер группы KA", type: "text" },
       { key: "location", label: "Локация", type: "text" },
+      { key: "location_en", label: "Локация EN", type: "text" },
+      { key: "location_ka", label: "Локация KA", type: "text" },
       { key: "features", label: "Что включено", type: "string_list" },
+      { key: "features_en", label: "Что включено EN (JSON)", type: "json" },
+      { key: "features_ka", label: "Что включено KA (JSON)", type: "json" },
       { key: "reasons", label: "Причины пойти (фото + текст)", type: "reasons" },
+      { key: "reasons_en", label: "Причины пойти EN (JSON)", type: "json" },
+      { key: "reasons_ka", label: "Причины пойти KA (JSON)", type: "json" },
       { key: "packing_list", label: "Что взять с собой", type: "packing_list" },
+      { key: "packing_list_en", label: "Что взять с собой EN (JSON)", type: "json" },
+      { key: "packing_list_ka", label: "Что взять с собой KA (JSON)", type: "json" },
       { key: "sort_order", label: "Порядок сортировки", type: "number" },
       { key: "hidden", label: "Скрыто", type: "boolean" },
+    ],
+  },
+  service_winter_prices: {
+    key: "service_winter_prices",
+    table: "service_winter_prices",
+    label: "Сервис · Зимний прайс",
+    section: "service",
+    hasSortOrder: true,
+    listColumns: ["sort_order", "title", "price", "highlight"],
+    fields: [
+      { key: "title", label: "Название", type: "text", required: true },
+      { key: "title_en", label: "Название EN", type: "text" },
+      { key: "title_ka", label: "Название KA", type: "text" },
+      { key: "description", label: "Описание", type: "textarea" },
+      { key: "description_en", label: "Описание EN", type: "textarea" },
+      { key: "description_ka", label: "Описание KA", type: "textarea" },
+      { key: "price", label: "Цена (напр. «80 ₾» или «от 20 ₾»)", type: "text", required: true },
+      { key: "price_en", label: "Цена EN", type: "text" },
+      { key: "price_ka", label: "Цена KA", type: "text" },
+      { key: "highlight", label: "Выделить", type: "boolean" },
+      { key: "sort_order", label: "Порядок сортировки", type: "number" },
+    ],
+  },
+  service_summer_prices: {
+    key: "service_summer_prices",
+    table: "service_summer_prices",
+    label: "Сервис · Летний прайс",
+    section: "service",
+    hasSortOrder: true,
+    listColumns: ["sort_order", "title", "price", "highlight"],
+    fields: [
+      { key: "title", label: "Название", type: "text", required: true },
+      { key: "title_en", label: "Название EN", type: "text" },
+      { key: "title_ka", label: "Название KA", type: "text" },
+      { key: "description", label: "Описание", type: "textarea" },
+      { key: "description_en", label: "Описание EN", type: "textarea" },
+      { key: "description_ka", label: "Описание KA", type: "textarea" },
+      { key: "price", label: "Цена (напр. «50 ₾» или «от 20 ₾»)", type: "text", required: true },
+      { key: "price_en", label: "Цена EN", type: "text" },
+      { key: "price_ka", label: "Цена KA", type: "text" },
+      { key: "highlight", label: "Выделить", type: "boolean" },
+      { key: "sort_order", label: "Порядок сортировки", type: "number" },
     ],
   },
 };
@@ -225,4 +297,6 @@ export const ADMIN_TABLE_LIST: AdminTableConfig[] = [
   ADMIN_TABLES.rental_subcategories,
   ADMIN_TABLES.rental_items,
   ADMIN_TABLES.hikes,
+  ADMIN_TABLES.service_winter_prices,
+  ADMIN_TABLES.service_summer_prices,
 ];

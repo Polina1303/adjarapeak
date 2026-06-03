@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
@@ -8,8 +9,9 @@ import s0 from "@/assets/service-0.jpg";
 import s1 from "@/assets/service-1.jpg";
 import s2 from "@/assets/service-2.jpg";
 import s3 from "@/assets/service-3.jpg";
-import { useLanguage } from "@/lib/i18n";
+import { type Lang, useLanguage } from "@/lib/i18n";
 import { getSiteText } from "@/lib/site-translations";
+import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/service")({
   head: () => ({
@@ -24,16 +26,105 @@ export const Route = createFileRoute("/service")({
   component: ServicePage,
 });
 
+type Service = { title: string; desc: string; price: string; highlight?: boolean };
+type ServiceFallback = ReadonlyArray<{
+  title: string;
+  desc: string;
+  price: string;
+  highlight?: boolean;
+}>;
+type ServicePriceRow = {
+  title: string;
+  description: string | null;
+  price: string;
+  highlight: boolean;
+  title_en?: string | null;
+  title_ka?: string | null;
+  description_en?: string | null;
+  description_ka?: string | null;
+  price_en?: string | null;
+  price_ka?: string | null;
+};
+
 const featureIcons = [Wrench, Snowflake, Droplets, ShieldCheck];
 const gallery = [s0, s1, s2, s3];
+
+function getTranslatedValue(
+  row: ServicePriceRow,
+  key: "title" | "description" | "price",
+  lang: Lang,
+) {
+  if (lang === "RU") return row[key];
+  const suffix = lang === "EN" ? "en" : "ka";
+  const value = row[`${key}_${suffix}` as keyof ServicePriceRow];
+  return typeof value === "string" && value.trim() ? value : null;
+}
+
+function localizePrice(price: string, fallback: string | undefined, lang: Lang) {
+  if (lang === "RU") return price;
+  if (fallback) return fallback;
+  if (lang === "EN") return price.replace(/^от\s+/i, "from ");
+  if (/^от\s+/i.test(price)) return `${price.replace(/^от\s+/i, "")}-დან`;
+  if (/^≈\s*/.test(price)) return price.replace(/^≈\s*/, "დაახლ. ");
+  return price;
+}
 
 function ServicePage() {
   const { lang } = useLanguage();
   const text = getSiteText(lang).service;
+  const [season, setSeason] = useState<"winter" | "summer">("summer");
+  const [winterServices, setWinterServices] = useState<Service[]>([]);
+  const [summerServices, setSummerServices] = useState<Service[]>([]);
   const features = text.features.map((feature, index) => ({
     ...feature,
     icon: featureIcons[index] ?? Wrench,
   }));
+
+  useEffect(() => {
+    (async () => {
+      const [{ data: winter }, { data: summer }] = await Promise.all([
+        supabase
+          .from("service_winter_prices")
+          .select("*")
+          .order("sort_order", { ascending: true }),
+        supabase
+          .from("service_summer_prices")
+          .select("*")
+          .order("sort_order", { ascending: true }),
+      ]);
+      const map = (
+        rows: ServicePriceRow[] | null,
+        fallback: ServiceFallback,
+      ): Service[] =>
+        (rows ?? []).map((r, index) => ({
+          title:
+            lang === "RU"
+              ? r.title
+              : (getTranslatedValue(r, "title", lang) ?? fallback[index]?.title ?? r.title),
+          desc:
+            lang === "RU"
+              ? (r.description ?? "")
+              : (getTranslatedValue(r, "description", lang) ?? fallback[index]?.desc ?? ""),
+          price: localizePrice(
+            getTranslatedValue(r, "price", lang) ?? r.price ?? "",
+            fallback[index]?.price,
+            lang,
+          ),
+          highlight: !!r.highlight,
+        }));
+      setWinterServices(map(winter, text.services));
+      setSummerServices(map(summer, text.summerServices));
+    })();
+  }, [lang, text.services, text.summerServices]);
+
+  const fallbackSource = season === "winter" ? text.services : text.summerServices;
+  const fallbackServices: Service[] = fallbackSource.map((s) => ({
+    ...s,
+    highlight: "highlight" in s ? !!s.highlight : false,
+  }));
+  const services = season === "winter" ? winterServices : summerServices;
+  const displayServices = services.length > 0 ? services : fallbackServices;
+  const sectionText = season === "winter" ? text.winterSectionText : text.summerSectionText;
 
   return (
     <div className="min-h-screen bg-background">
@@ -111,8 +202,28 @@ function ServicePage() {
               </h2>
             </div>
             <p className="font-body text-sm text-muted-foreground max-w-sm">
-              {text.sectionText}
+              {sectionText}
             </p>
+          </div>
+
+          <div className="inline-flex p-1 rounded-full border border-border bg-card mb-6">
+            {([
+              { key: "winter", label: text.winterSeason },
+              { key: "summer", label: text.summerSeason },
+            ] as const).map((t) => (
+              <button
+                key={t.key}
+                type="button"
+                onClick={() => setSeason(t.key)}
+                className={`px-5 py-2 rounded-full font-display text-xs uppercase tracking-wider transition-colors ${
+                  season === t.key
+                    ? "bg-ember text-ember-foreground"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {t.label}
+              </button>
+            ))}
           </div>
 
           <div className="rounded-3xl border border-border overflow-hidden bg-card">
@@ -121,7 +232,7 @@ function ServicePage() {
               <span className="font-display text-xs uppercase tracking-[0.2em] text-muted-foreground text-right">{text.priceColumn}</span>
             </div>
             <ul>
-              {text.services.map((s, i) => (
+              {displayServices.map((s, i) => (
                 <motion.li
                   key={s.title}
                   initial={{ opacity: 0, y: 10 }}

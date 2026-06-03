@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { listOneProductPerCategorySlug, type ShopProduct } from "@/lib/catalog.functions";
+import { listRecommendedProducts, type ShopProduct } from "@/lib/catalog.functions";
 import { ProductCard } from "./ProductCard";
 import {
   Carousel,
@@ -10,15 +10,13 @@ import {
 import { useLanguage } from "@/lib/i18n";
 import { getSiteText } from "@/lib/site-translations";
 
-const FEATURED_CATEGORY_SLUGS = ["roller", "kettlebells", "backpack", "tent", "windbreaker"];
-
 export function BrandStrip() {
   const [featuredProducts, setFeaturedProducts] = useState<ShopProduct[]>([]);
   const { lang } = useLanguage();
   const text = getSiteText(lang).home;
 
   useEffect(() => {
-    listOneProductPerCategorySlug({ data: { categorySlugs: FEATURED_CATEGORY_SLUGS } })
+    listRecommendedProducts({ data: { limit: 8 } })
       .then(setFeaturedProducts)
       .catch(() => setFeaturedProducts([]));
   }, []);
@@ -35,7 +33,7 @@ export function BrandStrip() {
         </div>
 
         {/* Desktop grid */}
-        <div className="hidden lg:grid grid-cols-5 gap-5">
+        <div className="hidden lg:grid grid-cols-4 gap-5">
           {featuredProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

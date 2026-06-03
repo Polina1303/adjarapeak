@@ -18,77 +18,137 @@ export type Database = {
         Row: {
           created_at: string
           description: string | null
+          description_en: string | null
+          description_ka: string | null
           difficulty: string | null
+          difficulty_en: string | null
+          difficulty_ka: string | null
           distance_km: number | null
           duration: string | null
+          duration_en: string | null
+          duration_ka: string | null
           end_date: string | null
           features: Json
+          features_en: Json | null
+          features_ka: Json | null
           gallery: Json
           group_size: string | null
+          group_size_en: string | null
+          group_size_ka: string | null
           hidden: boolean
           id: string
           image: string | null
           location: string | null
+          location_en: string | null
+          location_ka: string | null
           packing_list: Json
+          packing_list_en: Json | null
+          packing_list_ka: Json | null
           price: number
           reasons: Json
+          reasons_en: Json | null
+          reasons_ka: Json | null
           sale_price: number | null
           shortly: string | null
+          shortly_en: string | null
+          shortly_ka: string | null
           slug: string
           sort_order: number
           start_date: string | null
           start_time: string | null
           title: string
+          title_en: string | null
+          title_ka: string | null
         }
         Insert: {
           created_at?: string
           description?: string | null
+          description_en?: string | null
+          description_ka?: string | null
           difficulty?: string | null
+          difficulty_en?: string | null
+          difficulty_ka?: string | null
           distance_km?: number | null
           duration?: string | null
+          duration_en?: string | null
+          duration_ka?: string | null
           end_date?: string | null
           features?: Json
+          features_en?: Json | null
+          features_ka?: Json | null
           gallery?: Json
           group_size?: string | null
+          group_size_en?: string | null
+          group_size_ka?: string | null
           hidden?: boolean
           id?: string
           image?: string | null
           location?: string | null
+          location_en?: string | null
+          location_ka?: string | null
           packing_list?: Json
+          packing_list_en?: Json | null
+          packing_list_ka?: Json | null
           price?: number
           reasons?: Json
+          reasons_en?: Json | null
+          reasons_ka?: Json | null
           sale_price?: number | null
           shortly?: string | null
+          shortly_en?: string | null
+          shortly_ka?: string | null
           slug: string
           sort_order?: number
           start_date?: string | null
           start_time?: string | null
           title: string
+          title_en?: string | null
+          title_ka?: string | null
         }
         Update: {
           created_at?: string
           description?: string | null
+          description_en?: string | null
+          description_ka?: string | null
           difficulty?: string | null
+          difficulty_en?: string | null
+          difficulty_ka?: string | null
           distance_km?: number | null
           duration?: string | null
+          duration_en?: string | null
+          duration_ka?: string | null
           end_date?: string | null
           features?: Json
+          features_en?: Json | null
+          features_ka?: Json | null
           gallery?: Json
           group_size?: string | null
+          group_size_en?: string | null
+          group_size_ka?: string | null
           hidden?: boolean
           id?: string
           image?: string | null
           location?: string | null
+          location_en?: string | null
+          location_ka?: string | null
           packing_list?: Json
+          packing_list_en?: Json | null
+          packing_list_ka?: Json | null
           price?: number
           reasons?: Json
+          reasons_en?: Json | null
+          reasons_ka?: Json | null
           sale_price?: number | null
           shortly?: string | null
+          shortly_en?: string | null
+          shortly_ka?: string | null
           slug?: string
           sort_order?: number
           start_date?: string | null
           start_time?: string | null
           title?: string
+          title_en?: string | null
+          title_ka?: string | null
         }
         Relationships: []
       }
@@ -163,6 +223,11 @@ export type Database = {
           category_id: string
           created_at: string
           description: string | null
+          featured: boolean
+          featured_label: string | null
+          featured_priority: number
+          featured_tags: Json
+          featured_until: string | null
           features: Json
           hidden: boolean
           id: string
@@ -180,6 +245,11 @@ export type Database = {
           category_id: string
           created_at?: string
           description?: string | null
+          featured?: boolean
+          featured_label?: string | null
+          featured_priority?: number
+          featured_tags?: Json
+          featured_until?: string | null
           features?: Json
           hidden?: boolean
           id?: string
@@ -197,6 +267,11 @@ export type Database = {
           category_id?: string
           created_at?: string
           description?: string | null
+          featured?: boolean
+          featured_label?: string | null
+          featured_priority?: number
+          featured_tags?: Json
+          featured_until?: string | null
           features?: Json
           hidden?: boolean
           id?: string
@@ -260,6 +335,102 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      service_summer_prices: {
+        Row: {
+          created_at: string
+          description: string | null
+          description_en: string | null
+          description_ka: string | null
+          highlight: boolean
+          id: string
+          price: string
+          price_en: string | null
+          price_ka: string | null
+          sort_order: number
+          title: string
+          title_en: string | null
+          title_ka: string | null
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          description_en?: string | null
+          description_ka?: string | null
+          highlight?: boolean
+          id?: string
+          price?: string
+          price_en?: string | null
+          price_ka?: string | null
+          sort_order?: number
+          title: string
+          title_en?: string | null
+          title_ka?: string | null
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          description_en?: string | null
+          description_ka?: string | null
+          highlight?: boolean
+          id?: string
+          price?: string
+          price_en?: string | null
+          price_ka?: string | null
+          sort_order?: number
+          title?: string
+          title_en?: string | null
+          title_ka?: string | null
+        }
+        Relationships: []
+      }
+      service_winter_prices: {
+        Row: {
+          created_at: string
+          description: string | null
+          description_en: string | null
+          description_ka: string | null
+          highlight: boolean
+          id: string
+          price: string
+          price_en: string | null
+          price_ka: string | null
+          sort_order: number
+          title: string
+          title_en: string | null
+          title_ka: string | null
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          description_en?: string | null
+          description_ka?: string | null
+          highlight?: boolean
+          id?: string
+          price?: string
+          price_en?: string | null
+          price_ka?: string | null
+          sort_order?: number
+          title: string
+          title_en?: string | null
+          title_ka?: string | null
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          description_en?: string | null
+          description_ka?: string | null
+          highlight?: boolean
+          id?: string
+          price?: string
+          price_en?: string | null
+          price_ka?: string | null
+          sort_order?: number
+          title?: string
+          title_en?: string | null
+          title_ka?: string | null
+        }
+        Relationships: []
       }
       shop_categories: {
         Row: {
@@ -329,6 +500,7 @@ export type Database = {
       shop_products: {
         Row: {
           category_id: string
+          colors: Json
           created_at: string
           description: string | null
           features: Json
@@ -339,12 +511,14 @@ export type Database = {
           legacy_id: number | null
           price: number
           sale_price: number | null
+          sizes: Json
           slug: string
           subcategory_id: string | null
           title: string
         }
         Insert: {
           category_id: string
+          colors?: Json
           created_at?: string
           description?: string | null
           features?: Json
@@ -355,12 +529,14 @@ export type Database = {
           legacy_id?: number | null
           price?: number
           sale_price?: number | null
+          sizes?: Json
           slug: string
           subcategory_id?: string | null
           title: string
         }
         Update: {
           category_id?: string
+          colors?: Json
           created_at?: string
           description?: string | null
           features?: Json
@@ -371,6 +547,7 @@ export type Database = {
           legacy_id?: number | null
           price?: number
           sale_price?: number | null
+          sizes?: Json
           slug?: string
           subcategory_id?: string | null
           title?: string

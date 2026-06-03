@@ -13,6 +13,59 @@ const SPORTS_RENTAL_GROUP_SLUG = "sportsRental";
 const SPORTS_GROUP_SLUG = "sports";
 const FITNESS_GROUP_SLUG = "fitness";
 const SPORTS_AIR_CATEGORY_SLUG = "air";
+const FEATURED_PRODUCT_LIMIT = 8;
+const ALWAYS_SEASONAL_CATEGORY_SLUGS = new Set([
+  "backpack",
+  "bottle",
+  "buff",
+  "food",
+  "hat",
+  "hermo",
+  "knife",
+  "lantern",
+  "sunglasses",
+  "trekkingsticks",
+]);
+const SUMMER_FEATURED_CATEGORY_SLUGS = new Set([
+  "air",
+  "barbecue",
+  "chair",
+  "dishes",
+  "gas_burner",
+  "hammock",
+  "mat",
+  "sup_accessories",
+  "supboard",
+  "tent",
+  "termoryukzak",
+]);
+const WINTER_FEATURED_CATEGORY_SLUGS = new Set([
+  "air_sky",
+  "bag_sky",
+  "closes_ski",
+  "fasteners_sky",
+  "gloves_sky",
+  "helmet_sky",
+  "skigoggles",
+  "snowboardsky",
+  "snowboardsky_boots",
+  "snowshoes",
+  "socks_sky",
+  "thermalUnderwear",
+]);
+const FEATURED_COMPLEMENT_CATEGORY_SLUGS = new Set([
+  "backpack",
+  "bottle",
+  "buff",
+  "gas_burner",
+  "hermo",
+  "lantern",
+  "mat",
+  "sleepingbag",
+  "sunglasses",
+  "tent",
+  "trekkingsticks",
+]);
 const SHOP_GROUP_IMAGE_OVERRIDES: Record<string, string> = {
   cyclingRoller: "b1f2b627383337af48f04d809f5c9453.webp",
   martial: "b4a5-68313d694eb1a61.avif",
@@ -59,13 +112,26 @@ export type ShopProduct = {
   category_id: string;
   subcategory_id: string | null;
   features: string[];
+  sizes: string[];
+  colors: { color: string; image: string | null }[];
   in_stock: boolean;
+  featured?: boolean | null;
+  featured_priority?: number | null;
+  featured_until?: string | null;
+  featured_label?: string | null;
+  featured_tags?: string[];
   created_at?: string | null;
+};
+
+type ShopProductRow = Omit<ShopProduct, "sizes" | "colors" | "featured_tags"> & {
+  sizes?: unknown;
+  colors?: unknown;
+  featured_tags?: unknown;
 };
 
 export type RentalGroup = ShopGroup;
 export type RentalCategory = ShopCategory;
-export type RentalItem = Omit<ShopProduct, "in_stock" | "price" | "sale_price"> & {
+export type RentalItem = Omit<ShopProduct, "in_stock" | "price" | "sale_price" | "sizes" | "colors"> & {
   shortly: string | null;
   price_per_day: number;
   sale_price_per_day: number | null;
@@ -73,12 +139,14 @@ export type RentalItem = Omit<ShopProduct, "in_stock" | "price" | "sale_price"> 
 };
 
 type ShopProductSummaryRow = Pick<
-  ShopProduct,
+  ShopProductRow,
   | "id"
   | "slug"
   | "title"
   | "price"
   | "sale_price"
+  | "sizes"
+  | "colors"
   | "image"
   | "category_id"
   | "subcategory_id"
@@ -117,6 +185,40 @@ type CartRentalRow = Pick<
   | "shortly"
   | "description"
 >;
+
+function normalizeShopProductColors(value: unknown): ShopProduct["colors"] {
+  if (!Array.isArray(value)) return [];
+  return value
+    .map((item) => {
+      if (typeof item === "string") return { color: item.trim(), image: null };
+      if (!item || typeof item !== "object") return null;
+      const color = typeof (item as { color?: unknown }).color === "string"
+        ? (item as { color: string }).color.trim()
+        : "";
+      const imageValue = (item as { image?: unknown }).image;
+      const image = typeof imageValue === "string" && imageValue.trim() ? imageValue.trim() : null;
+      return color ? { color, image } : null;
+    })
+    .filter((item): item is ShopProduct["colors"][number] => Boolean(item));
+}
+
+function normalizeShopProductSizes(value: unknown): ShopProduct["sizes"] {
+  if (!Array.isArray(value)) return [];
+  return value.map((item) => String(item).trim()).filter(Boolean);
+}
+
+function normalizeShopProduct(product: ShopProductRow): ShopProduct {
+  return {
+    ...product,
+    colors: normalizeShopProductColors(product.colors),
+    sizes: normalizeShopProductSizes(product.sizes),
+    featured_tags: normalizeShopProductSizes(product.featured_tags),
+  };
+}
+
+function normalizeShopProducts(rows: unknown[] | null | undefined): ShopProduct[] {
+  return ((rows ?? []) as ShopProductRow[]).map(normalizeShopProduct);
+}
 
 const SHOP_GROUP_TITLE_OVERRIDES: Record<string, string> = {
   cyclingRoller: "Велоспорт и ролики",
@@ -168,10 +270,10 @@ const SPORTS_RENTAL_ALLOWED_ITEMS: Record<string, Array<{ image: string; price: 
     { image: "IMG_4474.PNG", price: 10 },
   ],
   rentBIKE: [
-    { image: "trinx-m600-rent.png", price: 10 },
-    { image: "kross-6-0-rent.jpg", price: 10 },
-    { image: "kross-r6-rent.jpg", price: 10 },
-    { image: "kross-5-0-rent.jpg", price: 10 },
+    { image: "trinx-m600-rent.png", price: 40 },
+    { image: "kross-6-0-rent.jpg", price: 40 },
+    { image: "kross-r6-rent.jpg", price: 40 },
+    { image: "kross-5-0-rent.jpg", price: 40 },
   ],
 };
 
@@ -276,20 +378,22 @@ function filterRentalItemsForGroup(
   const categorySlugById = new Map(categories.map((category) => [category.id, category.slug]));
   const seen = new Set<string>();
 
-  return items.filter((item) => {
+  return items.flatMap((item) => {
     const categorySlug = categorySlugById.get(item.category_id);
     const allowedItems = categorySlug ? SPORTS_RENTAL_ALLOWED_ITEMS[categorySlug] : undefined;
-    if (!allowedItems) return false;
+    if (!allowedItems) return [];
 
-    const allowed = allowedItems.find(
-      (entry) => entry.image === item.image && entry.price === Number(item.price_per_day),
-    );
-    if (!allowed) return false;
+    const allowed = allowedItems.find((entry) => entry.image === item.image);
+    if (!allowed) return [];
 
-    const key = `${categorySlug}:${allowed.image}:${allowed.price}`;
-    if (seen.has(key)) return false;
+    const key = `${categorySlug}:${allowed.image}`;
+    if (seen.has(key)) return [];
     seen.add(key);
-    return true;
+    return [{
+      ...item,
+      price_per_day: allowed.price,
+      sale_price_per_day: null,
+    }];
   });
 }
 
@@ -404,6 +508,8 @@ async function getBoardProducts() {
     description: null,
     legacy_id: null,
     features: [],
+    colors: normalizeShopProductColors(row.colors),
+    sizes: normalizeShopProductSizes(row.sizes),
   })) as ShopProduct[];
 }
 
@@ -565,7 +671,7 @@ export const getShopCategoryBySlug = createServerFn({ method: "GET" })
       category: category as ShopCategory,
       subcategories: (subcategories ?? []) as ShopSubcategory[],
       activeSubcategory: activeSub,
-      products: (products ?? []) as ShopProduct[],
+      products: normalizeShopProducts(products),
     };
   });
 
@@ -733,7 +839,7 @@ export const getShopCategoryView = createServerFn({ method: "GET" })
 
     const { data: productRows, error: pe } = await q;
     if (pe) throw new Error(pe.message);
-    const products = ((productRows ?? []) as ShopProduct[]).filter(
+    const products = normalizeShopProducts(productRows).filter(
       (product) =>
         !(
           (group as ShopGroup).slug === SPORTS_GROUP_SLUG &&
@@ -822,7 +928,7 @@ export const getShopProductBySlug = createServerFn({ method: "GET" })
           .eq("in_stock", true)
           .limit(200);
         const byCat = new Map<string, ShopProduct[]>();
-        for (const r of (candidates ?? []) as ShopProduct[]) {
+        for (const r of normalizeShopProducts(candidates)) {
           if (!byCat.has(r.category_id)) byCat.set(r.category_id, []);
           byCat.get(r.category_id)!.push(r);
         }
@@ -859,7 +965,7 @@ export const getShopProductBySlug = createServerFn({ method: "GET" })
           .in("category_id", otherCatIds)
           .eq("in_stock", true)
           .limit(60);
-        for (const r of shuffle((groupRel ?? []) as ShopProduct[])) {
+        for (const r of shuffle(normalizeShopProducts(groupRel))) {
           if (related.length >= TARGET) break;
           pushOne(r);
         }
@@ -874,17 +980,17 @@ export const getShopProductBySlug = createServerFn({ method: "GET" })
         .neq("category_id", product.category_id)
         .eq("in_stock", true)
         .limit(60);
-      for (const r of shuffle((anyRel ?? []) as ShopProduct[])) {
+      for (const r of shuffle(normalizeShopProducts(anyRel))) {
         if (related.length >= TARGET) break;
         pushOne(r);
       }
     }
 
     return {
-      product: product as ShopProduct,
+      product: normalizeShopProduct(product as ShopProductRow),
       category: (category ?? null) as ShopCategory | null,
       group: (group ?? null) as ShopGroup | null,
-      related,
+      related: related.map(normalizeShopProduct),
     };
   });
 
@@ -908,10 +1014,140 @@ async function getFeaturedProductsByCategorySlugs(slugs: string[], limit: number
     .limit(Math.max(limit * 4, 20));
   if (error) throw new Error(error.message);
 
-  return ((products ?? []) as ShopProduct[])
+  return normalizeShopProducts(products)
     .filter((product) => product.image && CATALOG_IMAGE_FILES.has(product.image))
     .slice(0, limit);
 }
+
+function getSeasonalFeaturedCategories(now = new Date()) {
+  const month = now.getMonth() + 1;
+  const winter = month === 12 || month <= 3;
+  return winter
+    ? new Set([...ALWAYS_SEASONAL_CATEGORY_SLUGS, ...WINTER_FEATURED_CATEGORY_SLUGS])
+    : new Set([...ALWAYS_SEASONAL_CATEGORY_SLUGS, ...SUMMER_FEATURED_CATEGORY_SLUGS]);
+}
+
+function daysSince(date: string | null | undefined, now: Date) {
+  if (!date) return Number.POSITIVE_INFINITY;
+  const time = new Date(date).getTime();
+  if (!Number.isFinite(time)) return Number.POSITIVE_INFINITY;
+  return Math.max(0, Math.floor((now.getTime() - time) / 86_400_000));
+}
+
+function stableDailyJitter(id: string, dayKey: string) {
+  let hash = 0;
+  const source = `${id}:${dayKey}`;
+  for (let i = 0; i < source.length; i += 1) {
+    hash = (hash * 31 + source.charCodeAt(i)) >>> 0;
+  }
+  return hash % 21;
+}
+
+function isFeaturedActive(product: ShopProduct, today: string) {
+  if (!product.featured) return false;
+  return !product.featured_until || product.featured_until >= today;
+}
+
+function scoreFeaturedProduct(
+  product: ShopProduct,
+  categorySlug: string | undefined,
+  seasonalCategories: Set<string>,
+  today: string,
+  now: Date,
+) {
+  const tags = new Set(product.featured_tags ?? []);
+  let score = 0;
+
+  if (isFeaturedActive(product, today)) {
+    score += 1000 + (product.featured_priority ?? 0) * 10;
+  }
+
+  if (product.image && CATALOG_IMAGE_FILES.has(product.image)) score += 120;
+  if (categorySlug && seasonalCategories.has(categorySlug)) score += 90;
+  if (categorySlug && FEATURED_COMPLEMENT_CATEGORY_SLUGS.has(categorySlug)) score += 60;
+  if (tags.has("seasonal")) score += 70;
+  if (tags.has("hiking") || tags.has("camping")) score += 55;
+  if (tags.has("team-pick")) score += 45;
+  if (hasManualDiscount(product)) score += 40;
+
+  const ageDays = daysSince(product.created_at, now);
+  if (ageDays <= 14) score += 35;
+  else if (ageDays <= 45) score += 20;
+
+  const displayPrice = getDisplayPrice(product);
+  if (displayPrice >= 20 && displayPrice <= 180) score += 20;
+  if (displayPrice > 350) score -= 20;
+
+  score += stableDailyJitter(product.id, today);
+  return score;
+}
+
+export const listRecommendedProducts = createServerFn({ method: "GET" })
+  .inputValidator((input: { limit?: number }) =>
+    z.object({ limit: z.number().min(1).max(20).optional() }).parse(input ?? {}),
+  )
+  .handler(async ({ data }) => {
+    const limit = data.limit ?? FEATURED_PRODUCT_LIMIT;
+    const now = new Date();
+    const today = now.toISOString().slice(0, 10);
+    const seasonalCategories = getSeasonalFeaturedCategories(now);
+
+    const [{ data: rawProducts, error: productError }, { data: rawCategories, error: categoryError }] =
+      await Promise.all([
+        supabase
+          .from("shop_products")
+          .select("*")
+          .eq("in_stock", true)
+          .eq("hidden", false)
+          .limit(300),
+        supabase
+          .from("shop_categories")
+          .select("id,slug"),
+      ]);
+
+    if (productError) throw new Error(productError.message);
+    if (categoryError) throw new Error(categoryError.message);
+
+    const categorySlugById = new Map(
+      ((rawCategories ?? []) as Pick<ShopCategory, "id" | "slug">[]).map((category) => [
+        category.id,
+        category.slug,
+      ]),
+    );
+
+    const ranked = normalizeShopProducts(rawProducts)
+      .filter((product) => product.image && CATALOG_IMAGE_FILES.has(product.image))
+      .map((product) => ({
+        product,
+        categorySlug: categorySlugById.get(product.category_id),
+        score: scoreFeaturedProduct(
+          product,
+          categorySlugById.get(product.category_id),
+          seasonalCategories,
+          today,
+          now,
+        ),
+      }))
+      .sort((a, b) => b.score - a.score);
+
+    const picked: ShopProduct[] = [];
+    const pickedCategories = new Set<string>();
+
+    for (const item of ranked) {
+      if (picked.length >= Math.min(limit, 6)) break;
+      if (item.categorySlug && pickedCategories.has(item.categorySlug)) continue;
+      picked.push(item.product);
+      if (item.categorySlug) pickedCategories.add(item.categorySlug);
+    }
+
+    for (const item of ranked) {
+      if (picked.length >= limit) break;
+      if (picked.some((product) => product.id === item.product.id)) continue;
+      picked.push(item.product);
+    }
+
+    return picked;
+  });
 
 export const listLatestProducts = createServerFn({ method: "GET" })
   .inputValidator((input: { limit?: number }) =>
@@ -949,7 +1185,10 @@ export const listProductsBySlugs = createServerFn({ method: "GET" })
       .eq("in_stock", true);
     if (error) throw new Error(error.message);
     const bySlug = new Map<string, ShopProduct>(
-      ((products ?? []) as ShopProduct[]).map((p) => [p.slug, p]),
+      normalizeShopProducts(products).map((p) => {
+        const product = p;
+        return [product.slug, product] as const;
+      }),
     );
     return data.slugs
       .map((s) => bySlug.get(s))
@@ -998,10 +1237,10 @@ export const searchShopProducts = createServerFn({ method: "GET" })
     const merged: ShopProduct[] = [];
     for (const r of results) {
       if (r.error) throw new Error(r.error.message);
-      for (const p of (r.data ?? []) as ShopProduct[]) {
+      for (const p of normalizeShopProducts(r.data)) {
         if (seen.has(p.id)) continue;
         seen.add(p.id);
-        merged.push(p);
+        merged.push(normalizeShopProduct(p));
         if (merged.length >= limit) break;
       }
       if (merged.length >= limit) break;
@@ -1095,7 +1334,7 @@ export const listOneProductPerCategorySlug = createServerFn({ method: "GET" })
       .in("category_id", ids)
       .eq("in_stock", true);
     if (error) throw new Error(error.message);
-    const all = ((products ?? []) as ShopProduct[]).filter(
+    const all = normalizeShopProducts(products).filter(
       (p) => p.image && CATALOG_IMAGE_FILES.has(p.image),
     );
     const slugById = new Map(catList.map((c) => [c.id, c.slug]));
@@ -1127,7 +1366,7 @@ export const listRelatedProducts = createServerFn({ method: "GET" })
       .neq("id", data.excludeId)
       .limit(data.limit ?? 4);
     if (error) throw new Error(error.message);
-    return (products ?? []) as ShopProduct[];
+    return normalizeShopProducts(products);
   });
 
 // ---------- Rentals ----------
@@ -1582,7 +1821,7 @@ export const getShopGroupView = createServerFn({ method: "GET" })
     const { data: rows, error: pe } = await q;
     if (pe) throw new Error(pe.message);
     products = sortByCatalogHierarchyThenNewest(
-      (rows ?? []) as ShopProductSummaryRow[],
+      (rows ?? []) as unknown as ShopProductSummaryRow[],
       catList,
       (subs ?? []) as ShopSubcategory[],
     ).map((r) => ({
@@ -1590,6 +1829,8 @@ export const getShopGroupView = createServerFn({ method: "GET" })
       description: null,
       legacy_id: null,
       features: [],
+      colors: normalizeShopProductColors((r as { colors?: unknown }).colors),
+      sizes: normalizeShopProductSizes((r as { sizes?: unknown }).sizes),
     })) as ShopProduct[];
     products = filterShopProductsForGroup(products, group.slug, catList);
 
@@ -1768,6 +2009,8 @@ export const getSaleProducts = createServerFn({ method: "GET" }).handler(async (
     description: null,
     legacy_id: null,
     features: [],
+    colors: normalizeShopProductColors(r.colors),
+    sizes: normalizeShopProductSizes(r.sizes),
   })) as ShopProduct[];
 
   const products = all

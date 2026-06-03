@@ -1,21 +1,13 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { listProductsBySlugs, type ShopProduct } from "@/lib/catalog.functions";
+import { listRecommendedProducts, type ShopProduct } from "@/lib/catalog.functions";
 import { ProductCard } from "./ProductCard";
-
-const FEATURED_SLUGS = [
-  "roliki-oxelo-learn-100-30-32-32-34-32-34-2440764376743",
-  "girya-10-kg-1940979943254661000",
-  "turisticheskiy-ryukzak-naturehike-rock-60-51-100036",
-  "palatka-naturehike-cloud-up-2-20d-2-h-mestnaya-dvuhsloynaya-1204091",
-  "vetrovka-explore-haki-12043040314845",
-];
 
 export function FeaturedProducts() {
   const [products, setProducts] = useState<ShopProduct[]>([]);
 
   useEffect(() => {
-    listProductsBySlugs({ data: { slugs: FEATURED_SLUGS } })
+    listRecommendedProducts({ data: { limit: 8 } })
       .then((arr) => setProducts(arr))
       .catch(() => setProducts([]));
   }, []);

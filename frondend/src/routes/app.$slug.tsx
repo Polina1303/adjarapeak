@@ -1,4 +1,5 @@
 import { createFileRoute, Link, notFound, useNavigate } from "@tanstack/react-router";
+import { useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -91,12 +92,17 @@ function AppPage() {
 function ProductView({ data }: { data: NonNullable<Awaited<ReturnType<typeof getShopProductBySlug>>> }) {
   const { product, category, group, related } = data;
   const navigate = useNavigate();
-  const mainImage = resolveCatalogImage(product.image);
+  const colors = Array.isArray(product.colors) ? product.colors : [];
+  const [selectedColor, setSelectedColor] = useState<string | null>(null);
+  const activeColor = colors.find((c) => c.color === selectedColor);
+  const mainImage = resolveCatalogImage(activeColor?.image || product.image);
 
   const inCart = useIsInCart(product.slug);
   const salePrice = getSalePrice(product.price, product.sale_price);
   const displayPrice = getDisplayPrice(product.price, product.sale_price);
   const discountPct = getDiscountPercent(product.price, product.sale_price);
+  const hasColors = colors.length > 0;
+  const hasSizes = (product.sizes?.length ?? 0) > 0;
 
   const handleAddToCart = () => {
     if (inCart) {
@@ -192,6 +198,43 @@ function ProductView({ data }: { data: NonNullable<Awaited<ReturnType<typeof get
               </motion.div>
 
               <div className="lg:hidden">
+                {hasColors && (
+                  <div className="mb-4">
+                    <div className="text-xs font-body uppercase tracking-[0.12em] text-muted-foreground mb-2">Цвет</div>
+                    <div className="flex items-center gap-2">
+                      {colors.map((c, i) => (
+                        <button
+                          key={`m-c-${c.color}-${i}`}
+                          type="button"
+                          title={c.color}
+                          onClick={() => setSelectedColor(c.color)}
+                          className={`w-8 h-8 rounded-md border shadow-sm transition-all ${
+                            selectedColor === c.color
+                              ? "border-ember ring-2 ring-ember"
+                              : "border-border hover:ring-2 hover:ring-ember/60"
+                          }`}
+                          style={{ backgroundColor: c.color }}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                )}
+                {hasSizes && (
+                  <div className="mb-4">
+                    <div className="text-xs font-body uppercase tracking-[0.12em] text-muted-foreground mb-2">Размер</div>
+                    <div className="flex items-center gap-2 flex-wrap">
+                      {product.sizes.map((s, i) => (
+                        <button
+                          key={`m-s-${s}-${i}`}
+                          type="button"
+                          className="min-w-[40px] h-10 px-3 rounded-md border border-border font-body text-sm text-foreground hover:border-ember hover:text-ember transition-colors"
+                        >
+                          {s}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
                 <div className="flex items-baseline gap-3 mb-4 flex-wrap">
                   <span className="font-display font-bold text-ember text-4xl">₾{displayPrice}</span>
                   {salePrice && (
@@ -257,6 +300,43 @@ function ProductView({ data }: { data: NonNullable<Awaited<ReturnType<typeof get
                 )}
                 <span className="text-sm text-muted-foreground font-body">/шт.</span>
               </div>
+              {hasColors && (
+                <div className="mb-4">
+                  <div className="text-xs font-body uppercase tracking-[0.12em] text-muted-foreground mb-2">Цвет</div>
+                  <div className="flex items-center gap-2">
+                    {colors.map((c, i) => (
+                      <button
+                        key={`${c.color}-${i}`}
+                        type="button"
+                        title={c.color}
+                        onClick={() => setSelectedColor(c.color)}
+                        className={`w-8 h-8 rounded-md border shadow-sm transition-all ${
+                          selectedColor === c.color
+                            ? "border-ember ring-2 ring-ember"
+                            : "border-border hover:ring-2 hover:ring-ember/60"
+                        }`}
+                        style={{ backgroundColor: c.color }}
+                      />
+                    ))}
+                  </div>
+                </div>
+              )}
+              {hasSizes && (
+                <div className="mb-6">
+                  <div className="text-xs font-body uppercase tracking-[0.12em] text-muted-foreground mb-2">Размер</div>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    {product.sizes.map((s, i) => (
+                      <button
+                        key={`${s}-${i}`}
+                        type="button"
+                        className="min-w-[40px] h-10 px-3 rounded-md border border-border font-body text-sm text-foreground hover:border-ember hover:text-ember transition-colors"
+                      >
+                        {s}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
               <Button
                 className={
                   inCart

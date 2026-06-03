@@ -19,6 +19,7 @@ export function ProductCard({ product: p, bordered = false }: Props) {
   const inCart = useIsInCart(p.slug);
   const { lang } = useLanguage();
   const text = getSiteText(lang).common;
+  const colors = Array.isArray(p.colors) ? p.colors : [];
   const handleAdd = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
@@ -76,6 +77,34 @@ export function ProductCard({ product: p, bordered = false }: Props) {
         <h3 className="font-body text-foreground text-sm leading-snug line-clamp-2">
           {p.title}
         </h3>
+        {(colors.length || p.sizes?.length) ? (
+          <div className="flex flex-col gap-2 pt-1">
+            {colors.length ? (
+              <div className="flex items-center gap-2">
+                {colors.slice(0, 6).map((c, i) => (
+                  <span
+                    key={`c-${c.color}-${i}`}
+                    className="w-5 h-5 rounded-sm border border-border shadow-sm"
+                    style={{ backgroundColor: c.color }}
+                    title={c.color}
+                  />
+                ))}
+              </div>
+            ) : null}
+            {p.sizes?.length ? (
+              <div className="flex items-center gap-2 flex-wrap">
+                {p.sizes.map((s, i) => (
+                  <span
+                    key={`s-${s}-${i}`}
+                    className="font-body text-xs font-semibold uppercase tracking-wider text-foreground/70"
+                  >
+                    {s}
+                  </span>
+                ))}
+              </div>
+            ) : null}
+          </div>
+        ) : null}
       </div>
       <div className="px-4 pb-4 mt-auto opacity-100 translate-y-0">
         <button

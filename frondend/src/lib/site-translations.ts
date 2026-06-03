@@ -114,6 +114,91 @@ export const SITE_TEXT = {
       mapTitle: "Магазин Adjara Peak — Батуми, улица Генерала Аслана Абашидзе, 19",
       mapLang: "ru",
     },
+    hikes: {
+      metaTitle: "Походы — Adjara Peak",
+      metaDescription:
+        "Авторские походы и горные туры в Аджарии и на Кавказе с гидами Adjara Peak.",
+      detailTitle: (title: string) => `${title} — Походы Adjara Peak`,
+      detailDescriptionFallback: "Поход с гидами Adjara Peak.",
+      detailTitleFallback: "Поход — Adjara Peak",
+      notFoundTitle: "Поход не найден",
+      indexTitle: "Походы по Грузии",
+      indexLead:
+        "Однодневные выезды и многодневные походы с опытными гидами. Полный комплект снаряжения по запросу.",
+      empty:
+        "Походы скоро появятся. Свяжитесь с нами, чтобы обсудить индивидуальный маршрут.",
+      allHikes: "Все походы",
+      book: "Записаться",
+      routeTitle: "О маршруте",
+      descriptionComing: "Подробное описание появится скоро.",
+      reasonsTitle: "Почему мне стоит пойти в этот поход",
+      faqTitle: "Частые вопросы",
+      galleryTitle: "Фотогалерея",
+      priceTitle: "Стоимость:",
+      includedTitle: "В стоимость входит:",
+      packingTitle: "Список вещей:",
+      distanceUnit: "км",
+      dateLocale: "ru-RU",
+      faq: [
+        {
+          question: "Что делать, если нет своего снаряжения?",
+          answer:
+            "Не проблема — у нас работает прокат. Снаряжение оплачивается отдельно: можно выбрать всё нужное в нашем каталоге аренды или просто написать нам, и мы сами подберём подходящий комплект под маршрут и ваш размер.",
+        },
+        {
+          question: "Сколько человек в группе?",
+          answer:
+            "В среднем собирается группа до 15 человек — достаточно компании, чтобы было весело, и при этом комфортно идти по тропе.",
+        },
+        {
+          question: "Во сколько выезд и возвращение?",
+          answer:
+            "Стартуем рано утром, обычно между 8:00 и 9:00. Обратно в город возвращаемся вечером — ориентировочно с 21:00 до 23:00, в зависимости от темпа группы и дорожной обстановки.",
+        },
+      ],
+      demoFeatures: [
+        "Трансфер на комфортабельном микроавтобусе",
+        "Сопровождение инструктора",
+        "Питание (ланч пакет для перекуса на маршруте и горячий ужин в конце похода)",
+        "Групповая аптечка",
+        "Групповое снаряжение (газ, газовая горелка, котелок, рации и др.)",
+      ],
+      demoPackingList: [
+        {
+          title: "Снаряжение",
+          items: [
+            "Рюкзак объемом 10-20 литров",
+            "Треккинговые палки",
+            "Солнцезащитные очки",
+            "Сидушка туристическая",
+            "Налобный фонарь",
+          ],
+        },
+        {
+          title: "Одежда и обувь",
+          items: [
+            "Треккинговые ботинки и запасная обувь",
+            "Термобельё",
+            "Штаны ходовые, ветровка",
+            "Тёплая кофта из флиса",
+            "Кепка, лёгкие перчатки",
+            "Купальный костюм и полотенце (если планируете купаться в водопаде)",
+          ],
+        },
+        {
+          title: "Личные вещи",
+          items: [
+            "Индивидуальная аптечка",
+            "Кружка, ложка, миска",
+            "Гигиеническая помада",
+            "Телефон",
+            "Фотоаппарат",
+            "Термос",
+            "Вода (не менее 1,5 л)",
+          ],
+        },
+      ],
+    },
     service: {
       heroTitle: "Готовим лыжи и сноуборды к лучшему сезону",
       heroText:
@@ -123,6 +208,12 @@ export const SITE_TEXT = {
       sectionTitle: "Сервисное обслуживание",
       sectionText:
         "Цены актуальны для лыж и сноубордов. Нестандартные работы — по согласованию с мастером.",
+      winterSeason: "Зимний сезон",
+      summerSeason: "Летний сезон",
+      winterSectionText:
+        "Цены актуальны для лыж и сноубордов. Нестандартные работы — по согласованию с мастером.",
+      summerSectionText:
+        "Цены актуальны для велосипедов. Нестандартные работы — по согласованию с мастером.",
       serviceColumn: "Услуга",
       priceColumn: "Цена",
       galleryTitle: "До и после в одном кадре",
@@ -167,6 +258,24 @@ export const SITE_TEXT = {
           desc: "Монтаж креплений, регулировка по росту, весу и уровню катания.",
           price: "от 30 ₾",
         },
+      ],
+      summerServices: [
+        {
+          title: "Чистка трансмиссии",
+          desc: "Полная чистка трансмиссии с последующей смазкой цепи и узлов. Смазка оплачивается отдельно.",
+          price: "50 ₾",
+          highlight: true,
+        },
+        { title: "Установка аксессуаров", desc: "Монтаж крыльев, флягодержателей, велокомпьютеров и других аксессуаров.", price: "10 ₾" },
+        { title: "Замена кассеты", desc: "Снятие изношенной кассеты и установка новой.", price: "15 ₾" },
+        { title: "Замена цепи", desc: "Демонтаж старой цепи и установка новой с подгонкой длины.", price: "15 ₾" },
+        { title: "Прокачка тормозов", desc: "Прокачка гидравлической линии одного контура, удаление воздуха.", price: "35 ₾" },
+        { title: "Замена тормозных колодок", desc: "Установка новых колодок с проверкой ротора и суппорта.", price: "15 ₾" },
+        { title: "Настройка дисковых тормозов", desc: "Центровка суппорта, устранение трения и настройка хода ручки.", price: "30 ₾" },
+        { title: "Замена камеры", desc: "Снятие покрышки, замена камеры и накачка до рабочего давления.", price: "20 ₾" },
+        { title: "Замена покрышки", desc: "Демонтаж старой покрышки и установка новой с центровкой.", price: "20 ₾" },
+        { title: "Устранение прокола", desc: "Поиск прокола, заклейка камеры и обратная сборка колеса.", price: "15 ₾" },
+        { title: "Смазка и обслуживание эксцентрика", desc: "Разборка, чистка и смазка эксцентрикового зажима втулки.", price: "10 ₾" },
       ],
       features: [
         {
@@ -349,6 +458,91 @@ export const SITE_TEXT = {
       mapTitle: "Adjara Peak store — 19 General Aslan Abashidze St, Batumi",
       mapLang: "en",
     },
+    hikes: {
+      metaTitle: "Hikes — Adjara Peak",
+      metaDescription:
+        "Signature hikes and mountain tours in Adjara and across the Caucasus with Adjara Peak guides.",
+      detailTitle: (title: string) => `${title} — Adjara Peak Hikes`,
+      detailDescriptionFallback: "A guided hike with Adjara Peak.",
+      detailTitleFallback: "Hike — Adjara Peak",
+      notFoundTitle: "Hike not found",
+      indexTitle: "Hiking in Georgia",
+      indexLead:
+        "One-day trips and multi-day hikes with experienced guides. Full gear set available on request.",
+      empty:
+        "Hikes will appear soon. Contact us to discuss a custom route.",
+      allHikes: "All hikes",
+      book: "Book",
+      routeTitle: "About the route",
+      descriptionComing: "A detailed description will appear soon.",
+      reasonsTitle: "Why this hike is worth joining",
+      faqTitle: "FAQ",
+      galleryTitle: "Photo gallery",
+      priceTitle: "Price:",
+      includedTitle: "Included in the price:",
+      packingTitle: "Packing list:",
+      distanceUnit: "km",
+      dateLocale: "en-US",
+      faq: [
+        {
+          question: "What if I do not have my own gear?",
+          answer:
+            "No problem — we have rental gear. Equipment is paid separately: choose everything you need in our rental catalog, or simply message us and we will put together the right set for the route and your size.",
+        },
+        {
+          question: "How many people are in the group?",
+          answer:
+            "Groups usually have up to 15 people — enough company to make it fun, while still keeping the pace comfortable on the trail.",
+        },
+        {
+          question: "What time do we leave and return?",
+          answer:
+            "We start early in the morning, usually between 8:00 and 9:00. We return to the city in the evening, approximately between 21:00 and 23:00, depending on the group's pace and road conditions.",
+        },
+      ],
+      demoFeatures: [
+        "Transfer by comfortable minibus",
+        "Instructor support",
+        "Meals (lunch pack for the route and a hot dinner after the hike)",
+        "Group first-aid kit",
+        "Group gear (gas, stove, pot, radios and more)",
+      ],
+      demoPackingList: [
+        {
+          title: "Gear",
+          items: [
+            "10-20 liter backpack",
+            "Trekking poles",
+            "Sunglasses",
+            "Sit pad",
+            "Headlamp",
+          ],
+        },
+        {
+          title: "Clothing and footwear",
+          items: [
+            "Trekking boots and spare shoes",
+            "Base layers",
+            "Hiking pants and windbreaker",
+            "Warm fleece layer",
+            "Cap and light gloves",
+            "Swimsuit and towel if you plan to swim in the waterfall",
+          ],
+        },
+        {
+          title: "Personal items",
+          items: [
+            "Personal first-aid kit",
+            "Cup, spoon and bowl",
+            "Lip balm",
+            "Phone",
+            "Camera",
+            "Thermos",
+            "Water, at least 1.5 l",
+          ],
+        },
+      ],
+    },
     service: {
       heroTitle: "We tune skis and snowboards for your best season",
       heroText:
@@ -358,6 +552,12 @@ export const SITE_TEXT = {
       sectionTitle: "Service Center",
       sectionText:
         "Prices apply to skis and snowboards. Custom jobs are agreed with the technician.",
+      winterSeason: "Winter season",
+      summerSeason: "Summer season",
+      winterSectionText:
+        "Prices apply to skis and snowboards. Custom jobs are agreed with the technician.",
+      summerSectionText:
+        "Prices apply to bicycles. Custom jobs are agreed with the technician.",
       serviceColumn: "Service",
       priceColumn: "Price",
       galleryTitle: "Before and after in one frame",
@@ -402,6 +602,24 @@ export const SITE_TEXT = {
           desc: "Binding installation and adjustment for height, weight and riding level.",
           price: "from 30 ₾",
         },
+      ],
+      summerServices: [
+        {
+          title: "Drivetrain cleaning",
+          desc: "Full drivetrain cleaning followed by chain and component lubrication. Lubricant is charged separately.",
+          price: "50 ₾",
+          highlight: true,
+        },
+        { title: "Accessory installation", desc: "Mounting fenders, bottle cages, bike computers and other accessories.", price: "10 ₾" },
+        { title: "Cassette replacement", desc: "Removing a worn cassette and installing a new one.", price: "15 ₾" },
+        { title: "Chain replacement", desc: "Removing the old chain and fitting a new one to length.", price: "15 ₾" },
+        { title: "Brake bleeding", desc: "Bleeding one hydraulic brake circuit and removing air from the line.", price: "35 ₾" },
+        { title: "Brake pad replacement", desc: "Installing new pads with rotor and caliper check.", price: "15 ₾" },
+        { title: "Disc brake adjustment", desc: "Caliper centering, rub removal and lever feel adjustment.", price: "30 ₾" },
+        { title: "Tube replacement", desc: "Removing the tire, replacing the inner tube and inflating to working pressure.", price: "20 ₾" },
+        { title: "Tire replacement", desc: "Removing the old tire and installing a new one with centering.", price: "20 ₾" },
+        { title: "Puncture repair", desc: "Finding the puncture, patching the tube and reassembling the wheel.", price: "15 ₾" },
+        { title: "Quick-release service", desc: "Disassembly, cleaning and lubrication of the hub quick-release clamp.", price: "10 ₾" },
       ],
       features: [
         {
@@ -584,6 +802,91 @@ export const SITE_TEXT = {
       mapTitle: "Adjara Peak-ის მაღაზია — ბათუმი, გენერალ ასლან აბაშიძის ქ. 19",
       mapLang: "ka",
     },
+    hikes: {
+      metaTitle: "ლაშქრობები — Adjara Peak",
+      metaDescription:
+        "ავტორული ლაშქრობები და მთის ტურები აჭარასა და კავკასიაში Adjara Peak-ის გიდებთან ერთად.",
+      detailTitle: (title: string) => `${title} — Adjara Peak-ის ლაშქრობები`,
+      detailDescriptionFallback: "ლაშქრობა Adjara Peak-ის გიდებთან ერთად.",
+      detailTitleFallback: "ლაშქრობა — Adjara Peak",
+      notFoundTitle: "ლაშქრობა ვერ მოიძებნა",
+      indexTitle: "ლაშქრობები საქართველოში",
+      indexLead:
+        "ერთდღიანი გასვლები და მრავალდღიანი ლაშქრობები გამოცდილ გიდებთან ერთად. სრული აღჭურვილობა ხელმისაწვდომია მოთხოვნით.",
+      empty:
+        "ლაშქრობები მალე გამოჩნდება. დაგვიკავშირდით ინდივიდუალური მარშრუტის შესათანხმებლად.",
+      allHikes: "ყველა ლაშქრობა",
+      book: "ჩაწერა",
+      routeTitle: "მარშრუტის შესახებ",
+      descriptionComing: "დეტალური აღწერა მალე გამოჩნდება.",
+      reasonsTitle: "რატომ ღირს ამ ლაშქრობაში წამოსვლა",
+      faqTitle: "ხშირი კითხვები",
+      galleryTitle: "ფოტოგალერეა",
+      priceTitle: "ფასი:",
+      includedTitle: "ფასში შედის:",
+      packingTitle: "საჭირო ნივთები:",
+      distanceUnit: "კმ",
+      dateLocale: "ka-GE",
+      faq: [
+        {
+          question: "რა ვქნა, თუ საკუთარი აღჭურვილობა არ მაქვს?",
+          answer:
+            "პრობლემა არ არის — გვაქვს ქირაობის სერვისი. აღჭურვილობა ცალკე იფარება: შეგიძლიათ აირჩიოთ საჭირო ნივთები ჩვენს ქირაობის კატალოგში, ან მოგვწეროთ და ჩვენ თვითონ შეგირჩევთ მარშრუტსა და ზომაზე მორგებულ კომპლექტს.",
+        },
+        {
+          question: "რამდენი ადამიანია ჯგუფში?",
+          answer:
+            "ჩვეულებრივ ჯგუფში 15 ადამიანამდეა — საკმარისი კომპანია კარგი განწყობისთვის და ამავე დროს კომფორტული ტემპი ბილიკზე.",
+        },
+        {
+          question: "რომელ საათზე გავდივართ და ვბრუნდებით?",
+          answer:
+            "გავდივართ დილით ადრე, ჩვეულებრივ 8:00-დან 9:00-მდე. ქალაქში ვბრუნდებით საღამოს, დაახლოებით 21:00-დან 23:00-მდე, ჯგუფის ტემპისა და გზის პირობების მიხედვით.",
+        },
+      ],
+      demoFeatures: [
+        "ტრანსფერი კომფორტული მიკროავტობუსით",
+        "ინსტრუქტორის თანხლება",
+        "კვება (ლანჩ-პაკეტი მარშრუტზე და ცხელი ვახშამი ლაშქრობის ბოლოს)",
+        "ჯგუფური აფთიაქი",
+        "ჯგუფური აღჭურვილობა (გაზი, გაზქურა, ქვაბი, რაციები და სხვა)",
+      ],
+      demoPackingList: [
+        {
+          title: "აღჭურვილობა",
+          items: [
+            "10-20 ლიტრიანი ზურგჩანთა",
+            "ტრეკინგის ჯოხები",
+            "მზის სათვალე",
+            "ტურისტული დასაჯდომი",
+            "თავის ფანარი",
+          ],
+        },
+        {
+          title: "ტანსაცმელი და ფეხსაცმელი",
+          items: [
+            "ტრეკინგის ფეხსაცმელი და სათადარიგო ფეხსაცმელი",
+            "თერმული საცვალი",
+            "სალაშქრო შარვალი და ქარსაცავი",
+            "თბილი ფლისის ზედა",
+            "კეპი და მსუბუქი ხელთათმანები",
+            "საცურაო კოსტიუმი და პირსახოცი, თუ ჩანჩქერში ბანაობას გეგმავთ",
+          ],
+        },
+        {
+          title: "პირადი ნივთები",
+          items: [
+            "პირადი აფთიაქი",
+            "ჭიქა, კოვზი და ჯამი",
+            "ჰიგიენური ტუჩსაცხი",
+            "ტელეფონი",
+            "ფოტოაპარატი",
+            "თერმოსი",
+            "წყალი, მინიმუმ 1.5 ლ",
+          ],
+        },
+      ],
+    },
     service: {
       heroTitle: "ვამზადებთ თხილამურებსა და სნოუბორდებს საუკეთესო სეზონისთვის",
       heroText:
@@ -593,6 +896,12 @@ export const SITE_TEXT = {
       sectionTitle: "სერვისული მომსახურება",
       sectionText:
         "ფასები მოქმედებს თხილამურებისა და სნოუბორდებისთვის. არასტანდარტული სამუშაოები შეთანხმებით.",
+      winterSeason: "ზამთრის სეზონი",
+      summerSeason: "ზაფხულის სეზონი",
+      winterSectionText:
+        "ფასები მოქმედებს თხილამურებისა და სნოუბორდებისთვის. არასტანდარტული სამუშაოები შეთანხმებით.",
+      summerSectionText:
+        "ფასები მოქმედებს ველოსიპედებისთვის. არასტანდარტული სამუშაოები შეთანხმებით.",
       serviceColumn: "სერვისი",
       priceColumn: "ფასი",
       galleryTitle: "მანამდე და შემდეგ ერთ კადრში",
@@ -637,6 +946,24 @@ export const SITE_TEXT = {
           desc: "სამაგრების მონტაჟი და მორგება სიმაღლის, წონისა და დონის მიხედვით.",
           price: "30 ₾-დან",
         },
+      ],
+      summerServices: [
+        {
+          title: "ტრანსმისიის წმენდა",
+          desc: "ტრანსმისიის სრული წმენდა და შემდეგ ჯაჭვისა და კვანძების შეზეთვა. საპოხი ცალკე ანგარიშდება.",
+          price: "50 ₾",
+          highlight: true,
+        },
+        { title: "აქსესუარების დაყენება", desc: "ფრთების, ბოთლის სამაგრების, ველოკომპიუტერებისა და სხვა აქსესუარების მონტაჟი.", price: "10 ₾" },
+        { title: "კასეტის შეცვლა", desc: "გაცვეთილი კასეტის მოხსნა და ახლის დაყენება.", price: "15 ₾" },
+        { title: "ჯაჭვის შეცვლა", desc: "ძველი ჯაჭვის მოხსნა და ახლის მორგება სიგრძეზე.", price: "15 ₾" },
+        { title: "მუხრუჭების დაჰაერება", desc: "ერთი ჰიდრავლიკური მუხრუჭის ხაზის დაჰაერება და ჰაერის მოცილება.", price: "35 ₾" },
+        { title: "მუხრუჭის ხუნდების შეცვლა", desc: "ახალი ხუნდების დაყენება როტორისა და კალიპერის შემოწმებით.", price: "15 ₾" },
+        { title: "დისკური მუხრუჭების რეგულირება", desc: "კალიპერის ცენტრირება, ხახუნის მოცილება და სახელურის სვლის მორგება.", price: "30 ₾" },
+        { title: "კამერის შეცვლა", desc: "საბურავის მოხსნა, კამერის შეცვლა და სამუშაო წნევამდე დაბერვა.", price: "20 ₾" },
+        { title: "საბურავის შეცვლა", desc: "ძველი საბურავის მოხსნა და ახლის დაყენება ცენტრირებით.", price: "20 ₾" },
+        { title: "პუნქციის შეკეთება", desc: "პუნქციის პოვნა, კამერის დაწებება და ბორბლის აწყობა.", price: "15 ₾" },
+        { title: "ექსცენტრიკის მომსახურება", desc: "ბორბლის ექსცენტრიკული დამჭერის დაშლა, წმენდა და შეზეთვა.", price: "10 ₾" },
       ],
       features: [
         {

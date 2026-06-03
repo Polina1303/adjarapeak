@@ -1,4 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { useEffect } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
@@ -24,6 +25,9 @@ import {
   CarouselProgress,
 } from "@/components/ui/carousel";
 import { getHikeBySlug } from "@/lib/hikes.functions";
+import { localizeHike } from "@/lib/hike-translations";
+import { useLanguage } from "@/lib/i18n";
+import { getSiteText } from "@/lib/site-translations";
 
 export const Route = createFileRoute("/hikes/$slug")({
   staleTime: 5 * 60 * 1000,
@@ -55,24 +59,34 @@ export const Route = createFileRoute("/hikes/$slug")({
       : [{ title: "Поход — Adjara Peak" }],
   }),
   component: HikePage,
-  notFoundComponent: () => (
+  notFoundComponent: HikeNotFound,
+});
+
+function HikeNotFound() {
+  const { lang } = useLanguage();
+  const text = getSiteText(lang).hikes;
+
+  return (
     <div className="min-h-screen bg-background">
       <Header />
       <div className="pt-32 pb-24 section-padding text-center">
         <h1 className="font-display text-3xl font-bold mb-4">
-          Поход не найден
+          {text.notFoundTitle}
         </h1>
         <Link to="/hikes" className="text-ember hover:underline">
-          Все походы
+          {text.allHikes}
         </Link>
       </div>
       <Footer />
     </div>
-  ),
-});
+  );
+}
 
 function HikePage() {
-  const hike = Route.useLoaderData();
+  const rawHike = Route.useLoaderData();
+  const { lang } = useLanguage();
+  const text = getSiteText(lang).hikes;
+  const hike = localizeHike(rawHike, lang);
   const price =
     hike.sale_price && hike.sale_price < hike.price
       ? hike.sale_price
@@ -80,7 +94,7 @@ function HikePage() {
   const hasDiscount = price !== hike.price;
 
   const dateLabel = hike.start_date
-    ? new Date(hike.start_date).toLocaleDateString("ru-RU", {
+    ? new Date(hike.start_date).toLocaleDateString(text.dateLocale, {
         day: "2-digit",
         month: "2-digit",
         year: "numeric",
@@ -92,58 +106,15 @@ function HikePage() {
   const metaRows: { icon: typeof Calendar; text: string }[] = [];
   if (dateTimeLabel) metaRows.push({ icon: Calendar, text: dateTimeLabel });
   if (hike.distance_km != null)
-    metaRows.push({ icon: RouteIcon, text: `${hike.distance_km} км` });
+    metaRows.push({ icon: RouteIcon, text: `${hike.distance_km} ${text.distanceUnit}` });
   if (hike.difficulty) metaRows.push({ icon: Mountain, text: hike.difficulty });
   metaRows.push({ icon: Wallet, text: `${price} ₾` });
 
   const reasons = hike.reasons;
 
-  const demoFeatures = [
-    "Трансфер на комфортабельном микроавтобусе",
-    "Сопровождение инструктора",
-    "Питание (ланч пакет для перекуса на маршруте и горячий ужин в конце похода)",
-    "Групповая аптечка",
-    "Групповое снаряжение (газ, газовая горелка, котелок, рации и др.)",
-  ];
-  const features = hike.features.length > 0 ? hike.features : demoFeatures;
-
-  const demoPackingList = [
-    {
-      title: "Снаряжение",
-      items: [
-        "Рюкзак объемом 10-20 литров",
-        "Треккинговые палки",
-        "Солнцезащитные очки",
-        "Сидушка туристическая",
-        "Налобный фонарь",
-      ],
-    },
-    {
-      title: "Одежда и обувь",
-      items: [
-        "Треккинговые ботинки и запасная обувь",
-        "Термобельё",
-        "Штаны ходовые, ветровка",
-        "Тёплая кофта из флиса",
-        "Кепка, лёгкие перчатки",
-        "Купальный костюм и полотенце (если планируете купаться в водопаде)",
-      ],
-    },
-    {
-      title: "Личные вещи",
-      items: [
-        "Индивидуальная аптечка",
-        "Кружка, ложка, миска",
-        "Гигиеническая помада",
-        "Телефон",
-        "Фотоаппарат",
-        "Термос",
-        "Вода (не менее 1,5 л)",
-      ],
-    },
-  ];
+  const features = hike.features.length > 0 ? hike.features : text.demoFeatures;
   const packingList =
-    hike.packing_list.length > 0 ? hike.packing_list : demoPackingList;
+    hike.packing_list.length > 0 ? hike.packing_list : text.demoPackingList;
 
   const demoPhotos = [
     "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=900&q=80",
@@ -160,6 +131,15 @@ function HikePage() {
     0,
     6,
   );
+
+  useEffect(() => {
+    document.title = text.detailTitle(hike.title);
+    const meta = document.querySelector<HTMLMetaElement>('meta[name="description"]');
+    if (meta) {
+      meta.content =
+        hike.shortly ?? hike.description?.slice(0, 160) ?? text.detailDescriptionFallback;
+    }
+  }, [hike.description, hike.shortly, hike.title, text]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -183,7 +163,7 @@ function HikePage() {
                 to="/hikes"
                 className="inline-flex items-center gap-1 text-xs font-body uppercase tracking-wider text-white/80 hover:text-white mb-10"
               >
-                <ChevronLeft className="h-3.5 w-3.5" /> Все походы
+                <ChevronLeft className="h-3.5 w-3.5" /> {text.allHikes}
               </Link>
               <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center mx-0 px-0">
                 {/* RIGHT — meta rows */}
@@ -227,7 +207,7 @@ function HikePage() {
                     rel="noopener noreferrer"
                     className="inline-flex justify-center items-center gap-2 bg-ember text-ember-foreground hover:bg-ember/90 transition-colors px-10 py-4 rounded-full font-display text-sm uppercase tracking-wider"
                   >
-                    Записаться
+                    {text.book}
                   </a>
                 </div>
               </div>
@@ -240,7 +220,7 @@ function HikePage() {
           <div className="max-w-6xl mx-auto">
             <div className="py-2">
               <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-4">
-                О маршруте
+                {text.routeTitle}
               </h2>
               {hike.description ? (
                 <div className="font-body text-sm md:text-base text-foreground/80 leading-relaxed whitespace-pre-line">
@@ -248,7 +228,7 @@ function HikePage() {
                 </div>
               ) : (
                 <p className="font-body text-sm text-muted-foreground">
-                  Подробное описание появится скоро.
+                  {text.descriptionComing}
                 </p>
               )}
             </div>
@@ -260,7 +240,7 @@ function HikePage() {
           <section className="section-padding pt-0 pb-12 md:pb-16">
             <div className="max-w-6xl mx-auto">
               <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-8 md:mb-12 text-center">
-                Почему мне стоит пойти в этот поход
+                {text.reasonsTitle}
               </h2>
 
               {/* Mobile: shadcn carousel */}
@@ -317,42 +297,19 @@ function HikePage() {
         <section className="section-padding pb-16 md:pb-24">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-6 md:mb-10 text-center">
-              Частые вопросы
+              {text.faqTitle}
             </h2>
             <Accordion type="multiple" className="text-left">
-              <AccordionItem value="faq-1" className="border-b border-border">
-                <AccordionTrigger className="font-display text-base md:text-lg font-bold text-foreground hover:no-underline py-5 text-left">
-                  Что делать, если нет своего снаряжения?
-                </AccordionTrigger>
-                <AccordionContent className="pb-5 font-body text-sm md:text-base text-foreground/80 leading-relaxed">
-                  Не проблема — у нас работает прокат. Снаряжение оплачивается
-                  отдельно: можно выбрать всё нужное в нашем каталоге аренды или
-                  просто написать нам, и мы сами подберём подходящий комплект
-                  под маршрут и ваш размер.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="faq-2" className="border-b border-border">
-                <AccordionTrigger className="font-display text-base md:text-lg font-bold text-foreground hover:no-underline py-5 text-left">
-                  Сколько человек в группе?
-                </AccordionTrigger>
-                <AccordionContent className="pb-5 font-body text-sm md:text-base text-foreground/80 leading-relaxed">
-                  В среднем собирается группа до 15 человек — достаточно
-                  компании, чтобы было весело, и при этом комфортно идти по
-                  тропе.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="faq-3" className="border-b border-border">
-                <AccordionTrigger className="font-display text-base md:text-lg font-bold text-foreground hover:no-underline py-5 text-left">
-                  Во сколько выезд и возвращение?
-                </AccordionTrigger>
-                <AccordionContent className="pb-5 font-body text-sm md:text-base text-foreground/80 leading-relaxed">
-                  Стартуем рано утром, обычно между 8:00 и 9:00. Обратно в город
-                  возвращаемся вечером — ориентировочно с 21:00 до 23:00, в
-                  зависимости от темпа группы и дорожной обстановки.
-                </AccordionContent>
-              </AccordionItem>
+              {text.faq.map((item, index) => (
+                <AccordionItem key={item.question} value={`faq-${index + 1}`} className="border-b border-border">
+                  <AccordionTrigger className="font-display text-base md:text-lg font-bold text-foreground hover:no-underline py-5 text-left">
+                    {item.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-5 font-body text-sm md:text-base text-foreground/80 leading-relaxed">
+                    {item.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
             </Accordion>
           </div>
         </section>
@@ -362,7 +319,7 @@ function HikePage() {
           <section className="section-padding pb-16 md:pb-24">
             <div className="max-w-6xl mx-auto">
               <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-8 md:mb-12 text-center">
-                Фотогалерея
+                {text.galleryTitle}
               </h2>
               <div className="flex flex-col gap-3 md:gap-4">
                 {Array.from({ length: Math.ceil(photos.length / 2) }).map(
@@ -433,7 +390,7 @@ function HikePage() {
         <section className="section-padding pt-0 pb-12 md:pb-20">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-6">
-              Стоимость:
+              {text.priceTitle}
             </h2>
             <div className="font-display text-2xl md:text-4xl font-bold text-foreground mb-8">
               {price} ₾
@@ -444,7 +401,7 @@ function HikePage() {
               rel="noopener noreferrer"
               className="inline-flex justify-center items-center gap-2 bg-ember text-ember-foreground hover:bg-ember/90 transition-colors px-12 py-4 rounded-full font-display text-sm uppercase tracking-wider mb-10 md:mb-14"
             >
-              Записаться
+              {text.book}
             </a>
 
             <Accordion type="multiple" className="text-left">
@@ -453,7 +410,7 @@ function HikePage() {
                 className="border-b border-border"
               >
                 <AccordionTrigger className="font-display text-lg md:text-xl font-bold text-foreground hover:no-underline py-5">
-                  В стоимость входит:
+                  {text.includedTitle}
                 </AccordionTrigger>
                 <AccordionContent className="pb-5">
                   <ul className="space-y-3">
@@ -472,7 +429,7 @@ function HikePage() {
 
               <AccordionItem value="packing" className="border-b border-border">
                 <AccordionTrigger className="font-display text-lg md:text-xl font-bold text-foreground hover:no-underline py-5">
-                  Список вещей:
+                  {text.packingTitle}
                 </AccordionTrigger>
                 <AccordionContent className="pb-5">
                   <div className="space-y-6">
