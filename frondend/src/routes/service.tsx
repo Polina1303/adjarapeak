@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
-import { Wrench, Snowflake, Droplets, ShieldCheck, Clock, MapPin, Phone } from "lucide-react";
-import bannerSki from "@/assets/banner-ski.jpg";
+import { Wrench, Snowflake, Droplets, ShieldCheck, Clock, MapPin, Phone, Bike, Cog, CircleDot } from "lucide-react";
+import bannerBike from "@/assets/banner-bike.jpg";
 import s0 from "@/assets/service-0.jpg";
 import s1 from "@/assets/service-1.jpg";
 import s2 from "@/assets/service-2.jpg";
@@ -20,7 +20,7 @@ export const Route = createFileRoute("/service")({
       { name: "description", content: "Заточка кантов, парафин, ремонт скользящей поверхности лыж и сноубордов в Батуми. Профессиональный сервис Adjara Peak." },
       { property: "og:title", content: "Сервисный центр — Adjara Peak" },
       { property: "og:description", content: "Профессиональный сервис лыж и сноубордов в Батуми: заточка кантов, парафин, ремонт." },
-      { property: "og:image", content: bannerSki },
+      { property: "og:image", content: bannerBike },
     ],
   }),
   component: ServicePage,
@@ -46,7 +46,8 @@ type ServicePriceRow = {
   price_ka?: string | null;
 };
 
-const featureIcons = [Wrench, Snowflake, Droplets, ShieldCheck];
+const winterFeatureIcons = [Wrench, Snowflake, Droplets, ShieldCheck];
+const summerFeatureIcons = [Bike, Cog, CircleDot, ShieldCheck];
 const gallery = [s0, s1, s2, s3];
 
 function getTranslatedValue(
@@ -75,10 +76,14 @@ function ServicePage() {
   const [season, setSeason] = useState<"winter" | "summer">("summer");
   const [winterServices, setWinterServices] = useState<Service[]>([]);
   const [summerServices, setSummerServices] = useState<Service[]>([]);
-  const features = text.features.map((feature, index) => ({
+  const featureSource = season === "winter" ? text.features : text.summerFeatures;
+  const featureIcons = season === "winter" ? winterFeatureIcons : summerFeatureIcons;
+  const features = featureSource.map((feature, index) => ({
     ...feature,
     icon: featureIcons[index] ?? Wrench,
   }));
+  const heroTitle = season === "winter" ? text.heroTitle : text.summerHeroTitle;
+  const heroText = season === "winter" ? text.heroText : text.summerHeroText;
 
   useEffect(() => {
     (async () => {
@@ -134,7 +139,7 @@ function ServicePage() {
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-25"
-          style={{ backgroundImage: `url(${bannerSki})` }}
+          style={{ backgroundImage: `url(${bannerBike})` }}
           aria-hidden
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/80 to-background" aria-hidden />
@@ -146,10 +151,10 @@ function ServicePage() {
               className="max-w-3xl"
             >
               <h1 className="font-display text-4xl md:text-7xl font-bold text-foreground leading-[1.05] md:leading-[0.95] mb-6">
-                {text.heroTitle}
+                {heroTitle}
               </h1>
               <p className="text-muted-foreground font-body text-base md:text-lg leading-relaxed max-w-2xl mb-8">
-                {text.heroText}
+                {heroText}
               </p>
               <div className="flex flex-wrap gap-3 w-full">
                 <a

@@ -117,13 +117,18 @@ function RentalCard({
                 type="button"
                 onClick={handleAdd}
                 disabled={!item.available}
-                className={`flex items-center justify-center w-full h-11 rounded-full font-body text-sm uppercase tracking-wider disabled:opacity-50 disabled:cursor-not-allowed transition-colors ${
+                className={`flex items-center justify-center w-full h-11 rounded-full font-body text-xs sm:text-sm uppercase tracking-wider disabled:opacity-50 disabled:cursor-not-allowed transition-colors ${
                   inCart
                     ? "bg-foreground text-background hover:bg-foreground/90"
                     : "bg-ember text-primary-foreground hover:bg-ember/90"
                 }`}
               >
-                {!item.available ? text.occupied : inCart ? text.inCart : text.addToCart}
+                {!item.available ? text.occupied : inCart ? text.inCart : (
+                  <>
+                    <span className="hidden sm:inline">{text.addToCart}</span>
+                    <span className="sm:hidden">{text.addToCartShort}</span>
+                  </>
+                )}
               </button>
             </div>
     </Link>

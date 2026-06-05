@@ -51,7 +51,7 @@ const headerText: Record<
     contacts: "Контакты",
     homeAria: "На главную",
     cartAria: "Перейти в корзину",
-    searchProducts: "Поиск товаров",
+    searchProducts: "Поиск товаров и аренды",
     openMenu: "Открыть меню",
     closeMenu: "Закрыть меню",
   },
@@ -64,7 +64,7 @@ const headerText: Record<
     contacts: "Contacts",
     homeAria: "Go to home page",
     cartAria: "Go to cart",
-    searchProducts: "Search products",
+    searchProducts: "Search shop and rentals",
     openMenu: "Open menu",
     closeMenu: "Close menu",
   },
@@ -77,7 +77,7 @@ const headerText: Record<
     contacts: "კონტაქტები",
     homeAria: "მთავარ გვერდზე გადასვლა",
     cartAria: "კალათაში გადასვლა",
-    searchProducts: "პროდუქტის ძებნა",
+    searchProducts: "მაღაზიისა და ქირაობის ძებნა",
     openMenu: "მენიუს გახსნა",
     closeMenu: "მენიუს დახურვა",
   },
@@ -146,7 +146,7 @@ export function Header({ transparent = false }: { transparent?: boolean }) {
             e.preventDefault();
             const q = searchQuery.trim();
             if (!q) return;
-            navigate({ to: "/sale/search", search: { q } });
+            navigate({ to: "/search", search: { q } });
           }}
           className="relative flex-1 min-w-0"
           role="search"

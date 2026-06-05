@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ServiceRouteImport } from './routes/service'
+import { Route as SearchRouteImport } from './routes/search'
 import { Route as SaleRouteImport } from './routes/sale'
 import { Route as RockClimbingRouteImport } from './routes/rockClimbing'
 import { Route as RentRouteImport } from './routes/rent'
@@ -36,6 +37,11 @@ import { Route as AdminAdminTTableRouteImport } from './routes/_admin/admin.t.$t
 const ServiceRoute = ServiceRouteImport.update({
   id: '/service',
   path: '/service',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SearchRoute = SearchRouteImport.update({
+  id: '/search',
+  path: '/search',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SaleRoute = SaleRouteImport.update({
@@ -157,6 +163,7 @@ export interface FileRoutesByFullPath {
   '/rent': typeof RentRouteWithChildren
   '/rockClimbing': typeof RockClimbingRoute
   '/sale': typeof SaleRouteWithChildren
+  '/search': typeof SearchRoute
   '/service': typeof ServiceRoute
   '/admin/login': typeof AdminLoginRoute
   '/app/$slug': typeof AppSlugRoute
@@ -181,6 +188,7 @@ export interface FileRoutesByTo {
   '/rent': typeof RentRouteWithChildren
   '/rockClimbing': typeof RockClimbingRoute
   '/sale': typeof SaleRouteWithChildren
+  '/search': typeof SearchRoute
   '/service': typeof ServiceRoute
   '/admin/login': typeof AdminLoginRoute
   '/app/$slug': typeof AppSlugRoute
@@ -207,6 +215,7 @@ export interface FileRoutesById {
   '/rent': typeof RentRouteWithChildren
   '/rockClimbing': typeof RockClimbingRoute
   '/sale': typeof SaleRouteWithChildren
+  '/search': typeof SearchRoute
   '/service': typeof ServiceRoute
   '/admin/login': typeof AdminLoginRoute
   '/app/$slug': typeof AppSlugRoute
@@ -233,6 +242,7 @@ export interface FileRouteTypes {
     | '/rent'
     | '/rockClimbing'
     | '/sale'
+    | '/search'
     | '/service'
     | '/admin/login'
     | '/app/$slug'
@@ -257,6 +267,7 @@ export interface FileRouteTypes {
     | '/rent'
     | '/rockClimbing'
     | '/sale'
+    | '/search'
     | '/service'
     | '/admin/login'
     | '/app/$slug'
@@ -282,6 +293,7 @@ export interface FileRouteTypes {
     | '/rent'
     | '/rockClimbing'
     | '/sale'
+    | '/search'
     | '/service'
     | '/admin/login'
     | '/app/$slug'
@@ -308,6 +320,7 @@ export interface RootRouteChildren {
   RentRoute: typeof RentRouteWithChildren
   RockClimbingRoute: typeof RockClimbingRoute
   SaleRoute: typeof SaleRouteWithChildren
+  SearchRoute: typeof SearchRoute
   ServiceRoute: typeof ServiceRoute
   AdminLoginRoute: typeof AdminLoginRoute
   AppSlugRoute: typeof AppSlugRoute
@@ -322,6 +335,13 @@ declare module '@tanstack/react-router' {
       path: '/service'
       fullPath: '/service'
       preLoaderRoute: typeof ServiceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/search': {
+      id: '/search'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof SearchRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sale': {
@@ -573,6 +593,7 @@ const rootRouteChildren: RootRouteChildren = {
   RentRoute: RentRouteWithChildren,
   RockClimbingRoute: RockClimbingRoute,
   SaleRoute: SaleRouteWithChildren,
+  SearchRoute: SearchRoute,
   ServiceRoute: ServiceRoute,
   AdminLoginRoute: AdminLoginRoute,
   AppSlugRoute: AppSlugRoute,

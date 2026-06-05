@@ -4,6 +4,7 @@ export const SITE_TEXT = {
   RU: {
     common: {
       addToCart: "Добавить в корзину",
+      addToCartShort: "В корзину",
       inCart: "В корзине",
       openCart: "Открыть корзину",
       outOfStock: "Нет в наличии",
@@ -203,6 +204,9 @@ export const SITE_TEXT = {
       heroTitle: "Готовим лыжи и сноуборды к лучшему сезону",
       heroText:
         "Заточка кантов, парафин, ремонт скользящей поверхности и установка креплений — в нашей мастерской в Батуми. Возвращаем доскам и лыжам заводское ощущение.",
+      summerHeroTitle: "Ремонт велосипедов для города и гор",
+      summerHeroText:
+        "Чистка и регулировка трансмиссии, прокачка тормозов, замена камер и покрышек, установка аксессуаров — обслуживаем шоссейные, горные и городские велосипеды в Батуми.",
       priceList: "Прайс-лист",
       book: "Записаться",
       sectionTitle: "Сервисное обслуживание",
@@ -295,6 +299,24 @@ export const SITE_TEXT = {
           desc: "Если что-то пойдёт не так — переделаем без вопросов.",
         },
       ],
+      summerFeatures: [
+        {
+          title: "Ремонт велосипедов",
+          desc: "Полный цикл: от прокола камеры до перебора трансмиссии.",
+        },
+        {
+          title: "Настройка трансмиссии",
+          desc: "Чёткое переключение, замена цепи, кассеты и тросов.",
+        },
+        {
+          title: "Тормоза и колёса",
+          desc: "Прокачка гидравлики, замена колодок, настройка дисковых тормозов.",
+        },
+        {
+          title: "Гарантия на работы",
+          desc: "Если что-то пойдёт не так — переделаем без вопросов.",
+        },
+      ],
     },
     climbing: {
       heroTitle: "Скалолазание в Гонио-Квариати",
@@ -348,6 +370,7 @@ export const SITE_TEXT = {
   EN: {
     common: {
       addToCart: "Add to cart",
+      addToCartShort: "Add",
       inCart: "In cart",
       openCart: "Open cart",
       outOfStock: "Out of stock",
@@ -547,6 +570,9 @@ export const SITE_TEXT = {
       heroTitle: "We tune skis and snowboards for your best season",
       heroText:
         "Edge sharpening, waxing, base repair and binding setup in our Batumi workshop. We bring boards and skis back to a factory-fresh feel.",
+      summerHeroTitle: "Bike repairs for city rides and mountain trails",
+      summerHeroText:
+        "Drivetrain cleaning and tuning, brake bleeding, tube and tire replacement, accessory installation — we service road, mountain and city bikes in Batumi.",
       priceList: "Price list",
       book: "Book service",
       sectionTitle: "Service Center",
@@ -639,6 +665,24 @@ export const SITE_TEXT = {
           desc: "If something is not right, we redo it without questions.",
         },
       ],
+      summerFeatures: [
+        {
+          title: "Bike repairs",
+          desc: "Full service cycle: from tube punctures to drivetrain overhaul.",
+        },
+        {
+          title: "Drivetrain tuning",
+          desc: "Crisp shifting, chain, cassette and cable replacement.",
+        },
+        {
+          title: "Brakes and wheels",
+          desc: "Hydraulic bleeding, pad replacement and disc brake adjustment.",
+        },
+        {
+          title: "Work guarantee",
+          desc: "If something is not right, we redo it without questions.",
+        },
+      ],
     },
     climbing: {
       heroTitle: "Rock Climbing in Gonio-Kvariati",
@@ -692,6 +736,7 @@ export const SITE_TEXT = {
   GE: {
     common: {
       addToCart: "კალათაში დამატება",
+      addToCartShort: "კალათაში",
       inCart: "კალათაშია",
       openCart: "კალათის გახსნა",
       outOfStock: "არ არის მარაგში",
@@ -891,6 +936,9 @@ export const SITE_TEXT = {
       heroTitle: "ვამზადებთ თხილამურებსა და სნოუბორდებს საუკეთესო სეზონისთვის",
       heroText:
         "კანტების ალესვა, პარაფინი, სასრიალო ზედაპირის შეკეთება და სამაგრების დაყენება ჩვენს სახელოსნოში ბათუმში. დაფებსა და თხილამურებს ქარხნულ შეგრძნებას ვუბრუნებთ.",
+      summerHeroTitle: "ველოსიპედის შეკეთება ქალაქისა და მთისთვის",
+      summerHeroText:
+        "ტრანსმისიის წმენდა და რეგულირება, მუხრუჭების დაჰაერება, კამერებისა და საბურავების შეცვლა, აქსესუარების დაყენება — ბათუმში ვემსახურებით შოსე, მთის და ქალაქის ველოსიპედებს.",
       priceList: "ფასები",
       book: "ჩაწერა",
       sectionTitle: "სერვისული მომსახურება",
@@ -977,6 +1025,24 @@ export const SITE_TEXT = {
         {
           title: "Ptex შეკეთება",
           desc: "ვავსებთ სასრიალო ზედაპირის ნაკაწრებსა და დაზიანებებს.",
+        },
+        {
+          title: "გარანტია სამუშაოზე",
+          desc: "თუ რამე ისე არ გამოვა — კითხვების გარეშე გადავაკეთებთ.",
+        },
+      ],
+      summerFeatures: [
+        {
+          title: "ველოსიპედების შეკეთება",
+          desc: "სრული ციკლი: კამერის პუნქციიდან ტრანსმისიის სრულ მომსახურებამდე.",
+        },
+        {
+          title: "ტრანსმისიის რეგულირება",
+          desc: "ზუსტი გადართვა, ჯაჭვის, კასეტის და ტროსების შეცვლა.",
+        },
+        {
+          title: "მუხრუჭები და ბორბლები",
+          desc: "ჰიდრავლიკის დაჰაერება, ხუნდების შეცვლა და დისკური მუხრუჭების რეგულირება.",
         },
         {
           title: "გარანტია სამუშაოზე",

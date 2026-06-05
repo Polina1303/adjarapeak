@@ -1068,13 +1068,13 @@ function scoreFeaturedProduct(
   if (tags.has("seasonal")) score += 70;
   if (tags.has("hiking") || tags.has("camping")) score += 55;
   if (tags.has("team-pick")) score += 45;
-  if (hasManualDiscount(product)) score += 40;
+  if (hasManualDiscount(product.price, product.sale_price)) score += 40;
 
   const ageDays = daysSince(product.created_at, now);
   if (ageDays <= 14) score += 35;
   else if (ageDays <= 45) score += 20;
 
-  const displayPrice = getDisplayPrice(product);
+  const displayPrice = getDisplayPrice(product.price, product.sale_price);
   if (displayPrice >= 20 && displayPrice <= 180) score += 20;
   if (displayPrice > 350) score -= 20;
 
@@ -1257,7 +1257,16 @@ export const searchRentalItems = createServerFn({ method: "GET" })
     const q = data.q.trim();
     if (!q) return [] as RentalItem[];
 
-    const patterns = [`%${q}%`];
+    const SYNONYMS: Record<string, string[]> = {
+      "спальник": ["спальн"],
+      "спальники": ["спальн"],
+    };
+    const lower = q.toLowerCase();
+    const terms = new Set<string>([q]);
+    for (const [key, vals] of Object.entries(SYNONYMS)) {
+      if (lower.includes(key)) for (const v of vals) terms.add(v);
+    }
+    const patterns = Array.from(terms).map((t) => `%${t}%`);
     const orFilter = (col: string) => patterns.map((p) => `${col}.ilike.${p}`).join(",");
     const [groupsRes, catsRes, subsRes] = await Promise.all([
       supabase.from("rental_groups").select("id").or(orFilter("title")),
