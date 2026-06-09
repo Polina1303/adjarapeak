@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -68,6 +68,7 @@ function getErrorMessage(error: unknown) {
   const details = readErrorField(error, "details");
   const hint = readErrorField(error, "hint");
   const fullMessage = [message, details, hint].filter(Boolean).join(" ");
+  const missingField = getMissingSchemaField(error);
 
   if (
     /sale_price|sale_price_per_day/i.test(fullMessage) &&
@@ -76,7 +77,27 @@ function getErrorMessage(error: unknown) {
     return "В базе ещё нет поля для цены со скидкой. Примените миграцию Supabase и попробуйте снова.";
   }
 
+  if (missingField) {
+    return `В базе ещё нет поля «${missingField}». Примените миграцию Supabase и попробуйте снова.`;
+  }
+
   return message;
+}
+
+function getMissingSchemaField(error: unknown) {
+  const message =
+    error instanceof Error ? error.message : readErrorField(error, "message");
+  const details = readErrorField(error, "details");
+  const hint = readErrorField(error, "hint");
+  const fullMessage = [message, details, hint].filter(Boolean).join(" ");
+
+  const schemaCacheMatch = fullMessage.match(/'([^']+)'\s+column/i);
+  if (schemaCacheMatch) return schemaCacheMatch[1];
+
+  const columnMissingMatch = fullMessage.match(/column\s+\w+\.([A-Za-z0-9_]+)\s+does not exist/i);
+  if (columnMissingMatch) return columnMissingMatch[1];
+
+  return null;
 }
 
 function validateManualSalePrice(
@@ -120,7 +141,12 @@ function validatePayload(config: AdminTableConfig, payload: Record<string, any>)
 export function RecordForm({ config, record, open, onClose, onSaved }: Props) {
   const [form, setForm] = useState<Record<string, any>>({});
   const [fkOptions, setFkOptions] = useState<Record<string, FkOption[]>>({});
+  const [missingDbFields, setMissingDbFields] = useState<string[]>([]);
   const [saving, setSaving] = useState(false);
+  const activeFields = useMemo(
+    () => config.fields.filter((f) => !missingDbFields.includes(f.key)),
+    [config.fields, missingDbFields],
+  );
 
   useEffect(() => {
     if (!open) return;
@@ -152,9 +178,39 @@ export function RecordForm({ config, record, open, onClose, onSaved }: Props) {
 
   useEffect(() => {
     if (!open) return;
+    let cancelled = false;
+
+    const checkSchemaFields = async () => {
+      const missing = new Set<string>();
+      const configuredKeys = config.fields.map((f) => f.key);
+
+      for (let i = 0; i < configuredKeys.length; i += 1) {
+        const keysToProbe = configuredKeys.filter((key) => !missing.has(key));
+        const { error } = await (supabase as any)
+          .from(config.table)
+          .select(["id", ...keysToProbe].join(","))
+          .limit(1);
+        const missingField = getMissingSchemaField(error);
+        if (!missingField || !configuredKeys.includes(missingField)) break;
+        missing.add(missingField);
+      }
+
+      if (!cancelled) setMissingDbFields([...missing]);
+    };
+
+    setMissingDbFields([]);
+    checkSchemaFields();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [open, config]);
+
+  useEffect(() => {
+    if (!open) return;
     const loadFk = async () => {
       const opts: Record<string, FkOption[]> = {};
-      for (const f of config.fields) {
+      for (const f of activeFields) {
         if (f.type === "fk" && f.fkTable) {
           const [{ data }, refs] = await Promise.all([
             (supabase as any).from(f.fkTable).select("*").order("title", { ascending: true }),
@@ -171,7 +227,7 @@ export function RecordForm({ config, record, open, onClose, onSaved }: Props) {
       setFkOptions(opts);
     };
     loadFk();
-  }, [open, config]);
+  }, [open, config, activeFields]);
 
   const setVal = (k: string, v: any) => setForm((p) => ({ ...p, [k]: v }));
 
@@ -179,7 +235,7 @@ export function RecordForm({ config, record, open, onClose, onSaved }: Props) {
     setSaving(true);
     try {
       const payload: Record<string, any> = {};
-      for (const f of config.fields) {
+      for (const f of activeFields) {
         let v = form[f.key];
         if (f.type === "number") {
           if (v === "" || v === null || v === undefined) {
@@ -392,7 +448,12 @@ export function RecordForm({ config, record, open, onClose, onSaved }: Props) {
           <DialogTitle>{record ? "Редактирование" : "Создание"} · {config.label}</DialogTitle>
         </DialogHeader>
         <div className="space-y-4 py-2">
-          {config.fields.map((f) => (
+          {missingDbFields.length > 0 && (
+            <div className="rounded-md border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-900">
+              В базе нет колонок: {missingDbFields.join(", ")}. Эти поля временно скрыты из формы.
+            </div>
+          )}
+          {activeFields.map((f) => (
             <div key={f.key} className="space-y-1.5">
               {f.type !== "boolean" && (
                 <Label>

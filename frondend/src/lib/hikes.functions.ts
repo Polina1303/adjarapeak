@@ -38,15 +38,30 @@ function normalize(row: any): Hike {
   };
 }
 
+function getDateSortValue(hike: Hike) {
+  if (!hike.start_date) return Number.MAX_SAFE_INTEGER;
+  const timestamp = Date.parse(`${hike.start_date}T00:00:00`);
+  return Number.isFinite(timestamp) ? timestamp : Number.MAX_SAFE_INTEGER;
+}
+
+function sortHikesByDate(a: Hike, b: Hike) {
+  const byDate = getDateSortValue(a) - getDateSortValue(b);
+  if (byDate !== 0) return byDate;
+  const bySortOrder = Number(a.sort_order ?? 0) - Number(b.sort_order ?? 0);
+  if (bySortOrder !== 0) return bySortOrder;
+  return a.title.localeCompare(b.title, "ru");
+}
+
 export const listHikes = createServerFn({ method: "GET" }).handler(async () => {
   const today = new Date().toISOString().slice(0, 10);
   const { data, error } = await supabase
     .from("hikes")
     .select("*")
     .or(`end_date.is.null,end_date.gte.${today}`)
-    .order("sort_order", { ascending: true });
+    .order("start_date", { ascending: true, nullsFirst: false })
+    .order("id", { ascending: true });
   if (error) throw new Error(error.message);
-  return ((data ?? []) as any[]).map(normalize);
+  return ((data ?? []) as any[]).map(normalize).sort(sortHikesByDate);
 });
 
 export const getHikeBySlug = createServerFn({ method: "GET" })

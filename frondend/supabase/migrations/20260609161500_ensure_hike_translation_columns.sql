@@ -1,0 +1,23 @@
+ALTER TABLE public.hikes
+  ADD COLUMN IF NOT EXISTS title_en TEXT,
+  ADD COLUMN IF NOT EXISTS title_ka TEXT,
+  ADD COLUMN IF NOT EXISTS shortly_en TEXT,
+  ADD COLUMN IF NOT EXISTS shortly_ka TEXT,
+  ADD COLUMN IF NOT EXISTS description_en TEXT,
+  ADD COLUMN IF NOT EXISTS description_ka TEXT,
+  ADD COLUMN IF NOT EXISTS difficulty_en TEXT,
+  ADD COLUMN IF NOT EXISTS difficulty_ka TEXT,
+  ADD COLUMN IF NOT EXISTS duration_en TEXT,
+  ADD COLUMN IF NOT EXISTS duration_ka TEXT,
+  ADD COLUMN IF NOT EXISTS group_size_en TEXT,
+  ADD COLUMN IF NOT EXISTS group_size_ka TEXT,
+  ADD COLUMN IF NOT EXISTS location_en TEXT,
+  ADD COLUMN IF NOT EXISTS location_ka TEXT,
+  ADD COLUMN IF NOT EXISTS features_en JSONB,
+  ADD COLUMN IF NOT EXISTS features_ka JSONB,
+  ADD COLUMN IF NOT EXISTS reasons_en JSONB,
+  ADD COLUMN IF NOT EXISTS reasons_ka JSONB,
+  ADD COLUMN IF NOT EXISTS packing_list_en JSONB,
+  ADD COLUMN IF NOT EXISTS packing_list_ka JSONB;
+
+NOTIFY pgrst, 'reload schema';

@@ -22,6 +22,7 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 import {
+  Copy,
   Pencil,
   Trash2,
   Plus,
@@ -54,6 +55,8 @@ const COLUMN_LABELS: Record<string, string> = {
   hidden: "Скрыто",
   image: "Изображение",
   description: "Описание",
+  start_date: "Дата",
+  end_date: "Дата окончания",
 };
 
 function normalizeSearchValue(value: unknown) {
@@ -74,6 +77,15 @@ function getSearchableValue(value: unknown): string {
   return String(value);
 }
 
+function cloneValue(value: unknown) {
+  if (value === undefined) return undefined;
+  if (value === null) return null;
+  if (Array.isArray(value) || typeof value === "object") {
+    return JSON.parse(JSON.stringify(value));
+  }
+  return value;
+}
+
 function matchesSearch(row: Row, tokens: string[]) {
   const haystack = normalizeSearchValue(
     Object.values(row).map(getSearchableValue).join(" "),
@@ -81,14 +93,41 @@ function matchesSearch(row: Row, tokens: string[]) {
   return tokens.every((token) => haystack.includes(token));
 }
 
-async function fetchAllAdminRows(table: string, orderCol: string) {
+function createCopySlug(slug: unknown, rows: Row[]) {
+  const base = String(slug || "copy").trim() || "copy";
+  const existingSlugs = new Set(rows.map((row) => String(row.slug ?? "")));
+  for (let i = 1; ; i += 1) {
+    const next = i === 1 ? `${base}-copy` : `${base}-copy-${i}`;
+    if (!existingSlugs.has(next)) return next;
+  }
+}
+
+function getDateSortValue(row: Row) {
+  if (!row.start_date) return Number.MAX_SAFE_INTEGER;
+  const timestamp = Date.parse(`${row.start_date}T00:00:00`);
+  return Number.isFinite(timestamp) ? timestamp : Number.MAX_SAFE_INTEGER;
+}
+
+function sortRowsByDate(rows: Row[]) {
+  return [...rows].sort((a, b) => {
+    const byDate = getDateSortValue(a) - getDateSortValue(b);
+    if (byDate !== 0) return byDate;
+    const bySortOrder = Number(a.sort_order ?? 0) - Number(b.sort_order ?? 0);
+    if (bySortOrder !== 0) return bySortOrder;
+    return String(a.title ?? "").localeCompare(String(b.title ?? ""), "ru");
+  });
+}
+
+async function fetchAllAdminRows(config: AdminTableConfig) {
   const all: Row[] = [];
+  const orderCol = config.defaultOrderColumn ?? (config.hasSortOrder ? "sort_order" : "title");
+  const ascending = config.defaultOrderAscending ?? true;
   for (let from = 0; ; from += FETCH_PAGE_SIZE) {
     const to = from + FETCH_PAGE_SIZE - 1;
     let query = (supabase as any)
-      .from(table)
+      .from(config.table)
       .select("*")
-      .order(orderCol, { ascending: true });
+      .order(orderCol, { ascending, nullsFirst: false });
 
     if (orderCol !== "id") {
       query = query.order("id", { ascending: true });
@@ -114,18 +153,19 @@ export function DataTable({ config }: { config: AdminTableConfig }) {
   const [fkLabels, setFkLabels] = useState<Record<string, Record<string, string>>>({});
   const [dragIndex, setDragIndex] = useState<number | null>(null);
   const [overIndex, setOverIndex] = useState<number | null>(null);
+  const canSyncDateOrder = config.defaultOrderColumn === "start_date";
 
   const PAGE_SIZE = 50;
 
   const load = async () => {
     setLoading(true);
-    const orderCol = config.hasSortOrder ? "sort_order" : "title";
     try {
       const [loadedRows, refs] = await Promise.all([
-        fetchAllAdminRows(config.table, orderCol),
+        fetchAllAdminRows(config),
         loadAdminSortRefs(config.table, supabase),
       ]);
-      setRows(sortAdminRows(config.table, loadedRows, refs));
+      const sortedRows = sortAdminRows(config.table, loadedRows, refs);
+      setRows(canSyncDateOrder ? sortRowsByDate(sortedRows) : sortedRows);
     } catch (error) {
       toast.error(error instanceof Error ? error.message : "Не удалось загрузить записи");
     } finally {
@@ -188,6 +228,41 @@ export function DataTable({ config }: { config: AdminTableConfig }) {
     else load();
   };
 
+  const duplicateRow = async (r: Row) => {
+    const payload: Row = {};
+
+    for (const field of config.fields) {
+      const value = cloneValue(r[field.key]);
+      if (value !== undefined) payload[field.key] = value;
+    }
+
+    if ("slug" in payload) payload.slug = createCopySlug(payload.slug, rows);
+    if (config.hasHidden && "hidden" in payload) payload.hidden = true;
+    if (config.hasSortOrder && "sort_order" in payload) {
+      const scopeField = config.sortScopeField;
+      const scopedRows = scopeField
+        ? rows.filter((row) => row[scopeField] === r[scopeField])
+        : rows;
+      payload.sort_order =
+        Math.max(0, ...scopedRows.map((row) => Number(row.sort_order) || 0)) + 1;
+    }
+
+    const { data, error } = await (supabase as any)
+      .from(config.table)
+      .insert(payload)
+      .select("*")
+      .single();
+
+    if (error) {
+      toast.error(error.message);
+      return;
+    }
+
+    toast.success("Копия создана. Проверьте дату и слаг.");
+    await load();
+    setEditing((data as Row) ?? null);
+  };
+
   const reorder = async (from: number, to: number) => {
     if (from === to || from < 0 || to < 0 || from >= rows.length || to >= rows.length) return;
     const scopeField = config.sortScopeField;
@@ -229,6 +304,35 @@ export function DataTable({ config }: { config: AdminTableConfig }) {
     downloadBlob(toCSV(rows), `${config.table}-${new Date().toISOString().slice(0, 10)}.csv`);
   };
 
+  const syncDateSortOrder = async () => {
+    const sortedRows = sortRowsByDate(rows);
+    const updates = sortedRows
+      .map((row, index) => ({ row, sort_order: index + 1 }))
+      .filter(({ row, sort_order }) => Number(row.sort_order) !== sort_order);
+
+    if (!updates.length) {
+      toast.success("Порядок уже соответствует датам");
+      return;
+    }
+
+    const results = await Promise.all(
+      updates.map(({ row, sort_order }) =>
+        (supabase as any)
+          .from(config.table)
+          .update({ sort_order })
+          .eq("id", row.id),
+      ),
+    );
+    const failed = results.find((result: any) => result.error);
+    if (failed?.error) {
+      toast.error(failed.error.message);
+      return;
+    }
+
+    toast.success("Порядок синхронизирован по датам");
+    load();
+  };
+
   const renderCell = (r: Row, col: string) => {
     const v = r[col];
     if (col === "image" && v) {
@@ -263,6 +367,11 @@ export function DataTable({ config }: { config: AdminTableConfig }) {
           className="max-w-sm"
         />
         <div className="ml-auto flex gap-2">
+          {canSyncDateOrder && (
+            <Button variant="outline" size="sm" onClick={syncDateSortOrder}>
+              Порядок по датам
+            </Button>
+          )}
           <Button variant="outline" size="sm" onClick={exportCSV}>
             <Download className="h-4 w-4 mr-1" /> CSV
           </Button>
@@ -280,7 +389,7 @@ export function DataTable({ config }: { config: AdminTableConfig }) {
               {config.listColumns.map((c) => (
                 <TableHead key={c}>{COLUMN_LABELS[c] ?? c}</TableHead>
               ))}
-              <TableHead className="w-32 text-right">Действия</TableHead>
+              <TableHead className="w-40 text-right">Действия</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -367,6 +476,14 @@ export function DataTable({ config }: { config: AdminTableConfig }) {
                             {r.hidden ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                           </Button>
                         )}
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          onClick={() => duplicateRow(r)}
+                          title="Дублировать"
+                        >
+                          <Copy className="h-4 w-4" />
+                        </Button>
                         <Button variant="ghost" size="icon" onClick={() => setEditing(r)} className="hover:bg-muted hover:text-foreground transition-colors">
                           <Pencil className="h-4 w-4" />
                         </Button>

@@ -33,6 +33,8 @@ export type AdminTableConfig = {
   hasHidden?: boolean;
   hasSortOrder?: boolean;
   sortScopeField?: string;
+  defaultOrderColumn?: string;
+  defaultOrderAscending?: boolean;
   listColumns: string[]; // columns to show in the list (must be subset of fields keys + id)
   fields: FieldConfig[];
 };
@@ -197,8 +199,9 @@ export const ADMIN_TABLES: Record<AdminTableKey, AdminTableConfig> = {
     label: "Походы",
     section: "hikes",
     hasHidden: true,
-    hasSortOrder: true,
-    listColumns: ["sort_order", "title", "slug", "price", "hidden"],
+    defaultOrderColumn: "start_date",
+    defaultOrderAscending: true,
+    listColumns: ["start_date", "title", "slug", "price", "hidden"],
     fields: [
       { key: "title", label: "Название", type: "text", required: true },
       { key: "title_en", label: "Название EN", type: "text" },
@@ -239,7 +242,6 @@ export const ADMIN_TABLES: Record<AdminTableKey, AdminTableConfig> = {
       { key: "packing_list", label: "Что взять с собой", type: "packing_list" },
       { key: "packing_list_en", label: "Что взять с собой EN (JSON)", type: "json" },
       { key: "packing_list_ka", label: "Что взять с собой KA (JSON)", type: "json" },
-      { key: "sort_order", label: "Порядок сортировки", type: "number" },
       { key: "hidden", label: "Скрыто", type: "boolean" },
     ],
   },

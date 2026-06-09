@@ -23,11 +23,25 @@ export const Route = createFileRoute("/hikes/")({
   component: HikesIndex,
 });
 
+function getDateSortValue(hike: { start_date?: string | null }) {
+  if (!hike.start_date) return Number.MAX_SAFE_INTEGER;
+  const timestamp = Date.parse(`${hike.start_date}T00:00:00`);
+  return Number.isFinite(timestamp) ? timestamp : Number.MAX_SAFE_INTEGER;
+}
+
 function HikesIndex() {
   const rawHikes = Route.useLoaderData();
   const { lang } = useLanguage();
   const text = getSiteText(lang).hikes;
-  const hikes = rawHikes.map((hike) => localizeHike(hike, lang));
+  const hikes = rawHikes
+    .map((hike) => localizeHike(hike, lang))
+    .sort((a, b) => {
+      const byDate = getDateSortValue(a) - getDateSortValue(b);
+      if (byDate !== 0) return byDate;
+      const bySortOrder = Number(a.sort_order ?? 0) - Number(b.sort_order ?? 0);
+      if (bySortOrder !== 0) return bySortOrder;
+      return a.title.localeCompare(b.title, lang === "ka" ? "ka" : "ru");
+    });
 
   useEffect(() => {
     document.title = text.metaTitle;
