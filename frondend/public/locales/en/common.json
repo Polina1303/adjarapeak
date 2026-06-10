@@ -28,6 +28,13 @@
       "sunscreen": "SUNSCREEN"
     }
   },
+  "winterSports": {
+    "title": "WINTER SPORTS",
+    "category": {
+      "ice_skates": "ICE SKATES",
+      "air_sky": "TUBING AND SLEDS"
+    }
+  },
   "clothesAndShoes": {
     "title": "CLOTHING AND SHOES",
     "category": {

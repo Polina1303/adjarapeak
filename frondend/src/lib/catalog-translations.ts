@@ -36,6 +36,7 @@ const SHOP_GROUP_LABELS: Record<Lang, Record<string, string>> = {
     sports: "Игровой спорт",
     fitness: "Фитнес и йога",
     swimmingSup: "Плавание и сапы",
+    winterSports: "Зимние виды спорта",
     alpinesking: "Горнолыжный спорт",
   },
   EN: {
@@ -48,6 +49,7 @@ const SHOP_GROUP_LABELS: Record<Lang, Record<string, string>> = {
     sports: "TEAM SPORTS",
     fitness: "FITNESS AND YOGA",
     swimmingSup: "SWIMMING AND SUP",
+    winterSports: "WINTER SPORTS",
     alpinesking: "ALPINE SKIING",
   },
   GE: {
@@ -60,6 +62,7 @@ const SHOP_GROUP_LABELS: Record<Lang, Record<string, string>> = {
     sports: "სპორტული თამაშები",
     fitness: "ფიტნესი და იოგა",
     swimmingSup: "საპ-ბორდი და ცურვა",
+    winterSports: "ზამთრის სპორტი",
     alpinesking: "სამთო-სათხილამურო სპორტი",
   },
 };

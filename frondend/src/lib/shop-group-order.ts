@@ -8,6 +8,7 @@ export const SHOP_GROUP_SLUG_ORDER = [
   "sports",
   "fitness",
   "swimmingSup",
+  "winterSports",
   "alpinesking",
 ] as const;
 

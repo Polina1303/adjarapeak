@@ -28,6 +28,13 @@
       "sunscreen": "მზისგან დამცავი კრემი"
     }
   },
+  "winterSports": {
+    "title": "ზამთრის სპორტი",
+    "category": {
+      "ice_skates": "ციგურები",
+      "air_sky": "ტიუბინგი და სასრიალოები"
+    }
+  },
   "clothesAndShoes": {
     "title": "ტანსაცმელი და ფეხსაცმელი",
     "category": {

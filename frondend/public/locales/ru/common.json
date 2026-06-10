@@ -28,6 +28,13 @@
       "sunscreen": "СОЛНЦЕЗАЩИТНЫЙ КРЕМ"
     }
   },
+  "winterSports": {
+    "title": "ЗИМНИЕ ВИДЫ СПОРТА",
+    "category": {
+      "ice_skates": "КОНЬКИ",
+      "air_sky": "ТЮБИНГИ/САНКИ"
+    }
+  },
 
   "clothesAndShoes": {
     "title": "ОДЕЖДА И ОБУВЬ",
