@@ -14,6 +14,7 @@ const SPORTS_GROUP_SLUG = "sports";
 const FITNESS_GROUP_SLUG = "fitness";
 const SPORTS_AIR_CATEGORY_SLUG = "air";
 const FEATURED_PRODUCT_LIMIT = 8;
+const ALWAYS_RECOMMENDED_PRODUCT_SLUGS = new Set(["lodka-hello-plus-235-yellow"]);
 const ALWAYS_SEASONAL_CATEGORY_SLUGS = new Set([
   "backpack",
   "bottle",
@@ -1048,6 +1049,10 @@ function isFeaturedActive(product: ShopProduct, today: string) {
   return !product.featured_until || product.featured_until >= today;
 }
 
+function isAlwaysRecommendedProduct(product: Pick<ShopProduct, "slug">) {
+  return ALWAYS_RECOMMENDED_PRODUCT_SLUGS.has(product.slug);
+}
+
 function scoreFeaturedProduct(
   product: ShopProduct,
   categorySlug: string | undefined,
@@ -1057,6 +1062,8 @@ function scoreFeaturedProduct(
 ) {
   const tags = new Set(product.featured_tags ?? []);
   let score = 0;
+
+  if (isAlwaysRecommendedProduct(product)) score += 100000;
 
   if (isFeaturedActive(product, today)) {
     score += 1000 + (product.featured_priority ?? 0) * 10;
@@ -1116,7 +1123,11 @@ export const listRecommendedProducts = createServerFn({ method: "GET" })
     );
 
     const ranked = normalizeShopProducts(rawProducts)
-      .filter((product) => product.image && CATALOG_IMAGE_FILES.has(product.image))
+      .filter(
+        (product) =>
+          product.image &&
+          (CATALOG_IMAGE_FILES.has(product.image) || isAlwaysRecommendedProduct(product)),
+      )
       .map((product) => ({
         product,
         categorySlug: categorySlugById.get(product.category_id),

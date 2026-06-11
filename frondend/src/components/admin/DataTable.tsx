@@ -35,6 +35,7 @@ import type { AdminTableConfig } from "@/lib/admin-tables";
 import { ADMIN_TABLES } from "@/lib/admin-tables";
 import { loadAdminSortRefs, sortAdminRows } from "@/lib/admin-sort";
 import { RecordForm } from "./RecordForm";
+import { QuickProductForm } from "./QuickProductForm";
 import { toCSV, downloadBlob } from "@/lib/csv";
 import { resolveCatalogImage } from "@/lib/catalog-image";
 import { toast } from "sonner";
@@ -149,6 +150,7 @@ export function DataTable({ config }: { config: AdminTableConfig }) {
   const [page, setPage] = useState(0);
   const [editing, setEditing] = useState<Row | null>(null);
   const [creating, setCreating] = useState(false);
+  const [quickCreating, setQuickCreating] = useState(false);
   const [deleteTarget, setDeleteTarget] = useState<Row | null>(null);
   const [fkLabels, setFkLabels] = useState<Record<string, Record<string, string>>>({});
   const [dragIndex, setDragIndex] = useState<number | null>(null);
@@ -375,6 +377,11 @@ export function DataTable({ config }: { config: AdminTableConfig }) {
           <Button variant="outline" size="sm" onClick={exportCSV}>
             <Download className="h-4 w-4 mr-1" /> CSV
           </Button>
+          {config.table === "shop_products" && (
+            <Button variant="outline" size="sm" onClick={() => setQuickCreating(true)}>
+              <Plus className="h-4 w-4 mr-1" /> Быстро
+            </Button>
+          )}
           <Button size="sm" onClick={() => setCreating(true)}>
             <Plus className="h-4 w-4 mr-1" /> Добавить
           </Button>
@@ -551,6 +558,13 @@ export function DataTable({ config }: { config: AdminTableConfig }) {
         onClose={() => setCreating(false)}
         onSaved={load}
       />
+      {config.table === "shop_products" && (
+        <QuickProductForm
+          open={quickCreating}
+          onOpenChange={setQuickCreating}
+          onSaved={load}
+        />
+      )}
 
       <AlertDialog open={!!deleteTarget} onOpenChange={(o) => !o && setDeleteTarget(null)}>
         <AlertDialogContent>
