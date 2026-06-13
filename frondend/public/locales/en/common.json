@@ -518,7 +518,7 @@
     }
   },
   "cyclingRoller": {
-    "title": "CYCLING AND ROLLERS",
+    "title": "CYCLING, ROLLERS AND SCOOTERS",
     "category": {
       "roller": {
         "title": "ROLLER SKATES",
@@ -528,6 +528,7 @@
           "roller_bags": "ROLLER BAGS"
         }
       },
+      "scooter": "SCOOTERS",
       "protection": "PROTECTION",
       "helmet": "HELMETS",
       "bike_accessories": "BIKE ACCESSORIES"

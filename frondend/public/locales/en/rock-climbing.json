@@ -59,7 +59,7 @@
       "title": "Sunday"
     },
     "price": "Training session cost: 49 GEL",
-    "groups": ["Group 1 — 10:00 / 13:00", "Group 2 — 15:00 / 18:00"],
+    "groups": ["Group 1 — 9:00", "Group 2 — 13:00"],
     "signup": "Sign up"
   }
 }

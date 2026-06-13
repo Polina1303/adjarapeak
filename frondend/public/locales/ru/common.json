@@ -520,7 +520,7 @@
     }
   },
   "cyclingRoller": {
-    "title": "ВЕЛОСПОРТ И РОЛИКИ",
+    "title": "ВЕЛОСПОРТ, РОЛИКИ И САМОКАТЫ",
     "category": {
       "roller": {
         "title": "РОЛИКИ",
@@ -530,6 +530,7 @@
           "roller_bags": "СУМКА ДЛЯ РОЛИКОВ"
         }
       },
+      "scooter": "САМОКАТЫ",
       "protection": "ЗАЩИТА",
       "helmet": "ШЛЕМЫ",
       "bike_accessories": "АКСЕССУАРЫ ДЛЯ ВЕЛОСИПЕДА"

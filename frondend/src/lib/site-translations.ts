@@ -336,7 +336,7 @@ export const SITE_TEXT = {
         "Перед каждой тренировкой проводим инструктаж — для новичков подробно объясняем, чего делать не стоит. Лазаем с верхней страховкой: где не хватает навыков, инструктор поможет подтянуть на сложном участке. На рельефе Гонио-Квариати трассы 5 и 6 категории — доступны многим начинающим, особенно тем, кто уже бывал на скалодроме.",
       experiencePoint: "Пункт 3 · Опыт",
       experienceText:
-        "Наша команда — Саша и Егор — имеет большой опыт работы на этом рельефе и заботится о вас на протяжении всей тренировки.",
+        "Саша имеет большой опыт работы на этом рельефе и заботится о вас на протяжении всей тренировки.",
       scheduleTitle: "График и расписание",
       trainingPrice: "Стоимость тренировки:",
       back: "Назад",
@@ -352,10 +352,10 @@ export const SITE_TEXT = {
       ],
       team: [
         { name: "Саша", role: "Инструктор" },
-        { name: "Егор", role: "Инструктор" },
+        // { name: "Егор", role: "Инструктор" },
       ],
       schedule: [
-        { day: "Воскресенье", price: "49 ₾", slots: ["1 группа — 10:00 / 13:00", "2 группа — 15:00 / 18:00"] },
+        { day: "Воскресенье", price: "50 ₾", slots: ["1 группа — 9:00", "2 группа — 13:00"] },
       ],
     },
     mobileNav: {
@@ -702,7 +702,7 @@ export const SITE_TEXT = {
         "Before each session we run a briefing and explain what beginners should avoid. We climb with top-rope belay: when skills are not enough, the instructor can help you through the hard section. Gonio-Kvariati routes of grades 5 and 6 are accessible to many beginners, especially those who have already tried a climbing gym.",
       experiencePoint: "Point 3 · Experience",
       experienceText:
-        "Our team — Sasha and Egor — has extensive experience on this rock and takes care of you throughout the session.",
+        "Sasha has extensive experience working on this terrain and takes care of you throughout the entire training session.",
       scheduleTitle: "Schedule",
       trainingPrice: "Session price:",
       back: "Back",
@@ -718,10 +718,10 @@ export const SITE_TEXT = {
       ],
       team: [
         { name: "Sasha", role: "Instructor" },
-        { name: "Egor", role: "Instructor" },
+        // { name: "Egor", role: "Instructor" },
       ],
       schedule: [
-        { day: "Sunday", price: "49 ₾", slots: ["Group 1 — 10:00 / 13:00", "Group 2 — 15:00 / 18:00"] },
+        { day: "Sunday", price: "50 ₾", slots: ["Group 1 — 10:00 / 13:00", "Group 2 — 15:00 / 18:00"] },
       ],
     },
     mobileNav: {
@@ -1068,8 +1068,7 @@ export const SITE_TEXT = {
         "ყოველი ვარჯიშის წინ ინსტრუქტაჟს ვატარებთ — დამწყებებს დეტალურად ვუხსნით, რას უნდა მოერიდონ. ვცოცავთ ზედა დაზღვევით: რთულ მონაკვეთზე ინსტრუქტორი დაგეხმარებათ. გონიო-კვარიათის რელიეფზე 5 და 6 კატეგორიის მარშრუტები ბევრ დამწყებსაც შეუძლია, განსაკუთრებით მათ, ვინც უკვე ყოფილა სკალადრომზე.",
       experiencePoint: "პუნქტი 3 · გამოცდილება",
       experienceText:
-        "ჩვენი გუნდი — საშა და ეგორი — ამ რელიეფზე დიდი გამოცდილებით მუშაობს და მთელი ვარჯიშის განმავლობაში ზრუნავს თქვენზე.",
-      scheduleTitle: "გრაფიკი და განრიგი",
+     "საშას ამ რელიეფზე მუშაობის დიდი გამოცდილება აქვს და მთელი ვარჯიშის განმავლობაში ზრუნავს თქვენზე." ,   scheduleTitle: "გრაფიკი და განრიგი",
       trainingPrice: "ვარჯიშის ფასი:",
       back: "უკან",
       forward: "წინ",
@@ -1084,10 +1083,10 @@ export const SITE_TEXT = {
       ],
       team: [
         { name: "საშა", role: "ინსტრუქტორი" },
-        { name: "ეგორი", role: "ინსტრუქტორი" },
+        // { name: "ეგორი", role: "ინსტრუქტორი" },
       ],
       schedule: [
-        { day: "კვირა", price: "49 ₾", slots: ["1 ჯგუფი — 10:00 / 13:00", "2 ჯგუფი — 15:00 / 18:00"] },
+        { day: "კვირა", price: "50 ₾", slots: ["1 ჯგუფი — 10:00 / 13:00", "2 ჯგუფი — 15:00 / 18:00"] },
       ],
     },
     mobileNav: {

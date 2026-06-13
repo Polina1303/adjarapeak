@@ -2,7 +2,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
-import { MapPin, Shield, Users, Mountain, Calendar, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  MapPin,
+  Shield,
+  Users,
+  Mountain,
+  Calendar,
+  ExternalLink,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import climbingHero from "@/assets/climbing-hero.avif";
 import cl0 from "@/assets/cl-0.avif";
@@ -11,8 +20,8 @@ import cl2 from "@/assets/cl-2.avif";
 import cl3 from "@/assets/cl-3.avif";
 import cl4 from "@/assets/cl-4.avif";
 import cl5 from "@/assets/cl-5.avif";
-import team0 from "@/assets/team-0.avif";
-import team1 from "@/assets/team-1.avif";
+import team0 from "@/assets/team0.png";
+// import team1 from "@/assets/team-1.avif";
 import { useLanguage } from "@/lib/i18n";
 import { getSiteText } from "@/lib/site-translations";
 
@@ -20,9 +29,17 @@ export const Route = createFileRoute("/rockClimbing")({
   head: () => ({
     meta: [
       { title: "Скалолазание — Adjara Peak" },
-      { name: "description", content: "Тренировки по скалолазанию в Гонио-Квариати: снаряжение, инструкторы, расписание и запись." },
+      {
+        name: "description",
+        content:
+          "Тренировки по скалолазанию в Гонио-Квариати: снаряжение, инструкторы, расписание и запись.",
+      },
       { property: "og:title", content: "Скалолазание — Adjara Peak" },
-      { property: "og:description", content: "Скалолазание с инструкторами Adjara Peak в районе Гонио-Квариати." },
+      {
+        property: "og:description",
+        content:
+          "Скалолазание с инструкторами Adjara Peak в районе Гонио-Квариати.",
+      },
       { property: "og:image", content: climbingHero },
     ],
   }),
@@ -30,7 +47,7 @@ export const Route = createFileRoute("/rockClimbing")({
 });
 
 const carousel = [cl0, cl1, cl2, cl3, cl4, cl5];
-const teamImages = [team0, team1];
+const teamImages = [team0];
 
 function useHorizontalCarousel() {
   const scroller = useRef<HTMLDivElement>(null);
@@ -87,11 +104,21 @@ function ClimbingPage() {
           style={{ backgroundImage: `url(${climbingHero})` }}
           aria-hidden
         />
-        <div className="absolute inset-0 backdrop-blur-md bg-background/55" aria-hidden />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background" aria-hidden />
+        <div
+          className="absolute inset-0 backdrop-blur-md bg-background/55"
+          aria-hidden
+        />
+        <div
+          className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background"
+          aria-hidden
+        />
         <div className="relative section-padding">
           <div className="max-w-6xl mx-auto">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="max-w-3xl"
+            >
               <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold text-foreground leading-[1.05] md:leading-[0.95] mb-6 break-words">
                 {text.heroTitle}
               </h1>
@@ -154,15 +181,21 @@ function ClimbingPage() {
             </h2>
           </div>
           <div className="rounded-3xl border border-border bg-card p-8 md:p-10">
-            <h3 className="font-display text-sm uppercase tracking-[0.2em] text-ember mb-3">{text.gearPoint}</h3>
+            <h3 className="font-display text-sm uppercase tracking-[0.2em] text-ember mb-3">
+              {text.gearPoint}
+            </h3>
             <p className="font-body text-sm text-foreground/80 leading-relaxed mb-2">
               {text.gearIntro}
             </p>
             <div className="grid sm:grid-cols-2 gap-x-8 gap-y-4 mt-6">
               {text.gear.map((g) => (
                 <div key={g.title} className="border-l-2 border-ember/40 pl-4">
-                  <div className="font-display text-xs uppercase tracking-wider text-foreground mb-1">{g.title}</div>
-                  <p className="font-body text-xs text-muted-foreground leading-relaxed">{g.desc}</p>
+                  <div className="font-display text-xs uppercase tracking-wider text-foreground mb-1">
+                    {g.title}
+                  </div>
+                  <p className="font-body text-xs text-muted-foreground leading-relaxed">
+                    {g.desc}
+                  </p>
                 </div>
               ))}
             </div>
@@ -175,7 +208,9 @@ function ClimbingPage() {
         <div className="max-w-6xl mx-auto rounded-3xl border border-border bg-card p-8 md:p-10">
           <div className="flex items-center gap-3 mb-4">
             <Users className="hidden md:block h-6 w-6 text-ember" />
-            <h3 className="font-display text-sm uppercase tracking-[0.2em] text-ember">{text.accessibilityPoint}</h3>
+            <h3 className="font-display text-sm uppercase tracking-[0.2em] text-ember">
+              {text.accessibilityPoint}
+            </h3>
           </div>
           <p className="font-body text-sm text-foreground/80 leading-relaxed max-w-3xl mb-8">
             {text.accessibilityText}
@@ -204,11 +239,22 @@ function ClimbingPage() {
             <div
               ref={photoCarousel.scroller}
               className="flex gap-3 overflow-x-scroll snap-x snap-mandatory scroll-smooth pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-              style={{ touchAction: "pan-x pan-y", WebkitOverflowScrolling: "touch" }}
+              style={{
+                touchAction: "pan-x pan-y",
+                WebkitOverflowScrolling: "touch",
+              }}
             >
               {carousel.map((src, i) => (
-                <div key={i} className="snap-start shrink-0 w-[260px] lg:w-[320px] aspect-[3/4] rounded-2xl overflow-hidden bg-muted">
-                  <img src={src} alt={text.photoAlt(i + 1)} loading="lazy" className="w-full h-full object-cover" />
+                <div
+                  key={i}
+                  className="snap-start shrink-0 w-[260px] lg:w-[320px] aspect-[3/4] rounded-2xl overflow-hidden bg-muted"
+                >
+                  <img
+                    src={src}
+                    alt={text.photoAlt(i + 1)}
+                    loading="lazy"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               ))}
             </div>
@@ -230,7 +276,9 @@ function ClimbingPage() {
         <div className="max-w-6xl mx-auto rounded-3xl border border-border bg-card p-8 md:p-10">
           <div className="flex items-center gap-3 mb-4">
             <Mountain className="hidden md:block h-6 w-6 text-ember" />
-            <h3 className="font-display text-sm uppercase tracking-[0.2em] text-ember">{text.experiencePoint}</h3>
+            <h3 className="font-display text-sm uppercase tracking-[0.2em] text-ember">
+              {text.experiencePoint}
+            </h3>
           </div>
           <p className="font-body text-sm text-foreground/80 leading-relaxed max-w-3xl mb-8">
             {text.experienceText}
@@ -242,11 +290,23 @@ function ClimbingPage() {
             style={{ touchAction: "pan-x", WebkitOverflowScrolling: "touch" }}
           >
             {team.map((t) => (
-              <div key={t.name} className="snap-start shrink-0 w-[260px] aspect-[3/4] rounded-2xl overflow-hidden bg-muted relative">
-                <img src={t.img} alt={t.name} loading="lazy" className="w-full h-full object-cover" />
+              <div
+                key={t.name}
+                className="snap-start shrink-0 w-[260px] aspect-[3/4] rounded-2xl overflow-hidden bg-muted relative"
+              >
+                <img
+                  src={t.img}
+                  alt={t.name}
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
                 <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                  <div className="font-display text-base uppercase tracking-wider text-white">{t.name}</div>
-                  <div className="font-body text-xs text-white/70">{t.role}</div>
+                  <div className="font-display text-base uppercase tracking-wider text-white">
+                    {t.name}
+                  </div>
+                  <div className="font-body text-xs text-white/70">
+                    {t.role}
+                  </div>
                 </div>
               </div>
             ))}
@@ -254,11 +314,23 @@ function ClimbingPage() {
           {/* Desktop: static grid */}
           <div className="hidden lg:grid grid-cols-2 gap-4 max-w-2xl">
             {team.map((t) => (
-              <div key={t.name} className="aspect-[3/4] rounded-2xl overflow-hidden bg-muted relative">
-                <img src={t.img} alt={t.name} loading="lazy" className="w-full h-full object-cover" />
+              <div
+                key={t.name}
+                className="aspect-[3/4] rounded-2xl overflow-hidden bg-muted relative"
+              >
+                <img
+                  src={t.img}
+                  alt={t.name}
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
                 <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                  <div className="font-display text-base uppercase tracking-wider text-white">{t.name}</div>
-                  <div className="font-body text-xs text-white/70">{t.role}</div>
+                  <div className="font-display text-base uppercase tracking-wider text-white">
+                    {t.name}
+                  </div>
+                  <div className="font-body text-xs text-white/70">
+                    {t.role}
+                  </div>
                 </div>
               </div>
             ))}
@@ -280,16 +352,26 @@ function ClimbingPage() {
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-3 mb-6">
             <Calendar className="hidden md:block h-6 w-6 text-ember" />
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">{text.scheduleTitle}</h2>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
+              {text.scheduleTitle}
+            </h2>
           </div>
 
           <div className="space-y-4">
             {text.schedule.map((day) => (
-              <div key={day.day} className="rounded-3xl border border-border bg-card p-6 md:p-8">
+              <div
+                key={day.day}
+                className="rounded-3xl border border-border bg-card p-6 md:p-8"
+              >
                 <div className="mb-5">
-                  <h3 className="font-display text-2xl font-bold text-ember">{day.day}</h3>
+                  <h3 className="font-display text-2xl font-bold text-ember">
+                    {day.day}
+                  </h3>
                   <span className="font-body text-sm text-muted-foreground">
-                    {text.trainingPrice} <span className="font-display text-foreground font-bold">{day.price}</span>
+                    {text.trainingPrice}{" "}
+                    <span className="font-display text-foreground font-bold">
+                      {day.price}
+                    </span>
                   </span>
                 </div>
                 <ul className="space-y-2 mb-6">

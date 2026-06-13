@@ -407,14 +407,6 @@ export function CatalogPage(props: ShopProps | RentalProps) {
                     </span>
                   );
 
-                  if (isShop && tab.groupSlug === "sale") {
-                    return (
-                      <Link key={tab.key} to="/sale/sale" className="shrink-0">
-                        {inner}
-                      </Link>
-                    );
-                  }
-
                   return isShop ? (
                     <Link
                       key={tab.key}

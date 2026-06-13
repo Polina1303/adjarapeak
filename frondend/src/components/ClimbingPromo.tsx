@@ -20,7 +20,12 @@ export function ClimbingPromo() {
             transition={{ duration: 0.7 }}
             className="relative h-72 md:h-auto"
           >
-            <img src={climbing} alt={text.imageAlt} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+            <img
+              src={climbing}
+              alt={text.imageAlt}
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+            />
             <div className="absolute inset-0 bg-gradient-to-r from-foreground/40 via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-foreground/30" />
           </motion.div>
 
@@ -44,7 +49,10 @@ export function ClimbingPromo() {
                 <Calendar className="h-3.5 w-3.5 text-ember" /> {text.schedule}
               </span>
               <span className="inline-flex items-center font-display text-base md:text-lg font-bold text-background">
-                49 ₾ <span className="ml-1.5 text-xs font-body font-normal text-background/70">{text.priceNote}</span>
+                50 ₾{" "}
+                <span className="ml-1.5 text-xs font-body font-normal text-background/70">
+                  {text.priceNote}
+                </span>
               </span>
             </div>
 

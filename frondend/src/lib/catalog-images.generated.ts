@@ -1995,6 +1995,8 @@ export const CATALOG_IMAGE_FILES = new Set<string>([
   "table-tennis-set-of-2-durable-bats-3-balls-.png",
   "table.jpeg",
   "table2.jpg",
+  "teen-folding-scooter-blue.png",
+  "teen-folding-scooter-red.png",
   "taebit-ankle-support-martial-601100639792076.png",
   "tarmak-k100-kids-basketball-size-1-8616153.avif",
   "tarmak-k500r-basketball-size-3-8734249.png",

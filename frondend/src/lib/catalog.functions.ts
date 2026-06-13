@@ -382,10 +382,10 @@ function filterRentalItemsForGroup(
   return items.flatMap((item) => {
     const categorySlug = categorySlugById.get(item.category_id);
     const allowedItems = categorySlug ? SPORTS_RENTAL_ALLOWED_ITEMS[categorySlug] : undefined;
-    if (!allowedItems) return [];
+    if (!allowedItems) return [item];
 
     const allowed = allowedItems.find((entry) => entry.image === item.image);
-    if (!allowed) return [];
+    if (!allowed) return [item];
 
     const key = `${categorySlug}:${allowed.image}`;
     if (seen.has(key)) return [];
@@ -1974,7 +1974,7 @@ export const getRentalGroupView = createServerFn({ method: "GET" })
       (subs ?? []) as ShopSubcategory[],
     ).map((r) => ({
       ...r,
-      description: null,
+      description: (r as { description?: string | null }).description ?? null,
       legacy_id: null,
       features: [],
     })) as RentalItem[];

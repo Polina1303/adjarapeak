@@ -28,7 +28,7 @@ const LANG_TO_LOCALE: Record<Lang, LocaleCode> = {
 const SHOP_GROUP_LABELS: Record<Lang, Record<string, string>> = {
   RU: {
     sale: "Распродажа",
-    cyclingRoller: "Велоспорт и ролики",
+    cyclingRoller: "Велоспорт, ролики и самокаты",
     boards: "Баланс и доски",
     clothesAndShoes: "Одежда и обувь",
     martial: "Единоборства",
@@ -41,7 +41,7 @@ const SHOP_GROUP_LABELS: Record<Lang, Record<string, string>> = {
   },
   EN: {
     sale: "SALE",
-    cyclingRoller: "CYCLING AND ROLLERS",
+    cyclingRoller: "CYCLING, ROLLERS AND SCOOTERS",
     boards: "BALANCE AND BOARDS",
     clothesAndShoes: "CLOTHING AND SHOES",
     martial: "MARTIAL ARTS",
@@ -54,7 +54,7 @@ const SHOP_GROUP_LABELS: Record<Lang, Record<string, string>> = {
   },
   GE: {
     sale: "ფასდაკლება",
-    cyclingRoller: "ველოსპორტი და როლიკები",
+    cyclingRoller: "ველოსპორტი, როლიკები და სკუტერები",
     boards: "ბალანსი და დაფები",
     clothesAndShoes: "ტანსაცმელი და ფეხსაცმელი",
     martial: "ბოქსი, ორთაბრძოლა",
