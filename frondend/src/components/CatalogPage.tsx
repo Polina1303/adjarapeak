@@ -27,6 +27,24 @@ import { useLanguage } from "@/lib/i18n";
 
 const INITIAL_VISIBLE_COUNT = 36;
 const SEARCH_DEBOUNCE_MS = 350;
+const CATALOG_SEARCH_PARAM = "q";
+
+function getCatalogSearchFromUrl() {
+  if (typeof window === "undefined") return "";
+  return new URLSearchParams(window.location.search).get(CATALOG_SEARCH_PARAM) ?? "";
+}
+
+function replaceCatalogSearchInUrl(value: string) {
+  if (typeof window === "undefined") return;
+  const nextUrl = new URL(window.location.href);
+  const trimmed = value.trim();
+  if (trimmed) {
+    nextUrl.searchParams.set(CATALOG_SEARCH_PARAM, trimmed);
+  } else {
+    nextUrl.searchParams.delete(CATALOG_SEARCH_PARAM);
+  }
+  window.history.replaceState(window.history.state, "", nextUrl);
+}
 
 const CATALOG_PAGE_TEXT = {
   RU: {
@@ -96,7 +114,7 @@ export function CatalogPage(props: ShopProps | RentalProps) {
   const catalogTranslations = useCatalogTranslations(lang);
   const catalogUi = CATALOG_UI_TEXT[lang];
   const pageText = CATALOG_PAGE_TEXT[lang];
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState(getCatalogSearchFromUrl);
   const [sort, setSort] = useState<SortKey>("default");
   const [onlyAvailable, setOnlyAvailable] = useState(false);
   const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE_COUNT);
@@ -136,6 +154,11 @@ export function CatalogPage(props: ShopProps | RentalProps) {
   const shouldSearchWholeCatalog = trimmedSearch.length >= 3;
   const isWholeCatalogSearchActive = shouldSearchWholeCatalog && debouncedGlobalSearch.length >= 3;
   const navigate = useNavigate();
+
+  const handleSearchChange = (value: string) => {
+    setSearch(value);
+    replaceCatalogSearchInUrl(value);
+  };
 
   useEffect(() => {
     if (!shouldSearchWholeCatalog) {
@@ -496,7 +519,7 @@ export function CatalogPage(props: ShopProps | RentalProps) {
             <div className="flex-1 min-w-0">
               <CatalogToolbar
                 search={search}
-                onSearchChange={setSearch}
+                onSearchChange={handleSearchChange}
                 searchPlaceholder={isShop ? catalogUi.searchShop : catalogUi.searchRental}
                 sort={sort}
                 onSortChange={setSort}
