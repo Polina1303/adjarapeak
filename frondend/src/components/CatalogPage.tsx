@@ -80,6 +80,7 @@ const SHOP_GROUP_TAB_CONFIG = [
   { key: "clothesAndShoes", groupSlug: "clothesAndShoes" },
   { key: "martial", groupSlug: "martial" },
   { key: "tourismCamping", groupSlug: "tourismCamping" },
+  { key: "food", groupSlug: "food" },
   { key: "sports", groupSlug: "sports" },
   { key: "fitness", groupSlug: "fitness" },
   { key: "swimmingSup", groupSlug: "swimmingSup" },

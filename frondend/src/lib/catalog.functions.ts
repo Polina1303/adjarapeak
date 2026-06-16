@@ -14,7 +14,10 @@ const SPORTS_GROUP_SLUG = "sports";
 const FITNESS_GROUP_SLUG = "fitness";
 const SPORTS_AIR_CATEGORY_SLUG = "air";
 const FEATURED_PRODUCT_LIMIT = 8;
-const ALWAYS_RECOMMENDED_PRODUCT_SLUGS = new Set(["lodka-hello-plus-235-yellow"]);
+const ALWAYS_RECOMMENDED_PRODUCT_SLUGS = new Set([
+  "lodka-hello-plus-235-yellow",
+  "34444231",
+]);
 const ALWAYS_SEASONAL_CATEGORY_SLUGS = new Set([
   "backpack",
   "bottle",

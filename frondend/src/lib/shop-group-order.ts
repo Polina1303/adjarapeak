@@ -5,6 +5,7 @@ export const SHOP_GROUP_SLUG_ORDER = [
   "clothesAndShoes",
   "martial",
   "tourismCamping",
+  "food",
   "sports",
   "fitness",
   "swimmingSup",

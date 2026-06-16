@@ -229,7 +229,12 @@
           "technic": "TECH EQUIPMENT"
         }
       },
-      "medal": "KEYCHAINS, FLOATS, MEDALS, MAPS",
+      "medal": "KEYCHAINS, FLOATS, MEDALS, MAPS"
+    }
+  },
+  "food": {
+    "title": "FOOD",
+    "category": {
       "food": {
         "title": "FOOD",
         "subcategories": {
