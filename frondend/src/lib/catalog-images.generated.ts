@@ -2044,6 +2044,7 @@ export const CATALOG_IMAGE_FILES = new Set<string>([
   "trekking_sticks_black.jpg",
   "trekking_sticks_forclaz.jpg",
   "trekkingsticks1.jpg",
+  "trinx-junior-1-0-20.jpg",
   "trinx-m600-rent.png",
   "tusente-sport-bag-backpack-1-601099521398142.avif",
   "tusente-sport-bag-backpack-2-601099521398142.avif",

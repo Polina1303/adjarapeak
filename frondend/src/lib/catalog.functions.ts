@@ -77,6 +77,9 @@ const SHOP_GROUP_IMAGE_OVERRIDES: Record<string, string> = {
 const RENTAL_GROUP_IMAGE_OVERRIDES: Record<string, string> = {
   sportsRental: "kross-r6-rent.jpg",
 };
+const RENTAL_ITEM_IMAGE_OVERRIDES: Record<string, string> = {
+  "9871222": "trinx-junior-1-0-20.jpg",
+};
 
 // ---------- Types ----------
 export type ShopGroup = {
@@ -224,6 +227,18 @@ function normalizeShopProducts(rows: unknown[] | null | undefined): ShopProduct[
   return ((rows ?? []) as ShopProductRow[]).map(normalizeShopProduct);
 }
 
+function normalizeRentalItem(item: RentalItem): RentalItem {
+  const image = RENTAL_ITEM_IMAGE_OVERRIDES[item.slug] ?? item.image?.trim() ?? null;
+  return {
+    ...item,
+    image: image || null,
+  };
+}
+
+function normalizeRentalItems(rows: unknown[] | null | undefined): RentalItem[] {
+  return ((rows ?? []) as RentalItem[]).map(normalizeRentalItem);
+}
+
 const SHOP_GROUP_TITLE_OVERRIDES: Record<string, string> = {
   cyclingRoller: "Велоспорт и ролики",
   boards: "Баланс и доски",
@@ -343,6 +358,23 @@ function getBoardCategorySlug(product: Pick<ShopProduct, "title" | "slug" | "ima
   if (/лонг|long/.test(haystack)) return "longboards";
   if (/скейт|skate|sk8/.test(haystack)) return "skateboards";
   return "balanceboards";
+}
+
+function isBoardCatalogCategory(category: Pick<ShopCategory, "slug"> | null | undefined) {
+  return (
+    category?.slug === BALANCE_BOARD_CATEGORY_SLUG ||
+    category?.slug === "longboard" ||
+    category?.slug === "skateboard"
+  );
+}
+
+function getBoardDisplayCategory(product: Pick<ShopProduct, "title" | "slug" | "image">) {
+  const categorySlug = getBoardCategorySlug(product);
+  return (
+    createBoardsCategories([product as ShopProduct]).find(
+      (category) => category.slug === categorySlug,
+    ) ?? null
+  );
 }
 
 function isPillowOrMattressProduct(product: Pick<ShopProduct, "title" | "slug" | "image">) {
@@ -734,7 +766,7 @@ export const getRentalCategoryBySlugWithSub = createServerFn({ method: "GET" })
       category: category as RentalCategory,
       subcategories: (subcategories ?? []) as ShopSubcategory[],
       activeSubcategory: activeSub,
-      items: (items ?? []) as RentalItem[],
+      items: normalizeRentalItems(items),
     };
   });
 
@@ -873,6 +905,7 @@ export const getShopProductBySlug = createServerFn({ method: "GET" })
       .maybeSingle();
     if (error) throw new Error(error.message);
     if (!product) return null;
+    const normalizedProduct = normalizeShopProduct(product as ShopProductRow);
 
     const { data: category } = await supabase
       .from("shop_categories")
@@ -886,6 +919,12 @@ export const getShopProductBySlug = createServerFn({ method: "GET" })
           .eq("id", category.group_id)
           .maybeSingle()
       : { data: null };
+    const displayCategory = isBoardCatalogCategory(category as ShopCategory | null)
+      ? getBoardDisplayCategory(normalizedProduct)
+      : (category ?? null) as ShopCategory | null;
+    const displayGroup = isBoardCatalogCategory(category as ShopCategory | null)
+      ? createBoardsGroup(normalizedProduct.image)
+      : (group ?? null) as ShopGroup | null;
 
 
     // Complementary recommendations: show products that COMPLETE the kit.
@@ -895,7 +934,7 @@ export const getShopProductBySlug = createServerFn({ method: "GET" })
     // Tier 3: any other in-stock product.
     const TARGET = 8;
     const related: ShopProduct[] = [];
-    const seen = new Set<string>([product.id]);
+    const seen = new Set<string>([normalizedProduct.id]);
     const pushOne = (r: ShopProduct) => {
       if (related.length >= TARGET) return false;
       if (seen.has(r.id)) return false;
@@ -991,9 +1030,9 @@ export const getShopProductBySlug = createServerFn({ method: "GET" })
     }
 
     return {
-      product: normalizeShopProduct(product as ShopProductRow),
-      category: (category ?? null) as ShopCategory | null,
-      group: (group ?? null) as ShopGroup | null,
+      product: normalizedProduct,
+      category: displayCategory,
+      group: displayGroup,
       related: related.map(normalizeShopProduct),
     };
   });
@@ -1330,12 +1369,12 @@ export const searchRentalItems = createServerFn({ method: "GET" })
       for (const item of (r.data ?? []) as RentalItem[]) {
         if (seen.has(item.id)) continue;
         seen.add(item.id);
-        merged.push(item);
+        merged.push(normalizeRentalItem(item));
         if (merged.length >= limit) break;
       }
       if (merged.length >= limit) break;
     }
-    return merged;
+    return normalizeRentalItems(merged);
   });
 
 export const listOneProductPerCategorySlug = createServerFn({ method: "GET" })
@@ -1471,7 +1510,7 @@ export const getRentalCategoryBySlug = createServerFn({ method: "GET" })
       group: (group ?? null) as RentalGroup | null,
       category: category as RentalCategory,
       subcategories: (subcategories ?? []) as ShopSubcategory[],
-      items: (items ?? []) as RentalItem[],
+      items: normalizeRentalItems(items),
     };
   });
 
@@ -1538,7 +1577,7 @@ export const getRentalCategoryView = createServerFn({ method: "GET" })
     return {
       group: group as RentalGroup,
       category: category as RentalCategory,
-      items: (items ?? []) as RentalItem[],
+      items: normalizeRentalItems(items),
     };
   });
 
@@ -1608,7 +1647,7 @@ export const getRentalItemBySlug = createServerFn({ method: "GET" })
           .in("category_id", otherCatIds)
           .eq("available", true)
           .limit(40);
-        pushUnique(((groupRel ?? []) as RentalItem[]).sort(() => Math.random() - 0.5));
+        pushUnique(normalizeRentalItems(groupRel).sort(() => Math.random() - 0.5));
       }
     }
 
@@ -1619,14 +1658,14 @@ export const getRentalItemBySlug = createServerFn({ method: "GET" })
         .neq("category_id", item.category_id)
         .eq("available", true)
         .limit(40);
-      pushUnique(((anyRel ?? []) as RentalItem[]).sort(() => Math.random() - 0.5));
+      pushUnique(normalizeRentalItems(anyRel).sort(() => Math.random() - 0.5));
     }
 
     return {
-      item: item as RentalItem,
+      item: normalizeRentalItem(item as RentalItem),
       category: (category ?? null) as RentalCategory | null,
       group: (group ?? null) as RentalGroup | null,
-      related,
+      related: normalizeRentalItems(related),
     };
   });
 
@@ -1980,7 +2019,7 @@ export const getRentalGroupView = createServerFn({ method: "GET" })
       description: (r as { description?: string | null }).description ?? null,
       legacy_id: null,
       features: [],
-    })) as RentalItem[];
+    })).map((item) => normalizeRentalItem(item as RentalItem));
 
     // Attach a representative item image to each category (for tile picker)
     if (catIds.length) {
@@ -2059,7 +2098,7 @@ export const getSaleRentals = createServerFn({ method: "GET" }).handler(async ()
     description: null,
     legacy_id: null,
     features: [],
-  })) as RentalItem[];
+  })).map((item) => normalizeRentalItem(item as RentalItem));
 
   const items = all
     .filter((item) => hasManualDiscount(item.price_per_day, item.sale_price_per_day))

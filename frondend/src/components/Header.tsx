@@ -1,10 +1,11 @@
-import { Link, useNavigate } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import logo from "@/assets/logo.png";
 import { useState, useRef, useEffect } from "react";
 import { ShoppingBag, Menu, X, ChevronDown, Search } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useCartCount } from "@/lib/cart";
 import { useLanguage, type Lang } from "@/lib/i18n";
+import { MobileSearchOverlay } from "@/components/MobileSearchOverlay";
 
 type MainNavItem = {
   to: "/sale" | "/rent" | "/hikes" | "/rockClimbing" | "/service" | "/contact";
@@ -85,10 +86,9 @@ const headerText: Record<
 
 export function Header({ transparent = false }: { transparent?: boolean }) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
   const [hidden, setHidden] = useState(false);
-  const navigate = useNavigate();
   const { lang: currentLang, setLang, isTranslating } = useLanguage();
   const t = headerText[currentLang];
   const langRef = useRef<HTMLDivElement>(null);
@@ -130,7 +130,7 @@ export function Header({ transparent = false }: { transparent?: boolean }) {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-300 will-change-transform ${
-      hidden && !mobileOpen ? "-translate-y-full" : "translate-y-0"
+      hidden && !mobileOpen && !mobileSearchOpen ? "-translate-y-full" : "translate-y-0"
     } ${
       transparent
         ? "bg-background/90 backdrop-blur-xl border-b border-border"
@@ -141,26 +141,18 @@ export function Header({ transparent = false }: { transparent?: boolean }) {
         <Link to="/" aria-label={t.homeAria} className="shrink-0">
           <img src={logo} alt="Adjara Peak" className="h-8 w-auto" />
         </Link>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            const q = searchQuery.trim();
-            if (!q) return;
-            navigate({ to: "/search", search: { q } });
+        <button
+          type="button"
+          onClick={() => {
+            setMobileOpen(false);
+            setMobileSearchOpen(true);
           }}
-          className="relative flex-1 min-w-0"
-          role="search"
+          className="relative flex h-10 min-w-0 flex-1 items-center rounded-full border border-border bg-foreground/5 pl-10 pr-3 text-left font-body text-sm text-foreground/45 transition-colors hover:bg-background"
+          aria-label={t.searchProducts}
         >
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-foreground/40" />
-          <input
-            type="search"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder={t.searchProducts}
-            aria-label={t.searchProducts}
-            className="w-full h-10 pl-10 pr-3 rounded-full bg-foreground/5 border border-border text-sm font-body text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-ember focus:bg-background transition-colors"
-          />
-        </form>
+          <span className="truncate">{t.searchProducts}</span>
+        </button>
         <button
           aria-label={mobileOpen ? t.closeMenu : t.openMenu}
           className="shrink-0 w-10 h-10 rounded-lg flex items-center justify-center text-ember"
@@ -288,6 +280,11 @@ export function Header({ transparent = false }: { transparent?: boolean }) {
           </motion.div>
         )}
       </AnimatePresence>
+      <MobileSearchOverlay
+        open={mobileSearchOpen}
+        onClose={() => setMobileSearchOpen(false)}
+        lang={currentLang}
+      />
     </header>
   );
 }

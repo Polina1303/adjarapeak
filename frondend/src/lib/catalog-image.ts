@@ -74,7 +74,9 @@ export function resolveImage(name: string | null | undefined): string {
 
 export function resolveCatalogImage(name: string | null | undefined): string {
   if (!name) return CATALOG_POOL[0];
-  const imageName = CATALOG_IMAGE_ALIASES[name] ?? name;
+  const trimmedName = name.trim();
+  if (!trimmedName) return CATALOG_POOL[0];
+  const imageName = CATALOG_IMAGE_ALIASES[trimmedName] ?? trimmedName;
   // Allow absolute paths or full URLs to be used as-is (e.g. /img/foo.jpg).
   if (imageName.startsWith("/") || /^https?:\/\//i.test(imageName)) return imageName;
   if (CATALOG_IMAGE_FILES.has(imageName)) return `/img/${imageName}`;
