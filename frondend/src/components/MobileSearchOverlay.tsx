@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "framer-motion";
-import { Search, X } from "lucide-react";
+import { LoaderCircle, Search, X } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { resolveCatalogImage } from "@/lib/catalog-image";
 import {
@@ -198,6 +198,7 @@ export function MobileSearchOverlay({ open, onClose, lang }: Props) {
                 aria-label={text.title}
                 className="h-11 min-w-0 flex-1 bg-transparent font-body text-base text-foreground outline-none placeholder:text-foreground/40"
               />
+              {loading && <SearchSpinner className="h-5 w-5 text-ember" />}
               {query && (
                 <button
                   type="button"
@@ -235,7 +236,8 @@ export function MobileSearchOverlay({ open, onClose, lang }: Props) {
 
             <div className="max-h-[calc(100dvh-168px)] min-h-[340px] overflow-y-auto px-4 pb-[calc(env(safe-area-inset-bottom)+18px)]">
               {resultStatus ? (
-                <div className="flex min-h-[260px] items-center justify-center text-center font-body text-sm text-muted-foreground">
+                <div className="flex min-h-[260px] flex-col items-center justify-center gap-3 text-center font-body text-sm text-muted-foreground">
+                  {loading && <SearchSpinner className="h-7 w-7 text-ember" />}
                   {resultStatus}
                 </div>
               ) : (
@@ -278,6 +280,10 @@ export function MobileSearchOverlay({ open, onClose, lang }: Props) {
       )}
     </AnimatePresence>
   );
+}
+
+function SearchSpinner({ className }: { className: string }) {
+  return <LoaderCircle aria-hidden="true" className={`shrink-0 animate-spin ${className}`} />;
 }
 
 function ModeButton({
