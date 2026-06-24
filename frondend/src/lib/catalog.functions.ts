@@ -9,6 +9,9 @@ import { SHOP_COMPLEMENT_MAP } from "./recommendations";
 const EMPTY_CATEGORY_ID = "00000000-0000-0000-0000-000000000000";
 const BOARDS_GROUP_SLUG = "boards";
 const BALANCE_BOARD_CATEGORY_SLUG = "balance_board";
+const TOURISM_GROUP_SLUG = "tourismCamping";
+const LEGACY_RAINCOAT_CATEGORY_SLUG = "hermo";
+const RAINCOAT_CATEGORY_SLUG = "raincoat";
 const SPORTS_RENTAL_GROUP_SLUG = "sportsRental";
 const SPORTS_GROUP_SLUG = "sports";
 const FITNESS_GROUP_SLUG = "fitness";
@@ -24,10 +27,11 @@ const ALWAYS_SEASONAL_CATEGORY_SLUGS = new Set([
   "buff",
   "food",
   "hat",
-  "hermo",
   "knife",
   "lantern",
+  "raincoat",
   "sunglasses",
+  "termoryukzak",
   "trekkingsticks",
 ]);
 const SUMMER_FEATURED_CATEGORY_SLUGS = new Set([
@@ -62,12 +66,13 @@ const FEATURED_COMPLEMENT_CATEGORY_SLUGS = new Set([
   "bottle",
   "buff",
   "gas_burner",
-  "hermo",
   "lantern",
   "mat",
+  "raincoat",
   "sleepingbag",
   "sunglasses",
   "tent",
+  "termoryukzak",
   "trekkingsticks",
 ]);
 const SHOP_GROUP_IMAGE_OVERRIDES: Record<string, string> = {
@@ -248,6 +253,8 @@ const SHOP_GROUP_TITLE_OVERRIDES: Record<string, string> = {
 };
 
 const SHOP_CATEGORY_TITLE_OVERRIDES: Record<string, string> = {
+  hermo: "Дождевики",
+  raincoat: "Дождевики",
   boxing_gloves: "Перчатки для бокса",
   martialart_helmet: "Шлемы",
   martialart_protection: "Защита",
@@ -386,6 +393,21 @@ function filterShopCategoriesForGroup(groupSlug: string, categories: ShopCategor
     ? categories.filter((category) => category.slug !== BALANCE_BOARD_CATEGORY_SLUG)
     : categories;
   return visible.map(normalizeShopCategory);
+}
+
+function normalizeShopRouteCategorySlug(
+  groupSlug: string,
+  categorySlug: string,
+  categories: Array<Pick<ShopCategory, "slug">>,
+) {
+  if (
+    groupSlug === TOURISM_GROUP_SLUG &&
+    categorySlug === LEGACY_RAINCOAT_CATEGORY_SLUG &&
+    categories.some((category) => category.slug === RAINCOAT_CATEGORY_SLUG)
+  ) {
+    return RAINCOAT_CATEGORY_SLUG;
+  }
+  return categorySlug;
 }
 
 function filterShopProductsForGroup(
@@ -1860,7 +1882,8 @@ export const getShopGroupView = createServerFn({ method: "GET" })
     let activeCategory: ShopCategory | null = null;
     let activeSubcategory: ShopSubcategory | null = null;
     if (data.categorySlug) {
-      activeCategory = catList.find((c) => c.slug === data.categorySlug) ?? null;
+      const routeCategorySlug = normalizeShopRouteCategorySlug(group.slug, data.categorySlug, catList);
+      activeCategory = catList.find((c) => c.slug === routeCategorySlug) ?? null;
       if (!activeCategory) return null;
       if (data.subcategorySlug) {
         const list = subsByCat[activeCategory.id] ?? [];

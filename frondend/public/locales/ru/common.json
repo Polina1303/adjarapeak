@@ -133,6 +133,13 @@
           "raincoat": "Дождевики на рюкзак"
         }
       },
+      "raincoat": {
+        "title": "ДОЖДЕВИКИ",
+        "subcategories": {
+          "hermo": "Дождевики и пончо",
+          "raincoat": "Дождевики на рюкзак"
+        }
+      },
       "gas/burner": {
         "title": "ГОРЕЛКИ И ГАЗ",
         "subcategories": {

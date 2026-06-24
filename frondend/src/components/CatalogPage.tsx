@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight, SlidersHorizontal, ArrowLeft } from "lucide-react";
+import { ChevronLeft, ChevronRight, LoaderCircle, SlidersHorizontal, ArrowLeft } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CatalogSidebar } from "@/components/CatalogSidebar";
@@ -528,20 +528,17 @@ export function CatalogPage(props: ShopProps | RentalProps) {
                 onAvailableChange={setOnlyAvailable}
                 availabilityLabel={isShop ? catalogUi.inStock : catalogUi.available}
                 count={count}
+                loading={globalSearchLoading && isWholeCatalogSearchActive}
               />
 
               {isShop ? (
                 globalSearchLoading && isWholeCatalogSearchActive ? (
-                  <p className="text-center py-20 text-muted-foreground font-body">
-                    {catalogUi.searchingProducts}
-                  </p>
+                  <SearchLoadingState text={catalogUi.searchingProducts} />
                 ) : (
                   <ProductGrid products={visibleProducts} />
                 )
               ) : globalSearchLoading && isWholeCatalogSearchActive ? (
-                <p className="text-center py-20 text-muted-foreground font-body">
-                  {catalogUi.searchingProducts}
-                </p>
+                <SearchLoadingState text={catalogUi.searchingProducts} />
               ) : (
                 <RentalGrid items={visibleItems} />
               )}
@@ -565,6 +562,15 @@ export function CatalogPage(props: ShopProps | RentalProps) {
         </div>
       </main>
       <Footer />
+    </div>
+  );
+}
+
+function SearchLoadingState({ text }: { text: string }) {
+  return (
+    <div className="flex flex-col items-center justify-center gap-3 py-20 text-center font-body text-muted-foreground">
+      <LoaderCircle aria-hidden="true" className="h-7 w-7 animate-spin text-ember" />
+      <p>{text}</p>
     </div>
   );
 }

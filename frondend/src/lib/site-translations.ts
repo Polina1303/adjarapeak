@@ -355,7 +355,7 @@ export const SITE_TEXT = {
         // { name: "Егор", role: "Инструктор" },
       ],
       schedule: [
-        { day: "Воскресенье", price: "50 ₾", slots: ["1 группа — 9:00", "2 группа — 13:00"] },
+        { day: "Воскресенье", price: "50 ₾", slots: ["1 группа — 14:00 - 17:00", "2 группа — 17:30 - 20:30"] },
       ],
     },
     mobileNav: {
@@ -721,7 +721,7 @@ export const SITE_TEXT = {
         // { name: "Egor", role: "Instructor" },
       ],
       schedule: [
-        { day: "Sunday", price: "50 ₾", slots: ["Group 1 — 10:00 / 13:00", "Group 2 — 15:00 / 18:00"] },
+        { day: "Sunday", price: "50 ₾", slots: ["Group 1 — 14:00 - 17:00", "Group 2 — 17:30- 20:30"] },
       ],
     },
     mobileNav: {
@@ -1086,7 +1086,7 @@ export const SITE_TEXT = {
         // { name: "ეგორი", role: "ინსტრუქტორი" },
       ],
       schedule: [
-        { day: "კვირა", price: "50 ₾", slots: ["1 ჯგუფი — 10:00 / 13:00", "2 ჯგუფი — 15:00 / 18:00"] },
+        { day: "კვირა", price: "50 ₾", slots: ["1 ჯგუფი — 14:00 - 17:00", "2 ჯგუფი — 17:30 - 20:30"] },
       ],
     },
     mobileNav: {

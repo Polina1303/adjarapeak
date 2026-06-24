@@ -1,4 +1,4 @@
-import { ChevronDown, Search, X } from "lucide-react";
+import { ChevronDown, LoaderCircle, Search, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { CATALOG_UI_TEXT, type CatalogUiSortKey } from "@/lib/catalog-ui-text";
@@ -23,6 +23,7 @@ type Props = {
   onAvailableChange: (v: boolean) => void;
   availabilityLabel?: string;
   count: number;
+  loading?: boolean;
 };
 
 export function CatalogToolbar({
@@ -35,6 +36,7 @@ export function CatalogToolbar({
   onAvailableChange,
   availabilityLabel,
   count,
+  loading = false,
 }: Props) {
   const { lang } = useLanguage();
   const text = CATALOG_UI_TEXT[lang];
@@ -66,6 +68,14 @@ export function CatalogToolbar({
           aria-label={text.searchAriaLabel(actualSearchPlaceholder, count)}
           className="h-11 w-full rounded-lg border border-border bg-background pl-11 pr-11 font-body text-sm text-foreground placeholder:text-muted-foreground outline-none transition-colors focus:border-ember"
         />
+        {loading && (
+          <LoaderCircle
+            aria-hidden="true"
+            className={`absolute top-1/2 h-4 w-4 -translate-y-1/2 animate-spin text-ember ${
+              search ? "right-11" : "right-4"
+            }`}
+          />
+        )}
         {search && (
           <button
             type="button"

@@ -31,7 +31,7 @@ import {
   EyeOff,
   GripVertical,
 } from "lucide-react";
-import type { AdminTableConfig } from "@/lib/admin-tables";
+import type { AdminTableConfig, AdminTableKey } from "@/lib/admin-tables";
 import { ADMIN_TABLES } from "@/lib/admin-tables";
 import { loadAdminSortRefs, sortAdminRows } from "@/lib/admin-sort";
 import { RecordForm } from "./RecordForm";
@@ -42,6 +42,8 @@ import { toast } from "sonner";
 
 type Row = Record<string, any>;
 const FETCH_PAGE_SIZE = 1000;
+const BALANCE_BOARD_CATEGORY_SLUGS = new Set(["balance_board", "balance-board", "balanceboards"]);
+const BOARDS_GROUP_LABEL = "Баланс и доски";
 
 const COLUMN_LABELS: Record<string, string> = {
   sort_order: "Порядок",
@@ -87,9 +89,10 @@ function cloneValue(value: unknown) {
   return value;
 }
 
-function matchesSearch(row: Row, tokens: string[]) {
+function matchesSearch(row: Row, tokens: string[], fkLabels: Record<string, Record<string, string>>) {
+  const fkValues = Object.entries(fkLabels).map(([field, labels]) => labels[String(row[field] ?? "")] ?? "");
   const haystack = normalizeSearchValue(
-    Object.values(row).map(getSearchableValue).join(" "),
+    [...Object.values(row), ...fkValues].map(getSearchableValue).join(" "),
   );
   return tokens.every((token) => haystack.includes(token));
 }
@@ -143,6 +146,60 @@ async function fetchAllAdminRows(config: AdminTableConfig) {
   return all;
 }
 
+function fallbackSectionLabel(table: AdminTableKey) {
+  return table.startsWith("shop_") ? "Магазин" : "Аренда";
+}
+
+function categoryGroupLabel(
+  table: AdminTableKey,
+  row: Row,
+  group: { title?: string | null; slug?: string | null } | undefined,
+) {
+  if (table === "shop_categories" && BALANCE_BOARD_CATEGORY_SLUGS.has(String(row.slug ?? ""))) {
+    return BOARDS_GROUP_LABEL;
+  }
+  return group?.title ?? group?.slug ?? fallbackSectionLabel(table);
+}
+
+async function loadFkLabelMap(table: AdminTableKey) {
+  const [{ data }, refs] = await Promise.all([
+    (supabase as any).from(table).select("*").order("title", { ascending: true }),
+    loadAdminSortRefs(table, supabase),
+  ]);
+  const rows = sortAdminRows(table, (data as Row[]) ?? [], refs);
+  const map: Record<string, string> = {};
+
+  if (table === "shop_categories" || table === "rental_categories") {
+    const groups = table === "shop_categories" ? refs.shopGroups : refs.rentalGroups;
+    const groupById = new Map((groups ?? []).map((group) => [group.id, group]));
+    for (const row of rows) {
+      const group = groupById.get(row.group_id);
+      const groupLabel = categoryGroupLabel(table, row, group);
+      map[row.id] = `${groupLabel} / ${row.title}`;
+    }
+    return map;
+  }
+
+  if (table === "shop_subcategories" || table === "rental_subcategories") {
+    const categories = table === "shop_subcategories" ? refs.shopCategories : refs.rentalCategories;
+    const groups = table === "shop_subcategories" ? refs.shopGroups : refs.rentalGroups;
+    const categoryById = new Map((categories ?? []).map((category) => [category.id, category]));
+    const groupById = new Map((groups ?? []).map((group) => [group.id, group]));
+    for (const row of rows) {
+      const category = categoryById.get(row.category_id);
+      const group = category?.group_id ? groupById.get(category.group_id) : undefined;
+      const groupLabel = group?.title ?? group?.slug ?? "";
+      map[row.id] = [groupLabel, category?.title, row.title].filter(Boolean).join(" / ");
+    }
+    return map;
+  }
+
+  for (const row of rows) {
+    map[row.id] = String(row.title ?? row.id);
+  }
+  return map;
+}
+
 export function DataTable({ config }: { config: AdminTableConfig }) {
   const [rows, setRows] = useState<Row[]>([]);
   const [loading, setLoading] = useState(false);
@@ -191,12 +248,8 @@ export function DataTable({ config }: { config: AdminTableConfig }) {
     (async () => {
       const map: Record<string, Record<string, string>> = {};
       for (const f of fkFields) {
-        const refConfig = f.fkTable ? ADMIN_TABLES[f.fkTable] : null;
-        if (!refConfig) continue;
-        const { data } = await (supabase as any).from(refConfig.table).select("id,title");
-        const m: Record<string, string> = {};
-        ((data as any[]) ?? []).forEach((r) => (m[r.id] = r.title));
-        map[f.key] = m;
+        if (!f.fkTable || !ADMIN_TABLES[f.fkTable]) continue;
+        map[f.key] = await loadFkLabelMap(f.fkTable);
       }
       setFkLabels(map);
     })();
@@ -205,8 +258,8 @@ export function DataTable({ config }: { config: AdminTableConfig }) {
   const filtered = useMemo(() => {
     const tokens = normalizeSearchValue(search).split(/\s+/).filter(Boolean);
     if (!tokens.length) return rows;
-    return rows.filter((r) => matchesSearch(r, tokens));
-  }, [rows, search]);
+    return rows.filter((r) => matchesSearch(r, tokens, fkLabels));
+  }, [rows, search, fkLabels]);
 
   const pageRows = filtered.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
@@ -337,6 +390,9 @@ export function DataTable({ config }: { config: AdminTableConfig }) {
 
   const renderCell = (r: Row, col: string) => {
     const v = r[col];
+    if (config.table === "shop_categories" && col === "group_id" && BALANCE_BOARD_CATEGORY_SLUGS.has(String(r.slug ?? ""))) {
+      return <span className="text-xs">{BOARDS_GROUP_LABEL}</span>;
+    }
     if (col === "image" && v) {
       return <img src={resolveCatalogImage(v)} alt="" className="h-10 w-10 object-cover rounded" />;
     }

@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Check, ChevronsUpDown } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -13,15 +14,24 @@ import {
   DialogTitle,
   DialogFooter,
 } from "@/components/ui/dialog";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from "@/components/ui/command";
 import { ImageUploadField } from "./ImageUploadField";
 import { GalleryField } from "./GalleryField";
 import { StringListField } from "./StringListField";
 import { ReasonsField } from "./ReasonsField";
 import { PackingListField } from "./PackingListField";
 import { ColorImageListField } from "./ColorImageListField";
-import type { AdminTableConfig, FieldConfig } from "@/lib/admin-tables";
+import type { AdminTableConfig, AdminTableKey, FieldConfig } from "@/lib/admin-tables";
 import { loadAdminSortRefs, sortAdminRows } from "@/lib/admin-sort";
+import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 
 type Props = {
@@ -32,7 +42,16 @@ type Props = {
   onSaved: () => void;
 };
 
-type FkOption = { id: string; title: string; parent?: string | null };
+type FkOption = {
+  id: string;
+  title: string;
+  parent?: string | null;
+  subtitle?: string;
+  searchText: string;
+};
+
+const BALANCE_BOARD_CATEGORY_SLUGS = new Set(["balance_board", "balance-board", "balanceboards"]);
+const BOARDS_GROUP_LABEL = "Баланс и доски";
 
 function isOptionalManualSaleField(key: string) {
   return key === "sale_price" || key === "sale_price_per_day";
@@ -138,6 +157,171 @@ function validatePayload(config: AdminTableConfig, payload: Record<string, any>)
   return null;
 }
 
+function getGroupLabel(table: AdminTableKey, group: { title?: string | null; slug?: string | null } | undefined) {
+  if (group?.title) return group.title;
+  if (group?.slug) return group.slug;
+  return table.startsWith("shop_") ? "Магазин" : "Аренда";
+}
+
+function getCategoryGroupLabel(
+  table: AdminTableKey,
+  row: Record<string, any>,
+  group: { title?: string | null; slug?: string | null } | undefined,
+) {
+  if (table === "shop_categories" && BALANCE_BOARD_CATEGORY_SLUGS.has(String(row.slug ?? ""))) {
+    return BOARDS_GROUP_LABEL;
+  }
+  return getGroupLabel(table, group);
+}
+
+async function loadFkOptions(table: AdminTableKey): Promise<FkOption[]> {
+  const [{ data }, refs] = await Promise.all([
+    (supabase as any).from(table).select("*").order("title", { ascending: true }),
+    loadAdminSortRefs(table, supabase),
+  ]);
+  const rows = sortAdminRows(table, (data as any[]) ?? [], refs);
+
+  if (table === "shop_categories" || table === "rental_categories") {
+    const groups = table === "shop_categories" ? refs.shopGroups : refs.rentalGroups;
+    const groupById = new Map((groups ?? []).map((group) => [group.id, group]));
+
+    return rows.map((row) => {
+      const groupLabel = getCategoryGroupLabel(table, row, groupById.get(row.group_id));
+      return {
+        id: row.id,
+        title: row.title,
+        parent: null,
+        subtitle: groupLabel,
+        searchText: [groupLabel, row.title, row.slug].filter(Boolean).join(" "),
+      };
+    });
+  }
+
+  if (table === "shop_subcategories" || table === "rental_subcategories") {
+    const categories = table === "shop_subcategories" ? refs.shopCategories : refs.rentalCategories;
+    const groups = table === "shop_subcategories" ? refs.shopGroups : refs.rentalGroups;
+    const categoryById = new Map((categories ?? []).map((category) => [category.id, category]));
+    const groupById = new Map((groups ?? []).map((group) => [group.id, group]));
+
+    return rows.map((row) => {
+      const category = categoryById.get(row.category_id);
+      const groupLabel = category?.group_id ? getGroupLabel(table, groupById.get(category.group_id)) : "";
+      const categoryLabel = category?.title ?? "";
+      const subtitle = [groupLabel, categoryLabel].filter(Boolean).join(" / ");
+      return {
+        id: row.id,
+        title: row.title,
+        parent: row.category_id,
+        subtitle,
+        searchText: [groupLabel, categoryLabel, category?.slug, row.title, row.slug].filter(Boolean).join(" "),
+      };
+    });
+  }
+
+  return rows.map((row) => ({
+    id: row.id,
+    title: row.title,
+    parent: null,
+    searchText: [row.title, row.slug].filter(Boolean).join(" "),
+  }));
+}
+
+function FkCombobox({
+  value,
+  options,
+  placeholder,
+  emptyText,
+  clearLabel,
+  required,
+  disabled,
+  onChange,
+}: {
+  value: string | null | undefined;
+  options: FkOption[];
+  placeholder: string;
+  emptyText: string;
+  clearLabel: string;
+  required?: boolean;
+  disabled?: boolean;
+  onChange: (value: string | null) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const selected = options.find((option) => option.id === value);
+
+  return (
+    <Popover open={open} onOpenChange={setOpen}>
+      <PopoverTrigger asChild>
+        <Button
+          type="button"
+          variant="outline"
+          role="combobox"
+          aria-expanded={open}
+          disabled={disabled}
+          className="min-h-9 w-full justify-between px-3 text-left font-normal"
+        >
+          <span className="min-w-0">
+            <span className={cn("block truncate", !selected && "text-muted-foreground")}>
+              {selected?.title ?? placeholder}
+            </span>
+            {selected?.subtitle && (
+              <span className="block truncate text-xs text-muted-foreground">
+                {selected.subtitle}
+              </span>
+            )}
+          </span>
+          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+        </Button>
+      </PopoverTrigger>
+      <PopoverContent
+        align="start"
+        className="w-[var(--radix-popover-trigger-width)] p-0"
+        onWheelCapture={(event) => event.stopPropagation()}
+      >
+        <Command>
+          <CommandInput placeholder="Поиск по названию, слагу или группе…" />
+          <CommandList className="max-h-[min(360px,45vh)] overflow-y-auto overscroll-contain">
+            <CommandEmpty>{emptyText}</CommandEmpty>
+            <CommandGroup>
+              {!required && (
+                <CommandItem
+                  value={clearLabel}
+                  onSelect={() => {
+                    onChange(null);
+                    setOpen(false);
+                  }}
+                >
+                  <Check className={cn("h-4 w-4", !value ? "opacity-100" : "opacity-0")} />
+                  <span className="text-muted-foreground">{clearLabel}</span>
+                </CommandItem>
+              )}
+              {options.map((option) => (
+                <CommandItem
+                  key={option.id}
+                  value={`${option.searchText} ${option.id}`}
+                  onSelect={() => {
+                    onChange(option.id);
+                    setOpen(false);
+                  }}
+                >
+                  <Check className={cn("h-4 w-4", value === option.id ? "opacity-100" : "opacity-0")} />
+                  <span className="min-w-0">
+                    <span className="block truncate">{option.title}</span>
+                    {option.subtitle && (
+                      <span className="block truncate text-xs text-muted-foreground">
+                        {option.subtitle}
+                      </span>
+                    )}
+                  </span>
+                </CommandItem>
+              ))}
+            </CommandGroup>
+          </CommandList>
+        </Command>
+      </PopoverContent>
+    </Popover>
+  );
+}
+
 export function RecordForm({ config, record, open, onClose, onSaved }: Props) {
   const [form, setForm] = useState<Record<string, any>>({});
   const [fkOptions, setFkOptions] = useState<Record<string, FkOption[]>>({});
@@ -212,22 +396,36 @@ export function RecordForm({ config, record, open, onClose, onSaved }: Props) {
       const opts: Record<string, FkOption[]> = {};
       for (const f of activeFields) {
         if (f.type === "fk" && f.fkTable) {
-          const [{ data }, refs] = await Promise.all([
-            (supabase as any).from(f.fkTable).select("*").order("title", { ascending: true }),
-            loadAdminSortRefs(f.fkTable, supabase),
-          ]);
-          const rows = sortAdminRows(f.fkTable, (data as any[]) ?? [], refs);
-          opts[f.key] = rows.map((r) => ({
-            id: r.id,
-            title: r.title,
-            parent: f.fkParentField ? r[f.fkParentField] : null,
-          }));
+          opts[f.key] = await loadFkOptions(f.fkTable);
         }
       }
       setFkOptions(opts);
     };
     loadFk();
   }, [open, config, activeFields]);
+
+  useEffect(() => {
+    if (!open) return;
+    setForm((current) => {
+      let changed = false;
+      const next = { ...current };
+
+      for (const f of activeFields) {
+        if (f.type !== "fk" || !f.fkParentField || !f.fkParentSource) continue;
+        const value = next[f.key];
+        if (!value) continue;
+
+        const parentId = next[f.fkParentSource];
+        const option = (fkOptions[f.key] ?? []).find((item) => item.id === value);
+        if (parentId && option && option.parent !== parentId) {
+          next[f.key] = null;
+          changed = true;
+        }
+      }
+
+      return changed ? next : current;
+    });
+  }, [open, activeFields, fkOptions, form.category_id]);
 
   const setVal = (k: string, v: any) => setForm((p) => ({ ...p, [k]: v }));
 
@@ -284,6 +482,15 @@ export function RecordForm({ config, record, open, onClose, onSaved }: Props) {
         }
         if ((f.type === "date" || f.type === "time") && (!v || v === "")) v = null;
         if (f.type === "fk" && (!v || v === "")) v = null;
+        if (f.type === "fk" && v && f.fkParentField && f.fkParentSource) {
+          const parentId = form[f.fkParentSource];
+          const option = (fkOptions[f.key] ?? []).find((item) => item.id === v);
+          if (parentId && option && option.parent !== parentId) {
+            toast.error(`Поле «${f.label}» не относится к выбранной категории`);
+            setSaving(false);
+            return;
+          }
+        }
         if (f.type === "text" || f.type === "textarea") {
           if (v === "") v = null;
         }
@@ -419,23 +626,18 @@ export function RecordForm({ config, record, open, onClose, onSaved }: Props) {
         const all = fkOptions[f.key] ?? [];
         const parentId = f.fkParentSource ? form[f.fkParentSource] : null;
         const filtered = f.fkParentField && parentId ? all.filter((o) => o.parent === parentId) : all;
+        const needsParent = !!f.fkParentField && !!f.fkParentSource && !parentId;
         return (
-          <Select
-            value={v || ""}
-            onValueChange={(val) => setVal(f.key, val === "__none__" ? null : val)}
-          >
-            <SelectTrigger>
-              <SelectValue placeholder="Выберите…" />
-            </SelectTrigger>
-            <SelectContent>
-              {!f.required && <SelectItem value="__none__">— Не выбрано —</SelectItem>}
-              {filtered.map((o) => (
-                <SelectItem key={o.id} value={o.id}>
-                  {o.title}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+          <FkCombobox
+            value={v || null}
+            options={filtered}
+            placeholder={needsParent ? "Сначала выберите категорию" : "Выберите…"}
+            emptyText={needsParent ? "Сначала выберите категорию" : "Ничего не найдено"}
+            clearLabel="— Не выбрано —"
+            required={f.required}
+            disabled={needsParent}
+            onChange={(val) => setVal(f.key, val)}
+          />
         );
       }
     }

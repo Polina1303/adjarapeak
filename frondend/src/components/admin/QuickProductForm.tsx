@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Images, Loader2, Sparkles, Upload, X } from "lucide-react";
+import { Check, ChevronsUpDown, Images, Loader2, Sparkles, Upload, X } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import {
@@ -19,7 +19,17 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from "@/components/ui/command";
 import { Textarea } from "@/components/ui/textarea";
+import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 
 type Category = {
@@ -55,6 +65,9 @@ type Props = {
   onOpenChange: (open: boolean) => void;
   onSaved: () => void;
 };
+
+const BALANCE_BOARD_CATEGORY_SLUGS = new Set(["balance_board", "balance-board", "balanceboards"]);
+const BOARDS_GROUP_LABEL = "Баланс и доски";
 
 const EMPTY_RAW = `Название товара
 72
@@ -205,6 +218,92 @@ async function uploadCatalogImage(file: File, slug: string, suffix: string) {
   if (error) throw error;
   const { data } = supabase.storage.from("catalog-images").getPublicUrl(path);
   return data.publicUrl;
+}
+
+function categoryLabel(category: Category) {
+  const groupTitle = BALANCE_BOARD_CATEGORY_SLUGS.has(category.slug)
+    ? BOARDS_GROUP_LABEL
+    : category.shop_groups?.title;
+
+  return groupTitle ? `${groupTitle} / ${category.title}` : category.title;
+}
+
+function CategoryCombobox({
+  categories,
+  value,
+  onChange,
+}: {
+  categories: Category[];
+  value: string;
+  onChange: (value: string) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const selected = categories.find((category) => category.id === value);
+
+  return (
+    <Popover open={open} onOpenChange={setOpen}>
+      <PopoverTrigger asChild>
+        <Button
+          type="button"
+          variant="outline"
+          role="combobox"
+          aria-expanded={open}
+          className="min-h-9 w-full justify-between px-3 text-left font-normal"
+        >
+          <span className={cn("truncate", !selected && "text-muted-foreground")}>
+            {selected ? categoryLabel(selected) : "Выберите категорию"}
+          </span>
+          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+        </Button>
+      </PopoverTrigger>
+      <PopoverContent
+        align="start"
+        className="w-[var(--radix-popover-trigger-width)] p-0"
+        onWheelCapture={(event) => event.stopPropagation()}
+      >
+        <Command>
+          <CommandInput placeholder="Поиск по категории, группе или слагу…" />
+          <CommandList className="max-h-[min(360px,45vh)] overflow-y-auto overscroll-contain">
+            <CommandEmpty>Категория не найдена</CommandEmpty>
+            <CommandGroup>
+              {categories.map((category) => (
+                <CommandItem
+                  key={category.id}
+                  value={[
+                    category.title,
+                    category.slug,
+                    BALANCE_BOARD_CATEGORY_SLUGS.has(category.slug)
+                      ? BOARDS_GROUP_LABEL
+                      : category.shop_groups?.title,
+                    category.shop_groups?.slug,
+                    category.id,
+                  ]
+                    .filter(Boolean)
+                    .join(" ")}
+                  onSelect={() => {
+                    onChange(category.id);
+                    setOpen(false);
+                  }}
+                >
+                  <Check className={cn("h-4 w-4", value === category.id ? "opacity-100" : "opacity-0")} />
+                  <span className="min-w-0">
+                    <span className="block truncate">{category.title}</span>
+                    {(BALANCE_BOARD_CATEGORY_SLUGS.has(category.slug) || category.shop_groups?.title) && (
+                      <span className="block truncate text-xs text-muted-foreground">
+                        {BALANCE_BOARD_CATEGORY_SLUGS.has(category.slug)
+                          ? BOARDS_GROUP_LABEL
+                          : category.shop_groups?.title}
+                      </span>
+                    )}
+                  </span>
+                </CommandItem>
+              ))}
+            </CommandGroup>
+          </CommandList>
+        </Command>
+      </PopoverContent>
+    </Popover>
+  );
 }
 
 export function QuickProductForm({ open, onOpenChange, onSaved }: Props) {
@@ -373,20 +472,11 @@ export function QuickProductForm({ open, onOpenChange, onSaved }: Props) {
             <div className="grid gap-3 sm:grid-cols-2">
               <div className="space-y-1.5">
                 <p className="text-sm font-medium">Категория</p>
-                <Select value={categoryId} onValueChange={setCategoryId}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Выберите категорию" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {categories.map((category) => (
-                      <SelectItem key={category.id} value={category.id}>
-                        {category.shop_groups?.title
-                          ? `${category.shop_groups.title} / ${category.title}`
-                          : category.title}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+                <CategoryCombobox
+                  categories={categories}
+                  value={categoryId}
+                  onChange={setCategoryId}
+                />
               </div>
 
               <div className="space-y-1.5">

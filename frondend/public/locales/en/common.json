@@ -132,6 +132,13 @@
           "raincoat": "RAINCOATS FOR BACKPACKS"
         }
       },
+      "raincoat": {
+        "title": "RAINCOATS",
+        "subcategories": {
+          "hermo": "RAINCOATS AND PONCHOS",
+          "raincoat": "RAINCOATS FOR BACKPACKS"
+        }
+      },
       "gas/burner": {
         "title": "BURNERS AND GAS",
         "subcategories": {
