@@ -226,9 +226,9 @@ export const SITE_TEXT = {
       ctaText:
         "Принимаем лыжи и сноуборды каждый день. Стандартная комплексная подготовка — за один рабочий день.",
       addressLabel: "Адрес",
-      address: "Батуми, ул. Чавчавадзе 81",
+      address: "Батуми, ул. Генерала Аслана Абашидзе, 19",
       hoursLabel: "Часы работы",
-      hours: "Пн–Сб 10:00 — 20:00 · Вс 11:00 — 18:00",
+      hours: "11:00 — 20:00",
       phoneLabel: "Телефон",
       services: [
         {
@@ -592,9 +592,9 @@ export const SITE_TEXT = {
       ctaText:
         "We accept skis and snowboards every day. Standard full preparation takes one business day.",
       addressLabel: "Address",
-      address: "81 Chavchavadze St, Batumi",
+      address: "19 General Aslan Abashidze St, Batumi",
       hoursLabel: "Opening hours",
-      hours: "Mon-Sat 10:00 — 20:00 · Sun 11:00 — 18:00",
+      hours: "11:00 — 20:00",
       phoneLabel: "Phone",
       services: [
         {
@@ -958,9 +958,9 @@ export const SITE_TEXT = {
       ctaText:
         "თხილამურებსა და სნოუბორდებს ყოველდღე ვიღებთ. სტანდარტული სრული მომზადება ერთ სამუშაო დღეში სრულდება.",
       addressLabel: "მისამართი",
-      address: "ბათუმი, ჭავჭავაძის ქ. 81",
+      address: "ბათუმი, გენერალ ასლან აბაშიძის ქ. 19",
       hoursLabel: "სამუშაო საათები",
-      hours: "ორშ-შაბ 10:00 — 20:00 · კვ 11:00 — 18:00",
+      hours: "11:00 — 20:00",
       phoneLabel: "ტელეფონი",
       services: [
         {

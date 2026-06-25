@@ -3,7 +3,18 @@ import { useEffect, useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
-import { Wrench, Snowflake, Droplets, ShieldCheck, Clock, MapPin, Phone, Bike, Cog, CircleDot } from "lucide-react";
+import {
+  Wrench,
+  Snowflake,
+  Droplets,
+  ShieldCheck,
+  Clock,
+  MapPin,
+  Phone,
+  Bike,
+  Cog,
+  CircleDot,
+} from "lucide-react";
 import bannerBike from "@/assets/banner-bike.jpg";
 import s0 from "@/assets/service-0.jpg";
 import s1 from "@/assets/service-1.jpg";
@@ -17,16 +28,29 @@ export const Route = createFileRoute("/service")({
   head: () => ({
     meta: [
       { title: "Сервисный центр — Adjara Peak" },
-      { name: "description", content: "Заточка кантов, парафин, ремонт скользящей поверхности лыж и сноубордов в Батуми. Профессиональный сервис Adjara Peak." },
+      {
+        name: "description",
+        content:
+          "Заточка кантов, парафин, ремонт скользящей поверхности лыж и сноубордов в Батуми. Профессиональный сервис Adjara Peak.",
+      },
       { property: "og:title", content: "Сервисный центр — Adjara Peak" },
-      { property: "og:description", content: "Профессиональный сервис лыж и сноубордов в Батуми: заточка кантов, парафин, ремонт." },
+      {
+        property: "og:description",
+        content:
+          "Профессиональный сервис лыж и сноубордов в Батуми: заточка кантов, парафин, ремонт.",
+      },
       { property: "og:image", content: bannerBike },
     ],
   }),
   component: ServicePage,
 });
 
-type Service = { title: string; desc: string; price: string; highlight?: boolean };
+type Service = {
+  title: string;
+  desc: string;
+  price: string;
+  highlight?: boolean;
+};
 type ServiceFallback = ReadonlyArray<{
   title: string;
   desc: string;
@@ -53,7 +77,7 @@ const gallery = [s0, s1, s2, s3];
 function getTranslatedValue(
   row: ServicePriceRow,
   key: "title" | "description" | "price",
-  lang: Lang,
+  lang: Lang
 ) {
   if (lang === "RU") return row[key];
   const suffix = lang === "EN" ? "en" : "ka";
@@ -61,7 +85,11 @@ function getTranslatedValue(
   return typeof value === "string" && value.trim() ? value : null;
 }
 
-function localizePrice(price: string, fallback: string | undefined, lang: Lang) {
+function localizePrice(
+  price: string,
+  fallback: string | undefined,
+  lang: Lang
+) {
   if (lang === "RU") return price;
   if (fallback) return fallback;
   if (lang === "EN") return price.replace(/^от\s+/i, "from ");
@@ -76,8 +104,10 @@ function ServicePage() {
   const [season, setSeason] = useState<"winter" | "summer">("summer");
   const [winterServices, setWinterServices] = useState<Service[]>([]);
   const [summerServices, setSummerServices] = useState<Service[]>([]);
-  const featureSource = season === "winter" ? text.features : text.summerFeatures;
-  const featureIcons = season === "winter" ? winterFeatureIcons : summerFeatureIcons;
+  const featureSource =
+    season === "winter" ? text.features : text.summerFeatures;
+  const featureIcons =
+    season === "winter" ? winterFeatureIcons : summerFeatureIcons;
   const features = featureSource.map((feature, index) => ({
     ...feature,
     icon: featureIcons[index] ?? Wrench,
@@ -99,21 +129,25 @@ function ServicePage() {
       ]);
       const map = (
         rows: ServicePriceRow[] | null,
-        fallback: ServiceFallback,
+        fallback: ServiceFallback
       ): Service[] =>
         (rows ?? []).map((r, index) => ({
           title:
             lang === "RU"
               ? r.title
-              : (getTranslatedValue(r, "title", lang) ?? fallback[index]?.title ?? r.title),
+              : (getTranslatedValue(r, "title", lang) ??
+                fallback[index]?.title ??
+                r.title),
           desc:
             lang === "RU"
               ? (r.description ?? "")
-              : (getTranslatedValue(r, "description", lang) ?? fallback[index]?.desc ?? ""),
+              : (getTranslatedValue(r, "description", lang) ??
+                fallback[index]?.desc ??
+                ""),
           price: localizePrice(
             getTranslatedValue(r, "price", lang) ?? r.price ?? "",
             fallback[index]?.price,
-            lang,
+            lang
           ),
           highlight: !!r.highlight,
         }));
@@ -122,14 +156,16 @@ function ServicePage() {
     })();
   }, [lang, text.services, text.summerServices]);
 
-  const fallbackSource = season === "winter" ? text.services : text.summerServices;
+  const fallbackSource =
+    season === "winter" ? text.services : text.summerServices;
   const fallbackServices: Service[] = fallbackSource.map((s) => ({
     ...s,
     highlight: "highlight" in s ? !!s.highlight : false,
   }));
   const services = season === "winter" ? winterServices : summerServices;
   const displayServices = services.length > 0 ? services : fallbackServices;
-  const sectionText = season === "winter" ? text.winterSectionText : text.summerSectionText;
+  const sectionText =
+    season === "winter" ? text.winterSectionText : text.summerSectionText;
 
   return (
     <div className="min-h-screen bg-background">
@@ -142,7 +178,10 @@ function ServicePage() {
           style={{ backgroundImage: `url(${bannerBike})` }}
           aria-hidden
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/80 to-background" aria-hidden />
+        <div
+          className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/80 to-background"
+          aria-hidden
+        />
         <div className="relative section-padding">
           <div className="max-w-6xl mx-auto">
             <motion.div
@@ -191,7 +230,9 @@ function ServicePage() {
               <h3 className="font-display text-sm uppercase tracking-wider text-foreground mb-2">
                 {f.title}
               </h3>
-              <p className="font-body text-xs text-muted-foreground leading-relaxed">{f.desc}</p>
+              <p className="font-body text-xs text-muted-foreground leading-relaxed">
+                {f.desc}
+              </p>
             </motion.div>
           ))}
         </div>
@@ -212,10 +253,12 @@ function ServicePage() {
           </div>
 
           <div className="inline-flex p-1 rounded-full border border-border bg-card mb-6">
-            {([
-              { key: "winter", label: text.winterSeason },
-              { key: "summer", label: text.summerSeason },
-            ] as const).map((t) => (
+            {(
+              [
+                { key: "winter", label: text.winterSeason },
+                { key: "summer", label: text.summerSeason },
+              ] as const
+            ).map((t) => (
               <button
                 key={t.key}
                 type="button"
@@ -233,8 +276,12 @@ function ServicePage() {
 
           <div className="rounded-3xl border border-border overflow-hidden bg-card">
             <div className="hidden sm:grid grid-cols-[1fr_140px] px-6 py-4 border-b border-border bg-muted/40">
-              <span className="font-display text-xs uppercase tracking-[0.2em] text-muted-foreground">{text.serviceColumn}</span>
-              <span className="font-display text-xs uppercase tracking-[0.2em] text-muted-foreground text-right">{text.priceColumn}</span>
+              <span className="font-display text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                {text.serviceColumn}
+              </span>
+              <span className="font-display text-xs uppercase tracking-[0.2em] text-muted-foreground text-right">
+                {text.priceColumn}
+              </span>
             </div>
             <ul>
               {displayServices.map((s, i) => (
@@ -257,7 +304,9 @@ function ServicePage() {
                     </p>
                   </div>
                   <div className="sm:text-right">
-                    <span className={`font-display text-lg font-bold ${"highlight" in s && s.highlight ? "text-ember" : "text-foreground"}`}>
+                    <span
+                      className={`font-display text-lg font-bold ${"highlight" in s && s.highlight ? "text-ember" : "text-foreground"}`}
+                    >
                       {s.price}
                     </span>
                   </div>
@@ -284,7 +333,12 @@ function ServicePage() {
                 transition={{ delay: i * 0.05 }}
                 className="aspect-[4/5] rounded-2xl overflow-hidden bg-muted"
               >
-                <img src={src} alt={text.galleryAlt(i + 1)} className="w-full h-full object-cover" loading="lazy" />
+                <img
+                  src={src}
+                  alt={text.galleryAlt(i + 1)}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
               </motion.div>
             ))}
           </div>
@@ -306,7 +360,9 @@ function ServicePage() {
             <div className="flex items-start gap-3">
               <MapPin className="h-5 w-5 text-ember mt-0.5 shrink-0" />
               <div>
-                <div className="font-display text-xs uppercase tracking-wider text-background/60 mb-1">{text.addressLabel}</div>
+                <div className="font-display text-xs uppercase tracking-wider text-background/60 mb-1">
+                  {text.addressLabel}
+                </div>
                 <a
                   href="https://www.google.com/maps/search/?api=1&query=Batumi%2C+Chavchavadze+St+81"
                   target="_blank"
@@ -320,16 +376,23 @@ function ServicePage() {
             <div className="flex items-start gap-3">
               <Clock className="h-5 w-5 text-ember mt-0.5 shrink-0" />
               <div>
-                <div className="font-display text-xs uppercase tracking-wider text-background/60 mb-1">{text.hoursLabel}</div>
+                <div className="font-display text-xs uppercase tracking-wider text-background/60 mb-1">
+                  {text.hoursLabel}
+                </div>
                 <div className="font-body text-sm">{text.hours}</div>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <Phone className="h-5 w-5 text-ember mt-0.5 shrink-0" />
               <div>
-                <div className="font-display text-xs uppercase tracking-wider text-background/60 mb-1">{text.phoneLabel}</div>
-                <a href="tel:+995555000000" className="font-body text-sm hover:text-ember transition-colors">
-                  +995 555 000 000
+                <div className="font-display text-xs uppercase tracking-wider text-background/60 mb-1">
+                  {text.phoneLabel}
+                </div>
+                <a
+                  href="tel:+995571208555"
+                  className="font-body text-sm hover:text-ember transition-colors"
+                >
+                  +995-571-208-555 (Geo, Eng, Ru)
                 </a>
               </div>
             </div>
