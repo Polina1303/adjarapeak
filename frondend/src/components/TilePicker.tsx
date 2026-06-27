@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
+import type { ReactNode } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { resolveCatalogImage } from "@/lib/catalog-image";
@@ -36,9 +37,10 @@ type Props = {
   buildHref: (slug: string) => { to: string; params?: Record<string, string>; external?: boolean };
   breadcrumbs?: Crumb[];
   emptyText?: string;
+  children?: ReactNode;
 };
 
-export function TilePicker({ title, items, buildHref, breadcrumbs, emptyText }: Props) {
+export function TilePicker({ title, items, buildHref, breadcrumbs, emptyText, children }: Props) {
   const { lang } = useLanguage();
   const text = TILE_TEXT[lang];
 
@@ -75,6 +77,8 @@ export function TilePicker({ title, items, buildHref, breadcrumbs, emptyText }: 
           <h1 className="font-display text-3xl md:text-4xl font-bold text-foreground uppercase tracking-wide mb-8">
             {title}
           </h1>
+
+          {children}
 
           {items.length === 0 ? (
             <p className="text-center py-20 text-muted-foreground font-body">
