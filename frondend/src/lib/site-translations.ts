@@ -134,6 +134,25 @@ export const SITE_TEXT = {
       indexTitle: "Походы по Грузии",
       indexLead:
         "Однодневные выезды и многодневные походы с опытными гидами. Полный комплект снаряжения по запросу.",
+      guideEyebrow: "Команда Adjara Peak",
+      guideTitle: "Знакомьтесь, Денис — ваш гид в походах",
+      guideParagraphs: [
+        "Денис уже второй год работает с нашей командой. У него большой опыт сопровождения крупных групп, организации корпоративов и тимбилдингов, а также длительных пеших маршрутов.",
+        "Хайкингом Денис увлекается с детства, а свой первый серьёзный многодневный поход совершил уже в 14 лет. За его плечами маршруты Архыза, Приэльбрусья, Домбая и Лаго-Наки, а в последние три года — множество маршрутов по Грузии и Ликийская тропа.",
+        "Среди его увлечений — велосипед, фотография и путешествия. А список активностей настолько большой, что проще сказать, чем он не занимался: среди основных — пулевая стрельба, парашютный спорт и фитнес.",
+      ],
+      guideHighlights: [
+        "Крупные группы",
+        "Корпоративы и тимбилдинги",
+        "Многодневные маршруты",
+      ],
+      guideName: "Денис",
+      guideRole: "Гид Adjara Peak",
+      guideGalleryTitle: "Денис в горах",
+      guideGalleryLabel: "Фотографии гида Дениса",
+      guidePreviousPhoto: "Предыдущее фото",
+      guideNextPhoto: "Следующее фото",
+      guidePhotoAlt: (n: number) => `Гид Денис в походе ${n}`,
       empty:
         "Походы скоро появятся. Свяжитесь с нами, чтобы обсудить индивидуальный маршрут.",
       allHikes: "Все походы",
@@ -525,6 +544,25 @@ export const SITE_TEXT = {
       indexTitle: "Hiking in Georgia",
       indexLead:
         "One-day trips and multi-day hikes with experienced guides. Full gear set available on request.",
+      guideEyebrow: "Adjara Peak team",
+      guideTitle: "Meet Denis, your hiking guide",
+      guideParagraphs: [
+        "Denis is in his second year with our team. He has extensive experience guiding large groups, organizing corporate outings and team-building events, and leading long-distance hiking routes.",
+        "He has been hiking since childhood and completed his first serious multi-day trek at the age of 14. His experience includes routes across Arkhyz, the Elbrus region, Dombay and Lago-Naki, followed in recent years by numerous trails throughout Georgia and the Lycian Way.",
+        "His interests include cycling, photography and travel. The list of sports he has tried is so long that it is easier to name what he has not done; among the main ones are target shooting, skydiving and fitness.",
+      ],
+      guideHighlights: [
+        "Large groups",
+        "Corporate & team building",
+        "Multi-day routes",
+      ],
+      guideName: "Denis",
+      guideRole: "Adjara Peak guide",
+      guideGalleryTitle: "Denis in the mountains",
+      guideGalleryLabel: "Photos of guide Denis",
+      guidePreviousPhoto: "Previous photo",
+      guideNextPhoto: "Next photo",
+      guidePhotoAlt: (n: number) => `Guide Denis on a hike ${n}`,
       empty:
         "Hikes will appear soon. Contact us to discuss a custom route.",
       allHikes: "All hikes",
@@ -916,6 +954,25 @@ export const SITE_TEXT = {
       indexTitle: "ლაშქრობები საქართველოში",
       indexLead:
         "ერთდღიანი გასვლები და მრავალდღიანი ლაშქრობები გამოცდილ გიდებთან ერთად. სრული აღჭურვილობა ხელმისაწვდომია მოთხოვნით.",
+      guideEyebrow: "Adjara Peak-ის გუნდი",
+      guideTitle: "გაიცანით დენისი — თქვენი გიდი ლაშქრობებში",
+      guideParagraphs: [
+        "დენისი უკვე მეორე წელია ჩვენს გუნდთან მუშაობს. მას დიდი გამოცდილება აქვს დიდი ჯგუფების თანხლებაში, კორპორაციული გასვლებისა და გუნდური ღონისძიებების ორგანიზებაში, ასევე ხანგრძლივი საფეხმავლო მარშრუტების ხელმძღვანელობაში.",
+        "ლაშქრობა დენისს ბავშვობიდან უყვარს, ხოლო პირველი სერიოზული მრავალდღიანი ლაშქრობა 14 წლის ასაკში გაიარა. მის გამოცდილებაშია არხიზის, იალბუზის რეგიონის, დომბაისა და ლაგო-ნაკის მარშრუტები, ბოლო სამი წლის განმავლობაში კი — მრავალი ბილიკი საქართველოში და ლიკიის გზა.",
+        "მის ინტერესებშია ველოსიპედი, ფოტოგრაფია და მოგზაურობა. სპორტული აქტივობების სია იმდენად დიდია, რომ უფრო მარტივია ითქვას, რა არ უცდია; ძირითად მიმართულებებს შორისაა ტყვიის სროლა, პარაშუტით სპორტი და ფიტნესი.",
+      ],
+      guideHighlights: [
+        "დიდი ჯგუფები",
+        "კორპორაციული და გუნდური ღონისძიებები",
+        "მრავალდღიანი მარშრუტები",
+      ],
+      guideName: "დენისი",
+      guideRole: "Adjara Peak-ის გიდი",
+      guideGalleryTitle: "დენისი მთებში",
+      guideGalleryLabel: "გიდ დენისის ფოტოები",
+      guidePreviousPhoto: "წინა ფოტო",
+      guideNextPhoto: "შემდეგი ფოტო",
+      guidePhotoAlt: (n: number) => `გიდი დენისი ლაშქრობაში ${n}`,
       empty:
         "ლაშქრობები მალე გამოჩნდება. დაგვიკავშირდით ინდივიდუალური მარშრუტის შესათანხმებლად.",
       allHikes: "ყველა ლაშქრობა",
