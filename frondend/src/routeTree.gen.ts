@@ -18,6 +18,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CheckoutRouteImport } from './routes/checkout'
 import { Route as AdminRouteImport } from './routes/_admin'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as TourismCampingIndexRouteImport } from './routes/tourismCamping.index'
 import { Route as HikesIndexRouteImport } from './routes/hikes.index'
 import { Route as SaleSearchRouteImport } from './routes/sale.search'
 import { Route as SaleSaleRouteImport } from './routes/sale.sale'
@@ -76,6 +77,11 @@ const AdminRoute = AdminRouteImport.update({
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TourismCampingIndexRoute = TourismCampingIndexRouteImport.update({
+  id: '/tourismCamping/',
+  path: '/tourismCamping/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HikesIndexRoute = HikesIndexRouteImport.update({
@@ -174,6 +180,7 @@ export interface FileRoutesByFullPath {
   '/sale/sale': typeof SaleSaleRoute
   '/sale/search': typeof SaleSearchRoute
   '/hikes/': typeof HikesIndexRoute
+  '/tourismCamping/': typeof TourismCampingIndexRoute
   '/rent/$group/$category': typeof RentGroupCategoryRouteWithChildren
   '/sale/$group/$category': typeof SaleGroupCategoryRouteWithChildren
   '/admin/': typeof AdminAdminIndexRoute
@@ -199,6 +206,7 @@ export interface FileRoutesByTo {
   '/sale/sale': typeof SaleSaleRoute
   '/sale/search': typeof SaleSearchRoute
   '/hikes': typeof HikesIndexRoute
+  '/tourismCamping': typeof TourismCampingIndexRoute
   '/rent/$group/$category': typeof RentGroupCategoryRouteWithChildren
   '/sale/$group/$category': typeof SaleGroupCategoryRouteWithChildren
   '/admin': typeof AdminAdminIndexRoute
@@ -226,6 +234,7 @@ export interface FileRoutesById {
   '/sale/sale': typeof SaleSaleRoute
   '/sale/search': typeof SaleSearchRoute
   '/hikes/': typeof HikesIndexRoute
+  '/tourismCamping/': typeof TourismCampingIndexRoute
   '/rent/$group/$category': typeof RentGroupCategoryRouteWithChildren
   '/sale/$group/$category': typeof SaleGroupCategoryRouteWithChildren
   '/_admin/admin/': typeof AdminAdminIndexRoute
@@ -253,6 +262,7 @@ export interface FileRouteTypes {
     | '/sale/sale'
     | '/sale/search'
     | '/hikes/'
+    | '/tourismCamping/'
     | '/rent/$group/$category'
     | '/sale/$group/$category'
     | '/admin/'
@@ -278,6 +288,7 @@ export interface FileRouteTypes {
     | '/sale/sale'
     | '/sale/search'
     | '/hikes'
+    | '/tourismCamping'
     | '/rent/$group/$category'
     | '/sale/$group/$category'
     | '/admin'
@@ -304,6 +315,7 @@ export interface FileRouteTypes {
     | '/sale/sale'
     | '/sale/search'
     | '/hikes/'
+    | '/tourismCamping/'
     | '/rent/$group/$category'
     | '/sale/$group/$category'
     | '/_admin/admin/'
@@ -326,6 +338,7 @@ export interface RootRouteChildren {
   AppSlugRoute: typeof AppSlugRoute
   HikesSlugRoute: typeof HikesSlugRoute
   HikesIndexRoute: typeof HikesIndexRoute
+  TourismCampingIndexRoute: typeof TourismCampingIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -391,6 +404,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tourismCamping/': {
+      id: '/tourismCamping/'
+      path: '/tourismCamping'
+      fullPath: '/tourismCamping/'
+      preLoaderRoute: typeof TourismCampingIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/hikes/': {
@@ -599,6 +619,7 @@ const rootRouteChildren: RootRouteChildren = {
   AppSlugRoute: AppSlugRoute,
   HikesSlugRoute: HikesSlugRoute,
   HikesIndexRoute: HikesIndexRoute,
+  TourismCampingIndexRoute: TourismCampingIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

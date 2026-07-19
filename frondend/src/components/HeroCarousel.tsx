@@ -18,7 +18,7 @@ import { getSiteText } from "@/lib/site-translations";
 const slideConfig = [
   {
     image: heroCamping,
-    href: "/sale" as const,
+    href: "/tourismCamping/" as const,
   },
   {
     image: climbingPromo,

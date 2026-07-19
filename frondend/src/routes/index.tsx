@@ -18,6 +18,11 @@ const NewArrivals = lazy(() =>
 const ClimbingPromo = lazy(() =>
   import("@/components/ClimbingPromo").then((m) => ({ default: m.ClimbingPromo })),
 );
+const InterestingSection = lazy(() =>
+  import("@/components/InterestingSection").then((m) => ({
+    default: m.InterestingSection,
+  })),
+);
 const GiftCardSection = lazy(() =>
   import("@/components/GiftCardSection").then((m) => ({ default: m.GiftCardSection })),
 );
@@ -58,6 +63,7 @@ function Index() {
           <RentalSection groups={rentalGroups} />
           <NewArrivals />
           <ClimbingPromo />
+          <InterestingSection />
           <GiftCardSection />
           <StoreSection />
         </Suspense>

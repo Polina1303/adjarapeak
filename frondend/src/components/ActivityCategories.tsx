@@ -48,8 +48,9 @@ export function ActivityCategories({ groups }: { groups: Group[] }) {
               transition={{ delay: Math.min(i * 0.04, 0.3) }}
             >
               <Link
-                to="/sale"
-                                className="group flex flex-col items-center text-center rounded-xl bg-secondary/40 hover:bg-secondary/70 transition-colors p-3"
+                to={cat.slug === "tourismCamping" ? "/tourismCamping/" : "/sale/$group"}
+                params={cat.slug === "tourismCamping" ? undefined : { group: cat.slug }}
+                className="group flex flex-col items-center text-center rounded-xl bg-secondary/40 hover:bg-secondary/70 transition-colors p-3"
               >
                 <div className="w-full aspect-square rounded-lg overflow-hidden bg-secondary/60 flex items-center justify-center mb-3">
                   <img
@@ -83,8 +84,9 @@ export function ActivityCategories({ groups }: { groups: Group[] }) {
                   transition={{ delay: Math.min(i * 0.04, 0.3) }}
                 >
                   <Link
-                    to="/sale"
-                                        className="group flex flex-col items-center text-center"
+                    to={cat.slug === "tourismCamping" ? "/tourismCamping/" : "/sale/$group"}
+                    params={cat.slug === "tourismCamping" ? undefined : { group: cat.slug }}
+                    className="group flex flex-col items-center text-center"
                   >
                     <div className="w-full aspect-[3/4] rounded-xl overflow-hidden bg-secondary/60 mb-3 flex items-center justify-center">
                       <img

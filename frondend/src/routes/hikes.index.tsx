@@ -8,6 +8,10 @@ import { listHikes } from "@/lib/hikes.functions";
 import { localizeHike } from "@/lib/hike-translations";
 import { useLanguage } from "@/lib/i18n";
 import { getSiteText } from "@/lib/site-translations";
+import {
+  HikeDifficultyBadge,
+  HikeDifficultyScale,
+} from "@/components/HikeDifficultyScale";
 
 export const Route = createFileRoute("/hikes/")({
   staleTime: 5 * 60 * 1000,
@@ -70,6 +74,8 @@ function HikesIndex() {
           </div>
         </section>
 
+        <HikeDifficultyScale lang={lang} />
+
         <section className="section-padding pb-24">
           <div className="max-w-7xl mx-auto">
             {hikes.length === 0 ? (
@@ -125,11 +131,11 @@ function HikesIndex() {
                               <MapPin className="h-10 w-10" />
                             </div>
                           )}
-                          {hike.difficulty && (
-                            <span className="absolute top-4 left-4 pill-tag bg-background/90 text-foreground backdrop-blur-sm">
-                              {hike.difficulty}
-                            </span>
-                          )}
+                          <HikeDifficultyBadge
+                            difficulty={hike.difficulty}
+                            lang={lang}
+                            className="absolute left-4 top-4"
+                          />
                         </div>
                         <div className="p-6">
                           <h3 className="font-display font-semibold text-lg text-foreground leading-snug mb-4">

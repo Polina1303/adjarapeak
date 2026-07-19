@@ -332,8 +332,8 @@ export function CatalogPage(props: ShopProps | RentalProps) {
             {props.activeCategory ? (
               isShop ? (
                 <Link
-                  to="/sale/$group"
-                  params={{ group: props.group.slug }}
+                  to={props.group.slug === "tourismCamping" ? "/tourismCamping/" : "/sale/$group"}
+                  params={props.group.slug === "tourismCamping" ? undefined : { group: props.group.slug }}
                   className="hover:text-foreground transition-colors"
                 >
                   {groupTitle}
@@ -431,7 +431,15 @@ export function CatalogPage(props: ShopProps | RentalProps) {
                     </span>
                   );
 
-                  return isShop ? (
+                  return isShop && tab.groupSlug === "tourismCamping" ? (
+                    <Link
+                      key={tab.key}
+                      to="/tourismCamping/"
+                      className="shrink-0"
+                    >
+                      {inner}
+                    </Link>
+                  ) : isShop ? (
                     <Link
                       key={tab.key}
                       to="/sale/$group"

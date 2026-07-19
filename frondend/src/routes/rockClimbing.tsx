@@ -20,7 +20,7 @@ import cl2 from "@/assets/cl-2.avif";
 import cl3 from "@/assets/cl-3.avif";
 import cl4 from "@/assets/cl-4.avif";
 import cl5 from "@/assets/cl-5.avif";
-import team0 from "@/assets/team0.png";
+import team0 from "@/assets/team0.webp";
 // import team1 from "@/assets/team-1.avif";
 import { useLanguage } from "@/lib/i18n";
 import { getSiteText } from "@/lib/site-translations";
@@ -105,11 +105,11 @@ function ClimbingPage() {
           aria-hidden
         />
         <div
-          className="absolute inset-0 backdrop-blur-md bg-background/55"
+          className="absolute inset-0 backdrop-blur-[1px] bg-background/15"
           aria-hidden
         />
         <div
-          className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background"
+          className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/35 to-background/90"
           aria-hidden
         />
         <div className="relative section-padding">
@@ -297,7 +297,11 @@ function ClimbingPage() {
                 <img
                   src={t.img}
                   alt={t.name}
-                  loading="lazy"
+                  width={960}
+                  height={1280}
+                  loading="eager"
+                  decoding="async"
+                  fetchPriority="low"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4">
@@ -321,7 +325,11 @@ function ClimbingPage() {
                 <img
                   src={t.img}
                   alt={t.name}
-                  loading="lazy"
+                  width={960}
+                  height={1280}
+                  loading="eager"
+                  decoding="async"
+                  fetchPriority="low"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4">

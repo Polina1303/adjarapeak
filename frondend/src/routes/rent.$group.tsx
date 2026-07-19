@@ -3,8 +3,8 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CatalogPage } from "@/components/CatalogPage";
 import { getRentalGroupView } from "@/lib/catalog.functions";
-import { resolveImage } from "@/lib/catalog-image";
 import { useLanguage, type Lang } from "@/lib/i18n";
+import { ADJARA_PEAK_SOCIAL_IMAGE_META } from "@/lib/social-meta";
 
 const RENT_NOT_FOUND_TEXT: Record<Lang, { title: string; back: string }> = {
   RU: { title: "Раздел не найден", back: "Назад в прокат" },
@@ -27,7 +27,8 @@ export const Route = createFileRoute("/rent/$group")({
         { title },
         { name: "description", content: `Прокат: ${loaderData.group.title} в Adjara Peak.` },
         { property: "og:title", content: title },
-        { property: "og:image", content: resolveImage(loaderData.group.image) },
+        { property: "og:description", content: `Прокат: ${loaderData.group.title} в Adjara Peak.` },
+        ...ADJARA_PEAK_SOCIAL_IMAGE_META,
       ],
     };
   },

@@ -10,7 +10,6 @@ import {
   Wallet,
   ChevronLeft,
   Check,
-  MapPin,
 } from "lucide-react";
 import {
   Accordion,
@@ -28,6 +27,8 @@ import { getHikeBySlug } from "@/lib/hikes.functions";
 import { localizeHike } from "@/lib/hike-translations";
 import { useLanguage } from "@/lib/i18n";
 import { getSiteText } from "@/lib/site-translations";
+import { HikeDifficultyScale } from "@/components/HikeDifficultyScale";
+import { formatDifficulty } from "@/lib/hike-difficulty";
 
 export const Route = createFileRoute("/hikes/$slug")({
   staleTime: 5 * 60 * 1000,
@@ -107,7 +108,11 @@ function HikePage() {
   if (dateTimeLabel) metaRows.push({ icon: Calendar, text: dateTimeLabel });
   if (hike.distance_km != null)
     metaRows.push({ icon: RouteIcon, text: `${hike.distance_km} ${text.distanceUnit}` });
-  if (hike.difficulty) metaRows.push({ icon: Mountain, text: hike.difficulty });
+  if (hike.difficulty)
+    metaRows.push({
+      icon: Mountain,
+      text: formatDifficulty(hike.difficulty, lang) ?? hike.difficulty,
+    });
   metaRows.push({ icon: Wallet, text: `${price} ₾` });
 
   const reasons = hike.reasons;
@@ -116,21 +121,8 @@ function HikePage() {
   const packingList =
     hike.packing_list.length > 0 ? hike.packing_list : text.demoPackingList;
 
-  const demoPhotos = [
-    "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=900&q=80",
-    "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=900&q=80",
-    "https://images.unsplash.com/photo-1496545672447-f699b503d270?w=900&q=80",
-    "https://images.unsplash.com/photo-1551632811-561732d1e306?w=900&q=80",
-    "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=900&q=80",
-    "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=900&q=80",
-    "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=900&q=80",
-    "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=900&q=80",
-    "https://images.unsplash.com/photo-1476610182048-b716b8518aae?w=900&q=80",
-  ];
-  const photos = (hike.gallery.length > 0 ? hike.gallery : demoPhotos).slice(
-    0,
-    6,
-  );
+  const mainPhoto = hike.image ?? hike.gallery[0] ?? null;
+  const photos = hike.gallery.filter((photo) => photo && photo !== mainPhoto);
 
   useEffect(() => {
     document.title = text.detailTitle(hike.title);
@@ -145,75 +137,105 @@ function HikePage() {
     <div className="min-h-screen bg-background">
       <Header />
       <div className="pt-16 lg:pt-18">
-        {/* HERO */}
-        <section className="relative overflow-hidden min-h-[78vh] md:min-h-screen flex items-center">
-          {hike.image ? (
-            <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(${hike.image})` }}
-              aria-hidden
-            />
-          ) : (
-            <div className="absolute inset-0 bg-muted" aria-hidden />
-          )}
-          <div className="absolute inset-0 bg-black/30" aria-hidden />
-          <div className="relative w-full px-6 md:px-12 lg:px-16 py-16 md:py-24">
-            <div className="max-w-7xl mx-auto">
-              <Link
-                to="/hikes"
-                className="inline-flex items-center gap-1 text-xs font-body uppercase tracking-wider text-white/80 hover:text-white mb-10"
-              >
-                <ChevronLeft className="h-3.5 w-3.5" /> {text.allHikes}
-              </Link>
-              <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center mx-0 px-0">
-                {/* RIGHT — meta rows */}
-                <motion.ul
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  className="space-y-4 md:space-y-7 text-white order-2 md:order-2 md:justify-self-end"
+        {/* MAIN HORIZONTAL PHOTO */}
+        <section className="section-padding pb-5 pt-8 md:pb-6 md:pt-12">
+          <div className="mx-auto max-w-7xl">
+            <Link
+              to="/hikes"
+              className="mb-5 inline-flex items-center gap-1 font-body text-xs uppercase tracking-wider text-muted-foreground hover:text-foreground"
+            >
+              <ChevronLeft className="h-3.5 w-3.5" /> {text.allHikes}
+            </Link>
+
+            <div className="overflow-hidden rounded-3xl border border-border bg-card sm:relative sm:aspect-[16/10] sm:border-0 lg:aspect-[21/9]">
+              <div className="relative aspect-[16/10] bg-muted sm:absolute sm:inset-0 sm:aspect-auto">
+                {mainPhoto && (
+                  <img
+                    src={mainPhoto}
+                    alt={hike.title}
+                    fetchPriority="high"
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/5 to-transparent sm:from-black/85 sm:via-black/25 sm:to-black/10" />
+              </div>
+
+              <div className="relative p-5 text-foreground sm:absolute sm:inset-x-0 sm:bottom-0 sm:p-8 sm:text-white md:p-10 lg:p-12">
+                <motion.h1
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="max-w-4xl font-display text-2xl font-bold leading-[1.05] sm:text-4xl md:text-5xl"
                 >
-                  {metaRows.map(({ icon: Icon, text }, i) => (
-                    <li key={i} className="flex items-center gap-2 md:gap-3">
-                      <Icon className="h-6 w-6 md:h-9 md:w-9 shrink-0 stroke-[1.5]" />
-                      <span className="font-body text-base md:text-2xl">
-                        {text}
-                      </span>
+                  {hike.title}
+                </motion.h1>
+
+                {hike.shortly && (
+                  <p className="mt-4 max-w-3xl font-body text-sm leading-relaxed text-muted-foreground sm:text-white/85 md:text-base">
+                    {hike.shortly}
+                  </p>
+                )}
+
+                <motion.ul
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mt-6 flex flex-wrap gap-2"
+                >
+                  {metaRows.map(({ icon: Icon, text: rowText }, i) => (
+                    <li
+                      key={i}
+                      className="flex items-center gap-2 rounded-full border border-border bg-muted px-3 py-2 font-body text-xs text-foreground backdrop-blur-md sm:border-white/20 sm:bg-black/30 sm:text-white md:text-sm"
+                    >
+                      <Icon className="h-4 w-4 shrink-0 stroke-[1.7]" />
+                      <span>{rowText}</span>
                     </li>
                   ))}
                 </motion.ul>
 
-                {/* LEFT — title + CTA */}
-                <div className="text-white order-1 md:order-1">
-                  <motion.h1
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="font-display text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.05] mb-6"
-                  >
-                    {hike.title}
-                  </motion.h1>
-                  {hike.shortly && (
-                    <p className="font-body text-base md:text-xl text-white/90 max-w-xl mb-8 leading-relaxed">
-                      {hike.shortly}
-                    </p>
-                  )}
-                  {hasDiscount && (
-                    <div className="mb-6 text-white/70 font-display line-through">
-                      ₾{hike.price}
-                    </div>
-                  )}
+                <div className="mt-6 flex flex-wrap items-center gap-4">
                   <a
                     href="https://t.me/shpaksn"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex justify-center items-center gap-2 bg-ember text-ember-foreground hover:bg-ember/90 transition-colors px-10 py-4 rounded-full font-display text-sm uppercase tracking-wider"
+                    className="inline-flex items-center justify-center rounded-full bg-ember px-8 py-3.5 font-display text-xs uppercase tracking-wider text-ember-foreground transition-colors hover:bg-ember/90"
                   >
                     {text.book}
                   </a>
+                  {hasDiscount && (
+                    <span className="font-display text-sm text-muted-foreground line-through sm:text-white/65">
+                      {hike.price} ₾
+                    </span>
+                  )}
                 </div>
               </div>
             </div>
           </div>
         </section>
+
+        {/* VERTICAL GALLERY */}
+        {photos.length > 0 && (
+          <section className="section-padding pb-12 md:pb-16">
+            <div className="mx-auto max-w-7xl">
+              <h2 className="mb-5 font-display text-xl font-bold text-foreground md:text-2xl">
+                {text.galleryTitle}
+              </h2>
+              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:gap-4 lg:grid-cols-4">
+                {photos.map((photo, index) => (
+                  <div
+                    key={`${photo}-${index}`}
+                    className="aspect-[3/4] overflow-hidden rounded-2xl bg-muted"
+                  >
+                    <img
+                      src={photo}
+                      alt={`${hike.title} — ${index + 2}`}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* DESCRIPTION + FEATURES */}
         <section className="section-padding py-12 md:py-16">
@@ -234,6 +256,12 @@ function HikePage() {
             </div>
           </div>
         </section>
+
+        <HikeDifficultyScale
+          lang={lang}
+          difficulty={hike.difficulty}
+          variant="detail"
+        />
 
         {/* REASONS — Why go on this hike */}
         {reasons.length > 0 && (
@@ -313,78 +341,6 @@ function HikePage() {
             </Accordion>
           </div>
         </section>
-
-        {/* GALLERY */}
-        {photos.length > 0 && (
-          <section className="section-padding pb-16 md:pb-24">
-            <div className="max-w-6xl mx-auto">
-              <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-8 md:mb-12 text-center">
-                {text.galleryTitle}
-              </h2>
-              <div className="flex flex-col gap-3 md:gap-4">
-                {Array.from({ length: Math.ceil(photos.length / 2) }).map(
-                  (_, rowIdx) => {
-                    const a = photos[rowIdx * 2];
-                    const b = photos[rowIdx * 2 + 1];
-                    // Alternate row direction: row 0 [V,H], row 1 [H,V], row 2 [V,H]
-                    const verticalFirst = rowIdx % 2 === 0;
-                    return (
-                      <div
-                        key={rowIdx}
-                        className="grid gap-3 md:gap-4 h-[180px] sm:h-[260px] md:h-[360px]"
-                         style={{
-                           gridTemplateColumns: verticalFirst
-                             ? "1fr 2fr"
-                             : "2fr 1fr",
-                         }}
-                      >
-                        {verticalFirst ? (
-                          <>
-                            <div className="h-full rounded-lg md:rounded-2xl overflow-hidden bg-muted">
-                              <img
-                                src={a}
-                                alt={`${hike.title} — ${rowIdx * 2 + 1}`}
-                                loading="lazy"
-                                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                              />
-                            </div>
-                            <div className="h-full rounded-lg md:rounded-2xl overflow-hidden bg-muted">
-                              <img
-                                src={b}
-                                alt={`${hike.title} — ${rowIdx * 2 + 2}`}
-                                loading="lazy"
-                                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                              />
-                            </div>
-                          </>
-                        ) : (
-                          <>
-                            <div className="h-full rounded-lg md:rounded-2xl overflow-hidden bg-muted">
-                              <img
-                                src={a}
-                                alt={`${hike.title} — ${rowIdx * 2 + 1}`}
-                                loading="lazy"
-                                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                              />
-                            </div>
-                            <div className="h-full rounded-lg md:rounded-2xl overflow-hidden bg-muted">
-                              <img
-                                src={b}
-                                alt={`${hike.title} — ${rowIdx * 2 + 2}`}
-                                loading="lazy"
-                                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                              />
-                            </div>
-                          </>
-                        )}
-                      </div>
-                    );
-                  },
-                )}
-              </div>
-            </div>
-          </section>
-        )}
 
         {/* PRICING */}
         <section className="section-padding pt-0 pb-12 md:pb-20">

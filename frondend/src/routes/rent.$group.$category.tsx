@@ -3,8 +3,8 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CatalogPage } from "@/components/CatalogPage";
 import { getRentalGroupView } from "@/lib/catalog.functions";
-import { resolveImage } from "@/lib/catalog-image";
 import { useLanguage, type Lang } from "@/lib/i18n";
+import { ADJARA_PEAK_SOCIAL_IMAGE_META } from "@/lib/social-meta";
 
 const RENT_CATEGORY_NOT_FOUND_TEXT: Record<Lang, { title: string; back: string }> = {
   RU: { title: "Категория не найдена", back: "Назад в прокат" },
@@ -30,7 +30,8 @@ export const Route = createFileRoute("/rent/$group/$category")({
         { title },
         { name: "description", content: `Rent ${cat.toLowerCase()} in Batumi.` },
         { property: "og:title", content: title },
-        { property: "og:image", content: resolveImage(loaderData.activeCategory?.image ?? loaderData.group.image) },
+        { property: "og:description", content: `Rent ${cat.toLowerCase()} in Batumi.` },
+        ...ADJARA_PEAK_SOCIAL_IMAGE_META,
       ],
     };
   },

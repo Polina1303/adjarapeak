@@ -6,6 +6,13 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Check, ChevronsUpDown } from "lucide-react";
 import {
   Dialog,
@@ -482,6 +489,7 @@ export function RecordForm({ config, record, open, onClose, onSaved }: Props) {
         }
         if ((f.type === "date" || f.type === "time") && (!v || v === "")) v = null;
         if (f.type === "fk" && (!v || v === "")) v = null;
+        if (f.type === "select" && (!v || v === "")) v = null;
         if (f.type === "fk" && v && f.fkParentField && f.fkParentSource) {
           const parentId = form[f.fkParentSource];
           const option = (fkOptions[f.key] ?? []).find((item) => item.id === v);
@@ -622,6 +630,24 @@ export function RecordForm({ config, record, open, onClose, onSaved }: Props) {
         return <PackingListField value={Array.isArray(v) ? v : []} onChange={(nv) => setVal(f.key, nv)} />;
       case "color_image_list":
         return <ColorImageListField value={Array.isArray(v) ? v : []} onChange={(nv) => setVal(f.key, nv)} />;
+      case "select":
+        return (
+          <Select
+            value={v || undefined}
+            onValueChange={(value) => setVal(f.key, value)}
+          >
+            <SelectTrigger>
+              <SelectValue placeholder="Выберите категорию…" />
+            </SelectTrigger>
+            <SelectContent>
+              {(f.options ?? []).map((option) => (
+                <SelectItem key={option.value} value={option.value}>
+                  {option.label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        );
       case "fk": {
         const all = fkOptions[f.key] ?? [];
         const parentId = f.fkParentSource ? form[f.fkParentSource] : null;

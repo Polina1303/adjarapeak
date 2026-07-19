@@ -3,6 +3,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { LanguageProvider } from "@/lib/i18n";
+import { ADJARA_PEAK_SOCIAL_IMAGE_META } from "@/lib/social-meta";
 
 import appCss from "../styles.css?url";
 
@@ -41,7 +42,7 @@ export const Route = createRootRoute({
       { property: "og:title", content: "Adjara Peak" },
       { property: "og:description", content: "Снаряжение, прокат и горные туры в Аджарии." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
+      ...ADJARA_PEAK_SOCIAL_IMAGE_META,
       { name: "twitter:site", content: "@AdjaraPeak" },
       { name: "twitter:title", content: "Adjara Peak" },
       { name: "twitter:description", content: "Снаряжение, прокат и горные туры в Аджарии." },

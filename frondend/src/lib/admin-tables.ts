@@ -1,3 +1,5 @@
+import { SERVICE_CATEGORY_OPTIONS } from "@/lib/service-categories";
+
 export type FieldType =
   | "text"
   | "textarea"
@@ -12,13 +14,15 @@ export type FieldType =
   | "string_list"
   | "reasons"
   | "packing_list"
-  | "color_image_list";
+  | "color_image_list"
+  | "select";
 
 export type FieldConfig = {
   key: string;
   label: string;
   type: FieldType;
   required?: boolean;
+  options?: ReadonlyArray<{ value: string; label: string }>;
   // for fk
   fkTable?: AdminTableKey;
   fkParentField?: string; // dependent select: filter fkTable rows by this field on the parent
@@ -224,7 +228,11 @@ export const ADMIN_TABLES: Record<AdminTableKey, AdminTableConfig> = {
       { key: "duration_en", label: "Длительность EN", type: "text" },
       { key: "duration_ka", label: "Длительность KA", type: "text" },
       { key: "distance_km", label: "Километраж (км)", type: "number" },
-      { key: "difficulty", label: "Сложность", type: "text" },
+      {
+        key: "difficulty",
+        label: "Сложность + факторы (напр. «Средний ⬆️💧»)",
+        type: "text",
+      },
       { key: "difficulty_en", label: "Сложность EN", type: "text" },
       { key: "difficulty_ka", label: "Сложность KA", type: "text" },
       { key: "group_size", label: "Размер группы", type: "text" },
@@ -272,8 +280,15 @@ export const ADMIN_TABLES: Record<AdminTableKey, AdminTableConfig> = {
     label: "Сервис · Летний прайс",
     section: "service",
     hasSortOrder: true,
-    listColumns: ["sort_order", "title", "price", "highlight"],
+    listColumns: ["sort_order", "category", "title", "price", "highlight"],
     fields: [
+      {
+        key: "category",
+        label: "Категория на странице",
+        type: "select",
+        required: true,
+        options: SERVICE_CATEGORY_OPTIONS,
+      },
       { key: "title", label: "Название", type: "text", required: true },
       { key: "title_en", label: "Название EN", type: "text" },
       { key: "title_ka", label: "Название KA", type: "text" },

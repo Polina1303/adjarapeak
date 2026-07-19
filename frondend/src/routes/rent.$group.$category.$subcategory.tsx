@@ -3,8 +3,8 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CatalogPage } from "@/components/CatalogPage";
 import { getRentalGroupView } from "@/lib/catalog.functions";
-import { resolveImage } from "@/lib/catalog-image";
 import { useLanguage, type Lang } from "@/lib/i18n";
+import { ADJARA_PEAK_SOCIAL_IMAGE_META } from "@/lib/social-meta";
 
 const RENT_SUBCATEGORY_NOT_FOUND_TEXT: Record<Lang, { title: string; back: string }> = {
   RU: { title: "Подкатегория не найдена", back: "Назад в прокат" },
@@ -35,7 +35,8 @@ export const Route = createFileRoute("/rent/$group/$category/$subcategory")({
         { title },
         { name: "description", content: `Rent ${sub.toLowerCase()} in ${cat.toLowerCase()}.` },
         { property: "og:title", content: title },
-        { property: "og:image", content: resolveImage(loaderData.activeCategory?.image ?? loaderData.group.image) },
+        { property: "og:description", content: `Rent ${sub.toLowerCase()} in ${cat.toLowerCase()}.` },
+        ...ADJARA_PEAK_SOCIAL_IMAGE_META,
       ],
     };
   },

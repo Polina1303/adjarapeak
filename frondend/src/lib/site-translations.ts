@@ -84,6 +84,13 @@ export const SITE_TEXT = {
         added: (amount: number) => `Подарочная карта на ₾${amount} добавлена в корзину`,
         imageAlt: "Подарочная карта Adjara Peak",
       },
+      interesting: {
+        eyebrow: "Интересное",
+        title: "Наблюдайте за дикой природой",
+        description:
+          "iNaturalist помогает распознавать растения и животных, сохранять наблюдения и делиться ими с сообществом натуралистов.",
+        cta: "Открыть iNaturalist",
+      },
     },
     footer: {
       description:
@@ -100,6 +107,7 @@ export const SITE_TEXT = {
         climbing: "Скалолазание",
         service: "Сервисный центр",
         contacts: "Контакты",
+        interesting: "Интересное · iNaturalist",
       },
     },
     contact: {
@@ -207,6 +215,19 @@ export const SITE_TEXT = {
       summerHeroTitle: "Ремонт велосипедов для города и гор",
       summerHeroText:
         "Чистка и регулировка трансмиссии, прокачка тормозов, замена камер и покрышек, установка аксессуаров — обслуживаем шоссейные, горные и городские велосипеды в Батуми.",
+      mechanicEyebrow: "Команда сервиса",
+      mechanicTitle: "Знакомьтесь, это Никита — наш новый веломеханик!",
+      mechanicParagraphs: [
+        "Личность, широко известная в узких кругах, и настоящий ветеран питерского фиксед-гир движения. В своё время Никита помогал строить легендарную мастерскую «Все фиксируй», а ещё приложил руку к первому в России фильму о фикс-культуре «Без тормозов» в качестве оператора и консультанта.",
+        "К нему можно смело обращаться, если вы ищете редкие детали или хотите собрать байк своей мечты. Никита знает о велосипедах всё — и с радостью поделится опытом!",
+      ],
+      mechanicName: "Никита",
+      mechanicRole: "Веломеханик Adjara Peak",
+      mechanicGalleryTitle: "Никита в работе",
+      mechanicGalleryLabel: "Фотографии веломеханика Никиты",
+      mechanicPreviousPhoto: "Предыдущее фото",
+      mechanicNextPhoto: "Следующее фото",
+      mechanicPhotoAlt: (n: number) => `Веломеханик Никита за работой ${n}`,
       priceList: "Прайс-лист",
       book: "Записаться",
       sectionTitle: "Сервисное обслуживание",
@@ -225,6 +246,10 @@ export const SITE_TEXT = {
       ctaTitle: "Привезите снаряжение — заберёте как новое",
       ctaText:
         "Принимаем лыжи и сноуборды каждый день. Стандартная комплексная подготовка — за один рабочий день.",
+      summerCtaTitle:
+        "Штатный веломастер — быстрый сервис с гарантией качества",
+      summerCtaText:
+        "Принимаем велосипеды каждый день. Диагностика, настройка и ремонт выполняются на месте — оперативно, внимательно и с гарантией на работы.",
       addressLabel: "Адрес",
       address: "Батуми, ул. Генерала Аслана Абашидзе, 19",
       hoursLabel: "Часы работы",
@@ -450,6 +475,13 @@ export const SITE_TEXT = {
         added: (amount: number) => `Gift card for ₾${amount} added to cart`,
         imageAlt: "Adjara Peak gift card",
       },
+      interesting: {
+        eyebrow: "Explore",
+        title: "Observe the wildlife around you",
+        description:
+          "iNaturalist helps identify plants and animals, record observations and share them with a global community of naturalists.",
+        cta: "Open iNaturalist",
+      },
     },
     footer: {
       description:
@@ -466,6 +498,7 @@ export const SITE_TEXT = {
         climbing: "Rock Climbing",
         service: "Service Center",
         contacts: "Contacts",
+        interesting: "Explore · iNaturalist",
       },
     },
     contact: {
@@ -573,6 +606,19 @@ export const SITE_TEXT = {
       summerHeroTitle: "Bike repairs for city rides and mountain trails",
       summerHeroText:
         "Drivetrain cleaning and tuning, brake bleeding, tube and tire replacement, accessory installation — we service road, mountain and city bikes in Batumi.",
+      mechanicEyebrow: "Service team",
+      mechanicTitle: "Meet Nikita — our new bike mechanic!",
+      mechanicParagraphs: [
+        "A familiar name in a close-knit scene and a true veteran of Saint Petersburg’s fixed-gear movement. Nikita helped build the legendary Vse Fiksiruy workshop and worked as a camera operator and consultant on Bez Tormozov, Russia’s first film about fixed-gear culture.",
+        "Come to him if you are searching for rare components or want to build the bike of your dreams. Nikita knows bicycles inside out and is always happy to share his experience.",
+      ],
+      mechanicName: "Nikita",
+      mechanicRole: "Bike mechanic at Adjara Peak",
+      mechanicGalleryTitle: "Nikita at work",
+      mechanicGalleryLabel: "Photos of bike mechanic Nikita",
+      mechanicPreviousPhoto: "Previous photo",
+      mechanicNextPhoto: "Next photo",
+      mechanicPhotoAlt: (n: number) => `Bike mechanic Nikita at work ${n}`,
       priceList: "Price list",
       book: "Book service",
       sectionTitle: "Service Center",
@@ -591,6 +637,10 @@ export const SITE_TEXT = {
       ctaTitle: "Bring your gear in — pick it up like new",
       ctaText:
         "We accept skis and snowboards every day. Standard full preparation takes one business day.",
+      summerCtaTitle:
+        "In-house bike mechanic — fast service with guaranteed quality",
+      summerCtaText:
+        "We accept bikes every day. Diagnostics, tuning and repairs are carried out on site — promptly, carefully and with a warranty on the work.",
       addressLabel: "Address",
       address: "19 General Aslan Abashidze St, Batumi",
       hoursLabel: "Opening hours",
@@ -816,6 +866,13 @@ export const SITE_TEXT = {
         added: (amount: number) => `სასაჩუქრე ბარათი ₾${amount} დაემატა კალათაში`,
         imageAlt: "Adjara Peak-ის სასაჩუქრე ბარათი",
       },
+      interesting: {
+        eyebrow: "საინტერესო",
+        title: "დააკვირდით ველურ ბუნებას",
+        description:
+          "iNaturalist გეხმარებათ მცენარეებისა და ცხოველების ამოცნობაში, დაკვირვებების შენახვასა და ნატურალისტთა საზოგადოებასთან გაზიარებაში.",
+        cta: "iNaturalist-ის გახსნა",
+      },
     },
     footer: {
       description:
@@ -832,6 +889,7 @@ export const SITE_TEXT = {
         climbing: "კლდეზე ცოცვა",
         service: "სერვის-ცენტრი",
         contacts: "კონტაქტები",
+        interesting: "საინტერესო · iNaturalist",
       },
     },
     contact: {
@@ -939,6 +997,19 @@ export const SITE_TEXT = {
       summerHeroTitle: "ველოსიპედის შეკეთება ქალაქისა და მთისთვის",
       summerHeroText:
         "ტრანსმისიის წმენდა და რეგულირება, მუხრუჭების დაჰაერება, კამერებისა და საბურავების შეცვლა, აქსესუარების დაყენება — ბათუმში ვემსახურებით შოსე, მთის და ქალაქის ველოსიპედებს.",
+      mechanicEyebrow: "სერვისის გუნდი",
+      mechanicTitle: "გაიცანით ნიკიტა — ჩვენი ახალი ველომექანიკოსი!",
+      mechanicParagraphs: [
+        "ნიკიტა ვიწრო წრეებში ფართოდ ცნობილი პიროვნება და პეტერბურგის ფიქსირებული გადაცემის მოძრაობის ნამდვილი ვეტერანია. თავის დროზე ის ლეგენდარული სახელოსნოს „Все фиксируй“ შექმნაში მონაწილეობდა და რუსეთში ფიქს-კულტურის შესახებ პირველ ფილმზე — „Без тормозов“ — ოპერატორად და კონსულტანტად მუშაობდა.",
+        "ნიკიტას შეგიძლიათ თამამად მიმართოთ, თუ იშვიათ დეტალებს ეძებთ ან თქვენი ოცნების ველოსიპედის აწყობა გსურთ. მან ველოსიპედების შესახებ ყველაფერი იცის და გამოცდილებას სიამოვნებით გაგიზიარებთ!",
+      ],
+      mechanicName: "ნიკიტა",
+      mechanicRole: "Adjara Peak-ის ველომექანიკოსი",
+      mechanicGalleryTitle: "ნიკიტა მუშაობისას",
+      mechanicGalleryLabel: "ველომექანიკოს ნიკიტას ფოტოები",
+      mechanicPreviousPhoto: "წინა ფოტო",
+      mechanicNextPhoto: "შემდეგი ფოტო",
+      mechanicPhotoAlt: (n: number) => `ველომექანიკოსი ნიკიტა მუშაობისას ${n}`,
       priceList: "ფასები",
       book: "ჩაწერა",
       sectionTitle: "სერვისული მომსახურება",
@@ -957,6 +1028,10 @@ export const SITE_TEXT = {
       ctaTitle: "მოიტანეთ აღჭურვილობა — წაიღებთ როგორც ახალს",
       ctaText:
         "თხილამურებსა და სნოუბორდებს ყოველდღე ვიღებთ. სტანდარტული სრული მომზადება ერთ სამუშაო დღეში სრულდება.",
+      summerCtaTitle:
+        "შტატიანი ველომექანიკოსი — სწრაფი სერვისი ხარისხის გარანტიით",
+      summerCtaText:
+        "ველოსიპედებს ყოველდღე ვიღებთ. დიაგნოსტიკა, რეგულირება და შეკეთება ადგილზე სრულდება — სწრაფად, ყურადღებით და შესრულებულ სამუშაოზე გარანტიით.",
       addressLabel: "მისამართი",
       address: "ბათუმი, გენერალ ასლან აბაშიძის ქ. 19",
       hoursLabel: "სამუშაო საათები",

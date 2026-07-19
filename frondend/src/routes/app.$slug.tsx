@@ -289,8 +289,9 @@ function ProductView({ data }: { data: NonNullable<Awaited<ReturnType<typeof get
               <>
                 <ChevronRight className="h-3.5 w-3.5 opacity-60" />
                 <Link
-                  to="/sale"
-                                    className="hover:text-foreground transition-colors"
+                  to={group.slug === "tourismCamping" ? "/tourismCamping/" : "/sale/$group"}
+                  params={group.slug === "tourismCamping" ? undefined : { group: group.slug }}
+                  className="hover:text-foreground transition-colors"
                 >
                   {group.title}
                 </Link>

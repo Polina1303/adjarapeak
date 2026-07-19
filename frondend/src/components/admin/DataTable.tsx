@@ -58,6 +58,7 @@ const COLUMN_LABELS: Record<string, string> = {
   hidden: "Скрыто",
   image: "Изображение",
   description: "Описание",
+  category: "Категория",
   start_date: "Дата",
   end_date: "Дата окончания",
 };
@@ -390,8 +391,13 @@ export function DataTable({ config }: { config: AdminTableConfig }) {
 
   const renderCell = (r: Row, col: string) => {
     const v = r[col];
+    const field = config.fields.find((item) => item.key === col);
     if (config.table === "shop_categories" && col === "group_id" && BALANCE_BOARD_CATEGORY_SLUGS.has(String(r.slug ?? ""))) {
       return <span className="text-xs">{BOARDS_GROUP_LABEL}</span>;
+    }
+    if (field?.type === "select") {
+      const label = field.options?.find((option) => option.value === v)?.label;
+      return <span className="text-sm">{label ?? "—"}</span>;
     }
     if (col === "image" && v) {
       return <img src={resolveCatalogImage(v)} alt="" className="h-10 w-10 object-cover rounded" />;

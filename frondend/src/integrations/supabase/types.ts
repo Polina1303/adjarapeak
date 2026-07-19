@@ -338,6 +338,7 @@ export type Database = {
       }
       service_summer_prices: {
         Row: {
+          category: string
           created_at: string
           description: string | null
           description_en: string | null
@@ -353,6 +354,7 @@ export type Database = {
           title_ka: string | null
         }
         Insert: {
+          category?: string
           created_at?: string
           description?: string | null
           description_en?: string | null
@@ -368,6 +370,7 @@ export type Database = {
           title_ka?: string | null
         }
         Update: {
+          category?: string
           created_at?: string
           description?: string | null
           description_en?: string | null

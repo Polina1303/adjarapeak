@@ -1,7 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { motion } from "framer-motion";
 import {
   Wrench,
@@ -14,14 +20,27 @@ import {
   Bike,
   Cog,
   CircleDot,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import bannerBike from "@/assets/banner-bike.jpg";
 import s0 from "@/assets/service-0.jpg";
 import s1 from "@/assets/service-1.jpg";
 import s2 from "@/assets/service-2.jpg";
 import s3 from "@/assets/service-3.jpg";
+import nikitaBikeService1 from "@/assets/nikita-bike-service-1.jpg";
+import nikitaBikeService2 from "@/assets/nikita-bike-service-2.jpg";
+import nikitaBikeService3 from "@/assets/nikita-bike-service-3.jpg";
+import nikitaBikeService4 from "@/assets/nikita-bike-service-4.jpg";
 import { type Lang, useLanguage } from "@/lib/i18n";
 import { getSiteText } from "@/lib/site-translations";
+import {
+  inferServiceCategory,
+  isServiceCategoryKey,
+  SERVICE_CATEGORY_KEYS,
+  SERVICE_CATEGORY_LABELS,
+  type ServiceCategoryKey,
+} from "@/lib/service-categories";
 import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/service")({
@@ -49,6 +68,7 @@ type Service = {
   title: string;
   desc: string;
   price: string;
+  category: ServiceCategoryKey;
   highlight?: boolean;
 };
 type ServiceFallback = ReadonlyArray<{
@@ -68,11 +88,63 @@ type ServicePriceRow = {
   description_ka?: string | null;
   price_en?: string | null;
   price_ka?: string | null;
+  category?: string | null;
 };
 
 const winterFeatureIcons = [Wrench, Snowflake, Droplets, ShieldCheck];
 const summerFeatureIcons = [Bike, Cog, CircleDot, ShieldCheck];
 const gallery = [s0, s1, s2, s3];
+const mechanicGallery = [
+  nikitaBikeService1,
+  nikitaBikeService2,
+  nikitaBikeService3,
+  nikitaBikeService4,
+];
+
+function useServiceCarousel(active: boolean) {
+  const scroller = useRef<HTMLDivElement>(null);
+  const [canLeft, setCanLeft] = useState(false);
+  const [canRight, setCanRight] = useState(false);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const element = scroller.current;
+    if (!element) return;
+
+    const update = () => {
+      setCanLeft(element.scrollLeft > 4);
+      setCanRight(
+        element.scrollLeft + element.clientWidth < element.scrollWidth - 4
+      );
+      const maxScroll = element.scrollWidth - element.clientWidth;
+      setProgress(
+        maxScroll > 0
+          ? Math.min(1, Math.max(0, element.scrollLeft / maxScroll))
+          : 1
+      );
+    };
+
+    update();
+    element.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+
+    return () => {
+      element.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
+  }, [active]);
+
+  const scroll = (direction: -1 | 1) => {
+    const element = scroller.current;
+    if (!element) return;
+    element.scrollBy({
+      left: direction * Math.max(element.clientWidth * 0.72, 280),
+      behavior: "smooth",
+    });
+  };
+
+  return { scroller, canLeft, canRight, progress, scroll };
+}
 
 function getTranslatedValue(
   row: ServicePriceRow,
@@ -102,6 +174,7 @@ function ServicePage() {
   const { lang } = useLanguage();
   const text = getSiteText(lang).service;
   const [season, setSeason] = useState<"winter" | "summer">("summer");
+  const mechanicCarousel = useServiceCarousel(season === "summer");
   const [winterServices, setWinterServices] = useState<Service[]>([]);
   const [summerServices, setSummerServices] = useState<Service[]>([]);
   const featureSource =
@@ -149,6 +222,9 @@ function ServicePage() {
             fallback[index]?.price,
             lang
           ),
+          category: isServiceCategoryKey(r.category)
+            ? r.category
+            : inferServiceCategory(r.title),
           highlight: !!r.highlight,
         }));
       setWinterServices(map(winter, text.services));
@@ -160,12 +236,25 @@ function ServicePage() {
     season === "winter" ? text.services : text.summerServices;
   const fallbackServices: Service[] = fallbackSource.map((s) => ({
     ...s,
+    category: inferServiceCategory(s.title),
     highlight: "highlight" in s ? !!s.highlight : false,
   }));
   const services = season === "winter" ? winterServices : summerServices;
   const displayServices = services.length > 0 ? services : fallbackServices;
+  const serviceGroups = SERVICE_CATEGORY_KEYS
+    .map((key) => ({
+      key,
+      title: SERVICE_CATEGORY_LABELS[lang][key],
+      services: displayServices.filter((service) => service.category === key),
+    }))
+    .filter((group) => group.services.length > 0);
+  const serviceSource = services.length > 0 ? "remote" : "fallback";
   const sectionText =
     season === "winter" ? text.winterSectionText : text.summerSectionText;
+  const ctaTitle =
+    season === "winter" ? text.ctaTitle : text.summerCtaTitle;
+  const ctaText =
+    season === "winter" ? text.ctaText : text.summerCtaText;
 
   return (
     <div className="min-h-screen bg-background">
@@ -174,12 +263,12 @@ function ServicePage() {
       {/* HERO */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-25"
+          className="absolute inset-0 bg-cover bg-center opacity-[0.85]"
           style={{ backgroundImage: `url(${bannerBike})` }}
           aria-hidden
         />
         <div
-          className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/80 to-background"
+          className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/35 to-background/90"
           aria-hidden
         />
         <div className="relative section-padding">
@@ -215,7 +304,7 @@ function ServicePage() {
       </section>
 
       {/* FEATURES */}
-      <section className="section-padding pb-20">
+      <section className="section-padding py-12 md:py-16">
         <div className="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {features.map((f, i) => (
             <motion.div
@@ -239,39 +328,39 @@ function ServicePage() {
       </section>
 
       {/* PRICES */}
-      <section id="prices" className="section-padding pb-20">
+      <section id="prices" className="section-padding pb-12 md:pb-16">
         <div className="max-w-6xl mx-auto">
-          <div className="flex items-end justify-between flex-wrap gap-4 mb-10">
-            <div>
-              <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground">
-                {text.sectionTitle}
-              </h2>
-            </div>
-            <p className="font-body text-sm text-muted-foreground max-w-sm">
-              {sectionText}
-            </p>
+          <div className="mb-10">
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground">
+              {text.sectionTitle}
+            </h2>
           </div>
 
-          <div className="inline-flex p-1 rounded-full border border-border bg-card mb-6">
-            {(
-              [
-                { key: "winter", label: text.winterSeason },
-                { key: "summer", label: text.summerSeason },
-              ] as const
-            ).map((t) => (
-              <button
-                key={t.key}
-                type="button"
-                onClick={() => setSeason(t.key)}
-                className={`px-5 py-2 rounded-full font-display text-xs uppercase tracking-wider transition-colors ${
-                  season === t.key
-                    ? "bg-ember text-ember-foreground"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                {t.label}
-              </button>
-            ))}
+          <div className="mb-6">
+            <div className="inline-flex p-1 rounded-full border border-border bg-card">
+              {(
+                [
+                  { key: "winter", label: text.winterSeason },
+                  { key: "summer", label: text.summerSeason },
+                ] as const
+              ).map((t) => (
+                <button
+                  key={t.key}
+                  type="button"
+                  onClick={() => setSeason(t.key)}
+                  className={`px-5 py-2 rounded-full font-display text-xs uppercase tracking-wider transition-colors ${
+                    season === t.key
+                      ? "bg-ember text-ember-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {t.label}
+                </button>
+              ))}
+            </div>
+            <p className="mt-4 font-body text-sm text-muted-foreground max-w-sm">
+              {sectionText}
+            </p>
           </div>
 
           <div className="rounded-3xl border border-border overflow-hidden bg-card">
@@ -283,77 +372,247 @@ function ServicePage() {
                 {text.priceColumn}
               </span>
             </div>
-            <ul>
-              {displayServices.map((s, i) => (
-                <motion.li
-                  key={s.title}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.04 }}
-                  className={`grid sm:grid-cols-[1fr_140px] gap-2 px-6 py-5 border-b border-border last:border-b-0 ${
-                    "highlight" in s && s.highlight ? "bg-ember/5" : ""
-                  }`}
+            <Accordion
+              key={`${season}-${serviceSource}`}
+              type="multiple"
+              defaultValue={serviceGroups[0] ? [serviceGroups[0].key] : []}
+            >
+              {serviceGroups.map((group) => (
+                <AccordionItem
+                  key={group.key}
+                  value={group.key}
+                  className="border-border last:border-b-0"
                 >
-                  <div>
-                    <h3 className="font-display text-sm uppercase tracking-wider text-foreground mb-1">
-                      {s.title}
-                    </h3>
-                    <p className="font-body text-xs text-muted-foreground leading-relaxed max-w-2xl">
-                      {s.desc}
-                    </p>
-                  </div>
-                  <div className="sm:text-right">
-                    <span
-                      className={`font-display text-lg font-bold ${"highlight" in s && s.highlight ? "text-ember" : "text-foreground"}`}
-                    >
-                      {s.price}
+                  <AccordionTrigger className="px-6 py-5 hover:no-underline hover:bg-muted/30">
+                    <span className="flex items-center gap-3 pr-4">
+                      <span className="font-display text-sm md:text-base uppercase tracking-wider text-foreground">
+                        {group.title}
+                      </span>
+                      <span className="inline-flex min-w-6 h-6 items-center justify-center rounded-full bg-muted px-2 font-body text-xs text-muted-foreground">
+                        {group.services.length}
+                      </span>
                     </span>
-                  </div>
-                </motion.li>
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-0">
+                    <ul className="border-t border-border">
+                      {group.services.map((service, index) => (
+                        <motion.li
+                          key={`${group.key}-${service.title}-${index}`}
+                          initial={{ opacity: 0, y: 10 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: index * 0.03 }}
+                          className={`grid sm:grid-cols-[1fr_140px] gap-2 px-6 py-5 border-b border-border last:border-b-0 ${
+                            service.highlight ? "bg-ember/5" : ""
+                          }`}
+                        >
+                          <div>
+                            <h3 className="font-display text-sm uppercase tracking-wider text-foreground mb-1">
+                              {service.title}
+                            </h3>
+                            <p className="font-body text-xs text-muted-foreground leading-relaxed max-w-2xl">
+                              {service.desc}
+                            </p>
+                          </div>
+                          <div className="sm:text-right">
+                            <span
+                              className={`font-display text-lg font-bold ${
+                                service.highlight
+                                  ? "text-ember"
+                                  : "text-foreground"
+                              }`}
+                            >
+                              {service.price}
+                            </span>
+                          </div>
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
               ))}
-            </ul>
+            </Accordion>
           </div>
         </div>
       </section>
 
-      {/* GALLERY */}
-      <section className="section-padding pb-20">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-8">
-            {text.galleryTitle}
-          </h2>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-            {gallery.map((src, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.96 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-                className="aspect-[4/5] rounded-2xl overflow-hidden bg-muted"
-              >
-                <img
-                  src={src}
-                  alt={text.galleryAlt(i + 1)}
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </motion.div>
-            ))}
+      {/* BIKE MECHANIC */}
+      {season === "summer" && (
+        <section className="section-padding pb-12 md:pb-16">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              className="overflow-hidden rounded-3xl bg-foreground text-background"
+            >
+              <div className="grid lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)]">
+                <div className="flex flex-col justify-center p-8 md:p-12 lg:p-14">
+                  <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-background/15 px-3 py-1.5">
+                    <Wrench className="h-3.5 w-3.5 text-ember" />
+                    <span className="font-body text-[10px] uppercase tracking-[0.18em] text-background/60">
+                      {text.mechanicEyebrow}
+                    </span>
+                  </div>
+                  <h2 className="font-display text-3xl font-bold leading-[1.08] md:text-4xl">
+                    {text.mechanicTitle}
+                  </h2>
+                  <div className="mt-6 space-y-4">
+                    {text.mechanicParagraphs.map((paragraph) => (
+                      <p
+                        key={paragraph}
+                        className="font-body text-sm leading-relaxed text-background/70 md:text-base"
+                      >
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
+                  <div className="mt-8 flex items-center gap-3 border-t border-background/15 pt-6">
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-ember text-ember-foreground">
+                      <Bike className="h-5 w-5" />
+                    </span>
+                    <div>
+                      <div className="font-display text-sm font-bold uppercase tracking-wider">
+                        {text.mechanicName}
+                      </div>
+                      <div className="font-body text-xs text-background/55">
+                        {text.mechanicRole}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="min-w-0 border-t border-background/15 bg-background/5 p-4 md:p-6 lg:border-l lg:border-t-0">
+                  <div className="mb-4 flex items-center justify-between gap-4">
+                    <span className="font-display text-xs uppercase tracking-[0.18em] text-background/55">
+                      {text.mechanicGalleryTitle}
+                    </span>
+                    <div className="hidden items-center gap-2 md:flex">
+                      <button
+                        type="button"
+                        onClick={() => mechanicCarousel.scroll(-1)}
+                        disabled={!mechanicCarousel.canLeft}
+                        aria-label={text.mechanicPreviousPhoto}
+                        className="flex h-10 w-10 items-center justify-center rounded-full border border-background/20 text-background transition-colors hover:border-ember hover:text-ember disabled:cursor-default disabled:opacity-30"
+                      >
+                        <ChevronLeft className="h-5 w-5" />
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => mechanicCarousel.scroll(1)}
+                        disabled={!mechanicCarousel.canRight}
+                        aria-label={text.mechanicNextPhoto}
+                        className="flex h-10 w-10 items-center justify-center rounded-full border border-background/20 text-background transition-colors hover:border-ember hover:text-ember disabled:cursor-default disabled:opacity-30"
+                      >
+                        <ChevronRight className="h-5 w-5" />
+                      </button>
+                    </div>
+                  </div>
+
+                  <div
+                    ref={mechanicCarousel.scroller}
+                    role="region"
+                    aria-roledescription="carousel"
+                    aria-label={text.mechanicGalleryLabel}
+                    tabIndex={0}
+                    onKeyDown={(event) => {
+                      if (event.key === "ArrowLeft") {
+                        event.preventDefault();
+                        mechanicCarousel.scroll(-1);
+                      }
+                      if (event.key === "ArrowRight") {
+                        event.preventDefault();
+                        mechanicCarousel.scroll(1);
+                      }
+                    }}
+                    className="flex snap-x snap-mandatory gap-3 overflow-x-auto overscroll-x-contain scroll-smooth pb-2 outline-none [scrollbar-width:none] focus-visible:ring-2 focus-visible:ring-ember [&::-webkit-scrollbar]:hidden"
+                    style={{
+                      touchAction: "pan-x pan-y",
+                      WebkitOverflowScrolling: "touch",
+                    }}
+                  >
+                    {mechanicGallery.map((src, index) => (
+                      <figure
+                        key={src}
+                        role="group"
+                        aria-label={`${index + 1} / ${mechanicGallery.length}`}
+                        className="relative aspect-[3/4] w-[84%] shrink-0 snap-start overflow-hidden rounded-2xl bg-background/10 sm:w-[58%] lg:w-[72%]"
+                      >
+                        <img
+                          src={src}
+                          alt={text.mechanicPhotoAlt(index + 1)}
+                          width={960}
+                          height={1280}
+                          loading="lazy"
+                          decoding="async"
+                          className="h-full w-full object-cover"
+                        />
+                        <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/55 to-transparent px-4 pb-4 pt-12 font-body text-xs text-white/75">
+                          {String(index + 1).padStart(2, "0")} /{" "}
+                          {String(mechanicGallery.length).padStart(2, "0")}
+                        </figcaption>
+                      </figure>
+                    ))}
+                  </div>
+
+                  <div className="mt-5 h-[3px] overflow-hidden rounded-full bg-background/15">
+                    <div
+                      className="h-full rounded-full bg-ember transition-[margin] duration-200 ease-out"
+                      style={{
+                        width: `${100 / mechanicGallery.length}%`,
+                        marginLeft: `${
+                          mechanicCarousel.progress *
+                          (100 - 100 / mechanicGallery.length)
+                        }%`,
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
+
+      {/* GALLERY */}
+      {season === "winter" && (
+        <section className="section-padding pb-12 md:pb-16">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-8">
+              {text.galleryTitle}
+            </h2>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+              {gallery.map((src, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.05 }}
+                  className="aspect-[4/5] rounded-2xl overflow-hidden bg-muted"
+                >
+                  <img
+                    src={src}
+                    alt={text.galleryAlt(i + 1)}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* CONTACT CTA */}
       <section id="contact" className="section-padding pb-24">
         <div className="max-w-6xl mx-auto rounded-3xl bg-foreground text-background p-10 md:p-14 grid md:grid-cols-2 gap-10">
           <div>
             <h2 className="font-display text-3xl md:text-4xl font-bold leading-tight mb-4">
-              {text.ctaTitle}
+              {ctaTitle}
             </h2>
             <p className="font-body text-sm text-background/70 leading-relaxed max-w-md">
-              {text.ctaText}
+              {ctaText}
             </p>
           </div>
           <div className="space-y-5 md:border-l md:border-background/15 md:pl-10">

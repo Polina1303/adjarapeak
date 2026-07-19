@@ -6,6 +6,7 @@ import { RentalGrid } from "@/components/RentalGrid";
 import { getSaleRentals } from "@/lib/catalog.functions";
 import { useCatalogTranslations } from "@/lib/catalog-translations";
 import { useLanguage, type Lang } from "@/lib/i18n";
+import { ADJARA_PEAK_SOCIAL_IMAGE_META } from "@/lib/social-meta";
 
 const RENT_SALE_TEXT: Record<
   Lang,
@@ -53,6 +54,7 @@ export const Route = createFileRoute("/rent/sale")({
       { name: "description", content: "Снаряжение в прокат со скидками в Adjara Peak. Предложения ограничены." },
       { property: "og:title", content: "Распродажа проката — Adjara Peak" },
       { property: "og:description", content: "Снаряжение в прокат со скидками в Adjara Peak." },
+      ...ADJARA_PEAK_SOCIAL_IMAGE_META,
     ],
   }),
   component: RentalSalePage,
