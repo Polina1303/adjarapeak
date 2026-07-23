@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
 import {
   Calendar,
+  ChevronDown,
   ChevronLeft,
   ChevronRight,
   MapPin,
@@ -19,12 +20,16 @@ import denisGuide1 from "@/assets/denis-guide-1.jpg";
 import denisGuide2 from "@/assets/denis-guide-2.jpg";
 import denisGuide3 from "@/assets/denis-guide-3.jpg";
 import denisGuide4 from "@/assets/denis-guide-4.jpg";
+import lesyaGuide1 from "@/assets/lesya-guide-1.jpg";
+import lesyaGuide2 from "@/assets/lesya-guide-2.jpg";
+import lesyaGuide3 from "@/assets/lesya-guide-3.jpg";
 import {
   HikeDifficultyBadge,
   HikeDifficultyScale,
 } from "@/components/HikeDifficultyScale";
 
 const denisGallery = [denisGuide1, denisGuide2, denisGuide3, denisGuide4];
+const lesyaGallery = [lesyaGuide1, lesyaGuide2, lesyaGuide3];
 
 export const Route = createFileRoute("/hikes/")({
   staleTime: 5 * 60 * 1000,
@@ -91,11 +96,190 @@ function useGuideCarousel() {
   return { scroller, canLeft, canRight, progress, scroll };
 }
 
+type GuideProfileProps = {
+  eyebrow: string;
+  title: string;
+  paragraphs: readonly string[];
+  highlights: readonly string[];
+  name: string;
+  role: string;
+  galleryTitle: string;
+  galleryLabel: string;
+  previousPhoto: string;
+  nextPhoto: string;
+  detailsLabel: string;
+  photoAlt: (n: number) => string;
+  gallery: readonly string[];
+};
+
+function GuideProfile({
+  eyebrow,
+  title,
+  paragraphs,
+  highlights,
+  name,
+  role,
+  galleryTitle,
+  galleryLabel,
+  previousPhoto,
+  nextPhoto,
+  detailsLabel,
+  photoAlt,
+  gallery,
+}: GuideProfileProps) {
+  const carousel = useGuideCarousel();
+
+  return (
+    <motion.article
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.12 }}
+      className="overflow-hidden rounded-3xl bg-foreground text-background"
+    >
+      <div className="relative border-b border-background/15 bg-background/5 p-3 md:p-4">
+        <div className="absolute left-6 right-6 top-6 z-10 flex items-center justify-between gap-3">
+          <span className="rounded-full border border-white/20 bg-black/35 px-3 py-1.5 font-display text-[10px] uppercase tracking-[0.16em] text-white backdrop-blur-sm">
+            {galleryTitle}
+          </span>
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => carousel.scroll(-1)}
+              disabled={!carousel.canLeft}
+              aria-label={previousPhoto}
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/25 bg-black/35 text-white backdrop-blur-sm transition-colors hover:border-ember hover:text-ember disabled:cursor-default disabled:opacity-35"
+            >
+              <ChevronLeft className="h-4 w-4" />
+            </button>
+            <button
+              type="button"
+              onClick={() => carousel.scroll(1)}
+              disabled={!carousel.canRight}
+              aria-label={nextPhoto}
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/25 bg-black/35 text-white backdrop-blur-sm transition-colors hover:border-ember hover:text-ember disabled:cursor-default disabled:opacity-35"
+            >
+              <ChevronRight className="h-4 w-4" />
+            </button>
+          </div>
+        </div>
+
+        <div
+          ref={carousel.scroller}
+          role="region"
+          aria-roledescription="carousel"
+          aria-label={galleryLabel}
+          tabIndex={0}
+          onKeyDown={(event) => {
+            if (event.key === "ArrowLeft") {
+              event.preventDefault();
+              carousel.scroll(-1);
+            }
+            if (event.key === "ArrowRight") {
+              event.preventDefault();
+              carousel.scroll(1);
+            }
+          }}
+          className="flex snap-x snap-mandatory gap-3 overflow-x-auto overscroll-x-contain scroll-smooth outline-none [scrollbar-width:none] focus-visible:ring-2 focus-visible:ring-ember [&::-webkit-scrollbar]:hidden"
+          style={{
+            touchAction: "pan-x pan-y",
+            WebkitOverflowScrolling: "touch",
+          }}
+        >
+          {gallery.map((src, index) => (
+            <figure
+              key={src}
+              role="group"
+              aria-label={`${index + 1} / ${gallery.length}`}
+              className="relative aspect-[4/3] w-full shrink-0 snap-start overflow-hidden rounded-2xl bg-background/10"
+            >
+              <img
+                src={src}
+                alt={photoAlt(index + 1)}
+                width={960}
+                height={1280}
+                loading="lazy"
+                decoding="async"
+                className="h-full w-full object-cover"
+              />
+              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-5 pb-5 pt-16 text-white">
+                <div className="font-display text-sm font-bold uppercase tracking-wider">
+                  {name}
+                </div>
+                <div className="mt-1 font-body text-xs text-white/70">{role}</div>
+                <div className="absolute bottom-5 right-5 font-body text-[10px] tracking-[0.16em] text-white/65">
+                  {String(index + 1).padStart(2, "0")} /{" "}
+                  {String(gallery.length).padStart(2, "0")}
+                </div>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+
+        <div className="mx-2 mt-3 h-[3px] overflow-hidden rounded-full bg-background/15">
+          <div
+            className="h-full rounded-full bg-ember transition-[margin] duration-200 ease-out"
+            style={{
+              width: `${100 / gallery.length}%`,
+              marginLeft: `${carousel.progress * (100 - 100 / gallery.length)}%`,
+            }}
+          />
+        </div>
+      </div>
+
+      <div className="p-6 md:p-8">
+        <div className="inline-flex w-fit items-center gap-2 rounded-full border border-background/15 px-3 py-1.5">
+          <Mountain className="h-3.5 w-3.5 text-ember" />
+          <span className="font-body text-[10px] uppercase tracking-[0.18em] text-background/60">
+            {eyebrow}
+          </span>
+        </div>
+
+        <h2 className="mt-5 font-display text-2xl font-bold leading-[1.08] md:text-3xl">
+          {title}
+        </h2>
+
+        <p className="mt-5 font-body text-sm leading-relaxed text-background/70 md:text-[15px]">
+          {paragraphs[0]}
+        </p>
+
+        {paragraphs.length > 1 && (
+          <details className="group mt-4 border-t border-background/15 pt-4">
+            <summary className="flex min-h-10 cursor-pointer list-none items-center justify-between gap-4 font-display text-xs uppercase tracking-[0.14em] text-background/70 transition-colors hover:text-ember focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ember [&::-webkit-details-marker]:hidden">
+              {detailsLabel}
+              <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 group-open:rotate-180" />
+            </summary>
+            <div className="space-y-3 pt-3">
+              {paragraphs.slice(1).map((paragraph) => (
+                <p
+                  key={paragraph}
+                  className="font-body text-sm leading-relaxed text-background/70"
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </details>
+        )}
+
+        <ul className="mt-5 flex flex-wrap gap-2" aria-label={role}>
+          {highlights.map((highlight) => (
+            <li
+              key={highlight}
+              className="rounded-full border border-background/15 bg-background/5 px-3 py-2 font-body text-[10px] uppercase tracking-[0.1em] text-background/70"
+            >
+              {highlight}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </motion.article>
+  );
+}
+
 function HikesIndex() {
   const rawHikes = Route.useLoaderData();
   const { lang } = useLanguage();
   const text = getSiteText(lang).hikes;
-  const guideCarousel = useGuideCarousel();
   const hikes = rawHikes
     .map((hike) => localizeHike(hike, lang))
     .sort((a, b) => {
@@ -226,149 +410,38 @@ function HikesIndex() {
           </div>
         </section>
 
-        <section className="section-padding pb-24">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.12 }}
-              className="overflow-hidden rounded-3xl bg-foreground text-background"
-            >
-              <div className="grid lg:grid-cols-[minmax(0,0.88fr)_minmax(0,1.12fr)]">
-                <div className="flex flex-col justify-center p-8 md:p-12 lg:p-14">
-                  <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-background/15 px-3 py-1.5">
-                    <Mountain className="h-3.5 w-3.5 text-ember" />
-                    <span className="font-body text-[10px] uppercase tracking-[0.18em] text-background/60">
-                      {text.guideEyebrow}
-                    </span>
-                  </div>
-
-                  <h2 className="font-display text-3xl font-bold leading-[1.08] md:text-4xl">
-                    {text.guideTitle}
-                  </h2>
-
-                  <div className="mt-6 space-y-4">
-                    {text.guideParagraphs.map((paragraph) => (
-                      <p
-                        key={paragraph}
-                        className="font-body text-sm leading-relaxed text-background/70 md:text-base"
-                      >
-                        {paragraph}
-                      </p>
-                    ))}
-                  </div>
-
-                  <ul className="mt-7 flex flex-wrap gap-2" aria-label={text.guideRole}>
-                    {text.guideHighlights.map((highlight) => (
-                      <li
-                        key={highlight}
-                        className="rounded-full border border-background/15 bg-background/5 px-3 py-2 font-body text-[10px] uppercase tracking-[0.12em] text-background/70"
-                      >
-                        {highlight}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="mt-8 flex items-center gap-3 border-t border-background/15 pt-6">
-                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-ember text-ember-foreground">
-                      <Mountain className="h-5 w-5" />
-                    </span>
-                    <div>
-                      <div className="font-display text-sm font-bold uppercase tracking-wider">
-                        {text.guideName}
-                      </div>
-                      <div className="font-body text-xs text-background/55">
-                        {text.guideRole}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="min-w-0 border-t border-background/15 bg-background/5 p-4 md:p-6 lg:border-l lg:border-t-0">
-                  <div className="mb-4 flex items-center justify-between gap-4">
-                    <span className="font-display text-xs uppercase tracking-[0.18em] text-background/55">
-                      {text.guideGalleryTitle}
-                    </span>
-                    <div className="hidden items-center gap-2 md:flex">
-                      <button
-                        type="button"
-                        onClick={() => guideCarousel.scroll(-1)}
-                        disabled={!guideCarousel.canLeft}
-                        aria-label={text.guidePreviousPhoto}
-                        className="flex h-10 w-10 items-center justify-center rounded-full border border-background/20 text-background transition-colors hover:border-ember hover:text-ember disabled:cursor-default disabled:opacity-30"
-                      >
-                        <ChevronLeft className="h-5 w-5" />
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => guideCarousel.scroll(1)}
-                        disabled={!guideCarousel.canRight}
-                        aria-label={text.guideNextPhoto}
-                        className="flex h-10 w-10 items-center justify-center rounded-full border border-background/20 text-background transition-colors hover:border-ember hover:text-ember disabled:cursor-default disabled:opacity-30"
-                      >
-                        <ChevronRight className="h-5 w-5" />
-                      </button>
-                    </div>
-                  </div>
-
-                  <div
-                    ref={guideCarousel.scroller}
-                    role="region"
-                    aria-roledescription="carousel"
-                    aria-label={text.guideGalleryLabel}
-                    tabIndex={0}
-                    onKeyDown={(event) => {
-                      if (event.key === "ArrowLeft") {
-                        event.preventDefault();
-                        guideCarousel.scroll(-1);
-                      }
-                      if (event.key === "ArrowRight") {
-                        event.preventDefault();
-                        guideCarousel.scroll(1);
-                      }
-                    }}
-                    className="flex snap-x snap-mandatory gap-3 overflow-x-auto overscroll-x-contain scroll-smooth pb-2 outline-none [scrollbar-width:none] focus-visible:ring-2 focus-visible:ring-ember [&::-webkit-scrollbar]:hidden"
-                    style={{
-                      touchAction: "pan-x pan-y",
-                      WebkitOverflowScrolling: "touch",
-                    }}
-                  >
-                    {denisGallery.map((src, index) => (
-                      <figure
-                        key={src}
-                        role="group"
-                        aria-label={`${index + 1} / ${denisGallery.length}`}
-                        className="relative aspect-[3/4] w-[84%] shrink-0 snap-start overflow-hidden rounded-2xl bg-background/10 sm:w-[58%] lg:w-[72%]"
-                      >
-                        <img
-                          src={src}
-                          alt={text.guidePhotoAlt(index + 1)}
-                          width={960}
-                          height={index === denisGallery.length - 1 ? 960 : 1280}
-                          loading="lazy"
-                          decoding="async"
-                          className="h-full w-full object-cover"
-                        />
-                        <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/55 to-transparent px-4 pb-4 pt-12 font-body text-xs text-white/75">
-                          {String(index + 1).padStart(2, "0")} /{" "}
-                          {String(denisGallery.length).padStart(2, "0")}
-                        </figcaption>
-                      </figure>
-                    ))}
-                  </div>
-
-                  <div className="mt-5 h-[3px] overflow-hidden rounded-full bg-background/15">
-                    <div
-                      className="h-full rounded-full bg-ember transition-[margin] duration-200 ease-out"
-                      style={{
-                        width: `${100 / denisGallery.length}%`,
-                        marginLeft: `${guideCarousel.progress * (100 - 100 / denisGallery.length)}%`,
-                      }}
-                    />
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+        <section className="section-padding pb-24" aria-label={text.guideSectionLabel}>
+          <div className="max-w-7xl mx-auto grid gap-5 md:grid-cols-2 md:items-start">
+            <GuideProfile
+              eyebrow={text.guideEyebrow}
+              title={text.guideTitle}
+              paragraphs={text.guideParagraphs}
+              highlights={text.guideHighlights}
+              name={text.guideName}
+              role={text.guideRole}
+              galleryTitle={text.guideGalleryTitle}
+              galleryLabel={text.guideGalleryLabel}
+              previousPhoto={text.guidePreviousPhoto}
+              nextPhoto={text.guideNextPhoto}
+              detailsLabel={text.guideDetailsLabel}
+              photoAlt={text.guidePhotoAlt}
+              gallery={denisGallery}
+            />
+            <GuideProfile
+              eyebrow={text.guideEyebrow}
+              title={text.lesyaGuideTitle}
+              paragraphs={text.lesyaGuideParagraphs}
+              highlights={text.lesyaGuideHighlights}
+              name={text.lesyaGuideName}
+              role={text.lesyaGuideRole}
+              galleryTitle={text.lesyaGuideGalleryTitle}
+              galleryLabel={text.lesyaGuideGalleryLabel}
+              previousPhoto={text.lesyaGuidePreviousPhoto}
+              nextPhoto={text.lesyaGuideNextPhoto}
+              detailsLabel={text.guideDetailsLabel}
+              photoAlt={text.lesyaGuidePhotoAlt}
+              gallery={lesyaGallery}
+            />
           </div>
         </section>
       </div>

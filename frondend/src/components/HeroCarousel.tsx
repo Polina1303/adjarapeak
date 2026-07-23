@@ -1,14 +1,14 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import type { CarouselApi } from "@/components/ui/carousel";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import bannerBike from "@/assets/banner-bike.jpg";
 import heroCamping from "@/assets/hero-camping.jpg";
-import heroMountains from "@/assets/hero-mountains.jpg";
-import heroAdventure from "@/assets/hero-adventure.jpg";
+import heroHikes from "@/assets/hero-hikes.jpg";
 import camping from "@/assets/camping.jpg";
 import climbingPromo from "@/assets/climbing-promo.avif";
 import { Link } from "@tanstack/react-router";
@@ -29,19 +29,20 @@ const slideConfig = [
     href: "/rent" as const,
   },
   {
-    image: heroMountains,
-    href: "/rent" as const,
+    image: bannerBike,
+    href: "/service" as const,
   },
   {
-    image: heroAdventure,
+    image: heroHikes,
     href: "/hikes" as const,
   },
 ];
 
 export function HeroCarousel() {
-  const [desktopActive, setDesktopActive] = useState(0);
-  const [mobileActive, setMobileActive] = useState(0);
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [autoplayVersion, setAutoplayVersion] = useState(0);
   const [mobileApi, setMobileApi] = useState<CarouselApi>();
+  const autoplayTimerRef = useRef<number | null>(null);
   const { lang } = useLanguage();
   const heroText = getSiteText(lang).home.hero;
   const desktopSlides = slideConfig.map((slide, index) => ({
@@ -49,28 +50,36 @@ export function HeroCarousel() {
     ...heroText.slides[index],
   }));
 
-  useEffect(() => {
-    const id = window.setInterval(() => {
-      setDesktopActive((i) => (i + 1) % slideConfig.length);
-    }, 6000);
-    return () => window.clearInterval(id);
+  const resetAutoplay = useCallback(() => {
+    if (autoplayTimerRef.current !== null) {
+      window.clearTimeout(autoplayTimerRef.current);
+      autoplayTimerRef.current = null;
+    }
+    setAutoplayVersion((version) => version + 1);
   }, []);
 
   useEffect(() => {
-    if (!mobileApi) return;
-
-    const id = window.setInterval(() => {
-      mobileApi.scrollNext();
+    autoplayTimerRef.current = window.setTimeout(() => {
+      autoplayTimerRef.current = null;
+      const nextSlide = (activeSlide + 1) % slideConfig.length;
+      setActiveSlide(nextSlide);
+      mobileApi?.scrollTo(nextSlide);
     }, 6000);
 
-    return () => window.clearInterval(id);
-  }, [mobileApi]);
+    return () => {
+      if (autoplayTimerRef.current !== null) {
+        window.clearTimeout(autoplayTimerRef.current);
+        autoplayTimerRef.current = null;
+      }
+    };
+  }, [activeSlide, autoplayVersion, mobileApi]);
 
   useEffect(() => {
     if (!mobileApi) return;
 
     const updateActive = () => {
-      setMobileActive(mobileApi.selectedScrollSnap());
+      setActiveSlide(mobileApi.selectedScrollSnap());
+      resetAutoplay();
     };
 
     updateActive();
@@ -81,9 +90,15 @@ export function HeroCarousel() {
       mobileApi.off("select", updateActive);
       mobileApi.off("reInit", updateActive);
     };
-  }, [mobileApi]);
+  }, [mobileApi, resetAutoplay]);
 
-  const slide = desktopSlides[desktopActive];
+  const selectSlide = (index: number) => {
+    resetAutoplay();
+    setActiveSlide(index);
+    mobileApi?.scrollTo(index);
+  };
+
+  const slide = desktopSlides[activeSlide];
 
   return (
     <section className="w-full bg-background py-4 md:py-6">
@@ -93,7 +108,7 @@ export function HeroCarousel() {
           <div className="relative overflow-hidden rounded-xl bg-foreground min-h-[560px]">
             <AnimatePresence mode="sync">
               <motion.img
-                key={`img-${desktopActive}`}
+                key={`img-${activeSlide}`}
                 src={slide.image}
                 alt={slide.title}
                 initial={{ opacity: 0, scale: 1.04 }}
@@ -114,7 +129,7 @@ export function HeroCarousel() {
             />
             <AnimatePresence mode="wait">
               <motion.div
-                key={`text-${desktopActive}`}
+                key={`text-${activeSlide}`}
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -16 }}
@@ -143,10 +158,10 @@ export function HeroCarousel() {
               {desktopSlides.map((_, i) => (
                 <button
                   key={i}
-                  onClick={() => setDesktopActive(i)}
+                  onClick={() => selectSlide(i)}
                   aria-label={heroText.goToSlide(i + 1)}
                   className={`h-2 rounded-full transition-all ${
-                    i === desktopActive ? "w-6 bg-ember" : "w-2 bg-white/50 hover:bg-white/70"
+                    i === activeSlide ? "w-6 bg-ember" : "w-2 bg-white/50 hover:bg-white/70"
                   }`}
                 />
               ))}
@@ -202,13 +217,10 @@ export function HeroCarousel() {
               {desktopSlides.map((_, i) => (
                 <button
                   key={i}
-                  onClick={() => {
-                    setMobileActive(i);
-                    mobileApi?.scrollTo(i);
-                  }}
+                  onClick={() => selectSlide(i)}
                   aria-label={heroText.goToSlide(i + 1)}
                   className={`h-1.5 rounded-full transition-all ${
-                    i === mobileActive ? "w-5 bg-ember" : "w-1.5 bg-white/50"
+                    i === activeSlide ? "w-5 bg-ember" : "w-1.5 bg-white/50"
                   }`}
                 />
               ))}

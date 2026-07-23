@@ -36,10 +36,10 @@ export const SITE_TEXT = {
             cta: "Арендовать снаряжение",
           },
           {
-            title: "Прокат\nснаряжения",
+            title: "Велосервис\nв Батуми",
             subtitle:
-              "Палатки, лыжи, велосипеды и не только — берите снаряжение в аренду на день или на неделю.",
-            cta: "Смотреть прокат",
+              "Вернём велосипед в строй: диагностика, настройка и ремонт у опытного мастера с гарантией качества.",
+            cta: "Записаться в сервис",
           },
           {
             title: "Расписание\nпоходов",
@@ -59,7 +59,7 @@ export const SITE_TEXT = {
         subtitle:
           "Тренировки на естественном рельефе для новичков и опытных. Снаряжение, инструктаж и страховка — на нас. С вами работают Саша и Егор.",
         location: "Гонио-Квариати",
-        schedule: "Сб–Вс · 10:00 / 15:00",
+        schedule: "Ср · 17:30 · Сб–Вс · 14:00 / 17:30",
         priceNote: "за тренировку",
         book: "Записаться на тренировку",
         learnMore: "Узнать больше",
@@ -134,6 +134,8 @@ export const SITE_TEXT = {
       indexTitle: "Походы по Грузии",
       indexLead:
         "Однодневные выезды и многодневные походы с опытными гидами. Полный комплект снаряжения по запросу.",
+      guideSectionLabel: "Гиды Adjara Peak",
+      guideDetailsLabel: "Подробнее об опыте",
       guideEyebrow: "Команда Adjara Peak",
       guideTitle: "Знакомьтесь, Денис — ваш гид в походах",
       guideParagraphs: [
@@ -153,6 +155,25 @@ export const SITE_TEXT = {
       guidePreviousPhoto: "Предыдущее фото",
       guideNextPhoto: "Следующее фото",
       guidePhotoAlt: (n: number) => `Гид Денис в походе ${n}`,
+      lesyaGuideTitle: "Знакомьтесь, Леся — профессиональный горный гид",
+      lesyaGuideParagraphs: [
+        "Леся в туризме с 2008 года, а с 2015 года работает инструктором и гидом. Более 11 лет она организует безопасные и увлекательные путешествия в самых разных уголках мира.",
+        "За её плечами десятки экспедиций и походов в Грузии, Турции, Европе, Непале, Тибете, Южной Америке, на Камчатке и Кольском полуострове. На её счету более 20 успешных восхождений на Эльбрус и восхождения на Казбек с южной и северной сторон.",
+        "Леся имеет опыт спортивных походов до 5 категории сложности, является кандидатом в мастера спорта по спортивному туризму и участвовала в поисково-спасательных работах. Вне маршрутов она управляет парусной яхтой, катается на горных лыжах, читает, интересуется космосом и мечтает об Антарктиде.",
+      ],
+      lesyaGuideHighlights: [
+        "11+ лет опыта",
+        "20+ восхождений на Эльбрус",
+        "Походы до 5 категории",
+        "Поисково-спасательные работы",
+      ],
+      lesyaGuideName: "Леся",
+      lesyaGuideRole: "Горный гид Adjara Peak",
+      lesyaGuideGalleryTitle: "Леся в горах",
+      lesyaGuideGalleryLabel: "Фотографии горного гида Леси",
+      lesyaGuidePreviousPhoto: "Предыдущее фото Леси",
+      lesyaGuideNextPhoto: "Следующее фото Леси",
+      lesyaGuidePhotoAlt: (n: number) => `Горный гид Леся в экспедиции ${n}`,
       empty:
         "Походы скоро появятся. Свяжитесь с нами, чтобы обсудить индивидуальный маршрут.",
       allHikes: "Все походы",
@@ -399,6 +420,8 @@ export const SITE_TEXT = {
         // { name: "Егор", role: "Инструктор" },
       ],
       schedule: [
+        { day: "Среда", price: "50 ₾", slots: ["1 группа — 17:30 - 20:30"] },
+        { day: "Суббота", price: "50 ₾", slots: ["1 группа — 14:00 - 17:00", "2 группа — 17:30 - 20:30"] },
         { day: "Воскресенье", price: "50 ₾", slots: ["1 группа — 14:00 - 17:00", "2 группа — 17:30 - 20:30"] },
       ],
     },
@@ -446,10 +469,10 @@ export const SITE_TEXT = {
             cta: "Rent gear",
           },
           {
-            title: "Gear\nRental",
+            title: "Bike Service\nin Batumi",
             subtitle:
-              "Tents, skis, bicycles and more — rent equipment for a day or for a week.",
-            cta: "View rental",
+              "Get your bike back on the road: diagnostics, tuning and repairs by an experienced mechanic, backed by a quality guarantee.",
+            cta: "Book a service",
           },
           {
             title: "Hiking\nSchedule",
@@ -469,7 +492,7 @@ export const SITE_TEXT = {
         subtitle:
           "Outdoor climbing sessions for beginners and experienced climbers. Gear, briefing and belay are on us. Sasha and Egor guide the session.",
         location: "Gonio-Kvariati",
-        schedule: "Sat-Sun · 10:00 / 15:00",
+        schedule: "Wed · 17:30 · Sat-Sun · 14:00 / 17:30",
         priceNote: "per session",
         book: "Book a climbing session",
         learnMore: "Learn more",
@@ -544,6 +567,8 @@ export const SITE_TEXT = {
       indexTitle: "Hiking in Georgia",
       indexLead:
         "One-day trips and multi-day hikes with experienced guides. Full gear set available on request.",
+      guideSectionLabel: "Adjara Peak guides",
+      guideDetailsLabel: "More about the experience",
       guideEyebrow: "Adjara Peak team",
       guideTitle: "Meet Denis, your hiking guide",
       guideParagraphs: [
@@ -563,6 +588,25 @@ export const SITE_TEXT = {
       guidePreviousPhoto: "Previous photo",
       guideNextPhoto: "Next photo",
       guidePhotoAlt: (n: number) => `Guide Denis on a hike ${n}`,
+      lesyaGuideTitle: "Meet Lesya, a professional mountain guide",
+      lesyaGuideParagraphs: [
+        "Lesya has been active in tourism since 2008 and has worked as an instructor and guide since 2015. For more than 11 years, she has been creating safe, engaging journeys in mountain regions around the world.",
+        "She has led dozens of expeditions and treks in Georgia, Turkey, Europe, Nepal, Tibet, South America, Kamchatka and the Kola Peninsula. Her record includes more than 20 successful Elbrus ascents and climbs of Kazbek from both the south and north.",
+        "Lesya has experience in grade 5 sports trekking, holds Candidate for Master of Sport status in sports tourism, and has taken part in search-and-rescue operations. Away from the trail, she sails, skis, reads, follows space exploration and dreams of reaching Antarctica.",
+      ],
+      lesyaGuideHighlights: [
+        "11+ years of experience",
+        "20+ Elbrus ascents",
+        "Grade 5 expeditions",
+        "Search & rescue experience",
+      ],
+      lesyaGuideName: "Lesya",
+      lesyaGuideRole: "Adjara Peak mountain guide",
+      lesyaGuideGalleryTitle: "Lesya in the mountains",
+      lesyaGuideGalleryLabel: "Photos of mountain guide Lesya",
+      lesyaGuidePreviousPhoto: "Previous photo of Lesya",
+      lesyaGuideNextPhoto: "Next photo of Lesya",
+      lesyaGuidePhotoAlt: (n: number) => `Mountain guide Lesya on expedition ${n}`,
       empty:
         "Hikes will appear soon. Contact us to discuss a custom route.",
       allHikes: "All hikes",
@@ -809,7 +853,9 @@ export const SITE_TEXT = {
         // { name: "Egor", role: "Instructor" },
       ],
       schedule: [
-        { day: "Sunday", price: "50 ₾", slots: ["Group 1 — 14:00 - 17:00", "Group 2 — 17:30- 20:30"] },
+        { day: "Wednesday", price: "50 ₾", slots: ["Group 1 — 17:30 - 20:30"] },
+        { day: "Saturday", price: "50 ₾", slots: ["Group 1 — 14:00 - 17:00", "Group 2 — 17:30 - 20:30"] },
+        { day: "Sunday", price: "50 ₾", slots: ["Group 1 — 14:00 - 17:00", "Group 2 — 17:30 - 20:30"] },
       ],
     },
     mobileNav: {
@@ -856,10 +902,10 @@ export const SITE_TEXT = {
             cta: "აღჭურვილობის ქირაობა",
           },
           {
-            title: "აღჭურვილობის\nქირაობა",
+            title: "ველოსერვისი\nბათუმში",
             subtitle:
-              "კარვები, თხილამურები, ველოსიპედები და სხვა — იქირავეთ აღჭურვილობა დღით ან კვირით.",
-            cta: "ქირაობის ნახვა",
+              "დააბრუნეთ ველოსიპედი მწყობრში: დიაგნოსტიკა, რეგულირება და შეკეთება გამოცდილ ოსტატთან, ხარისხის გარანტიით.",
+            cta: "სერვისზე ჩაწერა",
           },
           {
             title: "ლაშქრობების\nგანრიგი",
@@ -879,7 +925,7 @@ export const SITE_TEXT = {
         subtitle:
           "ვარჯიშები ბუნებრივ რელიეფზე დამწყებებისთვის და გამოცდილებისთვის. აღჭურვილობა, ინსტრუქტაჟი და დაზღვევა ჩვენზეა. თქვენთან მუშაობენ საშა და ეგორი.",
         location: "გონიო-კვარიათი",
-        schedule: "შაბ-კვ · 10:00 / 15:00",
+        schedule: "ოთხ · 17:30 · შაბ-კვ · 14:00 / 17:30",
         priceNote: "ვარჯიშზე",
         book: "ვარჯიშზე ჩაწერა",
         learnMore: "მეტის გაგება",
@@ -954,6 +1000,8 @@ export const SITE_TEXT = {
       indexTitle: "ლაშქრობები საქართველოში",
       indexLead:
         "ერთდღიანი გასვლები და მრავალდღიანი ლაშქრობები გამოცდილ გიდებთან ერთად. სრული აღჭურვილობა ხელმისაწვდომია მოთხოვნით.",
+      guideSectionLabel: "Adjara Peak-ის გიდები",
+      guideDetailsLabel: "მეტი გამოცდილების შესახებ",
       guideEyebrow: "Adjara Peak-ის გუნდი",
       guideTitle: "გაიცანით დენისი — თქვენი გიდი ლაშქრობებში",
       guideParagraphs: [
@@ -973,6 +1021,25 @@ export const SITE_TEXT = {
       guidePreviousPhoto: "წინა ფოტო",
       guideNextPhoto: "შემდეგი ფოტო",
       guidePhotoAlt: (n: number) => `გიდი დენისი ლაშქრობაში ${n}`,
+      lesyaGuideTitle: "გაიცანით ლესია — პროფესიონალი მთის გიდი",
+      lesyaGuideParagraphs: [
+        "ლესია ტურიზმით 2008 წლიდან არის დაკავებული, ხოლო 2015 წლიდან ინსტრუქტორად და გიდად მუშაობს. 11 წელზე მეტია, რაც მსოფლიოს სხვადასხვა მთიან რეგიონში უსაფრთხო და შთამბეჭდავ მოგზაურობებს აწყობს.",
+        "მას ჩატარებული აქვს ათობით ექსპედიცია და ლაშქრობა საქართველოში, თურქეთში, ევროპაში, ნეპალში, ტიბეტში, სამხრეთ ამერიკაში, კამჩატკასა და კოლას ნახევარკუნძულზე. მის გამოცდილებაშია იალბუზზე 20-ზე მეტი წარმატებული ასვლა და ყაზბეგზე ასვლა როგორც სამხრეთიდან, ისე ჩრდილოეთიდან.",
+        "ლესიას აქვს მე-5 სირთულის კატეგორიამდე სპორტული ლაშქრობების გამოცდილება, არის სპორტული ტურიზმის სპორტის ოსტატობის კანდიდატი და მონაწილეობდა სამძებრო-სამაშველო სამუშაოებში. თავისუფალ დროს მართავს იალქნიან იახტას, სრიალებს თხილამურებით, კითხულობს, ინტერესდება კოსმოსით და ოცნებობს ანტარქტიდაზე.",
+      ],
+      lesyaGuideHighlights: [
+        "11+ წლიანი გამოცდილება",
+        "20+ ასვლა იალბუზზე",
+        "მე-5 კატეგორიის ლაშქრობები",
+        "სამძებრო-სამაშველო გამოცდილება",
+      ],
+      lesyaGuideName: "ლესია",
+      lesyaGuideRole: "Adjara Peak-ის მთის გიდი",
+      lesyaGuideGalleryTitle: "ლესია მთებში",
+      lesyaGuideGalleryLabel: "მთის გიდ ლესიას ფოტოები",
+      lesyaGuidePreviousPhoto: "ლესიას წინა ფოტო",
+      lesyaGuideNextPhoto: "ლესიას შემდეგი ფოტო",
+      lesyaGuidePhotoAlt: (n: number) => `მთის გიდი ლესია ექსპედიციაში ${n}`,
       empty:
         "ლაშქრობები მალე გამოჩნდება. დაგვიკავშირდით ინდივიდუალური მარშრუტის შესათანხმებლად.",
       allHikes: "ყველა ლაშქრობა",
@@ -1218,6 +1285,8 @@ export const SITE_TEXT = {
         // { name: "ეგორი", role: "ინსტრუქტორი" },
       ],
       schedule: [
+        { day: "ოთხშაბათი", price: "50 ₾", slots: ["1 ჯგუფი — 17:30 - 20:30"] },
+        { day: "შაბათი", price: "50 ₾", slots: ["1 ჯგუფი — 14:00 - 17:00", "2 ჯგუფი — 17:30 - 20:30"] },
         { day: "კვირა", price: "50 ₾", slots: ["1 ჯგუფი — 14:00 - 17:00", "2 ჯგუფი — 17:30 - 20:30"] },
       ],
     },
