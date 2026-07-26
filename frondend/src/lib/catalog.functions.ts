@@ -2083,7 +2083,8 @@ export const getSaleProducts = createServerFn({ method: "GET" }).handler(async (
     .select("*")
     .not("image", "is", null)
     .eq("in_stock", true)
-    .limit(400);
+    .not("sale_price", "is", null)
+    .gt("sale_price", 0);
   if (error) {
     if (isMissingSaleColumnError(error)) return { products: [] as ShopProduct[] };
     throw new Error(error.message);
@@ -2098,9 +2099,9 @@ export const getSaleProducts = createServerFn({ method: "GET" }).handler(async (
     sizes: normalizeShopProductSizes(r.sizes),
   })) as ShopProduct[];
 
-  const products = all
-    .filter((product) => hasManualDiscount(product.price, product.sale_price))
-    .slice(0, 36);
+  const products = all.filter((product) =>
+    hasManualDiscount(product.price, product.sale_price),
+  );
   return { products };
 });
 
