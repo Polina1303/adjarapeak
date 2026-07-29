@@ -241,20 +241,16 @@ function ServicePage() {
   }));
   const services = season === "winter" ? winterServices : summerServices;
   const displayServices = services.length > 0 ? services : fallbackServices;
-  const serviceGroups = SERVICE_CATEGORY_KEYS
-    .map((key) => ({
-      key,
-      title: SERVICE_CATEGORY_LABELS[lang][key],
-      services: displayServices.filter((service) => service.category === key),
-    }))
-    .filter((group) => group.services.length > 0);
+  const serviceGroups = SERVICE_CATEGORY_KEYS.map((key) => ({
+    key,
+    title: SERVICE_CATEGORY_LABELS[lang][key],
+    services: displayServices.filter((service) => service.category === key),
+  })).filter((group) => group.services.length > 0);
   const serviceSource = services.length > 0 ? "remote" : "fallback";
   const sectionText =
     season === "winter" ? text.winterSectionText : text.summerSectionText;
-  const ctaTitle =
-    season === "winter" ? text.ctaTitle : text.summerCtaTitle;
-  const ctaText =
-    season === "winter" ? text.ctaText : text.summerCtaText;
+  const ctaTitle = season === "winter" ? text.ctaTitle : text.summerCtaTitle;
+  const ctaText = season === "winter" ? text.ctaText : text.summerCtaText;
 
   return (
     <div className="min-h-screen bg-background">
