@@ -525,7 +525,7 @@ export function CatalogPage(props: ShopProps | RentalProps) {
                         group: props.group.slug,
                         category: props.activeCategory.slug,
                       }}
-                      className={`inline-flex h-10 items-center rounded-full border px-4 font-body text-xs uppercase tracking-wider transition-colors ${
+                      className={`inline-flex h-11 items-center rounded-full border px-4 font-body text-xs uppercase tracking-wider transition-colors touch-manipulation ${
                         !props.activeSubcategory
                           ? "border-ember bg-ember text-ember-foreground"
                           : "border-border bg-background text-foreground"
@@ -542,7 +542,7 @@ export function CatalogPage(props: ShopProps | RentalProps) {
                           category: props.activeCategory!.slug,
                           subcategory: subcategory.slug,
                         }}
-                        className={`inline-flex h-10 items-center rounded-full border px-4 font-body text-xs uppercase tracking-wider transition-colors ${
+                        className={`inline-flex h-11 items-center rounded-full border px-4 font-body text-xs uppercase tracking-wider transition-colors touch-manipulation ${
                           props.activeSubcategory?.id === subcategory.id
                             ? "border-ember bg-ember text-ember-foreground"
                             : "border-border bg-background text-foreground"
@@ -559,7 +559,7 @@ export function CatalogPage(props: ShopProps | RentalProps) {
               <SheetTrigger asChild>
                 <button
                   type="button"
-                  className="lg:hidden inline-flex items-center gap-2 self-start h-11 px-5 rounded-full border border-border text-sm font-body uppercase tracking-wider text-foreground hover:border-ember transition-colors"
+                  className="lg:hidden inline-flex items-center gap-2 self-start h-11 px-5 rounded-full border border-border text-sm font-body uppercase tracking-wider text-foreground hover:border-ember transition-colors touch-manipulation"
                 >
                   {isTourismSection ? (
                     <LayoutGrid className="h-4 w-4" />
@@ -575,7 +575,7 @@ export function CatalogPage(props: ShopProps | RentalProps) {
                     {isTourismSection ? pageText.categories : catalogUi.filters}
                   </SheetTitle>
                 </SheetHeader>
-                <div className="mt-4" onClick={() => setFiltersOpen(false)}>
+                <div className="mt-4">
                   <CatalogSidebar
                     kind={props.kind}
                     groupSlug={props.group.slug}
@@ -585,6 +585,7 @@ export function CatalogPage(props: ShopProps | RentalProps) {
                     activeCategorySlug={props.activeCategory?.slug}
                     activeSubcategorySlug={props.activeSubcategory?.slug}
                     allItemsLabel={pageText.allItems}
+                    onNavigate={() => setFiltersOpen(false)}
                     translateCategory={translateCategoryTitle}
                     translateSubcategory={translateSubcategoryTitle}
                   />

@@ -12,6 +12,7 @@ type Props = {
   activeCategorySlug?: string;
   activeSubcategorySlug?: string;
   allItemsLabel?: string;
+  onNavigate?: () => void;
   translateCategory?: (category: ShopCategory | RentalCategory) => string;
   translateSubcategory?: (
     category: ShopCategory | RentalCategory,
@@ -28,6 +29,7 @@ export function CatalogSidebar({
   activeCategorySlug,
   activeSubcategorySlug,
   allItemsLabel,
+  onNavigate,
   translateCategory,
   translateSubcategory,
 }: Props) {
@@ -57,7 +59,8 @@ export function CatalogSidebar({
             {kind === "shop" && groupSlug === "tourismCamping" ? (
               <Link
                 to="/tourismCamping/"
-                className={`block px-3 py-3 text-sm font-body uppercase tracking-wider transition-colors ${
+                onClick={onNavigate}
+                className={`flex min-h-11 items-center px-3 py-3 text-sm font-body uppercase tracking-wider transition-colors touch-manipulation ${
                   !activeCategorySlug
                     ? "text-ember font-semibold"
                     : "text-foreground/80 hover:text-foreground"
@@ -68,7 +71,8 @@ export function CatalogSidebar({
             ) : kind === "shop" && groupSlug === "sale" ? (
               <Link
                 to="/sale/sale"
-                className={`block px-3 py-3 text-sm font-body uppercase tracking-wider transition-colors ${
+                onClick={onNavigate}
+                className={`flex min-h-11 items-center px-3 py-3 text-sm font-body uppercase tracking-wider transition-colors touch-manipulation ${
                   !activeCategorySlug
                     ? "text-ember font-semibold"
                     : "text-foreground/80 hover:text-foreground"
@@ -80,7 +84,8 @@ export function CatalogSidebar({
               <Link
                 to="/sale/$group"
                 params={{ group: groupSlug }}
-                className={`block px-3 py-3 text-sm font-body uppercase tracking-wider transition-colors ${
+                onClick={onNavigate}
+                className={`flex min-h-11 items-center px-3 py-3 text-sm font-body uppercase tracking-wider transition-colors touch-manipulation ${
                   !activeCategorySlug
                     ? "text-ember font-semibold"
                     : "text-foreground/80 hover:text-foreground"
@@ -92,7 +97,8 @@ export function CatalogSidebar({
               <Link
                 to="/rent/$group"
                 params={{ group: groupSlug }}
-                className={`block px-3 py-3 text-sm font-body uppercase tracking-wider transition-colors ${
+                onClick={onNavigate}
+                className={`flex min-h-11 items-center px-3 py-3 text-sm font-body uppercase tracking-wider transition-colors touch-manipulation ${
                   !activeCategorySlug
                     ? "text-ember font-semibold"
                     : "text-foreground/80 hover:text-foreground"
@@ -117,7 +123,8 @@ export function CatalogSidebar({
                   <Link
                     to="/sale/$group/$category"
                     params={{ group: groupSlug, category: c.slug }}
-                    className={`flex-1 px-3 py-3 text-sm font-body uppercase tracking-wider transition-colors ${
+                    onClick={onNavigate}
+                    className={`flex min-h-11 flex-1 items-center px-3 py-3 text-sm font-body uppercase tracking-wider transition-colors touch-manipulation ${
                       isActiveCat && !activeSubcategorySlug
                         ? "text-ember font-semibold"
                       : "text-foreground/80 hover:text-foreground"
@@ -129,7 +136,8 @@ export function CatalogSidebar({
                   <Link
                     to="/rent/$group/$category"
                     params={{ group: groupSlug, category: c.slug }}
-                    className={`flex-1 px-3 py-3 text-sm font-body uppercase tracking-wider transition-colors ${
+                    onClick={onNavigate}
+                    className={`flex min-h-11 flex-1 items-center px-3 py-3 text-sm font-body uppercase tracking-wider transition-colors touch-manipulation ${
                       isActiveCat && !activeSubcategorySlug
                         ? "text-ember font-semibold"
                       : "text-foreground/80 hover:text-foreground"
@@ -143,7 +151,7 @@ export function CatalogSidebar({
                     type="button"
                     aria-label={isOpen ? "Свернуть" : "Развернуть"}
                     onClick={() => toggle(c.id)}
-                    className="px-3 text-ember hover:bg-muted/50 transition-colors"
+                    className="flex min-h-11 min-w-11 items-center justify-center text-ember hover:bg-muted/50 transition-colors touch-manipulation"
                   >
                     <ChevronDown
                       className={`h-4 w-4 transition-transform ${isOpen ? "rotate-180" : ""}`}
@@ -168,7 +176,8 @@ export function CatalogSidebar({
                               category: c.slug,
                               subcategory: s.slug,
                             }}
-                            className={`block pl-8 pr-3 py-2.5 text-xs font-body uppercase tracking-wider transition-colors ${
+                            onClick={onNavigate}
+                            className={`flex min-h-11 items-center pl-8 pr-3 py-3 text-xs font-body uppercase tracking-wider transition-colors touch-manipulation ${
                               isActiveSub
                                 ? "text-ember font-semibold"
                               : "text-foreground/70 hover:text-foreground"
@@ -184,7 +193,8 @@ export function CatalogSidebar({
                               category: c.slug,
                               subcategory: s.slug,
                             }}
-                            className={`block pl-8 pr-3 py-2.5 text-xs font-body uppercase tracking-wider transition-colors ${
+                            onClick={onNavigate}
+                            className={`flex min-h-11 items-center pl-8 pr-3 py-3 text-xs font-body uppercase tracking-wider transition-colors touch-manipulation ${
                               isActiveSub
                                 ? "text-ember font-semibold"
                               : "text-foreground/70 hover:text-foreground"
