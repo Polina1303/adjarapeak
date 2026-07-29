@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight, LayoutGrid, LoaderCircle, SlidersHorizontal, ArrowLeft } from "lucide-react";
+import { ChevronLeft, ChevronRight, LayoutGrid, LoaderCircle, ArrowLeft } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CatalogSidebar } from "@/components/CatalogSidebar";
@@ -456,6 +456,14 @@ export function CatalogPage(props: ShopProps | RentalProps) {
                     >
                       {inner}
                     </Link>
+                  ) : isShop && tab.groupSlug === "sale" ? (
+                    <Link
+                      key={tab.key}
+                      to="/sale/sale"
+                      className="shrink-0"
+                    >
+                      {inner}
+                    </Link>
                   ) : isShop ? (
                     <Link
                       key={tab.key}
@@ -561,18 +569,14 @@ export function CatalogPage(props: ShopProps | RentalProps) {
                   type="button"
                   className="lg:hidden inline-flex items-center gap-2 self-start h-11 px-5 rounded-full border border-border text-sm font-body uppercase tracking-wider text-foreground hover:border-ember transition-colors touch-manipulation"
                 >
-                  {isTourismSection ? (
-                    <LayoutGrid className="h-4 w-4" />
-                  ) : (
-                    <SlidersHorizontal className="h-4 w-4" />
-                  )}
-                  {isTourismSection ? pageText.allCategories : catalogUi.filters}
+                  <LayoutGrid className="h-4 w-4" />
+                  {pageText.allCategories}
                 </button>
               </SheetTrigger>
               <SheetContent side="left" className="w-[92vw] max-w-md overflow-y-auto">
                 <SheetHeader>
                   <SheetTitle className="font-display uppercase tracking-wide">
-                    {isTourismSection ? pageText.categories : catalogUi.filters}
+                    {pageText.categories}
                   </SheetTitle>
                 </SheetHeader>
                 <div className="mt-4">
