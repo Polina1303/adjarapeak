@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight, LoaderCircle, SlidersHorizontal, ArrowLeft } from "lucide-react";
+import { ChevronLeft, ChevronRight, LayoutGrid, LoaderCircle, SlidersHorizontal, ArrowLeft } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CatalogSidebar } from "@/components/CatalogSidebar";
@@ -53,7 +53,6 @@ const CATALOG_PAGE_TEXT = {
     shop: "Магазин",
     rental: "Прокат",
     categories: "Категории",
-    chooseCategory: "Выберите категорию",
     allCategories: "Все категории",
     allItems: "Все товары",
     allInCategory: "Все в категории",
@@ -66,7 +65,6 @@ const CATALOG_PAGE_TEXT = {
     shop: "Shop",
     rental: "Rental",
     categories: "Categories",
-    chooseCategory: "Choose a category",
     allCategories: "All categories",
     allItems: "All products",
     allInCategory: "All in category",
@@ -79,7 +77,6 @@ const CATALOG_PAGE_TEXT = {
     shop: "მაღაზია",
     rental: "ქირაობა",
     categories: "კატეგორიები",
-    chooseCategory: "აირჩიეთ კატეგორია",
     allCategories: "ყველა კატეგორია",
     allItems: "ყველა პროდუქტი",
     allInCategory: "ყველა კატეგორიაში",
@@ -313,7 +310,6 @@ export function CatalogPage(props: ShopProps | RentalProps) {
   }, [search, sort, onlyAvailable, props.group.id, props.activeCategory?.id, props.activeSubcategory?.id]);
 
   const isTourismSection = isShop && props.group.slug === "tourismCamping";
-  const quickCategories = isTourismSection ? props.categories.slice(0, 6) : [];
   const activeCategorySubcategories = props.activeCategory
     ? props.subsByCat[props.activeCategory.id] ?? []
     : [];
@@ -515,44 +511,6 @@ export function CatalogPage(props: ShopProps | RentalProps) {
               </p>
             </div>
 
-            {isTourismSection && !props.activeCategory && (
-              <section
-                aria-labelledby="tourism-category-shortcuts"
-                className="lg:hidden rounded-2xl border border-border bg-secondary/20 p-4"
-              >
-                <div className="mb-3 flex items-center justify-between gap-3">
-                  <h2
-                    id="tourism-category-shortcuts"
-                    className="font-display text-base font-bold uppercase tracking-wide text-foreground"
-                  >
-                    {pageText.chooseCategory}
-                  </h2>
-                  <button
-                    type="button"
-                    onClick={() => setFiltersOpen(true)}
-                    className="shrink-0 text-xs font-body font-medium text-ember underline-offset-4 hover:underline"
-                  >
-                    {pageText.allCategories}
-                  </button>
-                </div>
-                <div className="grid grid-cols-2 gap-2">
-                  {quickCategories.map((category) => (
-                    <Link
-                      key={category.id}
-                      to="/sale/$group/$category"
-                      params={{ group: props.group.slug, category: category.slug }}
-                      className="group flex min-h-16 items-center justify-between gap-2 rounded-xl border border-border bg-background px-3 py-3 transition-colors hover:border-ember"
-                    >
-                      <span className="font-body text-xs font-semibold uppercase leading-snug tracking-wide text-foreground">
-                        {translateCategoryTitle(category)}
-                      </span>
-                      <ChevronRight className="h-4 w-4 shrink-0 text-ember transition-transform group-hover:translate-x-0.5" />
-                    </Link>
-                  ))}
-                </div>
-              </section>
-            )}
-
             {isTourismSection &&
               props.activeCategory &&
               activeCategorySubcategories.length > 0 && (
@@ -598,17 +556,19 @@ export function CatalogPage(props: ShopProps | RentalProps) {
               )}
 
             <Sheet open={filtersOpen} onOpenChange={setFiltersOpen}>
-              {(!isTourismSection || props.activeCategory) && (
-                <SheetTrigger asChild>
-                  <button
-                    type="button"
-                    className="lg:hidden inline-flex items-center gap-2 self-start h-11 px-5 rounded-full border border-border text-sm font-body uppercase tracking-wider text-foreground hover:border-ember transition-colors"
-                  >
+              <SheetTrigger asChild>
+                <button
+                  type="button"
+                  className="lg:hidden inline-flex items-center gap-2 self-start h-11 px-5 rounded-full border border-border text-sm font-body uppercase tracking-wider text-foreground hover:border-ember transition-colors"
+                >
+                  {isTourismSection ? (
+                    <LayoutGrid className="h-4 w-4" />
+                  ) : (
                     <SlidersHorizontal className="h-4 w-4" />
-                    {isTourismSection ? pageText.categories : catalogUi.filters}
-                  </button>
-                </SheetTrigger>
-              )}
+                  )}
+                  {isTourismSection ? pageText.allCategories : catalogUi.filters}
+                </button>
+              </SheetTrigger>
               <SheetContent side="left" className="w-[92vw] max-w-md overflow-y-auto">
                 <SheetHeader>
                   <SheetTitle className="font-display uppercase tracking-wide">
