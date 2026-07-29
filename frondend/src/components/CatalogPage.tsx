@@ -52,6 +52,11 @@ const CATALOG_PAGE_TEXT = {
     home: "Главная",
     shop: "Магазин",
     rental: "Прокат",
+    categories: "Категории",
+    chooseCategory: "Выберите категорию",
+    allCategories: "Все категории",
+    allItems: "Все товары",
+    allInCategory: "Все в категории",
     scrollLeft: "Прокрутить категории влево",
     scrollRight: "Прокрутить категории вправо",
   },
@@ -60,6 +65,11 @@ const CATALOG_PAGE_TEXT = {
     home: "Home",
     shop: "Shop",
     rental: "Rental",
+    categories: "Categories",
+    chooseCategory: "Choose a category",
+    allCategories: "All categories",
+    allItems: "All products",
+    allInCategory: "All in category",
     scrollLeft: "Scroll categories left",
     scrollRight: "Scroll categories right",
   },
@@ -68,6 +78,11 @@ const CATALOG_PAGE_TEXT = {
     home: "მთავარი",
     shop: "მაღაზია",
     rental: "ქირაობა",
+    categories: "კატეგორიები",
+    chooseCategory: "აირჩიეთ კატეგორია",
+    allCategories: "ყველა კატეგორია",
+    allItems: "ყველა პროდუქტი",
+    allInCategory: "ყველა კატეგორიაში",
     scrollLeft: "კატეგორიების მარცხნივ გადახვევა",
     scrollRight: "კატეგორიების მარჯვნივ გადახვევა",
   },
@@ -297,6 +312,12 @@ export function CatalogPage(props: ShopProps | RentalProps) {
     setVisibleCount(INITIAL_VISIBLE_COUNT);
   }, [search, sort, onlyAvailable, props.group.id, props.activeCategory?.id, props.activeSubcategory?.id]);
 
+  const isTourismSection = isShop && props.group.slug === "tourismCamping";
+  const quickCategories = isTourismSection ? props.categories.slice(0, 6) : [];
+  const activeCategorySubcategories = props.activeCategory
+    ? props.subsByCat[props.activeCategory.id] ?? []
+    : [];
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -473,6 +494,7 @@ export function CatalogPage(props: ShopProps | RentalProps) {
                 subsByCat={props.subsByCat}
                 activeCategorySlug={props.activeCategory?.slug}
                 activeSubcategorySlug={props.activeSubcategory?.slug}
+                allItemsLabel={pageText.allItems}
                 translateCategory={translateCategoryTitle}
                 translateSubcategory={translateSubcategoryTitle}
               />
@@ -493,20 +515,104 @@ export function CatalogPage(props: ShopProps | RentalProps) {
               </p>
             </div>
 
-            <Sheet open={filtersOpen} onOpenChange={setFiltersOpen}>
-              <SheetTrigger asChild>
-                <button
-                  type="button"
-                  className="lg:hidden inline-flex items-center gap-2 self-start h-11 px-5 rounded-full border border-border text-sm font-body uppercase tracking-wider text-foreground hover:border-ember transition-colors"
+            {isTourismSection && !props.activeCategory && (
+              <section
+                aria-labelledby="tourism-category-shortcuts"
+                className="lg:hidden rounded-2xl border border-border bg-secondary/20 p-4"
+              >
+                <div className="mb-3 flex items-center justify-between gap-3">
+                  <h2
+                    id="tourism-category-shortcuts"
+                    className="font-display text-base font-bold uppercase tracking-wide text-foreground"
+                  >
+                    {pageText.chooseCategory}
+                  </h2>
+                  <button
+                    type="button"
+                    onClick={() => setFiltersOpen(true)}
+                    className="shrink-0 text-xs font-body font-medium text-ember underline-offset-4 hover:underline"
+                  >
+                    {pageText.allCategories}
+                  </button>
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  {quickCategories.map((category) => (
+                    <Link
+                      key={category.id}
+                      to="/sale/$group/$category"
+                      params={{ group: props.group.slug, category: category.slug }}
+                      className="group flex min-h-16 items-center justify-between gap-2 rounded-xl border border-border bg-background px-3 py-3 transition-colors hover:border-ember"
+                    >
+                      <span className="font-body text-xs font-semibold uppercase leading-snug tracking-wide text-foreground">
+                        {translateCategoryTitle(category)}
+                      </span>
+                      <ChevronRight className="h-4 w-4 shrink-0 text-ember transition-transform group-hover:translate-x-0.5" />
+                    </Link>
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {isTourismSection &&
+              props.activeCategory &&
+              activeCategorySubcategories.length > 0 && (
+                <section
+                  aria-label={pageText.categories}
+                  className="lg:hidden -mx-1 overflow-x-auto px-1 pb-1 scrollbar-hide"
                 >
-                  <SlidersHorizontal className="h-4 w-4" />
-                  {catalogUi.filters}
-                </button>
-              </SheetTrigger>
-              <SheetContent side="left" className="w-full sm:max-w-full overflow-y-auto">
+                  <div className="flex w-max gap-2">
+                    <Link
+                      to="/sale/$group/$category"
+                      params={{
+                        group: props.group.slug,
+                        category: props.activeCategory.slug,
+                      }}
+                      className={`inline-flex h-10 items-center rounded-full border px-4 font-body text-xs uppercase tracking-wider transition-colors ${
+                        !props.activeSubcategory
+                          ? "border-ember bg-ember text-ember-foreground"
+                          : "border-border bg-background text-foreground"
+                      }`}
+                    >
+                      {pageText.allInCategory}
+                    </Link>
+                    {activeCategorySubcategories.map((subcategory) => (
+                      <Link
+                        key={subcategory.id}
+                        to="/sale/$group/$category/$subcategory"
+                        params={{
+                          group: props.group.slug,
+                          category: props.activeCategory!.slug,
+                          subcategory: subcategory.slug,
+                        }}
+                        className={`inline-flex h-10 items-center rounded-full border px-4 font-body text-xs uppercase tracking-wider transition-colors ${
+                          props.activeSubcategory?.id === subcategory.id
+                            ? "border-ember bg-ember text-ember-foreground"
+                            : "border-border bg-background text-foreground"
+                        }`}
+                      >
+                        {translateSubcategoryTitle(props.activeCategory, subcategory)}
+                      </Link>
+                    ))}
+                  </div>
+                </section>
+              )}
+
+            <Sheet open={filtersOpen} onOpenChange={setFiltersOpen}>
+              {(!isTourismSection || props.activeCategory) && (
+                <SheetTrigger asChild>
+                  <button
+                    type="button"
+                    className="lg:hidden inline-flex items-center gap-2 self-start h-11 px-5 rounded-full border border-border text-sm font-body uppercase tracking-wider text-foreground hover:border-ember transition-colors"
+                  >
+                    <SlidersHorizontal className="h-4 w-4" />
+                    {isTourismSection ? pageText.categories : catalogUi.filters}
+                  </button>
+                </SheetTrigger>
+              )}
+              <SheetContent side="left" className="w-[92vw] max-w-md overflow-y-auto">
                 <SheetHeader>
                   <SheetTitle className="font-display uppercase tracking-wide">
-                    {catalogUi.filters}
+                    {isTourismSection ? pageText.categories : catalogUi.filters}
                   </SheetTitle>
                 </SheetHeader>
                 <div className="mt-4" onClick={() => setFiltersOpen(false)}>
@@ -518,6 +624,7 @@ export function CatalogPage(props: ShopProps | RentalProps) {
                     subsByCat={props.subsByCat}
                     activeCategorySlug={props.activeCategory?.slug}
                     activeSubcategorySlug={props.activeSubcategory?.slug}
+                    allItemsLabel={pageText.allItems}
                     translateCategory={translateCategoryTitle}
                     translateSubcategory={translateSubcategoryTitle}
                   />

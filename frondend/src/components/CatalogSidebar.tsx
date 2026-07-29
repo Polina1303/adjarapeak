@@ -11,6 +11,7 @@ type Props = {
   subsByCat: Record<string, ShopSubcategory[]>;
   activeCategorySlug?: string;
   activeSubcategorySlug?: string;
+  allItemsLabel?: string;
   translateCategory?: (category: ShopCategory | RentalCategory) => string;
   translateSubcategory?: (
     category: ShopCategory | RentalCategory,
@@ -26,6 +27,7 @@ export function CatalogSidebar({
   subsByCat,
   activeCategorySlug,
   activeSubcategorySlug,
+  allItemsLabel,
   translateCategory,
   translateSubcategory,
 }: Props) {
@@ -50,6 +52,57 @@ export function CatalogSidebar({
   return (
     <aside className="w-full lg:w-[260px] shrink-0">
       <ul className="flex flex-col">
+        {allItemsLabel && (
+          <li className="border-b border-border/40">
+            {kind === "shop" && groupSlug === "tourismCamping" ? (
+              <Link
+                to="/tourismCamping/"
+                className={`block px-3 py-3 text-sm font-body uppercase tracking-wider transition-colors ${
+                  !activeCategorySlug
+                    ? "text-ember font-semibold"
+                    : "text-foreground/80 hover:text-foreground"
+                }`}
+              >
+                {allItemsLabel}
+              </Link>
+            ) : kind === "shop" && groupSlug === "sale" ? (
+              <Link
+                to="/sale/sale"
+                className={`block px-3 py-3 text-sm font-body uppercase tracking-wider transition-colors ${
+                  !activeCategorySlug
+                    ? "text-ember font-semibold"
+                    : "text-foreground/80 hover:text-foreground"
+                }`}
+              >
+                {allItemsLabel}
+              </Link>
+            ) : kind === "shop" ? (
+              <Link
+                to="/sale/$group"
+                params={{ group: groupSlug }}
+                className={`block px-3 py-3 text-sm font-body uppercase tracking-wider transition-colors ${
+                  !activeCategorySlug
+                    ? "text-ember font-semibold"
+                    : "text-foreground/80 hover:text-foreground"
+                }`}
+              >
+                {allItemsLabel}
+              </Link>
+            ) : (
+              <Link
+                to="/rent/$group"
+                params={{ group: groupSlug }}
+                className={`block px-3 py-3 text-sm font-body uppercase tracking-wider transition-colors ${
+                  !activeCategorySlug
+                    ? "text-ember font-semibold"
+                    : "text-foreground/80 hover:text-foreground"
+                }`}
+              >
+                {allItemsLabel}
+              </Link>
+            )}
+          </li>
+        )}
         {categories.map((c) => {
           const subs = subsByCat[c.id] ?? [];
           const hasSubs = subs.length > 0;
