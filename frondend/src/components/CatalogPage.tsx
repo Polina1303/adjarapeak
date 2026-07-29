@@ -404,11 +404,11 @@ export function CatalogPage(props: ShopProps | RentalProps) {
                     type="button"
                     aria-label={pageText.scrollLeft}
                     onClick={() => scrollTabs(-1)}
-                    className="absolute left-0 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center h-8 w-8 rounded-full bg-background border border-border shadow-sm hover:bg-secondary transition-colors"
+                    className="absolute left-0 top-1/2 -translate-y-1/2 z-20 hidden sm:flex items-center justify-center h-8 w-8 rounded-full bg-background border border-border shadow-sm hover:bg-secondary transition-colors"
                   >
                     <ChevronLeft className="h-4 w-4" />
                   </button>
-                  <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 z-10 bg-gradient-to-r from-background to-transparent transition-opacity duration-300 opacity-100" />
+                  <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 z-10 hidden sm:block bg-gradient-to-r from-background to-transparent transition-opacity duration-300 opacity-100" />
                 </>
               )}
               {canScrollRight && (
@@ -417,16 +417,16 @@ export function CatalogPage(props: ShopProps | RentalProps) {
                     type="button"
                     aria-label={pageText.scrollRight}
                     onClick={() => scrollTabs(1)}
-                    className="absolute right-0 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center h-8 w-8 rounded-full bg-background border border-border shadow-sm hover:bg-secondary transition-colors"
+                    className="absolute right-0 top-1/2 -translate-y-1/2 z-20 hidden sm:flex items-center justify-center h-8 w-8 rounded-full bg-background border border-border shadow-sm hover:bg-secondary transition-colors"
                   >
                     <ChevronRight className="h-4 w-4" />
                   </button>
-                  <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 z-10 bg-gradient-to-l from-background to-transparent transition-opacity duration-300 opacity-100" />
+                  <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 z-10 hidden sm:block bg-gradient-to-l from-background to-transparent transition-opacity duration-300 opacity-100" />
                 </>
               )}
               <div
                 ref={tabsRef}
-                className="flex gap-1 sm:gap-2 overflow-x-auto scrollbar-hide scroll-smooth"
+                className="flex gap-1 sm:gap-2 overflow-x-auto overscroll-x-contain scrollbar-hide scroll-smooth"
               >
                 {groupTabs.map((tab) => {
                   const active = tab.group.id === props.group.id;
