@@ -23,22 +23,9 @@ import {
 import { getCartLineItems, type CartLineItem } from "@/lib/catalog.functions";
 import { resolveCatalogImage } from "@/lib/catalog-image";
 import { useLanguage, type Lang } from "@/lib/i18n";
+import { getOrderApiUrl } from "@/lib/order-api";
 import giftCardCart from "@/assets/gift-card-cart.png";
 import { toast } from "sonner";
-
-const DEFAULT_ORDER_API_URL =
-  "https://adjarapeak-api-production.up.railway.app/api/order";
-
-function getOrderApiUrl() {
-  const raw =
-    (import.meta.env.VITE_ORDER_API_URL as string | undefined) ||
-    (import.meta.env.VITE_API_URL as string | undefined);
-  if (!raw) return DEFAULT_ORDER_API_URL;
-  const trimmed = raw.replace(/\/$/, "");
-  if (trimmed.endsWith("/api/order") || trimmed.endsWith("/send"))
-    return trimmed;
-  return `${trimmed}/api/order`;
-}
 
 type CheckoutText = {
   cartTitle: string;

@@ -22,7 +22,19 @@ import {
   CircleDot,
   ChevronLeft,
   ChevronRight,
+  Loader2,
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import bannerBike from "@/assets/banner-bike.jpg";
 import s0 from "@/assets/service-0.jpg";
 import s1 from "@/assets/service-1.jpg";
@@ -32,6 +44,7 @@ import nikitaBikeService1 from "@/assets/nikita-bike-service-1.jpg";
 import nikitaBikeService2 from "@/assets/nikita-bike-service-2.jpg";
 import nikitaBikeService3 from "@/assets/nikita-bike-service-3.jpg";
 import nikitaBikeService4 from "@/assets/nikita-bike-service-4.jpg";
+import rollerSkatingIcon from "@/assets/roller-skating.svg";
 import { type Lang, useLanguage } from "@/lib/i18n";
 import { getSiteText } from "@/lib/site-translations";
 import {
@@ -41,7 +54,9 @@ import {
   SERVICE_CATEGORY_LABELS,
   type ServiceCategoryKey,
 } from "@/lib/service-categories";
+import { getOrderApiUrl } from "@/lib/order-api";
 import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 export const Route = createFileRoute("/service")({
   head: () => ({
@@ -170,6 +185,16 @@ function localizePrice(
   return price;
 }
 
+function SupBoardIcon() {
+  return (
+    <span className="relative block h-8 w-9" aria-hidden>
+      <span className="absolute bottom-1 left-0 h-2 w-9 rounded-[50%] border-2 border-current" />
+      <span className="absolute left-[19px] top-0 h-7 w-0.5 origin-bottom rotate-[24deg] rounded-full bg-current" />
+      <span className="absolute bottom-[3px] left-[13px] h-2 w-1 origin-top rotate-[24deg] rounded-full bg-current" />
+    </span>
+  );
+}
+
 function ServicePage() {
   const { lang } = useLanguage();
   const text = getSiteText(lang).service;
@@ -177,6 +202,14 @@ function ServicePage() {
   const mechanicCarousel = useServiceCarousel(season === "summer");
   const [winterServices, setWinterServices] = useState<Service[]>([]);
   const [summerServices, setSummerServices] = useState<Service[]>([]);
+  const [bookingOpen, setBookingOpen] = useState(false);
+  const [bookingSubmitting, setBookingSubmitting] = useState(false);
+  const [bookingForm, setBookingForm] = useState({
+    name: "",
+    phone: "",
+    telegram: "",
+    comment: "",
+  });
   const featureSource =
     season === "winter" ? text.features : text.summerFeatures;
   const featureIcons =
@@ -252,9 +285,188 @@ function ServicePage() {
   const ctaTitle = season === "winter" ? text.ctaTitle : text.summerCtaTitle;
   const ctaText = season === "winter" ? text.ctaText : text.summerCtaText;
 
+  async function handleBookingSubmit(event: React.FormEvent) {
+    event.preventDefault();
+    if (!bookingForm.name.trim()) {
+      toast.error(text.bookingNameError);
+      return;
+    }
+    if (!bookingForm.phone.trim()) {
+      toast.error(text.bookingPhoneError);
+      return;
+    }
+
+    const serviceTitle =
+      season === "winter"
+        ? text.bookingWinterService
+        : text.bookingSummerService;
+    const comment = bookingForm.comment.trim();
+
+    setBookingSubmitting(true);
+    try {
+      const response = await fetch(getOrderApiUrl(), {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          customer: {
+            name: bookingForm.name.trim(),
+            phone: bookingForm.phone.trim(),
+            telegram: bookingForm.telegram.trim(),
+          },
+          rental: {
+            dateStart: "",
+            dateEnd: "",
+          },
+          comments: comment,
+          items: [
+            {
+              slug: `service-${season}`,
+              title: serviceTitle,
+              quantity: 1,
+              price: 0,
+              total: 0,
+              kind: "shop",
+              unit: "",
+              description: comment,
+              image: "",
+            },
+          ],
+          summary: {
+            totalItems: 1,
+            total: 0,
+          },
+        }),
+      });
+      const payload = await response.json().catch(() => null);
+      if (!response.ok) {
+        throw new Error(
+          payload?.msg || payload?.error || text.bookingSendError
+        );
+      }
+
+      setBookingForm({ name: "", phone: "", telegram: "", comment: "" });
+      setBookingOpen(false);
+      toast.success(text.bookingSent);
+    } catch (error) {
+      toast.error(
+        error instanceof Error ? error.message : text.bookingSendError
+      );
+    } finally {
+      setBookingSubmitting(false);
+    }
+  }
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
+
+      <Dialog open={bookingOpen} onOpenChange={setBookingOpen}>
+        <DialogContent
+          closeLabel={text.bookingCloseLabel}
+          className="max-h-[90dvh] w-[calc(100%-2rem)] overflow-y-auto rounded-3xl border-border p-6 sm:max-w-md sm:p-8"
+        >
+          <DialogHeader className="pr-8 text-left">
+            <DialogTitle className="font-display text-2xl font-bold uppercase leading-tight text-foreground">
+              {text.bookingTitle}
+            </DialogTitle>
+            <DialogDescription className="font-body leading-relaxed">
+              {text.bookingDescription}
+            </DialogDescription>
+          </DialogHeader>
+
+          <div className="rounded-2xl border border-ember/25 bg-ember/5 px-4 py-3">
+            <span className="font-body text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+              {text.bookingServiceLabel}
+            </span>
+            <p className="mt-1 font-display text-sm font-bold uppercase tracking-wider text-foreground">
+              {season === "winter"
+                ? text.bookingWinterService
+                : text.bookingSummerService}
+            </p>
+          </div>
+
+          <form onSubmit={handleBookingSubmit} className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="service-booking-name">{text.bookingNameLabel}</Label>
+              <Input
+                id="service-booking-name"
+                value={bookingForm.name}
+                onChange={(event) =>
+                  setBookingForm((current) => ({
+                    ...current,
+                    name: event.target.value,
+                  }))
+                }
+                placeholder={text.bookingNamePlaceholder}
+                autoComplete="name"
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="service-booking-phone">{text.bookingPhoneLabel}</Label>
+              <Input
+                id="service-booking-phone"
+                type="tel"
+                value={bookingForm.phone}
+                onChange={(event) =>
+                  setBookingForm((current) => ({
+                    ...current,
+                    phone: event.target.value,
+                  }))
+                }
+                placeholder={text.bookingPhonePlaceholder}
+                autoComplete="tel"
+                inputMode="tel"
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="service-booking-telegram">
+                {text.bookingTelegramLabel}
+              </Label>
+              <Input
+                id="service-booking-telegram"
+                value={bookingForm.telegram}
+                onChange={(event) =>
+                  setBookingForm((current) => ({
+                    ...current,
+                    telegram: event.target.value,
+                  }))
+                }
+                placeholder={text.bookingTelegramPlaceholder}
+                autoComplete="off"
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="service-booking-comment">
+                {text.bookingCommentLabel}
+              </Label>
+              <Textarea
+                id="service-booking-comment"
+                value={bookingForm.comment}
+                onChange={(event) =>
+                  setBookingForm((current) => ({
+                    ...current,
+                    comment: event.target.value,
+                  }))
+                }
+                placeholder={text.bookingCommentPlaceholder}
+                className="min-h-24 resize-none"
+              />
+            </div>
+            <Button
+              type="submit"
+              disabled={bookingSubmitting}
+              className="h-12 w-full rounded-full bg-ember font-display text-xs uppercase tracking-wider text-ember-foreground hover:bg-ember/90"
+            >
+              {bookingSubmitting && (
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden />
+              )}
+              {bookingSubmitting
+                ? text.bookingSubmitting
+                : text.bookingSubmit}
+            </Button>
+          </form>
+        </DialogContent>
+      </Dialog>
 
       {/* HERO */}
       <section className="relative pt-32 pb-20 overflow-hidden">
@@ -287,12 +499,13 @@ function ServicePage() {
                 >
                   {text.priceList}
                 </a>
-                <a
-                  href="#contact"
+                <button
+                  type="button"
+                  onClick={() => setBookingOpen(true)}
                   className="flex-1 inline-flex justify-center items-center gap-2 border border-border hover:border-ember hover:text-ember transition-colors px-6 py-3 rounded-full font-display text-xs uppercase tracking-wider text-foreground"
                 >
                   {text.book}
-                </a>
+                </button>
               </div>
             </motion.div>
           </div>
@@ -431,6 +644,104 @@ function ServicePage() {
           </div>
         </div>
       </section>
+
+      {/* SUMMER GEAR SERVICE */}
+      {season === "summer" && (
+        <section className="section-padding pb-12 md:pb-16">
+          <div className="max-w-6xl mx-auto">
+            <div className="mb-8 max-w-2xl">
+              <p className="mb-3 font-display text-xs uppercase tracking-[0.2em] text-ember">
+                {text.summerGearEyebrow}
+              </p>
+              <h2 className="font-display text-3xl font-bold leading-tight text-foreground md:text-4xl">
+                {text.summerGearTitle}
+              </h2>
+            </div>
+
+            <div className="grid gap-4 lg:grid-cols-2">
+              <motion.article
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                className="flex min-h-full flex-col rounded-3xl border border-border bg-card p-7 md:p-9"
+              >
+                <div className="mb-8 flex h-12 w-12 items-center justify-center rounded-full bg-ember/10 text-ember">
+                  <img
+                    src={rollerSkatingIcon}
+                    alt=""
+                    width={28}
+                    height={28}
+                    className="h-7 w-7"
+                    aria-hidden
+                  />
+                </div>
+                <h3 className="max-w-md font-display text-2xl font-bold leading-tight text-foreground md:text-3xl lg:min-h-20">
+                  {text.skateServiceTitle}
+                </h3>
+                <p className="mt-4 font-body text-sm leading-relaxed text-muted-foreground md:text-base lg:min-h-14">
+                  {text.skateServiceDescription}
+                </p>
+                <div className="mt-6 flex items-end justify-between gap-4 border-t border-border pt-6">
+                  <span className="font-body text-xs uppercase tracking-[0.16em] text-muted-foreground">
+                    {text.servicePriceLabel}
+                  </span>
+                  <span className="font-display text-3xl font-bold text-ember">
+                    {text.skateServicePrice}
+                  </span>
+                </div>
+                <div className="mt-6 flex-1">
+                  <p className="font-body text-sm italic leading-relaxed text-muted-foreground">
+                    {text.skateServiceNote}
+                  </p>
+                </div>
+                <div className="mt-6 flex items-center gap-3 border-t border-border pt-6">
+                  <ShieldCheck className="h-5 w-5 shrink-0 text-ember" aria-hidden />
+                  <strong className="font-display text-sm uppercase tracking-wider text-foreground">
+                    {text.supServiceWarranty}
+                  </strong>
+                </div>
+              </motion.article>
+
+              <motion.article
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ delay: 0.06 }}
+                className="flex min-h-full flex-col rounded-3xl border border-foreground bg-foreground p-7 text-background md:p-9"
+              >
+                <div className="mb-8 flex h-12 w-12 items-center justify-center rounded-full bg-ember text-ember-foreground">
+                  <SupBoardIcon />
+                </div>
+                <h3 className="font-display text-2xl font-bold leading-tight text-background md:text-3xl lg:min-h-20">
+                  {text.supServiceTitle}
+                </h3>
+                <p className="mt-4 font-body text-sm leading-relaxed text-background/70 md:text-base lg:min-h-14">
+                  {text.supServiceDescription}
+                </p>
+                <div className="mt-6 flex items-end justify-between gap-4 border-t border-background/15 pt-6">
+                  <span className="font-body text-xs uppercase tracking-[0.16em] text-background/55">
+                    {text.servicePriceLabel}
+                  </span>
+                  <span className="font-display text-3xl font-bold text-ember">
+                    {text.supServicePrice}
+                  </span>
+                </div>
+                <div className="mt-6 flex-1">
+                  <p className="font-body text-sm leading-relaxed text-background/70">
+                    {text.supServiceControl}
+                  </p>
+                </div>
+                <div className="mt-6 flex items-center gap-3 border-t border-background/15 pt-6">
+                  <ShieldCheck className="h-5 w-5 shrink-0 text-ember" aria-hidden />
+                  <strong className="font-display text-sm uppercase tracking-wider text-background">
+                    {text.supServiceWarranty}
+                  </strong>
+                </div>
+              </motion.article>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* BIKE MECHANIC */}
       {season === "summer" && (
