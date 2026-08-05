@@ -57,6 +57,8 @@ type FkOption = {
   searchText: string;
 };
 
+const missingSchemaFieldsCache = new Map<AdminTableKey, string[]>();
+
 const BALANCE_BOARD_CATEGORY_SLUGS = new Set(["balance_board", "balance-board", "balanceboards"]);
 const BOARDS_GROUP_LABEL = "Баланс и доски";
 
@@ -369,6 +371,11 @@ export function RecordForm({ config, record, open, onClose, onSaved }: Props) {
 
   useEffect(() => {
     if (!open) return;
+    const cachedMissingFields = missingSchemaFieldsCache.get(config.table);
+    if (cachedMissingFields) {
+      setMissingDbFields(cachedMissingFields);
+      return;
+    }
     let cancelled = false;
 
     const checkSchemaFields = async () => {
@@ -386,7 +393,9 @@ export function RecordForm({ config, record, open, onClose, onSaved }: Props) {
         missing.add(missingField);
       }
 
-      if (!cancelled) setMissingDbFields([...missing]);
+      const missingFields = [...missing];
+      missingSchemaFieldsCache.set(config.table, missingFields);
+      if (!cancelled) setMissingDbFields(missingFields);
     };
 
     setMissingDbFields([]);
