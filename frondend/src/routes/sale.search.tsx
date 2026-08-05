@@ -28,6 +28,7 @@ export const Route = createFileRoute("/sale/search")({
           : "Поиск по магазину — Adjara Peak",
       },
       { name: "description", content: "Поиск товаров в магазине Adjara Peak." },
+      { name: "robots", content: "noindex, follow" },
     ],
   }),
   component: SaleSearchPage,

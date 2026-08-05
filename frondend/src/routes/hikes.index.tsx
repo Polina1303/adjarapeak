@@ -27,6 +27,7 @@ import {
   HikeDifficultyBadge,
   HikeDifficultyScale,
 } from "@/components/HikeDifficultyScale";
+import { canonicalLink } from "@/lib/seo";
 
 const denisGallery = [denisGuide1, denisGuide2, denisGuide3, denisGuide4];
 const lesyaGallery = [lesyaGuide1, lesyaGuide2, lesyaGuide3];
@@ -41,6 +42,7 @@ export const Route = createFileRoute("/hikes/")({
       { property: "og:title", content: "Походы — Adjara Peak" },
       { property: "og:description", content: "Авторские походы и горные туры в Аджарии и на Кавказе." },
     ],
+    links: [canonicalLink("/hikes/")],
   }),
   component: HikesIndex,
 });

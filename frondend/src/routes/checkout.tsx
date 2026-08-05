@@ -211,6 +211,7 @@ export const Route = createFileRoute("/checkout")({
         name: "description",
         content: "Оформление заказа в магазине Adjara Peak.",
       },
+      { name: "robots", content: "noindex, nofollow" },
     ],
   }),
 });

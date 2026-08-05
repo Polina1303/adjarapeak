@@ -24,6 +24,7 @@ import team0 from "@/assets/team0.webp";
 // import team1 from "@/assets/team-1.avif";
 import { useLanguage } from "@/lib/i18n";
 import { getSiteText } from "@/lib/site-translations";
+import { canonicalLink } from "@/lib/seo";
 
 export const Route = createFileRoute("/rockClimbing")({
   head: () => ({
@@ -42,6 +43,7 @@ export const Route = createFileRoute("/rockClimbing")({
       },
       { property: "og:image", content: climbingHero },
     ],
+    links: [canonicalLink("/rockClimbing")],
   }),
   component: ClimbingPage,
 });

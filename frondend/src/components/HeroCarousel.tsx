@@ -9,8 +9,8 @@ import {
 import bannerBike from "@/assets/banner-bike.jpg";
 import heroCamping from "@/assets/hero-camping.jpg";
 import heroHikes from "@/assets/hero-hikes.jpg";
-import camping from "@/assets/camping.jpg";
 import climbingPromo from "@/assets/climbing-promo.avif";
+import nikitaBikeService from "@/assets/nikita-bike-service-1.jpg";
 import { Link } from "@tanstack/react-router";
 import { useLanguage } from "@/lib/i18n";
 import { getSiteText } from "@/lib/site-translations";
@@ -18,18 +18,18 @@ import { getSiteText } from "@/lib/site-translations";
 const slideConfig = [
   {
     image: heroCamping,
-    href: "/tourismCamping/" as const,
+    href: "/sale" as const,
+  },
+  {
+    image: bannerBike,
+    href: "/rent" as const,
   },
   {
     image: climbingPromo,
     href: "/rockClimbing" as const,
   },
   {
-    image: camping,
-    href: "/rent" as const,
-  },
-  {
-    image: bannerBike,
+    image: nikitaBikeService,
     href: "/service" as const,
   },
   {
@@ -142,14 +142,21 @@ export function HeroCarousel() {
                 <p className="text-primary-foreground/90 text-base font-body mb-6 max-w-md drop-shadow-md">
                   {slide.subtitle}
                 </p>
-                <div>
-                  <Link
-                    to={slide.href}
-                    className="inline-flex h-12 items-center px-6 rounded-full bg-ember text-primary-foreground font-display font-medium text-sm hover:bg-ember/90 transition-colors"
-                  >
-                    {slide.cta}
-                  </Link>
-                </div>
+                {activeSlide === 1 ? (
+                  <RentalQuickLinks
+                    labels={heroText.rentalActions}
+                    primaryLabel={slide.cta}
+                  />
+                ) : (
+                  <div>
+                    <Link
+                      to={slide.href}
+                      className="inline-flex h-12 items-center px-6 rounded-full bg-ember text-primary-foreground font-display font-medium text-sm hover:bg-ember/90 transition-colors"
+                    >
+                      {slide.cta}
+                    </Link>
+                  </div>
+                )}
               </motion.div>
             </AnimatePresence>
 
@@ -174,7 +181,7 @@ export function HeroCarousel() {
           <div className="relative overflow-hidden rounded-xl bg-foreground">
             <Carousel opts={{ loop: true }} setApi={setMobileApi} className="w-full">
               <CarouselContent className="ml-0">
-                {desktopSlides.map((mobileSlide) => (
+                {desktopSlides.map((mobileSlide, index) => (
                   <CarouselItem key={mobileSlide.title} className="pl-0">
                     <div className="relative overflow-hidden bg-foreground aspect-[16/15.8] sm:aspect-[16/13.2]">
                       <img
@@ -198,14 +205,22 @@ export function HeroCarousel() {
                         <p className="text-primary-foreground/90 text-sm font-body mb-4 max-w-md drop-shadow-md line-clamp-3">
                           {mobileSlide.subtitle}
                         </p>
-                        <div>
-                          <Link
-                            to={mobileSlide.href}
-                            className="flex h-11 items-center justify-center px-5 rounded-full bg-ember text-primary-foreground font-display font-medium text-sm hover:bg-ember/90 transition-colors w-full pb-0"
-                          >
-                            {mobileSlide.cta}
-                          </Link>
-                        </div>
+                        {index === 1 ? (
+                          <RentalQuickLinks
+                            labels={heroText.rentalActions}
+                            primaryLabel={mobileSlide.cta}
+                            compact
+                          />
+                        ) : (
+                          <div>
+                            <Link
+                              to={mobileSlide.href}
+                              className="flex h-11 items-center justify-center px-5 rounded-full bg-ember text-primary-foreground font-display font-medium text-sm hover:bg-ember/90 transition-colors w-full pb-0"
+                            >
+                              {mobileSlide.cta}
+                            </Link>
+                          </div>
+                        )}
                       </div>
                     </div>
                   </CarouselItem>
@@ -229,5 +244,92 @@ export function HeroCarousel() {
         </div>
       </div>
     </section>
+  );
+}
+
+function RentalQuickLinks({
+  labels,
+  primaryLabel,
+  compact = false,
+}: {
+  labels: {
+    bikes: string;
+    rollers: string;
+    skateboards: string;
+    tourism: string;
+    skiing: string;
+  };
+  primaryLabel: string;
+  compact?: boolean;
+}) {
+  const links = [
+    {
+      label: labels.bikes,
+      to: "/rent/$group/$category" as const,
+      params: { group: "sportsRental", category: "rentBIKE" },
+    },
+    {
+      label: labels.rollers,
+      to: "/rent/$group/$category" as const,
+      params: { group: "sportsRental", category: "rentROLLER" },
+    },
+    {
+      label: labels.skateboards,
+      to: "/rent/$group/$category" as const,
+      params: { group: "sportsRental", category: "rentBOARD" },
+    },
+  ];
+
+  const categoryClass = compact
+    ? "inline-flex min-h-10 items-center justify-center rounded-full border border-white/35 bg-black/25 px-3 text-center font-body text-[11px] font-medium leading-tight text-white backdrop-blur-sm transition-colors hover:bg-white/15 sm:text-xs"
+    : "inline-flex h-10 items-center justify-center rounded-full border border-white/35 bg-black/25 px-4 font-body text-xs font-medium text-white backdrop-blur-sm transition-colors hover:border-white/55 hover:bg-white/15";
+
+  return (
+    <div
+      className={
+        compact
+          ? "space-y-2.5"
+          : "flex max-w-5xl flex-wrap items-center gap-2.5"
+      }
+    >
+      <Link
+        to="/rent"
+        className={
+          compact
+            ? "flex h-11 w-full items-center justify-center gap-2 rounded-full bg-ember px-5 font-display text-sm font-medium text-primary-foreground shadow-lg transition-colors hover:bg-ember/90"
+            : "inline-flex h-12 items-center justify-center gap-2 rounded-full bg-ember px-6 font-display text-sm font-medium text-primary-foreground shadow-lg transition-colors hover:bg-ember/90"
+        }
+      >
+        {primaryLabel}
+        <span aria-hidden="true">→</span>
+      </Link>
+
+      <div className="flex flex-wrap gap-2">
+        {links.map((item) => (
+          <Link
+            key={item.label}
+            to={item.to}
+            params={item.params}
+            className={categoryClass}
+          >
+            {item.label}
+          </Link>
+        ))}
+        <Link
+          to="/rent/$group"
+          params={{ group: "tourismRental" }}
+          className={categoryClass}
+        >
+          {labels.tourism}
+        </Link>
+        <Link
+          to="/rent/$group"
+          params={{ group: "skiRental" }}
+          className={categoryClass}
+        >
+          {labels.skiing}
+        </Link>
+      </div>
+    </div>
   );
 }

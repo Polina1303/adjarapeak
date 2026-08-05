@@ -18,22 +18,22 @@ export const SITE_TEXT = {
       hero: {
         slides: [
           {
-            title: "Adjara\nPeak",
+            title: "Спортивный и туристический\nмагазин в Батуми",
             subtitle:
-              "Как создать снаряжение, которое служит годами? Делать его с мыслью о горах. Премиальная экипировка для Кавказа.",
-            cta: "Купить снаряжение",
+              "Инвентарь для фитнеса, йоги, футбола, баскетбола, единоборств, велоспорта, роликов и скейтбординга. Туристическое и кемпинговое снаряжение, одежда и обувь.",
+            cta: "Перейти в магазин",
+          },
+          {
+            title: "Всё напрокат\nдля города, моря и гор",
+            subtitle:
+              "Велосипеды, ролики и скейтборды; палатки, спальники и SUP; лыжи и сноуборды.",
+            cta: "Смотреть весь прокат",
           },
           {
             title: "Скалы\nКвариати",
             subtitle:
               "Тренировки на естественном рельефе с инструкторами Сашей и Егором. Снаряжение и страховка — на нас.",
             cta: "Записаться",
-          },
-          {
-            title: "Кемпинг\nв горах",
-            subtitle:
-              "Палатки, спальники и горелки — всё для автономного выезда в Аджарские горы.",
-            cta: "Арендовать снаряжение",
           },
           {
             title: "Велосервис\nв Батуми",
@@ -48,6 +48,13 @@ export const SITE_TEXT = {
             cta: "Смотреть походы",
           },
         ],
+        rentalActions: {
+          bikes: "Велосипеды",
+          rollers: "Ролики",
+          skateboards: "Скейты",
+          tourism: "Туризм и SUP",
+          skiing: "Лыжи и сноуборд",
+        },
         goToSlide: (n: number) => `Перейти к слайду ${n}`,
       },
       featuredProducts: "Рекомендуемые товары",
@@ -111,7 +118,7 @@ export const SITE_TEXT = {
       },
     },
     contact: {
-      title: "Контакты",
+      title: "Спортивный магазин Adjara Peak в Батуми",
       addressTitle: "Наш адрес",
       address: "Батуми, ул. Генерала Аслана Абашидзе, 19",
       hoursTitle: "Время работы",
@@ -489,22 +496,22 @@ export const SITE_TEXT = {
       hero: {
         slides: [
           {
-            title: "Adjara\nPeak",
+            title: "Sports and outdoor store\nin Batumi",
             subtitle:
-              "How do you make gear that lasts for years? Build it with the mountains in mind. Premium equipment for the Caucasus.",
-            cta: "Shop gear",
+              "Gear for fitness, yoga, football, basketball, combat sports, cycling, roller skating and skateboarding, plus hiking and camping equipment, clothing and footwear.",
+            cta: "Open the shop",
+          },
+          {
+            title: "Rentals for the city,\nsea and mountains",
+            subtitle:
+              "Bicycles, roller skates and skateboards; tents, sleeping bags and SUP boards; skis and snowboards.",
+            cta: "View all rentals",
           },
           {
             title: "Kvariati\nRocks",
             subtitle:
               "Outdoor climbing sessions with instructors Sasha and Egor. Gear and belay are on us.",
             cta: "Book a session",
-          },
-          {
-            title: "Mountain\nCamping",
-            subtitle:
-              "Tents, sleeping bags and stoves — everything for a self-supported trip into the Adjara mountains.",
-            cta: "Rent gear",
           },
           {
             title: "Bike Service\nin Batumi",
@@ -519,6 +526,13 @@ export const SITE_TEXT = {
             cta: "View trips",
           },
         ],
+        rentalActions: {
+          bikes: "Bicycles",
+          rollers: "Rollers",
+          skateboards: "Skateboards",
+          tourism: "Hiking & SUP",
+          skiing: "Ski & snowboard",
+        },
         goToSlide: (n: number) => `Go to slide ${n}`,
       },
       featuredProducts: "Recommended Products",
@@ -582,7 +596,7 @@ export const SITE_TEXT = {
       },
     },
     contact: {
-      title: "Contacts",
+      title: "Adjara Peak sporting goods store in Batumi",
       addressTitle: "Our address",
       address: "19 General Aslan Abashidze St, Batumi",
       hoursTitle: "Opening hours",
@@ -960,22 +974,22 @@ export const SITE_TEXT = {
       hero: {
         slides: [
           {
-            title: "Adjara\nPeak",
+            title: "სპორტული და ტურისტული\nმაღაზია ბათუმში",
             subtitle:
-              "როგორ იქმნება აღჭურვილობა, რომელიც წლები გემსახურება? მთებზე ფიქრით. პრემიუმ ეკიპირება კავკასიისთვის.",
-            cta: "აღჭურვილობის ყიდვა",
+              "ინვენტარი ფიტნესისთვის, იოგისთვის, ფეხბურთისთვის, კალათბურთისთვის, საბრძოლო სპორტისთვის, ველოსპორტისთვის, როლიკებისა და სკეიტბორდისთვის. ტურისტული და საკემპინგე აღჭურვილობა, ტანსაცმელი და ფეხსაცმელი.",
+            cta: "მაღაზიის გახსნა",
+          },
+          {
+            title: "ყველაფერი ქირით\nქალაქის, ზღვისა და მთებისთვის",
+            subtitle:
+              "ველოსიპედები, როლიკები და სკეიტბორდები; კარვები, საძილე ტომრები და SUP დაფები; თხილამურები და სნოუბორდები.",
+            cta: "ყველა გასაქირავებლის ნახვა",
           },
           {
             title: "კვარიათის\nკლდეები",
             subtitle:
               "ვარჯიშები ბუნებრივ რელიეფზე ინსტრუქტორებთან, საშასთან და ეგორთან. აღჭურვილობა და დაზღვევა ჩვენზეა.",
             cta: "ჩაწერა",
-          },
-          {
-            title: "კემპინგი\nმთებში",
-            subtitle:
-              "კარვები, საძილე ტომრები და გაზქურები — ყველაფერი აჭარის მთებში დამოუკიდებელი გასვლისთვის.",
-            cta: "აღჭურვილობის ქირაობა",
           },
           {
             title: "ველოსერვისი\nბათუმში",
@@ -990,6 +1004,13 @@ export const SITE_TEXT = {
             cta: "ლაშქრობების ნახვა",
           },
         ],
+        rentalActions: {
+          bikes: "ველოსიპედები",
+          rollers: "როლიკები",
+          skateboards: "სკეიტბორდები",
+          tourism: "ტურიზმი და SUP",
+          skiing: "თხილამური და სნოუბორდი",
+        },
         goToSlide: (n: number) => `${n} სლაიდზე გადასვლა`,
       },
       featuredProducts: "რეკომენდებული პროდუქტები",
@@ -1053,7 +1074,7 @@ export const SITE_TEXT = {
       },
     },
     contact: {
-      title: "კონტაქტები",
+      title: "Adjara Peak-ის სპორტული მაღაზია ბათუმში",
       addressTitle: "ჩვენი მისამართი",
       address: "ბათუმი, გენერალ ასლან აბაშიძის ქ. 19",
       hoursTitle: "სამუშაო საათები",

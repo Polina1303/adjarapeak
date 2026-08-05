@@ -13,6 +13,7 @@ import { ProductCarousel } from "@/components/ProductCarousel";
 import { RentalCarousel } from "@/components/RentalCarousel";
 import { getDiscountPercent, getDisplayPrice, getSalePrice } from "@/lib/discount";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { absoluteSiteUrl, canonicalLink } from "@/lib/seo";
 
 type LoaderData =
   | { kind: "product"; data: Awaited<ReturnType<typeof getShopProductBySlug>> }
@@ -33,6 +34,9 @@ export const Route = createFileRoute("/app/$slug")({
       const title = `${product.title} — Adjara Peak`;
       const desc = product.description ?? product.title;
       const img = resolveCatalogImage(product.image);
+      const canonicalPath = `/app/${encodeURIComponent(product.slug)}`;
+      const imageUrl = img.startsWith("http") ? img : absoluteSiteUrl(img);
+      const price = getSalePrice(product.price, product.sale_price) ?? product.price;
       return {
         meta: [
           { title },
@@ -43,13 +47,41 @@ export const Route = createFileRoute("/app/$slug")({
           { property: "og:type", content: "product" },
           { name: "twitter:card", content: "summary_large_image" },
           { name: "twitter:image", content: img },
+          {
+            "script:ld+json": {
+              "@context": "https://schema.org",
+              "@type": "Product",
+              name: product.title,
+              description: desc,
+              image: [imageUrl],
+              sku: product.slug,
+              url: absoluteSiteUrl(canonicalPath),
+              offers: {
+                "@type": "Offer",
+                url: absoluteSiteUrl(canonicalPath),
+                priceCurrency: "GEL",
+                price,
+                availability: product.in_stock
+                  ? "https://schema.org/InStock"
+                  : "https://schema.org/OutOfStock",
+                itemCondition: "https://schema.org/NewCondition",
+                seller: {
+                  "@type": "SportingGoodsStore",
+                  "@id": "https://www.adjarapeak.ge/#store",
+                  name: "Adjara Peak",
+                },
+              },
+            },
+          },
         ],
+        links: [canonicalLink(canonicalPath)],
       };
     }
     const item = loaderData.data!.item;
     const title = `Аренда ${item.title} — Adjara Peak`;
     const desc = item.shortly ?? item.description ?? item.title;
     const img = resolveCatalogImage(item.image);
+    const canonicalPath = `/app/${encodeURIComponent(item.slug)}`;
     return {
       meta: [
         { title },
@@ -58,6 +90,7 @@ export const Route = createFileRoute("/app/$slug")({
         { property: "og:description", content: desc },
         { property: "og:image", content: img },
       ],
+      links: [canonicalLink(canonicalPath)],
     };
   },
   notFoundComponent: () => (

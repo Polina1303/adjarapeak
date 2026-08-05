@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { CatalogPage } from "@/components/CatalogPage";
 import { getShopGroupView } from "@/lib/catalog.functions";
 import { resolveImage } from "@/lib/catalog-image";
+import { canonicalLink } from "@/lib/seo";
 
 export const Route = createFileRoute("/sale/$group")({
   staleTime: 5 * 60 * 1000,
@@ -15,6 +16,7 @@ export const Route = createFileRoute("/sale/$group")({
   head: ({ loaderData }) => {
     if (!loaderData) return { meta: [{ title: "Магазин — Adjara Peak" }] };
     const title = `${loaderData.group.title} — Adjara Peak`;
+    const canonicalPath = `/sale/${encodeURIComponent(loaderData.group.slug)}`;
     return {
       meta: [
         { title },
@@ -22,6 +24,7 @@ export const Route = createFileRoute("/sale/$group")({
         { property: "og:title", content: title },
         { property: "og:image", content: resolveImage(loaderData.group.image) },
       ],
+      links: [canonicalLink(canonicalPath)],
     };
   },
   notFoundComponent: () => (

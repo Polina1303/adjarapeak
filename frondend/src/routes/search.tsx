@@ -29,6 +29,7 @@ export const Route = createFileRoute("/search")({
     meta: [
       { title: loaderData?.q ? `Поиск: ${loaderData.q} — Adjara Peak` : "Поиск — Adjara Peak" },
       { name: "description", content: "Поиск товаров и аренды Adjara Peak." },
+      { name: "robots", content: "noindex, follow" },
     ],
   }),
   component: SearchPage,

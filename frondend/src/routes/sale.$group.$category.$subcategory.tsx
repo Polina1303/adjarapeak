@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { CatalogPage } from "@/components/CatalogPage";
 import { getShopGroupView } from "@/lib/catalog.functions";
 import { resolveImage } from "@/lib/catalog-image";
+import { canonicalLink } from "@/lib/seo";
 
 export const Route = createFileRoute("/sale/$group/$category/$subcategory")({
   staleTime: 5 * 60 * 1000,
@@ -23,6 +24,7 @@ export const Route = createFileRoute("/sale/$group/$category/$subcategory")({
     const sub = loaderData.activeSubcategory?.title ?? "";
     const cat = loaderData.activeCategory?.title ?? "";
     const title = `${sub} — ${cat} — Adjara Peak`;
+    const canonicalPath = `/sale/${encodeURIComponent(loaderData.group.slug)}/${encodeURIComponent(loaderData.activeCategory?.slug ?? "")}/${encodeURIComponent(loaderData.activeSubcategory?.slug ?? "")}`;
     return {
       meta: [
         { title },
@@ -30,6 +32,7 @@ export const Route = createFileRoute("/sale/$group/$category/$subcategory")({
         { property: "og:title", content: title },
         { property: "og:image", content: resolveImage(loaderData.activeCategory?.image ?? loaderData.group.image) },
       ],
+      links: [canonicalLink(canonicalPath)],
     };
   },
   notFoundComponent: () => (

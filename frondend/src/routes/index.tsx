@@ -5,6 +5,10 @@ import { HeroCarousel } from "@/components/HeroCarousel";
 import { BrandStrip } from "@/components/BrandStrip";
 import { Footer } from "@/components/Footer";
 import { listShopGroups, listRentalGroups } from "@/lib/catalog.functions";
+import {
+  ADJARA_PEAK_LOCAL_BUSINESS_SCHEMA,
+  canonicalLink,
+} from "@/lib/seo";
 
 const ActivityCategories = lazy(() =>
   import("@/components/ActivityCategories").then((m) => ({ default: m.ActivityCategories })),
@@ -41,11 +45,13 @@ export const Route = createFileRoute("/")({
   },
   head: () => ({
     meta: [
-      { title: "Adjara Peak — снаряжение, прокат и туры в Грузии" },
-      { name: "description", content: "Премиальное outdoor-снаряжение, горные туры с гидами и прокат экипировки в Аджарии, Грузия." },
-      { property: "og:title", content: "Adjara Peak — готовьтесь к приключениям" },
-      { property: "og:description", content: "Туры, снаряжение и прокат для хайкинга, лыж и приключений на Кавказе." },
+      { title: "Спортивный магазин в Батуми — Adjara Peak" },
+      { name: "description", content: "Adjara Peak — спортивный магазин в Батуми: товары для спорта, туризма и кемпинга, одежда, обувь, велосипеды, SUP, лыжи и прокат снаряжения." },
+      { property: "og:title", content: "Adjara Peak — спортивный магазин в Батуми" },
+      { property: "og:description", content: "Спортивные товары, туристическое снаряжение, прокат и горные туры в Батуми и Аджарии." },
+      { "script:ld+json": ADJARA_PEAK_LOCAL_BUSINESS_SCHEMA },
     ],
+    links: [canonicalLink("/")],
   }),
   component: Index,
 });
@@ -56,6 +62,9 @@ function Index() {
     <div className="min-h-screen bg-background">
       <Header />
       <div className="pt-16 lg:pt-18">
+        <h1 className="sr-only">
+          Спортивный и туристический магазин Adjara Peak в Батуми
+        </h1>
         <HeroCarousel />
         <BrandStrip />
         <Suspense fallback={null}>

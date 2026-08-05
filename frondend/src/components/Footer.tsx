@@ -27,7 +27,7 @@ const navLinks = [
 const socials = [
   { Icon: Instagram, href: "https://instagram.com/adjarapeak/", label: "Instagram" },
   { Icon: Send, href: "https://t.me/adjarapeak", label: "Telegram" },
-  { Icon: WhatsAppIcon, href: "https://api.whatsapp.com/send/?phone=995511147586&text&type=phone_number&app_absent=0", label: "WhatsApp" },
+  { Icon: WhatsAppIcon, href: "https://api.whatsapp.com/send/?phone=995571208555&text&type=phone_number&app_absent=0", label: "WhatsApp" },
 ];
 
 export function Footer() {

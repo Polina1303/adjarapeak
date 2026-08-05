@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /checkout
+Disallow: /search
+Disallow: /sale/search
+
+Sitemap: https://www.adjarapeak.ge/sitemap.xml

@@ -39,6 +39,7 @@ export const Route = createRootRoute({
       { title: "Adjara Peak — снаряжение и туры в Аджарии" },
       { name: "description", content: "Снаряжение, прокат и горные туры в Батуми и Аджарии." },
       { name: "author", content: "Adjara Peak" },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
       { property: "og:title", content: "Adjara Peak" },
       { property: "og:description", content: "Снаряжение, прокат и горные туры в Аджарии." },
       { property: "og:type", content: "website" },

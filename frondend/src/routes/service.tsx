@@ -57,6 +57,7 @@ import {
 import { getOrderApiUrl } from "@/lib/order-api";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import { canonicalLink } from "@/lib/seo";
 
 export const Route = createFileRoute("/service")({
   head: () => ({
@@ -75,6 +76,7 @@ export const Route = createFileRoute("/service")({
       },
       { property: "og:image", content: bannerBike },
     ],
+    links: [canonicalLink("/service")],
   }),
   component: ServicePage,
 });

@@ -15,15 +15,19 @@ import {
 import { useCatalogTranslations } from "@/lib/catalog-translations";
 import { useLanguage, type Lang } from "@/lib/i18n";
 import { getSiteText } from "@/lib/site-translations";
+import { canonicalLink } from "@/lib/seo";
 
 export const Route = createFileRoute("/sale")({
   staleTime: 5 * 60 * 1000,
   loader: async () => await listShopGroups(),
   head: () => ({
     meta: [
-      { title: "Магазин — Adjara Peak" },
-      { name: "description", content: "Снаряжение, одежда и экипировка для приключений." },
+      { title: "Спортивные товары в Батуми — магазин Adjara Peak" },
+      { name: "description", content: "Спортивный магазин Adjara Peak в Батуми: товары для туризма и кемпинга, велоспорта, фитнеса, плавания, единоборств и зимних видов спорта." },
+      { property: "og:title", content: "Спортивные товары в Батуми — Adjara Peak" },
+      { property: "og:description", content: "Купить спортивные товары и туристическое снаряжение в магазине Adjara Peak в Батуми." },
     ],
+    links: [canonicalLink("/sale")],
   }),
   component: ShopIndex,
 });

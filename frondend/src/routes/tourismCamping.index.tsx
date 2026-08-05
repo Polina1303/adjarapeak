@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { getShopGroupView } from "@/lib/catalog.functions";
 import { resolveImage } from "@/lib/catalog-image";
+import { canonicalLink } from "@/lib/seo";
 
 const TOURISM_GROUP_SLUG = "tourismCamping";
 
@@ -18,7 +19,10 @@ export const Route = createFileRoute("/tourismCamping/")({
   },
   head: ({ loaderData }) => {
     if (!loaderData) {
-      return { meta: [{ title: "Туризм и кемпинг — Adjara Peak" }] };
+      return {
+        meta: [{ title: "Туризм и кемпинг — Adjara Peak" }],
+        links: [canonicalLink("/tourismCamping/")],
+      };
     }
     const title = `${loaderData.group.title} — Adjara Peak`;
     return {
@@ -34,6 +38,7 @@ export const Route = createFileRoute("/tourismCamping/")({
           content: resolveImage(loaderData.group.image),
         },
       ],
+      links: [canonicalLink("/tourismCamping/")],
     };
   },
   notFoundComponent: () => (
