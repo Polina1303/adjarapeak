@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { Upload, X } from "lucide-react";
+import { Loader2, Upload, X } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -66,8 +66,12 @@ export function ImageUploadField({ value, onChange }: Props) {
           onClick={() => inputRef.current?.click()}
           disabled={uploading}
         >
-          <Upload className="h-4 w-4 mr-1" />
-          {uploading ? "..." : "Загрузить"}
+          {uploading ? (
+            <Loader2 className="h-4 w-4 mr-1 animate-spin" />
+          ) : (
+            <Upload className="h-4 w-4 mr-1" />
+          )}
+          {uploading ? "Загрузка…" : "Загрузить"}
         </Button>
       </div>
       <input

@@ -26,6 +26,7 @@ import { useLanguage, type Lang } from "@/lib/i18n";
 import { getOrderApiUrl } from "@/lib/order-api";
 import giftCardCart from "@/assets/gift-card-cart.png";
 import { toast } from "sonner";
+import { RentalWeekendOffer } from "@/components/RentalWeekendOffer";
 
 type CheckoutText = {
   cartTitle: string;
@@ -372,6 +373,7 @@ function CheckoutPage() {
         if (!item) return null;
         return {
           slug: line.slug,
+          productUrl: `https://adjarapeak.ge/app/${encodeURIComponent(line.slug)}`,
           title: item.title,
           quantity: line.qty,
           price: item.price,
@@ -683,6 +685,8 @@ function CheckoutPage() {
                 <p className="rounded-md bg-ember/10 border border-ember/30 px-3 py-2.5 font-body text-xs text-foreground/80 leading-relaxed">
                   {text.note}
                 </p>
+
+                {hasRental && <RentalWeekendOffer />}
 
                 <Button
                   type="submit"

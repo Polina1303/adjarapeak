@@ -32,7 +32,7 @@ export const SITE_TEXT = {
           {
             title: "Скалы\nКвариати",
             subtitle:
-              "Тренировки на естественном рельефе с инструкторами Сашей и Егором. Снаряжение и страховка — на нас.",
+              "Тренировки на естественном рельефе с инструктором Сашей. Снаряжение и страховка — на нас.",
             cta: "Записаться",
           },
           {
@@ -64,7 +64,7 @@ export const SITE_TEXT = {
       climbingPromo: {
         title: "Скалолазание в Гонио-Квариати",
         subtitle:
-          "Тренировки на естественном рельефе для новичков и опытных. Снаряжение, инструктаж и страховка — на нас. С вами работают Саша и Егор.",
+          "Тренировки на естественном рельефе для новичков и опытных. Снаряжение, инструктаж и страховка — на нас. С вами работает Саша.",
         location: "Гонио-Квариати",
         schedule: "Ср · 17:30 · Сб–Вс · 14:00 / 17:30",
         priceNote: "за тренировку",
@@ -275,6 +275,17 @@ export const SITE_TEXT = {
       mechanicPreviousPhoto: "Предыдущее фото",
       mechanicNextPhoto: "Следующее фото",
       mechanicPhotoAlt: (n: number) => `Веломеханик Никита за работой ${n}`,
+      mechanicPortfolioEyebrow: "Портфолио веломастера",
+      mechanicPortfolioTitle: "Велосипеды после работ Никиты",
+      mechanicPortfolioText:
+        "Горные, городские, детские и шоссейные велосипеды после обслуживания, ремонта и настройки в мастерской Adjara Peak.",
+      mechanicPortfolioLabel: "Портфолио работ веломеханика Никиты",
+      mechanicPortfolioPrevious: "Предыдущая работа",
+      mechanicPortfolioNext: "Следующая работа",
+      mechanicPortfolioOpen: (n: number) => `Открыть работу ${n}`,
+      mechanicPortfolioAlt: (n: number) =>
+        `Велосипед после обслуживания у Никиты ${n}`,
+      mechanicPortfolioClose: "Закрыть портфолио",
       priceList: "Прайс-лист",
       book: "Записаться",
       bookingTitle: "Запись в сервис",
@@ -431,7 +442,7 @@ export const SITE_TEXT = {
     climbing: {
       heroTitle: "Скалолазание в Гонио-Квариати",
       heroText:
-        "Тренировки на естественном рельефе для новичков и опытных. Полный комплект снаряжения, верхняя страховка и опытные инструкторы — Саша и Егор.",
+        "Тренировки на естественном рельефе для новичков и опытных. Полный комплект снаряжения, верхняя страховка и опытный инструктор — Саша.",
       book: "Записаться",
       directions: "Как добраться",
       locationTitle: "Локация: район Гонио-Квариати",
@@ -462,7 +473,6 @@ export const SITE_TEXT = {
       ],
       team: [
         { name: "Саша", role: "Инструктор" },
-        // { name: "Егор", role: "Инструктор" },
       ],
       schedule: [
         { day: "Среда", price: "50 ₾", slots: ["1 группа — 17:30 - 20:30"] },
@@ -510,7 +520,7 @@ export const SITE_TEXT = {
           {
             title: "Kvariati\nRocks",
             subtitle:
-              "Outdoor climbing sessions with instructors Sasha and Egor. Gear and belay are on us.",
+              "Outdoor climbing sessions with instructor Sasha. Gear and belay are on us.",
             cta: "Book a session",
           },
           {
@@ -542,7 +552,7 @@ export const SITE_TEXT = {
       climbingPromo: {
         title: "Climbing in Gonio-Kvariati",
         subtitle:
-          "Outdoor climbing sessions for beginners and experienced climbers. Gear, briefing and belay are on us. Sasha and Egor guide the session.",
+          "Outdoor climbing sessions for beginners and experienced climbers. Gear, briefing and belay are on us. Sasha guides the session.",
         location: "Gonio-Kvariati",
         schedule: "Wed · 17:30 · Sat-Sun · 14:00 / 17:30",
         priceNote: "per session",
@@ -753,6 +763,16 @@ export const SITE_TEXT = {
       mechanicPreviousPhoto: "Previous photo",
       mechanicNextPhoto: "Next photo",
       mechanicPhotoAlt: (n: number) => `Bike mechanic Nikita at work ${n}`,
+      mechanicPortfolioEyebrow: "Bike mechanic portfolio",
+      mechanicPortfolioTitle: "Bikes serviced by Nikita",
+      mechanicPortfolioText:
+        "Mountain, city, kids’ and road bikes after maintenance, repairs and tuning at the Adjara Peak workshop.",
+      mechanicPortfolioLabel: "Nikita’s bike mechanic portfolio",
+      mechanicPortfolioPrevious: "Previous project",
+      mechanicPortfolioNext: "Next project",
+      mechanicPortfolioOpen: (n: number) => `Open project ${n}`,
+      mechanicPortfolioAlt: (n: number) => `Bike serviced by Nikita ${n}`,
+      mechanicPortfolioClose: "Close portfolio",
       priceList: "Price list",
       book: "Book service",
       bookingTitle: "Book a service",
@@ -909,7 +929,7 @@ export const SITE_TEXT = {
     climbing: {
       heroTitle: "Rock Climbing in Gonio-Kvariati",
       heroText:
-        "Outdoor climbing sessions for beginners and experienced climbers. Full gear, top-rope belay and experienced instructors — Sasha and Egor.",
+        "Outdoor climbing sessions for beginners and experienced climbers. Full gear, top-rope belay and an experienced instructor — Sasha.",
       book: "Book a session",
       directions: "How to get there",
       locationTitle: "Location: Gonio-Kvariati area",
@@ -940,7 +960,6 @@ export const SITE_TEXT = {
       ],
       team: [
         { name: "Sasha", role: "Instructor" },
-        // { name: "Egor", role: "Instructor" },
       ],
       schedule: [
         { day: "Wednesday", price: "50 ₾", slots: ["Group 1 — 17:30 - 20:30"] },
@@ -988,7 +1007,7 @@ export const SITE_TEXT = {
           {
             title: "კვარიათის\nკლდეები",
             subtitle:
-              "ვარჯიშები ბუნებრივ რელიეფზე ინსტრუქტორებთან, საშასთან და ეგორთან. აღჭურვილობა და დაზღვევა ჩვენზეა.",
+              "ვარჯიშები ბუნებრივ რელიეფზე ინსტრუქტორ საშასთან ერთად. აღჭურვილობა და დაზღვევა ჩვენზეა.",
             cta: "ჩაწერა",
           },
           {
@@ -1020,7 +1039,7 @@ export const SITE_TEXT = {
       climbingPromo: {
         title: "კლდეზე ცოცვა გონიო-კვარიათში",
         subtitle:
-          "ვარჯიშები ბუნებრივ რელიეფზე დამწყებებისთვის და გამოცდილებისთვის. აღჭურვილობა, ინსტრუქტაჟი და დაზღვევა ჩვენზეა. თქვენთან მუშაობენ საშა და ეგორი.",
+          "ვარჯიშები ბუნებრივ რელიეფზე დამწყებებისთვის და გამოცდილებისთვის. აღჭურვილობა, ინსტრუქტაჟი და დაზღვევა ჩვენზეა. თქვენთან მუშაობს საშა.",
         location: "გონიო-კვარიათი",
         schedule: "ოთხ · 17:30 · შაბ-კვ · 14:00 / 17:30",
         priceNote: "ვარჯიშზე",
@@ -1231,6 +1250,17 @@ export const SITE_TEXT = {
       mechanicPreviousPhoto: "წინა ფოტო",
       mechanicNextPhoto: "შემდეგი ფოტო",
       mechanicPhotoAlt: (n: number) => `ველომექანიკოსი ნიკიტა მუშაობისას ${n}`,
+      mechanicPortfolioEyebrow: "ველომექანიკოსის პორტფოლიო",
+      mechanicPortfolioTitle: "ნიკიტას მიერ მომსახურებული ველოსიპედები",
+      mechanicPortfolioText:
+        "მთის, ქალაქის, საბავშვო და საგზაო ველოსიპედები Adjara Peak-ის სახელოსნოში სერვისის, შეკეთებისა და რეგულირების შემდეგ.",
+      mechanicPortfolioLabel: "ველომექანიკოს ნიკიტას ნამუშევრების პორტფოლიო",
+      mechanicPortfolioPrevious: "წინა ნამუშევარი",
+      mechanicPortfolioNext: "შემდეგი ნამუშევარი",
+      mechanicPortfolioOpen: (n: number) => `ნამუშევრის გახსნა ${n}`,
+      mechanicPortfolioAlt: (n: number) =>
+        `ნიკიტას მიერ მომსახურებული ველოსიპედი ${n}`,
+      mechanicPortfolioClose: "პორტფოლიოს დახურვა",
       priceList: "ფასები",
       book: "ჩაწერა",
       bookingTitle: "სერვისზე ჩაწერა",
@@ -1387,7 +1417,7 @@ export const SITE_TEXT = {
     climbing: {
       heroTitle: "კლდეზე ცოცვა გონიო-კვარიათში",
       heroText:
-        "ვარჯიშები ბუნებრივ რელიეფზე დამწყებებისთვის და გამოცდილებისთვის. სრული აღჭურვილობა, ზედა დაზღვევა და გამოცდილი ინსტრუქტორები — საშა და ეგორი.",
+        "ვარჯიშები ბუნებრივ რელიეფზე დამწყებებისთვის და გამოცდილებისთვის. სრული აღჭურვილობა, ზედა დაზღვევა და გამოცდილი ინსტრუქტორი — საშა.",
       book: "ჩაწერა",
       directions: "როგორ მივიდეთ",
       locationTitle: "ლოკაცია: გონიო-კვარიათის რაიონი",
@@ -1417,7 +1447,6 @@ export const SITE_TEXT = {
       ],
       team: [
         { name: "საშა", role: "ინსტრუქტორი" },
-        // { name: "ეგორი", role: "ინსტრუქტორი" },
       ],
       schedule: [
         { day: "ოთხშაბათი", price: "50 ₾", slots: ["1 ჯგუფი — 17:30 - 20:30"] },

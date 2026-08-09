@@ -6,6 +6,7 @@ import { getDiscountPercent, getDisplayPrice, getSalePrice } from "@/lib/discoun
 import { useLanguage } from "@/lib/i18n";
 import { getSiteText } from "@/lib/site-translations";
 import { toast } from "sonner";
+import { LoadingImage } from "@/components/LoadingIndicator";
 
 type Props = {
   product: ShopProduct;
@@ -45,7 +46,7 @@ export function ProductCard({ product: p, bordered = false }: Props) {
       }`}
     >
       <div className="relative aspect-square bg-background overflow-hidden">
-        <img
+        <LoadingImage
           src={resolveCatalogImage(p.image)}
           alt={p.title}
           loading="lazy"

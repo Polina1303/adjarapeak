@@ -1,4 +1,13 @@
-import { Outlet, Link, createRootRoute, HeadContent, Scripts, useLocation } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
+import {
+  Outlet,
+  Link,
+  createRootRoute,
+  HeadContent,
+  Scripts,
+  useLocation,
+  useRouterState,
+} from "@tanstack/react-router";
 import { Toaster } from "@/components/ui/sonner";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
@@ -94,6 +103,7 @@ function RootComponent() {
 
   return (
     <LanguageProvider>
+      <NavigationProgress />
       <Outlet />
       <Toaster />
       <ScrollToTop />
@@ -104,5 +114,32 @@ function RootComponent() {
         </>
       )}
     </LanguageProvider>
+  );
+}
+
+function NavigationProgress() {
+  const isLoading = useRouterState({ select: (state) => state.isLoading });
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    if (!isLoading) {
+      setVisible(false);
+      return;
+    }
+
+    const timeout = window.setTimeout(() => setVisible(true), 160);
+    return () => window.clearTimeout(timeout);
+  }, [isLoading]);
+
+  return (
+    <div
+      role="progressbar"
+      aria-label="Загрузка страницы"
+      className={`pointer-events-none fixed inset-x-0 top-0 z-[100] h-[3px] overflow-hidden transition-opacity duration-150 ${
+        visible ? "opacity-100" : "opacity-0"
+      }`}
+    >
+      <span className="navigation-progress-bar block h-full bg-ember shadow-[0_0_10px_color-mix(in_oklab,var(--ember)_70%,transparent)]" />
+    </div>
   );
 }

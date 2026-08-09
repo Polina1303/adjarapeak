@@ -10,6 +10,7 @@ import { toast } from "sonner";
 import { ADMIN_TABLE_LIST } from "@/lib/admin-tables";
 import { toCSV, downloadBlob } from "@/lib/csv";
 import { Menu } from "lucide-react";
+import { PageLoading } from "@/components/LoadingIndicator";
 
 function MobileMenuTrigger() {
   const { toggleSidebar } = useSidebar();
@@ -51,7 +52,7 @@ function AdminGate() {
   }, [session?.user?.id]);
 
   if (loading) {
-    return <div className="min-h-screen flex items-center justify-center">Загрузка…</div>;
+    return <PageLoading label="Проверяем доступ к админке…" />;
   }
   if (!session) return null;
   if (!isAdmin) {

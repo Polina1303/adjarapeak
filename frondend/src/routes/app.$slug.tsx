@@ -14,10 +14,64 @@ import { RentalCarousel } from "@/components/RentalCarousel";
 import { getDiscountPercent, getDisplayPrice, getSalePrice } from "@/lib/discount";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { absoluteSiteUrl, canonicalLink } from "@/lib/seo";
+import { useLanguage, type Lang } from "@/lib/i18n";
+import { RentalWeekendOffer } from "@/components/RentalWeekendOffer";
+import { LoadingImage } from "@/components/LoadingIndicator";
 
 type LoaderData =
   | { kind: "product"; data: Awaited<ReturnType<typeof getShopProductBySlug>> }
   | { kind: "rental"; data: Awaited<ReturnType<typeof getRentalItemBySlug>> };
+
+const RENTAL_TERMS_TEXT: Record<
+  Lang,
+  { title: string; body: string; carePrefix: string; careEmphasis: string; careSuffix: string }
+> = {
+  RU: {
+    title: "Условия аренды:",
+    body:
+      "оборудование необходимо вернуть в полной комплектации и в том же состоянии, в котором оно было получено. В случае повреждения или утери отдельных элементов стоимость ремонта или замены оплачивается отдельно.",
+    carePrefix: "Всё снаряжение перед каждой арендой ",
+    careEmphasis: "проверяется и приводится в порядок",
+    careSuffix: ".",
+  },
+  EN: {
+    title: "Rental terms:",
+    body:
+      "equipment must be returned complete and in the same condition in which it was received. If individual components are damaged or lost, repair or replacement costs are charged separately.",
+    carePrefix: "All equipment is ",
+    careEmphasis: "inspected and prepared",
+    careSuffix: " before every rental.",
+  },
+  GE: {
+    title: "ქირაობის პირობები:",
+    body:
+      "აღჭურვილობა უნდა დაბრუნდეს სრული კომპლექტაციით და იმავე მდგომარეობაში, რომელშიც მიიღეთ. ცალკეული ელემენტების დაზიანების ან დაკარგვის შემთხვევაში შეკეთების ან ჩანაცვლების ღირებულება ცალკე ანაზღაურდება.",
+    carePrefix: "ყოველი გაქირავების წინ ყველა აღჭურვილობა ",
+    careEmphasis: "მოწმდება და წესრიგდება",
+    careSuffix: ".",
+  },
+};
+
+const BIKE_RENTAL_EXTRAS_TEXT: Record<
+  Lang,
+  { title: string; items: string; included: string }
+> = {
+  RU: {
+    title: "При аренде велосипеда дополнительно выдаём:",
+    items: "флягу для воды, замок, шлем и держатель для телефона.",
+    included: "Всё включено в стоимость аренды.",
+  },
+  EN: {
+    title: "Every bicycle rental also includes:",
+    items: "a water bottle, lock, helmet, and phone holder.",
+    included: "Everything is included in the rental price.",
+  },
+  GE: {
+    title: "ველოსიპედის ქირაობისას დამატებით გთავაზობთ:",
+    items: "წყლის ბოთლს, საკეტს, ჩაფხუტსა და ტელეფონის დამჭერს.",
+    included: "ყველაფერი შედის ქირაობის ღირებულებაში.",
+  },
+};
 
 export const Route = createFileRoute("/app/$slug")({
   loader: async ({ params }): Promise<LoaderData> => {
@@ -144,7 +198,7 @@ function ZoomableCatalogImage({
         onClick={() => setOpen(true)}
         className="group relative aspect-square overflow-hidden rounded-3xl bg-muted text-left cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-ember focus-visible:ring-offset-2"
       >
-        <img src={src} alt={alt} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
+        <LoadingImage src={src} alt={alt} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
         {badge && (
           <span className="absolute top-4 right-4 bg-foreground text-background text-xs uppercase tracking-[0.12em] font-body font-semibold px-3 py-1.5 rounded-full">
             {badge}
@@ -535,6 +589,10 @@ function ProductView({ data }: { data: NonNullable<Awaited<ReturnType<typeof get
 
 function RentalView({ data }: { data: NonNullable<Awaited<ReturnType<typeof getRentalItemBySlug>>> }) {
   const { item, category, group, related } = data;
+  const { lang } = useLanguage();
+  const rentalTerms = RENTAL_TERMS_TEXT[lang];
+  const bikeRentalExtras = BIKE_RENTAL_EXTRAS_TEXT[lang];
+  const isBikeRental = category?.slug === "rentBIKE";
   const navigate = useNavigate();
   const img = resolveCatalogImage(item.image);
   const booked = useIsInCart(item.slug);
@@ -649,6 +707,11 @@ function RentalView({ data }: { data: NonNullable<Awaited<ReturnType<typeof getR
                     ? "Открыть корзину"
                     : "Забронировать"}
                 </Button>
+                {isBikeRental && <BikeRentalExtrasNote text={bikeRentalExtras} />}
+                <RentalTermsNote text={rentalTerms} />
+                <div className="mt-3">
+                  <RentalWeekendOffer />
+                </div>
               </div>
 
               {item.features.length > 0 && (
@@ -713,6 +776,11 @@ function RentalView({ data }: { data: NonNullable<Awaited<ReturnType<typeof getR
                   ? "Открыть корзину"
                   : "Забронировать"}
               </Button>
+              {isBikeRental && <BikeRentalExtrasNote text={bikeRentalExtras} />}
+              <RentalTermsNote text={rentalTerms} />
+              <div className="mt-3">
+                <RentalWeekendOffer />
+              </div>
             </motion.div>
           </div>
 
@@ -728,5 +796,40 @@ function RentalView({ data }: { data: NonNullable<Awaited<ReturnType<typeof getR
       </main>
       <Footer />
     </div>
+  );
+}
+
+function BikeRentalExtrasNote({
+  text,
+}: {
+  text: (typeof BIKE_RENTAL_EXTRAS_TEXT)[Lang];
+}) {
+  return (
+    <aside className="mt-4 rounded-xl border border-moss/30 bg-moss/10 px-4 py-3 font-body text-xs leading-relaxed text-foreground/80">
+      <div className="flex items-start gap-2.5">
+        <Check className="mt-0.5 h-4 w-4 shrink-0 text-moss" />
+        <div>
+          <strong className="font-bold text-foreground">{text.title}</strong>{" "}
+          {text.items}
+          <strong className="mt-2 block font-bold text-foreground">
+            {text.included}
+          </strong>
+        </div>
+      </div>
+    </aside>
+  );
+}
+
+function RentalTermsNote({ text }: { text: (typeof RENTAL_TERMS_TEXT)[Lang] }) {
+  return (
+    <aside className="mt-4 rounded-xl border border-ember/25 bg-ember/5 px-4 py-3 font-body text-xs leading-relaxed text-foreground/75">
+      <strong className="font-bold text-foreground">{text.title}</strong>{" "}
+      {text.body}
+      <span className="mt-2 block">
+        {text.carePrefix}
+        <strong className="font-bold text-foreground">{text.careEmphasis}</strong>
+        {text.careSuffix}
+      </span>
+    </aside>
   );
 }

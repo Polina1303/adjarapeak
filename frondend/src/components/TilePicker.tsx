@@ -6,6 +6,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { resolveCatalogImage } from "@/lib/catalog-image";
 import { useLanguage } from "@/lib/i18n";
+import { LoadingImage } from "@/components/LoadingIndicator";
 
 const TILE_TEXT = {
   RU: {
@@ -90,8 +91,8 @@ export function TilePicker({ title, items, buildHref, breadcrumbs, emptyText, ch
                 const href = buildHref(item.slug);
                 const tileInner = (
                   <>
-                    <div className="aspect-square bg-background overflow-hidden flex items-center justify-center">
-                      <img
+                    <div className="relative aspect-square bg-background overflow-hidden flex items-center justify-center">
+                      <LoadingImage
                         src={resolveCatalogImage(item.image)}
                         alt={item.title}
                         loading="lazy"

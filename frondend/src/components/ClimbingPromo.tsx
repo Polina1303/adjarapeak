@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { MapPin, Calendar, ArrowRight } from "lucide-react";
-import climbing from "@/assets/climbing-promo.avif";
+import climbing from "@/assets/climbing-promo.jpeg";
 import { useLanguage } from "@/lib/i18n";
 import { getSiteText } from "@/lib/site-translations";
 
@@ -9,7 +9,7 @@ export function ClimbingPromo() {
   const { lang } = useLanguage();
   const text = getSiteText(lang).home.climbingPromo;
   return (
-    <section className="section-padding section-spacing">
+    <section className="section-padding section-spacing mt-3 md:mt-4">
       <div className="max-w-7xl mx-auto">
         <div className="relative grid md:grid-cols-2 rounded-3xl overflow-hidden bg-foreground text-background min-h-[420px]">
           {/* image */}
@@ -66,14 +66,12 @@ export function ClimbingPromo() {
                 {text.book}
                 <ArrowRight className="h-3.5 w-3.5" />
               </a>
-              <a
-                href="https://t.me/shpaksn"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/rockClimbing"
                 className="font-display text-xs uppercase tracking-wider text-ember hover:text-background/80 transition-colors"
               >
                 {text.learnMore}
-              </a>
+              </Link>
             </div>
           </div>
         </div>

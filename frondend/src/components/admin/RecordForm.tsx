@@ -13,7 +13,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Check, ChevronsUpDown } from "lucide-react";
+import { Check, ChevronsUpDown, Loader2 } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -706,6 +706,7 @@ export function RecordForm({ config, record, open, onClose, onSaved }: Props) {
             Отмена
           </Button>
           <Button onClick={submit} disabled={saving}>
+            {saving && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
             {saving ? "Сохранение…" : "Сохранить"}
           </Button>
         </DialogFooter>

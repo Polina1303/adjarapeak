@@ -23,6 +23,8 @@ import {
   ChevronLeft,
   ChevronRight,
   Loader2,
+  Images,
+  Maximize2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -44,7 +46,20 @@ import nikitaBikeService1 from "@/assets/nikita-bike-service-1.jpg";
 import nikitaBikeService2 from "@/assets/nikita-bike-service-2.jpg";
 import nikitaBikeService3 from "@/assets/nikita-bike-service-3.jpg";
 import nikitaBikeService4 from "@/assets/nikita-bike-service-4.jpg";
+import nikitaPortfolio1 from "@/assets/nikita-portfolio-01.jpg";
+import nikitaPortfolio2 from "@/assets/nikita-portfolio-02.jpg";
+import nikitaPortfolio3 from "@/assets/nikita-portfolio-03.jpg";
+import nikitaPortfolio4 from "@/assets/nikita-portfolio-04.jpg";
+import nikitaPortfolio5 from "@/assets/nikita-portfolio-05.jpg";
+import nikitaPortfolio6 from "@/assets/nikita-portfolio-06.jpg";
+import nikitaPortfolio7 from "@/assets/nikita-portfolio-07.jpg";
+import nikitaPortfolio8 from "@/assets/nikita-portfolio-08.jpg";
+import nikitaPortfolio9 from "@/assets/nikita-portfolio-09.jpg";
+import nikitaPortfolio10 from "@/assets/nikita-portfolio-10.jpg";
+import nikitaPortfolio11 from "@/assets/nikita-portfolio-11.jpg";
+import nikitaPortfolio12 from "@/assets/nikita-portfolio-12.jpg";
 import rollerSkatingIcon from "@/assets/roller-skating.svg";
+import { LoadingImage } from "@/components/LoadingIndicator";
 import { type Lang, useLanguage } from "@/lib/i18n";
 import { getSiteText } from "@/lib/site-translations";
 import {
@@ -116,6 +131,20 @@ const mechanicGallery = [
   nikitaBikeService2,
   nikitaBikeService3,
   nikitaBikeService4,
+];
+const mechanicPortfolio = [
+  nikitaPortfolio1,
+  nikitaPortfolio2,
+  nikitaPortfolio3,
+  nikitaPortfolio4,
+  nikitaPortfolio5,
+  nikitaPortfolio6,
+  nikitaPortfolio7,
+  nikitaPortfolio8,
+  nikitaPortfolio9,
+  nikitaPortfolio10,
+  nikitaPortfolio11,
+  nikitaPortfolio12,
 ];
 
 function useServiceCarousel(active: boolean) {
@@ -202,6 +231,10 @@ function ServicePage() {
   const text = getSiteText(lang).service;
   const [season, setSeason] = useState<"winter" | "summer">("summer");
   const mechanicCarousel = useServiceCarousel(season === "summer");
+  const portfolioCarousel = useServiceCarousel(season === "summer");
+  const [portfolioOpenIndex, setPortfolioOpenIndex] = useState<number | null>(
+    null
+  );
   const [winterServices, setWinterServices] = useState<Service[]>([]);
   const [summerServices, setSummerServices] = useState<Service[]>([]);
   const [bookingOpen, setBookingOpen] = useState(false);
@@ -358,6 +391,13 @@ function ServicePage() {
     }
   }
 
+  const activePortfolioIndex = portfolioOpenIndex ?? 0;
+  const showPortfolioPhoto = (index: number) => {
+    setPortfolioOpenIndex(
+      (index + mechanicPortfolio.length) % mechanicPortfolio.length
+    );
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -467,6 +507,64 @@ function ServicePage() {
                 : text.bookingSubmit}
             </Button>
           </form>
+        </DialogContent>
+      </Dialog>
+
+      <Dialog
+        open={portfolioOpenIndex !== null}
+        onOpenChange={(open) => !open && setPortfolioOpenIndex(null)}
+      >
+        <DialogContent
+          closeLabel={text.mechanicPortfolioClose}
+          overlayClassName="bg-black/90"
+          onKeyDown={(event) => {
+            if (event.key === "ArrowLeft") {
+              event.preventDefault();
+              showPortfolioPhoto(activePortfolioIndex - 1);
+            }
+            if (event.key === "ArrowRight") {
+              event.preventDefault();
+              showPortfolioPhoto(activePortfolioIndex + 1);
+            }
+          }}
+          className="w-[calc(100%-1.5rem)] max-w-6xl overflow-hidden rounded-3xl border-white/10 bg-[#111] p-2 text-white shadow-2xl sm:p-3"
+        >
+          <DialogHeader className="sr-only">
+            <DialogTitle>{text.mechanicPortfolioTitle}</DialogTitle>
+            <DialogDescription>
+              {text.mechanicPortfolioAlt(activePortfolioIndex + 1)}
+            </DialogDescription>
+          </DialogHeader>
+          <div className="relative flex max-h-[84dvh] min-h-[50dvh] items-center justify-center overflow-hidden rounded-[1.25rem] bg-black">
+            <LoadingImage
+              src={mechanicPortfolio[activePortfolioIndex]}
+              alt={text.mechanicPortfolioAlt(activePortfolioIndex + 1)}
+              width={1600}
+              height={1200}
+              decoding="async"
+              className="max-h-[84dvh] w-full object-contain"
+            />
+            <button
+              type="button"
+              onClick={() => showPortfolioPhoto(activePortfolioIndex - 1)}
+              aria-label={text.mechanicPortfolioPrevious}
+              className="absolute left-3 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-black/55 text-white backdrop-blur transition-colors hover:border-ember hover:text-ember sm:left-5"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+            <button
+              type="button"
+              onClick={() => showPortfolioPhoto(activePortfolioIndex + 1)}
+              aria-label={text.mechanicPortfolioNext}
+              className="absolute right-3 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-black/55 text-white backdrop-blur transition-colors hover:border-ember hover:text-ember sm:right-5"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
+            <div className="absolute bottom-3 left-1/2 z-10 -translate-x-1/2 rounded-full bg-black/65 px-3 py-1.5 font-body text-xs tabular-nums text-white/80 backdrop-blur sm:bottom-5">
+              {String(activePortfolioIndex + 1).padStart(2, "0")} /{" "}
+              {String(mechanicPortfolio.length).padStart(2, "0")}
+            </div>
+          </div>
         </DialogContent>
       </Dialog>
 
@@ -876,6 +974,134 @@ function ServicePage() {
                       }}
                     />
                   </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      )}
+
+      {/* BIKE MECHANIC PORTFOLIO */}
+      {season === "summer" && (
+        <section className="section-padding pb-12 md:pb-16">
+          <div className="mx-auto max-w-6xl">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.12 }}
+              className="overflow-hidden rounded-3xl border border-border bg-card"
+            >
+              <div className="flex flex-col gap-6 border-b border-border p-6 md:flex-row md:items-end md:justify-between md:p-9 lg:p-10">
+                <div className="max-w-3xl">
+                  <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-ember/25 bg-ember/5 px-3 py-1.5 text-ember">
+                    <Images className="h-3.5 w-3.5" aria-hidden />
+                    <span className="font-body text-[10px] uppercase tracking-[0.18em]">
+                      {text.mechanicPortfolioEyebrow}
+                    </span>
+                  </div>
+                  <h2 className="font-display text-3xl font-bold leading-[1.08] text-foreground md:text-4xl">
+                    {text.mechanicPortfolioTitle}
+                  </h2>
+                  <p className="mt-4 max-w-2xl font-body text-sm leading-relaxed text-muted-foreground md:text-base">
+                    {text.mechanicPortfolioText}
+                  </p>
+                </div>
+
+                <div className="flex shrink-0 items-center justify-between gap-3 md:justify-end">
+                  <span className="font-display text-xs tabular-nums text-muted-foreground">
+                    01 — {String(mechanicPortfolio.length).padStart(2, "0")}
+                  </span>
+                  <div className="hidden items-center gap-2 sm:flex">
+                    <button
+                      type="button"
+                      onClick={() => portfolioCarousel.scroll(-1)}
+                      disabled={!portfolioCarousel.canLeft}
+                      aria-label={text.mechanicPortfolioPrevious}
+                      className="flex h-11 w-11 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:border-ember hover:text-ember disabled:cursor-default disabled:opacity-30"
+                    >
+                      <ChevronLeft className="h-5 w-5" />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => portfolioCarousel.scroll(1)}
+                      disabled={!portfolioCarousel.canRight}
+                      aria-label={text.mechanicPortfolioNext}
+                      className="flex h-11 w-11 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:border-ember hover:text-ember disabled:cursor-default disabled:opacity-30"
+                    >
+                      <ChevronRight className="h-5 w-5" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-4 md:p-6 lg:p-8">
+                <div
+                  ref={portfolioCarousel.scroller}
+                  role="region"
+                  aria-roledescription="carousel"
+                  aria-label={text.mechanicPortfolioLabel}
+                  tabIndex={0}
+                  onKeyDown={(event) => {
+                    if (event.key === "ArrowLeft") {
+                      event.preventDefault();
+                      portfolioCarousel.scroll(-1);
+                    }
+                    if (event.key === "ArrowRight") {
+                      event.preventDefault();
+                      portfolioCarousel.scroll(1);
+                    }
+                  }}
+                  className="flex snap-x snap-mandatory gap-3 overflow-x-auto overscroll-x-contain scroll-smooth pb-2 outline-none [scrollbar-width:none] focus-visible:ring-2 focus-visible:ring-ember focus-visible:ring-offset-4 md:gap-4 [&::-webkit-scrollbar]:hidden"
+                  style={{
+                    touchAction: "pan-x pan-y",
+                    WebkitOverflowScrolling: "touch",
+                  }}
+                >
+                  {mechanicPortfolio.map((src, index) => (
+                    <button
+                      key={src}
+                      type="button"
+                      aria-label={text.mechanicPortfolioOpen(index + 1)}
+                      onClick={() => setPortfolioOpenIndex(index)}
+                      className="group relative aspect-[7/5] w-[88%] shrink-0 snap-start overflow-hidden rounded-2xl bg-muted text-left sm:w-[68%] lg:w-[48%]"
+                    >
+                      <LoadingImage
+                        src={src}
+                        alt={text.mechanicPortfolioAlt(index + 1)}
+                        width={1600}
+                        height={1200}
+                        loading="lazy"
+                        decoding="async"
+                        draggable={false}
+                        className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.025]"
+                      />
+                      <span className="absolute inset-0 z-[2] bg-gradient-to-t from-black/65 via-transparent to-transparent" />
+                      <span className="absolute inset-x-0 bottom-0 z-[3] flex items-end justify-between gap-4 p-4 sm:p-5">
+                        <span className="font-display text-sm font-bold tabular-nums text-white">
+                          {String(index + 1).padStart(2, "0")}
+                          <span className="font-normal text-white/55">
+                            {" "}/ {String(mechanicPortfolio.length).padStart(2, "0")}
+                          </span>
+                        </span>
+                        <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/30 bg-black/20 text-white backdrop-blur-sm transition-colors group-hover:border-ember group-hover:bg-ember group-hover:text-ember-foreground">
+                          <Maximize2 className="h-4 w-4" aria-hidden />
+                        </span>
+                      </span>
+                    </button>
+                  ))}
+                </div>
+
+                <div className="mt-5 h-[3px] overflow-hidden rounded-full bg-muted">
+                  <div
+                    className="h-full rounded-full bg-ember transition-[margin] duration-200 ease-out"
+                    style={{
+                      width: `${100 / mechanicPortfolio.length}%`,
+                      marginLeft: `${
+                        portfolioCarousel.progress *
+                        (100 - 100 / mechanicPortfolio.length)
+                      }%`,
+                    }}
+                  />
                 </div>
               </div>
             </motion.div>

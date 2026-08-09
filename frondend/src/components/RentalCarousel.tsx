@@ -12,6 +12,7 @@ import {
   CarouselPrevious,
   CarouselProgress,
 } from "@/components/ui/carousel";
+import { LoadingImage } from "@/components/LoadingIndicator";
 
 export function RentalCarousel({ items }: { items: RentalItem[] }) {
   const { lang } = useLanguage();
@@ -35,7 +36,7 @@ export function RentalCarousel({ items }: { items: RentalItem[] }) {
                 className="group relative bg-card rounded-xl overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 h-full"
               >
                 <div className="relative aspect-square bg-background overflow-hidden">
-                  <img
+                  <LoadingImage
                     src={resolveCatalogImage(item.image)}
                     alt={item.title}
                     loading="lazy"

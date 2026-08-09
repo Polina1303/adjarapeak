@@ -240,3 +240,27 @@ html::-webkit-scrollbar-thumb:hover {
     display: none;
   }
 }
+
+@keyframes navigation-progress {
+  0% {
+    transform: translateX(-130%);
+  }
+  55% {
+    transform: translateX(120%);
+  }
+  100% {
+    transform: translateX(320%);
+  }
+}
+
+.navigation-progress-bar {
+  width: 38%;
+  animation: navigation-progress 1.15s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navigation-progress-bar {
+    width: 100%;
+    animation: none;
+  }
+}

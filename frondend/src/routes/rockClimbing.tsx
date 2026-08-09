@@ -20,9 +20,20 @@ import cl2 from "@/assets/cl-2.avif";
 import cl3 from "@/assets/cl-3.avif";
 import cl4 from "@/assets/cl-4.avif";
 import cl5 from "@/assets/cl-5.avif";
-import team0 from "@/assets/team0.webp";
-// import team1 from "@/assets/team-1.avif";
-import { useLanguage } from "@/lib/i18n";
+import sashaClimbing1 from "@/assets/sasha-climbing-1.avif";
+import sashaClimbing2 from "@/assets/sasha-climbing-2.avif";
+import accessibility01 from "@/assets/climbing-accessibility-01.jpg";
+import accessibility02 from "@/assets/climbing-accessibility-02.jpg";
+import accessibility03 from "@/assets/climbing-accessibility-03.jpg";
+import accessibility04 from "@/assets/climbing-accessibility-04.jpg";
+import accessibility05 from "@/assets/climbing-accessibility-05.jpg";
+import accessibility06 from "@/assets/climbing-accessibility-06.jpg";
+import accessibility07 from "@/assets/climbing-accessibility-07.jpg";
+import accessibility08 from "@/assets/climbing-accessibility-08.jpg";
+import accessibility09 from "@/assets/climbing-accessibility-09.jpg";
+import accessibility10 from "@/assets/climbing-accessibility-10.jpg";
+import { LoadingImage } from "@/components/LoadingIndicator";
+import { useLanguage, type Lang } from "@/lib/i18n";
 import { getSiteText } from "@/lib/site-translations";
 import { canonicalLink } from "@/lib/seo";
 
@@ -33,13 +44,13 @@ export const Route = createFileRoute("/rockClimbing")({
       {
         name: "description",
         content:
-          "Тренировки по скалолазанию в Гонио-Квариати: снаряжение, инструкторы, расписание и запись.",
+          "Тренировки по скалолазанию в Гонио-Квариати: снаряжение, инструктор, расписание и запись.",
       },
       { property: "og:title", content: "Скалолазание — Adjara Peak" },
       {
         property: "og:description",
         content:
-          "Скалолазание с инструкторами Adjara Peak в районе Гонио-Квариати.",
+          "Скалолазание с инструктором Adjara Peak в районе Гонио-Квариати.",
       },
       { property: "og:image", content: climbingHero },
     ],
@@ -48,8 +59,43 @@ export const Route = createFileRoute("/rockClimbing")({
   component: ClimbingPage,
 });
 
-const carousel = [cl0, cl1, cl2, cl3, cl4, cl5];
-const teamImages = [team0];
+const carousel = [
+  cl0,
+  cl1,
+  cl2,
+  cl5,
+  accessibility01,
+  accessibility02,
+  accessibility03,
+  accessibility04,
+  accessibility05,
+  accessibility06,
+  accessibility07,
+  accessibility08,
+  accessibility09,
+  accessibility10,
+];
+const teamImages = [sashaClimbing1, sashaClimbing2];
+
+const CLIMBING_VIDEO_TEXT: Record<
+  Lang,
+  { title: string; description: string }
+> = {
+  RU: {
+    title: "Наш инструктор на скалодроме",
+    description:
+      "Посмотрите видео с нашим инструктором во время тренировки на скалодроме.",
+  },
+  EN: {
+    title: "Our instructor at the climbing gym",
+    description:
+      "Watch our instructor during a training session at the climbing gym.",
+  },
+  GE: {
+    title: "ჩვენი ინსტრუქტორი ცოცვის დარბაზში",
+    description: "ნახეთ ჩვენი ინსტრუქტორი ვარჯიშის დროს ცოცვის დარბაზში.",
+  },
+};
 
 function useHorizontalCarousel() {
   const scroller = useRef<HTMLDivElement>(null);
@@ -90,10 +136,9 @@ function ClimbingPage() {
   const teamCarousel = useHorizontalCarousel();
   const { lang } = useLanguage();
   const text = getSiteText(lang).climbing;
-  const team = text.team.map((member, index) => ({
-    ...member,
-    img: teamImages[index] ?? team0,
-  }));
+  const videoText = CLIMBING_VIDEO_TEXT[lang];
+  const instructor = text.team[0] ?? { name: "", role: "" };
+  const teamPhotos = teamImages.map((img) => ({ ...instructor, img }));
 
   return (
     <div className="min-h-screen bg-background">
@@ -249,12 +294,13 @@ function ClimbingPage() {
               {carousel.map((src, i) => (
                 <div
                   key={i}
-                  className="snap-start shrink-0 w-[260px] lg:w-[320px] aspect-[3/4] rounded-2xl overflow-hidden bg-muted"
+                  className="relative snap-start shrink-0 w-[260px] lg:w-[320px] aspect-[3/4] rounded-2xl overflow-hidden bg-muted"
                 >
-                  <img
+                  <LoadingImage
                     src={src}
                     alt={text.photoAlt(i + 1)}
                     loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -291,14 +337,14 @@ function ClimbingPage() {
             className="lg:hidden flex gap-3 overflow-x-auto overflow-y-hidden snap-x snap-mandatory scroll-smooth pb-3 [scrollbar-width:thin] [scrollbar-color:var(--ember)_transparent] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-ember"
             style={{ touchAction: "pan-x", WebkitOverflowScrolling: "touch" }}
           >
-            {team.map((t) => (
+            {teamPhotos.map((t, index) => (
               <div
-                key={t.name}
+                key={`${t.name}-${index}`}
                 className="snap-start shrink-0 w-[260px] aspect-[3/4] rounded-2xl overflow-hidden bg-muted relative"
               >
                 <img
                   src={t.img}
-                  alt={t.name}
+                  alt={`${t.name} — ${index + 1}`}
                   width={960}
                   height={1280}
                   loading="eager"
@@ -319,14 +365,14 @@ function ClimbingPage() {
           </div>
           {/* Desktop: static grid */}
           <div className="hidden lg:grid grid-cols-2 gap-4 max-w-2xl">
-            {team.map((t) => (
+            {teamPhotos.map((t, index) => (
               <div
-                key={t.name}
+                key={`${t.name}-${index}`}
                 className="aspect-[3/4] rounded-2xl overflow-hidden bg-muted relative"
               >
                 <img
                   src={t.img}
-                  alt={t.name}
+                  alt={`${t.name} — ${index + 1}`}
                   width={960}
                   height={1280}
                   loading="eager"
@@ -349,8 +395,8 @@ function ClimbingPage() {
             <div
               className="h-full rounded-full bg-ember transition-[margin] duration-200 ease-out"
               style={{
-                width: `${Math.max(100 / team.length, 8)}%`,
-                marginLeft: `${teamCarousel.progress * (100 - Math.max(100 / team.length, 8))}%`,
+                width: `${Math.max(100 / teamPhotos.length, 8)}%`,
+                marginLeft: `${teamCarousel.progress * (100 - Math.max(100 / teamPhotos.length, 8))}%`,
               }}
             />
           </div>
@@ -404,6 +450,31 @@ function ClimbingPage() {
                 </a>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+      {/* VIDEO */}
+      <section className="section-padding pb-16">
+        <div className="mx-auto max-w-6xl rounded-3xl border border-border bg-card p-5 sm:p-8 md:p-10">
+          <div className="mb-6 max-w-3xl">
+            <h2 className="font-display text-2xl font-bold text-foreground md:text-4xl">
+              {videoText.title}
+            </h2>
+            <p className="mt-2 font-body text-sm leading-relaxed text-muted-foreground md:text-base">
+              {videoText.description}
+            </p>
+          </div>
+          <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl bg-black shadow-xl">
+            <video
+              className="aspect-video w-full bg-black object-contain"
+              controls
+              playsInline
+              preload="metadata"
+              poster={climbingHero}
+              aria-label={videoText.title}
+            >
+              <source src="/videos/climbing-story.mp4" type="video/mp4" />
+            </video>
           </div>
         </div>
       </section>

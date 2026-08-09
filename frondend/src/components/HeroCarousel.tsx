@@ -9,7 +9,7 @@ import {
 import bannerBike from "@/assets/banner-bike.jpg";
 import heroCamping from "@/assets/hero-camping.jpg";
 import heroHikes from "@/assets/hero-hikes.jpg";
-import climbingPromo from "@/assets/climbing-promo.avif";
+import climbingPromo from "@/assets/climbing-promo.jpeg";
 import nikitaBikeService from "@/assets/nikita-bike-service-1.jpg";
 import { Link } from "@tanstack/react-router";
 import { useLanguage } from "@/lib/i18n";
@@ -183,7 +183,7 @@ export function HeroCarousel() {
               <CarouselContent className="ml-0">
                 {desktopSlides.map((mobileSlide, index) => (
                   <CarouselItem key={mobileSlide.title} className="pl-0">
-                    <div className="relative overflow-hidden bg-foreground aspect-[16/15.8] sm:aspect-[16/13.2]">
+                    <div className="relative min-h-[22rem] w-full overflow-hidden bg-foreground aspect-[16/15.8] sm:min-h-0 sm:aspect-[16/13.2]">
                       <img
                         src={mobileSlide.image}
                         alt={mobileSlide.title}
@@ -199,10 +199,10 @@ export function HeroCarousel() {
                         }}
                       />
                       <div className="relative z-10 h-full w-full flex flex-col justify-end px-5 pt-5 pb-9 sm:p-5">
-                        <h2 className="font-display text-3xl sm:text-5xl font-bold text-primary-foreground leading-[0.95] mb-3 whitespace-pre-line drop-shadow-lg uppercase">
+                        <h2 className="mb-2 whitespace-pre-line font-display text-[clamp(1.25rem,6.8vw,1.875rem)] font-bold uppercase leading-[0.95] text-primary-foreground drop-shadow-lg sm:mb-3 sm:text-5xl">
                           {mobileSlide.title}
                         </h2>
-                        <p className="text-primary-foreground/90 text-sm font-body mb-4 max-w-md drop-shadow-md line-clamp-3">
+                        <p className="mb-3 max-w-md font-body text-[clamp(0.6875rem,3.2vw,0.875rem)] leading-5 text-primary-foreground/90 drop-shadow-md sm:mb-4 sm:text-sm">
                           {mobileSlide.subtitle}
                         </p>
                         {index === 1 ? (
@@ -281,14 +281,14 @@ function RentalQuickLinks({
   ];
 
   const categoryClass = compact
-    ? "inline-flex min-h-10 items-center justify-center rounded-full border border-white/35 bg-black/25 px-3 text-center font-body text-[11px] font-medium leading-tight text-white backdrop-blur-sm transition-colors hover:bg-white/15 sm:text-xs"
+    ? "inline-flex min-h-9 items-center justify-center rounded-full border border-white/35 bg-black/25 px-2.5 text-center font-body text-[10px] font-medium leading-tight text-white backdrop-blur-sm transition-colors hover:bg-white/15 sm:min-h-10 sm:px-3 sm:text-xs"
     : "inline-flex h-10 items-center justify-center rounded-full border border-white/35 bg-black/25 px-4 font-body text-xs font-medium text-white backdrop-blur-sm transition-colors hover:border-white/55 hover:bg-white/15";
 
   return (
     <div
       className={
         compact
-          ? "space-y-2.5"
+          ? "space-y-2 sm:space-y-2.5"
           : "flex max-w-5xl flex-wrap items-center gap-2.5"
       }
     >
@@ -296,7 +296,7 @@ function RentalQuickLinks({
         to="/rent"
         className={
           compact
-            ? "flex h-11 w-full items-center justify-center gap-2 rounded-full bg-ember px-5 font-display text-sm font-medium text-primary-foreground shadow-lg transition-colors hover:bg-ember/90"
+            ? "flex h-10 w-full items-center justify-center gap-2 rounded-full bg-ember px-5 font-display text-[clamp(0.6875rem,3.2vw,0.875rem)] font-medium text-primary-foreground shadow-lg transition-colors hover:bg-ember/90 sm:h-11 sm:text-sm"
             : "inline-flex h-12 items-center justify-center gap-2 rounded-full bg-ember px-6 font-display text-sm font-medium text-primary-foreground shadow-lg transition-colors hover:bg-ember/90"
         }
       >

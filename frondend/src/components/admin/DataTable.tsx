@@ -30,6 +30,7 @@ import {
   Eye,
   EyeOff,
   GripVertical,
+  Loader2,
 } from "lucide-react";
 import type { AdminTableConfig, AdminTableKey } from "@/lib/admin-tables";
 import { ADMIN_TABLES } from "@/lib/admin-tables";
@@ -464,7 +465,12 @@ export function DataTable({ config }: { config: AdminTableConfig }) {
           <TableBody>
             {loading ? (
               <TableRow>
-                <TableCell colSpan={config.listColumns.length + 2}>Загрузка…</TableCell>
+                <TableCell colSpan={config.listColumns.length + 2}>
+                  <span className="flex items-center justify-center gap-2 py-10 text-muted-foreground">
+                    <Loader2 className="h-5 w-5 animate-spin text-ember" />
+                    Загрузка записей…
+                  </span>
+                </TableCell>
               </TableRow>
             ) : pageRows.length === 0 ? (
               <TableRow>
