@@ -526,7 +526,13 @@
       "hat_sea": "ШАПКА ДЛЯ ПЛАВАНИЯ",
       "flippers": "ЛАСТЫ И ЛОПАТКИ",
       "hermo2": "ГЕРМОМЕШКИ",
-      "shoesSea": "ПЛЯЖНАЯ ОБУВЬ И ОДЕЖДА",
+      "shoesSea": {
+        "title": "ПЛЯЖНАЯ ОБУВЬ И ОДЕЖДА",
+        "subcategories": {
+          "water_shoes": "ОБУВЬ ДЛЯ ВОДЫ",
+          "beachwear": "ПЛЯЖНАЯ ОДЕЖДА"
+        }
+      },
       "beach": "МЕБЕЛЬ ДЛЯ ПЛЯЖА",
       "towel": "ПОЛОТЕНЦЕ"
     }
@@ -542,7 +548,13 @@
           "roller_bags": "СУМКА ДЛЯ РОЛИКОВ"
         }
       },
-      "scooter": "САМОКАТЫ",
+      "scooter": {
+        "title": "САМОКАТЫ",
+        "subcategories": {
+          "scooter": "САМОКАТЫ",
+          "scooter_accessories": "АКСЕССУАРЫ ДЛЯ САМОКАТА"
+        }
+      },
       "protection": "ЗАЩИТА",
       "helmet": "ШЛЕМЫ",
       "bike_accessories": "АКСЕССУАРЫ ДЛЯ ВЕЛОСИПЕДА"

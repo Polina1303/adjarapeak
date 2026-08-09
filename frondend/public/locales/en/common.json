@@ -524,7 +524,13 @@
       "hat_sea": "SWIMMING CAPS",
       "flippers": "FLIPPERS AND PADDLES",
       "hermo2": "DRY BAGS",
-      "shoesSea": "BEACH SHOES AND CLOTHING",
+      "shoesSea": {
+        "title": "BEACH SHOES AND CLOTHING",
+        "subcategories": {
+          "water_shoes": "WATER SHOES",
+          "beachwear": "BEACHWEAR"
+        }
+      },
       "beach": "BEACH FURNITURE",
       "towel": "TOWELS"
     }
@@ -540,7 +546,13 @@
           "roller_bags": "ROLLER BAGS"
         }
       },
-      "scooter": "SCOOTERS",
+      "scooter": {
+        "title": "SCOOTERS",
+        "subcategories": {
+          "scooter": "SCOOTERS",
+          "scooter_accessories": "SCOOTER ACCESSORIES"
+        }
+      },
       "protection": "PROTECTION",
       "helmet": "HELMETS",
       "bike_accessories": "BIKE ACCESSORIES"

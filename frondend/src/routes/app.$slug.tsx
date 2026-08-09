@@ -17,6 +17,7 @@ import { absoluteSiteUrl, canonicalLink } from "@/lib/seo";
 import { useLanguage, type Lang } from "@/lib/i18n";
 import { RentalWeekendOffer } from "@/components/RentalWeekendOffer";
 import { LoadingImage } from "@/components/LoadingIndicator";
+import { useCatalogTranslations } from "@/lib/catalog-translations";
 
 type LoaderData =
   | { kind: "product"; data: Awaited<ReturnType<typeof getShopProductBySlug>> }
@@ -317,7 +318,9 @@ function ImageZoomDialog({
 }
 
 function ProductView({ data }: { data: NonNullable<Awaited<ReturnType<typeof getShopProductBySlug>>> }) {
-  const { product, category, group, related } = data;
+  const { product, category, group, subcategory, related } = data;
+  const { lang } = useLanguage();
+  const catalogTranslations = useCatalogTranslations(lang);
   const navigate = useNavigate();
   const colors = Array.isArray(product.colors) ? product.colors : [];
   const [selectedColor, setSelectedColor] = useState<string | null>(null);
@@ -330,6 +333,21 @@ function ProductView({ data }: { data: NonNullable<Awaited<ReturnType<typeof get
   const discountPct = getDiscountPercent(product.price, product.sale_price);
   const hasColors = colors.length > 0;
   const hasSizes = (product.sizes?.length ?? 0) > 0;
+  const groupTitle = group
+    ? catalogTranslations.group("shop", group.slug, group.title)
+    : null;
+  const categoryTitle = group && category
+    ? catalogTranslations.category("shop", group.slug, category.slug, category.title)
+    : null;
+  const subcategoryTitle = group && category && subcategory
+    ? catalogTranslations.subcategory(
+        "shop",
+        group.slug,
+        category.slug,
+        subcategory.slug,
+        subcategory.title,
+      )
+    : null;
 
   const handleAddToCart = () => {
     if (inCart) {
@@ -380,7 +398,7 @@ function ProductView({ data }: { data: NonNullable<Awaited<ReturnType<typeof get
                   params={group.slug === "tourismCamping" ? undefined : { group: group.slug }}
                   className="hover:text-foreground transition-colors"
                 >
-                  {group.title}
+                  {groupTitle}
                 </Link>
               </>
             )}
@@ -392,7 +410,23 @@ function ProductView({ data }: { data: NonNullable<Awaited<ReturnType<typeof get
                   params={{ group: group.slug, category: category.slug }}
                   className="hover:text-foreground transition-colors"
                 >
-                  {category.title}
+                  {categoryTitle}
+                </Link>
+              </>
+            )}
+            {group && category && subcategory && (
+              <>
+                <ChevronRight className="h-3.5 w-3.5 opacity-60" />
+                <Link
+                  to="/sale/$group/$category/$subcategory"
+                  params={{
+                    group: group.slug,
+                    category: category.slug,
+                    subcategory: subcategory.slug,
+                  }}
+                  className="hover:text-foreground transition-colors"
+                >
+                  {subcategoryTitle}
                 </Link>
               </>
             )}

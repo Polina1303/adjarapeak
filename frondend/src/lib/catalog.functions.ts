@@ -941,6 +941,13 @@ export const getShopProductBySlug = createServerFn({ method: "GET" })
           .eq("id", category.group_id)
           .maybeSingle()
       : { data: null };
+    const { data: subcategory } = product.subcategory_id
+      ? await supabase
+          .from("shop_subcategories")
+          .select("*")
+          .eq("id", product.subcategory_id)
+          .maybeSingle()
+      : { data: null };
     const displayCategory = isBoardCatalogCategory(category as ShopCategory | null)
       ? getBoardDisplayCategory(normalizedProduct)
       : (category ?? null) as ShopCategory | null;
@@ -1055,6 +1062,7 @@ export const getShopProductBySlug = createServerFn({ method: "GET" })
       product: normalizedProduct,
       category: displayCategory,
       group: displayGroup,
+      subcategory: (subcategory ?? null) as ShopSubcategory | null,
       related: related.map(normalizeShopProduct),
     };
   });
