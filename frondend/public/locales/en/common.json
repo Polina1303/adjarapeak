@@ -63,9 +63,17 @@
         }
       },
       "care": "CLOTHING AND SHOE CARE",
-      "thermalUnderwear": "THERMAL UNDERWEAR",
+      "thermalUnderwear": {
+        "title": "THERMAL UNDERWEAR",
+        "subcategories": {
+          "men": "MEN'S",
+          "women": "WOMEN'S"
+        }
+      },
       "socks": "SOCKS",
-      "underwear": "UNDERWEAR"
+      "underwear": "UNDERWEAR",
+      "tshirts": "T-SHIRTS AND TANK TOPS",
+      "shorts": "SHORTS"
     }
   },
   "martial": {
@@ -166,7 +174,8 @@
         "subcategories": {
           "thermos": "THERMOS",
           "cup": "THERMO MUGS",
-          "termoryukzak": "THERMO BACKPACKS"
+          "termoryukzak": "THERMO BACKPACKS",
+          "car_coolers": "CAR COOLERS AND COOL BOXES"
         }
       },
       "bottle": "BOTTLES",
@@ -226,15 +235,12 @@
           "aid": "FIRST AID KITS",
           "compass": "COMPASSES AND WHISTLES",
           "repeller": "DETERRENTS",
-          "repellent": "REPELLENTS"
+          "repellent": "REPELLENTS",
+          "radios": "TWO-WAY RADIOS AND COMMUNICATION"
         }
       },
       "technic": {
-        "title": "TECH AND WATCHES",
-        "subcategories": {
-          "watch": "WATCHES",
-          "technic": "TECH EQUIPMENT"
-        }
+        "title": "SOLAR PANELS AND CHARGING"
       },
       "medal": "KEYCHAINS, FLOATS, MEDALS, MAPS"
     }
@@ -493,7 +499,12 @@
     "category": {
       "fitness_gloves": "FITNESS GLOVES",
       "kettlebells": "DUMBBELLS AND KETTLEBELLS",
-      "accessories_fitnes": "FITNESS ACCESSORIES",
+      "accessories_fitnes": {
+        "title": "FITNESS ACCESSORIES",
+        "subcategories": {
+          "stopwatches": "STOPWATCHES AND SPORTS WATCHES"
+        }
+      },
       "shaker": "SHAKER",
       "extender": "EXPANDER",
       "jumprope": "JUMP ROPE",

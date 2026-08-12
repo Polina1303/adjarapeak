@@ -64,9 +64,17 @@
         }
       },
       "care": "УХОД ЗА ОБУВЬЮ И ОДЕЖДОЙ",
-      "thermalUnderwear": "ТЕРМОБЕЛЬЕ",
+      "thermalUnderwear": {
+        "title": "ТЕРМОБЕЛЬЕ",
+        "subcategories": {
+          "men": "Мужское",
+          "women": "Женское"
+        }
+      },
       "socks": "НОСКИ",
-      "underwear": "НИЖНЕЕ БЕЛЬЕ"
+      "underwear": "НИЖНЕЕ БЕЛЬЕ",
+      "tshirts": "ФУТБОЛКИ И МАЙКИ",
+      "shorts": "ШОРТЫ"
     }
   },
   "martial": {
@@ -167,7 +175,8 @@
         "subcategories": {
           "thermos": "Термосы",
           "cup": "Термокружки",
-          "termoryukzak": "Термосумки и терморюкзаки"
+          "termoryukzak": "Термосумки и терморюкзаки",
+          "car_coolers": "Автохолодильники и термобоксы"
         }
       },
       "bottle": "БУТЫЛКИ",
@@ -227,15 +236,12 @@
           "aid": "Аптечки",
           "compass": "Компасы и свистки",
           "repeller": "Отпугиватели",
-          "repellent": "Репелленты"
+          "repellent": "Репелленты",
+          "radios": "Рации и связь"
         }
       },
       "technic": {
-        "title": "ТЕХНИКА и ЧАСЫ",
-        "subcategories": {
-          "watch": "Часы",
-          "technic": "Техника"
-        }
+        "title": "СОЛНЕЧНЫЕ ПАНЕЛИ И ЗАРЯДКА"
       },
       "medal": "БРЕЛКИ, ПОПЛАВКИ, МЕДАЛИ, КАРТЫ"
     }
@@ -495,7 +501,12 @@
     "category": {
       "fitness_gloves": "Перчатки для фитнеса",
       "kettlebells": "Гантели и гири",
-      "accessories_fitnes": "Спортивные аксессуары",
+      "accessories_fitnes": {
+        "title": "Спортивные аксессуары",
+        "subcategories": {
+          "stopwatches": "Секундомеры и спортивные часы"
+        }
+      },
       "shaker": "ШЕЙКЕР",
       "extender": "ЭСПАНДЕР",
       "jumprope": "СКАКАЛКИ",
