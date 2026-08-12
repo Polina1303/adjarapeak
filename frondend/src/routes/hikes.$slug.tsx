@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
@@ -9,6 +9,7 @@ import {
   Mountain,
   Wallet,
   ChevronLeft,
+  ChevronRight,
   Check,
 } from "lucide-react";
 import {
@@ -83,7 +84,51 @@ function HikeNotFound() {
   );
 }
 
+function useHorizontalCarousel() {
+  const scroller = useRef<HTMLDivElement>(null);
+  const [canLeft, setCanLeft] = useState(false);
+  const [canRight, setCanRight] = useState(false);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const element = scroller.current;
+    if (!element) return;
+
+    const update = () => {
+      setCanLeft(element.scrollLeft > 4);
+      setCanRight(
+        element.scrollLeft + element.clientWidth < element.scrollWidth - 4
+      );
+      const maxScroll = element.scrollWidth - element.clientWidth;
+      setProgress(
+        maxScroll > 0
+          ? Math.min(1, Math.max(0, element.scrollLeft / maxScroll))
+          : 1
+      );
+    };
+
+    update();
+    element.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+
+    return () => {
+      element.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
+  }, []);
+
+  const scroll = (direction: -1 | 1) => {
+    scroller.current?.scrollBy({
+      left: direction * 360,
+      behavior: "smooth",
+    });
+  };
+
+  return { scroller, canLeft, canRight, progress, scroll };
+}
+
 function HikePage() {
+  const photoCarousel = useHorizontalCarousel();
   const rawHike = Route.useLoaderData();
   const { lang } = useLanguage();
   const text = getSiteText(lang).hikes;
@@ -211,27 +256,87 @@ function HikePage() {
           </div>
         </section>
 
-        {/* VERTICAL GALLERY */}
+        {/* HORIZONTAL GALLERY */}
         {photos.length > 0 && (
           <section className="section-padding pb-12 md:pb-16">
             <div className="mx-auto max-w-7xl">
               <h2 className="mb-5 font-display text-xl font-bold text-foreground md:text-2xl">
                 {text.galleryTitle}
               </h2>
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:gap-4 lg:grid-cols-4">
-                {photos.map((photo, index) => (
-                  <div
-                    key={`${photo}-${index}`}
-                    className="aspect-[3/4] overflow-hidden rounded-2xl bg-muted"
+
+              <div className="relative">
+                {photoCarousel.canLeft && (
+                  <button
+                    type="button"
+                    onClick={() => photoCarousel.scroll(-1)}
+                    className="absolute -left-3 top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-background text-foreground shadow-lg transition-colors hover:bg-background/90 md:flex"
+                    aria-label={text.galleryPreviousPhoto}
                   >
-                    <img
-                      src={photo}
-                      alt={`${hike.title} — ${index + 2}`}
-                      loading="lazy"
-                      className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
-                    />
-                  </div>
-                ))}
+                    <ChevronLeft className="h-5 w-5" />
+                  </button>
+                )}
+                {photoCarousel.canRight && (
+                  <button
+                    type="button"
+                    onClick={() => photoCarousel.scroll(1)}
+                    className="absolute -right-3 top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-background text-foreground shadow-lg transition-colors hover:bg-background/90 md:flex"
+                    aria-label={text.galleryNextPhoto}
+                  >
+                    <ChevronRight className="h-5 w-5" />
+                  </button>
+                )}
+
+                <div
+                  ref={photoCarousel.scroller}
+                  role="region"
+                  aria-roledescription="carousel"
+                  aria-label={text.galleryTitle}
+                  tabIndex={0}
+                  onKeyDown={(event) => {
+                    if (event.key === "ArrowLeft") {
+                      event.preventDefault();
+                      photoCarousel.scroll(-1);
+                    }
+                    if (event.key === "ArrowRight") {
+                      event.preventDefault();
+                      photoCarousel.scroll(1);
+                    }
+                  }}
+                  className="flex snap-x snap-mandatory gap-3 overflow-x-auto overscroll-x-contain scroll-smooth pb-2 outline-none [scrollbar-width:none] focus-visible:ring-2 focus-visible:ring-ember [&::-webkit-scrollbar]:hidden md:gap-4"
+                  style={{
+                    touchAction: "pan-x pan-y",
+                    WebkitOverflowScrolling: "touch",
+                  }}
+                >
+                  {photos.map((photo, index) => (
+                    <div
+                      key={`${photo}-${index}`}
+                      role="group"
+                      aria-label={`${index + 1} / ${photos.length}`}
+                      className="aspect-[3/4] w-[260px] shrink-0 snap-start overflow-hidden rounded-2xl bg-muted lg:w-[320px]"
+                    >
+                      <img
+                        src={photo}
+                        alt={`${hike.title} — ${index + 2}`}
+                        loading="lazy"
+                        className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mx-auto mt-5 h-[3px] max-w-xs overflow-hidden rounded-full bg-border/70">
+                <div
+                  className="h-full rounded-full bg-ember transition-[margin] duration-200 ease-out"
+                  style={{
+                    width: `${Math.max(100 / photos.length, 8)}%`,
+                    marginLeft: `${
+                      photoCarousel.progress *
+                      (100 - Math.max(100 / photos.length, 8))
+                    }%`,
+                  }}
+                />
               </div>
             </div>
           </section>
