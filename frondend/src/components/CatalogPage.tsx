@@ -100,6 +100,7 @@ const SHOP_GROUP_TAB_CONFIG = [
   { key: "sports", groupSlug: "sports" },
   { key: "fitness", groupSlug: "fitness" },
   { key: "swimmingSup", groupSlug: "swimmingSup" },
+  { key: "climbing", groupSlug: "climbing" },
   { key: "winterSports", groupSlug: "winterSports" },
   { key: "alpinesking", groupSlug: "alpinesking" },
 ] as const;
