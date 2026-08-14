@@ -3,6 +3,7 @@ import { lazy, Suspense } from "react";
 import { Header } from "@/components/Header";
 import { HeroCarousel } from "@/components/HeroCarousel";
 import { BrandStrip } from "@/components/BrandStrip";
+import { RentalEveningTeaser } from "@/components/RentalEveningOffer";
 import { Footer } from "@/components/Footer";
 import { listShopGroups, listRentalGroups } from "@/lib/catalog.functions";
 import {
@@ -66,6 +67,7 @@ function Index() {
           Спортивный и туристический магазин Adjara Peak в Батуми
         </h1>
         <HeroCarousel />
+        <RentalEveningTeaser />
         <BrandStrip />
         <Suspense fallback={null}>
           <ActivityCategories groups={groups} />

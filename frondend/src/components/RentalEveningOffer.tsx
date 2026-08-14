@@ -1,4 +1,5 @@
-import { Clock3, MoonStar } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+import { ArrowRight, Clock3, MoonStar } from "lucide-react";
 import { useLanguage, type Lang } from "@/lib/i18n";
 
 type EveningOfferText = {
@@ -9,6 +10,8 @@ type EveningOfferText = {
   priceLabel: string;
   price: string;
   deposit: string;
+  teaser: string;
+  cta: string;
 };
 
 const EVENING_OFFER_TEXT: Record<Lang, EveningOfferText> = {
@@ -22,6 +25,8 @@ const EVENING_OFFER_TEXT: Record<Lang, EveningOfferText> = {
     priceLabel: "Стоимость",
     price: "20–30 ₾",
     deposit: "Без залога",
+    teaser: "Велосипеды, ролики и лонгборды: заберите вечером, верните утром — оплатите только 3 часа.",
+    cta: "В спортивный прокат",
   },
   EN: {
     badge: "Special rate",
@@ -33,6 +38,8 @@ const EVENING_OFFER_TEXT: Record<Lang, EveningOfferText> = {
     priceLabel: "Price",
     price: "₾20–30",
     deposit: "No deposit",
+    teaser: "Bicycles, skates, and longboards: pick up in the evening, return in the morning, and pay for only 3 hours.",
+    cta: "Explore sports rentals",
   },
   GE: {
     badge: "სპეციალური ტარიფი",
@@ -44,6 +51,8 @@ const EVENING_OFFER_TEXT: Record<Lang, EveningOfferText> = {
     priceLabel: "ღირებულება",
     price: "20–30 ₾",
     deposit: "გირაო არ არის საჭირო",
+    teaser: "ველოსიპედები, როლიკები და ლონგბორდები: აიღეთ საღამოს, დააბრუნეთ დილით და გადაიხადეთ მხოლოდ 3 საათის საფასური.",
+    cta: "სპორტული გაქირავება",
   },
 };
 
@@ -52,6 +61,44 @@ export const EVENING_RENTAL_CATEGORY_SLUGS = new Set([
   "rentROLLER",
   "rentBOARD",
 ]);
+
+export function RentalEveningTeaser() {
+  const { lang } = useLanguage();
+  const text = EVENING_OFFER_TEXT[lang];
+
+  return (
+    <section className="section-padding pb-0 pt-5 md:pt-7">
+      <div className="mx-auto max-w-7xl">
+        <Link
+          to="/rent/$group"
+          params={{ group: "sportsRental" }}
+          className="group flex flex-col gap-3 overflow-hidden rounded-xl border border-ember/35 bg-foreground px-4 py-4 text-background shadow-md transition hover:border-ember/70 hover:shadow-lg sm:flex-row sm:items-center md:px-5"
+        >
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-ember text-primary-foreground">
+            <MoonStar className="h-4.5 w-4.5" aria-hidden="true" />
+          </span>
+          <div className="min-w-0 flex-1">
+            <h2 className="font-display text-base font-bold uppercase tracking-wide text-background md:text-lg">
+              {text.title}
+            </h2>
+            <p className="mt-0.5 font-body text-xs leading-relaxed text-background/70 md:text-sm">
+              {text.teaser}
+            </p>
+          </div>
+          <div className="flex shrink-0 items-center justify-between gap-4 sm:justify-end">
+            <span className="rounded-full bg-ember px-3 py-1.5 font-body text-xs font-bold text-primary-foreground md:text-sm">
+              {text.price}
+            </span>
+            <span className="inline-flex items-center gap-1.5 font-body text-xs font-bold text-background md:text-sm">
+              {text.cta}
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+            </span>
+          </div>
+        </Link>
+      </div>
+    </section>
+  );
+}
 
 export function RentalEveningOffer({ compact = false }: { compact?: boolean }) {
   const { lang } = useLanguage();
