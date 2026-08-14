@@ -22,6 +22,7 @@ export type FieldConfig = {
   label: string;
   type: FieldType;
   required?: boolean;
+  defaultValue?: string | number | boolean;
   options?: ReadonlyArray<{ value: string; label: string }>;
   // for fk
   fkTable?: AdminTableKey;
@@ -126,7 +127,7 @@ export const ADMIN_TABLES: Record<AdminTableKey, AdminTableConfig> = {
       { key: "featured_until", label: "Показывать до", type: "date" },
       { key: "featured_label", label: "Подпись рекомендации", type: "text" },
       { key: "featured_tags", label: "Теги рекомендации (seasonal, hiking, camping, team-pick)", type: "string_list" },
-      { key: "in_stock", label: "В наличии", type: "boolean" },
+      { key: "in_stock", label: "В наличии", type: "boolean", defaultValue: true },
       { key: "hidden", label: "Скрыто", type: "boolean" },
     ],
   },

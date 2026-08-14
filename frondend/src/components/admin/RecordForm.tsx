@@ -355,7 +355,9 @@ export function RecordForm({ config, record, open, onClose, onSaved }: Props) {
         }
       } else {
         initial[f.key] =
-          f.type === "boolean"
+          f.defaultValue !== undefined
+            ? f.defaultValue
+            : f.type === "boolean"
             ? false
             : f.type === "number" && f.required
               ? 0
