@@ -16,6 +16,10 @@ import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { absoluteSiteUrl, canonicalLink } from "@/lib/seo";
 import { useLanguage, type Lang } from "@/lib/i18n";
 import { RentalWeekendOffer } from "@/components/RentalWeekendOffer";
+import {
+  EVENING_RENTAL_CATEGORY_SLUGS,
+  RentalEveningOffer,
+} from "@/components/RentalEveningOffer";
 import { LoadingImage } from "@/components/LoadingIndicator";
 import { useCatalogTranslations } from "@/lib/catalog-translations";
 
@@ -627,6 +631,7 @@ function RentalView({ data }: { data: NonNullable<Awaited<ReturnType<typeof getR
   const rentalTerms = RENTAL_TERMS_TEXT[lang];
   const bikeRentalExtras = BIKE_RENTAL_EXTRAS_TEXT[lang];
   const isBikeRental = category?.slug === "rentBIKE";
+  const hasEveningRate = EVENING_RENTAL_CATEGORY_SLUGS.has(category?.slug ?? "");
   const navigate = useNavigate();
   const img = resolveCatalogImage(item.image);
   const booked = useIsInCart(item.slug);
@@ -743,6 +748,11 @@ function RentalView({ data }: { data: NonNullable<Awaited<ReturnType<typeof getR
                 </Button>
                 {isBikeRental && <BikeRentalExtrasNote text={bikeRentalExtras} />}
                 <RentalTermsNote text={rentalTerms} />
+                {hasEveningRate && (
+                  <div className="mt-3">
+                    <RentalEveningOffer compact />
+                  </div>
+                )}
                 <div className="mt-3">
                   <RentalWeekendOffer />
                 </div>
@@ -812,6 +822,11 @@ function RentalView({ data }: { data: NonNullable<Awaited<ReturnType<typeof getR
               </Button>
               {isBikeRental && <BikeRentalExtrasNote text={bikeRentalExtras} />}
               <RentalTermsNote text={rentalTerms} />
+              {hasEveningRate && (
+                <div className="mt-3">
+                  <RentalEveningOffer compact />
+                </div>
+              )}
               <div className="mt-3">
                 <RentalWeekendOffer />
               </div>

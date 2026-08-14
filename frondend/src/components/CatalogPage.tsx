@@ -6,6 +6,10 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CatalogSidebar } from "@/components/CatalogSidebar";
 import { CatalogToolbar, type SortKey } from "@/components/CatalogToolbar";
+import {
+  EVENING_RENTAL_CATEGORY_SLUGS,
+  RentalEveningOffer,
+} from "@/components/RentalEveningOffer";
 import { ProductGrid } from "@/components/ProductGrid";
 import { RentalGrid } from "@/components/RentalGrid";
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/components/ui/sheet";
@@ -310,6 +314,10 @@ export function CatalogPage(props: ShopProps | RentalProps) {
   }, [search, sort, onlyAvailable, props.group.id, props.activeCategory?.id, props.activeSubcategory?.id]);
 
   const isTourismSection = isShop && props.group.slug === "tourismCamping";
+  const showsEveningOffer =
+    props.kind === "rentals" &&
+    props.group.slug === "sportsRental" &&
+    (!props.activeCategory || EVENING_RENTAL_CATEGORY_SLUGS.has(props.activeCategory.slug));
   const activeCategorySubcategories = props.activeCategory
     ? props.subsByCat[props.activeCategory.id] ?? []
     : [];
@@ -518,6 +526,8 @@ export function CatalogPage(props: ShopProps | RentalProps) {
                 )}
               </p>
             </div>
+
+            {showsEveningOffer && <RentalEveningOffer />}
 
             {isTourismSection &&
               props.activeCategory &&
