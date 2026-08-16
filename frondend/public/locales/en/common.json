@@ -186,7 +186,8 @@
           "plate": "PLATES",
           "setdishes": "DISH SETS",
           "teapot": "TEAPOTS",
-          "pot": "POTS, KETTLES, FRYING PANS",
+          "pans-saute": "FRYING PANS AND SAUTE PANS",
+          "pot": "POTS AND CAMPING POTS",
           "cutlery": "CUTLERY AND ACCESSORIES"
         }
       },
