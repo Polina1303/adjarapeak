@@ -45,7 +45,7 @@ export function GiftCardSection() {
   };
 
   return (
-    <section className="section-padding py-12 md:py-16 bg-background">
+    <section className="section-padding bg-muted/25 py-8 md:py-10">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-0 lg:gap-10 items-center">
           <motion.div

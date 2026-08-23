@@ -61,6 +61,37 @@ export const SITE_TEXT = {
       popularCategories: "Популярные категории",
       rentalEquipment: "Прокат снаряжения",
       newArrivals: "Новинки",
+      actions: {
+        shop: "Весь магазин",
+        catalog: "Весь каталог",
+        rental: "Весь прокат",
+        newArrivals: "Все новинки",
+      },
+      bikeService: {
+        eyebrow: "Велосервис в Батуми",
+        title: "Настроим велосипед для города и гор",
+        description:
+          "Диагностика, настройка и ремонт шоссейных, горных, городских и детских велосипедов. Все работы выполняем на месте — внимательно, оперативно и с гарантией.",
+        services: [
+          "Чистка и настройка трансмиссии",
+          "Регулировка и прокачка тормозов",
+          "Колёса, камеры и покрышки",
+          "Сборка и установка аксессуаров",
+        ],
+        course: {
+          title: "Обучение езде на велосипеде с нуля",
+          meta: "Дети и взрослые · 4 урока · занятие 90 минут",
+          price: "60 ₾",
+        },
+        mechanicName: "Никита",
+        mechanicRole: "Веломеханик Adjara Peak",
+        guarantee: "Гарантия на выполненные работы",
+        hours: "Ежедневно · 11:00–20:00",
+        location: "Батуми · ул. Генерала Аслана Абашидзе, 19",
+        cta: "Услуги, цены и запись",
+        call: "Позвонить",
+        imageAlt: "Веломеханик Никита ремонтирует велосипед в мастерской Adjara Peak",
+      },
       climbingPromo: {
         title: "Скалолазание в Гонио-Квариати",
         subtitle:
@@ -297,6 +328,69 @@ export const SITE_TEXT = {
       bookingWinterService: "Сервис лыж и сноубордов",
       bookingSummerService:
         "Ремонт велосипедов, роликов, скейтбордов и SUP-досок",
+      bikeLessons: {
+        eyebrow: "Обучение с нуля",
+        title: "Научим уверенно ездить на велосипеде",
+        lead:
+          "Безопасная пошаговая программа для детей и взрослых, которые впервые садятся на велосипед или хотят избавиться от страха и закрепить правильную технику.",
+        goalLabel: "Цель программы",
+        goal:
+          "Последовательно освоить базовые навыки управления велосипедом, почувствовать баланс и научиться безопасно действовать в типичных ситуациях.",
+        method:
+          "Двигаемся от знакомства с велосипедом и баланса без педалей к уверенному старту, торможению и маневрированию. Особое внимание уделяем защитной экипировке, посадке и безопасным рефлексам.",
+        audience: "Для детей и взрослых",
+        duration: "90 минут",
+        lessonCount: "4 последовательных урока",
+        priceLabel: "Одно занятие",
+        price: "60 ₾",
+        book: "Записаться на занятие",
+        bookingTitle: "Запись на обучение",
+        bookingServiceName: "Обучение езде на велосипеде",
+        bookingDescription:
+          "Оставьте контакты и напишите, кому нужно занятие и есть ли опыт катания. Мы свяжемся с вами и подберём время.",
+        commentLabel: "Для кого занятие?",
+        commentPlaceholder:
+          "Например: ребёнок 8 лет, раньше не катался; велосипед нужен",
+        lessons: [
+          {
+            title: "Знакомство, посадка и баланс",
+            subtitle: "Без педалей",
+            items: [
+              "Подгонка защитной экипировки и проверка шлема.",
+              "Регулировка седла: ноги уверенно достают до земли.",
+              "Знакомство с тормозами и принципом их работы.",
+              "Упражнение «Самокат»: отталкивание ногами, движение накатом и удержание равновесия.",
+            ],
+          },
+          {
+            title: "Педали и уверенный старт",
+            subtitle: "Первое самостоятельное движение",
+            items: [
+              "Ведущая нога на педали в стартовой позиции «на два часа».",
+              "Первый толчок и постановка второй ноги на педаль.",
+              "Правильный фокус взгляда: вперёд по ходу движения, а не под колесо.",
+            ],
+          },
+          {
+            title: "Торможение и маневрирование",
+            subtitle: "Контроль скорости и траектории",
+            items: [
+              "Плавное торможение без резкого блокирования колёс.",
+              "Проезд по прямой с удержанием траектории.",
+              "Плавные повороты и объезд конусов на безопасной скорости.",
+            ],
+          },
+          {
+            title: "Закрепление и безопасность",
+            subtitle: "Уверенное управление",
+            items: [
+              "Разгон, торможение в заданной точке и экстренная остановка.",
+              "Безопасная группировка при потере равновесия на минимальной скорости.",
+              "Правила поведения на открытых площадках и взаимодействия с пешеходами.",
+            ],
+          },
+        ],
+      },
       bookingNameLabel: "Имя*",
       bookingNamePlaceholder: "Как к вам обращаться",
       bookingPhoneLabel: "Номер телефона*",
@@ -551,6 +645,37 @@ export const SITE_TEXT = {
       popularCategories: "Popular Categories",
       rentalEquipment: "Gear Rental",
       newArrivals: "New Arrivals",
+      actions: {
+        shop: "Shop all",
+        catalog: "Browse catalog",
+        rental: "All rentals",
+        newArrivals: "View new arrivals",
+      },
+      bikeService: {
+        eyebrow: "Bike service in Batumi",
+        title: "Tune your bike for city streets and mountain trails",
+        description:
+          "Diagnostics, tuning and repairs for road, mountain, city and kids’ bikes. Every job is done in-house with care, a quick turnaround and a service guarantee.",
+        services: [
+          "Drivetrain cleaning and tuning",
+          "Brake adjustment and bleeding",
+          "Wheels, tubes and tires",
+          "Bike builds and accessory fitting",
+        ],
+        course: {
+          title: "Learn to ride a bike from scratch",
+          meta: "Kids and adults · 4 lessons · 90 minutes each",
+          price: "60 ₾",
+        },
+        mechanicName: "Nikita",
+        mechanicRole: "Bike mechanic at Adjara Peak",
+        guarantee: "Service guarantee included",
+        hours: "Daily · 11:00–20:00",
+        location: "Batumi · 19 General Aslan Abashidze St",
+        cta: "Services, prices and booking",
+        call: "Call us",
+        imageAlt: "Bike mechanic Nikita repairing a bicycle at the Adjara Peak workshop",
+      },
       climbingPromo: {
         title: "Climbing in Gonio-Kvariati",
         subtitle:
@@ -786,6 +911,69 @@ export const SITE_TEXT = {
       bookingWinterService: "Ski and snowboard service",
       bookingSummerService:
         "Bike, roller skate, skateboard and SUP board repairs",
+      bikeLessons: {
+        eyebrow: "Learn from scratch",
+        title: "Learn to ride with confidence",
+        lead:
+          "A safe, step-by-step program for kids and adults getting on a bicycle for the first time or looking to overcome fear and build sound technique.",
+        goalLabel: "Program goal",
+        goal:
+          "Build the core skills to control a bicycle, find your balance and respond safely in common riding situations.",
+        method:
+          "We progress from bike setup and pedal-free balance to confident starts, braking and maneuvering. Protective gear, correct riding position and safe reflexes remain central throughout.",
+        audience: "For kids and adults",
+        duration: "90 minutes",
+        lessonCount: "4 progressive lessons",
+        priceLabel: "One lesson",
+        price: "60 ₾",
+        book: "Book a lesson",
+        bookingTitle: "Book a bike lesson",
+        bookingServiceName: "Learn to ride a bicycle",
+        bookingDescription:
+          "Leave your contact details and tell us who the lesson is for and whether they have any riding experience. We will contact you to arrange a time.",
+        commentLabel: "Who is the lesson for?",
+        commentPlaceholder:
+          "For example: an 8-year-old child, no previous experience, needs a bicycle",
+        lessons: [
+          {
+            title: "Bike setup, position and balance",
+            subtitle: "Without pedals",
+            items: [
+              "Fit protective gear and check the helmet.",
+              "Set the saddle so both feet reach the ground comfortably.",
+              "Learn how the brakes work.",
+              "Scooter drill: push off, coast and hold your balance without using the pedals.",
+            ],
+          },
+          {
+            title: "Pedaling and a confident start",
+            subtitle: "First independent movement",
+            items: [
+              "Place the leading foot on the pedal at the two o’clock position.",
+              "Practice the first push and bring the second foot onto the pedal.",
+              "Look forward along your route instead of down at the front wheel.",
+            ],
+          },
+          {
+            title: "Braking and maneuvering",
+            subtitle: "Speed and line control",
+            items: [
+              "Brake smoothly without abruptly locking the wheels.",
+              "Ride in a straight line while holding a steady course.",
+              "Make gentle turns and ride around cones at a safe speed.",
+            ],
+          },
+          {
+            title: "Consolidation and safety",
+            subtitle: "Confident bike control",
+            items: [
+              "Accelerate, stop at a marked point and practice an emergency stop.",
+              "Learn a safe tuck if balance is lost at minimal speed.",
+              "Cover open-area etiquette and safe interaction with pedestrians.",
+            ],
+          },
+        ],
+      },
       bookingNameLabel: "Name*",
       bookingNamePlaceholder: "Your name",
       bookingPhoneLabel: "Phone number*",
@@ -1040,6 +1228,37 @@ export const SITE_TEXT = {
       popularCategories: "პოპულარული კატეგორიები",
       rentalEquipment: "აღჭურვილობის ქირაობა",
       newArrivals: "სიახლეები",
+      actions: {
+        shop: "ყველა პროდუქტი",
+        catalog: "კატალოგის ნახვა",
+        rental: "ყველა გაქირავება",
+        newArrivals: "ყველა სიახლე",
+      },
+      bikeService: {
+        eyebrow: "ველოსერვისი ბათუმში",
+        title: "მოვამზადებთ ველოსიპედს ქალაქისა და მთებისთვის",
+        description:
+          "საგზაო, მთის, ქალაქისა და საბავშვო ველოსიპედების დიაგნოსტიკა, რეგულირება და შეკეთება. ყველა სამუშაო ადგილზე, სწრაფად, ყურადღებით და გარანტიით სრულდება.",
+        services: [
+          "ტრანსმისიის წმენდა და რეგულირება",
+          "მუხრუჭების რეგულირება და ჰაერის გამოშვება",
+          "ბორბლები, კამერები და საბურავები",
+          "აწყობა და აქსესუარების დაყენება",
+        ],
+        course: {
+          title: "ველოსიპედის ტარების სწავლა ნულიდან",
+          meta: "ბავშვები და მოზრდილები · 4 გაკვეთილი · 90 წუთი",
+          price: "60 ₾",
+        },
+        mechanicName: "ნიკიტა",
+        mechanicRole: "Adjara Peak-ის ველომექანიკოსი",
+        guarantee: "შესრულებულ სამუშაოზე გარანტია",
+        hours: "ყოველდღე · 11:00–20:00",
+        location: "ბათუმი · გენერალ ასლან აბაშიძის ქ. 19",
+        cta: "სერვისები, ფასები და ჩაწერა",
+        call: "დარეკვა",
+        imageAlt: "ველომექანიკოსი ნიკიტა Adjara Peak-ის სახელოსნოში ველოსიპედს არემონტებს",
+      },
       climbingPromo: {
         title: "კლდეზე ცოცვა გონიო-კვარიათში",
         subtitle:
@@ -1276,6 +1495,69 @@ export const SITE_TEXT = {
       bookingWinterService: "თხილამურებისა და სნოუბორდების სერვისი",
       bookingSummerService:
         "ველოსიპედების, როლიკების, სკეიტბორდებისა და SUP დაფების შეკეთება",
+      bikeLessons: {
+        eyebrow: "სწავლა ნულიდან",
+        title: "ისწავლეთ ველოსიპედის თავდაჯერებით მართვა",
+        lead:
+          "უსაფრთხო, ეტაპობრივი პროგრამა ბავშვებისა და მოზრდილებისთვის, რომლებიც პირველად ჯდებიან ველოსიპედზე ან სურთ შიშის დაძლევა და სწორი ტექნიკის ჩამოყალიბება.",
+        goalLabel: "პროგრამის მიზანი",
+        goal:
+          "ველოსიპედის მართვის საბაზისო უნარების თანმიმდევრულად ათვისება, ბალანსის შეგრძნება და ტიპურ სიტუაციებში უსაფრთხოდ მოქმედება.",
+        method:
+          "ვიწყებთ ველოსიპედის გაცნობითა და პედლების გარეშე ბალანსით, შემდეგ გადავდივართ სტარტზე, დამუხრუჭებასა და მანევრირებაზე. განსაკუთრებული ყურადღება ექცევა ეკიპირებას, სწორ პოზიციასა და უსაფრთხო რეფლექსებს.",
+        audience: "ბავშვებისა და მოზრდილებისთვის",
+        duration: "90 წუთი",
+        lessonCount: "4 თანმიმდევრული გაკვეთილი",
+        priceLabel: "ერთი გაკვეთილი",
+        price: "60 ₾",
+        book: "გაკვეთილზე ჩაწერა",
+        bookingTitle: "ველოსიპედის გაკვეთილზე ჩაწერა",
+        bookingServiceName: "ველოსიპედის ტარების სწავლა",
+        bookingDescription:
+          "დატოვეთ საკონტაქტო ინფორმაცია და მოგვწერეთ, ვისთვის არის გაკვეთილი და აქვს თუ არა ტარების გამოცდილება. დროს ერთად შევარჩევთ.",
+        commentLabel: "ვისთვის არის გაკვეთილი?",
+        commentPlaceholder:
+          "მაგალითად: 8 წლის ბავშვი, გამოცდილების გარეშე, ველოსიპედი სჭირდება",
+        lessons: [
+          {
+            title: "გაცნობა, პოზიცია და ბალანსი",
+            subtitle: "პედლების გარეშე",
+            items: [
+              "დამცავი ეკიპირების მორგება და ჩაფხუტის შემოწმება.",
+              "უნაგირის მორგება ისე, რომ ფეხები მიწას თავისუფლად სწვდებოდეს.",
+              "მუხრუჭების მუშაობის პრინციპის გაცნობა.",
+              "ვარჯიში „სკუტერი“: ფეხებით ბიძგი, ინერციით მოძრაობა და წონასწორობის შენარჩუნება.",
+            ],
+          },
+          {
+            title: "პედლები და თავდაჯერებული სტარტი",
+            subtitle: "პირველი დამოუკიდებელი მოძრაობა",
+            items: [
+              "წამყვანი ფეხის პედალზე მოთავსება „ორი საათის“ პოზიციაში.",
+              "პირველი ბიძგი და მეორე ფეხის პედალზე მოთავსება.",
+              "მზერის სწორად მიმართვა: წინ, მოძრაობის მიმართულებით და არა ბორბლისკენ.",
+            ],
+          },
+          {
+            title: "დამუხრუჭება და მანევრირება",
+            subtitle: "სიჩქარისა და ტრაექტორიის კონტროლი",
+            items: [
+              "რბილი დამუხრუჭება ბორბლების მკვეთრი ბლოკირების გარეშე.",
+              "სწორი ხაზით მოძრაობა ტრაექტორიის შენარჩუნებით.",
+              "რბილი მოსახვევები და კონუსების უსაფრთხო სიჩქარით შემოვლა.",
+            ],
+          },
+          {
+            title: "უნარების გამტკიცება და უსაფრთხოება",
+            subtitle: "თავდაჯერებული მართვა",
+            items: [
+              "აჩქარება, მონიშნულ წერტილში გაჩერება და ავარიული დამუხრუჭება.",
+              "მინიმალურ სიჩქარეზე წონასწორობის დაკარგვისას უსაფრთხო დაჯგუფება.",
+              "ღია მოედანზე ქცევისა და ფეხით მოსიარულეებთან უსაფრთხო ურთიერთობის წესები.",
+            ],
+          },
+        ],
+      },
       bookingNameLabel: "სახელი*",
       bookingNamePlaceholder: "თქვენი სახელი",
       bookingPhoneLabel: "ტელეფონის ნომერი*",

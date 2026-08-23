@@ -12,6 +12,7 @@ import {
   CarouselPrevious,
   CarouselProgress,
 } from "@/components/ui/carousel";
+import { ArrowRight } from "lucide-react";
 
 type Group = {
   id: string;
@@ -31,11 +32,20 @@ export function ActivityCategories({ groups }: { groups: Group[] }) {
   }));
 
   return (
-    <section className="section-padding py-12 md:py-16">
+    <section className="section-padding bg-muted/25 py-8 md:py-11">
       <div className="max-w-7xl mx-auto">
-        <h2 className="font-display text-2xl md:text-4xl font-bold text-foreground mb-8 md:mb-10">
-          {text.popularCategories}
-        </h2>
+        <div className="mb-5 flex items-end justify-between gap-4 md:mb-7">
+          <h2 className="font-display text-2xl font-bold text-foreground md:text-3xl">
+            {text.popularCategories}
+          </h2>
+          <Link
+            to="/sale"
+            className="group inline-flex shrink-0 items-center gap-1.5 font-display text-xs font-bold uppercase tracking-wide text-ember transition-colors hover:text-foreground sm:text-sm"
+          >
+            {text.actions.catalog}
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+          </Link>
+        </div>
 
         {/* Mobile: 2-column grid of small tiles */}
         <div className="grid grid-cols-2 gap-3 md:hidden">
@@ -88,7 +98,7 @@ export function ActivityCategories({ groups }: { groups: Group[] }) {
                     params={cat.slug === "tourismCamping" ? undefined : { group: cat.slug }}
                     className="group flex flex-col items-center text-center"
                   >
-                    <div className="w-full aspect-[3/4] rounded-xl overflow-hidden bg-secondary/60 mb-3 flex items-center justify-center">
+                    <div className="mb-3 flex aspect-square w-full items-center justify-center overflow-hidden rounded-xl bg-secondary/60">
                       <img
                         src={resolveCatalogImage(cat.image)}
                         alt={cat.title}

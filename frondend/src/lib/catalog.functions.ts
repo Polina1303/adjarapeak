@@ -18,6 +18,9 @@ const FITNESS_GROUP_SLUG = "fitness";
 const SPORTS_AIR_CATEGORY_SLUG = "air";
 const FEATURED_PRODUCT_LIMIT = 8;
 const ALWAYS_RECOMMENDED_PRODUCT_SLUGS = new Set([
+  "98721221643839390000",
+  "98700643831234400000",
+  "987643831234394000",
   "lodka-hello-plus-235-yellow",
   "34444231",
 ]);
@@ -1171,21 +1174,31 @@ export const listRecommendedProducts = createServerFn({ method: "GET" })
     const today = now.toISOString().slice(0, 10);
     const seasonalCategories = getSeasonalFeaturedCategories(now);
 
-    const [{ data: rawProducts, error: productError }, { data: rawCategories, error: categoryError }] =
-      await Promise.all([
-        supabase
-          .from("shop_products")
-          .select("*")
-          .eq("in_stock", true)
-          .eq("hidden", false)
-          .limit(300),
-        supabase
-          .from("shop_categories")
-          .select("id,slug"),
-      ]);
+    const [
+      { data: rawProducts, error: productError },
+      { data: rawCategories, error: categoryError },
+      { data: rawAlwaysRecommended, error: alwaysRecommendedError },
+    ] = await Promise.all([
+      supabase
+        .from("shop_products")
+        .select("*")
+        .eq("in_stock", true)
+        .eq("hidden", false)
+        .limit(300),
+      supabase
+        .from("shop_categories")
+        .select("id,slug"),
+      supabase
+        .from("shop_products")
+        .select("*")
+        .in("slug", [...ALWAYS_RECOMMENDED_PRODUCT_SLUGS])
+        .eq("in_stock", true)
+        .eq("hidden", false),
+    ]);
 
     if (productError) throw new Error(productError.message);
     if (categoryError) throw new Error(categoryError.message);
+    if (alwaysRecommendedError) throw new Error(alwaysRecommendedError.message);
 
     const categorySlugById = new Map(
       ((rawCategories ?? []) as Pick<ShopCategory, "id" | "slug">[]).map((category) => [
@@ -1194,9 +1207,22 @@ export const listRecommendedProducts = createServerFn({ method: "GET" })
       ]),
     );
 
+    const alwaysRecommendedOrder = new Map(
+      [...ALWAYS_RECOMMENDED_PRODUCT_SLUGS].map((slug, index) => [slug, index]),
+    );
+    const alwaysRecommended = normalizeShopProducts(rawAlwaysRecommended)
+      .filter((product) => Boolean(product.image))
+      .sort(
+        (a, b) =>
+          (alwaysRecommendedOrder.get(a.slug) ?? Number.MAX_SAFE_INTEGER) -
+          (alwaysRecommendedOrder.get(b.slug) ?? Number.MAX_SAFE_INTEGER),
+      );
+    const alwaysRecommendedIds = new Set(alwaysRecommended.map((product) => product.id));
+
     const ranked = normalizeShopProducts(rawProducts)
       .filter(
         (product) =>
+          !alwaysRecommendedIds.has(product.id) &&
           product.image &&
           (CATALOG_IMAGE_FILES.has(product.image) || isAlwaysRecommendedProduct(product)),
       )
@@ -1213,8 +1239,14 @@ export const listRecommendedProducts = createServerFn({ method: "GET" })
       }))
       .sort((a, b) => b.score - a.score);
 
-    const picked: ShopProduct[] = [];
-    const pickedCategories = new Set<string>();
+    // These products are selected before category diversification, so they are
+    // guaranteed to appear whenever they are visible and in stock.
+    const picked: ShopProduct[] = alwaysRecommended.slice(0, limit);
+    const pickedCategories = new Set(
+      picked
+        .map((product) => categorySlugById.get(product.category_id))
+        .filter((slug): slug is string => Boolean(slug)),
+    );
 
     for (const item of ranked) {
       if (picked.length >= Math.min(limit, 6)) break;

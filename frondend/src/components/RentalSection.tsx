@@ -12,6 +12,7 @@ import {
   CarouselPrevious,
   CarouselProgress,
 } from "@/components/ui/carousel";
+import { ArrowRight } from "lucide-react";
 
 type Group = {
   id: string;
@@ -35,11 +36,20 @@ export function RentalSection({ groups }: { groups: Group[] }) {
   }));
 
   return (
-    <section className="section-padding py-12 md:py-16 bg-muted/30">
+    <section className="section-padding py-8 md:py-11">
       <div className="max-w-7xl mx-auto">
-        <h2 className="font-display text-2xl md:text-4xl font-bold text-foreground mb-8 md:mb-10">
-          {text.rentalEquipment}
-        </h2>
+        <div className="mb-5 flex items-end justify-between gap-4 md:mb-7">
+          <h2 className="font-display text-2xl font-bold text-foreground md:text-3xl">
+            {text.rentalEquipment}
+          </h2>
+          <Link
+            to="/rent"
+            className="group inline-flex shrink-0 items-center gap-1.5 font-display text-xs font-bold uppercase tracking-wide text-ember transition-colors hover:text-foreground sm:text-sm"
+          >
+            {text.actions.rental}
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+          </Link>
+        </div>
 
         {/* Mobile: 2-column grid of tiles */}
         <div className="grid grid-cols-2 gap-3 md:hidden">
@@ -107,7 +117,7 @@ export function RentalSection({ groups }: { groups: Group[] }) {
                       to="/rent"
                                             className="group flex flex-col items-center text-center"
                     >
-                      <div className="w-full aspect-[3/4] rounded-xl overflow-hidden bg-secondary/60 mb-3 flex items-center justify-center">
+                      <div className="mb-3 flex aspect-square w-full items-center justify-center overflow-hidden rounded-xl bg-secondary/60">
                         <img
                           src={resolveCatalogImage(tile.image)}
                           alt={tile.title}
@@ -125,7 +135,7 @@ export function RentalSection({ groups }: { groups: Group[] }) {
                       to="/sale/sale"
                       className="group flex flex-col items-center text-center"
                     >
-                      <div className="w-full aspect-[3/4] rounded-xl overflow-hidden bg-secondary/60 mb-3 flex items-center justify-center">
+                      <div className="mb-3 flex aspect-square w-full items-center justify-center overflow-hidden rounded-xl bg-secondary/60">
                         <img
                           src={resolveCatalogImage("sale.webp")}
                           alt={tile.title}

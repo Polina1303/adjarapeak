@@ -81,13 +81,13 @@ export const Route = createFileRoute("/service")({
       {
         name: "description",
         content:
-          "Заточка кантов, парафин, ремонт скользящей поверхности лыж и сноубордов в Батуми. Профессиональный сервис Adjara Peak.",
+          "Велосервис, обучение езде на велосипеде, ремонт лыж и сноубордов в Батуми. Профессиональный сервис Adjara Peak.",
       },
       { property: "og:title", content: "Сервисный центр — Adjara Peak" },
       {
         property: "og:description",
         content:
-          "Профессиональный сервис лыж и сноубордов в Батуми: заточка кантов, парафин, ремонт.",
+          "Ремонт велосипедов, обучение езде, профессиональный сервис лыж и сноубордов в Батуми.",
       },
       { property: "og:image", content: bannerBike },
     ],
@@ -238,6 +238,9 @@ function ServicePage() {
   const [winterServices, setWinterServices] = useState<Service[]>([]);
   const [summerServices, setSummerServices] = useState<Service[]>([]);
   const [bookingOpen, setBookingOpen] = useState(false);
+  const [bookingKind, setBookingKind] = useState<"service" | "bikeLessons">(
+    "service"
+  );
   const [bookingSubmitting, setBookingSubmitting] = useState(false);
   const [bookingForm, setBookingForm] = useState({
     name: "",
@@ -319,6 +322,17 @@ function ServicePage() {
     season === "winter" ? text.winterSectionText : text.summerSectionText;
   const ctaTitle = season === "winter" ? text.ctaTitle : text.summerCtaTitle;
   const ctaText = season === "winter" ? text.ctaText : text.summerCtaText;
+  const bookingServiceTitle =
+    bookingKind === "bikeLessons"
+      ? text.bikeLessons.bookingServiceName
+      : season === "winter"
+        ? text.bookingWinterService
+        : text.bookingSummerService;
+
+  function openBooking(kind: "service" | "bikeLessons") {
+    setBookingKind(kind);
+    setBookingOpen(true);
+  }
 
   async function handleBookingSubmit(event: React.FormEvent) {
     event.preventDefault();
@@ -331,10 +345,6 @@ function ServicePage() {
       return;
     }
 
-    const serviceTitle =
-      season === "winter"
-        ? text.bookingWinterService
-        : text.bookingSummerService;
     const comment = bookingForm.comment.trim();
 
     setBookingSubmitting(true);
@@ -355,8 +365,11 @@ function ServicePage() {
           comments: comment,
           items: [
             {
-              slug: `service-${season}`,
-              title: serviceTitle,
+              slug:
+                bookingKind === "bikeLessons"
+                  ? "bike-riding-lessons"
+                  : `service-${season}`,
+              title: bookingServiceTitle,
               quantity: 1,
               price: 0,
               total: 0,
@@ -409,10 +422,14 @@ function ServicePage() {
         >
           <DialogHeader className="pr-8 text-left">
             <DialogTitle className="font-display text-2xl font-bold uppercase leading-tight text-foreground">
-              {text.bookingTitle}
+              {bookingKind === "bikeLessons"
+                ? text.bikeLessons.bookingTitle
+                : text.bookingTitle}
             </DialogTitle>
             <DialogDescription className="font-body leading-relaxed">
-              {text.bookingDescription}
+              {bookingKind === "bikeLessons"
+                ? text.bikeLessons.bookingDescription
+                : text.bookingDescription}
             </DialogDescription>
           </DialogHeader>
 
@@ -421,9 +438,7 @@ function ServicePage() {
               {text.bookingServiceLabel}
             </span>
             <p className="mt-1 font-display text-sm font-bold uppercase tracking-wider text-foreground">
-              {season === "winter"
-                ? text.bookingWinterService
-                : text.bookingSummerService}
+              {bookingServiceTitle}
             </p>
           </div>
 
@@ -479,7 +494,9 @@ function ServicePage() {
             </div>
             <div className="space-y-2">
               <Label htmlFor="service-booking-comment">
-                {text.bookingCommentLabel}
+                {bookingKind === "bikeLessons"
+                  ? text.bikeLessons.commentLabel
+                  : text.bookingCommentLabel}
               </Label>
               <Textarea
                 id="service-booking-comment"
@@ -490,7 +507,11 @@ function ServicePage() {
                     comment: event.target.value,
                   }))
                 }
-                placeholder={text.bookingCommentPlaceholder}
+                placeholder={
+                  bookingKind === "bikeLessons"
+                    ? text.bikeLessons.commentPlaceholder
+                    : text.bookingCommentPlaceholder
+                }
                 className="min-h-24 resize-none"
               />
             </div>
@@ -601,7 +622,7 @@ function ServicePage() {
                 </a>
                 <button
                   type="button"
-                  onClick={() => setBookingOpen(true)}
+                  onClick={() => openBooking("service")}
                   className="flex-1 inline-flex justify-center items-center gap-2 border border-border hover:border-ember hover:text-ember transition-colors px-6 py-3 rounded-full font-display text-xs uppercase tracking-wider text-foreground"
                 >
                   {text.book}
@@ -744,6 +765,138 @@ function ServicePage() {
           </div>
         </div>
       </section>
+
+      {/* BIKE RIDING LESSONS */}
+      {season === "summer" && (
+        <section
+          id="bike-lessons"
+          className="section-padding scroll-mt-24 pb-12 md:pb-16"
+        >
+          <div className="mx-auto max-w-6xl">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              className="overflow-hidden rounded-3xl border border-border bg-card"
+            >
+              <div className="grid gap-8 bg-foreground p-7 text-background md:p-10 lg:grid-cols-[1fr_auto] lg:items-end lg:p-12">
+                <div className="max-w-3xl">
+                  <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-ember/35 bg-ember/10 px-3 py-1.5 text-ember">
+                    <Bike className="h-4 w-4" aria-hidden />
+                    <span className="font-display text-[10px] font-bold uppercase tracking-[0.2em]">
+                      {text.bikeLessons.eyebrow}
+                    </span>
+                  </div>
+                  <h2 className="font-display text-3xl font-bold leading-[1.05] md:text-5xl">
+                    {text.bikeLessons.title}
+                  </h2>
+                  <p className="mt-5 max-w-2xl font-body text-sm leading-relaxed text-background/70 md:text-base">
+                    {text.bikeLessons.lead}
+                  </p>
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {[
+                      text.bikeLessons.audience,
+                      text.bikeLessons.duration,
+                      text.bikeLessons.lessonCount,
+                    ].map((item) => (
+                      <span
+                        key={item}
+                        className="rounded-full border border-background/20 bg-background/[0.06] px-3 py-1.5 font-body text-xs text-background/80"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="min-w-52 rounded-2xl bg-ember p-6 text-ember-foreground">
+                  <p className="font-body text-xs uppercase tracking-[0.16em] opacity-75">
+                    {text.bikeLessons.priceLabel}
+                  </p>
+                  <p className="mt-2 font-display text-4xl font-bold">
+                    {text.bikeLessons.price}
+                  </p>
+                  <p className="mt-1 font-body text-xs opacity-75">
+                    {text.bikeLessons.duration}
+                  </p>
+                </div>
+              </div>
+
+              <div className="p-6 md:p-9 lg:p-10">
+                <div className="grid gap-5 lg:grid-cols-2">
+                  <div className="rounded-2xl bg-muted/50 p-5 md:p-6">
+                    <p className="font-display text-xs font-bold uppercase tracking-[0.18em] text-ember">
+                      {text.bikeLessons.goalLabel}
+                    </p>
+                    <p className="mt-3 font-body text-sm leading-relaxed text-foreground">
+                      {text.bikeLessons.goal}
+                    </p>
+                  </div>
+                  <div className="rounded-2xl border border-border p-5 md:p-6">
+                    <p className="font-body text-sm leading-relaxed text-muted-foreground">
+                      {text.bikeLessons.method}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-6 grid gap-4 lg:grid-cols-2">
+                  {text.bikeLessons.lessons.map((lesson, index) => (
+                    <motion.article
+                      key={lesson.title}
+                      initial={{ opacity: 0, y: 16 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.15 }}
+                      transition={{ delay: index * 0.04 }}
+                      className="rounded-2xl border border-border p-5 transition-colors hover:border-ember/50 md:p-6"
+                    >
+                      <div className="flex items-start gap-4">
+                        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-ember font-display text-sm font-bold text-ember-foreground">
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+                        <div>
+                          <p className="font-body text-[10px] uppercase tracking-[0.16em] text-ember">
+                            {lesson.subtitle}
+                          </p>
+                          <h3 className="mt-1 font-display text-xl font-bold leading-tight text-foreground">
+                            {lesson.title}
+                          </h3>
+                        </div>
+                      </div>
+                      <ul className="mt-5 space-y-3 border-t border-border pt-5">
+                        {lesson.items.map((item) => (
+                          <li
+                            key={item}
+                            className="flex gap-3 font-body text-sm leading-relaxed text-muted-foreground"
+                          >
+                            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-ember" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </motion.article>
+                  ))}
+                </div>
+
+                <div className="mt-7 flex flex-col gap-4 rounded-2xl bg-foreground p-5 text-background sm:flex-row sm:items-center sm:justify-between md:p-6">
+                  <div className="flex items-start gap-3">
+                    <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-ember" aria-hidden />
+                    <p className="max-w-xl font-body text-sm leading-relaxed text-background/70">
+                      {text.bikeLessons.goal}
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => openBooking("bikeLessons")}
+                    className="inline-flex h-12 shrink-0 items-center justify-center rounded-full bg-ember px-6 font-display text-xs font-bold uppercase tracking-wider text-ember-foreground transition-colors hover:bg-ember/90"
+                  >
+                    {text.bikeLessons.book}
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      )}
 
       {/* SUMMER GEAR SERVICE */}
       {season === "summer" && (
@@ -1158,7 +1311,7 @@ function ServicePage() {
                   {text.addressLabel}
                 </div>
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=Batumi%2C+Chavchavadze+St+81"
+                  href="https://www.google.com/maps?cid=6512661380146566532"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-body text-sm hover:text-ember transition-colors"

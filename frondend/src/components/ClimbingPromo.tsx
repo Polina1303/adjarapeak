@@ -9,9 +9,9 @@ export function ClimbingPromo() {
   const { lang } = useLanguage();
   const text = getSiteText(lang).home.climbingPromo;
   return (
-    <section className="section-padding section-spacing mt-3 md:mt-4">
+    <section className="section-padding pb-8 pt-0 md:pb-10">
       <div className="max-w-7xl mx-auto">
-        <div className="relative grid md:grid-cols-2 rounded-3xl overflow-hidden bg-foreground text-background min-h-[420px]">
+        <div className="relative grid min-h-[390px] overflow-hidden rounded-3xl bg-foreground text-background md:grid-cols-2">
           {/* image */}
           <motion.div
             initial={{ opacity: 0, scale: 1.05 }}
@@ -30,9 +30,9 @@ export function ClimbingPromo() {
           </motion.div>
 
           {/* content */}
-          <div className="relative p-8 md:p-12 lg:p-14 flex flex-col justify-center gap-6">
+          <div className="relative flex flex-col justify-center gap-5 p-8 md:p-10 lg:p-12">
             <div>
-              <h2 className="font-display text-4xl md:text-5xl font-bold leading-[1.05]">
+              <h2 className="font-display text-3xl font-bold leading-[1.05] md:text-4xl">
                 {text.title}
               </h2>
             </div>

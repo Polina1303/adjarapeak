@@ -20,6 +20,11 @@ const RentalSection = lazy(() =>
 const NewArrivals = lazy(() =>
   import("@/components/NewArrivals").then((m) => ({ default: m.NewArrivals })),
 );
+const BikeServicePromo = lazy(() =>
+  import("@/components/BikeServicePromo").then((m) => ({
+    default: m.BikeServicePromo,
+  })),
+);
 const ClimbingPromo = lazy(() =>
   import("@/components/ClimbingPromo").then((m) => ({ default: m.ClimbingPromo })),
 );
@@ -73,9 +78,10 @@ function Index() {
           <ActivityCategories groups={groups} />
           <RentalSection groups={rentalGroups} />
           <NewArrivals />
+          <BikeServicePromo />
           <ClimbingPromo />
-          <InterestingSection />
           <GiftCardSection />
+          <InterestingSection />
           <StoreSection />
         </Suspense>
       </div>

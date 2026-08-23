@@ -7,7 +7,7 @@ export function StoreSection() {
   const { lang } = useLanguage();
   const text = getSiteText(lang).contact;
   return (
-    <section className="section-padding py-12 md:py-16 bg-background text-foreground">
+    <section className="section-padding bg-background py-8 text-foreground md:py-10">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           <motion.div
