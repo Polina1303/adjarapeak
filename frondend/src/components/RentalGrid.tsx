@@ -8,6 +8,7 @@ import { useLanguage } from "@/lib/i18n";
 import { getSiteText } from "@/lib/site-translations";
 import { toast } from "sonner";
 import { LoadingImage } from "@/components/LoadingIndicator";
+import { RentalRequirements } from "@/components/RentalRequirements";
 
 export function RentalGrid({ items }: { items: RentalItem[] }) {
   const { lang } = useLanguage();
@@ -112,6 +113,7 @@ function RentalCard({
                   {item.description}
                 </p>
               )}
+              <RentalRequirements />
             </div>
             <div className="px-5 pb-5 mt-auto opacity-100 translate-y-0">
               <button

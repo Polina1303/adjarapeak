@@ -13,6 +13,7 @@ import {
   CarouselProgress,
 } from "@/components/ui/carousel";
 import { LoadingImage } from "@/components/LoadingIndicator";
+import { RentalRequirements } from "@/components/RentalRequirements";
 
 export function RentalCarousel({ items }: { items: RentalItem[] }) {
   const { lang } = useLanguage();
@@ -71,6 +72,7 @@ export function RentalCarousel({ items }: { items: RentalItem[] }) {
                   <h3 className="font-body text-foreground text-sm leading-snug line-clamp-2">
                     {item.title}
                   </h3>
+                  <RentalRequirements />
                 </div>
               </Link>
             </CarouselItem>

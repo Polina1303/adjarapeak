@@ -24,6 +24,7 @@ const ALWAYS_RECOMMENDED_PRODUCT_SLUGS = new Set([
   "lodka-hello-plus-235-yellow",
   "34444231",
 ]);
+const ALWAYS_NEW_PRODUCT_SLUGS = ["3131990098841", "6754122232332"] as const;
 const ALWAYS_SEASONAL_CATEGORY_SLUGS = new Set([
   "backpack",
   "bottle",
@@ -1270,19 +1271,65 @@ export const listLatestProducts = createServerFn({ method: "GET" })
   )
   .handler(async ({ data }) => {
     const limit = data.limit ?? 6;
-    const rollerLimit = Math.min(2, limit);
-    const boardLimit = Math.max(limit - rollerLimit, 0);
+    const { data: rawPinnedProducts, error: pinnedProductsError } = await supabase
+      .from("shop_products")
+      .select("*")
+      .in("slug", [...ALWAYS_NEW_PRODUCT_SLUGS])
+      .eq("in_stock", true)
+      .eq("hidden", false);
+    if (pinnedProductsError) throw new Error(pinnedProductsError.message);
+
+    const pinnedOrder = new Map(
+      ALWAYS_NEW_PRODUCT_SLUGS.map((slug, index) => [slug, index]),
+    );
+    const pinnedProducts = normalizeShopProducts(rawPinnedProducts)
+      .filter((product) => Boolean(product.image))
+      .sort(
+        (a, b) =>
+          (pinnedOrder.get(a.slug) ?? Number.MAX_SAFE_INTEGER) -
+          (pinnedOrder.get(b.slug) ?? Number.MAX_SAFE_INTEGER),
+      )
+      .slice(0, limit);
+
+    const remaining = Math.max(limit - pinnedProducts.length, 0);
+    const rollerLimit = Math.min(2, remaining);
+    const boardLimit = Math.max(remaining - rollerLimit, 0);
     const [boardProducts, rollerProducts] = await Promise.all([
-      getFeaturedProductsByCategorySlugs([BALANCE_BOARD_CATEGORY_SLUG], boardLimit),
-      getFeaturedProductsByCategorySlugs(["roller", "rollers"], rollerLimit),
+      getFeaturedProductsByCategorySlugs(
+        [BALANCE_BOARD_CATEGORY_SLUG],
+        boardLimit + pinnedProducts.length,
+      ),
+      getFeaturedProductsByCategorySlugs(
+        ["roller", "rollers"],
+        rollerLimit + pinnedProducts.length,
+      ),
     ]);
 
     const seen = new Set<string>();
     const result: ShopProduct[] = [];
-    for (const product of [...boardProducts, ...rollerProducts]) {
-      if (seen.has(product.id)) continue;
+    const pushUnique = (product: ShopProduct) => {
+      if (seen.has(product.id) || result.length >= limit) return false;
       seen.add(product.id);
       result.push(product);
+      return true;
+    };
+
+    for (const product of pinnedProducts) pushUnique(product);
+
+    let addedBoards = 0;
+    for (const product of boardProducts) {
+      if (addedBoards >= boardLimit) break;
+      if (pushUnique(product)) addedBoards += 1;
+    }
+
+    let addedRollers = 0;
+    for (const product of rollerProducts) {
+      if (addedRollers >= rollerLimit) break;
+      if (pushUnique(product)) addedRollers += 1;
+    }
+
+    for (const product of [...boardProducts, ...rollerProducts]) {
+      pushUnique(product);
       if (result.length >= limit) break;
     }
     return result;

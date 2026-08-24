@@ -12,6 +12,9 @@ export const SITE_TEXT = {
       perDay: "/сутки",
       perTraining: "за тренировку",
       item: "/шт.",
+      rentalNoDeposit: "Без залога",
+      rentalPassportShort: "Нужен паспорт",
+      rentalPassportRequired: "Для оформления проката необходим паспорт",
       addedToCart: (title: string) => `Добавлено в корзину: ${title}`,
     },
     home: {
@@ -596,6 +599,9 @@ export const SITE_TEXT = {
       perDay: "/day",
       perTraining: "per session",
       item: "/item",
+      rentalNoDeposit: "No deposit",
+      rentalPassportShort: "Passport required",
+      rentalPassportRequired: "A passport is required to arrange the rental",
       addedToCart: (title: string) => `Added to cart: ${title}`,
     },
     home: {
@@ -1179,6 +1185,9 @@ export const SITE_TEXT = {
       perDay: "/დღე",
       perTraining: "ვარჯიშზე",
       item: "/ცალი",
+      rentalNoDeposit: "დეპოზიტის გარეშე",
+      rentalPassportShort: "საჭიროა პასპორტი",
+      rentalPassportRequired: "გაქირავების გასაფორმებლად საჭიროა პასპორტი",
       addedToCart: (title: string) => `კალათაში დაემატა: ${title}`,
     },
     home: {
