@@ -208,6 +208,34 @@ html { scroll-behavior: smooth; }
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+
+  /*
+   * Tailwind's opacity modifiers fall back to the solid base color when
+   * color-mix() is unavailable (for example, in Safari before 16.2).
+   * Keep these rental notices translucent with plain sRGB alpha colors.
+   */
+  .rental-terms-note {
+    border-color: rgba(250, 130, 9, 0.25);
+    background-color: rgba(250, 130, 9, 0.05);
+  }
+
+  .rental-bike-extras-note {
+    border-color: rgba(44, 125, 79, 0.3);
+    background-color: rgba(44, 125, 79, 0.1);
+  }
+
+  .rental-weekend-offer {
+    border-color: rgba(239, 68, 68, 0.4);
+    background-color: rgba(239, 68, 68, 0.04);
+  }
+
+  .rental-weekend-offer-icon {
+    background-color: rgba(239, 68, 68, 0.1);
+  }
+
+  .rental-weekend-offer-divider {
+    border-color: rgba(239, 68, 68, 0.2);
+  }
 }
 
 /* Global ember scrollbar */

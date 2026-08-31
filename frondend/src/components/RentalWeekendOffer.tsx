@@ -78,9 +78,9 @@ export function RentalWeekendOffer() {
   const text = OFFER_TEXT[lang];
 
   return (
-    <aside className="rounded-2xl border-2 border-destructive/40 bg-destructive/[0.04] p-4 md:p-5">
+    <aside className="rental-weekend-offer rounded-2xl border-2 p-4 md:p-5">
       <div className="flex items-start gap-3">
-        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-destructive/10 text-destructive">
+        <span className="rental-weekend-offer-icon flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-destructive">
           <CalendarDays className="h-4 w-4" aria-hidden="true" />
         </span>
         <div className="min-w-0">
@@ -105,7 +105,7 @@ export function RentalWeekendOffer() {
               <strong className="font-bold text-foreground">{text.paymentTime}</strong>
               {text.paymentSuffix}
             </p>
-            <p className="border-t border-destructive/20 pt-3 font-semibold text-foreground">
+            <p className="rental-weekend-offer-divider border-t pt-3 font-semibold text-foreground">
               {text.closing}
             </p>
           </div>

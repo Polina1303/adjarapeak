@@ -854,7 +854,7 @@ function BikeRentalExtrasNote({
   text: (typeof BIKE_RENTAL_EXTRAS_TEXT)[Lang];
 }) {
   return (
-    <aside className="mt-4 rounded-xl border border-moss/30 bg-moss/10 px-4 py-3 font-body text-xs leading-relaxed text-foreground/80">
+    <aside className="rental-bike-extras-note mt-4 rounded-xl border px-4 py-3 font-body text-xs leading-relaxed text-foreground/80">
       <div className="flex items-start gap-2.5">
         <Check className="mt-0.5 h-4 w-4 shrink-0 text-moss" />
         <div>
@@ -871,7 +871,7 @@ function BikeRentalExtrasNote({
 
 function RentalTermsNote({ text }: { text: (typeof RENTAL_TERMS_TEXT)[Lang] }) {
   return (
-    <aside className="mt-4 rounded-xl border border-ember/25 bg-ember/5 px-4 py-3 font-body text-xs leading-relaxed text-foreground/75">
+    <aside className="rental-terms-note mt-4 rounded-xl border px-4 py-3 font-body text-xs leading-relaxed text-foreground/75">
       <strong className="font-bold text-foreground">{text.title}</strong>{" "}
       {text.body}
       <span className="mt-2 block">
