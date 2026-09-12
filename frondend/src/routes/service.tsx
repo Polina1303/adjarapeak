@@ -65,6 +65,17 @@ import nikitaPortfolio16 from "@/assets/nikita-portfolio-16.jpg";
 import nikitaPortfolio17 from "@/assets/nikita-portfolio-17.jpg";
 import nikitaPortfolio18 from "@/assets/nikita-portfolio-18.jpg";
 import nikitaPortfolio19 from "@/assets/nikita-portfolio-19.jpg";
+import nikitaPortfolioImg4180 from "@/assets/nikita-portfolio-img_4180.jpg";
+import nikitaPortfolioImg4176 from "@/assets/nikita-portfolio-img_4176.jpg";
+import nikitaPortfolioImg4203 from "@/assets/nikita-portfolio-img_4203.jpg";
+import nikitaPortfolioImg4204 from "@/assets/nikita-portfolio-img_4204.jpg";
+import nikitaPortfolioImg4245 from "@/assets/nikita-portfolio-img_4245.jpg";
+import nikitaPortfolioImg4247 from "@/assets/nikita-portfolio-img_4247.jpg";
+import nikitaPortfolioImg1181 from "@/assets/nikita-portfolio-img_1181.jpg";
+import nikitaPortfolioImg4267 from "@/assets/nikita-portfolio-img_4267.jpg";
+import nikitaPortfolioImg4277 from "@/assets/nikita-portfolio-img_4277.jpg";
+import nikitaPortfolioImg4280 from "@/assets/nikita-portfolio-img_4280.jpg";
+import nikitaPortfolioImg4281 from "@/assets/nikita-portfolio-img_4281.jpg";
 import rollerSkatingIcon from "@/assets/roller-skating.svg";
 import { LoadingImage } from "@/components/LoadingIndicator";
 import { type Lang, useLanguage } from "@/lib/i18n";
@@ -159,6 +170,17 @@ const mechanicPortfolio = [
   nikitaPortfolio17,
   nikitaPortfolio18,
   nikitaPortfolio19,
+  nikitaPortfolioImg4180,
+  nikitaPortfolioImg4176,
+  nikitaPortfolioImg4203,
+  nikitaPortfolioImg4204,
+  nikitaPortfolioImg4245,
+  nikitaPortfolioImg4247,
+  nikitaPortfolioImg1181,
+  nikitaPortfolioImg4267,
+  nikitaPortfolioImg4277,
+  nikitaPortfolioImg4280,
+  nikitaPortfolioImg4281,
 ];
 
 function useServiceCarousel(active: boolean) {
