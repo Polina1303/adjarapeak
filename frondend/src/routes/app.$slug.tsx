@@ -201,9 +201,13 @@ function ZoomableCatalogImage({
         initial={{ opacity: 0, scale: 0.98 }}
         animate={{ opacity: 1, scale: 1 }}
         onClick={() => setOpen(true)}
-        className="group relative aspect-square overflow-hidden rounded-3xl bg-muted text-left cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-ember focus-visible:ring-offset-2"
+        className="group relative aspect-square overflow-hidden rounded-3xl bg-white text-left cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-ember focus-visible:ring-offset-2"
       >
-        <LoadingImage src={src} alt={alt} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
+        <LoadingImage
+          src={src}
+          alt={alt}
+          className="h-full w-full object-contain p-4 transition-transform duration-300 group-hover:scale-[1.03] sm:p-6"
+        />
         {badge && (
           <span className="absolute top-4 right-4 bg-foreground text-background text-xs uppercase tracking-[0.12em] font-body font-semibold px-3 py-1.5 rounded-full">
             {badge}
