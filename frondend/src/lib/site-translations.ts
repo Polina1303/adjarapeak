@@ -100,7 +100,7 @@ export const SITE_TEXT = {
         subtitle:
           "Тренировки на естественном рельефе для новичков и опытных. Снаряжение, инструктаж и страховка — на нас. С вами работает Саша.",
         location: "Гонио-Квариати",
-        schedule: "Ср · 17:30 · Сб–Вс · 14:00 / 17:30",
+        schedule: "Ср · 13:00 · Сб–Вс · 13:00 / 16:30",
         priceNote: "за тренировку",
         book: "Записаться на тренировку",
         learnMore: "Узнать больше",
@@ -574,9 +574,9 @@ export const SITE_TEXT = {
         { name: "Саша", role: "Инструктор" },
       ],
       schedule: [
-        { day: "Среда", price: "50 ₾", slots: ["1 группа — 17:30 - 20:30"] },
-        { day: "Суббота", price: "50 ₾", slots: ["1 группа — 14:00 - 17:00", "2 группа — 17:30 - 20:30"] },
-        { day: "Воскресенье", price: "50 ₾", slots: ["1 группа — 14:00 - 17:00", "2 группа — 17:30 - 20:30"] },
+        { day: "Среда", price: "50 ₾", slots: ["1 группа — 13:00 - 16:00"] },
+        { day: "Суббота", price: "50 ₾", slots: ["1 группа — 13:00 - 16:00", "2 группа — 16:30 - 19:30"] },
+        { day: "Воскресенье", price: "50 ₾", slots: ["1 группа — 13:00 - 16:00", "2 группа — 16:30 - 19:30"] },
       ],
     },
     mobileNav: {
@@ -687,7 +687,7 @@ export const SITE_TEXT = {
         subtitle:
           "Outdoor climbing sessions for beginners and experienced climbers. Gear, briefing and belay are on us. Sasha guides the session.",
         location: "Gonio-Kvariati",
-        schedule: "Wed · 17:30 · Sat-Sun · 14:00 / 17:30",
+        schedule: "Wed · 13:00 · Sat-Sun · 13:00 / 16:30",
         priceNote: "per session",
         book: "Book a climbing session",
         learnMore: "Learn more",
@@ -1160,9 +1160,9 @@ export const SITE_TEXT = {
         { name: "Sasha", role: "Instructor" },
       ],
       schedule: [
-        { day: "Wednesday", price: "50 ₾", slots: ["Group 1 — 17:30 - 20:30"] },
-        { day: "Saturday", price: "50 ₾", slots: ["Group 1 — 14:00 - 17:00", "Group 2 — 17:30 - 20:30"] },
-        { day: "Sunday", price: "50 ₾", slots: ["Group 1 — 14:00 - 17:00", "Group 2 — 17:30 - 20:30"] },
+        { day: "Wednesday", price: "50 ₾", slots: ["Group 1 — 13:00 - 16:00"] },
+        { day: "Saturday", price: "50 ₾", slots: ["Group 1 — 13:00 - 16:00", "Group 2 — 16:30 - 19:30"] },
+        { day: "Sunday", price: "50 ₾", slots: ["Group 1 — 13:00 - 16:00", "Group 2 — 16:30 - 19:30"] },
       ],
     },
     mobileNav: {
@@ -1273,7 +1273,7 @@ export const SITE_TEXT = {
         subtitle:
           "ვარჯიშები ბუნებრივ რელიეფზე დამწყებებისთვის და გამოცდილებისთვის. აღჭურვილობა, ინსტრუქტაჟი და დაზღვევა ჩვენზეა. თქვენთან მუშაობს საშა.",
         location: "გონიო-კვარიათი",
-        schedule: "ოთხ · 17:30 · შაბ-კვ · 14:00 / 17:30",
+        schedule: "ოთხ · 13:00 · შაბ-კვ · 13:00 / 16:30",
         priceNote: "ვარჯიშზე",
         book: "ვარჯიშზე ჩაწერა",
         learnMore: "მეტის გაგება",
@@ -1746,9 +1746,9 @@ export const SITE_TEXT = {
         { name: "საშა", role: "ინსტრუქტორი" },
       ],
       schedule: [
-        { day: "ოთხშაბათი", price: "50 ₾", slots: ["1 ჯგუფი — 17:30 - 20:30"] },
-        { day: "შაბათი", price: "50 ₾", slots: ["1 ჯგუფი — 14:00 - 17:00", "2 ჯგუფი — 17:30 - 20:30"] },
-        { day: "კვირა", price: "50 ₾", slots: ["1 ჯგუფი — 14:00 - 17:00", "2 ჯგუფი — 17:30 - 20:30"] },
+        { day: "ოთხშაბათი", price: "50 ₾", slots: ["1 ჯგუფი — 13:00 - 16:00"] },
+        { day: "შაბათი", price: "50 ₾", slots: ["1 ჯგუფი — 13:00 - 16:00", "2 ჯგუფი — 16:30 - 19:30"] },
+        { day: "კვირა", price: "50 ₾", slots: ["1 ჯგუფი — 13:00 - 16:00", "2 ჯგუფი — 16:30 - 19:30"] },
       ],
     },
     mobileNav: {

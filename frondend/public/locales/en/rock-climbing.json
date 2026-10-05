@@ -3,7 +3,7 @@
   "homeSection": {
     "title": "Rock Climbing",
     "description1": "Join our outdoor rock climbing training sessions in the scenic Gonio-Kvariati area. Suitable for both beginners and experienced climbers.",
-    "description2": "Training takes place on Wednesday at 17:30, and on Saturday and Sunday at 14:00 and 17:30. We provide all necessary equipment, including climbing shoes. Price: 49 GEL.",
+    "description2": "Training takes place on Wednesday at 13:00, and on Saturday and Sunday at 13:00 and 16:30. We provide all necessary equipment, including climbing shoes. Price: 49 GEL.",
     "more": "LEARN MORE",
     "signup": "Sign up for training"
   },
@@ -54,18 +54,18 @@
   "schedule": {
     "wednesday": {
       "title": "Wednesday",
-      "groups": ["Group 1 — 17:30 - 20:30"]
+      "groups": ["Group 1 — 13:00 - 16:00"]
     },
     "saturday": {
       "title": "Saturday",
-      "groups": ["Group 1 — 14:00 - 17:00", "Group 2 — 17:30 - 20:30"]
+      "groups": ["Group 1 — 13:00 - 16:00", "Group 2 — 16:30 - 19:30"]
     },
     "sunday": {
       "title": "Sunday",
-      "groups": ["Group 1 — 14:00 - 17:00", "Group 2 — 17:30 - 20:30"]
+      "groups": ["Group 1 — 13:00 - 16:00", "Group 2 — 16:30 - 19:30"]
     },
     "price": "Training session cost: 49 GEL",
-    "groups": ["Wednesday — 17:30", "Saturday and Sunday — 14:00 and 17:30"],
+    "groups": ["Wednesday — 13:00", "Saturday and Sunday — 13:00 and 16:30"],
     "signup": "Sign up"
   }
 }
