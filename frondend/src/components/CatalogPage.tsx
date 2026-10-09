@@ -11,6 +11,7 @@ import {
   RentalEveningOffer,
 } from "@/components/RentalEveningOffer";
 import { ProductGrid } from "@/components/ProductGrid";
+import { PetzlOrderOffer } from "@/components/PetzlOrderOffer";
 import { RentalGrid } from "@/components/RentalGrid";
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { useCatalogTranslations } from "@/lib/catalog-translations";
@@ -529,6 +530,8 @@ export function CatalogPage(props: ShopProps | RentalProps) {
             </div>
 
             {showsEveningOffer && <RentalEveningOffer />}
+
+            {isShop && props.group.slug === "climbing" && <PetzlOrderOffer />}
 
             {isTourismSection &&
               props.activeCategory &&

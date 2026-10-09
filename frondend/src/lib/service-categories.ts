@@ -55,6 +55,10 @@ export function isServiceCategoryKey(
 export function inferServiceCategory(rawTitle: string): ServiceCategoryKey {
   const title = rawTitle.trim().toLocaleLowerCase("ru-RU");
 
+  if (/^(переборка педалей|pedal overhaul|პედლების გადარჩევა)$/.test(title)) {
+    return "general";
+  }
+
   if (
     /(диагност|выезд|эвакуац|diagnostic|call-out|pickup|დიაგნოსტ)/.test(
       title
@@ -69,7 +73,7 @@ export function inferServiceCategory(rawTitle: string): ServiceCategoryKey {
   ) {
     return "brakes";
   }
-  if (/(вилк|рулев.*колон|амортиз|fork|headset|ჩანგალ)/.test(title)) {
+  if (/(вилк|рулев|амортиз|fork|headset|ჩანგალ)/.test(title)) {
     return "fork";
   }
   if (

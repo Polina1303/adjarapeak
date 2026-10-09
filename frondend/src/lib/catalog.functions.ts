@@ -80,6 +80,7 @@ const FEATURED_COMPLEMENT_CATEGORY_SLUGS = new Set([
   "trekkingsticks",
 ]);
 const SHOP_GROUP_IMAGE_OVERRIDES: Record<string, string> = {
+  climbing: "https://oesqpzetyywoqectaovz.supabase.co/storage/v1/object/public/catalog-images/1790368604463-znb2oi.jpg",
   cyclingRoller: "b1f2b627383337af48f04d809f5c9453.webp",
   martial: "b4a5-68313d694eb1a61.avif",
 };

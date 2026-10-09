@@ -141,6 +141,12 @@ type ServicePriceRow = {
   category?: string | null;
 };
 
+const outdoorServiceText = {
+  RU: { title: "Сервис туристического снаряжения", booking: "Записаться", services: ["Ремонт газовых туристических горелок", "Заточка альпинистского снаряжения"], detail: "Кошки и ледорубы" },
+  EN: { title: "Outdoor gear service", booking: "Book a service", services: ["Camping gas stove repair", "Mountaineering gear sharpening"], detail: "Crampons and ice axes" },
+  GE: { title: "ტურისტული აღჭურვილობის სერვისი", booking: "ჩაწერა", services: ["ტურისტული გაზქურების შეკეთება", "ალპინისტური აღჭურვილობის გალესვა"], detail: "წრიაპები და ყინულის წერაყინები" },
+} as const;
+
 const winterFeatureIcons = [Wrench, Snowflake, Droplets, ShieldCheck];
 const summerFeatureIcons = [Bike, Cog, CircleDot, ShieldCheck];
 const gallery = [s0, s1, s2, s3];
@@ -265,6 +271,8 @@ function SupBoardIcon() {
 function ServicePage() {
   const { lang } = useLanguage();
   const text = getSiteText(lang).service;
+  const outdoorText = outdoorServiceText[lang];
+  const [selectedOutdoorService, setSelectedOutdoorService] = useState<number | null>(null);
   const [season, setSeason] = useState<"winter" | "summer">("summer");
   const mechanicCarousel = useServiceCarousel(season === "summer");
   const portfolioCarousel = useServiceCarousel(season === "summer");
@@ -359,13 +367,16 @@ function ServicePage() {
   const ctaTitle = season === "winter" ? text.ctaTitle : text.summerCtaTitle;
   const ctaText = season === "winter" ? text.ctaText : text.summerCtaText;
   const bookingServiceTitle =
-    bookingKind === "bikeLessons"
+    selectedOutdoorService !== null
+      ? outdoorText.services[selectedOutdoorService]
+      : bookingKind === "bikeLessons"
       ? text.bikeLessons.bookingServiceName
       : season === "winter"
         ? text.bookingWinterService
         : text.bookingSummerService;
 
   function openBooking(kind: "service" | "bikeLessons") {
+    setSelectedOutdoorService(null);
     setBookingKind(kind);
     setBookingOpen(true);
   }
@@ -402,7 +413,9 @@ function ServicePage() {
           items: [
             {
               slug:
-                bookingKind === "bikeLessons"
+                selectedOutdoorService !== null
+                  ? `service-outdoor-${selectedOutdoorService === 0 ? "stove-repair" : "gear-sharpening"}`
+                  : bookingKind === "bikeLessons"
                   ? "bike-riding-lessons"
                   : `service-${season}`,
               title: bookingServiceTitle,
@@ -798,6 +811,37 @@ function ServicePage() {
                 </AccordionItem>
               ))}
             </Accordion>
+          </div>
+
+          <div aria-labelledby="outdoor-service-title" className="mt-6 overflow-hidden rounded-2xl border border-border bg-card">
+            <h2 id="outdoor-service-title" className="border-b border-border bg-muted/40 px-5 py-3 font-display text-xs uppercase tracking-wider text-muted-foreground sm:px-6">
+              {outdoorText.title}
+            </h2>
+            <ul className="divide-y divide-border">
+              {outdoorText.services.map((title, index) => (
+                <li key={title} className="grid grid-cols-[1fr_auto] items-center gap-x-4 gap-y-2 px-5 py-3 sm:grid-cols-[1fr_auto_auto] sm:gap-x-6 sm:px-6">
+                  <div className="min-w-0">
+                    <h3 className="font-body text-sm font-medium leading-snug text-foreground">{title}</h3>
+                    {index === 1 && <p className="mt-0.5 font-body text-xs text-muted-foreground">{outdoorText.detail}</p>}
+                  </div>
+                  <span className="whitespace-nowrap font-display text-base font-bold tabular-nums text-foreground">25 ₾</span>
+                  <Button
+                    type="button"
+                    variant="outline"
+                    size="sm"
+                    className="col-span-2 min-h-10 justify-self-start border-ember/30 text-xs text-ember hover:border-ember hover:bg-ember/5 sm:col-span-1 sm:justify-self-end"
+                    aria-label={`${outdoorText.booking}: ${title}`}
+                    onClick={() => {
+                      setBookingKind("service");
+                      setSelectedOutdoorService(index);
+                      setBookingOpen(true);
+                    }}
+                  >
+                    {outdoorText.booking}
+                  </Button>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
