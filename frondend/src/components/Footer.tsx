@@ -2,6 +2,31 @@ import { Link } from "@tanstack/react-router";
 import { ExternalLink, MapPin, Phone, Instagram, Send } from "lucide-react";
 import { useLanguage, type Lang } from "@/lib/i18n";
 import { getSiteText } from "@/lib/site-translations";
+import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+
+const deliveryText = {
+  RU: {
+    title: "Условия доставки",
+    batumi: "По Батуми — 10 лари. Бесплатно при заказе от 300 лари.",
+    georgia: "По Грузии — от 20 лари. Бесплатно при заказе от 500 лари.",
+    rental: "Для арендных товаров доступен только самовывоз.",
+    close: "Закрыть",
+  },
+  EN: {
+    title: "Delivery terms",
+    batumi: "In Batumi — 10 GEL. Free for orders of 300 GEL or more.",
+    georgia: "Across Georgia — from 20 GEL. Free for orders of 500 GEL or more.",
+    rental: "Rental equipment is available for pickup only.",
+    close: "Close",
+  },
+  GE: {
+    title: "მიწოდების პირობები",
+    batumi: "ბათუმში — 10 ლარი. უფასო 300 ლარიდან შეკვეთებზე.",
+    georgia: "საქართველოს მასშტაბით — 20 ლარიდან. უფასო 500 ლარიდან შეკვეთებზე.",
+    rental: "გასაქირავებელი აღჭურვილობის მიღება შესაძლებელია მხოლოდ ადგილზე.",
+    close: "დახურვა",
+  },
+};
 
 const languages: { code: Lang; label: string }[] = [
   { code: "EN", label: "EN" },
@@ -33,6 +58,7 @@ const socials = [
 export function Footer() {
   const { lang: currentLang, setLang } = useLanguage();
   const text = getSiteText(currentLang).footer;
+  const delivery = deliveryText[currentLang];
   return (
     <footer className="bg-foreground text-primary-foreground">
       <div className="section-padding py-16">
@@ -125,6 +151,25 @@ export function Footer() {
                 </div>
               </div>
             </div>
+          </div>
+          <div className="mt-10 border-t border-primary-foreground/15 pt-6 text-center">
+            <Dialog>
+              <DialogTrigger asChild>
+                <button type="button" className="font-body text-sm font-semibold uppercase tracking-wide text-primary-foreground underline underline-offset-4 hover:text-ember transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4">
+                  {delivery.title}
+                </button>
+              </DialogTrigger>
+              <DialogContent className="w-[calc(100%_-_2rem)] rounded-lg text-foreground" closeLabel={delivery.close}>
+                <DialogTitle className="pr-6">{delivery.title}</DialogTitle>
+                <DialogDescription asChild>
+                  <div className="space-y-4 text-sm leading-relaxed">
+                    <p>{delivery.batumi}</p>
+                    <p>{delivery.georgia}</p>
+                    <p>{delivery.rental}</p>
+                  </div>
+                </DialogDescription>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </div>

@@ -46,6 +46,7 @@ import nikitaBikeService1 from "@/assets/nikita-bike-service-1.jpg";
 import nikitaBikeService2 from "@/assets/nikita-bike-service-2.jpg";
 import nikitaBikeService3 from "@/assets/nikita-bike-service-3.jpg";
 import nikitaBikeService4 from "@/assets/nikita-bike-service-4.jpg";
+import nikitaBikeService5 from "@/assets/nikita-bike-service-5.jpg";
 import nikitaPortfolio1 from "@/assets/nikita-portfolio-01.jpg";
 import nikitaPortfolio2 from "@/assets/nikita-portfolio-02.jpg";
 import nikitaPortfolio3 from "@/assets/nikita-portfolio-03.jpg";
@@ -155,6 +156,7 @@ const mechanicGallery = [
   nikitaBikeService2,
   nikitaBikeService3,
   nikitaBikeService4,
+  nikitaBikeService5,
 ];
 const mechanicPortfolio = [
   nikitaPortfolio1,
