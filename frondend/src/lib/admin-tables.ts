@@ -194,6 +194,7 @@ export const ADMIN_TABLES: Record<AdminTableKey, AdminTableConfig> = {
       { key: "shortly", label: "Краткое описание", type: "text" },
       { key: "image", label: "Изображение", type: "image" },
       { key: "features", label: "Характеристики (JSON)", type: "json" },
+      { key: "colors", label: "Цвета (с изображением для каждого)", type: "color_image_list" },
       { key: "available", label: "Доступно", type: "boolean" },
       { key: "hidden", label: "Скрыто", type: "boolean" },
     ],

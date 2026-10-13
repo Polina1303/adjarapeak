@@ -301,7 +301,11 @@ function CheckoutPage() {
   // can no longer be resolved against the catalog (e.g. stale slug).
   function effective(line: CartLine): CartLineItem | undefined {
     const d = details[line.slug];
-    if (d) return d;
+    if (d) return line.selectedColor ? {
+      ...d,
+      title: `${d.title} (${line.selectedColor})`,
+      image: line.variantImage || d.image,
+    } : d;
     const giftCardAmount = line.slug.match(/^giftcard-(\d+)$/)?.[1];
     if (giftCardAmount) {
       return {

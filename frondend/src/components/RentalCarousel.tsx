@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { resolveCatalogImage } from "@/lib/catalog-image";
+import { catalogImageProps } from "@/lib/catalog-image";
 import type { RentalItem } from "@/lib/catalog.functions";
 import { getDiscountPercent, getDisplayPrice, getSalePrice } from "@/lib/discount";
 import { useLanguage } from "@/lib/i18n";
@@ -38,7 +38,7 @@ export function RentalCarousel({ items }: { items: RentalItem[] }) {
               >
                 <div className="relative aspect-square bg-background overflow-hidden">
                   <LoadingImage
-                    src={resolveCatalogImage(item.image)}
+                    {...catalogImageProps(item.image, "(min-width: 1024px) 320px, 50vw", 480)}
                     alt={item.title}
                     loading="lazy"
                     decoding="async"

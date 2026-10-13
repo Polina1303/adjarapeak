@@ -4,7 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import type { ReactNode } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { resolveCatalogImage } from "@/lib/catalog-image";
+import { catalogImageProps } from "@/lib/catalog-image";
 import { useLanguage } from "@/lib/i18n";
 import { LoadingImage } from "@/components/LoadingIndicator";
 
@@ -93,7 +93,7 @@ export function TilePicker({ title, items, buildHref, breadcrumbs, emptyText, ch
                   <>
                     <div className="relative aspect-square bg-background overflow-hidden flex items-center justify-center">
                       <LoadingImage
-                        src={resolveCatalogImage(item.image)}
+                        {...catalogImageProps(item.image, "(min-width: 1024px) 320px, 50vw", 480)}
                         alt={item.title}
                         loading="lazy"
                         decoding="async"

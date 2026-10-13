@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { resolveCatalogImage } from "@/lib/catalog-image";
+import { catalogImageProps } from "@/lib/catalog-image";
 import type { RentalItem } from "@/lib/catalog.functions";
 import { CATALOG_UI_TEXT } from "@/lib/catalog-ui-text";
 import { addToCart, useIsInCart } from "@/lib/cart";
@@ -74,7 +74,7 @@ function RentalCard({
     >
             <div className="relative aspect-square bg-background overflow-hidden">
               <LoadingImage
-                src={resolveCatalogImage(item.image)}
+                {...catalogImageProps(item.image)}
                 alt={item.title}
                 loading="lazy"
                 decoding="async"

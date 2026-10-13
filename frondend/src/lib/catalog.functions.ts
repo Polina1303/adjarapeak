@@ -5,6 +5,7 @@ import { CATALOG_IMAGE_FILES } from "@/lib/catalog-images.generated";
 import { sortShopGroups } from "@/lib/shop-group-order";
 import { getDisplayPrice, hasManualDiscount } from "@/lib/discount";
 import { SHOP_COMPLEMENT_MAP } from "./recommendations";
+import { SHOP_CARD_COLUMNS, RENTAL_CARD_COLUMNS } from "./catalog-columns";
 
 const EMPTY_CATEGORY_ID = "00000000-0000-0000-0000-000000000000";
 const BOARDS_GROUP_SLUG = "boards";
@@ -80,7 +81,7 @@ const FEATURED_COMPLEMENT_CATEGORY_SLUGS = new Set([
   "trekkingsticks",
 ]);
 const SHOP_GROUP_IMAGE_OVERRIDES: Record<string, string> = {
-  climbing: "https://oesqpzetyywoqectaovz.supabase.co/storage/v1/object/public/catalog-images/1790368604463-znb2oi.jpg",
+  climbing: "climbing-harness.webp",
   cyclingRoller: "b1f2b627383337af48f04d809f5c9453.webp",
   martial: "b4a5-68313d694eb1a61.avif",
 };
@@ -153,7 +154,10 @@ export type RentalItem = Omit<ShopProduct, "in_stock" | "price" | "sale_price" |
   price_per_day: number;
   sale_price_per_day: number | null;
   available: boolean;
+  colors?: ShopProduct["colors"];
 };
+
+type RentalItemRow = Omit<RentalItem, "colors"> & { colors?: unknown };
 
 type ShopProductSummaryRow = Pick<
   ShopProductRow,
@@ -237,11 +241,12 @@ function normalizeShopProducts(rows: unknown[] | null | undefined): ShopProduct[
   return ((rows ?? []) as ShopProductRow[]).map(normalizeShopProduct);
 }
 
-function normalizeRentalItem(item: RentalItem): RentalItem {
+function normalizeRentalItem(item: RentalItemRow): RentalItem {
   const image = RENTAL_ITEM_IMAGE_OVERRIDES[item.slug] ?? item.image?.trim() ?? null;
   return {
     ...item,
     image: image || null,
+    colors: normalizeShopProductColors(item.colors),
   };
 }
 
@@ -312,6 +317,7 @@ function normalizeShopGroup(group: ShopGroup): ShopGroup {
   return {
     ...group,
     title: SHOP_GROUP_TITLE_OVERRIDES[group.slug] ?? group.title,
+    image: SHOP_GROUP_IMAGE_OVERRIDES[group.slug] ?? group.image,
   };
 }
 
@@ -560,7 +566,7 @@ async function getBoardProducts() {
 
   const { data: rows, error } = await supabase
     .from("shop_products")
-    .select("*")
+    .select(SHOP_CARD_COLUMNS)
     .eq("category_id", sourceCategory.id)
     .order("created_at", { ascending: false })
     .limit(500);
@@ -1358,133 +1364,30 @@ export const listProductsBySlugs = createServerFn({ method: "GET" })
       .filter((p): p is ShopProduct => Boolean(p));
   });
 
+const catalogSearchInput = z.object({
+  q: z.string().min(1).max(100),
+  limit: z.number().int().min(1).max(100).optional(),
+});
+
 export const searchShopProducts = createServerFn({ method: "GET" })
-  .inputValidator((input: { q: string; limit?: number }) =>
-    z.object({ q: z.string().min(1).max(100), limit: z.number().min(1).max(100).optional() }).parse(input),
-  )
+  .inputValidator((input: { q: string; limit?: number }) => catalogSearchInput.parse(input))
   .handler(async ({ data }) => {
-    const limit = data.limit ?? 60;
-    const q = data.q.trim();
-    if (!q) return [] as ShopProduct[];
-    // Synonyms: map common short queries to canonical terms.
-    const SYNONYMS: Record<string, string[]> = {
-      "спальник": ["спальн"],
-      "спальники": ["спальн"],
-    };
-    const lower = q.toLowerCase();
-    const terms = new Set<string>([q]);
-    for (const [key, vals] of Object.entries(SYNONYMS)) {
-      if (lower.includes(key)) for (const v of vals) terms.add(v);
-    }
-    const patterns = Array.from(terms).map((t) => `%${t}%`);
-    const orFilter = (col: string) => patterns.map((p) => `${col}.ilike.${p}`).join(",");
-    const [catsRes, subsRes] = await Promise.all([
-      supabase.from("shop_categories").select("id").or(orFilter("title")),
-      supabase.from("shop_subcategories").select("id").or(orFilter("title")),
-    ]);
-    if (catsRes.error) throw new Error(catsRes.error.message);
-    if (subsRes.error) throw new Error(subsRes.error.message);
-    const catIds = (catsRes.data ?? []).map((c) => c.id as string);
-    const subIds = (subsRes.data ?? []).map((s) => s.id as string);
-    const queries: Promise<{ data: ShopProduct[] | null; error: { message: string } | null }>[] = [
-      supabase.from("shop_products").select("*").or(`${orFilter("title")},${orFilter("description")}`).limit(limit) as never,
-    ];
-    if (catIds.length) {
-      queries.push(supabase.from("shop_products").select("*").in("category_id", catIds).limit(limit) as never);
-    }
-    if (subIds.length) {
-      queries.push(supabase.from("shop_products").select("*").in("subcategory_id", subIds).limit(limit) as never);
-    }
-    const results = await Promise.all(queries);
-    const seen = new Set<string>();
-    const merged: ShopProduct[] = [];
-    for (const r of results) {
-      if (r.error) throw new Error(r.error.message);
-      for (const p of normalizeShopProducts(r.data)) {
-        if (seen.has(p.id)) continue;
-        seen.add(p.id);
-        merged.push(normalizeShopProduct(p));
-        if (merged.length >= limit) break;
-      }
-      if (merged.length >= limit) break;
-    }
-    return merged;
+    const { searchCatalog } = await import("./catalog-search.server");
+    const rows = await searchCatalog("shop", data.q, data.limit ?? 60);
+    return normalizeShopProducts(rows.map((row) => ({
+      ...(row as ShopProductSummaryRow), description: null, legacy_id: null, features: [],
+    })));
   });
 
 export const searchRentalItems = createServerFn({ method: "GET" })
-  .inputValidator((input: { q: string; limit?: number }) =>
-    z.object({ q: z.string().min(1).max(100), limit: z.number().min(1).max(100).optional() }).parse(input),
-  )
+  .inputValidator((input: { q: string; limit?: number }) => catalogSearchInput.parse(input))
   .handler(async ({ data }) => {
-    const limit = data.limit ?? 60;
-    const q = data.q.trim();
-    if (!q) return [] as RentalItem[];
-
-    const SYNONYMS: Record<string, string[]> = {
-      "спальник": ["спальн"],
-      "спальники": ["спальн"],
-    };
-    const lower = q.toLowerCase();
-    const terms = new Set<string>([q]);
-    for (const [key, vals] of Object.entries(SYNONYMS)) {
-      if (lower.includes(key)) for (const v of vals) terms.add(v);
-    }
-    const patterns = Array.from(terms).map((t) => `%${t}%`);
-    const orFilter = (col: string) => patterns.map((p) => `${col}.ilike.${p}`).join(",");
-    const [groupsRes, catsRes, subsRes] = await Promise.all([
-      supabase.from("rental_groups").select("id").or(orFilter("title")),
-      supabase.from("rental_categories").select("id,group_id").or(orFilter("title")),
-      supabase.from("rental_subcategories").select("id").or(orFilter("title")),
-    ]);
-    if (groupsRes.error) throw new Error(groupsRes.error.message);
-    if (catsRes.error) throw new Error(catsRes.error.message);
-    if (subsRes.error) throw new Error(subsRes.error.message);
-
-    const groupIds = (groupsRes.data ?? []).map((g) => g.id as string);
-    const groupCategoryIds = groupIds.length
-      ? (
-          await supabase
-            .from("rental_categories")
-            .select("id")
-            .in("group_id", groupIds)
-        )
-      : { data: [] as { id: string }[], error: null };
-    if (groupCategoryIds.error) throw new Error(groupCategoryIds.error.message);
-
-    const catIds = [
-      ...(catsRes.data ?? []).map((c) => c.id as string),
-      ...(groupCategoryIds.data ?? []).map((c) => c.id as string),
-    ];
-    const subIds = (subsRes.data ?? []).map((s) => s.id as string);
-
-    const queries: Promise<{ data: RentalItem[] | null; error: { message: string } | null }>[] = [
-      supabase
-        .from("rental_items")
-        .select("*")
-        .or(`${orFilter("title")},${orFilter("description")},${orFilter("shortly")}`)
-        .limit(limit) as never,
-    ];
-    if (catIds.length) {
-      queries.push(supabase.from("rental_items").select("*").in("category_id", catIds).limit(limit) as never);
-    }
-    if (subIds.length) {
-      queries.push(supabase.from("rental_items").select("*").in("subcategory_id", subIds).limit(limit) as never);
-    }
-
-    const results = await Promise.all(queries);
-    const seen = new Set<string>();
-    const merged: RentalItem[] = [];
-    for (const r of results) {
-      if (r.error) throw new Error(r.error.message);
-      for (const item of (r.data ?? []) as RentalItem[]) {
-        if (seen.has(item.id)) continue;
-        seen.add(item.id);
-        merged.push(normalizeRentalItem(item));
-        if (merged.length >= limit) break;
-      }
-      if (merged.length >= limit) break;
-    }
-    return normalizeRentalItems(merged);
+    const { searchCatalog } = await import("./catalog-search.server");
+    const rows = await searchCatalog("rental", data.q, data.limit ?? 60);
+    return normalizeRentalItems(rows.map((row) => ({
+      ...(row as RentalItemSummaryRow), legacy_id: null, features: [],
+      description: (row as RentalItem).description?.slice(0, 240) ?? null,
+    })));
   });
 
 export const listOneProductPerCategorySlug = createServerFn({ method: "GET" })
@@ -1772,7 +1675,7 @@ export const getRentalItemBySlug = createServerFn({ method: "GET" })
     }
 
     return {
-      item: normalizeRentalItem(item as RentalItem),
+      item: normalizeRentalItem(item as RentalItemRow),
       category: (category ?? null) as RentalCategory | null,
       group: (group ?? null) as RentalGroup | null,
       related: normalizeRentalItems(related),
@@ -1984,7 +1887,7 @@ export const getShopGroupView = createServerFn({ method: "GET" })
     let products: ShopProduct[] = [];
     let q = supabase
       .from("shop_products")
-      .select("*")
+      .select(SHOP_CARD_COLUMNS)
       .order("created_at", { ascending: false })
       .limit(5000);
     if (activeSubcategory) q = q.eq("subcategory_id", activeSubcategory.id);
@@ -2168,7 +2071,7 @@ export const getRentalGroupView = createServerFn({ method: "GET" })
 export const getSaleProducts = createServerFn({ method: "GET" }).handler(async () => {
   const { data: rows, error } = await supabase
     .from("shop_products")
-    .select("*")
+    .select(SHOP_CARD_COLUMNS)
     .not("image", "is", null)
     .eq("in_stock", true)
     .not("sale_price", "is", null)
@@ -2196,7 +2099,7 @@ export const getSaleProducts = createServerFn({ method: "GET" }).handler(async (
 export const getSaleRentals = createServerFn({ method: "GET" }).handler(async () => {
   const { data: rows, error } = await supabase
     .from("rental_items")
-    .select("*")
+    .select(RENTAL_CARD_COLUMNS)
     .not("image", "is", null)
     .eq("available", true)
     .limit(400);

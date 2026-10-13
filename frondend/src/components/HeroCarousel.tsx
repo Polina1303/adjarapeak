@@ -14,26 +14,34 @@ import nikitaBikeService from "@/assets/nikita-bike-service-1.jpg";
 import { Link } from "@tanstack/react-router";
 import { useLanguage } from "@/lib/i18n";
 import { getSiteText } from "@/lib/site-translations";
+import { getResponsiveImageProps } from "@/lib/responsive-image";
+
+const transparentPixel = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
 
 const slideConfig = [
   {
     image: heroCamping,
+    imageKey: "hero/hero-camping.jpg",
     href: "/sale" as const,
   },
   {
     image: bannerBike,
+    imageKey: "hero/banner-bike.jpg",
     href: "/rent" as const,
   },
   {
     image: climbingPromo,
+    imageKey: "hero/climbing-promo.jpeg",
     href: "/rockClimbing" as const,
   },
   {
     image: nikitaBikeService,
+    imageKey: "hero/nikita-bike-service-1.jpg",
     href: "/service" as const,
   },
   {
     image: heroHikes,
+    imageKey: "hero/hero-hikes.jpg",
     href: "/hikes" as const,
   },
 ];
@@ -99,6 +107,7 @@ export function HeroCarousel() {
   };
 
   const slide = desktopSlides[activeSlide];
+  const desktopImage = getResponsiveImageProps(slide.imageKey, "(min-width: 1400px) 1336px, calc(100vw - 64px)", 1280);
 
   return (
     <section className="w-full bg-background py-4 md:py-6">
@@ -107,18 +116,18 @@ export function HeroCarousel() {
         <div className="hidden lg:block">
           <div className="relative overflow-hidden rounded-xl bg-foreground min-h-[560px]">
             <AnimatePresence mode="sync">
-              <motion.img
+              <motion.picture
                 key={`img-${activeSlide}`}
-                src={slide.image}
-                alt={slide.title}
                 initial={{ opacity: 0, scale: 1.04 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.7, ease: "easeOut" }}
-                className="absolute inset-0 w-full h-full object-cover"
-                loading="eager"
-                decoding="async"
-              />
+                className="absolute inset-0 w-full h-full"
+              >
+                <source media="(min-width: 1024px)" srcSet={desktopImage.srcSet ?? slide.image} sizes={desktopImage.sizes} />
+                <img src={transparentPixel} alt={slide.title} width={desktopImage.width} height={desktopImage.height}
+                  className="w-full h-full object-cover" loading="eager" decoding="async" fetchPriority="high" />
+              </motion.picture>
             </AnimatePresence>
             <div
               className="absolute inset-0 z-[1]"
@@ -184,13 +193,17 @@ export function HeroCarousel() {
                 {desktopSlides.map((mobileSlide, index) => (
                   <CarouselItem key={mobileSlide.title} className="pl-0">
                     <div className="relative min-h-[22rem] w-full overflow-hidden bg-foreground aspect-[16/15.8] sm:min-h-0 sm:aspect-[16/13.2]">
-                      <img
-                        src={mobileSlide.image}
-                        alt={mobileSlide.title}
-                        className="absolute inset-0 w-full h-full object-cover"
-                        loading="eager"
-                        decoding="async"
-                      />
+                      <picture>
+                        <source media="(max-width: 1023px)"
+                          srcSet={Math.abs(index - activeSlide) <= 1
+                            ? getResponsiveImageProps(mobileSlide.imageKey, "calc(100vw - 32px)", 640).srcSet ?? mobileSlide.image
+                            : transparentPixel}
+                          sizes="calc(100vw - 32px)" />
+                        <img src={transparentPixel} alt={mobileSlide.title}
+                          className="absolute inset-0 w-full h-full object-cover"
+                          loading={index === activeSlide ? "eager" : "lazy"}
+                          fetchPriority={index === activeSlide ? "high" : "low"} decoding="async" />
+                      </picture>
                       <div
                         className="absolute inset-0 z-[1]"
                         style={{

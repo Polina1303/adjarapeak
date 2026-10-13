@@ -1,7 +1,7 @@
 import { createFileRoute, Link, Outlet, useChildMatches, useNavigate } from "@tanstack/react-router";
 import { LoaderCircle, Search, X } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { resolveCatalogImage } from "@/lib/catalog-image";
+import { catalogImageProps } from "@/lib/catalog-image";
 import { searchShopProducts, listShopGroups, type ShopProduct } from "@/lib/catalog.functions";
 import { getDisplayPrice, getSalePrice } from "@/lib/discount";
 import { TilePicker } from "@/components/TilePicker";
@@ -300,7 +300,7 @@ function ShopSearchRow({
       <div className="flex h-16 w-16 items-center justify-center rounded-full border border-border bg-background">
         {product.image ? (
           <img
-            src={resolveCatalogImage(product.image)}
+            {...catalogImageProps(product.image, "72px", 160)}
             alt={product.title}
             loading="lazy"
             decoding="async"

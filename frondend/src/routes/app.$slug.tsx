@@ -7,10 +7,11 @@ import { motion } from "framer-motion";
 import { Check, ArrowLeft, ChevronRight, Maximize2, Minus, Plus, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
 import { getShopProductBySlug, getRentalItemBySlug } from "@/lib/catalog.functions";
-import { resolveCatalogImage } from "@/lib/catalog-image";
+import { resolveCatalogImage, catalogImageProps } from "@/lib/catalog-image";
 import { addToCart, useIsInCart } from "@/lib/cart";
 import { ProductCarousel } from "@/components/ProductCarousel";
 import { RentalCarousel } from "@/components/RentalCarousel";
+import { RentalColorPicker, rentalColorLabel } from "@/components/RentalColorPicker";
 import { getDiscountPercent, getDisplayPrice, getSalePrice } from "@/lib/discount";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { absoluteSiteUrl, canonicalLink } from "@/lib/seo";
@@ -184,10 +185,12 @@ function AppPage() {
 
 function ZoomableCatalogImage({
   src,
+  imageName,
   alt,
   badge,
 }: {
   src: string;
+  imageName?: string | null;
   alt: string;
   badge?: string;
 }) {
@@ -204,8 +207,10 @@ function ZoomableCatalogImage({
         className="group relative aspect-square overflow-hidden rounded-3xl bg-white text-left cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-ember focus-visible:ring-offset-2"
       >
         <LoadingImage
-          src={src}
+          {...(imageName ? catalogImageProps(imageName, "(min-width: 1024px) 600px, 100vw", 960) : { src })}
           alt={alt}
+          fetchPriority="high"
+          decoding="async"
           className="h-full w-full object-contain p-4 transition-transform duration-300 group-hover:scale-[1.03] sm:p-6"
         />
         {badge && (
@@ -217,7 +222,8 @@ function ZoomableCatalogImage({
           <Maximize2 className="h-4 w-4" />
         </span>
       </motion.button>
-      <ImageZoomDialog open={open} onOpenChange={setOpen} src={src} alt={alt} />
+      <ImageZoomDialog open={open} onOpenChange={setOpen}
+        src={imageName ? resolveCatalogImage(imageName, "original") : src} alt={alt} />
     </>
   );
 }
@@ -456,6 +462,7 @@ function ProductView({ data }: { data: NonNullable<Awaited<ReturnType<typeof get
             <div className="flex flex-col gap-10 lg:gap-16">
               <ZoomableCatalogImage
                 src={mainImage}
+                imageName={activeColor?.image || product.image}
                 alt={product.title}
                 badge={!product.in_stock ? "Нет в наличии" : undefined}
               />
@@ -637,7 +644,10 @@ function RentalView({ data }: { data: NonNullable<Awaited<ReturnType<typeof getR
   const isBikeRental = category?.slug === "rentBIKE";
   const hasEveningRate = EVENING_RENTAL_CATEGORY_SLUGS.has(category?.slug ?? "");
   const navigate = useNavigate();
-  const img = resolveCatalogImage(item.image);
+  const colors = Array.isArray(item.colors) ? item.colors : [];
+  const [selectedColor, setSelectedColor] = useState<string | null>(null);
+  const activeColor = colors.find((entry) => entry.color === selectedColor);
+  const img = resolveCatalogImage(activeColor?.image || item.image);
   const booked = useIsInCart(item.slug);
   const salePrice = getSalePrice(item.price_per_day, item.sale_price_per_day);
   const displayPrice = getDisplayPrice(item.price_per_day, item.sale_price_per_day);
@@ -654,6 +664,8 @@ function RentalView({ data }: { data: NonNullable<Awaited<ReturnType<typeof getR
       price: displayPrice,
       kind: "rental",
       unit: "/сутки",
+      selectedColor: selectedColor ? rentalColorLabel(selectedColor) : undefined,
+      variantImage: activeColor?.image || undefined,
     });
     toast.success(`Заявка на бронирование отправлена: ${item.title}`);
   };
@@ -717,7 +729,7 @@ function RentalView({ data }: { data: NonNullable<Awaited<ReturnType<typeof getR
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 mb-20 items-start">
             <div className="flex flex-col gap-10 lg:gap-16">
-              <ZoomableCatalogImage src={img} alt={item.title} />
+              <ZoomableCatalogImage src={img} imageName={activeColor?.image || item.image} alt={item.title} />
 
               <div className="lg:hidden">
                 <div className="flex items-baseline gap-3 mb-4 flex-wrap">
@@ -734,6 +746,7 @@ function RentalView({ data }: { data: NonNullable<Awaited<ReturnType<typeof getR
                   )}
                   <span className="text-sm text-muted-foreground font-body">/сутки</span>
                 </div>
+                <RentalColorPicker colors={colors} selected={selectedColor} onChange={setSelectedColor} />
                 <Button
                   size="lg"
                   className={
@@ -808,6 +821,7 @@ function RentalView({ data }: { data: NonNullable<Awaited<ReturnType<typeof getR
                 <span className="text-sm text-muted-foreground font-body">/сутки</span>
               </div>
 
+              <RentalColorPicker colors={colors} selected={selectedColor} onChange={setSelectedColor} />
               <Button
                 size="lg"
                 className={

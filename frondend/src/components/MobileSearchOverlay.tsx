@@ -2,7 +2,7 @@ import { Link, useNavigate } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "framer-motion";
 import { LoaderCircle, Search, X } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { resolveCatalogImage } from "@/lib/catalog-image";
+import { catalogImageProps } from "@/lib/catalog-image";
 import {
   searchRentalItems,
   searchShopProducts,
@@ -115,14 +115,14 @@ export function MobileSearchOverlay({ open, onClose, lang }: Props) {
     let cancelled = false;
     setLoading(true);
     const timer = window.setTimeout(() => {
-      Promise.all([
+      Promise.allSettled([
         searchShopProducts({ data: { q: trimmedQuery, limit: 12 } }),
         searchRentalItems({ data: { q: trimmedQuery, limit: 12 } }),
       ])
         .then(([shopResults, rentalResults]) => {
           if (cancelled) return;
-          setProducts(shopResults);
-          setRentals(rentalResults);
+          setProducts(shopResults.status === "fulfilled" && Array.isArray(shopResults.value) ? shopResults.value : []);
+          setRentals(rentalResults.status === "fulfilled" && Array.isArray(rentalResults.value) ? rentalResults.value : []);
         })
         .catch(() => {
           if (cancelled) return;
@@ -404,7 +404,7 @@ function SearchThumb({ image, title }: { image: string | null; title: string }) 
     <div className="flex h-[72px] w-[72px] items-center justify-center rounded-full border border-border bg-background">
       {image ? (
         <img
-          src={resolveCatalogImage(image)}
+          {...catalogImageProps(image, "72px", 160)}
           alt={title}
           loading="lazy"
           decoding="async"

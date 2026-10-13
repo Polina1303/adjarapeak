@@ -220,6 +220,7 @@ export type Database = {
       rental_items: {
         Row: {
           available: boolean
+          colors: Json
           category_id: string
           created_at: string
           description: string | null
@@ -242,6 +243,7 @@ export type Database = {
         }
         Insert: {
           available?: boolean
+          colors?: Json
           category_id: string
           created_at?: string
           description?: string | null
@@ -264,6 +266,7 @@ export type Database = {
         }
         Update: {
           available?: boolean
+          colors?: Json
           category_id?: string
           created_at?: string
           description?: string | null

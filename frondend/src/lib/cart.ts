@@ -11,6 +11,8 @@ export function openCart() {}
 export type CartLineMeta = {
   title?: string;
   image?: string | null;
+  selectedColor?: string;
+  variantImage?: string;
   price?: number;
   kind?: "shop" | "rental";
   unit?: "" | "/сутки" | "/day" | "/დღე";
@@ -53,6 +55,8 @@ function readLines(): CartLine[] {
         qty: Math.max(1, Number(x.qty) || 1),
         title: typeof x.title === "string" ? x.title : undefined,
         image: typeof x.image === "string" ? x.image : null,
+        selectedColor: typeof x.selectedColor === "string" ? x.selectedColor : undefined,
+        variantImage: typeof x.variantImage === "string" ? x.variantImage : undefined,
         price: typeof x.price === "number" ? x.price : undefined,
         kind: x.kind === "rental" || x.kind === "shop" ? x.kind : undefined,
         unit:

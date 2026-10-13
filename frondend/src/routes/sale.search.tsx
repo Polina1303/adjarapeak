@@ -12,6 +12,7 @@ const searchSchema = z.object({
 });
 
 export const Route = createFileRoute("/sale/search")({
+  staleTime: 30_000,
   validateSearch: zodValidator(searchSchema),
   loaderDeps: ({ search }) => ({ q: search.q }),
   loader: async ({ deps }) => {

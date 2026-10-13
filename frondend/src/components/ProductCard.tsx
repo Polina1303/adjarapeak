@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { resolveCatalogImage } from "@/lib/catalog-image";
+import { catalogImageProps } from "@/lib/catalog-image";
 import type { ShopProduct } from "@/lib/catalog.functions";
 import { addToCart, useIsInCart, openCart } from "@/lib/cart";
 import { getDiscountPercent, getDisplayPrice, getSalePrice } from "@/lib/discount";
@@ -47,7 +47,7 @@ export function ProductCard({ product: p, bordered = false }: Props) {
     >
       <div className="relative aspect-square bg-background overflow-hidden">
         <LoadingImage
-          src={resolveCatalogImage(p.image)}
+          {...catalogImageProps(p.image)}
           alt={p.title}
           loading="lazy"
           decoding="async"

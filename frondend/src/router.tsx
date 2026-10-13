@@ -67,7 +67,8 @@ export const getRouter = () => {
     routeTree,
     context: {},
     scrollRestoration: true,
-    defaultPreloadStaleTime: 0,
+    defaultPreload: "intent",
+    defaultPreloadStaleTime: 30_000,
     // Keep the current page visible until the next route is ready. A global
     // pending component replaces the whole outlet and creates a blank flash.
     defaultPendingMs: Infinity,
