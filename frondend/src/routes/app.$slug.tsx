@@ -64,17 +64,17 @@ const BIKE_RENTAL_EXTRAS_TEXT: Record<
 > = {
   RU: {
     title: "При аренде велосипеда дополнительно выдаём:",
-    items: "флягу для воды, замок, шлем и держатель для телефона.",
+    items: "флягу для воды, замок и шлем.",
     included: "Всё включено в стоимость аренды.",
   },
   EN: {
     title: "Every bicycle rental also includes:",
-    items: "a water bottle, lock, helmet, and phone holder.",
+    items: "a water bottle, lock, and helmet.",
     included: "Everything is included in the rental price.",
   },
   GE: {
     title: "ველოსიპედის ქირაობისას დამატებით გთავაზობთ:",
-    items: "წყლის ბოთლს, საკეტს, ჩაფხუტსა და ტელეფონის დამჭერს.",
+    items: "წყლის ბოთლს, საკეტსა და ჩაფხუტს.",
     included: "ყველაფერი შედის ქირაობის ღირებულებაში.",
   },
 };
