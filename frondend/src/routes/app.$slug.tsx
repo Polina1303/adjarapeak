@@ -1,18 +1,41 @@
-import { createFileRoute, Link, notFound, useNavigate } from "@tanstack/react-router";
+import {
+  createFileRoute,
+  Link,
+  notFound,
+  useNavigate,
+} from "@tanstack/react-router";
 import { useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Check, ArrowLeft, ChevronRight, Maximize2, Minus, Plus, RotateCcw } from "lucide-react";
+import {
+  Check,
+  ArrowLeft,
+  ChevronRight,
+  Maximize2,
+  Minus,
+  Plus,
+  RotateCcw,
+} from "lucide-react";
 import { toast } from "sonner";
-import { getShopProductBySlug, getRentalItemBySlug } from "@/lib/catalog.functions";
+import {
+  getShopProductBySlug,
+  getRentalItemBySlug,
+} from "@/lib/catalog.functions";
 import { resolveCatalogImage, catalogImageProps } from "@/lib/catalog-image";
 import { addToCart, useIsInCart } from "@/lib/cart";
 import { ProductCarousel } from "@/components/ProductCarousel";
 import { RentalCarousel } from "@/components/RentalCarousel";
-import { RentalColorPicker, rentalColorLabel } from "@/components/RentalColorPicker";
-import { getDiscountPercent, getDisplayPrice, getSalePrice } from "@/lib/discount";
+import {
+  RentalColorPicker,
+  rentalColorLabel,
+} from "@/components/RentalColorPicker";
+import {
+  getDiscountPercent,
+  getDisplayPrice,
+  getSalePrice,
+} from "@/lib/discount";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { absoluteSiteUrl, canonicalLink } from "@/lib/seo";
 import { useLanguage, type Lang } from "@/lib/i18n";
@@ -30,28 +53,31 @@ type LoaderData =
 
 const RENTAL_TERMS_TEXT: Record<
   Lang,
-  { title: string; body: string; carePrefix: string; careEmphasis: string; careSuffix: string }
+  {
+    title: string;
+    body: string;
+    carePrefix: string;
+    careEmphasis: string;
+    careSuffix: string;
+  }
 > = {
   RU: {
     title: "Условия аренды:",
-    body:
-      "оборудование необходимо вернуть в полной комплектации и в том же состоянии, в котором оно было получено. В случае повреждения или утери отдельных элементов стоимость ремонта или замены оплачивается отдельно.",
+    body: "оборудование необходимо вернуть в полной комплектации и в том же состоянии, в котором оно было получено. В случае повреждения или утери отдельных элементов стоимость ремонта или замены оплачивается отдельно.",
     carePrefix: "Всё снаряжение перед каждой арендой ",
     careEmphasis: "проверяется и приводится в порядок",
     careSuffix: ".",
   },
   EN: {
     title: "Rental terms:",
-    body:
-      "equipment must be returned complete and in the same condition in which it was received. If individual components are damaged or lost, repair or replacement costs are charged separately.",
+    body: "equipment must be returned complete and in the same condition in which it was received. If individual components are damaged or lost, repair or replacement costs are charged separately.",
     carePrefix: "All equipment is ",
     careEmphasis: "inspected and prepared",
     careSuffix: " before every rental.",
   },
   GE: {
     title: "ქირაობის პირობები:",
-    body:
-      "აღჭურვილობა უნდა დაბრუნდეს სრული კომპლექტაციით და იმავე მდგომარეობაში, რომელშიც მიიღეთ. ცალკეული ელემენტების დაზიანების ან დაკარგვის შემთხვევაში შეკეთების ან ჩანაცვლების ღირებულება ცალკე ანაზღაურდება.",
+    body: "აღჭურვილობა უნდა დაბრუნდეს სრული კომპლექტაციით და იმავე მდგომარეობაში, რომელშიც მიიღეთ. ცალკეული ელემენტების დაზიანების ან დაკარგვის შემთხვევაში შეკეთების ან ჩანაცვლების ღირებულება ცალკე ანაზღაურდება.",
     carePrefix: "ყოველი გაქირავების წინ ყველა აღჭურვილობა ",
     careEmphasis: "მოწმდება და წესრიგდება",
     careSuffix: ".",
@@ -96,7 +122,8 @@ export const Route = createFileRoute("/app/$slug")({
       const img = resolveCatalogImage(product.image);
       const canonicalPath = `/app/${encodeURIComponent(product.slug)}`;
       const imageUrl = img.startsWith("http") ? img : absoluteSiteUrl(img);
-      const price = getSalePrice(product.price, product.sale_price) ?? product.price;
+      const price =
+        getSalePrice(product.price, product.sale_price) ?? product.price;
       return {
         meta: [
           { title },
@@ -158,7 +185,9 @@ export const Route = createFileRoute("/app/$slug")({
       <Header />
       <div className="pt-32 section-padding section-spacing text-center">
         <h1 className="font-display text-4xl font-bold mb-4">Не найдено</h1>
-        <Link to="/sale" className="underline">Назад в магазин</Link>
+        <Link to="/sale" className="underline">
+          Назад в магазин
+        </Link>
       </div>
       <Footer />
     </div>
@@ -167,9 +196,13 @@ export const Route = createFileRoute("/app/$slug")({
     <div className="min-h-screen">
       <Header />
       <div className="pt-32 section-padding section-spacing text-center">
-        <h1 className="font-display text-4xl font-bold mb-4">Что-то пошло не так</h1>
+        <h1 className="font-display text-4xl font-bold mb-4">
+          Что-то пошло не так
+        </h1>
         <p className="text-muted-foreground font-body mb-6">{error.message}</p>
-        <Link to="/sale" className="underline">Назад в магазин</Link>
+        <Link to="/sale" className="underline">
+          Назад в магазин
+        </Link>
       </div>
       <Footer />
     </div>
@@ -179,7 +212,8 @@ export const Route = createFileRoute("/app/$slug")({
 
 function AppPage() {
   const loaderData = Route.useLoaderData();
-  if (loaderData.kind === "product") return <ProductView data={loaderData.data!} />;
+  if (loaderData.kind === "product")
+    return <ProductView data={loaderData.data!} />;
   return <RentalView data={loaderData.data!} />;
 }
 
@@ -207,7 +241,13 @@ function ZoomableCatalogImage({
         className="group relative aspect-square overflow-hidden rounded-3xl bg-white text-left cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-ember focus-visible:ring-offset-2"
       >
         <LoadingImage
-          {...(imageName ? catalogImageProps(imageName, "(min-width: 1024px) 600px, 100vw", 960) : { src })}
+          {...(imageName
+            ? catalogImageProps(
+                imageName,
+                "(min-width: 1024px) 600px, 100vw",
+                960
+              )
+            : { src })}
           alt={alt}
           fetchPriority="high"
           decoding="async"
@@ -222,8 +262,12 @@ function ZoomableCatalogImage({
           <Maximize2 className="h-4 w-4" />
         </span>
       </motion.button>
-      <ImageZoomDialog open={open} onOpenChange={setOpen}
-        src={imageName ? resolveCatalogImage(imageName, "original") : src} alt={alt} />
+      <ImageZoomDialog
+        open={open}
+        onOpenChange={setOpen}
+        src={imageName ? resolveCatalogImage(imageName, "original") : src}
+        alt={alt}
+      />
     </>
   );
 }
@@ -241,7 +285,12 @@ function ImageZoomDialog({
 }) {
   const [scale, setScale] = useState(1);
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [dragStart, setDragStart] = useState<{ x: number; y: number; startX: number; startY: number } | null>(null);
+  const [dragStart, setDragStart] = useState<{
+    x: number;
+    y: number;
+    startX: number;
+    startY: number;
+  } | null>(null);
 
   const resetZoom = () => {
     setScale(1);
@@ -274,7 +323,9 @@ function ImageZoomDialog({
           >
             <Minus className="h-4 w-4" />
           </button>
-          <span className="min-w-12 text-center text-xs font-body font-semibold">{Math.round(scale * 100)}%</span>
+          <span className="min-w-12 text-center text-xs font-body font-semibold">
+            {Math.round(scale * 100)}%
+          </span>
           <button
             type="button"
             aria-label="Увеличить"
@@ -331,7 +382,11 @@ function ImageZoomDialog({
   );
 }
 
-function ProductView({ data }: { data: NonNullable<Awaited<ReturnType<typeof getShopProductBySlug>>> }) {
+function ProductView({
+  data,
+}: {
+  data: NonNullable<Awaited<ReturnType<typeof getShopProductBySlug>>>;
+}) {
   const { product, category, group, subcategory, related } = data;
   const { lang } = useLanguage();
   const catalogTranslations = useCatalogTranslations(lang);
@@ -350,18 +405,25 @@ function ProductView({ data }: { data: NonNullable<Awaited<ReturnType<typeof get
   const groupTitle = group
     ? catalogTranslations.group("shop", group.slug, group.title)
     : null;
-  const categoryTitle = group && category
-    ? catalogTranslations.category("shop", group.slug, category.slug, category.title)
-    : null;
-  const subcategoryTitle = group && category && subcategory
-    ? catalogTranslations.subcategory(
-        "shop",
-        group.slug,
-        category.slug,
-        subcategory.slug,
-        subcategory.title,
-      )
-    : null;
+  const categoryTitle =
+    group && category
+      ? catalogTranslations.category(
+          "shop",
+          group.slug,
+          category.slug,
+          category.title
+        )
+      : null;
+  const subcategoryTitle =
+    group && category && subcategory
+      ? catalogTranslations.subcategory(
+          "shop",
+          group.slug,
+          category.slug,
+          subcategory.slug,
+          subcategory.title
+        )
+      : null;
 
   const handleAddToCart = () => {
     if (inCart) {
@@ -401,15 +463,30 @@ function ProductView({ data }: { data: NonNullable<Awaited<ReturnType<typeof get
             aria-label="Breadcrumb"
             className="hidden lg:flex items-center flex-wrap gap-2 text-sm font-body text-muted-foreground mb-6"
           >
-            <Link to="/" className="hover:text-foreground transition-colors">Главная</Link>
+            <Link to="/" className="hover:text-foreground transition-colors">
+              Главная
+            </Link>
             <ChevronRight className="h-3.5 w-3.5 opacity-60" />
-            <Link to="/sale" className="hover:text-foreground transition-colors">Магазин</Link>
+            <Link
+              to="/sale"
+              className="hover:text-foreground transition-colors"
+            >
+              Магазин
+            </Link>
             {group && (
               <>
                 <ChevronRight className="h-3.5 w-3.5 opacity-60" />
                 <Link
-                  to={group.slug === "tourismCamping" ? "/tourismCamping/" : "/sale/$group"}
-                  params={group.slug === "tourismCamping" ? undefined : { group: group.slug }}
+                  to={
+                    group.slug === "tourismCamping"
+                      ? "/tourismCamping/"
+                      : "/sale/$group"
+                  }
+                  params={
+                    group.slug === "tourismCamping"
+                      ? undefined
+                      : { group: group.slug }
+                  }
                   className="hover:text-foreground transition-colors"
                 >
                   {groupTitle}
@@ -445,7 +522,9 @@ function ProductView({ data }: { data: NonNullable<Awaited<ReturnType<typeof get
               </>
             )}
             <ChevronRight className="h-3.5 w-3.5 opacity-60" />
-            <span className="text-foreground line-clamp-1">{product.title}</span>
+            <span className="text-foreground line-clamp-1">
+              {product.title}
+            </span>
           </nav>
           <div className="lg:hidden">
             <h1 className="font-display text-3xl md:text-5xl font-bold text-foreground leading-tight mb-1">
@@ -470,7 +549,9 @@ function ProductView({ data }: { data: NonNullable<Awaited<ReturnType<typeof get
               <div className="lg:hidden">
                 {hasColors && (
                   <div className="mb-4">
-                    <div className="text-xs font-body uppercase tracking-[0.12em] text-muted-foreground mb-2">Цвет</div>
+                    <div className="text-xs font-body uppercase tracking-[0.12em] text-muted-foreground mb-2">
+                      Цвет
+                    </div>
                     <div className="flex items-center gap-2">
                       {colors.map((c, i) => (
                         <button
@@ -491,7 +572,9 @@ function ProductView({ data }: { data: NonNullable<Awaited<ReturnType<typeof get
                 )}
                 {hasSizes && (
                   <div className="mb-4">
-                    <div className="text-xs font-body uppercase tracking-[0.12em] text-muted-foreground mb-2">Размер</div>
+                    <div className="text-xs font-body uppercase tracking-[0.12em] text-muted-foreground mb-2">
+                      Размер
+                    </div>
                     <div className="flex items-center gap-2 flex-wrap">
                       {product.sizes.map((s, i) => (
                         <button
@@ -506,7 +589,9 @@ function ProductView({ data }: { data: NonNullable<Awaited<ReturnType<typeof get
                   </div>
                 )}
                 <div className="flex items-baseline gap-3 mb-4 flex-wrap">
-                  <span className="font-display font-bold text-ember text-4xl">₾{displayPrice}</span>
+                  <span className="font-display font-bold text-ember text-4xl">
+                    ₾{displayPrice}
+                  </span>
                   {salePrice && (
                     <span className="font-body text-base text-muted-foreground line-through">
                       ₾{product.price}
@@ -517,7 +602,9 @@ function ProductView({ data }: { data: NonNullable<Awaited<ReturnType<typeof get
                       -{discountPct}%
                     </span>
                   )}
-                  <span className="text-sm text-muted-foreground font-body">/шт.</span>
+                  <span className="text-sm text-muted-foreground font-body">
+                    /шт.
+                  </span>
                 </div>
                 <Button
                   className={
@@ -534,10 +621,15 @@ function ProductView({ data }: { data: NonNullable<Awaited<ReturnType<typeof get
 
               {product.features.length > 0 && (
                 <div>
-                  <h2 className="font-display font-bold text-foreground text-2xl md:text-3xl mb-4">Описание</h2>
+                  <h2 className="font-display font-bold text-foreground text-2xl md:text-3xl mb-4">
+                    Описание
+                  </h2>
                   <ul className="space-y-3">
                     {product.features.map((f: string, i: number) => (
-                      <li key={i} className="flex items-start gap-3 text-sm font-body text-foreground/80">
+                      <li
+                        key={i}
+                        className="flex items-start gap-3 text-sm font-body text-foreground/80"
+                      >
                         <Check className="h-4 w-4 text-ember mt-0.5 shrink-0" />
                         {f}
                       </li>
@@ -557,7 +649,9 @@ function ProductView({ data }: { data: NonNullable<Awaited<ReturnType<typeof get
                 </p>
               )}
               <div className="flex items-baseline gap-3 mb-4 flex-wrap">
-                <span className="font-display font-bold text-ember text-4xl">₾{displayPrice}</span>
+                <span className="font-display font-bold text-ember text-4xl">
+                  ₾{displayPrice}
+                </span>
                 {salePrice && (
                   <span className="font-body text-base text-muted-foreground line-through">
                     ₾{product.price}
@@ -568,11 +662,15 @@ function ProductView({ data }: { data: NonNullable<Awaited<ReturnType<typeof get
                     -{discountPct}%
                   </span>
                 )}
-                <span className="text-sm text-muted-foreground font-body">/шт.</span>
+                <span className="text-sm text-muted-foreground font-body">
+                  /шт.
+                </span>
               </div>
               {hasColors && (
                 <div className="mb-4">
-                  <div className="text-xs font-body uppercase tracking-[0.12em] text-muted-foreground mb-2">Цвет</div>
+                  <div className="text-xs font-body uppercase tracking-[0.12em] text-muted-foreground mb-2">
+                    Цвет
+                  </div>
                   <div className="flex items-center gap-2">
                     {colors.map((c, i) => (
                       <button
@@ -593,7 +691,9 @@ function ProductView({ data }: { data: NonNullable<Awaited<ReturnType<typeof get
               )}
               {hasSizes && (
                 <div className="mb-6">
-                  <div className="text-xs font-body uppercase tracking-[0.12em] text-muted-foreground mb-2">Размер</div>
+                  <div className="text-xs font-body uppercase tracking-[0.12em] text-muted-foreground mb-2">
+                    Размер
+                  </div>
                   <div className="flex items-center gap-2 flex-wrap">
                     {product.sizes.map((s, i) => (
                       <button
@@ -636,13 +736,19 @@ function ProductView({ data }: { data: NonNullable<Awaited<ReturnType<typeof get
   );
 }
 
-function RentalView({ data }: { data: NonNullable<Awaited<ReturnType<typeof getRentalItemBySlug>>> }) {
+function RentalView({
+  data,
+}: {
+  data: NonNullable<Awaited<ReturnType<typeof getRentalItemBySlug>>>;
+}) {
   const { item, category, group, related } = data;
   const { lang } = useLanguage();
   const rentalTerms = RENTAL_TERMS_TEXT[lang];
   const bikeRentalExtras = BIKE_RENTAL_EXTRAS_TEXT[lang];
   const isBikeRental = category?.slug === "rentBIKE";
-  const hasEveningRate = EVENING_RENTAL_CATEGORY_SLUGS.has(category?.slug ?? "");
+  const hasEveningRate = EVENING_RENTAL_CATEGORY_SLUGS.has(
+    category?.slug ?? ""
+  );
   const navigate = useNavigate();
   const colors = Array.isArray(item.colors) ? item.colors : [];
   const [selectedColor, setSelectedColor] = useState<string | null>(null);
@@ -650,8 +756,14 @@ function RentalView({ data }: { data: NonNullable<Awaited<ReturnType<typeof getR
   const img = resolveCatalogImage(activeColor?.image || item.image);
   const booked = useIsInCart(item.slug);
   const salePrice = getSalePrice(item.price_per_day, item.sale_price_per_day);
-  const displayPrice = getDisplayPrice(item.price_per_day, item.sale_price_per_day);
-  const discountPct = getDiscountPercent(item.price_per_day, item.sale_price_per_day);
+  const displayPrice = getDisplayPrice(
+    item.price_per_day,
+    item.sale_price_per_day
+  );
+  const discountPct = getDiscountPercent(
+    item.price_per_day,
+    item.sale_price_per_day
+  );
 
   const handleBook = () => {
     if (booked) {
@@ -664,7 +776,9 @@ function RentalView({ data }: { data: NonNullable<Awaited<ReturnType<typeof getR
       price: displayPrice,
       kind: "rental",
       unit: "/сутки",
-      selectedColor: selectedColor ? rentalColorLabel(selectedColor) : undefined,
+      selectedColor: selectedColor
+        ? rentalColorLabel(selectedColor)
+        : undefined,
       variantImage: activeColor?.image || undefined,
     });
     toast.success(`Заявка на бронирование отправлена: ${item.title}`);
@@ -687,15 +801,22 @@ function RentalView({ data }: { data: NonNullable<Awaited<ReturnType<typeof getR
             aria-label="Breadcrumb"
             className="hidden lg:flex items-center flex-wrap gap-2 text-sm font-body text-muted-foreground mb-6"
           >
-            <Link to="/" className="hover:text-foreground transition-colors">Главная</Link>
+            <Link to="/" className="hover:text-foreground transition-colors">
+              Главная
+            </Link>
             <ChevronRight className="h-3.5 w-3.5 opacity-60" />
-            <Link to="/rent" className="hover:text-foreground transition-colors">Прокат</Link>
+            <Link
+              to="/rent"
+              className="hover:text-foreground transition-colors"
+            >
+              Прокат
+            </Link>
             {group && (
               <>
                 <ChevronRight className="h-3.5 w-3.5 opacity-60" />
                 <Link
                   to="/rent"
-                                    className="hover:text-foreground transition-colors"
+                  className="hover:text-foreground transition-colors"
                 >
                   {group.title}
                 </Link>
@@ -721,19 +842,29 @@ function RentalView({ data }: { data: NonNullable<Awaited<ReturnType<typeof getR
               {item.title}
             </h1>
             {item.shortly && (
-              <p className="text-foreground/90 font-body leading-relaxed mb-4 text-sm">{item.shortly}</p>
+              <p className="text-foreground/90 font-body leading-relaxed mb-4 text-sm">
+                {item.shortly}
+              </p>
             )}
             {item.description && (
-              <p className="text-muted-foreground font-body leading-relaxed mb-8 text-xs">{item.description}</p>
+              <p className="text-muted-foreground font-body leading-relaxed mb-8 text-xs">
+                {item.description}
+              </p>
             )}
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 mb-20 items-start">
             <div className="flex flex-col gap-10 lg:gap-16">
-              <ZoomableCatalogImage src={img} imageName={activeColor?.image || item.image} alt={item.title} />
+              <ZoomableCatalogImage
+                src={img}
+                imageName={activeColor?.image || item.image}
+                alt={item.title}
+              />
 
               <div className="lg:hidden">
                 <div className="flex items-baseline gap-3 mb-4 flex-wrap">
-                  <span className="font-display font-bold text-ember text-4xl">₾{displayPrice}</span>
+                  <span className="font-display font-bold text-ember text-4xl">
+                    ₾{displayPrice}
+                  </span>
                   {salePrice && (
                     <span className="font-body text-base text-muted-foreground line-through">
                       ₾{item.price_per_day}
@@ -744,9 +875,15 @@ function RentalView({ data }: { data: NonNullable<Awaited<ReturnType<typeof getR
                       -{discountPct}%
                     </span>
                   )}
-                  <span className="text-sm text-muted-foreground font-body">/сутки</span>
+                  <span className="text-sm text-muted-foreground font-body">
+                    /сутки
+                  </span>
                 </div>
-                <RentalColorPicker colors={colors} selected={selectedColor} onChange={setSelectedColor} />
+                <RentalColorPicker
+                  colors={colors}
+                  selected={selectedColor}
+                  onChange={setSelectedColor}
+                />
                 <Button
                   size="lg"
                   className={
@@ -760,10 +897,12 @@ function RentalView({ data }: { data: NonNullable<Awaited<ReturnType<typeof getR
                   {!item.available
                     ? "Сейчас занято"
                     : booked
-                    ? "Открыть корзину"
-                    : "Забронировать"}
+                      ? "Открыть корзину"
+                      : "Забронировать"}
                 </Button>
-                {isBikeRental && <BikeRentalExtrasNote text={bikeRentalExtras} />}
+                {isBikeRental && (
+                  <BikeRentalExtrasNote text={bikeRentalExtras} />
+                )}
                 <RentalTermsNote text={rentalTerms} />
                 {hasEveningRate && (
                   <div className="mt-3">
@@ -777,10 +916,15 @@ function RentalView({ data }: { data: NonNullable<Awaited<ReturnType<typeof getR
 
               {item.features.length > 0 && (
                 <div>
-                  <h2 className="font-display font-bold text-foreground text-2xl md:text-3xl mb-4">Описание</h2>
+                  <h2 className="font-display font-bold text-foreground text-2xl md:text-3xl mb-4">
+                    Описание
+                  </h2>
                   <ul className="space-y-3">
                     {item.features.map((f: string, i: number) => (
-                      <li key={i} className="flex items-start gap-3 text-sm font-body text-foreground/80">
+                      <li
+                        key={i}
+                        className="flex items-start gap-3 text-sm font-body text-foreground/80"
+                      >
                         <Check className="h-4 w-4 text-ember mt-0.5 shrink-0" />
                         {f}
                       </li>
@@ -800,14 +944,20 @@ function RentalView({ data }: { data: NonNullable<Awaited<ReturnType<typeof getR
                 {item.title}
               </h1>
               {item.shortly && (
-                <p className="text-foreground/90 font-body leading-relaxed mb-6 text-sm">{item.shortly}</p>
+                <p className="text-foreground/90 font-body leading-relaxed mb-6 text-sm">
+                  {item.shortly}
+                </p>
               )}
               {item.description && (
-                <p className="text-muted-foreground font-body leading-relaxed mb-6 text-xs">{item.description}</p>
+                <p className="text-muted-foreground font-body leading-relaxed mb-6 text-xs">
+                  {item.description}
+                </p>
               )}
 
               <div className="flex items-baseline gap-3 mb-6 flex-wrap">
-                <span className="font-display font-bold text-ember text-4xl">₾{displayPrice}</span>
+                <span className="font-display font-bold text-ember text-4xl">
+                  ₾{displayPrice}
+                </span>
                 {salePrice && (
                   <span className="font-body text-base text-muted-foreground line-through">
                     ₾{item.price_per_day}
@@ -818,10 +968,16 @@ function RentalView({ data }: { data: NonNullable<Awaited<ReturnType<typeof getR
                     -{discountPct}%
                   </span>
                 )}
-                <span className="text-sm text-muted-foreground font-body">/сутки</span>
+                <span className="text-sm text-muted-foreground font-body">
+                  /сутки
+                </span>
               </div>
 
-              <RentalColorPicker colors={colors} selected={selectedColor} onChange={setSelectedColor} />
+              <RentalColorPicker
+                colors={colors}
+                selected={selectedColor}
+                onChange={setSelectedColor}
+              />
               <Button
                 size="lg"
                 className={
@@ -835,8 +991,8 @@ function RentalView({ data }: { data: NonNullable<Awaited<ReturnType<typeof getR
                 {!item.available
                   ? "Сейчас занято"
                   : booked
-                  ? "Открыть корзину"
-                  : "Забронировать"}
+                    ? "Открыть корзину"
+                    : "Забронировать"}
               </Button>
               {isBikeRental && <BikeRentalExtrasNote text={bikeRentalExtras} />}
               <RentalTermsNote text={rentalTerms} />
@@ -845,9 +1001,11 @@ function RentalView({ data }: { data: NonNullable<Awaited<ReturnType<typeof getR
                   <RentalEveningOffer compact />
                 </div>
               )}
-              <div className="mt-3">
-                <RentalWeekendOffer />
-              </div>
+              {!hasEveningRate && (
+                <div className="mt-3">
+                  <RentalWeekendOffer />
+                </div>
+              )}
             </motion.div>
           </div>
 
@@ -894,7 +1052,9 @@ function RentalTermsNote({ text }: { text: (typeof RENTAL_TERMS_TEXT)[Lang] }) {
       {text.body}
       <span className="mt-2 block">
         {text.carePrefix}
-        <strong className="font-bold text-foreground">{text.careEmphasis}</strong>
+        <strong className="font-bold text-foreground">
+          {text.careEmphasis}
+        </strong>
         {text.careSuffix}
       </span>
     </aside>

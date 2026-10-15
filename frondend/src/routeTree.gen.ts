@@ -9,60 +9,39 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ServiceRouteImport } from './routes/service'
-import { Route as SearchRouteImport } from './routes/search'
-import { Route as SaleRouteImport } from './routes/sale'
-import { Route as RockClimbingRouteImport } from './routes/rockClimbing'
-import { Route as RentRouteImport } from './routes/rent'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as CheckoutRouteImport } from './routes/checkout'
-import { Route as AdminRouteImport } from './routes/_admin'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as TourismCampingIndexRouteImport } from './routes/tourismCamping.index'
-import { Route as HikesIndexRouteImport } from './routes/hikes.index'
-import { Route as SaleSearchRouteImport } from './routes/sale.search'
-import { Route as SaleSaleRouteImport } from './routes/sale.sale'
-import { Route as SaleGroupRouteImport } from './routes/sale.$group'
-import { Route as RentSaleRouteImport } from './routes/rent.sale'
-import { Route as RentGroupRouteImport } from './routes/rent.$group'
-import { Route as HikesSlugRouteImport } from './routes/hikes.$slug'
-import { Route as AppSlugRouteImport } from './routes/app.$slug'
+import { Route as AdminRouteImport } from './routes/_admin'
+import { Route as CheckoutRouteImport } from './routes/checkout'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as RentRouteImport } from './routes/rent'
+import { Route as RockClimbingRouteImport } from './routes/rockClimbing'
+import { Route as SaleRouteImport } from './routes/sale'
+import { Route as SearchRouteImport } from './routes/search'
+import { Route as ServiceRouteImport } from './routes/service'
 import { Route as AdminLoginRouteImport } from './routes/admin.login'
+import { Route as AppSlugRouteImport } from './routes/app.$slug'
+import { Route as HikesIndexRouteImport } from './routes/hikes.index'
+import { Route as HikesSlugRouteImport } from './routes/hikes.$slug'
+import { Route as RentGroupRouteImport } from './routes/rent.$group'
+import { Route as RentSaleRouteImport } from './routes/rent.sale'
+import { Route as SaleGroupRouteImport } from './routes/sale.$group'
+import { Route as SaleSaleRouteImport } from './routes/sale.sale'
+import { Route as SaleSearchRouteImport } from './routes/sale.search'
+import { Route as TourismCampingIndexRouteImport } from './routes/tourismCamping.index'
 import { Route as AdminAdminIndexRouteImport } from './routes/_admin/admin.index'
-import { Route as SaleGroupCategoryRouteImport } from './routes/sale.$group.$category'
 import { Route as RentGroupCategoryRouteImport } from './routes/rent.$group.$category'
-import { Route as SaleGroupCategorySubcategoryRouteImport } from './routes/sale.$group.$category.$subcategory'
-import { Route as RentGroupCategorySubcategoryRouteImport } from './routes/rent.$group.$category.$subcategory'
+import { Route as SaleGroupCategoryRouteImport } from './routes/sale.$group.$category'
 import { Route as AdminAdminTTableRouteImport } from './routes/_admin/admin.t.$table'
+import { Route as RentGroupCategorySubcategoryRouteImport } from './routes/rent.$group.$category.$subcategory'
+import { Route as SaleGroupCategorySubcategoryRouteImport } from './routes/sale.$group.$category.$subcategory'
 
-const ServiceRoute = ServiceRouteImport.update({
-  id: '/service',
-  path: '/service',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SearchRoute = SearchRouteImport.update({
-  id: '/search',
-  path: '/search',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SaleRoute = SaleRouteImport.update({
-  id: '/sale',
-  path: '/sale',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RockClimbingRoute = RockClimbingRouteImport.update({
-  id: '/rockClimbing',
-  path: '/rockClimbing',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RentRoute = RentRouteImport.update({
-  id: '/rent',
-  path: '/rent',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
+const AdminRoute = AdminRouteImport.update({
+  id: '/_admin',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CheckoutRoute = CheckoutRouteImport.update({
@@ -70,58 +49,34 @@ const CheckoutRoute = CheckoutRouteImport.update({
   path: '/checkout',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AdminRoute = AdminRouteImport.update({
-  id: '/_admin',
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const RentRoute = RentRouteImport.update({
+  id: '/rent',
+  path: '/rent',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TourismCampingIndexRoute = TourismCampingIndexRouteImport.update({
-  id: '/tourismCamping/',
-  path: '/tourismCamping/',
+const RockClimbingRoute = RockClimbingRouteImport.update({
+  id: '/rockClimbing',
+  path: '/rockClimbing',
   getParentRoute: () => rootRouteImport,
 } as any)
-const HikesIndexRoute = HikesIndexRouteImport.update({
-  id: '/hikes/',
-  path: '/hikes/',
+const SaleRoute = SaleRouteImport.update({
+  id: '/sale',
+  path: '/sale',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SaleSearchRoute = SaleSearchRouteImport.update({
+const SearchRoute = SearchRouteImport.update({
   id: '/search',
   path: '/search',
-  getParentRoute: () => SaleRoute,
-} as any)
-const SaleSaleRoute = SaleSaleRouteImport.update({
-  id: '/sale',
-  path: '/sale',
-  getParentRoute: () => SaleRoute,
-} as any)
-const SaleGroupRoute = SaleGroupRouteImport.update({
-  id: '/$group',
-  path: '/$group',
-  getParentRoute: () => SaleRoute,
-} as any)
-const RentSaleRoute = RentSaleRouteImport.update({
-  id: '/sale',
-  path: '/sale',
-  getParentRoute: () => RentRoute,
-} as any)
-const RentGroupRoute = RentGroupRouteImport.update({
-  id: '/$group',
-  path: '/$group',
-  getParentRoute: () => RentRoute,
-} as any)
-const HikesSlugRoute = HikesSlugRouteImport.update({
-  id: '/hikes/$slug',
-  path: '/hikes/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AppSlugRoute = AppSlugRouteImport.update({
-  id: '/app/$slug',
-  path: '/app/$slug',
+const ServiceRoute = ServiceRouteImport.update({
+  id: '/service',
+  path: '/service',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdminLoginRoute = AdminLoginRouteImport.update({
@@ -129,38 +84,83 @@ const AdminLoginRoute = AdminLoginRouteImport.update({
   path: '/admin/login',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AppSlugRoute = AppSlugRouteImport.update({
+  id: '/app/$slug',
+  path: '/app/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HikesIndexRoute = HikesIndexRouteImport.update({
+  id: '/hikes/',
+  path: '/hikes/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HikesSlugRoute = HikesSlugRouteImport.update({
+  id: '/hikes/$slug',
+  path: '/hikes/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RentGroupRoute = RentGroupRouteImport.update({
+  id: '/$group',
+  path: '/$group',
+  getParentRoute: () => RentRoute,
+} as any)
+const RentSaleRoute = RentSaleRouteImport.update({
+  id: '/sale',
+  path: '/sale',
+  getParentRoute: () => RentRoute,
+} as any)
+const SaleGroupRoute = SaleGroupRouteImport.update({
+  id: '/$group',
+  path: '/$group',
+  getParentRoute: () => SaleRoute,
+} as any)
+const SaleSaleRoute = SaleSaleRouteImport.update({
+  id: '/sale',
+  path: '/sale',
+  getParentRoute: () => SaleRoute,
+} as any)
+const SaleSearchRoute = SaleSearchRouteImport.update({
+  id: '/search',
+  path: '/search',
+  getParentRoute: () => SaleRoute,
+} as any)
+const TourismCampingIndexRoute = TourismCampingIndexRouteImport.update({
+  id: '/tourismCamping/',
+  path: '/tourismCamping/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminAdminIndexRoute = AdminAdminIndexRouteImport.update({
   id: '/admin/',
   path: '/admin/',
   getParentRoute: () => AdminRoute,
-} as any)
-const SaleGroupCategoryRoute = SaleGroupCategoryRouteImport.update({
-  id: '/$category',
-  path: '/$category',
-  getParentRoute: () => SaleGroupRoute,
 } as any)
 const RentGroupCategoryRoute = RentGroupCategoryRouteImport.update({
   id: '/$category',
   path: '/$category',
   getParentRoute: () => RentGroupRoute,
 } as any)
-const SaleGroupCategorySubcategoryRoute =
-  SaleGroupCategorySubcategoryRouteImport.update({
-    id: '/$subcategory',
-    path: '/$subcategory',
-    getParentRoute: () => SaleGroupCategoryRoute,
-  } as any)
+const SaleGroupCategoryRoute = SaleGroupCategoryRouteImport.update({
+  id: '/$category',
+  path: '/$category',
+  getParentRoute: () => SaleGroupRoute,
+} as any)
+const AdminAdminTTableRoute = AdminAdminTTableRouteImport.update({
+  id: '/admin/t/$table',
+  path: '/admin/t/$table',
+  getParentRoute: () => AdminRoute,
+} as any)
 const RentGroupCategorySubcategoryRoute =
   RentGroupCategorySubcategoryRouteImport.update({
     id: '/$subcategory',
     path: '/$subcategory',
     getParentRoute: () => RentGroupCategoryRoute,
   } as any)
-const AdminAdminTTableRoute = AdminAdminTTableRouteImport.update({
-  id: '/admin/t/$table',
-  path: '/admin/t/$table',
-  getParentRoute: () => AdminRoute,
-} as any)
+const SaleGroupCategorySubcategoryRoute =
+  SaleGroupCategorySubcategoryRouteImport.update({
+    id: '/$subcategory',
+    path: '/$subcategory',
+    getParentRoute: () => SaleGroupCategoryRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -343,53 +343,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/service': {
-      id: '/service'
-      path: '/service'
-      fullPath: '/service'
-      preLoaderRoute: typeof ServiceRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/search': {
-      id: '/search'
-      path: '/search'
-      fullPath: '/search'
-      preLoaderRoute: typeof SearchRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sale': {
-      id: '/sale'
-      path: '/sale'
-      fullPath: '/sale'
-      preLoaderRoute: typeof SaleRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/rockClimbing': {
-      id: '/rockClimbing'
-      path: '/rockClimbing'
-      fullPath: '/rockClimbing'
-      preLoaderRoute: typeof RockClimbingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/rent': {
-      id: '/rent'
-      path: '/rent'
-      fullPath: '/rent'
-      preLoaderRoute: typeof RentRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/checkout': {
-      id: '/checkout'
-      path: '/checkout'
-      fullPath: '/checkout'
-      preLoaderRoute: typeof CheckoutRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_admin': {
@@ -399,74 +357,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/checkout': {
+      id: '/checkout'
+      path: '/checkout'
+      fullPath: '/checkout'
+      preLoaderRoute: typeof CheckoutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/tourismCamping/': {
-      id: '/tourismCamping/'
-      path: '/tourismCamping'
-      fullPath: '/tourismCamping/'
-      preLoaderRoute: typeof TourismCampingIndexRouteImport
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/hikes/': {
-      id: '/hikes/'
-      path: '/hikes'
-      fullPath: '/hikes/'
-      preLoaderRoute: typeof HikesIndexRouteImport
+    '/rent': {
+      id: '/rent'
+      path: '/rent'
+      fullPath: '/rent'
+      preLoaderRoute: typeof RentRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/sale/search': {
-      id: '/sale/search'
+    '/rockClimbing': {
+      id: '/rockClimbing'
+      path: '/rockClimbing'
+      fullPath: '/rockClimbing'
+      preLoaderRoute: typeof RockClimbingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sale': {
+      id: '/sale'
+      path: '/sale'
+      fullPath: '/sale'
+      preLoaderRoute: typeof SaleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/search': {
+      id: '/search'
       path: '/search'
-      fullPath: '/sale/search'
-      preLoaderRoute: typeof SaleSearchRouteImport
-      parentRoute: typeof SaleRoute
-    }
-    '/sale/sale': {
-      id: '/sale/sale'
-      path: '/sale'
-      fullPath: '/sale/sale'
-      preLoaderRoute: typeof SaleSaleRouteImport
-      parentRoute: typeof SaleRoute
-    }
-    '/sale/$group': {
-      id: '/sale/$group'
-      path: '/$group'
-      fullPath: '/sale/$group'
-      preLoaderRoute: typeof SaleGroupRouteImport
-      parentRoute: typeof SaleRoute
-    }
-    '/rent/sale': {
-      id: '/rent/sale'
-      path: '/sale'
-      fullPath: '/rent/sale'
-      preLoaderRoute: typeof RentSaleRouteImport
-      parentRoute: typeof RentRoute
-    }
-    '/rent/$group': {
-      id: '/rent/$group'
-      path: '/$group'
-      fullPath: '/rent/$group'
-      preLoaderRoute: typeof RentGroupRouteImport
-      parentRoute: typeof RentRoute
-    }
-    '/hikes/$slug': {
-      id: '/hikes/$slug'
-      path: '/hikes/$slug'
-      fullPath: '/hikes/$slug'
-      preLoaderRoute: typeof HikesSlugRouteImport
+      fullPath: '/search'
+      preLoaderRoute: typeof SearchRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/app/$slug': {
-      id: '/app/$slug'
-      path: '/app/$slug'
-      fullPath: '/app/$slug'
-      preLoaderRoute: typeof AppSlugRouteImport
+    '/service': {
+      id: '/service'
+      path: '/service'
+      fullPath: '/service'
+      preLoaderRoute: typeof ServiceRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/login': {
@@ -476,19 +413,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminLoginRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/app/$slug': {
+      id: '/app/$slug'
+      path: '/app/$slug'
+      fullPath: '/app/$slug'
+      preLoaderRoute: typeof AppSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hikes/': {
+      id: '/hikes/'
+      path: '/hikes'
+      fullPath: '/hikes/'
+      preLoaderRoute: typeof HikesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hikes/$slug': {
+      id: '/hikes/$slug'
+      path: '/hikes/$slug'
+      fullPath: '/hikes/$slug'
+      preLoaderRoute: typeof HikesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rent/$group': {
+      id: '/rent/$group'
+      path: '/$group'
+      fullPath: '/rent/$group'
+      preLoaderRoute: typeof RentGroupRouteImport
+      parentRoute: typeof RentRoute
+    }
+    '/rent/sale': {
+      id: '/rent/sale'
+      path: '/sale'
+      fullPath: '/rent/sale'
+      preLoaderRoute: typeof RentSaleRouteImport
+      parentRoute: typeof RentRoute
+    }
+    '/sale/$group': {
+      id: '/sale/$group'
+      path: '/$group'
+      fullPath: '/sale/$group'
+      preLoaderRoute: typeof SaleGroupRouteImport
+      parentRoute: typeof SaleRoute
+    }
+    '/sale/sale': {
+      id: '/sale/sale'
+      path: '/sale'
+      fullPath: '/sale/sale'
+      preLoaderRoute: typeof SaleSaleRouteImport
+      parentRoute: typeof SaleRoute
+    }
+    '/sale/search': {
+      id: '/sale/search'
+      path: '/search'
+      fullPath: '/sale/search'
+      preLoaderRoute: typeof SaleSearchRouteImport
+      parentRoute: typeof SaleRoute
+    }
+    '/tourismCamping/': {
+      id: '/tourismCamping/'
+      path: '/tourismCamping'
+      fullPath: '/tourismCamping/'
+      preLoaderRoute: typeof TourismCampingIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/_admin/admin/': {
       id: '/_admin/admin/'
       path: '/admin'
       fullPath: '/admin/'
       preLoaderRoute: typeof AdminAdminIndexRouteImport
       parentRoute: typeof AdminRoute
-    }
-    '/sale/$group/$category': {
-      id: '/sale/$group/$category'
-      path: '/$category'
-      fullPath: '/sale/$group/$category'
-      preLoaderRoute: typeof SaleGroupCategoryRouteImport
-      parentRoute: typeof SaleGroupRoute
     }
     '/rent/$group/$category': {
       id: '/rent/$group/$category'
@@ -497,12 +490,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RentGroupCategoryRouteImport
       parentRoute: typeof RentGroupRoute
     }
-    '/sale/$group/$category/$subcategory': {
-      id: '/sale/$group/$category/$subcategory'
-      path: '/$subcategory'
-      fullPath: '/sale/$group/$category/$subcategory'
-      preLoaderRoute: typeof SaleGroupCategorySubcategoryRouteImport
-      parentRoute: typeof SaleGroupCategoryRoute
+    '/sale/$group/$category': {
+      id: '/sale/$group/$category'
+      path: '/$category'
+      fullPath: '/sale/$group/$category'
+      preLoaderRoute: typeof SaleGroupCategoryRouteImport
+      parentRoute: typeof SaleGroupRoute
+    }
+    '/_admin/admin/t/$table': {
+      id: '/_admin/admin/t/$table'
+      path: '/admin/t/$table'
+      fullPath: '/admin/t/$table'
+      preLoaderRoute: typeof AdminAdminTTableRouteImport
+      parentRoute: typeof AdminRoute
     }
     '/rent/$group/$category/$subcategory': {
       id: '/rent/$group/$category/$subcategory'
@@ -511,12 +511,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RentGroupCategorySubcategoryRouteImport
       parentRoute: typeof RentGroupCategoryRoute
     }
-    '/_admin/admin/t/$table': {
-      id: '/_admin/admin/t/$table'
-      path: '/admin/t/$table'
-      fullPath: '/admin/t/$table'
-      preLoaderRoute: typeof AdminAdminTTableRouteImport
-      parentRoute: typeof AdminRoute
+    '/sale/$group/$category/$subcategory': {
+      id: '/sale/$group/$category/$subcategory'
+      path: '/$subcategory'
+      fullPath: '/sale/$group/$category/$subcategory'
+      preLoaderRoute: typeof SaleGroupCategorySubcategoryRouteImport
+      parentRoute: typeof SaleGroupCategoryRoute
     }
   }
 }

@@ -9,7 +9,6 @@
   "scripts": {
     "images:optimize": "node scripts/optimize-images.mjs",
     "test": "node --experimental-strip-types --test tests/*.test.mjs",
-    "predev": "npm run images:optimize",
     "dev": "vite dev",
     "prebuild": "npm run images:optimize",
     "build": "vite build",
@@ -50,7 +49,7 @@
     "@tailwindcss/vite": "^4.2.1",
     "@tanstack/react-query": "^5.83.0",
     "@tanstack/react-router": "^1.168.0",
-    "@tanstack/react-start": "^1.167.14",
+    "@tanstack/react-start": "1.168.60",
     "@tanstack/router-plugin": "^1.167.10",
     "@tanstack/zod-adapter": "^1.166.9",
     "class-variance-authority": "^0.7.1",
@@ -77,7 +76,6 @@
     "zod": "^3.24.2"
   },
   "devDependencies": {
-    "sharp": "^0.34.5",
     "@eslint/js": "^9.32.0",
     "@lovable.dev/vite-tanstack-config": "^1.2.0",
     "@types/node": "^22.16.5",
@@ -89,6 +87,7 @@
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^15.15.0",
     "nitro": "^3.0.260522-beta",
+    "sharp": "^0.34.5",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.56.1",
     "vite": "^7.3.1"
