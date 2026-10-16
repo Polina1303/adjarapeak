@@ -77,6 +77,12 @@ import nikitaPortfolioImg4267 from "@/assets/nikita-portfolio-img_4267.jpg";
 import nikitaPortfolioImg4277 from "@/assets/nikita-portfolio-img_4277.jpg";
 import nikitaPortfolioImg4280 from "@/assets/nikita-portfolio-img_4280.jpg";
 import nikitaPortfolioImg4281 from "@/assets/nikita-portfolio-img_4281.jpg";
+import nikitaPortfolioImg4384 from "@/assets/nikita-portfolio-img_4384.jpg";
+import nikitaPortfolioImg4420 from "@/assets/nikita-portfolio-img_4420.jpg";
+import nikitaPortfolioImg4423 from "@/assets/nikita-portfolio-img_4423.jpg";
+import nikitaPortfolioImg4436 from "@/assets/nikita-portfolio-img_4436.jpg";
+import nikitaPortfolioImg4621 from "@/assets/nikita-portfolio-img_4621.jpg";
+import nikitaPortfolioImg4622 from "@/assets/nikita-portfolio-img_4622.jpg";
 import rollerSkatingIcon from "@/assets/roller-skating.svg";
 import { LoadingImage } from "@/components/LoadingIndicator";
 import { type Lang, useLanguage } from "@/lib/i18n";
@@ -189,6 +195,12 @@ const mechanicPortfolio = [
   nikitaPortfolioImg4277,
   nikitaPortfolioImg4280,
   nikitaPortfolioImg4281,
+  nikitaPortfolioImg4384,
+  nikitaPortfolioImg4420,
+  nikitaPortfolioImg4423,
+  nikitaPortfolioImg4436,
+  nikitaPortfolioImg4621,
+  nikitaPortfolioImg4622,
 ];
 
 function useServiceCarousel(active: boolean) {
