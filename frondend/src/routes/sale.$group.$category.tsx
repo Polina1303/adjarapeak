@@ -5,8 +5,10 @@ import { CatalogPage } from "@/components/CatalogPage";
 import { getShopGroupView } from "@/lib/catalog.functions";
 import { resolveImage } from "@/lib/catalog-image";
 import { canonicalLink } from "@/lib/seo";
+import { validateKidsRollerOfferSearch } from "@/lib/kids-roller-offer";
 
 export const Route = createFileRoute("/sale/$group/$category")({
+  validateSearch: validateKidsRollerOfferSearch,
   staleTime: 5 * 60 * 1000,
   loader: async ({ params }) => {
     const data = await getShopGroupView({

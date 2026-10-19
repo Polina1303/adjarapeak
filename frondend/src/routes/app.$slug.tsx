@@ -45,6 +45,8 @@ import {
   RentalEveningOffer,
 } from "@/components/RentalEveningOffer";
 import { LoadingImage } from "@/components/LoadingIndicator";
+import { KidsRollerGiftNote } from "@/components/KidsRollerOffer";
+import { isKidsRollerOfferProduct } from "@/lib/kids-roller-offer";
 import { useCatalogTranslations } from "@/lib/catalog-translations";
 
 type LoaderData =
@@ -400,6 +402,7 @@ function ProductView({
   const salePrice = getSalePrice(product.price, product.sale_price);
   const displayPrice = getDisplayPrice(product.price, product.sale_price);
   const discountPct = getDiscountPercent(product.price, product.sale_price);
+  const showsKidsGift = product.in_stock && isKidsRollerOfferProduct(product);
   const hasColors = colors.length > 0;
   const hasSizes = (product.sizes?.length ?? 0) > 0;
   const groupTitle = group
@@ -606,6 +609,7 @@ function ProductView({
                     /шт.
                   </span>
                 </div>
+                {showsKidsGift && <div className="mb-4"><KidsRollerGiftNote /></div>}
                 <Button
                   className={
                     inCart
@@ -666,6 +670,7 @@ function ProductView({
                   /шт.
                 </span>
               </div>
+              {showsKidsGift && <div className="mb-5"><KidsRollerGiftNote /></div>}
               {hasColors && (
                 <div className="mb-4">
                   <div className="text-xs font-body uppercase tracking-[0.12em] text-muted-foreground mb-2">

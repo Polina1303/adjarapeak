@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "@tanstack/react-router";
+import { Link, useNavigate, useSearch } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, LayoutGrid, LoaderCircle, ArrowLeft } from "lucide-react";
@@ -12,6 +12,8 @@ import {
 } from "@/components/RentalEveningOffer";
 import { ProductGrid } from "@/components/ProductGrid";
 import { PetzlOrderOffer } from "@/components/PetzlOrderOffer";
+import { KidsRollerOffer, KIDS_ROLLER_OFFER_TEXT } from "@/components/KidsRollerOffer";
+import { isKidsRollerOfferProduct, KIDS_ROLLER_CATALOG_PARAMS, KIDS_ROLLER_OFFER } from "@/lib/kids-roller-offer";
 import { RentalGrid } from "@/components/RentalGrid";
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { useCatalogTranslations } from "@/lib/catalog-translations";
@@ -133,6 +135,13 @@ export function CatalogPage(props: ShopProps | RentalProps) {
   const catalogTranslations = useCatalogTranslations(lang);
   const catalogUi = CATALOG_UI_TEXT[lang];
   const pageText = CATALOG_PAGE_TEXT[lang];
+  const offerText = KIDS_ROLLER_OFFER_TEXT[lang];
+  const routeSearch = useSearch({ strict: false });
+  const isRollerCategory = props.kind === "shop" &&
+    props.group.slug === KIDS_ROLLER_CATALOG_PARAMS.group &&
+    props.activeCategory?.slug === KIDS_ROLLER_CATALOG_PARAMS.category &&
+    (!props.activeSubcategory || props.activeSubcategory.slug === "roller");
+  const kidsOfferActive = isRollerCategory && routeSearch.offer === KIDS_ROLLER_OFFER;
   const [search, setSearch] = useState(getCatalogSearchFromUrl);
   const [sort, setSort] = useState<SortKey>("default");
   const [onlyAvailable, setOnlyAvailable] = useState(false);
@@ -234,13 +243,14 @@ export function CatalogPage(props: ShopProps | RentalProps) {
   const filteredProducts = useMemo(() => {
     if (!isShop) return [] as ShopProduct[];
     let arr = (isWholeCatalogSearchActive ? globalSearchProducts : props.products).slice();
+    if (kidsOfferActive) arr = arr.filter(isKidsRollerOfferProduct);
     if (onlyAvailable) arr = arr.filter((p) => p.in_stock);
     if (sort === "price-asc")
       arr.sort((a, b) => getDisplayPrice(a.price, a.sale_price) - getDisplayPrice(b.price, b.sale_price));
     else if (sort === "price-desc")
       arr.sort((a, b) => getDisplayPrice(b.price, b.sale_price) - getDisplayPrice(a.price, a.sale_price));
     return arr;
-  }, [globalSearchProducts, isShop, isWholeCatalogSearchActive, onlyAvailable, props, sort]);
+  }, [globalSearchProducts, isShop, isWholeCatalogSearchActive, kidsOfferActive, onlyAvailable, props, sort]);
 
   const filteredItems = useMemo(() => {
     if (isShop) return [] as RentalItem[];
@@ -313,9 +323,11 @@ export function CatalogPage(props: ShopProps | RentalProps) {
 
   useEffect(() => {
     setVisibleCount(INITIAL_VISIBLE_COUNT);
-  }, [search, sort, onlyAvailable, props.group.id, props.activeCategory?.id, props.activeSubcategory?.id]);
+  }, [search, sort, onlyAvailable, kidsOfferActive, props.group.id, props.activeCategory?.id, props.activeSubcategory?.id]);
 
   const isTourismSection = isShop && props.group.slug === "tourismCamping";
+  const showsKidsOffer = isRollerCategory ||
+    (isShop && props.group.slug === KIDS_ROLLER_CATALOG_PARAMS.group && !props.activeCategory);
   const showsEveningOffer =
     props.kind === "rentals" &&
     props.group.slug === "sportsRental" &&
@@ -532,6 +544,25 @@ export function CatalogPage(props: ShopProps | RentalProps) {
             {showsEveningOffer && <RentalEveningOffer />}
 
             {isShop && props.group.slug === "climbing" && <PetzlOrderOffer />}
+
+            {showsKidsOffer && <KidsRollerOffer compact active={kidsOfferActive} />}
+
+            {isRollerCategory && (
+              <nav aria-label={offerText.title} data-no-translate className="flex flex-wrap gap-2">
+                {[false, true].map((offer) => (
+                  <Link
+                    key={String(offer)}
+                    to="/sale/$group/$category"
+                    params={KIDS_ROLLER_CATALOG_PARAMS}
+                    search={{ offer: offer ? KIDS_ROLLER_OFFER : undefined }}
+                    aria-current={kidsOfferActive === offer ? "page" : undefined}
+                    className={`inline-flex min-h-11 items-center justify-center rounded-full border px-4 py-2 text-center font-body text-xs font-bold leading-snug transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground ${kidsOfferActive === offer ? "border-foreground bg-foreground text-background" : "border-border hover:border-foreground/40"}`}
+                  >
+                    {offer ? offerText.offer : offerText.all}
+                  </Link>
+                ))}
+              </nav>
+            )}
 
             {isTourismSection &&
               props.activeCategory &&

@@ -12,7 +12,7 @@ export function NewArrivals() {
   const text = getSiteText(lang).home;
 
   useEffect(() => {
-    listLatestProducts({ data: { limit: 12 } })
+    listLatestProducts({ data: { limit: 16 } })
       .then(setProducts)
       .catch(() => setProducts([]));
   }, []);

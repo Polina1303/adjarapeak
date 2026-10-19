@@ -1,6 +1,9 @@
-import { Link } from "@tanstack/react-router";
-import { ArrowRight, Clock3, MoonStar } from "lucide-react";
+import { Clock3, MoonStar } from "lucide-react";
 import { useLanguage, type Lang } from "@/lib/i18n";
+import { useId } from "react";
+import { HomeOfferCard } from "@/components/HomeOfferCard";
+import bannerBike from "@/assets/banner-bike.jpg";
+import { getResponsiveImageProps } from "@/lib/responsive-image";
 
 type EveningOfferText = {
   badge: string;
@@ -65,38 +68,47 @@ export const EVENING_RENTAL_CATEGORY_SLUGS = new Set([
 export function RentalEveningTeaser() {
   const { lang } = useLanguage();
   const text = EVENING_OFFER_TEXT[lang];
+  const headingId = useId();
+  const homeText = {
+    RU: {
+      title: "Вечернее катание",
+      description: "Велосипеды, ролики и лонгборды.",
+      benefit: "Оплата только за 3 часа",
+      details: "Заберите с 18:00 до 19:30. Верните на следующий день с 11:00 до 11:30.",
+      imageAlt: "Велосипед на горной тропе",
+    },
+    EN: {
+      title: "Evening ride",
+      description: "Bicycles, skates and longboards.",
+      benefit: "Pay for only 3 hours",
+      details: "Pick up from 18:00 to 19:30. Return the next day from 11:00 to 11:30.",
+      imageAlt: "Mountain bike on a trail",
+    },
+    GE: {
+      title: "საღამოს გასეირნება",
+      description: "ველოსიპედები, როლიკები და ლონგბორდები.",
+      benefit: "მხოლოდ 3 საათის საფასური",
+      details: "აიღეთ 18:00-დან 19:30-მდე. დააბრუნეთ მეორე დღეს 11:00-დან 11:30-მდე.",
+      imageAlt: "ველოსიპედი მთის ბილიკზე",
+    },
+  }[lang];
+  const image = getResponsiveImageProps("hero/banner-bike.jpg", "(min-width: 640px) 200px, 104px", 640);
 
   return (
-    <section className="section-padding pb-0 pt-5 md:pt-7">
-      <div className="mx-auto max-w-7xl">
-        <Link
-          to="/rent/$group"
-          params={{ group: "sportsRental" }}
-          className="group flex flex-col gap-3 overflow-hidden rounded-xl border border-ember/35 bg-foreground px-4 py-4 text-background shadow-md transition hover:border-ember/70 hover:shadow-lg sm:flex-row sm:items-center md:px-5"
-        >
-          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-ember text-primary-foreground">
-            <MoonStar className="h-4.5 w-4.5" aria-hidden="true" />
-          </span>
-          <div className="min-w-0 flex-1">
-            <h2 className="font-display text-base font-bold uppercase tracking-wide text-background md:text-lg">
-              {text.title}
-            </h2>
-            <p className="mt-0.5 font-body text-xs leading-relaxed text-background/70 md:text-sm">
-              {text.teaser}
-            </p>
-          </div>
-          <div className="flex shrink-0 items-center justify-between gap-4 sm:justify-end">
-            <span className="rounded-full bg-ember px-3 py-1.5 font-body text-xs font-bold text-primary-foreground md:text-sm">
-              {text.price}
-            </span>
-            <span className="inline-flex items-center gap-1.5 font-body text-xs font-bold text-background md:text-sm">
-              {text.cta}
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-            </span>
-          </div>
-        </Link>
-      </div>
-    </section>
+    <HomeOfferCard
+      headingId={headingId}
+      eyebrow={text.badge}
+      title={homeText.title}
+      price={text.price}
+      description={homeText.description}
+      benefit={homeText.benefit}
+      details={homeText.details}
+      note={text.deposit}
+      icon={MoonStar}
+      image={{ src: image.src ?? bannerBike, srcSet: image.srcSet, sizes: image.sizes, alt: homeText.imageAlt, fit: "cover", position: "35% center" }}
+      destination="sports-rental"
+      actionLabel={text.cta}
+    />
   );
 }
 

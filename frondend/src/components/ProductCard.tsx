@@ -7,6 +7,9 @@ import { useLanguage } from "@/lib/i18n";
 import { getSiteText } from "@/lib/site-translations";
 import { toast } from "sonner";
 import { LoadingImage } from "@/components/LoadingIndicator";
+import { Gift } from "lucide-react";
+import { isKidsRollerOfferProduct } from "@/lib/kids-roller-offer";
+import { KIDS_ROLLER_OFFER_TEXT } from "@/components/KidsRollerOffer";
 
 type Props = {
   product: ShopProduct;
@@ -78,6 +81,12 @@ export function ProductCard({ product: p, bordered = false }: Props) {
         <h3 className="font-body text-foreground text-sm leading-snug line-clamp-2">
           {p.title}
         </h3>
+        {p.in_stock && isKidsRollerOfferProduct(p) && (
+          <span data-no-translate className="inline-flex items-start gap-1.5 font-body text-[10px] font-bold leading-relaxed text-[#9c4900] sm:text-xs">
+            <Gift aria-hidden="true" className="mt-0.5 h-3.5 w-3.5 shrink-0" />
+            {KIDS_ROLLER_OFFER_TEXT[lang].gift}
+          </span>
+        )}
         {(colors.length || p.sizes?.length) ? (
           <div className="flex flex-col gap-2 pt-1">
             {colors.length ? (

@@ -5,6 +5,7 @@ import { catalogImageProps } from "@/lib/catalog-image";
 import { searchShopProducts, listShopGroups, type ShopProduct } from "@/lib/catalog.functions";
 import { getDisplayPrice, getSalePrice } from "@/lib/discount";
 import { TilePicker } from "@/components/TilePicker";
+import { KidsRollerOffer } from "@/components/KidsRollerOffer";
 import {
   Dialog,
   DialogContent,
@@ -55,6 +56,9 @@ function ShopIndex() {
       emptyText="Категории пока недоступны."
     >
       <ShopLandingSearch lang={lang} />
+      <div className="mb-8">
+        <KidsRollerOffer compact />
+      </div>
     </TilePicker>
   );
 }

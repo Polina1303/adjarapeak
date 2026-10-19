@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { lazy, Suspense } from "react";
 import { Header } from "@/components/Header";
 import { HeroCarousel } from "@/components/HeroCarousel";
+import { HomeOffers } from "@/components/HomeOffers";
 import { BrandStrip } from "@/components/BrandStrip";
 import { FeaturedBrands } from "@/components/FeaturedBrands";
-import { RentalEveningTeaser } from "@/components/RentalEveningOffer";
 import { Footer } from "@/components/Footer";
 import { listShopGroups, listRentalGroups } from "@/lib/catalog.functions";
 import {
@@ -73,7 +73,7 @@ function Index() {
           Спортивный и туристический магазин Adjara Peak в Батуми
         </h1>
         <HeroCarousel />
-        <RentalEveningTeaser />
+        <HomeOffers />
         <BrandStrip />
         <Suspense fallback={null}>
           <ActivityCategories groups={groups} />

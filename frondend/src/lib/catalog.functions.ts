@@ -1094,12 +1094,17 @@ async function getFeaturedProductsByCategorySlugs(slugs: string[], limit: number
     .select("*")
     .in("category_id", categoryIds)
     .eq("in_stock", true)
+    .eq("hidden", false)
     .order("created_at", { ascending: false })
     .limit(Math.max(limit * 4, 20));
   if (error) throw new Error(error.message);
 
   return normalizeShopProducts(products)
-    .filter((product) => product.image && CATALOG_IMAGE_FILES.has(product.image))
+    .filter(
+      (product) => product.image && (
+        CATALOG_IMAGE_FILES.has(product.image) || /^https?:\/\//i.test(product.image)
+      ),
+    )
     .slice(0, limit);
 }
 
@@ -1278,15 +1283,18 @@ export const listLatestProducts = createServerFn({ method: "GET" })
   )
   .handler(async ({ data }) => {
     const limit = data.limit ?? 6;
-    const { data: rawPinnedProducts, error: pinnedProductsError } = await supabase
-      .from("shop_products")
-      .select("*")
-      .in("slug", [...ALWAYS_NEW_PRODUCT_SLUGS])
-      .eq("in_stock", true)
-      .eq("hidden", false);
+    const [skiProducts, { data: rawPinnedProducts, error: pinnedProductsError }] = await Promise.all([
+      getFeaturedProductsByCategorySlugs(["skis"], Math.min(8, limit)),
+      supabase
+        .from("shop_products")
+        .select("*")
+        .in("slug", [...ALWAYS_NEW_PRODUCT_SLUGS])
+        .eq("in_stock", true)
+        .eq("hidden", false),
+    ]);
     if (pinnedProductsError) throw new Error(pinnedProductsError.message);
 
-    const pinnedOrder = new Map(
+    const pinnedOrder = new Map<string, number>(
       ALWAYS_NEW_PRODUCT_SLUGS.map((slug, index) => [slug, index]),
     );
     const pinnedProducts = normalizeShopProducts(rawPinnedProducts)
@@ -1296,9 +1304,9 @@ export const listLatestProducts = createServerFn({ method: "GET" })
           (pinnedOrder.get(a.slug) ?? Number.MAX_SAFE_INTEGER) -
           (pinnedOrder.get(b.slug) ?? Number.MAX_SAFE_INTEGER),
       )
-      .slice(0, limit);
+      .slice(0, Math.max(limit - skiProducts.length, 0));
 
-    const remaining = Math.max(limit - pinnedProducts.length, 0);
+    const remaining = Math.max(limit - skiProducts.length - pinnedProducts.length, 0);
     const rollerLimit = Math.min(2, remaining);
     const boardLimit = Math.max(remaining - rollerLimit, 0);
     const [boardProducts, rollerProducts] = await Promise.all([
@@ -1321,6 +1329,7 @@ export const listLatestProducts = createServerFn({ method: "GET" })
       return true;
     };
 
+    for (const product of skiProducts) pushUnique(product);
     for (const product of pinnedProducts) pushUnique(product);
 
     let addedBoards = 0;
