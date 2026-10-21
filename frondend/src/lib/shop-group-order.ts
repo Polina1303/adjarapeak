@@ -1,5 +1,6 @@
 export const SHOP_GROUP_SLUG_ORDER = [
   "sale",
+  "alpinesking",
   "cyclingRoller",
   "boards",
   "clothesAndShoes",
@@ -11,7 +12,6 @@ export const SHOP_GROUP_SLUG_ORDER = [
   "swimmingSup",
   "climbing",
   "winterSports",
-  "alpinesking",
 ] as const;
 
 const SHOP_GROUP_ORDER_INDEX = new Map<string, number>(

@@ -1,0 +1,82 @@
+[
+  {
+    "index": 215,
+    "name": "magic-pon",
+    "source": "https://oesqpzetyywoqectaovz.supabase.co/storage/v1/object/public/catalog-images/1784476398509-ongo87.webp",
+    "refs": [
+      {
+        "table": "shop_products",
+        "id": "1919c5ae-9a3b-43f4-a117-ab32600bff0a",
+        "slug": "8790123",
+        "title": "Раздвижные ролики - квады Magic Pon",
+        "field": "image"
+      }
+    ],
+    "path": "frondend/.cache/catalog-image-sources/8393b6be333c10414fa27ed27d929d13aa8d28980bbc01c7d97cfedc2190dd3c",
+    "output": "output/legacy-cleanup/final/magic-pon-no-legacy.png",
+    "width": 1000,
+    "height": 1000,
+    "changedPixels": 7145,
+    "outsideDiff": 0
+  },
+  {
+    "index": 1594,
+    "name": "sport-ranger",
+    "source": "https://oesqpzetyywoqectaovz.supabase.co/storage/v1/object/public/catalog-images/1784475931653-vwyqvr.webp",
+    "refs": [
+      {
+        "table": "shop_products",
+        "id": "c63164f8-2f65-4bed-bf88-d50cb385c3dc",
+        "slug": "987123654",
+        "title": "Раздвижные ролики Sport Ranger Gray/Green",
+        "field": "image"
+      }
+    ],
+    "path": "frondend/.cache/catalog-image-sources/0b6287608b0a3205f0b8674f82750ae216d31c838d77d598e12af7f3dc4d7854",
+    "output": "output/legacy-cleanup/final/sport-ranger-no-legacy.png",
+    "width": 1000,
+    "height": 1000,
+    "changedPixels": 6928,
+    "outsideDiff": 0
+  },
+  {
+    "index": 1787,
+    "name": "moonlight",
+    "source": "https://oesqpzetyywoqectaovz.supabase.co/storage/v1/object/public/catalog-images/1784475533938-rqtmsb.webp",
+    "refs": [
+      {
+        "table": "shop_products",
+        "id": "e06e507a-1d95-45ab-8c8a-5155f053bf50",
+        "slug": "652140",
+        "title": "Ролики с подсветкой Moonlight Pink/Blue",
+        "field": "image"
+      }
+    ],
+    "path": "frondend/.cache/catalog-image-sources/a71838a1bfd3706b439b5b2760774f7e5355caa0b95d82f26c27150ef5d79ba8",
+    "output": "output/legacy-cleanup/final/moonlight-no-legacy.png",
+    "width": 1000,
+    "height": 1000,
+    "changedPixels": 6627,
+    "outsideDiff": 0
+  },
+  {
+    "index": 248,
+    "name": "georgia-gift",
+    "source": "https://oesqpzetyywoqectaovz.supabase.co/storage/v1/object/public/catalog-images/1784475212530-c8qw17.webp",
+    "refs": [
+      {
+        "table": "shop_products",
+        "id": "1d323b90-d2a1-43f0-8d7d-3e6f4381bb54",
+        "slug": "8967451",
+        "title": "Подарочный набор GEORGIA",
+        "field": "image"
+      }
+    ],
+    "path": "frondend/.cache/catalog-image-sources/27544507b2b55bc76e134e15771bfca741fb521f3c5763021aff92afbe383615",
+    "output": "output/legacy-cleanup/final/georgia-gift-no-legacy.png",
+    "width": 1000,
+    "height": 1000,
+    "changedPixels": 7092,
+    "outsideDiff": 0
+  }
+]

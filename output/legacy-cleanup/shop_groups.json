@@ -1,0 +1,98 @@
+[
+  {
+    "id": "0c5e1039-9ecf-4d17-8575-f54ad2eaa4af",
+    "slug": "swimmingSup",
+    "title": "Плавание и SUP",
+    "image": "sup-board-clean.png",
+    "sort_order": 9,
+    "created_at": "2026-05-02T13:56:18.130726+00:00"
+  },
+  {
+    "id": "1c0ed90a-13f8-4de9-9095-383741c34a3e",
+    "slug": "winterSports",
+    "title": "Зимние виды спорта",
+    "image": "https://oesqpzetyywoqectaovz.supabase.co/storage/v1/object/public/catalog-images/1781082248582-of39zt.png",
+    "sort_order": 11,
+    "created_at": "2026-06-10T08:00:17.203318+00:00"
+  },
+  {
+    "id": "2cae3288-102d-4b7d-93e7-78057c0aeef8",
+    "slug": "martial",
+    "title": "Единоборства",
+    "image": null,
+    "sort_order": 4,
+    "created_at": "2026-05-02T13:56:18.039153+00:00"
+  },
+  {
+    "id": "2e38f2a2-be06-4dc2-bd9c-4edd19a21508",
+    "slug": "climbing",
+    "title": "Скалолазание",
+    "image": "",
+    "sort_order": 10,
+    "created_at": "2026-08-14T10:34:17.299025+00:00"
+  },
+  {
+    "id": "780d35c3-8621-4a61-9255-71ee5d0dc4fc",
+    "slug": "tourismCamping",
+    "title": "Туризм и кемпинг",
+    "image": "camping-tent-mh100-2-person-fresh-and-black.jpg",
+    "sort_order": 5,
+    "created_at": "2026-05-02T13:56:18.061635+00:00"
+  },
+  {
+    "id": "8634c7e3-927a-4df6-aed1-c4522489c664",
+    "slug": "alpinesking",
+    "title": "Горнолыжный спорт",
+    "image": "2021-Draft-Camber_e226fbf7-5f08-4fed-af0b-08bebd125dda.webp",
+    "sort_order": 1001,
+    "created_at": "2026-05-02T13:56:17.992687+00:00"
+  },
+  {
+    "id": "b2460d3d-a4dc-4261-b247-4a9b3a6c36eb",
+    "slug": "cyclingRoller",
+    "title": "Велосипеды и ролики",
+    "image": "",
+    "sort_order": 2,
+    "created_at": "2026-05-02T13:56:18.152621+00:00"
+  },
+  {
+    "id": "bd336ca1-0a4d-423f-b59b-5e8b65719bad",
+    "slug": "clothesAndShoes",
+    "title": "Одежда и обувь",
+    "image": "clothes-summer.png",
+    "sort_order": 3,
+    "created_at": "2026-05-02T13:56:18.01716+00:00"
+  },
+  {
+    "id": "c069bcf8-320f-4f62-93b3-7876620c144a",
+    "slug": "fitness",
+    "title": "Фитнес",
+    "image": "2355067354_w640_h640_ganteli-dlya-fitnesa.webp",
+    "sort_order": 8,
+    "created_at": "2026-05-02T13:56:18.108705+00:00"
+  },
+  {
+    "id": "c6159cf4-e1f4-4e1f-bfb8-40c942214d66",
+    "slug": "sports",
+    "title": "Спорт",
+    "image": "0072caf5-8f66-4001-8552-442eda1f9b2a.png",
+    "sort_order": 7,
+    "created_at": "2026-05-02T13:56:18.086727+00:00"
+  },
+  {
+    "id": "dd6b335e-c913-43db-82f4-23a31a7c1172",
+    "slug": "food",
+    "title": "Еда",
+    "image": "ukrainian-borscht-front.png",
+    "sort_order": 6,
+    "created_at": "2026-06-15T19:52:07.837916+00:00"
+  },
+  {
+    "id": "fe5ab258-414e-45ed-91ab-e6ee59aef17b",
+    "slug": "sale",
+    "title": "Распродажа",
+    "image": "sale-banner.jpg",
+    "sort_order": 1,
+    "created_at": "2026-05-10T12:53:35.449074+00:00"
+  }
+]

@@ -1,0 +1,191 @@
+[
+  {
+    "source": "IMG_2389.PNG",
+    "refs": [
+      {
+        "table": "shop_products",
+        "id": "b01604ad-d4dc-4f96-b29e-dc91ec0b530d",
+        "slug": "1083270430777",
+        "title": "Тарелка пластиковая неглубокая",
+        "field": "image"
+      }
+    ],
+    "index": 1425,
+    "path": "frondend/public/img/IMG_2389.PNG",
+    "gold": 20792,
+    "box": [
+      60,
+      260,
+      339,
+      374
+    ],
+    "best": 0.7741935483870968,
+    "where": {
+      "x": 83,
+      "y": 10,
+      "scale": 1.5
+    }
+  },
+  {
+    "source": "fc3dfbf2-9fd5-41c6-bf85-53a150583385_800x800.avif",
+    "refs": [
+      {
+        "table": "shop_products",
+        "id": "e2d082c5-9e2d-44b1-bf14-6990a067b62a",
+        "slug": "10234003233341100",
+        "title": "Балаклава",
+        "field": "image"
+      }
+    ],
+    "index": 1810,
+    "path": "frondend/public/img/fc3dfbf2-9fd5-41c6-bf85-53a150583385_800x800.avif",
+    "gold": 17574,
+    "box": [
+      107,
+      260,
+      294,
+      383
+    ],
+    "best": 0.7741935483870968,
+    "where": {
+      "x": 84,
+      "y": 1,
+      "scale": 1.5
+    }
+  },
+  {
+    "source": "9923d480-23ea-4722.png",
+    "refs": [
+      {
+        "table": "shop_products",
+        "id": "16b305af-9419-43b9-a40c-e0e5855a71b0",
+        "slug": "6293124390979943000",
+        "title": "Резина для тренировок ",
+        "field": "image"
+      }
+    ],
+    "index": 195,
+    "path": "frondend/public/img/9923d480-23ea-4722.png",
+    "gold": 6912,
+    "box": [
+      124,
+      260,
+      263,
+      382
+    ],
+    "best": 0.7741935483870968,
+    "where": {
+      "x": 97,
+      "y": 9,
+      "scale": 1.25
+    }
+  },
+  {
+    "source": "https://oesqpzetyywoqectaovz.supabase.co/storage/v1/object/public/catalog-images/1786879963129-hifm6e.avif",
+    "refs": [
+      {
+        "table": "shop_products",
+        "id": "0fcc8491-aa44-4c52-a518-61655add01e6",
+        "slug": "424242094842",
+        "title": "Индикатор износа цепи  TOOPRE",
+        "field": "image"
+      }
+    ],
+    "index": 128,
+    "path": "frondend/.cache/catalog-image-sources/b133822669322e69841ac57620df4c86634a73ea5b7cab36dbb8458d194fea0b",
+    "gold": 1132,
+    "box": [
+      60,
+      260,
+      107,
+      334
+    ],
+    "best": 0.7741935483870968,
+    "where": {
+      "x": 142,
+      "y": 40,
+      "scale": 0.85
+    }
+  },
+  {
+    "source": "https://oesqpzetyywoqectaovz.supabase.co/storage/v1/object/public/catalog-images/1784476398509-ongo87.webp",
+    "refs": [
+      {
+        "table": "shop_products",
+        "id": "1919c5ae-9a3b-43f4-a117-ab32600bff0a",
+        "slug": "8790123",
+        "title": "Раздвижные ролики - квады Magic Pon",
+        "field": "image"
+      }
+    ],
+    "index": 215,
+    "path": "frondend/.cache/catalog-image-sources/8393b6be333c10414fa27ed27d929d13aa8d28980bbc01c7d97cfedc2190dd3c",
+    "gold": 324,
+    "box": [
+      164,
+      373,
+      236,
+      393
+    ],
+    "best": 1,
+    "where": {
+      "x": 79,
+      "y": 184,
+      "scale": 1
+    }
+  },
+  {
+    "source": "https://oesqpzetyywoqectaovz.supabase.co/storage/v1/object/public/catalog-images/1784475533938-rqtmsb.webp",
+    "refs": [
+      {
+        "table": "shop_products",
+        "id": "e06e507a-1d95-45ab-8c8a-5155f053bf50",
+        "slug": "652140",
+        "title": "Ролики с подсветкой Moonlight Pink/Blue",
+        "field": "image"
+      }
+    ],
+    "index": 1787,
+    "path": "frondend/.cache/catalog-image-sources/a71838a1bfd3706b439b5b2760774f7e5355caa0b95d82f26c27150ef5d79ba8",
+    "gold": 324,
+    "box": [
+      164,
+      373,
+      236,
+      393
+    ],
+    "best": 1,
+    "where": {
+      "x": 79,
+      "y": 184,
+      "scale": 1
+    }
+  },
+  {
+    "source": "https://oesqpzetyywoqectaovz.supabase.co/storage/v1/object/public/catalog-images/1784475931653-vwyqvr.webp",
+    "refs": [
+      {
+        "table": "shop_products",
+        "id": "c63164f8-2f65-4bed-bf88-d50cb385c3dc",
+        "slug": "987123654",
+        "title": "Раздвижные ролики Sport Ranger Gray/Green",
+        "field": "image"
+      }
+    ],
+    "index": 1594,
+    "path": "frondend/.cache/catalog-image-sources/0b6287608b0a3205f0b8674f82750ae216d31c838d77d598e12af7f3dc4d7854",
+    "gold": 323,
+    "box": [
+      164,
+      373,
+      236,
+      393
+    ],
+    "best": 0.8064516129032258,
+    "where": {
+      "x": 79,
+      "y": 184,
+      "scale": 1
+    }
+  }
+]

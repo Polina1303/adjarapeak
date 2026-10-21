@@ -1,0 +1,26 @@
+[
+  {
+    "id": "51fdeb24-a622-4a3a-b431-ac65def8708d",
+    "slug": "tourismRental",
+    "title": "Туристический прокат",
+    "image": null,
+    "sort_order": 2,
+    "created_at": "2026-05-02T13:56:55.624063+00:00"
+  },
+  {
+    "id": "5eb4cd97-cf4f-481f-8b0f-efe54bf819c8",
+    "slug": "sportsRental",
+    "title": "Спортивный прокат",
+    "image": "2355067354_w640_h640_ganteli-dlya-fitnesa.webp",
+    "sort_order": 3,
+    "created_at": "2026-05-10T12:19:35.851568+00:00"
+  },
+  {
+    "id": "f1dd6771-f322-45b9-8b04-9fe8360dc45d",
+    "slug": "skiRental",
+    "title": "Горнолыжное снаряжение",
+    "image": "2021-Draft-Camber_e226fbf7-5f08-4fed-af0b-08bebd125dda.webp",
+    "sort_order": 999,
+    "created_at": "2026-05-02T13:56:55.430966+00:00"
+  }
+]

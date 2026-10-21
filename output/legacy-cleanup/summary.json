@@ -1,0 +1,104 @@
+{
+  "checkedUniqueImages": 2232,
+  "unavailableImages": [
+    {
+      "source": "https://legacy.ge/storage/images/products/product_img_6ab85c5e7439d.webp",
+      "refs": [
+        {
+          "table": "shop_products",
+          "id": "8ab2576b-a5a0-4a90-ba12-32f01a1da538",
+          "slug": "slam-ball-weighted-4kg",
+          "title": "Слэмбол, утяжеленный мяч 4кг",
+          "field": "image"
+        }
+      ],
+      "index": 1122,
+      "path": "frondend/.cache/catalog-image-sources/dc176f62f6da40237052f6272af1c4cbb4dce2aed54a087bf57400a91c04cb8b"
+    }
+  ],
+  "watermarkedImages": 4,
+  "finalMethod": "Programmatic removal using the logo pixel mask; PNG without resizing or recompression losses.",
+  "validation": "All four images are 1000x1000. Zero changed pixels outside the logo mask. Zero gold logo pixels remain in the logo region.",
+  "originalsDirectory": "originals",
+  "finalDirectory": "final",
+  "uploaded": true,
+  "products": [
+    {
+      "title": "Раздвижные ролики - квады Magic Pon",
+      "slug": "8790123",
+      "original": "https://oesqpzetyywoqectaovz.supabase.co/storage/v1/object/public/catalog-images/1784476398509-ongo87.webp",
+      "final": "output/legacy-cleanup/final/magic-pon-no-legacy.png",
+      "changedPixels": 7145,
+      "outsideMaskChangedPixels": 0,
+      "uploadedUrl": "https://oesqpzetyywoqectaovz.supabase.co/storage/v1/object/public/catalog-images/1792330867123-21pog1.png"
+    },
+    {
+      "title": "Раздвижные ролики Sport Ranger Gray/Green",
+      "slug": "987123654",
+      "original": "https://oesqpzetyywoqectaovz.supabase.co/storage/v1/object/public/catalog-images/1784475931653-vwyqvr.webp",
+      "final": "output/legacy-cleanup/final/sport-ranger-no-legacy.png",
+      "changedPixels": 6928,
+      "outsideMaskChangedPixels": 0,
+      "uploadedUrl": "https://oesqpzetyywoqectaovz.supabase.co/storage/v1/object/public/catalog-images/1792330924389-3dybwl.png"
+    },
+    {
+      "title": "Ролики с подсветкой Moonlight Pink/Blue",
+      "slug": "652140",
+      "original": "https://oesqpzetyywoqectaovz.supabase.co/storage/v1/object/public/catalog-images/1784475533938-rqtmsb.webp",
+      "final": "output/legacy-cleanup/final/moonlight-no-legacy.png",
+      "changedPixels": 6627,
+      "outsideMaskChangedPixels": 0,
+      "uploadedUrl": "https://oesqpzetyywoqectaovz.supabase.co/storage/v1/object/public/catalog-images/1792330966483-iov9g3.png"
+    },
+    {
+      "title": "Подарочный набор GEORGIA",
+      "slug": "8967451",
+      "original": "https://oesqpzetyywoqectaovz.supabase.co/storage/v1/object/public/catalog-images/1784475212530-c8qw17.webp",
+      "final": "output/legacy-cleanup/final/georgia-gift-no-legacy.png",
+      "changedPixels": 7092,
+      "outsideMaskChangedPixels": 0,
+      "uploadedUrl": "https://oesqpzetyywoqectaovz.supabase.co/storage/v1/object/public/catalog-images/1792331002075-rs92zd.png"
+    }
+  ],
+  "uploadVerification": [
+    {
+      "slug": "8790123",
+      "title": "Раздвижные ролики - квады Magic Pon",
+      "url": "https://oesqpzetyywoqectaovz.supabase.co/storage/v1/object/public/catalog-images/1792330867123-21pog1.png",
+      "sha256": "5f21bb4b39b5b69e20362b026e40794644697ea358533e955649534ff4540c93",
+      "changedFields": [
+        "image"
+      ]
+    },
+    {
+      "slug": "987123654",
+      "title": "Раздвижные ролики Sport Ranger Gray/Green",
+      "url": "https://oesqpzetyywoqectaovz.supabase.co/storage/v1/object/public/catalog-images/1792330924389-3dybwl.png",
+      "sha256": "506597fd110d24f7ecfc92e1da9331f8c2f19cdabca2e1b0a1bf2939ea53482e",
+      "changedFields": [
+        "image"
+      ]
+    },
+    {
+      "slug": "652140",
+      "title": "Ролики с подсветкой Moonlight Pink/Blue",
+      "url": "https://oesqpzetyywoqectaovz.supabase.co/storage/v1/object/public/catalog-images/1792330966483-iov9g3.png",
+      "sha256": "9bd7f09fc6aee1935cdf337c5c1dc54c7872a4c425a63906162946513d941e54",
+      "changedFields": [
+        "image",
+        "in_stock"
+      ]
+    },
+    {
+      "slug": "8967451",
+      "title": "Подарочный набор GEORGIA",
+      "url": "https://oesqpzetyywoqectaovz.supabase.co/storage/v1/object/public/catalog-images/1792331002075-rs92zd.png",
+      "sha256": "068f5a140b94a69b5ff03adfe8be602c536b37c798981e81c35906748ef67cc4",
+      "changedFields": [
+        "image"
+      ]
+    }
+  ],
+  "uploadMethod": "Uploaded and saved through the shop products admin interface.",
+  "availabilityNote": "Moonlight availability was already false in the admin form before this image replacement and was preserved."
+}

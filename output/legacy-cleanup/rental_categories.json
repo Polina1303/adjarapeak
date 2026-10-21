@@ -1,0 +1,245 @@
+[
+  {
+    "id": "011734ea-6a97-47ee-86fd-e6c9d2fe750c",
+    "group_id": "51fdeb24-a622-4a3a-b431-ac65def8708d",
+    "slug": "rentSleeping",
+    "title": "Спальники",
+    "image": "sleeping_bag_green.jpg",
+    "sort_order": 2,
+    "created_at": "2026-05-02T13:56:55.666713+00:00"
+  },
+  {
+    "id": "118b483c-3631-439f-9f37-5cbff92fffea",
+    "group_id": "5eb4cd97-cf4f-481f-8b0f-efe54bf819c8",
+    "slug": "rentTEAMSPORT",
+    "title": "Командные виды спорта",
+    "image": "beach-volleyball-size-5-bv100-classic-turquoise-kipsta.png",
+    "sort_order": 5,
+    "created_at": "2026-05-10T12:27:00.740999+00:00"
+  },
+  {
+    "id": "14f00509-a1aa-4236-8541-f899ef988807",
+    "group_id": "51fdeb24-a622-4a3a-b431-ac65def8708d",
+    "slug": "rentSUP",
+    "title": "SUP-доски",
+    "image": "18a131f8-02f0-47bc-b2a5-88b58d52642d.438bc7c551289ad8284aa8b118c9bc5a.webp",
+    "sort_order": 10,
+    "created_at": "2026-05-02T13:56:55.838064+00:00"
+  },
+  {
+    "id": "1b065f99-dfe6-49a7-855a-9e7af6e3a2ef",
+    "group_id": "5eb4cd97-cf4f-481f-8b0f-efe54bf819c8",
+    "slug": "Scooter",
+    "title": "Самокат",
+    "image": "https://oesqpzetyywoqectaovz.supabase.co/storage/v1/object/public/catalog-images/1781438572863-rawfx7.png",
+    "sort_order": 2,
+    "created_at": "2026-06-14T12:03:02.290753+00:00"
+  },
+  {
+    "id": "1f6a7fd4-7575-4e6d-b9ac-a77b5d69f3f5",
+    "group_id": "f1dd6771-f322-45b9-8b04-9fe8360dc45d",
+    "slug": "helmet",
+    "title": "Шлемы",
+    "image": "IMG_58.png",
+    "sort_order": 4,
+    "created_at": "2026-05-02T13:56:55.517263+00:00"
+  },
+  {
+    "id": "3211e01a-7f83-44f4-8121-8ee7dfcf98a8",
+    "group_id": "f1dd6771-f322-45b9-8b04-9fe8360dc45d",
+    "slug": "avalanche_equipment",
+    "title": "Лавинное снаряжение",
+    "image": "IMG_6820.PNG",
+    "sort_order": 8,
+    "created_at": "2026-05-02T13:56:55.602709+00:00"
+  },
+  {
+    "id": "3426b0a4-5f32-4623-aa5b-186dbc09d71f",
+    "group_id": "f1dd6771-f322-45b9-8b04-9fe8360dc45d",
+    "slug": "mask",
+    "title": "Маски",
+    "image": "IMG_5865-.png",
+    "sort_order": 5,
+    "created_at": "2026-05-02T13:56:55.53856+00:00"
+  },
+  {
+    "id": "34f00ca4-54fd-4a61-a5b1-43797cdfcabb",
+    "group_id": "5eb4cd97-cf4f-481f-8b0f-efe54bf819c8",
+    "slug": "rentBOARD",
+    "title": "Скейты и доски",
+    "image": "i-can-play-surfskate-947096861241.png",
+    "sort_order": 3,
+    "created_at": "2026-05-10T12:27:00.740999+00:00"
+  },
+  {
+    "id": "387844c6-4325-4f12-973b-37d2bf8ab71c",
+    "group_id": "5eb4cd97-cf4f-481f-8b0f-efe54bf819c8",
+    "slug": "ice-skates",
+    "title": "Ледовые коньки",
+    "image": "",
+    "sort_order": 8,
+    "created_at": "2026-08-14T12:39:07.926579+00:00"
+  },
+  {
+    "id": "49e175fb-df5b-4c3a-82e1-173d86d3f1ed",
+    "group_id": "f1dd6771-f322-45b9-8b04-9fe8360dc45d",
+    "slug": "protection",
+    "title": "Защита",
+    "image": "19.24.57.jpg",
+    "sort_order": 6,
+    "created_at": "2026-05-02T13:56:55.559883+00:00"
+  },
+  {
+    "id": "4d099928-c61f-4cb1-a84c-c2786ffdf7ac",
+    "group_id": "51fdeb24-a622-4a3a-b431-ac65def8708d",
+    "slug": "rentCLIMBING",
+    "title": "Альпинистское снаряжение",
+    "image": "VERTEXVENT.jpg",
+    "sort_order": 9,
+    "created_at": "2026-05-02T13:56:55.816748+00:00"
+  },
+  {
+    "id": "502d2cdd-b36f-4125-8a66-a28f57fe85a6",
+    "group_id": "f1dd6771-f322-45b9-8b04-9fe8360dc45d",
+    "slug": "dif",
+    "title": "Разное",
+    "image": "Gn31w.jpg",
+    "sort_order": 7,
+    "created_at": "2026-05-02T13:56:55.581351+00:00"
+  },
+  {
+    "id": "65250ac8-0b6e-4539-8c5a-954f607c176d",
+    "group_id": "5eb4cd97-cf4f-481f-8b0f-efe54bf819c8",
+    "slug": "rentFITNESS",
+    "title": "Фитнес",
+    "image": "mat_with_case.jpg",
+    "sort_order": 6,
+    "created_at": "2026-05-10T12:27:00.740999+00:00"
+  },
+  {
+    "id": "7074dbf9-8be2-41b0-bd19-7417dcf3f994",
+    "group_id": "f1dd6771-f322-45b9-8b04-9fe8360dc45d",
+    "slug": "clothes",
+    "title": "Одежда",
+    "image": "IMG_5903.PNG",
+    "sort_order": 3,
+    "created_at": "2026-05-02T13:56:55.495915+00:00"
+  },
+  {
+    "id": "74c642b1-1069-41bc-aab3-e6e673bc4be9",
+    "group_id": "51fdeb24-a622-4a3a-b431-ac65def8708d",
+    "slug": "rentHIKING",
+    "title": "Походы",
+    "image": "sitting_DECATHLON.png",
+    "sort_order": 8,
+    "created_at": "2026-05-02T13:56:55.79453+00:00"
+  },
+  {
+    "id": "7be2adda-313f-4765-8920-142c41658d44",
+    "group_id": "51fdeb24-a622-4a3a-b431-ac65def8708d",
+    "slug": "rentBURNER",
+    "title": "Горелки",
+    "image": "adapter.jpg",
+    "sort_order": 6,
+    "created_at": "2026-05-02T13:56:55.751692+00:00"
+  },
+  {
+    "id": "9f9a7d62-ab36-4010-b148-7f410106a52d",
+    "group_id": "f1dd6771-f322-45b9-8b04-9fe8360dc45d",
+    "slug": "snowboard",
+    "title": "Сноуборды",
+    "image": "19.52.32.jpg",
+    "sort_order": 2,
+    "created_at": "2026-05-02T13:56:55.474704+00:00"
+  },
+  {
+    "id": "ab0f027c-fba0-49a6-befd-ad1e38d33948",
+    "group_id": "51fdeb24-a622-4a3a-b431-ac65def8708d",
+    "slug": "rentTECHNICS",
+    "title": "Техника",
+    "image": "xiaomi-redmi-fast-charge-power-bank-20000-mah-18w.png",
+    "sort_order": 11,
+    "created_at": "2026-05-02T13:56:55.859283+00:00"
+  },
+  {
+    "id": "b3072283-62c9-481e-9943-579cb8f66917",
+    "group_id": "5eb4cd97-cf4f-481f-8b0f-efe54bf819c8",
+    "slug": "rentBIKE",
+    "title": "Велосипеды",
+    "image": "trinx-m600-rent.png",
+    "sort_order": 4,
+    "created_at": "2026-05-10T12:27:00.740999+00:00"
+  },
+  {
+    "id": "b8a4848e-6164-497c-8caf-e419725779e3",
+    "group_id": "51fdeb24-a622-4a3a-b431-ac65def8708d",
+    "slug": "rentTent",
+    "title": "Палатки",
+    "image": "tent2Mesuca.jpg",
+    "sort_order": 1,
+    "created_at": "2026-05-02T13:56:55.645225+00:00"
+  },
+  {
+    "id": "c1a38d35-7bb6-4ed2-bcb5-b4d1935c95a0",
+    "group_id": "51fdeb24-a622-4a3a-b431-ac65def8708d",
+    "slug": "rentBack",
+    "title": "Рюкзаки",
+    "image": "IMG_8135.jpg",
+    "sort_order": 3,
+    "created_at": "2026-05-02T13:56:55.688048+00:00"
+  },
+  {
+    "id": "d1b11d6e-a485-40c4-b6d4-a22ef0070670",
+    "group_id": "51fdeb24-a622-4a3a-b431-ac65def8708d",
+    "slug": "rentFURNITURE",
+    "title": "Мебель",
+    "image": "9858034f125a76b5679055e7b28c27aa.webp",
+    "sort_order": 4,
+    "created_at": "2026-05-02T13:56:55.709148+00:00"
+  },
+  {
+    "id": "d62c068b-b703-4b54-976c-9959c7c1516d",
+    "group_id": "5eb4cd97-cf4f-481f-8b0f-efe54bf819c8",
+    "slug": "protection",
+    "title": "Защита",
+    "image": "https://oesqpzetyywoqectaovz.supabase.co/storage/v1/object/public/catalog-images/1781353674754-8a07sg.jpg",
+    "sort_order": 7,
+    "created_at": "2026-06-13T12:28:12.563001+00:00"
+  },
+  {
+    "id": "d9733102-6da3-470d-9732-a2126b2867c3",
+    "group_id": "51fdeb24-a622-4a3a-b431-ac65def8708d",
+    "slug": "rentDISHES",
+    "title": "Посуда",
+    "image": "00.13.37.jpg",
+    "sort_order": 5,
+    "created_at": "2026-05-02T13:56:55.730267+00:00"
+  },
+  {
+    "id": "e0b3c9a7-d0c5-4273-a339-c0338659255c",
+    "group_id": "51fdeb24-a622-4a3a-b431-ac65def8708d",
+    "slug": "rentTOOLS",
+    "title": "Инструменты",
+    "image": "product_1207_1.jpg",
+    "sort_order": 7,
+    "created_at": "2026-05-02T13:56:55.773131+00:00"
+  },
+  {
+    "id": "e7e9503b-56f3-4deb-87fd-6e95c9143611",
+    "group_id": "f1dd6771-f322-45b9-8b04-9fe8360dc45d",
+    "slug": "sky",
+    "title": "Лыжи",
+    "image": "2026-01-01 15.38.20.jpg",
+    "sort_order": 1,
+    "created_at": "2026-05-02T13:56:55.452274+00:00"
+  },
+  {
+    "id": "f8e18183-3a8c-4c28-bdfe-2a63cf257b94",
+    "group_id": "5eb4cd97-cf4f-481f-8b0f-efe54bf819c8",
+    "slug": "rentROLLER",
+    "title": "Ролики",
+    "image": "easy-roll-3in1-skates-1-773445237516.png",
+    "sort_order": 1,
+    "created_at": "2026-05-10T12:27:00.740999+00:00"
+  }
+]

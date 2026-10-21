@@ -1,0 +1,1136 @@
+[
+  {
+    "id": "004e93da-a1f7-48dd-9750-03d73badb32e",
+    "group_id": "780d35c3-8621-4a61-9255-71ee5d0dc4fc",
+    "slug": "backpack",
+    "title": "Рюкзаки",
+    "image": "backpackBlack17L.jpg",
+    "sort_order": 3,
+    "created_at": "2026-05-02T13:56:18.061635+00:00"
+  },
+  {
+    "id": "019084c0-3be4-48c9-925f-9d94761d114e",
+    "group_id": "b2460d3d-a4dc-4261-b247-4a9b3a6c36eb",
+    "slug": "protection",
+    "title": "Защита",
+    "image": "9d89ae16-8e53-4cae-b62a-79392297469b-Photoroom.png",
+    "sort_order": 3,
+    "created_at": "2026-05-02T13:56:18.152621+00:00"
+  },
+  {
+    "id": "0559d3d1-5e45-47e8-8b08-e678e33776e6",
+    "group_id": "780d35c3-8621-4a61-9255-71ee5d0dc4fc",
+    "slug": "barbecue",
+    "title": "Барбекю",
+    "image": "202322.png",
+    "sort_order": 13,
+    "created_at": "2026-05-02T13:56:18.061635+00:00"
+  },
+  {
+    "id": "077b8096-0b90-4320-ba05-268cb06a3b9e",
+    "group_id": "c069bcf8-320f-4f62-93b3-7876620c144a",
+    "slug": "straps-hooks-belts",
+    "title": "Лямки, крюки и ремни",
+    "image": "",
+    "sort_order": 16,
+    "created_at": "2026-08-14T09:37:39.179842+00:00"
+  },
+  {
+    "id": "09c15591-d679-4b54-ac1c-a7005586ca49",
+    "group_id": "c6159cf4-e1f4-4e1f-bfb8-40c942214d66",
+    "slug": "tennis",
+    "title": "Теннис",
+    "image": "61yQ51BsmYL.png",
+    "sort_order": 1,
+    "created_at": "2026-05-02T13:56:18.086727+00:00"
+  },
+  {
+    "id": "0aaf4403-0cf5-4011-99b1-e929b715608b",
+    "group_id": "780d35c3-8621-4a61-9255-71ee5d0dc4fc",
+    "slug": "technic",
+    "title": "Солнечные панели и зарядка",
+    "image": "1_org_zoom323.png",
+    "sort_order": 21,
+    "created_at": "2026-05-02T13:56:18.061635+00:00"
+  },
+  {
+    "id": "0b2a81fb-0d3a-4047-9fa0-707d1e8db240",
+    "group_id": "2cae3288-102d-4b7d-93e7-78057c0aeef8",
+    "slug": "martialart_mouth_guard",
+    "title": "Капы",
+    "image": "f25e9788-d2ab-4ded-97de-1240e1866629.webp",
+    "sort_order": 3,
+    "created_at": "2026-05-02T13:56:18.039153+00:00"
+  },
+  {
+    "id": "0fec5058-b077-4b71-96cd-b1e10eb831b3",
+    "group_id": "0c5e1039-9ecf-4d17-8575-f54ad2eaa4af",
+    "slug": "hat_sea",
+    "title": "Головные уборы для воды",
+    "image": "mesh-swim-cap-printed-fabric-size.png",
+    "sort_order": 9,
+    "created_at": "2026-05-02T13:56:18.130726+00:00"
+  },
+  {
+    "id": "117ab319-58af-4b71-864b-20fb53a14b05",
+    "group_id": "780d35c3-8621-4a61-9255-71ee5d0dc4fc",
+    "slug": "safety",
+    "title": "Безопасность",
+    "image": "110000428237905.jpg",
+    "sort_order": 20,
+    "created_at": "2026-05-02T13:56:18.061635+00:00"
+  },
+  {
+    "id": "131e488a-eb2d-4893-8a86-7b7561f5e1c1",
+    "group_id": "c069bcf8-320f-4f62-93b3-7876620c144a",
+    "slug": "kettlebells",
+    "title": "Гантели и гири",
+    "image": "90798593_gantel-v-vinilovoj.webp",
+    "sort_order": 2,
+    "created_at": "2026-05-02T13:56:18.108705+00:00"
+  },
+  {
+    "id": "144632b3-49ef-4e62-a72a-4c3feb620d2f",
+    "group_id": "780d35c3-8621-4a61-9255-71ee5d0dc4fc",
+    "slug": "medal",
+    "title": "Медали",
+    "image": "23.11.40.jpg",
+    "sort_order": 22,
+    "created_at": "2026-05-02T13:56:18.061635+00:00"
+  },
+  {
+    "id": "172f4d9e-f551-44a7-9747-5d39c45f3808",
+    "group_id": "8634c7e3-927a-4df6-aed1-c4522489c664",
+    "slug": "buff",
+    "title": "Баффы",
+    "image": "adult-ski-neck-warmer.avif",
+    "sort_order": 5,
+    "created_at": "2026-05-02T13:56:17.992687+00:00"
+  },
+  {
+    "id": "1a866589-7c29-4ce4-999f-407c1dd7b54b",
+    "group_id": "c6159cf4-e1f4-4e1f-bfb8-40c942214d66",
+    "slug": "badminton",
+    "title": "Бадминтон",
+    "image": "6337498439.jpg",
+    "sort_order": 5,
+    "created_at": "2026-05-02T13:56:18.086727+00:00"
+  },
+  {
+    "id": "1d7c1a93-c8df-4cad-b17a-07fadb4bced1",
+    "group_id": "780d35c3-8621-4a61-9255-71ee5d0dc4fc",
+    "slug": "gas_burner",
+    "title": "Газовые горелки",
+    "image": "gas-flame.jpg",
+    "sort_order": 7,
+    "created_at": "2026-05-02T13:56:18.061635+00:00"
+  },
+  {
+    "id": "1dfa6cf2-c078-4ea8-bcad-9564b3479de5",
+    "group_id": "c6159cf4-e1f4-4e1f-bfb8-40c942214d66",
+    "slug": "padel",
+    "title": "Падел",
+    "image": "picture23445.png",
+    "sort_order": 2,
+    "created_at": "2026-05-02T13:56:18.086727+00:00"
+  },
+  {
+    "id": "1e7e2af1-92aa-4480-b4a7-ce79349d4362",
+    "group_id": "0c5e1039-9ecf-4d17-8575-f54ad2eaa4af",
+    "slug": "sup_accessories",
+    "title": "Аксессуары для SUP",
+    "image": "strahovochnyj-lish-coil-leash-8-7mm.webp",
+    "sort_order": 6,
+    "created_at": "2026-05-02T13:56:18.130726+00:00"
+  },
+  {
+    "id": "1f79f12d-f11f-4cf3-b4af-58436319ce3f",
+    "group_id": "bd336ca1-0a4d-423f-b59b-5e8b65719bad",
+    "slug": "clothes_gloves",
+    "title": "Перчатки",
+    "image": "001405-2-yinhe.png_468x468Q75.jpg_.avif",
+    "sort_order": 7,
+    "created_at": "2026-05-02T13:56:18.01716+00:00"
+  },
+  {
+    "id": "222a5925-a2c0-4c42-aec7-a1472bf66876",
+    "group_id": "c6159cf4-e1f4-4e1f-bfb8-40c942214d66",
+    "slug": "baseball",
+    "title": "Бейсбол",
+    "image": "2df97b49-7dac-455e-9d50-9467ea7cd0fe.jpeg",
+    "sort_order": 6,
+    "created_at": "2026-05-02T13:56:18.086727+00:00"
+  },
+  {
+    "id": "22846d12-8b80-4260-977f-083da4246e60",
+    "group_id": "c6159cf4-e1f4-4e1f-bfb8-40c942214d66",
+    "slug": "football",
+    "title": "Футбол",
+    "image": "ogretici-futbol-topu-5-numara-sari-pembe-learning-ball.png",
+    "sort_order": 8,
+    "created_at": "2026-05-02T13:56:18.086727+00:00"
+  },
+  {
+    "id": "27175b55-313e-4d88-956d-f909ea2af453",
+    "group_id": "2e38f2a2-be06-4dc2-bd9c-4edd19a21508",
+    "slug": "climbing-helmets",
+    "title": "Шлемы для скалолазания",
+    "image": "",
+    "sort_order": 3,
+    "created_at": "2026-09-20T12:14:47.430123+00:00"
+  },
+  {
+    "id": "29a6b2a8-fec8-4f42-86d0-4170c31b92d7",
+    "group_id": "0c5e1039-9ecf-4d17-8575-f54ad2eaa4af",
+    "slug": "vest",
+    "title": "Жилеты",
+    "image": "Most-Popular-EPE-Foam-Life-Jacket-Full-Size-for-Adult-and-Children.avif",
+    "sort_order": 5,
+    "created_at": "2026-05-02T13:56:18.130726+00:00"
+  },
+  {
+    "id": "2d2f3278-2c3a-42f0-8afa-e99ac0fa00ce",
+    "group_id": "780d35c3-8621-4a61-9255-71ee5d0dc4fc",
+    "slug": "sleepingbag",
+    "title": "Спальные мешки",
+    "image": "BTRACE_ZERO_L.png",
+    "sort_order": 2,
+    "created_at": "2026-05-02T13:56:18.061635+00:00"
+  },
+  {
+    "id": "2d8e1198-f135-4e8b-81ff-639eed867600",
+    "group_id": "bd336ca1-0a4d-423f-b59b-5e8b65719bad",
+    "slug": "care",
+    "title": "Уход",
+    "image": "d2ae7e6c-goods.webp",
+    "sort_order": 9,
+    "created_at": "2026-05-02T13:56:18.01716+00:00"
+  },
+  {
+    "id": "2ebafe3b-e3d6-47ab-8926-f7b74b62c141",
+    "group_id": "2cae3288-102d-4b7d-93e7-78057c0aeef8",
+    "slug": "martialart_exercise",
+    "title": "Тренажеры для единоборств",
+    "image": "b8556d1a-1dde-470e-9858-de257ebabaf5.png",
+    "sort_order": 11,
+    "created_at": "2026-05-02T13:56:18.039153+00:00"
+  },
+  {
+    "id": "32765d7d-0649-455f-9d04-321a22610911",
+    "group_id": "c069bcf8-320f-4f62-93b3-7876620c144a",
+    "slug": "shaker",
+    "title": "Шейкеры",
+    "image": "eb87bf73-7c37-44.png",
+    "sort_order": 4,
+    "created_at": "2026-05-02T13:56:18.108705+00:00"
+  },
+  {
+    "id": "32918e3d-7395-4f39-8f39-7621f54b1506",
+    "group_id": "8634c7e3-927a-4df6-aed1-c4522489c664",
+    "slug": "sky_care",
+    "title": "Уход за лыжами",
+    "image": "8.42.28.jpg",
+    "sort_order": 9,
+    "created_at": "2026-05-02T13:56:17.992687+00:00"
+  },
+  {
+    "id": "35d5c548-495c-4b62-9b82-e741eeee0180",
+    "group_id": "c069bcf8-320f-4f62-93b3-7876620c144a",
+    "slug": "accessories_fitnes",
+    "title": "Аксессуары для фитнеса",
+    "image": "siyah-kas-gelistirm.png",
+    "sort_order": 3,
+    "created_at": "2026-05-02T13:56:18.108705+00:00"
+  },
+  {
+    "id": "37d1ee81-940c-4917-9fc3-9868d8d13d79",
+    "group_id": "8634c7e3-927a-4df6-aed1-c4522489c664",
+    "slug": "snowboardsky_boots",
+    "title": "Ботинки для лыж и сноуборда",
+    "image": "IMG_3974.PNG",
+    "sort_order": 2,
+    "created_at": "2026-05-02T13:56:17.992687+00:00"
+  },
+  {
+    "id": "385177fa-a3bc-416d-9395-7a4bd772908d",
+    "group_id": "8634c7e3-927a-4df6-aed1-c4522489c664",
+    "slug": "thermalUnderwear",
+    "title": "Термобелье",
+    "image": "19.38.07.jpg",
+    "sort_order": 6,
+    "created_at": "2026-05-02T13:56:17.992687+00:00"
+  },
+  {
+    "id": "3852e642-4362-49a4-85ad-c08fddac426a",
+    "group_id": "780d35c3-8621-4a61-9255-71ee5d0dc4fc",
+    "slug": "trekkingsticks",
+    "title": "Треккинговые палки",
+    "image": "098764567890.jpg",
+    "sort_order": 5,
+    "created_at": "2026-05-02T13:56:18.061635+00:00"
+  },
+  {
+    "id": "3adb3b1a-701f-4e07-b312-db49c706d37f",
+    "group_id": "780d35c3-8621-4a61-9255-71ee5d0dc4fc",
+    "slug": "lantern",
+    "title": "Фонари",
+    "image": "33aafde2567a999fdb086b8664e299b2.jpg",
+    "sort_order": 8,
+    "created_at": "2026-05-02T13:56:18.061635+00:00"
+  },
+  {
+    "id": "3bd1423b-0c52-4e6c-9ac7-33adc5c51ad4",
+    "group_id": "8634c7e3-927a-4df6-aed1-c4522489c664",
+    "slug": "winter_chains",
+    "title": "Зимние цепи",
+    "image": "IMG_5012.PNG",
+    "sort_order": 15,
+    "created_at": "2026-05-02T13:56:17.992687+00:00"
+  },
+  {
+    "id": "3d4996b6-4546-4c98-a455-92d444ca9bdd",
+    "group_id": "8634c7e3-927a-4df6-aed1-c4522489c664",
+    "slug": "bag_sky",
+    "title": "Лыжные сумки",
+    "image": "kayak-cantasi-siyah-100.png",
+    "sort_order": 14,
+    "created_at": "2026-05-02T13:56:17.992687+00:00"
+  },
+  {
+    "id": "3feea4e1-ba66-4925-8c4d-e7f99ea0c292",
+    "group_id": "2e38f2a2-be06-4dc2-bd9c-4edd19a21508",
+    "slug": "climbing-harnesses",
+    "title": "Страховочные системы",
+    "image": "",
+    "sort_order": 6,
+    "created_at": "2026-09-26T07:54:41.468246+00:00"
+  },
+  {
+    "id": "43bc22f2-0e94-4dac-ab5e-4bbfe1b4634a",
+    "group_id": "bd336ca1-0a4d-423f-b59b-5e8b65719bad",
+    "slug": "shorts",
+    "title": "Шорты",
+    "image": "",
+    "sort_order": 14,
+    "created_at": "2026-08-11T14:46:37.833287+00:00"
+  },
+  {
+    "id": "457bda27-dc61-48f4-825a-218f34df7ef6",
+    "group_id": "0c5e1039-9ecf-4d17-8575-f54ad2eaa4af",
+    "slug": "hermo2",
+    "title": "Гермомешки",
+    "image": "22.16.11.jpg",
+    "sort_order": 11,
+    "created_at": "2026-05-02T13:56:18.130726+00:00"
+  },
+  {
+    "id": "47e3ec95-f748-412e-9f30-23b3e36d4822",
+    "group_id": "8634c7e3-927a-4df6-aed1-c4522489c664",
+    "slug": "snowboardsky",
+    "title": "Сноуборды и лыжи",
+    "image": "IMG_3744.PNG",
+    "sort_order": 1,
+    "created_at": "2026-05-02T13:56:17.992687+00:00"
+  },
+  {
+    "id": "4ceb2b50-8474-4fcc-bcdc-bd43d91e13fd",
+    "group_id": "0c5e1039-9ecf-4d17-8575-f54ad2eaa4af",
+    "slug": "beach",
+    "title": "Пляж",
+    "image": "47046567365643.jpeg",
+    "sort_order": 13,
+    "created_at": "2026-05-02T13:56:18.130726+00:00"
+  },
+  {
+    "id": "50888dfe-cb44-4e48-abf6-54ca8d4d22b4",
+    "group_id": "c6159cf4-e1f4-4e1f-bfb8-40c942214d66",
+    "slug": "frisbee",
+    "title": "Фрисби",
+    "image": "1018264996.jpg",
+    "sort_order": 7,
+    "created_at": "2026-05-02T13:56:18.086727+00:00"
+  },
+  {
+    "id": "51dc0b92-1041-47a5-8aa9-18e572786883",
+    "group_id": "780d35c3-8621-4a61-9255-71ee5d0dc4fc",
+    "slug": "dishes",
+    "title": "Посуда",
+    "image": "8dcd-aede1cf3ab55.webp",
+    "sort_order": 12,
+    "created_at": "2026-05-02T13:56:18.061635+00:00"
+  },
+  {
+    "id": "5b15617a-5588-4cff-9ffc-29328de0d49e",
+    "group_id": "0c5e1039-9ecf-4d17-8575-f54ad2eaa4af",
+    "slug": "goggles",
+    "title": "Очки",
+    "image": "swimming-goggles-ready-one-size-clear-lenses-grey-nabaiji-8616684.jpg",
+    "sort_order": 8,
+    "created_at": "2026-05-02T13:56:18.130726+00:00"
+  },
+  {
+    "id": "616b9ea6-b745-4fd2-be4d-da43f15acc66",
+    "group_id": "c069bcf8-320f-4f62-93b3-7876620c144a",
+    "slug": "balance_board",
+    "title": "Балансборды",
+    "image": "IMG_4474.PNG",
+    "sort_order": 17,
+    "created_at": "2026-05-02T13:56:18.108705+00:00"
+  },
+  {
+    "id": "631a5040-5a89-4eaf-b5fb-1b7ba6272cac",
+    "group_id": "1c0ed90a-13f8-4de9-9095-383741c34a3e",
+    "slug": "air_sky",
+    "title": "Тюбинги и санки",
+    "image": "09491dd5-4982-448d-8ed7-d424eb2b2545.webp",
+    "sort_order": 2,
+    "created_at": "2026-05-02T13:56:17.992687+00:00"
+  },
+  {
+    "id": "63aef69c-56cb-4b2c-bac4-9d38c6a66a98",
+    "group_id": "2cae3288-102d-4b7d-93e7-78057c0aeef8",
+    "slug": "martialart_clothes",
+    "title": "Одежда для единоборств",
+    "image": "4aa86b2f-b61c-4bd4-80c5-30d56.png",
+    "sort_order": 7,
+    "created_at": "2026-05-02T13:56:18.039153+00:00"
+  },
+  {
+    "id": "64d2731e-905e-4c20-898b-0a16e1c7b7bf",
+    "group_id": "c069bcf8-320f-4f62-93b3-7876620c144a",
+    "slug": "strength-training",
+    "title": "Силовые тренировки",
+    "image": "",
+    "sort_order": 12,
+    "created_at": "2026-08-14T09:25:36.683383+00:00"
+  },
+  {
+    "id": "6f2165f0-622f-4ccc-8d30-8c4e6b5eee32",
+    "group_id": "c6159cf4-e1f4-4e1f-bfb8-40c942214d66",
+    "slug": "mini",
+    "title": "Настольный теннис",
+    "image": "small-indoor-table-tennis-set-ppr-100-with-2-bats-and-3-balls.avif",
+    "sort_order": 4,
+    "created_at": "2026-05-02T13:56:18.086727+00:00"
+  },
+  {
+    "id": "7029e8fd-d3bd-4565-9098-85862c5e7bee",
+    "group_id": "b2460d3d-a4dc-4261-b247-4a9b3a6c36eb",
+    "slug": "roller",
+    "title": "Ролики",
+    "image": "f3a392a0-9695-41c1-9895-084b1f7b477e-Photoroom.png",
+    "sort_order": 1,
+    "created_at": "2026-05-02T13:56:18.152621+00:00"
+  },
+  {
+    "id": "712b899c-b327-44ed-adf5-9caa81bbceab",
+    "group_id": "c6159cf4-e1f4-4e1f-bfb8-40c942214d66",
+    "slug": "energy-gels",
+    "title": "Энергетические гели",
+    "image": "",
+    "sort_order": 15,
+    "created_at": "2026-09-20T13:14:01.671692+00:00"
+  },
+  {
+    "id": "7329b2a5-e9b9-453c-9b0b-ad2ba99b3369",
+    "group_id": "0c5e1039-9ecf-4d17-8575-f54ad2eaa4af",
+    "slug": "supboard",
+    "title": "SUP-доски",
+    "image": "IMG_6532.JPG",
+    "sort_order": 1,
+    "created_at": "2026-05-02T13:56:18.130726+00:00"
+  },
+  {
+    "id": "741e1b07-b3a8-4db1-9dc9-abd8084d3c9d",
+    "group_id": "2e38f2a2-be06-4dc2-bd9c-4edd19a21508",
+    "slug": "magnesia",
+    "title": "Магнезия",
+    "image": "",
+    "sort_order": 1,
+    "created_at": "2026-08-14T10:34:35.285901+00:00"
+  },
+  {
+    "id": "76f382a1-c3b3-4a2d-a18c-c9a45a1c3a4b",
+    "group_id": "1c0ed90a-13f8-4de9-9095-383741c34a3e",
+    "slug": "ice_skates",
+    "title": "Коньки",
+    "image": "",
+    "sort_order": 1,
+    "created_at": "2026-06-10T08:19:06.082807+00:00"
+  },
+  {
+    "id": "771d7f18-6775-4bd4-918d-812874f21b73",
+    "group_id": "c6159cf4-e1f4-4e1f-bfb8-40c942214d66",
+    "slug": "basketball",
+    "title": "Баскетбол",
+    "image": "18.40.32.png",
+    "sort_order": 9,
+    "created_at": "2026-05-02T13:56:18.086727+00:00"
+  },
+  {
+    "id": "77fa2583-76f6-498f-b1b6-3366faee1cc4",
+    "group_id": "8634c7e3-927a-4df6-aed1-c4522489c664",
+    "slug": "socks_sky",
+    "title": "Лыжные носки",
+    "image": "owboard-corabi-mavi-100.png",
+    "sort_order": 12,
+    "created_at": "2026-05-02T13:56:17.992687+00:00"
+  },
+  {
+    "id": "788fb18b-549e-45c3-965b-2b1c09276bf0",
+    "group_id": "c6159cf4-e1f4-4e1f-bfb8-40c942214d66",
+    "slug": "tennis-padel-clothing",
+    "title": "Одежда для тенниса и падела",
+    "image": "",
+    "sort_order": 3,
+    "created_at": "2026-08-16T12:37:50.687285+00:00"
+  },
+  {
+    "id": "78dd9f77-f160-4b01-9807-247c1debf8b2",
+    "group_id": "bd336ca1-0a4d-423f-b59b-5e8b65719bad",
+    "slug": "buff",
+    "title": "Баффы",
+    "image": "adult-ski-neck-warmer.avif",
+    "sort_order": 6,
+    "created_at": "2026-05-02T13:56:18.01716+00:00"
+  },
+  {
+    "id": "7e3282ac-3474-44e4-8e7d-53454822422a",
+    "group_id": "bd336ca1-0a4d-423f-b59b-5e8b65719bad",
+    "slug": "fleece_jacket",
+    "title": "Флисовые куртки",
+    "image": "fleece3.png",
+    "sort_order": 2,
+    "created_at": "2026-05-02T13:56:18.01716+00:00"
+  },
+  {
+    "id": "7e84c1fd-8349-4a93-93ec-22c05109dac6",
+    "group_id": "780d35c3-8621-4a61-9255-71ee5d0dc4fc",
+    "slug": "binoculars",
+    "title": "Бинокли",
+    "image": "binoculars.jpg",
+    "sort_order": 15,
+    "created_at": "2026-05-02T13:56:18.061635+00:00"
+  },
+  {
+    "id": "7ff4d6d2-95ba-40a5-a0ae-450d73cb581e",
+    "group_id": "bd336ca1-0a4d-423f-b59b-5e8b65719bad",
+    "slug": "windbreaker",
+    "title": "Ветровки",
+    "image": "21.33.22.jpg",
+    "sort_order": 1,
+    "created_at": "2026-05-02T13:56:18.01716+00:00"
+  },
+  {
+    "id": "80147025-17c4-4298-b31b-59847d474d9a",
+    "group_id": "c069bcf8-320f-4f62-93b3-7876620c144a",
+    "slug": "headbands-wristbands",
+    "title": "Повязки и напульсники",
+    "image": "",
+    "sort_order": 15,
+    "created_at": "2026-08-14T09:25:41.737716+00:00"
+  },
+  {
+    "id": "810b131d-cf7b-4e7d-9a25-c4fdec1ffa52",
+    "group_id": "8634c7e3-927a-4df6-aed1-c4522489c664",
+    "slug": "helmet_sky",
+    "title": "Лыжные шлемы",
+    "image": "7527039974.png",
+    "sort_order": 7,
+    "created_at": "2026-05-02T13:56:17.992687+00:00"
+  },
+  {
+    "id": "8474121e-782f-4c7f-bbe0-ea56f9d132f2",
+    "group_id": "2cae3288-102d-4b7d-93e7-78057c0aeef8",
+    "slug": "bandages",
+    "title": "Бинты",
+    "image": "a3094f4d-9d76-4776.png",
+    "sort_order": 6,
+    "created_at": "2026-05-02T13:56:18.039153+00:00"
+  },
+  {
+    "id": "8523b299-ea06-4654-884f-0bc69f6fc455",
+    "group_id": "bd336ca1-0a4d-423f-b59b-5e8b65719bad",
+    "slug": "down_jackets",
+    "title": "Пуховики",
+    "image": "24423424.17.13.jpg",
+    "sort_order": 3,
+    "created_at": "2026-05-02T13:56:18.01716+00:00"
+  },
+  {
+    "id": "88ae2f56-f723-4ec4-8b8f-6e141936fd71",
+    "group_id": "2cae3288-102d-4b7d-93e7-78057c0aeef8",
+    "slug": "martialart_protection",
+    "title": "Защита для единоборств",
+    "image": "e0dd9940-6135-448d-ab1a-d69cccb58add.avif",
+    "sort_order": 4,
+    "created_at": "2026-05-02T13:56:18.039153+00:00"
+  },
+  {
+    "id": "8b56cef5-0b57-4927-8168-d27034a4ffbc",
+    "group_id": "b2460d3d-a4dc-4261-b247-4a9b3a6c36eb",
+    "slug": "bike_accessories",
+    "title": "Велосипедные аксессуары",
+    "image": "bc1cc4f6-0205-11ef-9217-0a580a68309d.png",
+    "sort_order": 5,
+    "created_at": "2026-05-02T13:56:18.152621+00:00"
+  },
+  {
+    "id": "8b633cf4-acbc-4ccb-84b5-5edcce7aab62",
+    "group_id": "c069bcf8-320f-4f62-93b3-7876620c144a",
+    "slug": "gymnastic",
+    "title": "Гимнастика",
+    "image": "769866.png",
+    "sort_order": 10,
+    "created_at": "2026-05-02T13:56:18.108705+00:00"
+  },
+  {
+    "id": "90f289a6-751a-4061-94db-c81abdbd7e19",
+    "group_id": "c6159cf4-e1f4-4e1f-bfb8-40c942214d66",
+    "slug": "volleyball",
+    "title": "Волейбол",
+    "image": "beach-volleyball-size-5-bv100-classic-turquoise-kipsta.png",
+    "sort_order": 10,
+    "created_at": "2026-05-02T13:56:18.086727+00:00"
+  },
+  {
+    "id": "91037f64-4fc5-4d34-b4fb-ac1bd73f1f4d",
+    "group_id": "780d35c3-8621-4a61-9255-71ee5d0dc4fc",
+    "slug": "hammock",
+    "title": "Гамаки",
+    "image": "hammock.jpg",
+    "sort_order": 17,
+    "created_at": "2026-05-02T13:56:18.061635+00:00"
+  },
+  {
+    "id": "94cf152d-a586-4b01-8f2a-d7e379dee6e7",
+    "group_id": "c069bcf8-320f-4f62-93b3-7876620c144a",
+    "slug": "elasticbands",
+    "title": "Фитнес-резинки",
+    "image": "elastik-pilates-bandi-3-kg-bordo-orta-seviye.avif",
+    "sort_order": 7,
+    "created_at": "2026-05-02T13:56:18.108705+00:00"
+  },
+  {
+    "id": "96873a8a-2af0-417f-a868-aa2d0a9f9f32",
+    "group_id": "c069bcf8-320f-4f62-93b3-7876620c144a",
+    "slug": "functional-training",
+    "title": "Функциональный тренинг",
+    "image": "",
+    "sort_order": 13,
+    "created_at": "2026-08-14T09:25:38.343031+00:00"
+  },
+  {
+    "id": "96f1daed-ac8d-444a-91e1-cca6cb1dabb3",
+    "group_id": "b2460d3d-a4dc-4261-b247-4a9b3a6c36eb",
+    "slug": "helmet",
+    "title": "Шлемы",
+    "image": "mountain-bike-helmet-black-expl-50-ro.png",
+    "sort_order": 4,
+    "created_at": "2026-05-02T13:56:18.152621+00:00"
+  },
+  {
+    "id": "98818313-5620-40fb-b049-150734d4a29d",
+    "group_id": "2e38f2a2-be06-4dc2-bd9c-4edd19a21508",
+    "slug": "climbing-slings",
+    "title": "Страховочные петли",
+    "image": "",
+    "sort_order": 8,
+    "created_at": "2026-09-26T07:54:43.926229+00:00"
+  },
+  {
+    "id": "9955eaff-9406-41b0-a4e8-b3c2810a9b29",
+    "group_id": "2e38f2a2-be06-4dc2-bd9c-4edd19a21508",
+    "slug": "belay-devices",
+    "title": "Страховочные устройства",
+    "image": "",
+    "sort_order": 5,
+    "created_at": "2026-09-26T07:54:40.293139+00:00"
+  },
+  {
+    "id": "9e77f00f-afc4-4cd4-bc41-3decb0d4b7be",
+    "group_id": "c6159cf4-e1f4-4e1f-bfb8-40c942214d66",
+    "slug": "air",
+    "title": "Надувное снаряжение",
+    "image": "ocr.jpeg",
+    "sort_order": 13,
+    "created_at": "2026-05-02T13:56:18.086727+00:00"
+  },
+  {
+    "id": "9e81ed69-0074-43ee-9dce-9062c2efbc4b",
+    "group_id": "bd336ca1-0a4d-423f-b59b-5e8b65719bad",
+    "slug": "shoes",
+    "title": "Обувь",
+    "image": "e83324e4-59ac-468c-9fbe-c32307.png",
+    "sort_order": 5,
+    "created_at": "2026-05-02T13:56:18.01716+00:00"
+  },
+  {
+    "id": "9ea88ccf-2282-4c69-b111-150ff3fbf927",
+    "group_id": "c069bcf8-320f-4f62-93b3-7876620c144a",
+    "slug": "jumprope",
+    "title": "Скакалки",
+    "image": "6653934320.jpg",
+    "sort_order": 6,
+    "created_at": "2026-05-02T13:56:18.108705+00:00"
+  },
+  {
+    "id": "9eff6bd8-5571-4568-b05f-a4a28c93587d",
+    "group_id": "dd6b335e-c913-43db-82f4-23a31a7c1172",
+    "slug": "food",
+    "title": "Еда",
+    "image": "ukrainian-borscht-front.png",
+    "sort_order": 1,
+    "created_at": "2026-05-02T13:56:18.061635+00:00"
+  },
+  {
+    "id": "9f0c4649-c0a3-40e3-9b35-409ec0c5d80a",
+    "group_id": "c6159cf4-e1f4-4e1f-bfb8-40c942214d66",
+    "slug": "kneePads",
+    "title": "Наколенники",
+    "image": "1834274d-e94e-4281-b81b-043695664120_960x960-Photoroom.png",
+    "sort_order": 12,
+    "created_at": "2026-05-02T13:56:18.086727+00:00"
+  },
+  {
+    "id": "a0c532a6-6f23-408a-a24d-a0c42cc1df2c",
+    "group_id": "0c5e1039-9ecf-4d17-8575-f54ad2eaa4af",
+    "slug": "shoesSea",
+    "title": "Пляжная обувь и одежда",
+    "image": "f868cd79-546c-4990-957f-e60263f80295.webp",
+    "sort_order": 12,
+    "created_at": "2026-05-02T13:56:18.130726+00:00"
+  },
+  {
+    "id": "a1581a5e-c9d3-45f9-a5d1-40bdb7ebbb35",
+    "group_id": "780d35c3-8621-4a61-9255-71ee5d0dc4fc",
+    "slug": "sunglasses",
+    "title": "Солнцезащитные очки",
+    "image": "17.04.49.jpg",
+    "sort_order": 9,
+    "created_at": "2026-05-02T13:56:18.061635+00:00"
+  },
+  {
+    "id": "a27e73f0-eae1-41d1-a5e1-03c8d086140a",
+    "group_id": "8634c7e3-927a-4df6-aed1-c4522489c664",
+    "slug": "snowshoes",
+    "title": "Снегоступы",
+    "image": "202514.50.50.jpg",
+    "sort_order": 13,
+    "created_at": "2026-05-02T13:56:17.992687+00:00"
+  },
+  {
+    "id": "a5051855-9cc0-4333-897d-b4e00503c5fa",
+    "group_id": "2e38f2a2-be06-4dc2-bd9c-4edd19a21508",
+    "slug": "climbing-ropes",
+    "title": "Верёвки",
+    "image": "",
+    "sort_order": 4,
+    "created_at": "2026-09-26T07:54:39.099081+00:00"
+  },
+  {
+    "id": "a6b4b779-f233-48bc-8a7f-024ce980116d",
+    "group_id": "0c5e1039-9ecf-4d17-8575-f54ad2eaa4af",
+    "slug": "oar",
+    "title": "Весла",
+    "image": "sup_veslo_allyuminij_gladiator_lt.webp",
+    "sort_order": 3,
+    "created_at": "2026-05-02T13:56:18.130726+00:00"
+  },
+  {
+    "id": "a6b4c480-96e4-4653-a68c-8451431c79d2",
+    "group_id": "2e38f2a2-be06-4dc2-bd9c-4edd19a21508",
+    "slug": "climbing-belay-gloves",
+    "title": "Страховочные перчатки",
+    "image": "",
+    "sort_order": 9,
+    "created_at": "2026-09-26T11:36:24.015402+00:00"
+  },
+  {
+    "id": "abc035e1-1573-4f2e-b969-48ad5f46f0d5",
+    "group_id": "780d35c3-8621-4a61-9255-71ee5d0dc4fc",
+    "slug": "chair",
+    "title": "Стулья",
+    "image": "orig4211.webp",
+    "sort_order": 16,
+    "created_at": "2026-05-02T13:56:18.061635+00:00"
+  },
+  {
+    "id": "aca00128-e43a-4480-a2f9-1fbfd2dd1329",
+    "group_id": "2e38f2a2-be06-4dc2-bd9c-4edd19a21508",
+    "slug": "climbing-training",
+    "title": "Тренажёры для скалолазания",
+    "image": "",
+    "sort_order": 2,
+    "created_at": "2026-08-16T11:09:44.496924+00:00"
+  },
+  {
+    "id": "ad0d0777-9e0c-41ce-a560-9843710ee42a",
+    "group_id": "c069bcf8-320f-4f62-93b3-7876620c144a",
+    "slug": "massage-recovery",
+    "title": "Массаж и восстановление",
+    "image": "",
+    "sort_order": 14,
+    "created_at": "2026-08-14T09:25:40.049306+00:00"
+  },
+  {
+    "id": "b2b45ab3-a961-4f13-8a78-0d55d4899fb4",
+    "group_id": "8634c7e3-927a-4df6-aed1-c4522489c664",
+    "slug": "skis",
+    "title": "Лыжи",
+    "image": "",
+    "sort_order": 0,
+    "created_at": "2026-10-15T09:12:45.392404+00:00"
+  },
+  {
+    "id": "b4ab5951-b0d6-41e7-ac57-2cbdd84f28b4",
+    "group_id": "c069bcf8-320f-4f62-93b3-7876620c144a",
+    "slug": "sports-watches-stopwatches",
+    "title": "Спортивные часы и секундомеры",
+    "image": "",
+    "sort_order": 11,
+    "created_at": "2026-08-14T09:25:24.360468+00:00"
+  },
+  {
+    "id": "bd834a21-9400-4b85-ae3f-0ec7ddeafd38",
+    "group_id": "bd336ca1-0a4d-423f-b59b-5e8b65719bad",
+    "slug": "hat",
+    "title": "Головные уборы",
+    "image": "6dab6bea-7b17-4462.png",
+    "sort_order": 8,
+    "created_at": "2026-05-02T13:56:18.01716+00:00"
+  },
+  {
+    "id": "bf452b59-e5cf-46d2-b2ea-45ec1ba99958",
+    "group_id": "0c5e1039-9ecf-4d17-8575-f54ad2eaa4af",
+    "slug": "boats",
+    "title": "Лодки",
+    "image": "https://oesqpzetyywoqectaovz.supabase.co/storage/v1/object/public/catalog-images/1784471978398-w3podo.webp",
+    "sort_order": 2,
+    "created_at": "2026-07-19T14:39:52.483165+00:00"
+  },
+  {
+    "id": "c18a8f4b-6a58-4ab8-b6a9-27614be78802",
+    "group_id": "780d35c3-8621-4a61-9255-71ee5d0dc4fc",
+    "slug": "mat",
+    "title": "Коврики",
+    "image": "folga-paraloni.webp",
+    "sort_order": 4,
+    "created_at": "2026-05-02T13:56:18.061635+00:00"
+  },
+  {
+    "id": "c3d48af8-b684-4cdb-ae1f-65f6400b7c85",
+    "group_id": "2cae3288-102d-4b7d-93e7-78057c0aeef8",
+    "slug": "martialart_helmet",
+    "title": "Шлемы для единоборств",
+    "image": "32c41b55-7fce-41c2-9d6e-8d6e3f027d34.webp",
+    "sort_order": 2,
+    "created_at": "2026-05-02T13:56:18.039153+00:00"
+  },
+  {
+    "id": "c4fe7dfd-cf0f-41ce-a3cf-93e59b6b7d6f",
+    "group_id": "c069bcf8-320f-4f62-93b3-7876620c144a",
+    "slug": "hoop",
+    "title": "Обручи",
+    "image": "67429309.webp",
+    "sort_order": 9,
+    "created_at": "2026-05-02T13:56:18.108705+00:00"
+  },
+  {
+    "id": "ca4b592f-42a4-4c20-99f6-d8bd3e40af51",
+    "group_id": "0c5e1039-9ecf-4d17-8575-f54ad2eaa4af",
+    "slug": "towel",
+    "title": "Полотенца",
+    "image": "259cd_1300x1300.webp",
+    "sort_order": 14,
+    "created_at": "2026-05-02T13:56:18.130726+00:00"
+  },
+  {
+    "id": "cb141490-333b-446a-8b0b-0c1fec72dd3c",
+    "group_id": "c069bcf8-320f-4f62-93b3-7876620c144a",
+    "slug": "extender",
+    "title": "Эспандеры",
+    "image": "ayarlanabilir-el-yayi-8-40-kg.avif",
+    "sort_order": 5,
+    "created_at": "2026-05-02T13:56:18.108705+00:00"
+  },
+  {
+    "id": "cf73ad8c-b1d8-4e04-a644-836cc738d332",
+    "group_id": "8634c7e3-927a-4df6-aed1-c4522489c664",
+    "slug": "skigoggles",
+    "title": "Горнолыжные очки",
+    "image": "IMG_6870.JPG",
+    "sort_order": 8,
+    "created_at": "2026-05-02T13:56:17.992687+00:00"
+  },
+  {
+    "id": "cf9b67c3-8093-44eb-ac5d-8c27b0f86f6d",
+    "group_id": "0c5e1039-9ecf-4d17-8575-f54ad2eaa4af",
+    "slug": "flippers",
+    "title": "Ласты",
+    "image": "picture8989.png",
+    "sort_order": 10,
+    "created_at": "2026-05-02T13:56:18.130726+00:00"
+  },
+  {
+    "id": "d0955afa-e5ce-4f56-aa3f-714856cde488",
+    "group_id": "2cae3288-102d-4b7d-93e7-78057c0aeef8",
+    "slug": "martialart_rubber",
+    "title": "Резина для единоборств",
+    "image": "11lotka.jpg.webp",
+    "sort_order": 9,
+    "created_at": "2026-05-02T13:56:18.039153+00:00"
+  },
+  {
+    "id": "d0967861-12b1-41e1-befb-8f51301d80c8",
+    "group_id": "c069bcf8-320f-4f62-93b3-7876620c144a",
+    "slug": "mats",
+    "title": "Маты",
+    "image": "CGiBiTNufHIJPB2V.jpg",
+    "sort_order": 8,
+    "created_at": "2026-05-02T13:56:18.108705+00:00"
+  },
+  {
+    "id": "d0debbf2-67c6-47d9-ae59-1668d55fa847",
+    "group_id": "780d35c3-8621-4a61-9255-71ee5d0dc4fc",
+    "slug": "hermo",
+    "title": "Дождевики",
+    "image": "raincoat.jpg",
+    "sort_order": 6,
+    "created_at": "2026-05-02T13:56:18.061635+00:00"
+  },
+  {
+    "id": "d1bc8fda-c745-4ea2-b0b3-991f77e29567",
+    "group_id": "2cae3288-102d-4b7d-93e7-78057c0aeef8",
+    "slug": "paws",
+    "title": "Лапы",
+    "image": "ccfa5a8ec047466ca6a4789ea12fcbc4-goods-Photoroom.png",
+    "sort_order": 5,
+    "created_at": "2026-05-02T13:56:18.039153+00:00"
+  },
+  {
+    "id": "d3d061b1-40fa-400f-a6a6-e8139f83ed2f",
+    "group_id": "bd336ca1-0a4d-423f-b59b-5e8b65719bad",
+    "slug": "thermalUnderwear",
+    "title": "Термобелье",
+    "image": "19.38.07.jpg",
+    "sort_order": 10,
+    "created_at": "2026-05-02T13:56:18.01716+00:00"
+  },
+  {
+    "id": "d781109e-9827-4a98-b258-0457f73dcf33",
+    "group_id": "8634c7e3-927a-4df6-aed1-c4522489c664",
+    "slug": "closes_ski",
+    "title": "Лыжная одежда",
+    "image": "Hd899fa17d8b647e0a55154c27a102dc0d.png",
+    "sort_order": 4,
+    "created_at": "2026-05-02T13:56:17.992687+00:00"
+  },
+  {
+    "id": "d7f9aa77-b5f0-4ac7-a088-373d9b3c28d1",
+    "group_id": "780d35c3-8621-4a61-9255-71ee5d0dc4fc",
+    "slug": "tent",
+    "title": "Палатки",
+    "image": "14.41.19.jpg",
+    "sort_order": 1,
+    "created_at": "2026-05-02T13:56:18.061635+00:00"
+  },
+  {
+    "id": "d7fceee9-211a-4540-ab0e-418b1c56ff28",
+    "group_id": "780d35c3-8621-4a61-9255-71ee5d0dc4fc",
+    "slug": "termoryukzak",
+    "title": "Термосы и термосумки",
+    "image": "s21sx162-21-oz-standard-flex-cap-fossil-straight.webp",
+    "sort_order": 10,
+    "created_at": "2026-05-02T13:56:18.061635+00:00"
+  },
+  {
+    "id": "e0e9ef06-d4a1-41a3-97e5-b61a080d3307",
+    "group_id": "0c5e1039-9ecf-4d17-8575-f54ad2eaa4af",
+    "slug": "mask",
+    "title": "Маски",
+    "image": "diving-mask-100-grey-subea-8491466.jpg",
+    "sort_order": 7,
+    "created_at": "2026-05-02T13:56:18.130726+00:00"
+  },
+  {
+    "id": "e49f2094-a393-4492-8c1a-ab271460014f",
+    "group_id": "0c5e1039-9ecf-4d17-8575-f54ad2eaa4af",
+    "slug": "fin",
+    "title": "Плавники",
+    "image": "73684021.png",
+    "sort_order": 4,
+    "created_at": "2026-05-02T13:56:18.130726+00:00"
+  },
+  {
+    "id": "e684b9a0-1cf2-40f1-a0c1-2acd6f66f366",
+    "group_id": "780d35c3-8621-4a61-9255-71ee5d0dc4fc",
+    "slug": "knife",
+    "title": "Ножи",
+    "image": "6955_big.jpg",
+    "sort_order": 14,
+    "created_at": "2026-05-02T13:56:18.061635+00:00"
+  },
+  {
+    "id": "ea2f263e-49cb-4053-b994-1b6baa64793d",
+    "group_id": "2cae3288-102d-4b7d-93e7-78057c0aeef8",
+    "slug": "boxing_gloves",
+    "title": "Боксерские перчатки",
+    "image": "4ad8c5df-b673-45ee-ace5-d68c7fdc6937.webp",
+    "sort_order": 1,
+    "created_at": "2026-05-02T13:56:18.039153+00:00"
+  },
+  {
+    "id": "eabe1e5a-b5b3-4609-ba90-a1c912aa64d6",
+    "group_id": "780d35c3-8621-4a61-9255-71ee5d0dc4fc",
+    "slug": "rope",
+    "title": "Веревки",
+    "image": "picture32.jpg",
+    "sort_order": 18,
+    "created_at": "2026-05-02T13:56:18.061635+00:00"
+  },
+  {
+    "id": "eaff2c75-3571-4776-a15f-89a86c652c7a",
+    "group_id": "8634c7e3-927a-4df6-aed1-c4522489c664",
+    "slug": "gloves_sky",
+    "title": "Лыжные перчатки",
+    "image": "055723de-45b0-47c6-988f-6ecd99853b53.avif",
+    "sort_order": 11,
+    "created_at": "2026-05-02T13:56:17.992687+00:00"
+  },
+  {
+    "id": "ec84d4c9-2b68-4abc-b1cd-3ee2d7ca7a56",
+    "group_id": "c6159cf4-e1f4-4e1f-bfb8-40c942214d66",
+    "slug": "rugby",
+    "title": "Регби",
+    "image": "american-football-with-brown-leather-texture-white-laces-white-background.jpg",
+    "sort_order": 11,
+    "created_at": "2026-05-02T13:56:18.086727+00:00"
+  },
+  {
+    "id": "ece6afa1-f09a-4225-a95b-093d35d79479",
+    "group_id": "2e38f2a2-be06-4dc2-bd9c-4edd19a21508",
+    "slug": "climbing-carabiners",
+    "title": "Карабины",
+    "image": "",
+    "sort_order": 7,
+    "created_at": "2026-09-26T07:54:42.676913+00:00"
+  },
+  {
+    "id": "edb96391-2f17-42d0-ae88-efeb1f9f7f34",
+    "group_id": "bd336ca1-0a4d-423f-b59b-5e8b65719bad",
+    "slug": "underwear",
+    "title": "Белье",
+    "image": "fila-man-boxers-2-pack_1.jpg",
+    "sort_order": 12,
+    "created_at": "2026-05-02T13:56:18.01716+00:00"
+  },
+  {
+    "id": "f193d41b-4984-429e-a8ec-93b3390d22a7",
+    "group_id": "8634c7e3-927a-4df6-aed1-c4522489c664",
+    "slug": "fasteners_sky",
+    "title": "Лыжные крепления",
+    "image": "optimize.webp",
+    "sort_order": 3,
+    "created_at": "2026-05-02T13:56:17.992687+00:00"
+  },
+  {
+    "id": "f2d89636-e257-485b-ae1e-77bf03258326",
+    "group_id": "c069bcf8-320f-4f62-93b3-7876620c144a",
+    "slug": "fitness_gloves",
+    "title": "Фитнес-перчатки",
+    "image": "sarung-tangan-gym-fitness-latihan-beban-100-corength-8595161.jpg",
+    "sort_order": 1,
+    "created_at": "2026-05-02T13:56:18.108705+00:00"
+  },
+  {
+    "id": "f86a1ab8-843f-43df-b2c4-5e6b227755ad",
+    "group_id": "bd336ca1-0a4d-423f-b59b-5e8b65719bad",
+    "slug": "socks",
+    "title": "Носки",
+    "image": "sock-hike-50-mid-2-pack-navy.png",
+    "sort_order": 11,
+    "created_at": "2026-05-02T13:56:18.01716+00:00"
+  },
+  {
+    "id": "fa670352-0043-4896-ab59-3e50d443c612",
+    "group_id": "2cae3288-102d-4b7d-93e7-78057c0aeef8",
+    "slug": "martialart_mma",
+    "title": "MMA",
+    "image": "8d8f2dec-4dc8-47fd-bac9-36a40e0dcf75.avif",
+    "sort_order": 10,
+    "created_at": "2026-05-02T13:56:18.039153+00:00"
+  },
+  {
+    "id": "faaea56e-fa69-4c17-80c0-63e4a728ad4e",
+    "group_id": "bd336ca1-0a4d-423f-b59b-5e8b65719bad",
+    "slug": "tshirts",
+    "title": "Футболки и майки",
+    "image": "",
+    "sort_order": 13,
+    "created_at": "2026-08-11T14:46:24.956184+00:00"
+  },
+  {
+    "id": "fb051c7f-503e-4269-bf26-c4a316d53d20",
+    "group_id": "8634c7e3-927a-4df6-aed1-c4522489c664",
+    "slug": "sunscreen",
+    "title": "Солнцезащитные средства",
+    "image": "gunes-kremi-200-ml-active-spf50.png",
+    "sort_order": 16,
+    "created_at": "2026-05-02T13:56:17.992687+00:00"
+  },
+  {
+    "id": "fb21d53d-2594-4637-983a-73c4d38da5ac",
+    "group_id": "2cae3288-102d-4b7d-93e7-78057c0aeef8",
+    "slug": "martialart_shoes",
+    "title": "Обувь для единоборств",
+    "image": "b4a5-68313d694eb1a61.avif",
+    "sort_order": 8,
+    "created_at": "2026-05-02T13:56:18.039153+00:00"
+  },
+  {
+    "id": "fbced94d-ad30-4f2b-b754-dcf748c069ed",
+    "group_id": "780d35c3-8621-4a61-9255-71ee5d0dc4fc",
+    "slug": "air",
+    "title": "Надувное снаряжение",
+    "image": "podushka-comfort-dlya-kempingu.jpg",
+    "sort_order": 19,
+    "created_at": "2026-05-02T13:56:18.061635+00:00"
+  },
+  {
+    "id": "fbe517d2-3cbb-4212-90f7-1dc8cd970904",
+    "group_id": "780d35c3-8621-4a61-9255-71ee5d0dc4fc",
+    "slug": "bottle",
+    "title": "Бутылки",
+    "image": "7d57252c-3335-409f-a1c0-ddd13a6e1d6a.jpg",
+    "sort_order": 11,
+    "created_at": "2026-05-02T13:56:18.061635+00:00"
+  },
+  {
+    "id": "fcd6ea8e-2d7c-46a7-b307-0254fc1321e8",
+    "group_id": "b2460d3d-a4dc-4261-b247-4a9b3a6c36eb",
+    "slug": "scooter",
+    "title": "Самокаты",
+    "image": "teen-folding-scooter-blue.png",
+    "sort_order": 2,
+    "created_at": "2026-06-13T13:40:36.36301+00:00"
+  },
+  {
+    "id": "fe07865c-4021-4969-8838-e37fdba9a5db",
+    "group_id": "c6159cf4-e1f4-4e1f-bfb8-40c942214d66",
+    "slug": "isotonic",
+    "title": "Изотоники",
+    "image": "on-the-go-elektrolit-limon-tablet.avif",
+    "sort_order": 14,
+    "created_at": "2026-05-02T13:56:18.086727+00:00"
+  },
+  {
+    "id": "fee51042-e6e7-4190-a9b4-2fd070dc86e8",
+    "group_id": "bd336ca1-0a4d-423f-b59b-5e8b65719bad",
+    "slug": "pants",
+    "title": "Брюки",
+    "image": "picture42111.png",
+    "sort_order": 4,
+    "created_at": "2026-05-02T13:56:18.01716+00:00"
+  }
+]
