@@ -1,6 +1,7 @@
 import { createFileRoute, Outlet, useChildMatches } from "@tanstack/react-router";
 import { listRentalGroups } from "@/lib/catalog.functions";
 import { TilePicker } from "@/components/TilePicker";
+import { RentalRulesPanel } from "@/components/RentalRulesPanel";
 import { useCatalogTranslations } from "@/lib/catalog-translations";
 import { useLanguage, type Lang } from "@/lib/i18n";
 import { ADJARA_PEAK_SOCIAL_IMAGE_META } from "@/lib/social-meta";
@@ -58,6 +59,8 @@ function RentalsIndex() {
       }))}
       buildHref={(slug) => ({ to: "/rent/$group", params: { group: slug } })}
       emptyText={text.empty}
-    />
+    >
+      <RentalRulesPanel />
+    </TilePicker>
   );
 }

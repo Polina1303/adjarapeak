@@ -92,7 +92,7 @@
       "noDeposit": "Equipment is provided without a deposit.",
       "overdue": "If the agreed rental period is exceeded without notice, the client pays double the rental price for each overdue day.",
       "earlyNotice": "If you want to return the equipment earlier, please let us know in advance.",
-      "noRecalculation": "If the equipment is returned earlier than planned, no recalculation is made.",
+      "noRecalculation": "If the equipment is returned before the agreed date, the rental price is not recalculated and no refund is issued.",
       "cleanReturn": "Equipment is issued dry and clean and must be returned in the same condition. If returned wet or dirty, a penalty equal to one rental day is charged.",
       "damage": "In case of damage during the rental period, the client covers the repair cost.",
       "loss": "In case of loss or irreparable damage, the client compensates the full market value of the equipment specified in the agreement.",
