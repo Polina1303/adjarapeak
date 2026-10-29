@@ -1036,7 +1036,7 @@ function RentalRulesLink({ label }: { label: string }) {
           className="h-4 w-4 shrink-0 text-ember"
           aria-hidden="true"
         />
-        <span className="font-sans text-sm font-semibold normal-case tracking-normal">
+        <span className="font-body text-sm font-bold normal-case tracking-normal">
           {label}
         </span>
       </span>

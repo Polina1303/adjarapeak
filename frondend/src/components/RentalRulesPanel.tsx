@@ -144,7 +144,7 @@ export function RentalRulesPanel() {
             className="flex min-h-11 items-center gap-2.5 rounded-xl bg-background/80 px-3.5 py-2.5 text-foreground"
           >
             <Icon className="h-4 w-4 shrink-0 text-ember" aria-hidden="true" />
-            <span className="font-sans text-sm font-medium normal-case tracking-normal leading-snug md:text-[15px]">
+            <span className="font-body text-sm font-light normal-case tracking-normal leading-snug md:text-[15px]">
               {label}
             </span>
           </div>
@@ -152,7 +152,7 @@ export function RentalRulesPanel() {
       </div>
 
       <details className="group mt-3 border-t border-border/70 pt-2">
-        <summary className="flex cursor-pointer list-none items-center justify-between rounded-lg px-1 py-2 font-sans text-sm font-semibold normal-case tracking-normal text-foreground transition-colors hover:text-ember focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ember focus-visible:ring-offset-2 [&::-webkit-details-marker]:hidden">
+        <summary className="flex cursor-pointer list-none items-center justify-between rounded-lg px-1 py-2 font-body text-sm font-bold normal-case tracking-normal text-foreground transition-colors hover:text-ember focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ember focus-visible:ring-offset-2 [&::-webkit-details-marker]:hidden">
           <span>{text.allRules}</span>
           <ChevronDown
             className="h-4 w-4 shrink-0 text-ember transition-transform duration-200 group-open:rotate-180"
@@ -167,7 +167,7 @@ export function RentalRulesPanel() {
               <section key={group.title} aria-labelledby={headingId}>
                 <h3
                   id={headingId}
-                  className="font-sans text-sm font-semibold normal-case tracking-normal text-foreground md:text-base"
+                  className="font-body text-sm font-bold normal-case tracking-normal text-foreground md:text-base"
                 >
                   {group.title}
                 </h3>
@@ -175,7 +175,7 @@ export function RentalRulesPanel() {
                   {group.items.map((item) => (
                     <li
                       key={item}
-                      className="flex items-start gap-2.5 font-sans text-[15px] normal-case tracking-normal leading-6 text-foreground/90 md:text-base"
+                      className="flex items-start gap-2.5 font-body text-[15px] font-light normal-case tracking-normal leading-6 text-foreground/90 md:text-base"
                     >
                       <BadgeCheck className="mt-0.5 h-4 w-4 shrink-0 text-ember" aria-hidden="true" />
                       <span>{item}</span>
