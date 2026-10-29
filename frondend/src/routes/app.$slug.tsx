@@ -17,7 +17,6 @@ import {
   Minus,
   Plus,
   RotateCcw,
-  ShieldCheck,
 } from "lucide-react";
 import { toast } from "sonner";
 import {
@@ -49,16 +48,11 @@ import { LoadingImage } from "@/components/LoadingIndicator";
 import { KidsRollerGiftNote } from "@/components/KidsRollerOffer";
 import { isKidsRollerOfferProduct } from "@/lib/kids-roller-offer";
 import { useCatalogTranslations } from "@/lib/catalog-translations";
+import { RentalRulesDisclosure } from "@/components/RentalRulesPanel";
 
 type LoaderData =
   | { kind: "product"; data: Awaited<ReturnType<typeof getShopProductBySlug>> }
   | { kind: "rental"; data: Awaited<ReturnType<typeof getRentalItemBySlug>> };
-
-const RENTAL_RULES_LINK_TEXT: Record<Lang, string> = {
-  RU: "Все правила проката",
-  EN: "All rental rules",
-  GE: "ქირაობის ყველა წესი",
-};
 
 const BIKE_RENTAL_EXTRAS_TEXT: Record<
   Lang,
@@ -192,7 +186,6 @@ function AppPage() {
     return <ProductView data={loaderData.data!} />;
   return <RentalView data={loaderData.data!} />;
 }
-
 function ZoomableCatalogImage({
   src,
   imageName,
@@ -722,7 +715,6 @@ function RentalView({
 }) {
   const { item, category, group, related } = data;
   const { lang } = useLanguage();
-  const rentalRulesLinkText = RENTAL_RULES_LINK_TEXT[lang];
   const bikeRentalExtras = BIKE_RENTAL_EXTRAS_TEXT[lang];
   const isBikeRental = category?.slug === "rentBIKE";
   const hasEveningRate = EVENING_RENTAL_CATEGORY_SLUGS.has(
@@ -882,7 +874,7 @@ function RentalView({
                 {isBikeRental && (
                   <BikeRentalExtrasNote text={bikeRentalExtras} />
                 )}
-                <RentalRulesLink label={rentalRulesLinkText} />
+                <RentalRulesDisclosure variant="card" />
                 {hasEveningRate && (
                   <div className="mt-3">
                     <RentalEveningOffer compact />
@@ -974,7 +966,7 @@ function RentalView({
                     : "Забронировать"}
               </Button>
               {isBikeRental && <BikeRentalExtrasNote text={bikeRentalExtras} />}
-              <RentalRulesLink label={rentalRulesLinkText} />
+              <RentalRulesDisclosure variant="card" />
               {hasEveningRate && (
                 <div className="mt-3">
                   <RentalEveningOffer compact />
@@ -1021,29 +1013,5 @@ function BikeRentalExtrasNote({
         </div>
       </div>
     </aside>
-  );
-}
-
-function RentalRulesLink({ label }: { label: string }) {
-  return (
-    <Link
-      to="/rent"
-      hash="rental-rules"
-      className="mt-4 flex min-h-11 items-center justify-between gap-3 rounded-xl border border-border bg-muted/30 px-4 py-3 text-foreground transition-colors hover:border-ember/40 hover:bg-ember/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ember focus-visible:ring-offset-2"
-    >
-      <span className="flex items-center gap-2.5">
-        <ShieldCheck
-          className="h-4 w-4 shrink-0 text-ember"
-          aria-hidden="true"
-        />
-        <span className="font-body text-sm font-bold normal-case tracking-normal">
-          {label}
-        </span>
-      </span>
-      <ChevronRight
-        className="h-4 w-4 shrink-0 text-muted-foreground"
-        aria-hidden="true"
-      />
-    </Link>
   );
 }

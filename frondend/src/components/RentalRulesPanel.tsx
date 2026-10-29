@@ -17,6 +17,7 @@ type RuleGroup = {
 type RentalRulesCopy = {
   title: string;
   allRules: string;
+  allRentalRules: string;
   chips: Array<{ label: string; icon: LucideIcon }>;
   groups: RuleGroup[];
 };
@@ -25,6 +26,7 @@ const RENTAL_RULES_TEXT: Record<Lang, RentalRulesCopy> = {
   RU: {
     title: "Правила проката",
     allRules: "Все правила",
+    allRentalRules: "Все правила проката",
     chips: [
       { label: "Без залога · нужен документ", icon: FileText },
       { label: "Оплата при выдаче", icon: CreditCard },
@@ -56,6 +58,7 @@ const RENTAL_RULES_TEXT: Record<Lang, RentalRulesCopy> = {
   EN: {
     title: "Rental rules",
     allRules: "All rules",
+    allRentalRules: "All rental rules",
     chips: [
       { label: "No deposit · ID required", icon: FileText },
       { label: "Pay on collection", icon: CreditCard },
@@ -87,6 +90,7 @@ const RENTAL_RULES_TEXT: Record<Lang, RentalRulesCopy> = {
   GE: {
     title: "ქირაობის წესები",
     allRules: "ყველა წესი",
+    allRentalRules: "ქირაობის ყველა წესი",
     chips: [
       { label: "დეპოზიტის გარეშე · საჭიროა დოკუმენტი", icon: FileText },
       { label: "გადახდა აღებისას", icon: CreditCard },
@@ -151,42 +155,79 @@ export function RentalRulesPanel() {
         ))}
       </div>
 
-      <details className="group mt-3 border-t border-border/70 pt-2">
-        <summary className="flex cursor-pointer list-none items-center justify-between rounded-lg px-1 py-2 font-body text-sm font-bold normal-case tracking-normal text-foreground transition-colors hover:text-ember focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ember focus-visible:ring-offset-2 [&::-webkit-details-marker]:hidden">
-          <span>{text.allRules}</span>
-          <ChevronDown
-            className="h-4 w-4 shrink-0 text-ember transition-transform duration-200 group-open:rotate-180"
-            aria-hidden="true"
-          />
-        </summary>
-
-        <div className="space-y-5 px-1 pb-2 pt-3">
-          {text.groups.map((group) => {
-            const headingId = `rental-rule-${group.title}`;
-            return (
-              <section key={group.title} aria-labelledby={headingId}>
-                <h3
-                  id={headingId}
-                  className="font-body text-sm font-bold normal-case tracking-normal text-foreground md:text-base"
-                >
-                  {group.title}
-                </h3>
-                <ul className="mt-2 space-y-2.5">
-                  {group.items.map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-start gap-2.5 font-body text-[15px] font-light normal-case tracking-normal leading-6 text-foreground/90 md:text-base"
-                    >
-                      <BadgeCheck className="mt-0.5 h-4 w-4 shrink-0 text-ember" aria-hidden="true" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </section>
-            );
-          })}
-        </div>
-      </details>
+      <RentalRulesDisclosure />
     </section>
+  );
+}
+
+export function RentalRulesDisclosure({
+  variant = "panel",
+}: {
+  variant?: "panel" | "card";
+}) {
+  const { lang } = useLanguage();
+  const text = RENTAL_RULES_TEXT[lang];
+  const isCard = variant === "card";
+
+  return (
+    <details
+      className={
+        isCard
+          ? "group mt-4 rounded-xl border border-border bg-muted/30"
+          : "group mt-3 border-t border-border/70 pt-2"
+      }
+    >
+      <summary
+        className={`flex cursor-pointer list-none items-center justify-between rounded-lg font-body text-sm font-bold normal-case tracking-normal text-foreground transition-colors hover:text-ember focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ember focus-visible:ring-offset-2 [&::-webkit-details-marker]:hidden ${
+          isCard ? "px-4 py-3" : "px-1 py-2"
+        }`}
+      >
+        {isCard ? (
+          <span className="flex items-center gap-2.5">
+            <ShieldCheck
+              className="h-4 w-4 shrink-0 text-ember"
+              aria-hidden="true"
+            />
+            <span>{text.allRentalRules}</span>
+          </span>
+        ) : (
+          <span>{text.allRules}</span>
+        )}
+        <ChevronDown
+          className="h-4 w-4 shrink-0 text-ember transition-transform duration-200 group-open:rotate-180"
+          aria-hidden="true"
+        />
+      </summary>
+
+      <div
+        className={`space-y-5 ${
+          isCard
+            ? "border-t border-border/70 px-4 pb-4 pt-4"
+            : "px-1 pb-2 pt-3"
+        }`}
+      >
+        {text.groups.map((group) => (
+          <section key={group.title}>
+            <h3 className="font-body text-sm font-bold normal-case tracking-normal text-foreground md:text-base">
+              {group.title}
+            </h3>
+            <ul className="mt-2 space-y-2.5">
+              {group.items.map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-2.5 font-body text-[15px] font-light normal-case tracking-normal leading-6 text-foreground/90 md:text-base"
+                >
+                  <BadgeCheck
+                    className="mt-0.5 h-4 w-4 shrink-0 text-ember"
+                    aria-hidden="true"
+                  />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))}
+      </div>
+    </details>
   );
 }
