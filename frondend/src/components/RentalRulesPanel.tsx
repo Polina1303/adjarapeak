@@ -123,8 +123,9 @@ export function RentalRulesPanel() {
 
   return (
     <section
+      id="rental-rules"
       aria-labelledby="rental-rules-title"
-      className="mb-6 rounded-2xl border border-ember/20 bg-ember/5 px-5 py-5 shadow-sm md:px-6"
+      className="mb-6 scroll-mt-24 rounded-2xl border border-ember/20 bg-ember/5 px-5 py-5 shadow-sm md:px-6"
     >
       <div className="flex items-center gap-3">
         <ShieldCheck className="h-6 w-6 shrink-0 text-ember" aria-hidden="true" />

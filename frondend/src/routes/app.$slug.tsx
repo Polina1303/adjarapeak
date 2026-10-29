@@ -17,6 +17,7 @@ import {
   Minus,
   Plus,
   RotateCcw,
+  ShieldCheck,
 } from "lucide-react";
 import { toast } from "sonner";
 import {
@@ -53,37 +54,10 @@ type LoaderData =
   | { kind: "product"; data: Awaited<ReturnType<typeof getShopProductBySlug>> }
   | { kind: "rental"; data: Awaited<ReturnType<typeof getRentalItemBySlug>> };
 
-const RENTAL_TERMS_TEXT: Record<
-  Lang,
-  {
-    title: string;
-    body: string;
-    carePrefix: string;
-    careEmphasis: string;
-    careSuffix: string;
-  }
-> = {
-  RU: {
-    title: "Условия аренды:",
-    body: "оборудование необходимо вернуть в полной комплектации и в том же состоянии, в котором оно было получено. В случае повреждения или утери отдельных элементов стоимость ремонта или замены оплачивается отдельно.",
-    carePrefix: "Всё снаряжение перед каждой арендой ",
-    careEmphasis: "проверяется и приводится в порядок",
-    careSuffix: ".",
-  },
-  EN: {
-    title: "Rental terms:",
-    body: "equipment must be returned complete and in the same condition in which it was received. If individual components are damaged or lost, repair or replacement costs are charged separately.",
-    carePrefix: "All equipment is ",
-    careEmphasis: "inspected and prepared",
-    careSuffix: " before every rental.",
-  },
-  GE: {
-    title: "ქირაობის პირობები:",
-    body: "აღჭურვილობა უნდა დაბრუნდეს სრული კომპლექტაციით და იმავე მდგომარეობაში, რომელშიც მიიღეთ. ცალკეული ელემენტების დაზიანების ან დაკარგვის შემთხვევაში შეკეთების ან ჩანაცვლების ღირებულება ცალკე ანაზღაურდება.",
-    carePrefix: "ყოველი გაქირავების წინ ყველა აღჭურვილობა ",
-    careEmphasis: "მოწმდება და წესრიგდება",
-    careSuffix: ".",
-  },
+const RENTAL_RULES_LINK_TEXT: Record<Lang, string> = {
+  RU: "Все правила проката",
+  EN: "All rental rules",
+  GE: "ქირაობის ყველა წესი",
 };
 
 const BIKE_RENTAL_EXTRAS_TEXT: Record<
@@ -748,7 +722,7 @@ function RentalView({
 }) {
   const { item, category, group, related } = data;
   const { lang } = useLanguage();
-  const rentalTerms = RENTAL_TERMS_TEXT[lang];
+  const rentalRulesLinkText = RENTAL_RULES_LINK_TEXT[lang];
   const bikeRentalExtras = BIKE_RENTAL_EXTRAS_TEXT[lang];
   const isBikeRental = category?.slug === "rentBIKE";
   const hasEveningRate = EVENING_RENTAL_CATEGORY_SLUGS.has(
@@ -908,7 +882,7 @@ function RentalView({
                 {isBikeRental && (
                   <BikeRentalExtrasNote text={bikeRentalExtras} />
                 )}
-                <RentalTermsNote text={rentalTerms} />
+                <RentalRulesLink label={rentalRulesLinkText} />
                 {hasEveningRate && (
                   <div className="mt-3">
                     <RentalEveningOffer compact />
@@ -1000,7 +974,7 @@ function RentalView({
                     : "Забронировать"}
               </Button>
               {isBikeRental && <BikeRentalExtrasNote text={bikeRentalExtras} />}
-              <RentalTermsNote text={rentalTerms} />
+              <RentalRulesLink label={rentalRulesLinkText} />
               {hasEveningRate && (
                 <div className="mt-3">
                   <RentalEveningOffer compact />
@@ -1050,18 +1024,26 @@ function BikeRentalExtrasNote({
   );
 }
 
-function RentalTermsNote({ text }: { text: (typeof RENTAL_TERMS_TEXT)[Lang] }) {
+function RentalRulesLink({ label }: { label: string }) {
   return (
-    <aside className="rental-terms-note mt-4 rounded-xl border px-4 py-3 font-body text-xs leading-relaxed text-foreground/75">
-      <strong className="font-bold text-foreground">{text.title}</strong>{" "}
-      {text.body}
-      <span className="mt-2 block">
-        {text.carePrefix}
-        <strong className="font-bold text-foreground">
-          {text.careEmphasis}
-        </strong>
-        {text.careSuffix}
+    <Link
+      to="/rent"
+      hash="rental-rules"
+      className="mt-4 flex min-h-11 items-center justify-between gap-3 rounded-xl border border-border bg-muted/30 px-4 py-3 text-foreground transition-colors hover:border-ember/40 hover:bg-ember/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ember focus-visible:ring-offset-2"
+    >
+      <span className="flex items-center gap-2.5">
+        <ShieldCheck
+          className="h-4 w-4 shrink-0 text-ember"
+          aria-hidden="true"
+        />
+        <span className="font-sans text-sm font-semibold normal-case tracking-normal">
+          {label}
+        </span>
       </span>
-    </aside>
+      <ChevronRight
+        className="h-4 w-4 shrink-0 text-muted-foreground"
+        aria-hidden="true"
+      />
+    </Link>
   );
 }
