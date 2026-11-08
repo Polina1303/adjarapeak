@@ -1,3 +1,4 @@
+import { productCategoryLabel } from "@/lib/product-category";
 import { formatPrice } from "@/lib/price";
 import { createFileRoute, Link, Outlet, useChildMatches, useNavigate } from "@tanstack/react-router";
 import { LoaderCircle, Search, X } from "lucide-react";
@@ -292,6 +293,7 @@ function ShopSearchRow({
   outOfStockText: string;
   onSelect: () => void;
 }) {
+  const {lang}=useLanguage();
   const salePrice = getSalePrice(product.price, product.sale_price);
   const displayPrice = getDisplayPrice(product.price, product.sale_price);
 
@@ -306,7 +308,7 @@ function ShopSearchRow({
         {product.image ? (
           <img
             {...catalogImageProps(product.image, "72px", 160)}
-            alt={product.title}
+            alt={[product.title,productCategoryLabel(product.category_id,lang)].filter(Boolean).join(" — ")}
             loading="lazy"
             decoding="async"
             className="h-12 w-12 object-contain"

@@ -86,6 +86,8 @@ export function StoreSection() {
           >
             <iframe
               title={text.mapTitle}
+              width={600}
+              height={320}
               src={`https://maps.google.com/maps?cid=6512661380146566532&output=embed&hl=${text.mapLang}`}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

@@ -32,6 +32,8 @@ export function BikeServicePromo() {
           >
             <img
               src={nikitaBikeService}
+              width={960}
+              height={1280}
               alt={text.imageAlt}
               className="absolute inset-0 h-full w-full object-cover object-center"
               loading="lazy"

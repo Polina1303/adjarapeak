@@ -1,3 +1,4 @@
+import { productCategoryLabel } from "@/lib/product-category";
 import { formatPrice } from "@/lib/price";
 import { Link } from "@tanstack/react-router";
 import { catalogImageProps } from "@/lib/catalog-image";
@@ -55,7 +56,7 @@ export function ProductCard({ product: p, bordered = false, categoryLabel, analy
       <div className="relative aspect-square bg-background overflow-hidden">
         <LoadingImage
           {...catalogImageProps(p.image)}
-          alt={[p.title,categoryLabel].filter(Boolean).join(" — ")}
+          alt={[p.title,categoryLabel??productCategoryLabel(p.category_id,lang)].filter(Boolean).join(" — ")}
           loading="lazy"
           decoding="async"
           className="w-full h-full object-contain p-5 transition-transform duration-500 group-hover:scale-105"

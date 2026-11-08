@@ -1,3 +1,4 @@
+import { productCategoryLabel } from "@/lib/product-category";
 import { formatPrice } from "@/lib/price";
 import { Link } from "@tanstack/react-router";
 import { catalogImageProps } from "@/lib/catalog-image";
@@ -52,7 +53,7 @@ function CarouselCard({ product: p }: { product: ShopProduct }) {
       <div className="relative aspect-square bg-background overflow-hidden">
         <LoadingImage
           {...catalogImageProps(p.image, "(min-width: 1024px) 320px, 50vw", 480)}
-          alt={p.title}
+          alt={[p.title,productCategoryLabel(p.category_id,lang)].filter(Boolean).join(" — ")}
           loading="lazy"
           decoding="async"
           className="w-full h-full object-contain p-6 transition-transform duration-500 group-hover:scale-105"

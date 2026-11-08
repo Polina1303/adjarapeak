@@ -211,3 +211,7 @@ export function useCatalogTranslations(lang: Lang) {
     [lang, locale],
   );
 }
+
+export function getShopGroupLabel(slug: string, lang: Lang): string {
+  return SHOP_GROUP_LABELS[lang][slug] ?? slug;
+}

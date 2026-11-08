@@ -146,12 +146,16 @@ export function GiftCardSection() {
           >
             <img
               src={giftCardMobile}
+              width={1164}
+              height={1412}
               alt={text.imageAlt}
               loading="lazy"
               className="rounded-2xl w-full h-auto object-contain lg:hidden"
             />
             <img
               src={giftCard}
+              width={1721}
+              height={546}
               alt={text.imageAlt}
               loading="lazy"
               className="rounded-2xl w-full h-80 object-contain hidden lg:block"

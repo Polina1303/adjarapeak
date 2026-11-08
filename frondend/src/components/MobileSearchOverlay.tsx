@@ -1,3 +1,5 @@
+import { useLanguage } from "@/lib/i18n";
+import { productCategoryLabel } from "@/lib/product-category";
 import { formatPrice } from "@/lib/price";
 import { Link, useNavigate } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "framer-motion";
@@ -322,6 +324,7 @@ function ProductSearchRow({
   onClick: () => void;
   outOfStockText: string;
 }) {
+  const {lang}=useLanguage();
   const salePrice = getSalePrice(product.price, product.sale_price);
   const displayPrice = getDisplayPrice(product.price, product.sale_price);
 
@@ -332,7 +335,7 @@ function ProductSearchRow({
       onClick={onClick}
       className="grid grid-cols-[72px_1fr] gap-3 py-3 text-left transition-colors hover:bg-muted/50"
     >
-      <SearchThumb image={product.image} title={product.title} />
+      <SearchThumb image={product.image} title={[product.title,productCategoryLabel(product.category_id,lang)].filter(Boolean).join(" — ")} />
       <div className="flex min-w-0 flex-col justify-center gap-1">
         <h3 className="line-clamp-2 font-body text-sm font-bold leading-snug text-foreground">
           {product.title}

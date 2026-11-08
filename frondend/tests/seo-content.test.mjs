@@ -1,5 +1,35 @@
-import test from 'node:test';
-import assert from 'node:assert/strict';
-import {productMetadata,breadcrumbSchema,jsonLd,socialMetadata} from '../src/lib/seo-content.ts';
-test('product metadata uses plain description capped to 150 characters and has a category fallback',()=>{const result=productMetadata('Лыжи','<p>'+('a'.repeat(200))+'</p>','Горнолыжный спорт');assert.match(result.title,/купить в Батуми/);assert.equal(result.description.length,150);assert.match(productMetadata('Лыжи',null,'Спорт').description,/Спорт/);assert.match(productMetadata('Skis',null,'Skiing','EN').title,/buy in Batumi/);});
-test('social metadata is synchronized and breadcrumbs are sequential with safe JSON-LD',()=>{const meta=socialMetadata('Title','Description');assert.equal(meta.filter(m=>m.content==='Title').length,2);const schema=breadcrumbSchema([{name:'Home',url:'https://example.com/'},{name:'Shop',url:'https://example.com/shop'}]);assert.deepEqual(schema.itemListElement.map(x=>x.position),[1,2]);assert.ok(!jsonLd({name:'</script>'}).includes('<'));});
+import test from "node:test";
+import assert from "node:assert/strict";
+import {
+  productMetadata,
+  breadcrumbSchema,
+  jsonLd,
+  socialMetadata,
+} from "../src/lib/seo-content.ts";
+test("product metadata uses plain description capped to 150 characters and has a category fallback", () => {
+  const result = productMetadata(
+    "Лыжи",
+    "<p>" + "a".repeat(200) + "</p>",
+    "Горнолыжный спорт",
+  );
+  assert.match(result.title, /купить в Батуми/);
+  assert.equal(result.description.length, 150);
+  assert.match(productMetadata("Лыжи", null, "Спорт").description, /Спорт/);
+  assert.match(
+    productMetadata("Skis", null, "Skiing", "EN").title,
+    /buy in Batumi/,
+  );
+});
+test("social metadata is synchronized and breadcrumbs are sequential with safe JSON-LD", () => {
+  const meta = socialMetadata("Title", "Description");
+  assert.equal(meta.filter((m) => m.content === "Title").length, 2);
+  const schema = breadcrumbSchema([
+    { name: "Home", url: "https://example.com/" },
+    { name: "Shop", url: "https://example.com/shop" },
+  ]);
+  assert.deepEqual(
+    schema.itemListElement.map((x) => x.position),
+    [1, 2],
+  );
+  assert.ok(!jsonLd({ name: "</script>" }).includes("<"));
+});

@@ -58,8 +58,10 @@ function readLines(): CartLine[] {
         category: typeof x.category === "string" ? x.category : undefined,
         title: typeof x.title === "string" ? x.title : undefined,
         image: typeof x.image === "string" ? x.image : null,
-        selectedColor: typeof x.selectedColor === "string" ? x.selectedColor : undefined,
-        variantImage: typeof x.variantImage === "string" ? x.variantImage : undefined,
+        selectedColor:
+          typeof x.selectedColor === "string" ? x.selectedColor : undefined,
+        variantImage:
+          typeof x.variantImage === "string" ? x.variantImage : undefined,
         price: typeof x.price === "number" ? x.price : undefined,
         kind: x.kind === "rental" || x.kind === "shop" ? x.kind : undefined,
         unit:
@@ -84,10 +86,32 @@ export function addToCart(qty = 1, slug?: string, meta?: CartLineMeta) {
   if (!slug) return;
   const lines = readLines();
   const idx = lines.findIndex((l) => l.slug === slug);
-  if (idx >= 0) lines[idx] = { ...lines[idx], ...meta, qty: lines[idx].qty + qty };
+  if (idx >= 0)
+    lines[idx] = { ...lines[idx], ...meta, qty: lines[idx].qty + qty };
   else lines.push({ slug, qty, ...meta });
   writeLines(lines);
-  trackEvent("add_to_cart",{category:meta?.category??(slug.startsWith("giftcard-")?"gift_card":meta?.kind??"catalog"),ecommerce:{currency:"GEL",...(typeof meta?.price==="number"?{value:meta.price*qty}:{}),items:[{item_id:slug,item_name:meta?.title,item_category:meta?.category??(slug.startsWith("giftcard-")?"gift_card":meta?.kind??"catalog"),quantity:qty,...(typeof meta?.price==="number"?{price:meta.price}:{})}]}});
+  trackEvent("add_to_cart", {
+    category:
+      meta?.category ??
+      (slug.startsWith("giftcard-") ? "gift_card" : (meta?.kind ?? "catalog")),
+    ecommerce: {
+      currency: "GEL",
+      ...(typeof meta?.price === "number" ? { value: meta.price * qty } : {}),
+      items: [
+        {
+          item_id: slug,
+          item_name: meta?.title,
+          item_category:
+            meta?.category ??
+            (slug.startsWith("giftcard-")
+              ? "gift_card"
+              : (meta?.kind ?? "catalog")),
+          quantity: qty,
+          ...(typeof meta?.price === "number" ? { price: meta.price } : {}),
+        },
+      ],
+    },
+  });
 }
 
 export function setCartQty(slug: string, qty: number) {
