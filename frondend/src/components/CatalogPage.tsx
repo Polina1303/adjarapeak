@@ -6,6 +6,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CatalogSidebar } from "@/components/CatalogSidebar";
 import { CatalogToolbar, type SortKey } from "@/components/CatalogToolbar";
+import { TentRentalFilters } from "@/components/TentRentalFilters";
 import {
   EVENING_RENTAL_CATEGORY_SLUGS,
   RentalEveningOffer,
@@ -31,6 +32,12 @@ import {
   type RentalItem,
 } from "@/lib/catalog.functions";
 import { useLanguage } from "@/lib/i18n";
+import {
+  getTentCapacity,
+  getTentLayer,
+  type TentCapacityFilter,
+  type TentLayerFilter,
+} from "@/lib/tent-filters";
 
 const INITIAL_VISIBLE_COUNT = 36;
 const SEARCH_DEBOUNCE_MS = 350;
@@ -137,6 +144,7 @@ export function CatalogPage(props: ShopProps | RentalProps) {
   const pageText = CATALOG_PAGE_TEXT[lang];
   const offerText = KIDS_ROLLER_OFFER_TEXT[lang];
   const routeSearch = useSearch({ strict: false });
+  const isShop = props.kind === "shop";
   const isRollerCategory = props.kind === "shop" &&
     props.group.slug === KIDS_ROLLER_CATALOG_PARAMS.group &&
     props.activeCategory?.slug === KIDS_ROLLER_CATALOG_PARAMS.category &&
@@ -145,6 +153,8 @@ export function CatalogPage(props: ShopProps | RentalProps) {
   const [search, setSearch] = useState(getCatalogSearchFromUrl);
   const [sort, setSort] = useState<SortKey>("default");
   const [onlyAvailable, setOnlyAvailable] = useState(false);
+  const [tentLayer, setTentLayer] = useState<TentLayerFilter | null>(null);
+  const [tentCapacity, setTentCapacity] = useState<TentCapacityFilter | null>(null);
   const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE_COUNT);
   const [filtersOpen, setFiltersOpen] = useState(false);
   const tabsRef = useRef<HTMLDivElement | null>(null);
@@ -177,11 +187,20 @@ export function CatalogPage(props: ShopProps | RentalProps) {
     el.scrollBy({ left: dir * el.clientWidth * 0.8, behavior: "smooth" });
   };
 
-  const isShop = props.kind === "shop";
   const trimmedSearch = search.trim();
   const shouldSearchWholeCatalog = trimmedSearch.length >= 3;
   const isWholeCatalogSearchActive = shouldSearchWholeCatalog && debouncedGlobalSearch.length >= 3;
   const navigate = useNavigate();
+  const showsTentFilters =
+    !isShop &&
+    props.group.slug === "tourismRental" &&
+    props.activeCategory?.slug === "rentTent";
+
+  useEffect(() => {
+    if (showsTentFilters) return;
+    setTentLayer(null);
+    setTentCapacity(null);
+  }, [showsTentFilters]);
 
   const handleSearchChange = (value: string) => {
     setSearch(value);
@@ -256,6 +275,12 @@ export function CatalogPage(props: ShopProps | RentalProps) {
     if (isShop) return [] as RentalItem[];
     let arr = (isWholeCatalogSearchActive ? globalSearchItems : (props as RentalProps).items).slice();
     if (onlyAvailable) arr = arr.filter((p) => p.available);
+    if (showsTentFilters && tentLayer) {
+      arr = arr.filter((item) => getTentLayer(item) === tentLayer);
+    }
+    if (showsTentFilters && tentCapacity) {
+      arr = arr.filter((item) => getTentCapacity(item) === tentCapacity);
+    }
     if (sort === "price-asc")
       arr.sort(
         (a, b) =>
@@ -269,7 +294,17 @@ export function CatalogPage(props: ShopProps | RentalProps) {
           getDisplayPrice(a.price_per_day, a.sale_price_per_day),
       );
     return arr;
-  }, [globalSearchItems, isShop, isWholeCatalogSearchActive, props, sort, onlyAvailable]);
+  }, [
+    globalSearchItems,
+    isShop,
+    isWholeCatalogSearchActive,
+    props,
+    sort,
+    onlyAvailable,
+    showsTentFilters,
+    tentLayer,
+    tentCapacity,
+  ]);
 
   const count = isShop ? filteredProducts.length : filteredItems.length;
   const visibleProducts = filteredProducts.slice(0, visibleCount);
@@ -323,7 +358,17 @@ export function CatalogPage(props: ShopProps | RentalProps) {
 
   useEffect(() => {
     setVisibleCount(INITIAL_VISIBLE_COUNT);
-  }, [search, sort, onlyAvailable, kidsOfferActive, props.group.id, props.activeCategory?.id, props.activeSubcategory?.id]);
+  }, [
+    search,
+    sort,
+    onlyAvailable,
+    tentLayer,
+    tentCapacity,
+    kidsOfferActive,
+    props.group.id,
+    props.activeCategory?.id,
+    props.activeSubcategory?.id,
+  ]);
 
   const isTourismSection = isShop && props.group.slug === "tourismCamping";
   const showsKidsOffer = isRollerCategory ||
@@ -655,6 +700,15 @@ export function CatalogPage(props: ShopProps | RentalProps) {
                 count={count}
                 loading={globalSearchLoading && isWholeCatalogSearchActive}
               />
+
+              {showsTentFilters && (
+                <TentRentalFilters
+                  layer={tentLayer}
+                  capacity={tentCapacity}
+                  onLayerChange={setTentLayer}
+                  onCapacityChange={setTentCapacity}
+                />
+              )}
 
               {isShop ? (
                 globalSearchLoading && isWholeCatalogSearchActive ? (
