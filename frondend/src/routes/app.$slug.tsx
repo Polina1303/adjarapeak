@@ -1,3 +1,4 @@
+import { formatPrice } from "@/lib/price";
 import {
   createFileRoute,
   Link,
@@ -560,11 +561,11 @@ function ProductView({
                 )}
                 <div className="flex items-baseline gap-3 mb-4 flex-wrap">
                   <span className="font-display font-bold text-ember text-4xl">
-                    ₾{displayPrice}
+                    {formatPrice(displayPrice)}
                   </span>
                   {salePrice && (
                     <span className="font-body text-base text-muted-foreground line-through">
-                      ₾{product.price}
+                      {formatPrice(product.price)}
                     </span>
                   )}
                   {discountPct !== null && (
@@ -621,11 +622,11 @@ function ProductView({
               )}
               <div className="flex items-baseline gap-3 mb-4 flex-wrap">
                 <span className="font-display font-bold text-ember text-4xl">
-                  ₾{displayPrice}
+                  {formatPrice(displayPrice)}
                 </span>
                 {salePrice && (
                   <span className="font-body text-base text-muted-foreground line-through">
-                    ₾{product.price}
+                    {formatPrice(product.price)}
                   </span>
                 )}
                 {discountPct !== null && (
@@ -834,11 +835,11 @@ function RentalView({
               <div className="lg:hidden">
                 <div className="flex items-baseline gap-3 mb-4 flex-wrap">
                   <span className="font-display font-bold text-ember text-4xl">
-                    ₾{displayPrice}
+                    {formatPrice(displayPrice)}
                   </span>
                   {salePrice && (
                     <span className="font-body text-base text-muted-foreground line-through">
-                      ₾{item.price_per_day}
+                      {formatPrice(item.price_per_day)}
                     </span>
                   )}
                   {discountPct !== null && (
@@ -927,11 +928,11 @@ function RentalView({
 
               <div className="flex items-baseline gap-3 mb-6 flex-wrap">
                 <span className="font-display font-bold text-ember text-4xl">
-                  ₾{displayPrice}
+                  {formatPrice(displayPrice)}
                 </span>
                 {salePrice && (
                   <span className="font-body text-base text-muted-foreground line-through">
-                    ₾{item.price_per_day}
+                    {formatPrice(item.price_per_day)}
                   </span>
                 )}
                 {discountPct !== null && (

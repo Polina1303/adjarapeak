@@ -1,3 +1,4 @@
+import { formatPrice } from "@/lib/price";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { Header } from "@/components/Header";
@@ -158,7 +159,7 @@ function HikePage() {
       icon: Mountain,
       text: formatDifficulty(hike.difficulty, lang) ?? hike.difficulty,
     });
-  metaRows.push({ icon: Wallet, text: `${price} ₾` });
+  metaRows.push({ icon: Wallet, text: `${formatPrice(price)}` });
 
   const reasons = hike.reasons;
 
@@ -247,7 +248,7 @@ function HikePage() {
                   </a>
                   {hasDiscount && (
                     <span className="font-display text-sm text-muted-foreground line-through sm:text-white/65">
-                      {hike.price} ₾
+                      {formatPrice(hike.price)}
                     </span>
                   )}
                 </div>
@@ -454,7 +455,7 @@ function HikePage() {
               {text.priceTitle}
             </h2>
             <div className="font-display text-2xl md:text-4xl font-bold text-foreground mb-8">
-              {price} ₾
+              {formatPrice(price)}
             </div>
             <a
               href="https://t.me/shpaksn"

@@ -1,125 +1,27 @@
-import { motion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
 import { resolveCatalogImage } from "@/lib/catalog-image";
 import { useCatalogTranslations } from "@/lib/catalog-translations";
 import { useLanguage } from "@/lib/i18n";
 import { getSiteText } from "@/lib/site-translations";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-  CarouselProgress,
-} from "@/components/ui/carousel";
-import { ArrowRight } from "lucide-react";
 
-type Group = {
-  id: string;
-  slug: string;
-  title: string;
-  image: string | null;
-};
-
+type Group = { id: string; slug: string; title: string; image: string | null };
 export function ActivityCategories({ groups }: { groups: Group[] }) {
   const { lang } = useLanguage();
-  const catalogTranslations = useCatalogTranslations(lang);
+  const translations = useCatalogTranslations(lang);
   const text = getSiteText(lang).home;
-  if (!groups || groups.length === 0) return null;
-  const translatedGroups = groups.map((group) => ({
-    ...group,
-    title: catalogTranslations.group("shop", group.slug, group.title),
-  }));
-
-  return (
-    <section className="section-padding bg-muted/25 py-8 md:py-11">
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-5 flex items-end justify-between gap-4 md:mb-7">
-          <h2 className="font-display text-2xl font-bold text-foreground md:text-3xl">
-            {text.popularCategories}
-          </h2>
-          <Link
-            to="/sale"
-            className="group inline-flex shrink-0 items-center gap-1.5 font-display text-xs font-bold uppercase tracking-wide text-ember transition-colors hover:text-foreground sm:text-sm"
-          >
-            {text.actions.catalog}
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-          </Link>
-        </div>
-
-        {/* Mobile: 2-column grid of small tiles */}
-        <div className="grid grid-cols-2 gap-3 md:hidden">
-          {translatedGroups.map((cat, i) => (
-            <motion.div
-              key={cat.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: Math.min(i * 0.04, 0.3) }}
-            >
-              <Link
-                to={cat.slug === "tourismCamping" ? "/tourismCamping/" : "/sale/$group"}
-                params={cat.slug === "tourismCamping" ? undefined : { group: cat.slug }}
-                className="group flex flex-col items-center text-center rounded-xl bg-secondary/40 hover:bg-secondary/70 transition-colors p-3"
-              >
-                <div className="w-full aspect-square rounded-lg overflow-hidden bg-secondary/60 flex items-center justify-center mb-3">
-                  <img
-                    src={resolveCatalogImage(cat.image)}
-                    alt={cat.title}
-                    loading="lazy"
-                    style={{ mixBlendMode: "multiply" }}
-                    className="w-full h-full object-contain p-3 group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <h3 className="font-display font-semibold text-foreground text-sm leading-tight group-hover:text-ember transition-colors">
-                  {cat.title}
-                </h3>
-              </Link>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Tablet/desktop: carousel */}
-        <Carousel opts={{ align: "start", slidesToScroll: "auto" }} className="w-full hidden md:block">
-          <CarouselContent className="-ml-3 md:-ml-5">
-            {translatedGroups.map((cat, i) => (
-              <CarouselItem
-                key={cat.id}
-                className="pl-3 md:pl-5 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5"
-              >
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: Math.min(i * 0.04, 0.3) }}
-                >
-                  <Link
-                    to={cat.slug === "tourismCamping" ? "/tourismCamping/" : "/sale/$group"}
-                    params={cat.slug === "tourismCamping" ? undefined : { group: cat.slug }}
-                    className="group flex flex-col items-center text-center"
-                  >
-                    <div className="mb-3 flex aspect-square w-full items-center justify-center overflow-hidden rounded-xl bg-secondary/60">
-                      <img
-                        src={resolveCatalogImage(cat.image)}
-                        alt={cat.title}
-                        loading="lazy"
-                        style={{ mixBlendMode: "multiply" }}
-                        className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                    <h3 className="font-display font-semibold text-foreground text-sm md:text-base group-hover:text-ember transition-colors">
-                      {cat.title}
-                    </h3>
-                  </Link>
-                </motion.div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="hidden md:flex -left-4" />
-          <CarouselNext className="hidden md:flex -right-4" />
-          <CarouselProgress className="mt-6 max-w-xs mx-auto" />
-        </Carousel>
+  if (!groups.length) return null;
+  return <section className="section-padding py-8 md:py-11">
+    <div className="mx-auto max-w-7xl">
+      <div className="mb-6 flex items-center justify-between gap-4">
+        <h2 className="font-display text-2xl font-bold md:text-3xl">{text.popularCategories}</h2>
+        <Link to="/sale" className="text-ember">{text.actions.catalog}</Link>
       </div>
-    </section>
-  );
+      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+        {groups.map((group) => <Link key={group.id} to="/sale/$group" params={{ group: group.slug }} className="group rounded-xl bg-secondary/40 p-3 text-center">
+          <img src={resolveCatalogImage(group.image)} alt="" width={240} height={240} loading="lazy" decoding="async" className="mb-3 aspect-square w-full rounded-lg object-contain p-3" />
+          <h3 className="font-display text-sm font-semibold group-hover:text-ember">{translations.group("shop", group.slug, group.title)}</h3>
+        </Link>)}
+      </div>
+    </div>
+  </section>;
 }

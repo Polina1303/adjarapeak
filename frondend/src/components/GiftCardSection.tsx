@@ -1,3 +1,4 @@
+import { formatPrice } from "@/lib/price";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Gift } from "lucide-react";
@@ -86,7 +87,7 @@ export function GiftCardSection() {
                           : "bg-background text-foreground border-border hover:border-ember"
                       }`}
                     >
-                      ₾{amount}
+                      {formatPrice(amount)}
                     </button>
                   );
                 })}

@@ -39,7 +39,7 @@ const EVENING_OFFER_TEXT: Record<Lang, EveningOfferText> = {
     benefit:
       "Ride after the heat has eased and keep enjoying your evening after the store closes.",
     priceLabel: "Price",
-    price: "₾20–30",
+    price: "20–30 ₾",
     deposit: "No deposit",
     teaser: "Bicycles, skates, and longboards: pick up in the evening, return in the morning, and pay for only 3 hours.",
     cta: "Explore sports rentals",

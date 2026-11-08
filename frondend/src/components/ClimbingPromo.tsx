@@ -1,3 +1,6 @@
+import { formatPrice } from "@/lib/price";
+import { contacts } from "@/lib/contacts";
+import { trackEvent } from "@/lib/analytics";
 import { Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { MapPin, Calendar, ArrowRight } from "lucide-react";
@@ -49,7 +52,7 @@ export function ClimbingPromo() {
                 <Calendar className="h-3.5 w-3.5 text-ember" /> {text.schedule}
               </span>
               <span className="inline-flex items-center font-display text-base md:text-lg font-bold text-background">
-                50 ₾{" "}
+                50 {formatPrice(" ")}
                 <span className="ml-1.5 text-xs font-body font-normal text-background/70">
                   {text.priceNote}
                 </span>
@@ -58,7 +61,7 @@ export function ClimbingPromo() {
 
             <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 pt-2">
               <a
-                href="https://t.me/shpaksn"
+                href={contacts.climbingTelegram} onClick={() => trackEvent("click_telegram_climbing")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-ember text-ember-foreground hover:bg-ember/90 transition-colors px-6 py-3 rounded-full font-display text-xs uppercase tracking-wider w-full sm:w-auto"
@@ -66,6 +69,7 @@ export function ClimbingPromo() {
                 {text.book}
                 <ArrowRight className="h-3.5 w-3.5" />
               </a>
+              <p className="text-xs text-background/70">{{ RU: "Напишите в Telegram: дата и количество человек", EN: "Message us on Telegram: date and number of people", GE: "მოგვწერეთ Telegram-ში: თარიღი და ადამიანების რაოდენობა" }[lang]}</p>
               <Link
                 to="/rockClimbing"
                 className="font-display text-xs uppercase tracking-wider text-ember hover:text-background/80 transition-colors"
