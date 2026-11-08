@@ -1,3 +1,4 @@
+import { EcosystemStrip } from "@/components/EcosystemStrip";
 import { createFileRoute } from "@tanstack/react-router";
 import { lazy, Suspense } from "react";
 import { Header } from "@/components/Header";
@@ -64,10 +65,8 @@ function Index() {
     <div className="min-h-screen bg-background">
       <Header />
       <div className="pt-16 lg:pt-18">
-        <h1 className="sr-only">
-          Спортивный и туристический магазин Adjara Peak в Батуми
-        </h1>
         <HeroCarousel />
+        <EcosystemStrip />
         <HomeOffers />
         <BrandStrip />
         <Suspense fallback={null}>
