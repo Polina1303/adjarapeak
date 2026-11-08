@@ -5,7 +5,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CatalogPage } from "@/components/CatalogPage";
 import { getShopGroupView } from "@/lib/catalog.functions";
-import { resolveImage } from "@/lib/catalog-image";
+import { resolveCatalogImage } from "@/lib/catalog-image";
 import { canonicalLink } from "@/lib/seo";
 
 export const Route = createFileRoute("/sale/$group")({
@@ -23,7 +23,7 @@ export const Route = createFileRoute("/sale/$group")({
     return {
       meta: [
         ...socialMetadata(title,seo?.description??`${loaderData.group.title} в магазине Adjara Peak.`),
-        { property: "og:image", content: resolveImage(loaderData.group.image) },
+        { property: "og:image", content: resolveCatalogImage(loaderData.group.image) },
       ],
       links: [canonicalLink(canonicalPath)],
     };
