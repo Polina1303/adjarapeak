@@ -1,3 +1,4 @@
+import { trackEvent } from "./analytics";
 import { useSyncExternalStore } from "react";
 
 const STORAGE_KEY = "ap_cart_v2";
@@ -10,6 +11,7 @@ export function openCart() {}
 
 export type CartLineMeta = {
   title?: string;
+  category?: string;
   image?: string | null;
   selectedColor?: string;
   variantImage?: string;
@@ -53,6 +55,7 @@ function readLines(): CartLine[] {
       .map((x) => ({
         slug: x.slug,
         qty: Math.max(1, Number(x.qty) || 1),
+        category: typeof x.category === "string" ? x.category : undefined,
         title: typeof x.title === "string" ? x.title : undefined,
         image: typeof x.image === "string" ? x.image : null,
         selectedColor: typeof x.selectedColor === "string" ? x.selectedColor : undefined,
@@ -84,6 +87,7 @@ export function addToCart(qty = 1, slug?: string, meta?: CartLineMeta) {
   if (idx >= 0) lines[idx] = { ...lines[idx], ...meta, qty: lines[idx].qty + qty };
   else lines.push({ slug, qty, ...meta });
   writeLines(lines);
+  trackEvent("add_to_cart",{category:meta?.category??(slug.startsWith("giftcard-")?"gift_card":meta?.kind??"catalog"),ecommerce:{currency:"GEL",...(typeof meta?.price==="number"?{value:meta.price*qty}:{}),items:[{item_id:slug,item_name:meta?.title,item_category:meta?.category??(slug.startsWith("giftcard-")?"gift_card":meta?.kind??"catalog"),quantity:qty,...(typeof meta?.price==="number"?{price:meta.price}:{})}]}});
 }
 
 export function setCartQty(slug: string, qty: number) {

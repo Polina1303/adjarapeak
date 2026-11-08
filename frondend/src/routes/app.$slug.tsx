@@ -407,6 +407,7 @@ function ProductView({
     }
     addToCart(1, product.slug, {
       title: product.title,
+      category: category?.slug??product.category_id,
       image: product.image,
       price: displayPrice,
       kind: "shop",
@@ -750,6 +751,7 @@ function RentalView({
     }
     addToCart(1, item.slug, {
       title: item.title,
+      category: category?.slug??item.category_id,
       image: item.image,
       price: displayPrice,
       kind: "rental",

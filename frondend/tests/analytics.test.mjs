@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {contactEvents,trackEvent} from '../src/lib/analytics.ts';
+test('contact clicks recognize exact services and distinguish hikes from climbing',()=>{assert.deepEqual(contactEvents('tel:+995571208555','/'),['click_phone']);assert.deepEqual(contactEvents('https://t.me/shpaksn','/'),['click_telegram','click_telegram_climbing']);assert.deepEqual(contactEvents('https://t.me/shpaksn','/hikes/trip'),['click_telegram']);assert.deepEqual(contactEvents('https://t.me.evil.test/shpaksn','/'),[]);assert.deepEqual(contactEvents('https://wa.me/995571208555','/'),['click_whatsapp']);});
+test('analytics is SSR safe and appends to an existing dataLayer',()=>{trackEvent('click_phone');globalThis.window={dataLayer:[{event:'gtm.js'}]};try{trackEvent('click_category_tile',{category_name:'Ski'});assert.equal(window.dataLayer.length,2);assert.deepEqual(window.dataLayer[1],{category_name:'Ski',event:'click_category_tile'});}finally{delete globalThis.window;}});

@@ -1,3 +1,4 @@
+import { Analytics } from "@/components/Analytics";
 import { useEffect, useState } from "react";
 import {
   Outlet,
@@ -103,6 +104,7 @@ function RootComponent() {
 
   return (
     <LanguageProvider>
+      {!isAdmin && <Analytics />}
       <NavigationProgress />
       <Outlet />
       <Toaster />

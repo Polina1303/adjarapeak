@@ -34,6 +34,7 @@ function CarouselCard({ product: p }: { product: ShopProduct }) {
     }
     addToCart(1, p.slug, {
       title: p.title,
+      category: p.category_id,
       image: p.image,
       price: displayPrice,
       kind: "shop",

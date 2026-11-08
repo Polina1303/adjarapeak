@@ -60,6 +60,7 @@ function RentalCard({
     if (inCart) return;
     addToCart(1, item.slug, {
       title: item.title,
+      category: item.category_id,
       image: item.image,
       price: displayPrice,
       kind: "rental",

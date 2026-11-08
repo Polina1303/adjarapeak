@@ -36,6 +36,7 @@ export function ProductCard({ product: p, bordered = false, categoryLabel, analy
     }
     addToCart(1, p.slug, {
       title: p.title,
+      category: analyticsCategory??p.category_id,
       image: p.image,
       price: displayPrice,
       kind: "shop",

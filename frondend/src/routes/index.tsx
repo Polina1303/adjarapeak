@@ -54,7 +54,8 @@ export const Route = createFileRoute("/")({
     return { groups: sortHomeGroups(groups), rentalGroups: [...rentalGroups].sort((a,b)=>Number(b.slug==='skiRental')-Number(a.slug==='skiRental')), selections };
   },
   head: () => ({
-    meta: [...socialMetadata(SALES_TEXT.RU.metaTitle,SALES_TEXT.RU.metaDescription),{"script:ld+json":ADJARA_PEAK_LOCAL_BUSINESS_SCHEMA}],
+    meta: [...socialMetadata(SALES_TEXT.RU.metaTitle,SALES_TEXT.RU.metaDescription)],
+    scripts: [{type:"application/ld+json",children:JSON.stringify(ADJARA_PEAK_LOCAL_BUSINESS_SCHEMA)}],
     links: [canonicalLink("/"),{rel:"preload",as:"image",href:getResponsiveImageProps("hero/hero-camping.jpg","(min-width: 1400px) 1336px, calc(100vw - 32px)",1280).src,imageSrcSet:getResponsiveImageProps("hero/hero-camping.jpg","(min-width: 1400px) 1336px, calc(100vw - 32px)",1280).srcSet,imageSizes:"(min-width: 1400px) 1336px, calc(100vw - 32px)"}],
   }),
   component: Index,
