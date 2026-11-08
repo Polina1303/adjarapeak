@@ -52,7 +52,7 @@ export function FeaturedBrands({ compact = false }: { compact?: boolean }) {
                     decoding="async"
                     className="h-16 w-full max-w-40 object-contain grayscale"
                   />
-                  <span className="font-body text-[11px] text-muted-foreground transition-colors group-hover:text-ember">{text.action}</span>
+                  <span className="font-body text-[11px] text-muted-foreground transition-colors group-hover:text-ember">{text.action} <span aria-hidden="true">↗</span></span>
                 </Link>
               </CarouselItem>
             ))}

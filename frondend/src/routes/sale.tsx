@@ -1,4 +1,3 @@
-import { formatPrice } from "@/lib/price";
 import { createFileRoute, Link, Outlet, useChildMatches, useNavigate } from "@tanstack/react-router";
 import { LoaderCircle, Search, X } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -320,9 +319,9 @@ function ShopSearchRow({
           {product.title}
         </h3>
         <div className="flex items-center gap-2">
-          <span className="font-display text-base font-bold text-ember">{formatPrice(displayPrice)}</span>
+          <span className="font-display text-base font-bold text-ember">₾{displayPrice}</span>
           {salePrice && (
-            <span className="font-body text-xs text-muted-foreground line-through">{formatPrice(product.price)}</span>
+            <span className="font-body text-xs text-muted-foreground line-through">₾{product.price}</span>
           )}
         </div>
         {!product.in_stock && (

@@ -1,5 +1,3 @@
-import { contacts } from "@/lib/contacts";
-import { trackEvent } from "@/lib/analytics";
 import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -176,7 +174,7 @@ function ClimbingPage() {
               </p>
               <div className="flex flex-wrap gap-3 w-full">
                 <a
-                  href={contacts.climbingTelegram} onClick={() => trackEvent("click_telegram_climbing")}
+                  href="https://t.me/shpaksn"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 inline-flex justify-center items-center gap-2 bg-ember text-ember-foreground hover:bg-ember/90 transition-colors px-6 py-3 rounded-full font-display text-xs uppercase tracking-wider"
@@ -443,7 +441,7 @@ function ClimbingPage() {
                   ))}
                 </ul>
                 <a
-                  href={contacts.climbingTelegram} onClick={() => trackEvent("click_telegram_climbing")}
+                  href="https://t.me/shpaksn"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex w-full justify-center items-center gap-2 bg-ember text-ember-foreground hover:bg-ember/90 transition-colors px-6 py-3 rounded-full font-display text-xs uppercase tracking-wider"

@@ -1,4 +1,3 @@
-import { formatPrice } from "@/lib/price";
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import {
@@ -101,7 +100,7 @@ const CHECKOUT_TEXT: Record<Lang, CheckoutText> = {
     unavailable: "Нет в наличии",
     decrease: "Уменьшить",
     increase: "Увеличить",
-    giftCardTitle: (amount) => `Подарочная карта на ${formatPrice(amount)}`,
+    giftCardTitle: (amount) => `Подарочная карта на ₾${amount}`,
     itemCount: (count) => `${count} ${pluralItemsRu(count)}`,
     groupCount: (count) => `${count} шт.`,
     staleOne: "Один товар из корзины больше недоступен и был удалён",
@@ -144,7 +143,7 @@ const CHECKOUT_TEXT: Record<Lang, CheckoutText> = {
     unavailable: "Out of stock",
     decrease: "Decrease",
     increase: "Increase",
-    giftCardTitle: (amount) => `Gift card for ${formatPrice(amount)}`,
+    giftCardTitle: (amount) => `Gift card for ₾${amount}`,
     itemCount: (count) => `${count} ${count === 1 ? "item" : "items"}`,
     groupCount: (count) => `${count} ${count === 1 ? "item" : "items"}`,
     staleOne: "One item in your cart is no longer available and was removed",
@@ -187,7 +186,7 @@ const CHECKOUT_TEXT: Record<Lang, CheckoutText> = {
     unavailable: "არ არის მარაგში",
     decrease: "შემცირება",
     increase: "გაზრდა",
-    giftCardTitle: (amount) => `სასაჩუქრე ბარათი ${formatPrice(amount)}`,
+    giftCardTitle: (amount) => `სასაჩუქრე ბარათი ₾${amount}`,
     itemCount: (count) => `${count} ნივთი`,
     groupCount: (count) => `${count} ნივთი`,
     staleOne: "კალათაში ერთი ნივთი აღარ არის ხელმისაწვდომი და წაიშალა",
@@ -896,6 +895,9 @@ function CheckoutRow({
   );
 }
 
+function formatPrice(value: number) {
+  return `${value.toFixed(2)} ₾`;
+}
 
 function pluralItemsRu(n: number) {
   const mod10 = n % 10;

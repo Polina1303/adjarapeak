@@ -29,6 +29,11 @@ const BikeServicePromo = lazy(() =>
 const ClimbingPromo = lazy(() =>
   import("@/components/ClimbingPromo").then((m) => ({ default: m.ClimbingPromo })),
 );
+const InterestingSection = lazy(() =>
+  import("@/components/InterestingSection").then((m) => ({
+    default: m.InterestingSection,
+  })),
+);
 const GiftCardSection = lazy(() =>
   import("@/components/GiftCardSection").then((m) => ({ default: m.GiftCardSection })),
 );
@@ -77,6 +82,7 @@ function Index() {
           <BikeServicePromo />
           <ClimbingPromo />
           <GiftCardSection />
+          <InterestingSection />
           <StoreSection />
         </Suspense>
         <FeaturedBrands />

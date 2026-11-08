@@ -1,4 +1,3 @@
-import { formatPrice } from "@/lib/price";
 import type { Lang } from "@/lib/i18n";
 
 export const SITE_TEXT = {
@@ -120,10 +119,10 @@ export const SITE_TEXT = {
         enterAmount: "Введите сумму (₾)",
         amountPlaceholder: (min: number, max: number) => `от ${min} до ${max}`,
         addToCart: "В корзину",
-        addToCartAmount: (amount: number) => `В корзину — ${formatPrice(amount)}`,
-        invalidAmount: (min: number, max: number) => `Введите сумму от ${formatPrice(min)} до ${formatPrice(max)}`,
-        cartTitle: (amount: number) => `Подарочная карта на ${formatPrice(amount)}`,
-        added: (amount: number) => `Подарочная карта на ${formatPrice(amount)} добавлена в корзину`,
+        addToCartAmount: (amount: number) => `В корзину — ₾${amount}`,
+        invalidAmount: (min: number, max: number) => `Введите сумму от ₾${min} до ₾${max}`,
+        cartTitle: (amount: number) => `Подарочная карта на ₾${amount}`,
+        added: (amount: number) => `Подарочная карта на ₾${amount} добавлена в корзину`,
         imageAlt: "Подарочная карта Adjara Peak",
       },
       interesting: {
@@ -707,10 +706,10 @@ export const SITE_TEXT = {
         enterAmount: "Enter amount (₾)",
         amountPlaceholder: (min: number, max: number) => `${min} to ${max}`,
         addToCart: "Add to cart",
-        addToCartAmount: (amount: number) => `Add to cart — ${formatPrice(amount)}`,
-        invalidAmount: (min: number, max: number) => `Enter an amount from ${formatPrice(min)} to ${formatPrice(max)}`,
-        cartTitle: (amount: number) => `Gift card for ${formatPrice(amount)}`,
-        added: (amount: number) => `Gift card for ${formatPrice(amount)} added to cart`,
+        addToCartAmount: (amount: number) => `Add to cart — ₾${amount}`,
+        invalidAmount: (min: number, max: number) => `Enter an amount from ₾${min} to ₾${max}`,
+        cartTitle: (amount: number) => `Gift card for ₾${amount}`,
+        added: (amount: number) => `Gift card for ₾${amount} added to cart`,
         imageAlt: "Adjara Peak gift card",
       },
       interesting: {
@@ -1293,10 +1292,10 @@ export const SITE_TEXT = {
         enterAmount: "შეიყვანეთ თანხა (₾)",
         amountPlaceholder: (min: number, max: number) => `${min}-დან ${max}-მდე`,
         addToCart: "კალათაში",
-        addToCartAmount: (amount: number) => `კალათაში — ${formatPrice(amount)}`,
-        invalidAmount: (min: number, max: number) => `შეიყვანეთ თანხა ${formatPrice(min)}-დან ${formatPrice(max)}-მდე`,
-        cartTitle: (amount: number) => `სასაჩუქრე ბარათი ${formatPrice(amount)}`,
-        added: (amount: number) => `სასაჩუქრე ბარათი ${formatPrice(amount)} დაემატა კალათაში`,
+        addToCartAmount: (amount: number) => `კალათაში — ₾${amount}`,
+        invalidAmount: (min: number, max: number) => `შეიყვანეთ თანხა ₾${min}-დან ₾${max}-მდე`,
+        cartTitle: (amount: number) => `სასაჩუქრე ბარათი ₾${amount}`,
+        added: (amount: number) => `სასაჩუქრე ბარათი ₾${amount} დაემატა კალათაში`,
         imageAlt: "Adjara Peak-ის სასაჩუქრე ბარათი",
       },
       interesting: {

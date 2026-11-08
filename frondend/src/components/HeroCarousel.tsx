@@ -1,16 +1,348 @@
-import { Link } from "@tanstack/react-router";
+import { motion, AnimatePresence } from "framer-motion";
+import { useCallback, useEffect, useRef, useState } from "react";
+import type { CarouselApi } from "@/components/ui/carousel";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import bannerBike from "@/assets/banner-bike.jpg";
 import heroCamping from "@/assets/hero-camping.jpg";
+import heroHikes from "@/assets/hero-hikes.jpg";
+import climbingPromo from "@/assets/climbing-promo.jpeg";
+import nikitaBikeService from "@/assets/nikita-bike-service-1.jpg";
+import { Link } from "@tanstack/react-router";
 import { useLanguage } from "@/lib/i18n";
 import { getSiteText } from "@/lib/site-translations";
 import { getResponsiveImageProps } from "@/lib/responsive-image";
+
+const transparentPixel = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+
+const slideConfig = [
+  {
+    image: heroCamping,
+    imageKey: "hero/hero-camping.jpg",
+    href: "/sale" as const,
+  },
+  {
+    image: bannerBike,
+    imageKey: "hero/banner-bike.jpg",
+    href: "/rent" as const,
+  },
+  {
+    image: climbingPromo,
+    imageKey: "hero/climbing-promo.jpeg",
+    href: "/rockClimbing" as const,
+  },
+  {
+    image: nikitaBikeService,
+    imageKey: "hero/nikita-bike-service-1.jpg",
+    href: "/service" as const,
+  },
+  {
+    image: heroHikes,
+    imageKey: "hero/hero-hikes.jpg",
+    href: "/hikes" as const,
+  },
+];
+
 export function HeroCarousel() {
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [autoplayVersion, setAutoplayVersion] = useState(0);
+  const [mobileApi, setMobileApi] = useState<CarouselApi>();
+  const autoplayTimerRef = useRef<number | null>(null);
   const { lang } = useLanguage();
-  const text = getSiteText(lang).home.hero.slides[0];
-  return <section className="mx-auto max-w-[1400px] p-4 md:p-6">
-    <div className="relative isolate flex min-h-[440px] items-end overflow-hidden rounded-xl bg-foreground p-6 md:min-h-[560px] md:p-10">
-      <img {...getResponsiveImageProps("hero/hero-camping.jpg", "100vw", 1280)} src={heroCamping} alt="" width={1280} height={720} fetchPriority="high" className="absolute inset-0 -z-20 h-full w-full object-cover" />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black/80 to-black/10" />
-      <div className="max-w-3xl text-white"><h2 className="font-display text-4xl font-bold md:text-6xl">{text.title}</h2><p className="my-5">{text.subtitle}</p><Link to="/sale" className="inline-flex rounded-full bg-ember px-6 py-3 text-ember-foreground">{text.cta}</Link></div>
+  const heroText = getSiteText(lang).home.hero;
+  const desktopSlides = slideConfig.map((slide, index) => ({
+    ...slide,
+    ...heroText.slides[index],
+  }));
+
+  const resetAutoplay = useCallback(() => {
+    if (autoplayTimerRef.current !== null) {
+      window.clearTimeout(autoplayTimerRef.current);
+      autoplayTimerRef.current = null;
+    }
+    setAutoplayVersion((version) => version + 1);
+  }, []);
+
+  useEffect(() => {
+    autoplayTimerRef.current = window.setTimeout(() => {
+      autoplayTimerRef.current = null;
+      const nextSlide = (activeSlide + 1) % slideConfig.length;
+      setActiveSlide(nextSlide);
+      mobileApi?.scrollTo(nextSlide);
+    }, 6000);
+
+    return () => {
+      if (autoplayTimerRef.current !== null) {
+        window.clearTimeout(autoplayTimerRef.current);
+        autoplayTimerRef.current = null;
+      }
+    };
+  }, [activeSlide, autoplayVersion, mobileApi]);
+
+  useEffect(() => {
+    if (!mobileApi) return;
+
+    const updateActive = () => {
+      setActiveSlide(mobileApi.selectedScrollSnap());
+      resetAutoplay();
+    };
+
+    updateActive();
+    mobileApi.on("select", updateActive);
+    mobileApi.on("reInit", updateActive);
+
+    return () => {
+      mobileApi.off("select", updateActive);
+      mobileApi.off("reInit", updateActive);
+    };
+  }, [mobileApi, resetAutoplay]);
+
+  const selectSlide = (index: number) => {
+    resetAutoplay();
+    setActiveSlide(index);
+    mobileApi?.scrollTo(index);
+  };
+
+  const slide = desktopSlides[activeSlide];
+  const desktopImage = getResponsiveImageProps(slide.imageKey, "(min-width: 1400px) 1336px, calc(100vw - 64px)", 1280);
+
+  return (
+    <section className="w-full bg-background py-4 md:py-6">
+      <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-8">
+        {/* Desktop layout — single full-width hero carousel */}
+        <div className="hidden lg:block">
+          <div className="relative overflow-hidden rounded-xl bg-foreground min-h-[560px]">
+            <AnimatePresence mode="sync">
+              <motion.picture
+                key={`img-${activeSlide}`}
+                initial={{ opacity: 0, scale: 1.04 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+                className="absolute inset-0 w-full h-full"
+              >
+                <source media="(min-width: 1024px)" srcSet={desktopImage.srcSet ?? slide.image} sizes={desktopImage.sizes} />
+                <img src={transparentPixel} alt={slide.title} width={desktopImage.width} height={desktopImage.height}
+                  className="w-full h-full object-cover" loading="eager" decoding="async" fetchPriority="high" />
+              </motion.picture>
+            </AnimatePresence>
+            <div
+              className="absolute inset-0 z-[1]"
+              style={{
+                background:
+                  "linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 70%)",
+              }}
+            />
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={`text-${activeSlide}`}
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -16 }}
+                transition={{ duration: 0.5 }}
+                className="relative z-10 h-full w-full flex flex-col justify-end p-10"
+              >
+                <h2 className="font-display text-7xl font-bold text-primary-foreground leading-[0.95] mb-4 whitespace-pre-line drop-shadow-lg uppercase">
+                  {slide.title}
+                </h2>
+                <p className="text-primary-foreground/90 text-base font-body mb-6 max-w-md drop-shadow-md">
+                  {slide.subtitle}
+                </p>
+                {activeSlide === 1 ? (
+                  <RentalQuickLinks
+                    labels={heroText.rentalActions}
+                    primaryLabel={slide.cta}
+                  />
+                ) : (
+                  <div>
+                    <Link
+                      to={slide.href}
+                      className="inline-flex h-12 items-center px-6 rounded-full bg-ember text-primary-foreground font-display font-medium text-sm hover:bg-ember/90 transition-colors"
+                    >
+                      {slide.cta}
+                    </Link>
+                  </div>
+                )}
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Dots */}
+            <div className="absolute bottom-5 right-6 z-20 flex items-center gap-2">
+              {desktopSlides.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => selectSlide(i)}
+                  aria-label={heroText.goToSlide(i + 1)}
+                  className={`h-2 rounded-full transition-all ${
+                    i === activeSlide ? "w-6 bg-ember" : "w-2 bg-white/50 hover:bg-white/70"
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile/tablet — swipeable hero carousel */}
+        <div className="lg:hidden">
+          <div className="relative overflow-hidden rounded-xl bg-foreground">
+            <Carousel opts={{ loop: true }} setApi={setMobileApi} className="w-full">
+              <CarouselContent className="ml-0">
+                {desktopSlides.map((mobileSlide, index) => (
+                  <CarouselItem key={mobileSlide.title} className="pl-0">
+                    <div className="relative min-h-[22rem] w-full overflow-hidden bg-foreground aspect-[16/15.8] sm:min-h-0 sm:aspect-[16/13.2]">
+                      <picture>
+                        <source media="(max-width: 1023px)"
+                          srcSet={Math.abs(index - activeSlide) <= 1
+                            ? getResponsiveImageProps(mobileSlide.imageKey, "calc(100vw - 32px)", 640).srcSet ?? mobileSlide.image
+                            : transparentPixel}
+                          sizes="calc(100vw - 32px)" />
+                        <img src={transparentPixel} alt={mobileSlide.title}
+                          className="absolute inset-0 w-full h-full object-cover"
+                          loading={index === activeSlide ? "eager" : "lazy"}
+                          fetchPriority={index === activeSlide ? "high" : "low"} decoding="async" />
+                      </picture>
+                      <div
+                        className="absolute inset-0 z-[1]"
+                        style={{
+                          background:
+                            "linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 70%)",
+                        }}
+                      />
+                      <div className="relative z-10 h-full w-full flex flex-col justify-end px-5 pt-5 pb-9 sm:p-5">
+                        <h2 className="mb-2 whitespace-pre-line font-display text-[clamp(1.25rem,6.8vw,1.875rem)] font-bold uppercase leading-[0.95] text-primary-foreground drop-shadow-lg sm:mb-3 sm:text-5xl">
+                          {mobileSlide.title}
+                        </h2>
+                        <p className="mb-3 max-w-md font-body text-[clamp(0.6875rem,3.2vw,0.875rem)] leading-5 text-primary-foreground/90 drop-shadow-md sm:mb-4 sm:text-sm">
+                          {mobileSlide.subtitle}
+                        </p>
+                        {index === 1 ? (
+                          <RentalQuickLinks
+                            labels={heroText.rentalActions}
+                            primaryLabel={mobileSlide.cta}
+                            compact
+                          />
+                        ) : (
+                          <div>
+                            <Link
+                              to={mobileSlide.href}
+                              className="flex h-11 items-center justify-center px-5 rounded-full bg-ember text-primary-foreground font-display font-medium text-sm hover:bg-ember/90 transition-colors w-full pb-0"
+                            >
+                              {mobileSlide.cta}
+                            </Link>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
+
+            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2">
+              {desktopSlides.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => selectSlide(i)}
+                  aria-label={heroText.goToSlide(i + 1)}
+                  className={`h-1.5 rounded-full transition-all ${
+                    i === activeSlide ? "w-5 bg-ember" : "w-1.5 bg-white/50"
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function RentalQuickLinks({
+  labels,
+  primaryLabel,
+  compact = false,
+}: {
+  labels: {
+    bikes: string;
+    rollers: string;
+    skateboards: string;
+    tourism: string;
+    skiing: string;
+  };
+  primaryLabel: string;
+  compact?: boolean;
+}) {
+  const links = [
+    {
+      label: labels.bikes,
+      to: "/rent/$group/$category" as const,
+      params: { group: "sportsRental", category: "rentBIKE" },
+    },
+    {
+      label: labels.rollers,
+      to: "/rent/$group/$category" as const,
+      params: { group: "sportsRental", category: "rentROLLER" },
+    },
+    {
+      label: labels.skateboards,
+      to: "/rent/$group/$category" as const,
+      params: { group: "sportsRental", category: "rentBOARD" },
+    },
+  ];
+
+  const categoryClass = compact
+    ? "inline-flex min-h-9 items-center justify-center rounded-full border border-white/35 bg-black/25 px-2.5 text-center font-body text-[10px] font-medium leading-tight text-white backdrop-blur-sm transition-colors hover:bg-white/15 sm:min-h-10 sm:px-3 sm:text-xs"
+    : "inline-flex h-10 items-center justify-center rounded-full border border-white/35 bg-black/25 px-4 font-body text-xs font-medium text-white backdrop-blur-sm transition-colors hover:border-white/55 hover:bg-white/15";
+
+  return (
+    <div
+      className={
+        compact
+          ? "space-y-2 sm:space-y-2.5"
+          : "flex max-w-5xl flex-wrap items-center gap-2.5"
+      }
+    >
+      <Link
+        to="/rent"
+        className={
+          compact
+            ? "flex h-10 w-full items-center justify-center gap-2 rounded-full bg-ember px-5 font-display text-[clamp(0.6875rem,3.2vw,0.875rem)] font-medium text-primary-foreground shadow-lg transition-colors hover:bg-ember/90 sm:h-11 sm:text-sm"
+            : "inline-flex h-12 items-center justify-center gap-2 rounded-full bg-ember px-6 font-display text-sm font-medium text-primary-foreground shadow-lg transition-colors hover:bg-ember/90"
+        }
+      >
+        {primaryLabel}
+        <span aria-hidden="true">→</span>
+      </Link>
+
+      <div className="flex flex-wrap gap-2">
+        {links.map((item) => (
+          <Link
+            key={item.label}
+            to={item.to}
+            params={item.params}
+            className={categoryClass}
+          >
+            {item.label}
+          </Link>
+        ))}
+        <Link
+          to="/rent/$group"
+          params={{ group: "tourismRental" }}
+          className={categoryClass}
+        >
+          {labels.tourism}
+        </Link>
+        <Link
+          to="/rent/$group"
+          params={{ group: "skiRental" }}
+          className={categoryClass}
+        >
+          {labels.skiing}
+        </Link>
+      </div>
     </div>
-  </section>;
+  );
 }

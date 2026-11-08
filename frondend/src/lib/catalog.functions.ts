@@ -1,4 +1,3 @@
-import { formatPrice } from "@/lib/price";
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
@@ -1731,7 +1730,7 @@ export const getCartLineItems = createServerFn({ method: "GET" })
       map.set(slug, {
         slug,
         kind: "shop",
-        title: `Подарочная карта на ${formatPrice(amount)}`,
+        title: `Подарочная карта на ₾${amount}`,
         image: null,
         price: amount,
         unit: "",

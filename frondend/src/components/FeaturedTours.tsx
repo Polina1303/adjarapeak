@@ -1,4 +1,3 @@
-import { formatPrice } from "@/lib/price";
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
@@ -92,7 +91,7 @@ export function FeaturedTours() {
                   </h3>
                   <div className="text-right">
                     <span className="text-xs text-muted-foreground font-body block">from</span>
-                    <span className="font-display font-bold text-foreground text-lg">{formatPrice(tour.price)}</span>
+                    <span className="font-display font-bold text-foreground text-lg">₾{tour.price}</span>
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-3 text-xs text-muted-foreground font-body mb-5">

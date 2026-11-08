@@ -1,4 +1,3 @@
-import { formatPrice } from "@/lib/price";
 import { useId } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Gift, MessageCircle } from "lucide-react";
@@ -34,9 +33,9 @@ export const KIDS_ROLLER_OFFER_TEXT = {
     limit: "Gift sets are available while stocks last.",
     cta: "Choose skates",
     consult: "Find the right size",
-    posterAlt: "Offer: kids’ roller skates for 120–225 ₾ with free protective gear",
+    posterAlt: "Offer: kids’ roller skates for ₾120–225 with free protective gear",
     all: "All skates",
-    offer: "Offer models · 120–225 ₾",
+    offer: "Offer models · ₾120–225",
     message: "Hello! I’m interested in kids’ skates with the free protective gear offer. Please help me choose a model and size.",
   },
   GE: {
@@ -71,7 +70,7 @@ export function KidsRollerOffer({ compact = false, active = false }: { compact?:
         headingId={headingId}
         eyebrow={text.badge}
         title={text.title}
-        price={formatPrice(120, { max: 225 })}
+        price="120–225 ₾"
         description={`${text.selection}. ${text.discount}.`}
         benefit={text.gift}
         details={text.giftContents}
@@ -101,7 +100,7 @@ export function KidsRollerOffer({ compact = false, active = false }: { compact?:
               {text.title}
             </h2>
             <div className="mt-2 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-              <span className="whitespace-nowrap font-display text-xl font-bold">{formatPrice(120, { max: 225 })}</span>
+              <span className="whitespace-nowrap font-display text-xl font-bold">120–225 ₾</span>
               <span className="font-body text-xs text-foreground/65 sm:text-sm">{text.selection}</span>
             </div>
             <p className="mt-1.5 font-body text-xs leading-relaxed text-foreground/65 sm:text-sm">{text.discount}</p>

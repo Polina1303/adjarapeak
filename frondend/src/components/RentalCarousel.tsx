@@ -1,4 +1,3 @@
-import { formatPrice } from "@/lib/price";
 import { Link } from "@tanstack/react-router";
 import { catalogImageProps } from "@/lib/catalog-image";
 import type { RentalItem } from "@/lib/catalog.functions";
@@ -59,14 +58,14 @@ export function RentalCarousel({ items }: { items: RentalItem[] }) {
                   )}
                   <div className="flex items-baseline gap-2 flex-wrap">
                     <span className="font-display font-bold text-foreground text-xl">
-                      {formatPrice(displayPrice)}
+                      ₾{displayPrice}
                       <span className="text-sm font-body font-normal text-muted-foreground">
                         {text.perDay}
                       </span>
                     </span>
                     {salePrice && (
                       <span className="font-body text-sm text-muted-foreground line-through">
-                        {formatPrice(item.price_per_day)}
+                        ₾{item.price_per_day}
                       </span>
                     )}
                   </div>

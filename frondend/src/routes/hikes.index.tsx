@@ -1,4 +1,3 @@
-import { formatPrice } from "@/lib/price";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { Header } from "@/components/Header";
@@ -400,7 +399,7 @@ function HikesIndex() {
                           )}
                           <div className="pt-4 border-t border-border">
                             <span className="font-display font-bold text-foreground text-xl">
-                              {formatPrice(price)}
+                              ₾{price}
                             </span>
                           </div>
                         </div>
