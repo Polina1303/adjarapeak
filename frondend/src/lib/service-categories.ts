@@ -31,7 +31,7 @@ export const SERVICE_CATEGORY_LABELS: Record<
     fork: "Fork",
     general: "Assembly and general work",
   },
-  GE: {
+  KA: {
     diagnostics: "დიაგნოსტიკა და ადგილზე მომსახურება",
     drivetrain: "ტრანსმისია",
     wheels: "ბორბლები და საბურავები",

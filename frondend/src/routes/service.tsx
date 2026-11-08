@@ -287,7 +287,7 @@ function ServicePage() {
   const text = getSiteText(lang).service;
   const outdoorText = outdoorServiceText[lang];
   const [selectedOutdoorService, setSelectedOutdoorService] = useState<number | null>(null);
-  const [season, setSeason] = useState<"winter" | "summer">(() => typeof window !== "undefined" && new URLSearchParams(window.location.search).get("season") === "summer" ? "summer" : "winter");
+  const [season, setSeason] = useState<"winter" | "summer">("summer");
   const mechanicCarousel = useServiceCarousel(season === "summer");
   const portfolioCarousel = useServiceCarousel(season === "summer");
   const [portfolioOpenIndex, setPortfolioOpenIndex] = useState<number | null>(

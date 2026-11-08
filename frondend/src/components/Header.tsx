@@ -1,9 +1,7 @@
-import { contacts } from "@/lib/contacts";
-import { SEASONAL_TEXT } from "@/lib/seasonal-text";
 import { Link } from "@tanstack/react-router";
 import logo from "@/assets/logo.png";
 import { useState, useRef, useEffect } from "react";
-import { Phone, ShoppingBag, Menu, X, ChevronDown, Search } from "lucide-react";
+import { ShoppingBag, Menu, X, ChevronDown, Search } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useCartCount } from "@/lib/cart";
 import { useLanguage, type Lang } from "@/lib/i18n";
@@ -155,7 +153,6 @@ export function Header({ transparent = false }: { transparent?: boolean }) {
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-foreground/40" />
           <span className="truncate">{t.searchProducts}</span>
         </button>
-        <a href={`tel:${contacts.phone}`} aria-label={SEASONAL_TEXT[currentLang].phone} className="flex h-10 w-10 shrink-0 items-center justify-center text-foreground"><Phone className="h-5 w-5" aria-hidden /></a>
         <button
           aria-label={mobileOpen ? t.closeMenu : t.openMenu}
           className="shrink-0 w-10 h-10 rounded-lg flex items-center justify-center text-ember"
