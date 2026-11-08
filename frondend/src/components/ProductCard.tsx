@@ -1,3 +1,4 @@
+import { formatPrice } from "@/lib/price";
 import { Link } from "@tanstack/react-router";
 import { catalogImageProps } from "@/lib/catalog-image";
 import type { ShopProduct } from "@/lib/catalog.functions";
@@ -70,11 +71,11 @@ export function ProductCard({ product: p, bordered = false }: Props) {
         )}
         <div className="flex items-baseline gap-2 flex-wrap">
           <span className="font-display font-bold text-foreground text-lg">
-            ₾{displayPrice}
+            {formatPrice(displayPrice)}
           </span>
           {salePrice && (
             <span className="font-body text-sm text-muted-foreground line-through">
-              ₾{p.price}
+              {formatPrice(p.price)}
             </span>
           )}
         </div>

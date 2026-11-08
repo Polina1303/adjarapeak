@@ -1,3 +1,4 @@
+import { formatPrice } from "@/lib/price";
 import { Clock3, MoonStar } from "lucide-react";
 import { useLanguage, type Lang } from "@/lib/i18n";
 import { useId } from "react";
@@ -26,7 +27,7 @@ const EVENING_OFFER_TEXT: Record<Lang, EveningOfferText> = {
     benefit:
       "Катайтесь вечером, когда жара уже спала, и продолжайте прогулку после закрытия магазина.",
     priceLabel: "Стоимость",
-    price: "20–30 ₾",
+    price: formatPrice(20, { max: 30 }),
     deposit: "Без залога",
     teaser: "Велосипеды, ролики и лонгборды: заберите вечером, верните утром — оплатите только 3 часа.",
     cta: "В спортивный прокат",
@@ -39,7 +40,7 @@ const EVENING_OFFER_TEXT: Record<Lang, EveningOfferText> = {
     benefit:
       "Ride after the heat has eased and keep enjoying your evening after the store closes.",
     priceLabel: "Price",
-    price: "₾20–30",
+    price: formatPrice(20, { max: 30 }),
     deposit: "No deposit",
     teaser: "Bicycles, skates, and longboards: pick up in the evening, return in the morning, and pay for only 3 hours.",
     cta: "Explore sports rentals",
@@ -52,7 +53,7 @@ const EVENING_OFFER_TEXT: Record<Lang, EveningOfferText> = {
     benefit:
       "ისეირნეთ საღამოს, როცა სიცხე იკლებს, და გააგრძელეთ გასეირნება მაღაზიის დახურვის შემდეგაც.",
     priceLabel: "ღირებულება",
-    price: "20–30 ₾",
+    price: formatPrice(20, { max: 30 }),
     deposit: "გირაო არ არის საჭირო",
     teaser: "ველოსიპედები, როლიკები და ლონგბორდები: აიღეთ საღამოს, დააბრუნეთ დილით და გადაიხადეთ მხოლოდ 3 საათის საფასური.",
     cta: "სპორტული გაქირავება",

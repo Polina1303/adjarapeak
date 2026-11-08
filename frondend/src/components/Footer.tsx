@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ExternalLink, MapPin, Phone, Instagram, Send } from "lucide-react";
+import { MapPin, Phone, Instagram, Send } from "lucide-react";
 import { useLanguage, type Lang } from "@/lib/i18n";
 import { getSiteText } from "@/lib/site-translations";
 import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
@@ -101,15 +101,7 @@ export function Footer() {
                     {text.nav[item.key]}
                   </Link>
                 ))}
-                <a
-                  href="https://www.inaturalist.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs text-primary-foreground/40 transition-colors hover:text-primary-foreground/70 font-body"
-                >
-                  {text.nav.interesting}
-                  <ExternalLink className="h-3 w-3" />
-                </a>
+
               </nav>
             </div>
 

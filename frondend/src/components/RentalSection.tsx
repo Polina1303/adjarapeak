@@ -1,163 +1,21 @@
-import { motion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
-import { resolveCatalogImage } from "@/lib/catalog-image";
+import { catalogImageProps } from "@/lib/catalog-image";
 import { useCatalogTranslations } from "@/lib/catalog-translations";
 import { useLanguage } from "@/lib/i18n";
 import { getSiteText } from "@/lib/site-translations";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-  CarouselProgress,
-} from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { ArrowRight } from "lucide-react";
-
-type Group = {
-  id: string;
-  slug: string;
-  title: string;
-  image: string | null;
-};
-
-export function RentalSection({ groups }: { groups: Group[] }) {
-  const { lang } = useLanguage();
-  const catalogTranslations = useCatalogTranslations(lang);
-  const text = getSiteText(lang).home;
-  if (!groups || groups.length === 0) return null;
-  const tiles: Array<
-    | { kind: "group"; id: string; slug: string; title: string; image: string | null }
-    | { kind: "sale"; id: string; title: string }
-  > = groups.map((g) => ({
-    kind: "group" as const,
-    ...g,
-    title: catalogTranslations.group("rentals", g.slug, g.title),
-  }));
-
-  return (
-    <section className="section-padding py-8 md:py-11">
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-5 flex items-end justify-between gap-4 md:mb-7">
-          <h2 className="font-display text-2xl font-bold text-foreground md:text-3xl">
-            {text.rentalEquipment}
-          </h2>
-          <Link
-            to="/rent"
-            className="group inline-flex shrink-0 items-center gap-1.5 font-display text-xs font-bold uppercase tracking-wide text-ember transition-colors hover:text-foreground sm:text-sm"
-          >
-            {text.actions.rental}
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-          </Link>
-        </div>
-
-        {/* Mobile: 2-column grid of tiles */}
-        <div className="grid grid-cols-2 gap-3 md:hidden">
-          {tiles.map((tile, i) => {
-            const inner = (
-              <>
-                <div className="w-full aspect-square rounded-xl overflow-hidden bg-secondary/60 mb-3 flex items-center justify-center">
-                  <img
-                    src={resolveCatalogImage(tile.kind === "group" ? tile.image : "sale.webp")}
-                    alt={tile.title}
-                    loading="lazy"
-                    style={{ mixBlendMode: "multiply" }}
-                    className="w-full h-full object-contain p-3 group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <h3 className="font-display font-semibold text-foreground text-sm leading-tight group-hover:text-ember transition-colors text-center">
-                  {tile.title}
-                </h3>
-              </>
-            );
-            return (
-              <motion.div
-                key={tile.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: Math.min(i * 0.04, 0.3) }}
-              >
-                {tile.kind === "group" ? (
-                  <Link
-                    to="/rent"
-                                        className="group flex flex-col items-center text-center rounded-xl bg-secondary/40 hover:bg-secondary/70 transition-colors p-3"
-                  >
-                    {inner}
-                  </Link>
-                ) : (
-                  <Link
-                    to="/sale/sale"
-                    className="group flex flex-col items-center text-center rounded-xl bg-secondary/40 hover:bg-secondary/70 transition-colors p-3"
-                  >
-                    {inner}
-                  </Link>
-                )}
-              </motion.div>
-            );
-          })}
-        </div>
-
-        {/* Tablet/desktop: carousel */}
-        <Carousel opts={{ align: "start", slidesToScroll: "auto" }} className="w-full hidden md:block">
-          <CarouselContent className="-ml-3 md:-ml-5">
-            {tiles.map((tile, i) => (
-              <CarouselItem
-                key={tile.id}
-                className="pl-3 md:pl-5 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5"
-              >
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: Math.min(i * 0.04, 0.3) }}
-                >
-                  {tile.kind === "group" ? (
-                    <Link
-                      to="/rent"
-                                            className="group flex flex-col items-center text-center"
-                    >
-                      <div className="mb-3 flex aspect-square w-full items-center justify-center overflow-hidden rounded-xl bg-secondary/60">
-                        <img
-                          src={resolveCatalogImage(tile.image)}
-                          alt={tile.title}
-                          loading="lazy"
-                          style={{ mixBlendMode: "multiply" }}
-                          className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
-                        />
-                      </div>
-                      <h3 className="font-display font-semibold text-foreground text-sm md:text-base group-hover:text-ember transition-colors">
-                        {tile.title}
-                      </h3>
-                    </Link>
-                  ) : (
-                    <Link
-                      to="/sale/sale"
-                      className="group flex flex-col items-center text-center"
-                    >
-                      <div className="mb-3 flex aspect-square w-full items-center justify-center overflow-hidden rounded-xl bg-secondary/60">
-                        <img
-                          src={resolveCatalogImage("sale.webp")}
-                          alt={tile.title}
-                          loading="lazy"
-                          style={{ mixBlendMode: "multiply" }}
-                          className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
-                        />
-                      </div>
-                      <h3 className="font-display font-semibold text-foreground text-sm md:text-base group-hover:text-ember transition-colors">
-                        {tile.title}
-                      </h3>
-                    </Link>
-                  )}
-                </motion.div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="hidden md:flex -left-4" />
-          <CarouselNext className="hidden md:flex -right-4" />
-          <CarouselProgress className="mt-6 max-w-xs mx-auto" />
-        </Carousel>
-      </div>
-    </section>
-  );
+type Group = { id: string; slug: string; title: string; image: string | null; product_count?: number };
+export function RentalSection({groups}:{groups:Group[]}) {
+ const {lang}=useLanguage(); const translations=useCatalogTranslations(lang); const text=getSiteText(lang).home;
+ if(!groups.length) return null;
+ return <section className="section-padding  py-8 md:py-11"><div className="mx-auto max-w-7xl">
+  <div className="mb-5 flex items-end justify-between gap-4 md:mb-7"><h2 className="font-display text-2xl font-bold md:text-3xl">{text.rentalEquipment}</h2><Link to="/rent" className="inline-flex items-center gap-1.5 font-display text-xs font-bold uppercase tracking-wide text-ember sm:text-sm">{text.actions.rental}<ArrowRight className="h-4 w-4" aria-hidden/></Link></div>
+  <Carousel opts={{align:"start",slidesToScroll:"auto",breakpoints:{"(max-width: 767px)":{active:false}}}}>
+   <CarouselContent className="ml-0 grid grid-cols-2 gap-3 md:-ml-5 md:flex md:gap-0">{groups.map(group=>{const title=translations.group("rentals",group.slug,group.title);return <CarouselItem key={group.id} className="min-w-0 pl-0 md:basis-1/4 md:pl-5 lg:basis-1/5"><Link to={"/rent/$group"} params={{group:group.slug}} data-category-tile={title} className="group flex h-full flex-col items-center rounded-xl p-3 text-center md:p-0">
+    {group.image&&<div className="mb-3 aspect-square w-full overflow-hidden rounded-xl bg-secondary/60"><img {...catalogImageProps(group.image)} alt={title} width={240} height={240} loading="lazy" decoding="async" className="h-full w-full object-contain p-3 transition-transform duration-500 group-hover:scale-105"/></div>}
+    <h3 className="font-display text-sm font-semibold group-hover:text-ember md:text-base">{title}</h3>{typeof group.product_count==='number'&&<span className="mt-1 text-xs text-muted-foreground">{group.product_count}</span>}
+   </Link></CarouselItem>})}</CarouselContent><CarouselPrevious className="-left-4 hidden md:flex"/><CarouselNext className="-right-4 hidden md:flex"/>
+  </Carousel>
+ </div></section>;
 }
