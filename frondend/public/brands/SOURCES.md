@@ -7,4 +7,7 @@ Brand assets used to link to products in the Adjara Peak catalog.
 - Black Diamond: https://blackdiamondequipment.com/cdn/shop/files/logowhite.svg (black version).
 - Osprey Packs: https://iconlogovector.com/logo/osprey (transparent preview, trimmed).
 
+- Micro: https://www.micro-mobility.com/themes/frontend/public/own/img/logo-micromobility.svg (official Micro Mobility site).
+- JOINFIT: https://www.joinfit-pro.com/wp-content/uploads/2020/05/logo.png (official JOINFIT site).
+
 Brand names and marks belong to their respective owners.

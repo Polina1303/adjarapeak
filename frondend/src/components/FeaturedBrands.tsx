@@ -12,6 +12,8 @@ const brands = [
   { name: "Stanley", logo: "stanley.svg" },
   { name: "Black Diamond", logo: "black-diamond.svg" },
   { name: "Osprey", logo: "osprey.png" },
+  { name: "Micro", logo: "micro.svg" },
+  { name: "JOINFIT", logo: "joinfit.png" },
 ];
 const copy = {
   RU: { title: "Бренды", subtitle: "Снаряжение для ваших приключений", action: "Смотреть товары", previous: "Предыдущие бренды", next: "Следующие бренды", browse: "Товары бренда" },
@@ -50,7 +52,7 @@ export function FeaturedBrands({ compact = false }: { compact?: boolean }) {
                     height={64}
                     loading="lazy"
                     decoding="async"
-                    className="h-16 w-full max-w-40 object-contain grayscale"
+                    className={`h-16 w-full max-w-40 object-contain grayscale ${brand.name === "JOINFIT" ? "brightness-0" : ""}`}
                   />
                   <span className="font-body text-[11px] text-muted-foreground transition-colors group-hover:text-ember">{text.action}</span>
                 </Link>
