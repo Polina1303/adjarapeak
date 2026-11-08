@@ -1,13 +1,14 @@
+import { HomeProductSelection } from "@/components/HomeProductSelection";
+import { sortHomeGroups } from "@/lib/home-selection";
 import { EcosystemStrip } from "@/components/EcosystemStrip";
 import { createFileRoute } from "@tanstack/react-router";
 import { lazy, Suspense } from "react";
 import { Header } from "@/components/Header";
 import { HeroCarousel } from "@/components/HeroCarousel";
 import { HomeOffers } from "@/components/HomeOffers";
-import { BrandStrip } from "@/components/BrandStrip";
 import { FeaturedBrands } from "@/components/FeaturedBrands";
 import { Footer } from "@/components/Footer";
-import { listShopGroups, listRentalGroups } from "@/lib/catalog.functions";
+import { getHomeSalesSelections, listShopGroups, listRentalGroups } from "@/lib/catalog.functions";
 import {
   ADJARA_PEAK_LOCAL_BUSINESS_SCHEMA,
   canonicalLink,
@@ -40,11 +41,12 @@ const StoreSection = lazy(() =>
 export const Route = createFileRoute("/")({
   staleTime: 5 * 60 * 1000,
   loader: async () => {
-    const [groups, rentalGroups] = await Promise.all([
+    const [groups, rentalGroups, selections] = await Promise.all([
       listShopGroups(),
       listRentalGroups(),
+      getHomeSalesSelections().catch(() => ({ski:[],fitness:[]})),
     ]);
-    return { groups, rentalGroups };
+    return { groups: sortHomeGroups(groups), rentalGroups: [...rentalGroups].sort((a,b)=>Number(b.slug==='skiRental')-Number(a.slug==='skiRental')), selections };
   },
   head: () => ({
     meta: [
@@ -60,7 +62,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  const { groups, rentalGroups } = Route.useLoaderData();
+  const { groups, rentalGroups, selections } = Route.useLoaderData();
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -68,11 +70,12 @@ function Index() {
         <HeroCarousel />
         <EcosystemStrip />
         <HomeOffers />
-        <BrandStrip />
+        <HomeProductSelection products={selections.ski} kind="ski" />
         <Suspense fallback={null}>
           <ActivityCategories groups={groups} />
+          <HomeProductSelection products={selections.fitness} kind="fitness" />
           <RentalSection groups={rentalGroups} />
-          <NewArrivals />
+          <NewArrivals excludeSlugs={[...selections.ski,...selections.fitness].map(p=>p.slug)} />
           <BikeServicePromo />
           <ClimbingPromo />
           <GiftCardSection />

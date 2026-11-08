@@ -6,7 +6,7 @@ import { getSiteText } from "@/lib/site-translations";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 
-export function NewArrivals() {
+export function NewArrivals({ excludeSlugs = [] }: {excludeSlugs?:string[]}) {
   const [products, setProducts] = useState<ShopProduct[]>([]);
   const { lang } = useLanguage();
   const text = getSiteText(lang).home;
@@ -17,7 +17,8 @@ export function NewArrivals() {
       .catch(() => setProducts([]));
   }, []);
 
-  if (products.length === 0) return null;
+  const visible=products.filter(p=>!excludeSlugs.includes(p.slug));
+  if (visible.length === 0) return null;
 
   return (
     <section className="section-padding bg-muted/25 py-8 md:py-11">
@@ -35,7 +36,7 @@ export function NewArrivals() {
           </Link>
         </div>
 
-        <ProductCarousel products={products} />
+        <ProductCarousel products={visible} />
       </div>
     </section>
   );

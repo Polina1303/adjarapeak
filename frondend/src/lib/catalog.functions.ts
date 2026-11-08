@@ -1,3 +1,4 @@
+import { selectHomeProducts } from "./home-selection";
 import { formatPrice } from "@/lib/price";
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
@@ -2129,4 +2130,23 @@ export const getSaleRentals = createServerFn({ method: "GET" }).handler(async ()
     .filter((item) => hasManualDiscount(item.price_per_day, item.sale_price_per_day))
     .slice(0, 36);
   return { items };
+});
+
+// Compact homepage selections use the same public catalog and normalization as category pages.
+export const getHomeSalesSelections = createServerFn({ method: "GET" }).handler(async () => {
+ const [{data:groups,error:ge},{data:categories,error:ce}]=await Promise.all([
+  supabase.from("shop_groups").select("id,slug").in("slug",["alpinesking","fitness"]),
+  supabase.from("shop_categories").select("id,group_id,slug"),
+ ]);
+ if(ge||ce) throw new Error((ge??ce)!.message);
+ const result=await Promise.all(["alpinesking","fitness"].map(async slug=>{
+  const group=groups?.find(g=>g.slug===slug);if(!group)return [] as ShopProduct[];
+  const ids=(categories??[]).filter(c=>c.group_id===group.id && !(slug==='fitness'&&c.slug==='balance_board')).map(c=>c.id);
+  if(!ids.length)return [] as ShopProduct[];
+  const {data:rows,error}=await supabase.from("shop_products").select("*").in("category_id",ids).eq("hidden",false).eq("in_stock",true).order("created_at",{ascending:false}).limit(300);
+  if(error)throw new Error(error.message);
+  const valid=normalizeShopProducts(rows).filter(p=>p.image && (CATALOG_IMAGE_FILES.has(p.image)||/^https?:\/\//.test(p.image)));
+  return selectHomeProducts(valid,slug==='alpinesking'?8:6);
+ }));
+ return {ski:result[0],fitness:result[1]};
 });

@@ -15,9 +15,11 @@ import { KIDS_ROLLER_OFFER_TEXT } from "@/components/KidsRollerOffer";
 type Props = {
   product: ShopProduct;
   bordered?: boolean;
+  categoryLabel?: string;
+  analyticsCategory?: string;
 };
 
-export function ProductCard({ product: p, bordered = false }: Props) {
+export function ProductCard({ product: p, bordered = false, categoryLabel, analyticsCategory }: Props) {
   const salePrice = getSalePrice(p.price, p.sale_price);
   const displayPrice = getDisplayPrice(p.price, p.sale_price);
   const discountPct = getDiscountPercent(p.price, p.sale_price);
@@ -52,7 +54,7 @@ export function ProductCard({ product: p, bordered = false }: Props) {
       <div className="relative aspect-square bg-background overflow-hidden">
         <LoadingImage
           {...catalogImageProps(p.image)}
-          alt={p.title}
+          alt={[p.title,categoryLabel].filter(Boolean).join(" — ")}
           loading="lazy"
           decoding="async"
           className="w-full h-full object-contain p-5 transition-transform duration-500 group-hover:scale-105"

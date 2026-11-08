@@ -99,7 +99,9 @@ export const SHOP_COMPLEMENT_MAP: Record<string, string[]> = {
 
   // Alpine / Ski
   snowboardsky: ["snowboardsky_boots", "fasteners_sky", "helmet_sky", "skigoggles", "gloves_sky", "bag_sky"],
-  snowboardsky_boots: ["socks_sky", "snowboardsky", "gloves_sky", "fasteners_sky"],
+  skis: ["ski_boots", "helmet_sky", "skigoggles", "ski_poles"],
+  ski_boots: ["helmet_sky", "skigoggles", "socks_sky", "gloves_sky"],
+  snowboardsky_boots: ["helmet_sky", "skigoggles", "socks_sky", "snowboardsky", "gloves_sky", "fasteners_sky"],
   fasteners_sky: ["snowboardsky", "snowboardsky_boots", "sky_care", "bag_sky"],
   closes_ski: ["thermalUnderwear", "gloves_sky", "socks_sky", "buff", "helmet_sky"],
   helmet_sky: ["skigoggles", "gloves_sky", "buff", "snowboardsky", "closes_ski"],

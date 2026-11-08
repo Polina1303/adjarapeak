@@ -1,3 +1,5 @@
+import { ProductAvailability } from "@/components/ProductAvailability";
+import { SALES_TEXT } from "@/lib/sales-text";
 import { formatPrice } from "@/lib/price";
 import {
   createFileRoute,
@@ -508,6 +510,7 @@ function ProductView({
             )}
           </div>
 
+          <ProductAvailability available={product.in_stock} />
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 mb-8 items-start">
             <div className="flex flex-col gap-10 lg:gap-16">
               <ZoomableCatalogImage
@@ -697,9 +700,9 @@ function ProductView({
           {related && related.length > 0 && (
             <section>
               <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6">
-                С этим товаром покупают
+                {SALES_TEXT[lang].related}
               </h2>
-              <ProductCarousel key={product.slug} products={related} />
+              <ProductCarousel key={product.slug} products={related.slice(0,4)} />
             </section>
           )}
         </div>
