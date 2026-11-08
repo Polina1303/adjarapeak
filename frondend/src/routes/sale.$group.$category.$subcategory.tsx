@@ -1,3 +1,4 @@
+import { SeasonCrossBanner } from "@/components/SeasonCrossBanner";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -51,6 +52,8 @@ export const Route = createFileRoute("/sale/$group/$category/$subcategory")({
 function ShopSubcategoryPage() {
   const data = Route.useLoaderData();
   return (
+    <>
+    <SeasonCrossBanner group={data.group.slug} />
     <CatalogPage
       kind="shop"
       groups={data.groups}
@@ -61,5 +64,6 @@ function ShopSubcategoryPage() {
       activeSubcategory={data.activeSubcategory}
       products={data.products}
     />
+    </>
   );
 }

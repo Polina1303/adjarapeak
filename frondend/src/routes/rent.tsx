@@ -45,7 +45,7 @@ function RentalsIndex() {
   const catalogTranslations = useCatalogTranslations(lang);
   const text = RENT_INDEX_TEXT[lang];
   if (childMatches.length > 0) return <Outlet />;
-  const filtered = groups.filter(
+  const filtered = [...groups].sort((a,b) => Number(b.slug === "skiRental") - Number(a.slug === "skiRental")).filter(
     (g) => g.slug !== "sale" && g.title.toLowerCase() !== "распродажа",
   );
   return (

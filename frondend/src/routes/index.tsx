@@ -1,87 +1,35 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { lazy, Suspense } from "react";
 import { Header } from "@/components/Header";
-import { HeroCarousel } from "@/components/HeroCarousel";
-import { HomeOffers } from "@/components/HomeOffers";
-import { BrandStrip } from "@/components/BrandStrip";
-import { FeaturedBrands } from "@/components/FeaturedBrands";
 import { Footer } from "@/components/Footer";
-import { listShopGroups, listRentalGroups } from "@/lib/catalog.functions";
-import {
-  ADJARA_PEAK_LOCAL_BUSINESS_SCHEMA,
-  canonicalLink,
-} from "@/lib/seo";
-
-const ActivityCategories = lazy(() =>
-  import("@/components/ActivityCategories").then((m) => ({ default: m.ActivityCategories })),
-);
-const RentalSection = lazy(() =>
-  import("@/components/RentalSection").then((m) => ({ default: m.RentalSection })),
-);
-const NewArrivals = lazy(() =>
-  import("@/components/NewArrivals").then((m) => ({ default: m.NewArrivals })),
-);
-const BikeServicePromo = lazy(() =>
-  import("@/components/BikeServicePromo").then((m) => ({
-    default: m.BikeServicePromo,
-  })),
-);
-const ClimbingPromo = lazy(() =>
-  import("@/components/ClimbingPromo").then((m) => ({ default: m.ClimbingPromo })),
-);
-const GiftCardSection = lazy(() =>
-  import("@/components/GiftCardSection").then((m) => ({ default: m.GiftCardSection })),
-);
-const StoreSection = lazy(() =>
-  import("@/components/StoreSection").then((m) => ({ default: m.StoreSection })),
-);
-
+import { HomeOffers } from "@/components/HomeOffers";
+import { GiftCardSection } from "@/components/GiftCardSection";
+import { StoreSection } from "@/components/StoreSection";
+import { ActivityCategories } from "@/components/ActivityCategories";
+import { FeaturedBrands } from "@/components/FeaturedBrands";
+import { SeasonalHero } from "@/components/SeasonalHero";
+import { SkiRentalCards, SeasonalProducts, SkiServiceSummary, ResortsSummary, ReviewsSummary, HikesSummary, CompactActivities } from "@/components/SeasonalSections";
+import { listShopGroups } from "@/lib/catalog.functions";
+import { listHikes } from "@/lib/hikes.functions";
+import { getSeasonalHome } from "@/lib/seasonal.functions";
+import { seasonalHero, homeSectionOrder } from "@/lib/seasonal-config";
+import { SEASONAL_TEXT } from "@/lib/seasonal-text";
+import { ADJARA_PEAK_LOCAL_BUSINESS_SCHEMA, canonicalLink } from "@/lib/seo";
 export const Route = createFileRoute("/")({
-  staleTime: 5 * 60 * 1000,
-  loader: async () => {
-    const [groups, rentalGroups] = await Promise.all([
-      listShopGroups(),
-      listRentalGroups(),
-    ]);
-    return { groups, rentalGroups };
-  },
-  head: () => ({
-    meta: [
-      { title: "Спортивный магазин в Батуми — Adjara Peak" },
-      { name: "description", content: "Adjara Peak — спортивный магазин в Батуми: товары для спорта, туризма и кемпинга, одежда, обувь, велосипеды, SUP, лыжи и прокат снаряжения." },
-      { property: "og:title", content: "Adjara Peak — спортивный магазин в Батуми" },
-      { property: "og:description", content: "Спортивные товары, туристическое снаряжение, прокат и горные туры в Батуми и Аджарии." },
-      { "script:ld+json": ADJARA_PEAK_LOCAL_BUSINESS_SCHEMA },
-    ],
-    links: [canonicalLink("/")],
-  }),
-  component: Index,
+ staleTime: 5*60*1000,
+ loader: async () => {
+  const [groups,seasonal,hikes]=await Promise.all([listShopGroups(),getSeasonalHome(),listHikes()]);
+  return {groups,seasonal,hikes};
+ },
+ head: () => ({ meta:[{title:seasonalHero.mode==='winter'?SEASONAL_TEXT.RU.winterMeta:SEASONAL_TEXT.RU.summerMeta},{name:"description",content:SEASONAL_TEXT.RU.description},{"script:ld+json":ADJARA_PEAK_LOCAL_BUSINESS_SCHEMA}],links:[canonicalLink('/'),{rel:'preload',as:'image',href:seasonalHero[seasonalHero.mode].image,fetchPriority:'high'}] }),
+ component: Index,
 });
-
 function Index() {
-  const { groups, rentalGroups } = Route.useLoaderData();
-  return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <div className="pt-16 lg:pt-18">
-        <h1 className="sr-only">
-          Спортивный и туристический магазин Adjara Peak в Батуми
-        </h1>
-        <HeroCarousel />
-        <HomeOffers />
-        <BrandStrip />
-        <Suspense fallback={null}>
-          <ActivityCategories groups={groups} />
-          <RentalSection groups={rentalGroups} />
-          <NewArrivals />
-          <BikeServicePromo />
-          <ClimbingPromo />
-          <GiftCardSection />
-          <StoreSection />
-        </Suspense>
-        <FeaturedBrands />
-      </div>
-      <Footer />
-    </div>
-  );
+ const {groups,seasonal,hikes}=Route.useLoaderData();
+ const sections={
+ hero:<SeasonalHero/>, rental:<SkiRentalCards items={seasonal.skiRentals} categories={seasonal.skiCategories}/>, offers:<HomeOffers/>,
+ ski:<><SeasonalProducts products={seasonal.ski} featuredConfirmed={seasonal.featuredConfirmed}/><ActivityCategories groups={groups}/><FeaturedBrands/></>,
+ service:<SkiServiceSummary/>, resorts:<ResortsSummary/>, fitness:<SeasonalProducts products={seasonal.fitness} fitness/>,
+ reviews:<ReviewsSummary/>,hikes:<HikesSummary hikes={hikes}/>,activities:<CompactActivities/>,gift:<GiftCardSection/>,contacts:<StoreSection hideReviews/>,
+ };
+ return <div className="min-h-screen bg-background"><Header/><main className="pt-16 lg:pt-18">{homeSectionOrder[seasonalHero.mode].map(key=><div key={key} data-home-section={key}>{sections[key]}</div>)}</main><Footer/></div>;
 }

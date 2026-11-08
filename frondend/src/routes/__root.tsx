@@ -1,3 +1,4 @@
+import { FloatingMessengers } from "@/components/FloatingMessengers";
 import { useEffect, useState } from "react";
 import {
   Outlet,
@@ -109,6 +110,7 @@ function RootComponent() {
       <ScrollToTop />
       {!isAdmin && (
         <>
+          <FloatingMessengers />
           <MobileBottomNav />
           <div aria-hidden className="lg:hidden h-16" />
         </>

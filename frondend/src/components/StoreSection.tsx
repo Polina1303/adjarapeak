@@ -3,7 +3,7 @@ import { MapPin, Clock, Phone, Star } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
 import { getSiteText } from "@/lib/site-translations";
 
-export function StoreSection() {
+export function StoreSection({ hideReviews = false }: { hideReviews?: boolean }) {
   const { lang } = useLanguage();
   const text = getSiteText(lang).contact;
   return (
@@ -22,7 +22,7 @@ export function StoreSection() {
               <div>
                 <h3 className="font-display font-bold uppercase tracking-wider mb-1">{text.addressTitle}</h3>
                 <a
-                  href="https://www.google.com/maps?cid=6512661380146566532"
+                  href="https://www.google.com/maps?cid=6512661380146566532&z=17"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-foreground/70 uppercase hover:text-ember transition-colors"
@@ -40,6 +40,7 @@ export function StoreSection() {
               </div>
             </div>
 
+            {!hideReviews && (<>
             <div className="flex gap-3">
               <Phone className="h-5 w-5 text-ember shrink-0 mt-0.5" />
               <div>
@@ -50,6 +51,8 @@ export function StoreSection() {
               </div>
             </div>
 
+            </>)}
+            {!hideReviews && (<>
             <div className="flex gap-3">
               <Star className="h-5 w-5 text-ember shrink-0 mt-0.5" />
               <div>
@@ -74,6 +77,7 @@ export function StoreSection() {
                 </div>
               </div>
             </div>
+            </>)}
 
           </motion.div>
 
