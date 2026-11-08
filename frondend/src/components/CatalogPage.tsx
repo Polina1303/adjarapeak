@@ -105,6 +105,8 @@ const CATALOG_PAGE_TEXT = {
 
 const SHOP_GROUP_TAB_CONFIG = [
   { key: "sale", groupSlug: "sale" },
+  { key: "alpinesking", groupSlug: "alpinesking" },
+  { key: "winterSports", groupSlug: "winterSports" },
   { key: "cyclingRoller", groupSlug: "cyclingRoller" },
   { key: "boards", groupSlug: "boards" },
   { key: "clothesAndShoes", groupSlug: "clothesAndShoes" },
@@ -115,8 +117,6 @@ const SHOP_GROUP_TAB_CONFIG = [
   { key: "fitness", groupSlug: "fitness" },
   { key: "swimmingSup", groupSlug: "swimmingSup" },
   { key: "climbing", groupSlug: "climbing" },
-  { key: "winterSports", groupSlug: "winterSports" },
-  { key: "alpinesking", groupSlug: "alpinesking" },
 ] as const;
 
 type ShopProps = {
