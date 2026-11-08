@@ -162,8 +162,10 @@ export function RentalRulesPanel() {
 
 export function RentalRulesDisclosure({
   variant = "panel",
+  depositConfirmed = false,
 }: {
   variant?: "panel" | "card";
+  depositConfirmed?: boolean;
 }) {
   const { lang } = useLanguage();
   const text = RENTAL_RULES_TEXT[lang];
@@ -212,7 +214,7 @@ export function RentalRulesDisclosure({
               {group.title}
             </h3>
             <ul className="mt-2 space-y-2.5">
-              {group.items.map((item) => (
+              {group.items.filter(item => depositConfirmed || !/без залога|without a deposit|no deposit|გირაოს გარეშე/i.test(item)).map((item) => (
                 <li
                   key={item}
                   className="flex items-start gap-2.5 font-body text-[15px] font-light normal-case tracking-normal leading-6 text-foreground/90 md:text-base"
