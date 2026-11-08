@@ -3,7 +3,7 @@ import { CATALOG_UI_TEXT } from "@/lib/catalog-ui-text";
 import { useLanguage } from "@/lib/i18n";
 import { ProductCard } from "./ProductCard";
 
-export function ProductGrid({ products }: { products: ShopProduct[] }) {
+export function ProductGrid({ products, categoryLabel, analyticsCategory }: { products: ShopProduct[]; categoryLabel?:string; analyticsCategory?:string }) {
   const { lang } = useLanguage();
   if (products.length === 0) {
     return (
@@ -15,7 +15,7 @@ export function ProductGrid({ products }: { products: ShopProduct[] }) {
   return (
     <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5">
       {products.map((p) => (
-        <ProductCard key={p.id} product={p} />
+        <ProductCard key={p.id} product={p} categoryLabel={categoryLabel} analyticsCategory={analyticsCategory} />
       ))}
     </div>
   );

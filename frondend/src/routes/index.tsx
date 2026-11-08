@@ -1,3 +1,8 @@
+import { SALES_TEXT } from "@/lib/sales-text";
+import { useLanguage } from "@/lib/i18n";
+import { socialMetadata } from "@/lib/seo-content";
+import { getResponsiveImageProps } from "@/lib/responsive-image";
+import { LocalizedSeo } from "@/components/LocalizedSeo";
 import { HomeProductSelection } from "@/components/HomeProductSelection";
 import { sortHomeGroups } from "@/lib/home-selection";
 import { EcosystemStrip } from "@/components/EcosystemStrip";
@@ -49,22 +54,18 @@ export const Route = createFileRoute("/")({
     return { groups: sortHomeGroups(groups), rentalGroups: [...rentalGroups].sort((a,b)=>Number(b.slug==='skiRental')-Number(a.slug==='skiRental')), selections };
   },
   head: () => ({
-    meta: [
-      { title: "Спортивный магазин в Батуми — Adjara Peak" },
-      { name: "description", content: "Adjara Peak — спортивный магазин в Батуми: товары для спорта, туризма и кемпинга, одежда, обувь, велосипеды, SUP, лыжи и прокат снаряжения." },
-      { property: "og:title", content: "Adjara Peak — спортивный магазин в Батуми" },
-      { property: "og:description", content: "Спортивные товары, туристическое снаряжение, прокат и горные туры в Батуми и Аджарии." },
-      { "script:ld+json": ADJARA_PEAK_LOCAL_BUSINESS_SCHEMA },
-    ],
-    links: [canonicalLink("/")],
+    meta: [...socialMetadata(SALES_TEXT.RU.metaTitle,SALES_TEXT.RU.metaDescription),{"script:ld+json":ADJARA_PEAK_LOCAL_BUSINESS_SCHEMA}],
+    links: [canonicalLink("/"),{rel:"preload",as:"image",href:getResponsiveImageProps("hero/hero-camping.jpg","(min-width: 1400px) 1336px, calc(100vw - 32px)",1280).src,imageSrcSet:getResponsiveImageProps("hero/hero-camping.jpg","(min-width: 1400px) 1336px, calc(100vw - 32px)",1280).srcSet,imageSizes:"(min-width: 1400px) 1336px, calc(100vw - 32px)"}],
   }),
   component: Index,
 });
 
 function Index() {
+  const {lang}=useLanguage();const seo=SALES_TEXT[lang];
   const { groups, rentalGroups, selections } = Route.useLoaderData();
   return (
     <div className="min-h-screen bg-background">
+      <LocalizedSeo title={seo.metaTitle} description={seo.metaDescription} />
       <Header />
       <div className="pt-16 lg:pt-18">
         <HeroCarousel />

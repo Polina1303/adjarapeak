@@ -1,3 +1,7 @@
+import { CategorySeoContent } from "@/components/CategorySeoContent";
+import { getCategorySeo } from "@/lib/category-seo";
+import { breadcrumbSchema, jsonLd } from "@/lib/seo-content";
+import { absoluteSiteUrl } from "@/lib/seo";
 import { Link, useNavigate, useSearch } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
@@ -310,6 +314,7 @@ export function CatalogPage(props: ShopProps | RentalProps) {
   const visibleProducts = filteredProducts.slice(0, visibleCount);
   const visibleItems = filteredItems.slice(0, visibleCount);
   const hasMore = count > visibleCount;
+  const groupSeo = isShop && !props.activeCategory ? getCategorySeo(props.group.slug,lang) : null;
   const groupTitle = catalogTranslations.group(props.kind, props.group.slug, props.group.title);
   const translateCategoryTitle = (category: ShopCategory | RentalCategory) =>
     catalogTranslations.category(props.kind, props.group.slug, category.slug, category.title);
@@ -381,8 +386,11 @@ export function CatalogPage(props: ShopProps | RentalProps) {
     ? props.subsByCat[props.activeCategory.id] ?? []
     : [];
 
+  const groupPath = `${isShop?"/sale":"/rent"}/${props.group.slug}`;
+  const breadcrumbs=[{name:pageText.home,url:absoluteSiteUrl("/")},{name:isShop?pageText.shop:pageText.rental,url:absoluteSiteUrl(isShop?"/sale":"/rent")},{name:groupTitle,url:absoluteSiteUrl(isShop&&props.group.slug==="tourismCamping"?"/tourismCamping/":groupPath)},...(props.activeCategory?[{name:activeCategoryTitle??props.activeCategory.title,url:absoluteSiteUrl(`${groupPath}/${props.activeCategory.slug}`)}]:[]),...(props.activeSubcategory?[{name:activeSubcategoryTitle??props.activeSubcategory.title,url:absoluteSiteUrl(`${groupPath}/${props.activeCategory!.slug}/${props.activeSubcategory.slug}`)}]:[])];
   return (
     <div className="min-h-screen bg-background">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html:jsonLd(breadcrumbSchema(breadcrumbs))}} />
       <Header />
       <main className="pt-24 pb-20 section-padding">
         <div className="max-w-7xl mx-auto">
@@ -573,7 +581,7 @@ export function CatalogPage(props: ShopProps | RentalProps) {
             <div className="flex-1 min-w-0 flex flex-col gap-6">
               <div>
               <h1 className="font-display text-2xl md:text-3xl font-bold text-foreground uppercase tracking-wide">
-                {activeSubcategoryTitle ?? activeCategoryTitle ?? groupTitle}
+                {groupSeo?.h1 ?? activeSubcategoryTitle ?? activeCategoryTitle ?? groupTitle}
               </h1>
               <p className="mt-2 text-xs font-body text-muted-foreground">
                 {isWholeCatalogSearchActive && globalSearchLoading ? (
@@ -714,7 +722,7 @@ export function CatalogPage(props: ShopProps | RentalProps) {
                 globalSearchLoading && isWholeCatalogSearchActive ? (
                   <SearchLoadingState text={catalogUi.searchingProducts} />
                 ) : (
-                  <ProductGrid products={visibleProducts} />
+                  <ProductGrid products={visibleProducts} categoryLabel={activeCategoryTitle??groupTitle} analyticsCategory={props.group.slug} />
                 )
               ) : globalSearchLoading && isWholeCatalogSearchActive ? (
                 <SearchLoadingState text={catalogUi.searchingProducts} />
@@ -735,6 +743,7 @@ export function CatalogPage(props: ShopProps | RentalProps) {
                   </p>
                 </div>
               )}
+              {groupSeo && <CategorySeoContent group={props.group.slug} />}
             </div>
             </div>
           </div>

@@ -1,3 +1,4 @@
+import { SALES_TEXT } from "@/lib/sales-text";
 import { Link } from "@tanstack/react-router";
 import { MapPin, Phone, Instagram, Send } from "lucide-react";
 import { useLanguage, type Lang } from "@/lib/i18n";
@@ -34,6 +35,7 @@ const socials = [
 export function Footer() {
   const { lang: currentLang, setLang } = useLanguage();
   const text = getSiteText(currentLang).footer;
+  const sales=SALES_TEXT[currentLang];
   return (
     <footer className="bg-foreground text-primary-foreground">
       <div className="section-padding py-16">
@@ -77,6 +79,15 @@ export function Footer() {
                   </Link>
                 ))}
 
+              </nav>
+              <h4 className="mb-4 mt-6 text-[10px] uppercase tracking-[0.15em] font-body font-medium text-primary-foreground/40">{sales.popular}</h4>
+              <nav className="flex flex-col gap-2 text-xs text-primary-foreground/40 font-body" data-no-translate>
+                <Link to="/sale/$group" params={{group:"alpinesking"}} className="hover:text-primary-foreground/70">{sales.skiShop}</Link>
+                <Link to="/sale/$group" params={{group:"winterSports"}} className="hover:text-primary-foreground/70">{{RU:"Зимние виды спорта",EN:"Winter sports",GE:"ზამთრის სპორტი"}[currentLang]}</Link>
+                <Link to="/sale/$group" params={{group:"fitness"}} className="hover:text-primary-foreground/70">{sales.fitnessTitle}</Link>
+                <Link to="/rent/$group" params={{group:"skiRental"}} className="hover:text-primary-foreground/70">{sales.skiRent}</Link>
+                <Link to="/tourismCamping" className="hover:text-primary-foreground/70">{{RU:"Туризм и кемпинг",EN:"Tourism and camping",GE:"ტურიზმი და კემპინგი"}[currentLang]}</Link>
+                <Link to="/" hash="gift-card" className="hover:text-primary-foreground/70">{sales.gift}</Link>
               </nav>
             </div>
 

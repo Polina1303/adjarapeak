@@ -1,3 +1,5 @@
+import { getCategorySeo } from "@/lib/category-seo";
+import { socialMetadata } from "@/lib/seo-content";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { CatalogPage } from "@/components/CatalogPage";
 import { Footer } from "@/components/Footer";
@@ -24,15 +26,11 @@ export const Route = createFileRoute("/tourismCamping/")({
         links: [canonicalLink("/tourismCamping/")],
       };
     }
-    const title = `${loaderData.group.title} — Adjara Peak`;
+    const seo=getCategorySeo(loaderData.group.slug,"RU");
+    const title=seo?.title??`${loaderData.group.title} — Adjara Peak`;
     return {
       meta: [
-        { title },
-        {
-          name: "description",
-          content: `${loaderData.group.title} в магазине Adjara Peak.`,
-        },
-        { property: "og:title", content: title },
+        ...socialMetadata(title,seo?.description??`${loaderData.group.title} в магазине Adjara Peak.`),
         {
           property: "og:image",
           content: resolveImage(loaderData.group.image),

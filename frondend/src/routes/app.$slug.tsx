@@ -1,3 +1,5 @@
+import { LocalizedSeo } from "@/components/LocalizedSeo";
+import { productMetadata } from "@/lib/seo-content";
 import { ProductAvailability } from "@/components/ProductAvailability";
 import { SALES_TEXT } from "@/lib/sales-text";
 import { formatPrice } from "@/lib/price";
@@ -90,8 +92,7 @@ export const Route = createFileRoute("/app/$slug")({
     if (!loaderData) return { meta: [{ title: "Не найдено — Adjara Peak" }] };
     if (loaderData.kind === "product") {
       const product = loaderData.data!.product;
-      const title = `${product.title} — Adjara Peak`;
-      const desc = product.description ?? product.title;
+      const {title,description:desc}=productMetadata(product.title,product.description,loaderData.data!.category?.title??loaderData.data!.group?.title??"");
       const img = resolveCatalogImage(product.image);
       const canonicalPath = `/app/${encodeURIComponent(product.slug)}`;
       const imageUrl = img.startsWith("http") ? img : absoluteSiteUrl(img);
@@ -398,6 +399,7 @@ function ProductView({
         )
       : null;
 
+  const localizedSeo=productMetadata(product.title,product.description,categoryTitle??groupTitle??"",lang);
   const handleAddToCart = () => {
     if (inCart) {
       navigate({ to: "/checkout" });
@@ -415,6 +417,7 @@ function ProductView({
 
   return (
     <div className="min-h-screen bg-background">
+      <LocalizedSeo title={localizedSeo.title} description={localizedSeo.description} />
       <Header />
       <main className="pt-24 pb-8 section-padding">
         <div className="max-w-7xl mx-auto">
@@ -516,7 +519,7 @@ function ProductView({
               <ZoomableCatalogImage
                 src={mainImage}
                 imageName={activeColor?.image || product.image}
-                alt={product.title}
+                alt={[product.title,categoryTitle??groupTitle].filter(Boolean).join(" — ")}
                 badge={!product.in_stock ? "Нет в наличии" : undefined}
               />
 

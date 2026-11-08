@@ -1,3 +1,5 @@
+import { getCategorySeo } from "@/lib/category-seo";
+import { socialMetadata } from "@/lib/seo-content";
 import { createFileRoute, Link, notFound, Outlet, useChildMatches } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -15,13 +17,12 @@ export const Route = createFileRoute("/sale/$group")({
   },
   head: ({ loaderData }) => {
     if (!loaderData) return { meta: [{ title: "Магазин — Adjara Peak" }] };
-    const title = `${loaderData.group.title} — Adjara Peak`;
+    const seo=getCategorySeo(loaderData.group.slug,"RU");
+    const title=seo?.title??`${loaderData.group.title} — Adjara Peak`;
     const canonicalPath = `/sale/${encodeURIComponent(loaderData.group.slug)}`;
     return {
       meta: [
-        { title },
-        { name: "description", content: `${loaderData.group.title} в магазине Adjara Peak.` },
-        { property: "og:title", content: title },
+        ...socialMetadata(title,seo?.description??`${loaderData.group.title} в магазине Adjara Peak.`),
         { property: "og:image", content: resolveImage(loaderData.group.image) },
       ],
       links: [canonicalLink(canonicalPath)],
