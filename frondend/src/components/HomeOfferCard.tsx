@@ -29,8 +29,8 @@ export function HomeOfferCard({ headingId, eyebrow, title, price, description, b
   const action = <>{actionLabel}<ArrowRight className="h-4 w-4 shrink-0" aria-hidden="true" /></>;
 
   return (
-    <article aria-labelledby={headingId} data-no-translate className="home-offer-card min-w-0 rounded-2xl border border-border bg-[#faf9f6] text-foreground">
-      <div className="home-offer-image overflow-hidden rounded-xl bg-[#eee9e1]">
+    <article aria-labelledby={headingId} data-no-translate className="home-offer-card min-w-0 rounded-2xl border border-border bg-background text-foreground">
+      <div className="home-offer-image overflow-hidden rounded-xl bg-background">
         <img src={image.src} srcSet={image.srcSet} sizes={image.sizes} width={800} height={1000} alt={image.alt} loading="lazy" decoding="async" className="h-full w-full object-cover" style={{ objectPosition: image.position }} />
       </div>
       <div className="home-offer-content min-w-0">
