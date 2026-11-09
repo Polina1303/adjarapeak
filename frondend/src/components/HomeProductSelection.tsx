@@ -22,7 +22,7 @@ export function HomeProductSelection({
           <Link
             to="/sale/$group"
             params={{ group }}
-            className="block rounded-xl border border-border bg-muted/25 p-6 font-display text-xl font-bold text-ember"
+            className="section-alt-bg block rounded-xl border border-border p-6 font-display text-xl font-bold text-ember"
           >
             {title} →
           </Link>
@@ -31,7 +31,7 @@ export function HomeProductSelection({
     );
   return (
     <section
-      className={`section-padding py-8 md:py-11 ${ski ? "" : "bg-muted/25"}`}
+      className={`section-padding py-8 md:py-11 ${ski ? "" : "section-alt-bg"}`}
       data-no-translate
     >
       <div className="mx-auto max-w-7xl">

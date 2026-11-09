@@ -91,13 +91,13 @@ export function TilePicker({ title, items, buildHref, breadcrumbs, emptyText, ch
                 const href = buildHref(item.slug);
                 const tileInner = (
                   <>
-                    <div className="relative aspect-square bg-background overflow-hidden flex items-center justify-center">
+                    <div className="catalog-media">
                       <LoadingImage
                         {...catalogImageProps(item.image, "(min-width: 1024px) 320px, 50vw", 480)}
                         alt={item.title}
                         loading="lazy"
                         decoding="async"
-                        className="w-full h-full object-contain p-5 transition-transform duration-500 group-hover:scale-105"
+                        className="catalog-media__image transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>
                     <div className="px-3 py-4 text-center">

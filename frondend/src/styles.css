@@ -84,7 +84,12 @@ html { scroll-behavior: smooth; }
   --font-family-display: 'Road Radio', 'Helvetica Neue', Arial, sans-serif;
   --font-family-body: 'Road Radio', 'Helvetica Neue', Arial, sans-serif;
 
-  --background: oklch(1 0 0);
+  --page-bg: oklch(1 0 0);
+  --section-alt-bg: oklch(1 0 0);
+  --catalog-tile-bg: oklch(1 0 0);
+  --catalog-image-bg: oklch(1 0 0);
+  --catalog-media-border: oklch(0.9 0.006 80);
+  --background: var(--page-bg);
   --foreground: oklch(0.15 0.01 60);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.15 0.01 60);
@@ -320,6 +325,38 @@ html { scroll-behavior: smooth; }
   .section-spacing {
     padding-top: clamp(2.5rem, 5vw, 5rem);
     padding-bottom: clamp(2.5rem, 5vw, 5rem);
+  }
+
+  .section-alt-bg {
+    background-color: var(--section-alt-bg);
+  }
+
+  .catalog-media {
+    position: relative;
+    display: flex;
+    aspect-ratio: 1 / 1;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: var(--catalog-tile-bg);
+  }
+
+  .catalog-media--white {
+    background-color: var(--catalog-image-bg);
+    border: 1px solid var(--catalog-media-border);
+  }
+
+  .catalog-media__image {
+    width: 100%;
+    height: 100%;
+    padding: clamp(0.875rem, 2.5vw, 1.5rem);
+    object-fit: contain;
+    object-position: center;
+    mix-blend-mode: normal;
+  }
+
+  .catalog-media--white .catalog-media__image {
+    mix-blend-mode: normal;
   }
 
   .hero-overlay {

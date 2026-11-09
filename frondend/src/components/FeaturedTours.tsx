@@ -39,7 +39,7 @@ const tours = [
 
 export function FeaturedTours() {
   return (
-    <section className="section-padding section-spacing bg-secondary/60">
+    <section className="section-padding section-spacing section-alt-bg">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

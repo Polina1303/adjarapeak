@@ -64,7 +64,7 @@ export function RentalSection({ groups }: { groups: Group[] }) {
                     className="group flex h-full flex-col items-center rounded-xl p-3 text-center md:p-0"
                   >
                     {group.image && (
-                      <div className="mb-3 aspect-square w-full overflow-hidden rounded-xl bg-secondary/60">
+                      <div className="catalog-media mb-3 w-full rounded-xl">
                         <img
                           {...catalogImageProps(group.image)}
                           alt={title}
@@ -72,7 +72,7 @@ export function RentalSection({ groups }: { groups: Group[] }) {
                           height={240}
                           loading="lazy"
                           decoding="async"
-                          className="h-full w-full object-contain p-3 transition-transform duration-500 group-hover:scale-105"
+                          className="catalog-media__image transition-transform duration-500 group-hover:scale-105"
                         />
                       </div>
                     )}

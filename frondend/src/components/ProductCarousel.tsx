@@ -50,13 +50,13 @@ function CarouselCard({ product: p }: { product: ShopProduct }) {
       params={{ slug: p.slug }}
       className="group relative bg-card rounded-xl overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 h-full"
     >
-      <div className="relative aspect-square bg-background overflow-hidden">
+      <div className="catalog-media">
         <LoadingImage
           {...catalogImageProps(p.image, "(min-width: 1024px) 320px, 50vw", 480)}
           alt={[p.title,productCategoryLabel(p.category_id,lang)].filter(Boolean).join(" — ")}
           loading="lazy"
           decoding="async"
-          className="w-full h-full object-contain p-6 transition-transform duration-500 group-hover:scale-105"
+          className="catalog-media__image transition-transform duration-500 group-hover:scale-105"
         />
         {!p.in_stock && (
           <span className="absolute top-3 right-3 bg-foreground text-background text-[10px] uppercase tracking-wider font-body font-bold px-2.5 py-1 rounded-full">

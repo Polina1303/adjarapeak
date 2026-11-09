@@ -21,7 +21,7 @@ export function NewArrivals({ excludeSlugs = [] }: {excludeSlugs?:string[]}) {
   if (visible.length === 0) return null;
 
   return (
-    <section className="section-padding bg-muted/25 py-8 md:py-11">
+    <section className="section-padding section-alt-bg py-8 md:py-11">
       <div className="max-w-7xl mx-auto">
         <div className="mb-5 flex items-end justify-between gap-4 md:mb-7">
           <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground">

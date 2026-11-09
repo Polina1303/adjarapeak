@@ -24,7 +24,7 @@ export function ActivityCategories({ groups }: { groups: Group[] }) {
   const text = getSiteText(lang).home;
   if (!groups.length) return null;
   return (
-    <section className="section-padding bg-muted/25 py-8 md:py-11">
+    <section className="section-padding section-alt-bg py-8 md:py-11">
       <div className="mx-auto max-w-7xl">
         <div className="mb-5 flex items-end justify-between gap-4 md:mb-7">
           <h2 className="font-display text-2xl font-bold md:text-3xl">
@@ -66,7 +66,7 @@ export function ActivityCategories({ groups }: { groups: Group[] }) {
                     className="group flex h-full flex-col items-center rounded-xl p-3 text-center md:p-0"
                   >
                     {group.image && (
-                      <div className="mb-3 aspect-square w-full overflow-hidden rounded-xl bg-secondary/60">
+                      <div className="catalog-media mb-3 w-full rounded-xl">
                         <img
                           {...catalogImageProps(group.image)}
                           alt={title}
@@ -74,7 +74,7 @@ export function ActivityCategories({ groups }: { groups: Group[] }) {
                           height={240}
                           loading="lazy"
                           decoding="async"
-                          className="h-full w-full object-contain p-3 transition-transform duration-500 group-hover:scale-105"
+                          className="catalog-media__image transition-transform duration-500 group-hover:scale-105"
                         />
                       </div>
                     )}

@@ -53,13 +53,13 @@ export function ProductCard({ product: p, bordered = false, categoryLabel, analy
         bordered ? "border border-border hover:border-transparent" : ""
       }`}
     >
-      <div className="relative aspect-square bg-background overflow-hidden">
+      <div className="catalog-media">
         <LoadingImage
           {...catalogImageProps(p.image)}
           alt={[p.title,categoryLabel??productCategoryLabel(p.category_id,lang)].filter(Boolean).join(" — ")}
           loading="lazy"
           decoding="async"
-          className="w-full h-full object-contain p-5 transition-transform duration-500 group-hover:scale-105"
+          className="catalog-media__image transition-transform duration-500 group-hover:scale-105"
         />
         {!p.in_stock && (
           <span className="absolute top-2 right-2 bg-foreground text-background text-[10px] uppercase tracking-wider font-body font-bold px-2 py-0.5 rounded-full">

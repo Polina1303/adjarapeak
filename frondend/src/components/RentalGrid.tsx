@@ -74,13 +74,13 @@ function RentalCard({
       params={{ slug: item.slug }}
       className="group relative bg-card rounded-xl overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
     >
-            <div className="relative aspect-square bg-background overflow-hidden">
+            <div className="catalog-media">
               <LoadingImage
                 {...catalogImageProps(item.image)}
                 alt={item.title}
                 loading="lazy"
                 decoding="async"
-                className="w-full h-full object-contain p-6 transition-transform duration-500 group-hover:scale-105"
+                className="catalog-media__image transition-transform duration-500 group-hover:scale-105"
               />
               {!item.available && (
                 <span className="absolute top-3 right-3 bg-foreground text-background text-[10px] uppercase tracking-wider font-body font-bold px-2.5 py-1 rounded-full">
