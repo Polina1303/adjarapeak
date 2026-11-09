@@ -153,6 +153,165 @@ html { scroll-behavior: smooth; }
 }
 
 @layer components {
+  .home-offers-track {
+    display: grid;
+    min-width: 0;
+    gap: 20px;
+  }
+
+  .home-offer-card {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 12px;
+    height: 360px;
+    padding: 16px;
+  }
+
+  .home-offer-image {
+    min-height: 0;
+  }
+
+  .home-offer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Road Radio uses capital-shaped glyphs even for lowercase characters. */
+  .home-offer-copy {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    text-transform: none;
+  }
+
+  .home-offer-header {
+    display: grid;
+    gap: 6px;
+  }
+
+  .home-offer-eyebrow {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .home-offer-title {
+    font-size: 24px;
+  }
+
+  .home-offer-price-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .home-offer-price {
+    font-size: 28px;
+  }
+
+  .home-offer-badge {
+    min-width: 0;
+    padding: 3px 8px;
+    font-size: 11px;
+    line-height: 14px;
+  }
+
+  .home-offer-description,
+  .home-offer-benefit {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .home-offer-benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .home-offer-icon {
+    width: 18px;
+    height: 18px;
+    margin-top: 1px;
+  }
+
+  .home-offer-action-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: auto;
+  }
+
+  .home-offer-action {
+    min-height: 44px;
+    padding-block: 10px;
+  }
+
+  @media (min-width: 1280px) {
+    .home-offers-track {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 768px) {
+    .home-offers-track {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x mandatory;
+      scroll-padding-inline: 4px;
+      padding: 4px;
+      margin: -4px;
+    }
+
+    .home-offer-card {
+      flex: 0 0 85vw;
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-rows: 140px minmax(0, 1fr);
+      height: 420px;
+      padding: 12px;
+      scroll-snap-align: start;
+    }
+
+    .home-offer-title {
+      font-size: 20px;
+    }
+
+    .home-offer-header {
+      gap: 4px;
+    }
+
+    .home-offer-eyebrow {
+      font-size: 11px;
+      line-height: 14px;
+    }
+
+    .home-offer-price {
+      font-size: 24px;
+    }
+
+    .home-offer-badge {
+      font-size: 10px;
+      line-height: 12px;
+    }
+
+    .home-offer-description,
+    .home-offer-benefit {
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    .home-offer-icon {
+      width: 16px;
+      height: 16px;
+      margin-top: 0;
+    }
+
+    .home-offer-action {
+      width: 100%;
+      height: 44px;
+      min-height: 44px;
+      font-size: 12px;
+    }
+  }
+
   .section-padding {
     padding-left: clamp(1.25rem, 5vw, 5rem);
     padding-right: clamp(1.25rem, 5vw, 5rem);

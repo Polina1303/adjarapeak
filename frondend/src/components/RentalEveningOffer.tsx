@@ -75,7 +75,7 @@ export function RentalEveningTeaser() {
       title: "Вечернее катание",
       description: "Велосипеды, ролики и лонгборды.",
       benefit: "Оплата только за 3 часа",
-      details: "Заберите с 18:00 до 19:30. Верните на следующий день с 11:00 до 11:30.",
+      details: "Заберите в 18:00–19:30, верните завтра в 11:00–11:30.",
       imageAlt: "Велосипед на горной тропе",
     },
     EN: {
@@ -93,7 +93,7 @@ export function RentalEveningTeaser() {
       imageAlt: "ველოსიპედი მთის ბილიკზე",
     },
   }[lang];
-  const image = getResponsiveImageProps("hero/banner-bike.jpg", "(min-width: 640px) 200px, 104px", 640);
+  const image = getResponsiveImageProps("hero/banner-bike.jpg", "(max-width: 768px) 85vw, 220px", 640);
 
   return (
     <HomeOfferCard
@@ -106,7 +106,7 @@ export function RentalEveningTeaser() {
       details={homeText.details}
       note={text.deposit}
       icon={MoonStar}
-      image={{ src: image.src ?? bannerBike, srcSet: image.srcSet, sizes: image.sizes, alt: homeText.imageAlt, fit: "cover", position: "35% center" }}
+      image={{ src: image.src ?? bannerBike, srcSet: image.srcSet, sizes: image.sizes, alt: homeText.imageAlt, position: "35% center" }}
       destination="sports-rental"
       actionLabel={text.cta}
     />

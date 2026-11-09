@@ -75,9 +75,9 @@ export function KidsRollerOffer({ compact = false, active = false }: { compact?:
         description={`${text.selection}. ${text.discount}.`}
         benefit={text.gift}
         details={text.giftContents}
-        note={text.limit}
+        note={{ RU: "Количество комплектов ограничено", EN: "Limited gift sets", GE: "შეზღუდული რაოდენობა" }[lang]}
         icon={Gift}
-        image={{ src: "/promotions/kids-rollers/poster-960.webp", alt: text.posterAlt }}
+        image={{ src: "/promotions/kids-rollers/poster-960.webp", alt: text.posterAlt, sizes: "(max-width: 768px) 85vw, 220px" }}
         destination="kids-skates"
         actionLabel={text.cta}
       />

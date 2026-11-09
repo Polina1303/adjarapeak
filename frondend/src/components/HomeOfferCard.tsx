@@ -17,48 +17,42 @@ type Props = {
     srcSet?: string;
     sizes?: string;
     alt: string;
-    fit?: "contain" | "cover";
     position?: string;
   };
   destination: "kids-skates" | "sports-rental";
   actionLabel: string;
 };
 
-const actionClass = "inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-full bg-foreground px-5 py-3 text-center font-body text-sm font-bold leading-snug text-background transition-colors hover:bg-foreground/85 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground";
+const actionClass = "home-offer-action inline-flex items-center justify-center gap-3 rounded-full bg-foreground px-5 text-center font-body text-sm font-bold uppercase leading-snug text-background transition-colors hover:bg-foreground/85 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground";
 
 export function HomeOfferCard({ headingId, eyebrow, title, price, description, benefit, details, note, icon: Icon, image, destination, actionLabel }: Props) {
   const action = <>{actionLabel}<ArrowRight className="h-4 w-4 shrink-0" aria-hidden="true" /></>;
 
   return (
-    <article aria-labelledby={headingId} data-no-translate className="flex h-full min-w-0 flex-col rounded-2xl border border-border bg-[#faf9f6] p-4 text-foreground sm:p-6">
-      <div className="grid min-w-0 grid-cols-[104px_minmax(0,1fr)] gap-x-4 sm:grid-cols-[200px_minmax(0,1fr)] sm:grid-rows-[auto_1fr] sm:gap-x-6">
-        <div className="aspect-[4/5] self-start overflow-hidden rounded-xl bg-[#eee9e1] sm:row-span-2">
-          <img src={image.src} srcSet={image.srcSet} sizes={image.sizes} width={800} height={1000} alt={image.alt} loading="lazy" decoding="async" className={`h-full w-full ${image.fit === "cover" ? "object-cover" : "object-contain"}`} style={{ objectPosition: image.position }} />
-        </div>
-        <div className="min-w-0">
-          <p className="font-body text-xs font-bold uppercase tracking-[0.1em] text-[#9c4900]">{eyebrow}</p>
-          <h3 id={headingId} className="mt-2 font-display text-xl font-bold uppercase leading-tight sm:text-2xl">{title}</h3>
-          <p className="mt-2 font-display text-2xl font-bold leading-tight sm:text-[28px]">{price}</p>
-          <p className="mt-3 min-h-12 font-body text-sm leading-relaxed text-foreground/70">{description}</p>
-        </div>
-        <div className="col-span-2 mt-4 flex min-w-0 items-start gap-2.5 sm:col-span-1 sm:col-start-2">
-          <Icon className="mt-0.5 h-5 w-5 shrink-0 text-[#9c4900]" aria-hidden="true" />
-          <div className="min-w-0">
-            <p className="font-display text-base font-bold leading-snug sm:text-lg">{benefit}</p>
-            <p className="mt-1 font-body text-sm leading-relaxed text-foreground/70">{details}</p>
-          </div>
-        </div>
+    <article aria-labelledby={headingId} data-no-translate className="home-offer-card min-w-0 rounded-2xl border border-border bg-[#faf9f6] text-foreground">
+      <div className="home-offer-image overflow-hidden rounded-xl bg-[#eee9e1]">
+        <img src={image.src} srcSet={image.srcSet} sizes={image.sizes} width={800} height={1000} alt={image.alt} loading="lazy" decoding="async" className="h-full w-full object-cover" style={{ objectPosition: image.position }} />
       </div>
-      <div className="mt-auto pt-5">
-        <div className="border-t border-border pt-4">
-          <p className="min-h-9 font-body text-xs leading-relaxed text-foreground/60">{note}</p>
-          <div className="mt-3">
-            {destination === "kids-skates" ? (
-              <Link to="/sale/$group/$category" params={KIDS_ROLLER_CATALOG_PARAMS} search={{ offer: KIDS_ROLLER_OFFER }} className={actionClass}>{action}</Link>
-            ) : (
-              <Link to="/rent/$group" params={{ group: "sportsRental" }} className={actionClass}>{action}</Link>
-            )}
+      <div className="home-offer-content min-w-0">
+        <div className="home-offer-header">
+          <p className="home-offer-copy home-offer-eyebrow font-bold tracking-[0.05em] text-[#9c4900]">{eyebrow}</p>
+          <h3 id={headingId} className="home-offer-title font-display font-bold uppercase leading-tight">{title}</h3>
+          <div className="home-offer-price-row">
+            <p className="home-offer-price whitespace-nowrap font-display font-bold leading-tight">{price}</p>
+            <span className="home-offer-copy home-offer-badge rounded-full border border-[#f3d9bd] bg-[#fff7ed] text-[#9c4900]">{note}</span>
           </div>
+        </div>
+        <p className="home-offer-copy home-offer-description text-foreground/70">{description}</p>
+        <p className="home-offer-copy home-offer-benefit text-foreground/70">
+          <Icon className="home-offer-icon shrink-0 text-[#9c4900]" aria-hidden="true" />
+          <span><strong className="font-semibold text-foreground">{benefit}:</strong>{" "}{details.charAt(0).toLocaleLowerCase() + details.slice(1)}</span>
+        </p>
+        <div className="home-offer-action-row">
+          {destination === "kids-skates" ? (
+            <Link to="/sale/$group/$category" params={KIDS_ROLLER_CATALOG_PARAMS} search={{ offer: KIDS_ROLLER_OFFER }} className={actionClass}>{action}</Link>
+          ) : (
+            <Link to="/rent/$group" params={{ group: "sportsRental" }} className={actionClass}>{action}</Link>
+          )}
         </div>
       </div>
     </article>
