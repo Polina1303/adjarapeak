@@ -93,12 +93,11 @@ export function RentalEveningTeaser() {
       imageAlt: "ველოსიპედი მთის ბილიკზე",
     },
   }[lang];
-  const image = getResponsiveImageProps("hero/banner-bike.jpg", "(max-width: 768px) 85vw, 220px", 640);
+  const image = getResponsiveImageProps("hero/banner-bike.jpg", "(max-width: 768px) 85vw, 160px", 640);
 
   return (
     <HomeOfferCard
       headingId={headingId}
-      eyebrow={text.badge}
       title={homeText.title}
       price={text.price}
       description={homeText.description}

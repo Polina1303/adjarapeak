@@ -166,9 +166,9 @@ html { scroll-behavior: smooth; }
 
   .home-offer-card {
     display: grid;
-    grid-template-columns: 220px minmax(0, 1fr);
+    grid-template-columns: 160px minmax(0, 1fr);
     gap: 12px;
-    padding: 12px;
+    padding: 10px;
   }
 
   .home-offer-image {
@@ -184,7 +184,7 @@ html { scroll-behavior: smooth; }
   .home-offer-content {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
   }
 
   /* Road Radio uses capital-shaped glyphs even for lowercase characters. */
@@ -198,13 +198,8 @@ html { scroll-behavior: smooth; }
     gap: 4px;
   }
 
-  .home-offer-eyebrow {
-    font-size: 12px;
-    line-height: 16px;
-  }
-
   .home-offer-title {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .home-offer-price-row {
@@ -214,7 +209,7 @@ html { scroll-behavior: smooth; }
   }
 
   .home-offer-price {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   .home-offer-badge {
@@ -226,8 +221,8 @@ html { scroll-behavior: smooth; }
 
   .home-offer-description,
   .home-offer-benefit {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 13px;
+    line-height: 18px;
   }
 
   .home-offer-benefit {
@@ -237,8 +232,8 @@ html { scroll-behavior: smooth; }
   }
 
   .home-offer-icon {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     margin-top: 1px;
   }
 
@@ -249,8 +244,9 @@ html { scroll-behavior: smooth; }
   }
 
   .home-offer-action {
-    min-height: 44px;
-    padding-block: 10px;
+    min-height: 36px;
+    padding-block: 8px;
+    font-size: 12px;
   }
 
   @media (min-width: 1280px) {
@@ -275,25 +271,21 @@ html { scroll-behavior: smooth; }
       flex: 0 0 85vw;
       grid-template-columns: minmax(0, 1fr);
       grid-template-rows: 140px auto;
-      padding: 12px;
+      padding: 10px;
+      row-gap: 8px;
       scroll-snap-align: start;
     }
 
     .home-offer-title {
-      font-size: 20px;
+      font-size: 18px;
     }
 
     .home-offer-header {
       gap: 4px;
     }
 
-    .home-offer-eyebrow {
-      font-size: 11px;
-      line-height: 14px;
-    }
-
     .home-offer-price {
-      font-size: 24px;
+      font-size: 22px;
     }
 
     .home-offer-badge {

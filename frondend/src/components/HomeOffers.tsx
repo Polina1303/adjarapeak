@@ -14,8 +14,8 @@ export function HomeOffers() {
   const headingId = useId();
 
   return (
-    <section id="kids-roller-offer" aria-labelledby={headingId} className="home-offers mx-auto min-w-0 max-w-[1400px] scroll-mt-20 px-4 py-4 md:px-6 lg:px-8">
-      <h2 id={headingId} data-no-translate className="mb-3 font-display text-2xl font-bold leading-tight md:text-3xl">{TITLES[lang]}</h2>
+    <section id="kids-roller-offer" aria-labelledby={headingId} className="home-offers mx-auto min-w-0 max-w-[1400px] scroll-mt-20 px-4 py-3 md:px-6 lg:px-8">
+      <h2 id={headingId} data-no-translate className="mb-2 font-display text-xl font-bold leading-tight md:text-2xl">{TITLES[lang]}</h2>
       <div className="home-offers-track scrollbar-hide">
         <KidsRollerOffer />
         <RentalEveningTeaser />
