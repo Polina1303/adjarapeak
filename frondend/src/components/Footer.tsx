@@ -3,7 +3,6 @@ import { Link } from "@tanstack/react-router";
 import { MapPin, Phone, Instagram, Send } from "lucide-react";
 import { useLanguage, type Lang } from "@/lib/i18n";
 import { getSiteText } from "@/lib/site-translations";
-import { DeliveryTermsLink } from "@/components/DeliveryTermsLink";
 
 const languages: { code: Lang; label: string }[] = [
   { code: "EN", label: "EN" },
@@ -129,9 +128,6 @@ export function Footer() {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="mt-10 border-t border-primary-foreground/15 pt-6 text-center">
-            <DeliveryTermsLink className="font-body text-sm font-semibold uppercase tracking-wide text-primary-foreground underline underline-offset-4 hover:text-ember transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4" />
           </div>
         </div>
       </div>

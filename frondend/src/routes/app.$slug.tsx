@@ -1,6 +1,7 @@
 import { LocalizedSeo } from "@/components/LocalizedSeo";
 import { productMetadata } from "@/lib/seo-content";
 import { ProductAvailability } from "@/components/ProductAvailability";
+import { DeliveryTermsDisclosure } from "@/components/DeliveryTermsDisclosure";
 import { SALES_TEXT } from "@/lib/sales-text";
 import { formatPrice } from "@/lib/price";
 import {
@@ -596,6 +597,7 @@ function ProductView({
                 >
                   {inCart ? "Открыть корзину" : "В корзину"}
                 </Button>
+                <DeliveryTermsDisclosure />
               </div>
 
               {product.features.length > 0 && (
@@ -698,6 +700,7 @@ function ProductView({
               >
                 {inCart ? "Открыть корзину" : "В корзину"}
               </Button>
+              <DeliveryTermsDisclosure />
             </div>
           </div>
 
