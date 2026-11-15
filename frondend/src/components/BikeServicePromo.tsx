@@ -9,7 +9,7 @@ import {
   MapPin,
   ShieldCheck,
 } from "lucide-react";
-import nikitaBikeService from "@/assets/nikita-bike-service-1.jpg";
+import nikitaBikeService from "@/assets/nikita-bike-service-5.jpg";
 import { useLanguage } from "@/lib/i18n";
 import { getSiteText } from "@/lib/site-translations";
 
@@ -32,10 +32,10 @@ export function BikeServicePromo() {
           >
             <img
               src={nikitaBikeService}
-              width={960}
-              height={1280}
+              width={1350}
+              height={1800}
               alt={text.imageAlt}
-              className="absolute inset-0 h-full w-full object-cover object-center"
+              className="absolute inset-0 h-full w-full object-cover object-[50%_30%] lg:object-center"
               loading="lazy"
               decoding="async"
             />

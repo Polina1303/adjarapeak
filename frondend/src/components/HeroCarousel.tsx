@@ -14,14 +14,14 @@ import { getResponsiveImageProps } from "@/lib/responsive-image";
 import heroCamping from "@/assets/hero-camping.jpg";
 import bannerBike from "@/assets/banner-bike.jpg";
 import climbingPromo from "@/assets/climbing-promo.jpeg";
-import bikeService from "@/assets/nikita-bike-service-1.jpg";
+import bikeService from "@/assets/nikita-bike-service-2.jpg";
 import heroHikes from "@/assets/hero-hikes.jpg";
 const images = [heroCamping, bannerSki, climbingPromo, bikeService, heroHikes];
 const keys = [
   "hero-camping.jpg",
   "banner-ski.jpg",
   "climbing-promo.jpeg",
-  "nikita-bike-service-1.jpg",
+  "nikita-bike-service-2.jpg",
   "hero-hikes.jpg",
 ];
 const paths = [
@@ -110,7 +110,7 @@ export function HeroCarousel() {
                         loading={i === 0 ? "eager" : "lazy"}
                         fetchPriority={i === 0 ? "high" : "low"}
                         decoding="async"
-                        className="absolute inset-0 h-full w-full object-cover"
+                        className={`absolute inset-0 h-full w-full object-cover ${i === 3 ? "object-[65%_43%]" : ""}`}
                       />
                     )}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />

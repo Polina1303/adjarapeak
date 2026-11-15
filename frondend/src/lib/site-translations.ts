@@ -94,7 +94,7 @@ export const SITE_TEXT = {
         location: "Батуми · ул. Генерала Аслана Абашидзе, 19",
         cta: "Услуги, цены и запись",
         call: "Позвонить",
-        imageAlt: "Веломеханик Никита ремонтирует велосипед в мастерской Adjara Peak",
+        imageAlt: "Веломеханик Никита в мастерской Adjara Peak",
       },
       climbingPromo: {
         title: "Скалолазание в Гонио-Квариати",
@@ -681,7 +681,7 @@ export const SITE_TEXT = {
         location: "Batumi · 19 General Aslan Abashidze St",
         cta: "Services, prices and booking",
         call: "Call us",
-        imageAlt: "Bike mechanic Nikita repairing a bicycle at the Adjara Peak workshop",
+        imageAlt: "Bike mechanic Nikita at the Adjara Peak workshop",
       },
       climbingPromo: {
         title: "Climbing in Gonio-Kvariati",
@@ -1267,7 +1267,7 @@ export const SITE_TEXT = {
         location: "ბათუმი · გენერალ ასლან აბაშიძის ქ. 19",
         cta: "სერვისები, ფასები და ჩაწერა",
         call: "დარეკვა",
-        imageAlt: "ველომექანიკოსი ნიკიტა Adjara Peak-ის სახელოსნოში ველოსიპედს არემონტებს",
+        imageAlt: "ველომექანიკოსი ნიკიტა Adjara Peak-ის სახელოსნოში",
       },
       climbingPromo: {
         title: "კლდეზე ცოცვა გონიო-კვარიათში",
