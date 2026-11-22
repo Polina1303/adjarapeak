@@ -1,4 +1,4 @@
-import { formatPrice } from "@/lib/price";
+import { getHikePrice } from "@/lib/hike-display";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { Header } from "@/components/Header";
@@ -333,10 +333,7 @@ function HikesIndex() {
             ) : (
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {hikes.map((hike, i) => {
-                  const price =
-                    hike.sale_price && hike.sale_price < hike.price
-                      ? hike.sale_price
-                      : hike.price;
+                  const { label: priceLabel } = getHikePrice(hike, lang);
                   const fmt = (d: string) => {
                     const dt = new Date(d);
                     const dd = String(dt.getDate()).padStart(2, "0");
@@ -400,7 +397,7 @@ function HikesIndex() {
                           )}
                           <div className="pt-4 border-t border-border">
                             <span className="font-display font-bold text-foreground text-xl">
-                              {formatPrice(price)}
+                              {priceLabel}
                             </span>
                           </div>
                         </div>

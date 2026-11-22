@@ -700,6 +700,11 @@ export function RecordForm({ config, record, open, onClose, onSaved }: Props) {
                 </Label>
               )}
               {renderField(f)}
+              {config.table === "hikes" && f.key === "price" && (
+                <p className="text-xs text-muted-foreground">
+                  0 — стоимость по запросу. Для фиксированной цены укажите сумму в лари.
+                </p>
+              )}
             </div>
           ))}
         </div>

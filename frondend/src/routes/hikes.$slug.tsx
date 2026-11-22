@@ -1,4 +1,5 @@
 import { formatPrice } from "@/lib/price";
+import { getHikeBookingUrl, getHikePrice } from "@/lib/hike-display";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { Header } from "@/components/Header";
@@ -134,11 +135,8 @@ function HikePage() {
   const { lang } = useLanguage();
   const text = getSiteText(lang).hikes;
   const hike = localizeHike(rawHike, lang);
-  const price =
-    hike.sale_price && hike.sale_price < hike.price
-      ? hike.sale_price
-      : hike.price;
-  const hasDiscount = price !== hike.price;
+  const { label: priceLabel, hasDiscount } = getHikePrice(hike, lang);
+  const bookingUrl = getHikeBookingUrl(hike.slug);
 
   const dateLabel = hike.start_date
     ? new Date(hike.start_date).toLocaleDateString(text.dateLocale, {
@@ -159,7 +157,7 @@ function HikePage() {
       icon: Mountain,
       text: formatDifficulty(hike.difficulty, lang) ?? hike.difficulty,
     });
-  metaRows.push({ icon: Wallet, text: `${formatPrice(price)}` });
+  metaRows.push({ icon: Wallet, text: priceLabel });
 
   const reasons = hike.reasons;
 
@@ -239,7 +237,7 @@ function HikePage() {
 
                 <div className="mt-6 flex flex-wrap items-center gap-4">
                   <a
-                    href="https://t.me/shpaksn"
+                    href={bookingUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center rounded-full bg-ember px-8 py-3.5 font-display text-xs uppercase tracking-wider text-ember-foreground transition-colors hover:bg-ember/90"
@@ -455,10 +453,10 @@ function HikePage() {
               {text.priceTitle}
             </h2>
             <div className="font-display text-2xl md:text-4xl font-bold text-foreground mb-8">
-              {formatPrice(price)}
+              {priceLabel}
             </div>
             <a
-              href="https://t.me/shpaksn"
+              href={bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex justify-center items-center gap-2 bg-ember text-ember-foreground hover:bg-ember/90 transition-colors px-12 py-4 rounded-full font-display text-sm uppercase tracking-wider mb-10 md:mb-14"
