@@ -85,8 +85,13 @@ import nikitaPortfolioImg4621 from "@/assets/nikita-portfolio-img_4621.jpg";
 import nikitaPortfolioImg4622 from "@/assets/nikita-portfolio-img_4622.jpg";
 import rollerSkatingIcon from "@/assets/roller-skating.svg";
 import { LoadingImage } from "@/components/LoadingIndicator";
-import { type Lang, useLanguage } from "@/lib/i18n";
-import { getSiteText } from "@/lib/site-translations";
+import { useLanguage } from "@/lib/i18n";
+import { getSiteText, SITE_TEXT } from "@/lib/site-translations";
+import {
+  translateServicePrice,
+  type ServiceFallback,
+  type ServicePriceRow,
+} from "@/lib/service-prices";
 import {
   inferServiceCategory,
   isServiceCategoryKey,
@@ -127,25 +132,6 @@ type Service = {
   price: string;
   category: ServiceCategoryKey;
   highlight?: boolean;
-};
-type ServiceFallback = ReadonlyArray<{
-  title: string;
-  desc: string;
-  price: string;
-  highlight?: boolean;
-}>;
-type ServicePriceRow = {
-  title: string;
-  description: string | null;
-  price: string;
-  highlight: boolean;
-  title_en?: string | null;
-  title_ka?: string | null;
-  description_en?: string | null;
-  description_ka?: string | null;
-  price_en?: string | null;
-  price_ka?: string | null;
-  category?: string | null;
 };
 
 const outdoorServiceText = {
@@ -248,30 +234,6 @@ function useServiceCarousel(active: boolean) {
   return { scroller, canLeft, canRight, progress, scroll };
 }
 
-function getTranslatedValue(
-  row: ServicePriceRow,
-  key: "title" | "description" | "price",
-  lang: Lang
-) {
-  if (lang === "RU") return row[key];
-  const suffix = lang === "EN" ? "en" : "ka";
-  const value = row[`${key}_${suffix}` as keyof ServicePriceRow];
-  return typeof value === "string" && value.trim() ? value : null;
-}
-
-function localizePrice(
-  price: string,
-  fallback: string | undefined,
-  lang: Lang
-) {
-  if (lang === "RU") return price;
-  if (fallback) return fallback;
-  if (lang === "EN") return price.replace(/^от\s+/i, "from ");
-  if (/^от\s+/i.test(price)) return `${price.replace(/^от\s+/i, "")}-დან`;
-  if (/^≈\s*/.test(price)) return price.replace(/^≈\s*/, "დაახლ. ");
-  return price;
-}
-
 function SupBoardIcon() {
   return (
     <span className="relative block h-8 w-9" aria-hidden>
@@ -287,7 +249,7 @@ function ServicePage() {
   const text = getSiteText(lang).service;
   const outdoorText = outdoorServiceText[lang];
   const [selectedOutdoorService, setSelectedOutdoorService] = useState<number | null>(null);
-  const [season, setSeason] = useState<"winter" | "summer">("summer");
+  const [season, setSeason] = useState<"winter" | "summer">("winter");
   const mechanicCarousel = useServiceCarousel(season === "summer");
   const portfolioCarousel = useServiceCarousel(season === "summer");
   const [portfolioOpenIndex, setPortfolioOpenIndex] = useState<number | null>(
@@ -331,33 +293,20 @@ function ServicePage() {
       ]);
       const map = (
         rows: ServicePriceRow[] | null,
+        source: ServiceFallback,
         fallback: ServiceFallback
       ): Service[] =>
-        (rows ?? []).map((r, index) => ({
-          title:
-            lang === "RU"
-              ? r.title
-              : (getTranslatedValue(r, "title", lang) ??
-                fallback[index]?.title ??
-                r.title),
-          desc:
-            lang === "RU"
-              ? (r.description ?? "")
-              : (getTranslatedValue(r, "description", lang) ??
-                fallback[index]?.desc ??
-                ""),
-          price: localizePrice(
-            getTranslatedValue(r, "price", lang) ?? r.price ?? "",
-            fallback[index]?.price,
-            lang
-          ),
+        (rows ?? []).map((r) => ({
+          ...translateServicePrice(r, source, fallback, lang),
           category: isServiceCategoryKey(r.category)
             ? r.category
             : inferServiceCategory(r.title),
           highlight: !!r.highlight,
         }));
-      setWinterServices(map(winter, text.services));
-      setSummerServices(map(summer, text.summerServices));
+      setWinterServices(map(winter, SITE_TEXT.RU.service.services, text.services));
+      setSummerServices(
+        map(summer, SITE_TEXT.RU.service.summerServices, text.summerServices)
+      );
     })();
   }, [lang, text.services, text.summerServices]);
 
@@ -370,11 +319,14 @@ function ServicePage() {
   }));
   const services = season === "winter" ? winterServices : summerServices;
   const displayServices = services.length > 0 ? services : fallbackServices;
-  const serviceGroups = SERVICE_CATEGORY_KEYS.map((key) => ({
-    key,
-    title: SERVICE_CATEGORY_LABELS[lang][key],
-    services: displayServices.filter((service) => service.category === key),
-  })).filter((group) => group.services.length > 0);
+  const serviceGroups =
+    season === "winter"
+      ? [{ key: "winter", title: text.winterServicesTitle, services: displayServices }]
+      : SERVICE_CATEGORY_KEYS.map((key) => ({
+          key,
+          title: SERVICE_CATEGORY_LABELS[lang][key],
+          services: displayServices.filter((service) => service.category === key),
+        })).filter((group) => group.services.length > 0);
   const serviceSource = services.length > 0 ? "remote" : "fallback";
   const sectionText =
     season === "winter" ? text.winterSectionText : text.summerSectionText;
@@ -751,7 +703,7 @@ function ServicePage() {
                 </button>
               ))}
             </div>
-            <p className="mt-4 font-body text-sm text-muted-foreground max-w-sm">
+            <p className={`mt-4 font-body text-sm text-muted-foreground ${season === "winter" ? "max-w-3xl" : "max-w-sm"}`}>
               {sectionText}
             </p>
           </div>

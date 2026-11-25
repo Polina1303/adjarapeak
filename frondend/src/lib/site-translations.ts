@@ -415,9 +415,10 @@ export const SITE_TEXT = {
       sectionText:
         "Цены актуальны для лыж и сноубордов. Нестандартные работы — по согласованию с мастером.",
       winterSeason: "Зимний сезон",
+      winterServicesTitle: "Сервис лыж и сноубордов",
       summerSeason: "Летний сезон",
       winterSectionText:
-        "Цены актуальны для лыж и сноубордов. Нестандартные работы — по согласованию с мастером.",
+        "Цены актуальны для лыж и сноубордов. Стоимость мелкого ремонта и итоговая стоимость комплекса с ремонтом зависят от состояния снаряжения и объёма работ. Уточняйте сроки и детали работ у администратора ADJARA PEAK.",
       summerSectionText:
         "Цены актуальны для велосипедов. Нестандартные работы — по согласованию с мастером.",
       serviceColumn: "Услуга",
@@ -453,35 +454,56 @@ export const SITE_TEXT = {
       phoneLabel: "Телефон",
       services: [
         {
-          title: "Комплексное обслуживание",
-          desc: "Заточка кантов, чистка скользящей поверхности, снятие старого парафина и нанесение нового (парафины от +3 до −20, шаг 6°).",
-          price: "≈ 80 ₾",
-          highlight: true,
-        },
-        {
-          title: "Заточка кантов",
-          desc: "Восстановление угла кромки для уверенного контроля на льду и жёстком склоне.",
-          price: "≈ 40 ₾",
-        },
-        {
-          title: "Консервация",
-          desc: "Подготовка снаряжения к межсезонному хранению: чистка, толстый слой защитного парафина.",
-          price: "от 20 ₾",
-        },
-        {
-          title: "Ремонт скользящей поверхности",
-          desc: "Заливка царапин Ptex, выравнивание базы, восстановление структуры.",
-          price: "от 20 ₾",
-        },
-        {
           title: "Нанесение температурного парафина",
-          desc: "Подбор парафина под температуру и тип снега, горячая прокатка утюгом.",
+          desc: "",
           price: "40 ₾",
         },
         {
-          title: "Установка и настройка креплений",
-          desc: "Монтаж креплений, регулировка по росту, весу и уровню катания.",
-          price: "от 30 ₾",
+          title: "Ручная заточка кантов",
+          desc: "",
+          price: "40 ₾",
+        },
+        {
+          title: "Комплекс: температурный парафин + ручная заточка кантов",
+          desc: "",
+          price: "70 ₾",
+          highlight: true,
+        },
+        {
+          title: "Комплекс: температурный парафин + ручная заточка кантов + мелкий ремонт",
+          desc: "",
+          price: "от 80 ₾",
+          highlight: true,
+        },
+        {
+          title: "Установка бамперов (2 шт.)",
+          desc: "",
+          price: "20 ₾",
+        },
+        {
+          title: "Покупка и установка бамперов (2 шт.)",
+          desc: "",
+          price: "60 ₾",
+        },
+        {
+          title: "Мелкий ремонт",
+          desc: "",
+          price: "от 20 ₾",
+        },
+        {
+          title: "Настройка креплений",
+          desc: "",
+          price: "БЕСПЛАТНО",
+        },
+        {
+          title: "Консервация",
+          desc: "",
+          price: "20 ₾",
+        },
+        {
+          title: "Снятие консервации",
+          desc: "",
+          price: "20 ₾",
         },
       ],
       summerServices: [
@@ -1001,9 +1023,10 @@ export const SITE_TEXT = {
       sectionText:
         "Prices apply to skis and snowboards. Custom jobs are agreed with the technician.",
       winterSeason: "Winter season",
+      winterServicesTitle: "Ski and snowboard service",
       summerSeason: "Summer season",
       winterSectionText:
-        "Prices apply to skis and snowboards. Custom jobs are agreed with the technician.",
+        "Prices apply to skis and snowboards. The cost of minor repairs and the total price of a package including repairs depend on the condition of the equipment and the work required. Ask the ADJARA PEAK administrator about turnaround times and service details.",
       summerSectionText:
         "Prices apply to bicycles. Custom jobs are agreed with the technician.",
       serviceColumn: "Service",
@@ -1039,35 +1062,56 @@ export const SITE_TEXT = {
       phoneLabel: "Phone",
       services: [
         {
-          title: "Full service",
-          desc: "Edge sharpening, base cleaning, old wax removal and fresh wax application (waxes from +3 to −20, 6° steps).",
-          price: "≈ 80 ₾",
-          highlight: true,
-        },
-        {
-          title: "Edge sharpening",
-          desc: "Restores edge angle for confident control on ice and hardpack.",
-          price: "≈ 40 ₾",
-        },
-        {
-          title: "Storage wax",
-          desc: "Off-season preparation: cleaning and a thick protective wax layer.",
-          price: "from 20 ₾",
-        },
-        {
-          title: "Base repair",
-          desc: "Ptex scratch filling, base leveling and structure restoration.",
-          price: "from 20 ₾",
-        },
-        {
-          title: "Temperature wax",
-          desc: "Wax selected for snow and temperature, hot-applied with an iron.",
+          title: "Temperature-specific waxing",
+          desc: "",
           price: "40 ₾",
         },
         {
-          title: "Binding setup",
-          desc: "Binding installation and adjustment for height, weight and riding level.",
-          price: "from 30 ₾",
+          title: "Hand edge sharpening",
+          desc: "",
+          price: "40 ₾",
+        },
+        {
+          title: "Package: temperature-specific waxing + hand edge sharpening",
+          desc: "",
+          price: "70 ₾",
+          highlight: true,
+        },
+        {
+          title: "Package: temperature-specific waxing + hand edge sharpening + minor repairs",
+          desc: "",
+          price: "from 80 ₾",
+          highlight: true,
+        },
+        {
+          title: "Bumper installation (2 pcs.)",
+          desc: "",
+          price: "20 ₾",
+        },
+        {
+          title: "Purchase and installation of bumpers (2 pcs.)",
+          desc: "",
+          price: "60 ₾",
+        },
+        {
+          title: "Minor repairs",
+          desc: "",
+          price: "from 20 ₾",
+        },
+        {
+          title: "Binding adjustment",
+          desc: "",
+          price: "FREE",
+        },
+        {
+          title: "Storage waxing",
+          desc: "",
+          price: "20 ₾",
+        },
+        {
+          title: "Storage wax removal",
+          desc: "",
+          price: "20 ₾",
         },
       ],
       summerServices: [
@@ -1588,9 +1632,10 @@ export const SITE_TEXT = {
       sectionText:
         "ფასები მოქმედებს თხილამურებისა და სნოუბორდებისთვის. არასტანდარტული სამუშაოები შეთანხმებით.",
       winterSeason: "ზამთრის სეზონი",
+      winterServicesTitle: "თხილამურებისა და სნოუბორდების სერვისი",
       summerSeason: "ზაფხულის სეზონი",
       winterSectionText:
-        "ფასები მოქმედებს თხილამურებისა და სნოუბორდებისთვის. არასტანდარტული სამუშაოები შეთანხმებით.",
+        "ფასები მოქმედებს თხილამურებისა და სნოუბორდებისთვის. მცირე შეკეთებისა და შეკეთების შემცველი კომპლექსური მომსახურების საბოლოო ღირებულება დამოკიდებულია აღჭურვილობის მდგომარეობასა და სამუშაოს მოცულობაზე. სამუშაოს ვადებისა და დეტალების შესახებ მიმართეთ ADJARA PEAK-ის ადმინისტრატორს.",
       summerSectionText:
         "ფასები მოქმედებს ველოსიპედებისთვის. არასტანდარტული სამუშაოები შეთანხმებით.",
       serviceColumn: "სერვისი",
@@ -1626,35 +1671,56 @@ export const SITE_TEXT = {
       phoneLabel: "ტელეფონი",
       services: [
         {
-          title: "სრული მომსახურება",
-          desc: "კანტების ალესვა, სასრიალო ზედაპირის წმენდა, ძველი პარაფინის მოხსნა და ახლის დატანა (პარაფინები +3-დან −20-მდე, 6° ნაბიჯით).",
-          price: "დაახლ. 80 ₾",
-          highlight: true,
-        },
-        {
-          title: "კანტების ალესვა",
-          desc: "კანტის კუთხის აღდგენა ყინულსა და მყარ ფერდობზე თავდაჯერებული კონტროლისთვის.",
-          price: "დაახლ. 40 ₾",
-        },
-        {
-          title: "კონსერვაცია",
-          desc: "აღჭურვილობის მომზადება სეზონებს შორის შესანახად: წმენდა და დამცავი პარაფინის სქელი ფენა.",
-          price: "20 ₾-დან",
-        },
-        {
-          title: "სასრიალო ზედაპირის შეკეთება",
-          desc: "ნაკაწრების Ptex-ით შევსება, ბაზის გასწორება და სტრუქტურის აღდგენა.",
-          price: "20 ₾-დან",
-        },
-        {
-          title: "ტემპერატურული პარაფინი",
-          desc: "პარაფინის შერჩევა ტემპერატურისა და თოვლის მიხედვით, ცხლად დატანა უთოთი.",
+          title: "ტემპერატურული პარაფინის დატანა",
+          desc: "",
           price: "40 ₾",
         },
         {
-          title: "სამაგრების დაყენება და რეგულირება",
-          desc: "სამაგრების მონტაჟი და მორგება სიმაღლის, წონისა და დონის მიხედვით.",
-          price: "30 ₾-დან",
+          title: "კანტების ხელით გალესვა",
+          desc: "",
+          price: "40 ₾",
+        },
+        {
+          title: "კომპლექსი: ტემპერატურული პარაფინის დატანა + კანტების ხელით გალესვა",
+          desc: "",
+          price: "70 ₾",
+          highlight: true,
+        },
+        {
+          title: "კომპლექსი: ტემპერატურული პარაფინის დატანა + კანტების ხელით გალესვა + მცირე შეკეთება",
+          desc: "",
+          price: "80 ₾-დან",
+          highlight: true,
+        },
+        {
+          title: "ბამპერების დაყენება (2 ც.)",
+          desc: "",
+          price: "20 ₾",
+        },
+        {
+          title: "ბამპერების შეძენა და დაყენება (2 ც.)",
+          desc: "",
+          price: "60 ₾",
+        },
+        {
+          title: "მცირე შეკეთება",
+          desc: "",
+          price: "20 ₾-დან",
+        },
+        {
+          title: "სამაგრების რეგულირება",
+          desc: "",
+          price: "უფასოდ",
+        },
+        {
+          title: "კონსერვაცია",
+          desc: "",
+          price: "20 ₾",
+        },
+        {
+          title: "კონსერვაციის მოხსნა",
+          desc: "",
+          price: "20 ₾",
         },
       ],
       summerServices: [
