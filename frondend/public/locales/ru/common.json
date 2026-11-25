@@ -85,8 +85,13 @@
       "martialart_mouth_guard": "КАПЫ",
       "martialart_protection": "ЗАЩИТА",
       "paws": "ЛАПЫ",
-      "bandages": "БИНТЫ ДЛЯ РУК",
-      "martialart_clothes": "ОДЕЖДА ДЛЯ ЕДИНОБОРСТВ",
+      "bandages": "БОКСЕРСКИЕ БИНТЫ",
+      "martialart_clothes": {
+        "title": "ОДЕЖДА ДЛЯ ЕДИНОБОРСТВ",
+        "subcategories": {
+          "shorts": "Шорты для единоборств"
+        }
+      },
       "martialart_shoes": "ОБУВЬ ДЛЯ ЕДИНОБОРСТВ",
       "martialart_rubber": "РЕЗИНА И ЖГУТЫ",
       "martialart_mma": "ПЕРЧАТКИ ММА",

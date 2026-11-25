@@ -85,7 +85,12 @@
       "martialart_protection": "დაცვა",
       "paws": "თათები",
       "bandages": "ხელის ბინტები",
-      "martialart_clothes": "სავარჯიშო ტანსაცმელი",
+      "martialart_clothes": {
+        "title": "სავარჯიშო ტანსაცმელი",
+        "subcategories": {
+          "shorts": "შორტები ორთაბრძოლებისთვის"
+        }
+      },
       "martialart_shoes": "სავარჯიშო ფეხსაცმელი",
       "martialart_rubber": "სავარჯიშო რეზინები",
       "martialart_mma": "MMA-ის ხელთათმანები",

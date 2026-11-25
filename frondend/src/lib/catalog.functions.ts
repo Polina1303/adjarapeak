@@ -270,7 +270,7 @@ const SHOP_CATEGORY_TITLE_OVERRIDES: Record<string, string> = {
   boxing_gloves: "Перчатки для бокса",
   martialart_helmet: "Шлемы",
   martialart_protection: "Защита",
-  bandages: "Бинты для рук",
+  bandages: "Боксерские бинты",
   martialart_rubber: "Резина и жгуты",
   martialart_mma: "Перчатки MMA",
   martialart_exercise: "Тренажеры",
@@ -328,6 +328,19 @@ function normalizeShopCategory(category: ShopCategory): ShopCategory {
     ...category,
     title: SHOP_CATEGORY_TITLE_OVERRIDES[category.slug] ?? category.title,
   };
+}
+
+function normalizeShopCategories(categories: ShopCategory[]): ShopCategory[] {
+  const normalized = categories.map(normalizeShopCategory);
+  const skis = normalized.find((category) => category.slug === "skis");
+  if (!skis) return normalized;
+
+  const following = ["kids_skis", "ski_poles"].flatMap((slug) =>
+    normalized.filter((category) => category.slug === slug && category.group_id === skis.group_id),
+  );
+  const ordered = normalized.filter((category) => !following.includes(category));
+  ordered.splice(ordered.indexOf(skis) + 1, 0, ...following);
+  return ordered;
 }
 
 function createBoardsGroup(image: string | null = null): ShopGroup {
@@ -405,7 +418,7 @@ function filterShopCategoriesForGroup(groupSlug: string, categories: ShopCategor
   const visible = groupSlug === FITNESS_GROUP_SLUG
     ? categories.filter((category) => category.slug !== BALANCE_BOARD_CATEGORY_SLUG)
     : categories;
-  return visible.map(normalizeShopCategory);
+  return normalizeShopCategories(visible);
 }
 
 function normalizeShopRouteCategorySlug(
@@ -672,15 +685,15 @@ export const listAllShopCategories = createServerFn({ method: "GET" }).handler(a
   return {
     groups: groupsList,
     categories: [
-      ...((cats ?? []) as ShopCategory[])
-        .filter(
+      ...normalizeShopCategories(
+        ((cats ?? []) as ShopCategory[]).filter(
           (category) =>
             !(
               groupSlugById.get(category.group_id) === FITNESS_GROUP_SLUG &&
               category.slug === BALANCE_BOARD_CATEGORY_SLUG
             ),
-        )
-        .map(normalizeShopCategory),
+        ),
+      ),
       ...createBoardsCategories(),
     ],
   };
@@ -1797,15 +1810,15 @@ export const getCatalogNav = createServerFn({ method: "GET" }).handler(async () 
   const groupSlugById = new Map(
     ((shopGroups ?? []) as ShopGroup[]).map((group) => [group.id, group.slug]),
   );
-  const normalizedShopCategories = ((shopCats ?? []) as ShopCategory[])
-    .filter(
+  const normalizedShopCategories = normalizeShopCategories(
+    ((shopCats ?? []) as ShopCategory[]).filter(
       (category) =>
         !(
           groupSlugById.get(category.group_id) === FITNESS_GROUP_SLUG &&
           category.slug === BALANCE_BOARD_CATEGORY_SLUG
         ),
-    )
-    .map(normalizeShopCategory);
+    ),
+  );
 
   return {
     shopGroups: normalizedShopGroups,

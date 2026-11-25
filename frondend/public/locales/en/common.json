@@ -85,7 +85,12 @@
       "martialart_protection": "PROTECTION",
       "paws": "PAWS",
       "bandages": "HAND WRAPS",
-      "martialart_clothes": "MARTIAL ARTS CLOTHING",
+      "martialart_clothes": {
+        "title": "MARTIAL ARTS CLOTHING",
+        "subcategories": {
+          "shorts": "Martial arts shorts"
+        }
+      },
       "martialart_shoes": "MARTIAL ARTS SHOES",
       "martialart_rubber": "BANDS AND RESISTANCE TUBES",
       "martialart_mma": "MMA GLOVES",
