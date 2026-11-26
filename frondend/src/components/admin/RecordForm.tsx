@@ -38,6 +38,7 @@ import { PackingListField } from "./PackingListField";
 import { ColorImageListField } from "./ColorImageListField";
 import type { AdminTableConfig, AdminTableKey, FieldConfig } from "@/lib/admin-tables";
 import { loadAdminSortRefs, sortAdminRows } from "@/lib/admin-sort";
+import { readProductOrder, stripProductOrderMetadata, withProductOrder } from "@/lib/product-order-metadata";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 
@@ -153,6 +154,9 @@ function validateManualSalePrice(
 
 function validatePayload(config: AdminTableConfig, payload: Record<string, any>) {
   if (config.table === "shop_products") {
+    if (payload.sort_order != null && (!Number.isInteger(payload.sort_order) || payload.sort_order < 1 || payload.sort_order >= 2147483647)) {
+      return "Порядок сортировки должен быть целым числом от 1 до 2147483646";
+    }
     return validateManualSalePrice(payload.price, payload.sale_price, "Цена со скидкой", "Цена");
   }
   if (config.table === "rental_items") {
@@ -351,7 +355,13 @@ export function RecordForm({ config, record, open, onClose, onSaved }: Props) {
           initial[f.key] = Array.isArray(record[f.key]) ? record[f.key] : [];
         }
         if (f.type === "json") {
-          initial[f.key] = JSON.stringify(record[f.key] ?? [], null, 2);
+          const value = config.table === "shop_products" && f.key === "features"
+            ? stripProductOrderMetadata(record.features)
+            : record[f.key];
+          initial[f.key] = JSON.stringify(value ?? [], null, 2);
+        }
+        if (config.table === "shop_products" && f.key === "sort_order") {
+          initial[f.key] = readProductOrder(record.features) ?? "";
         }
       } else {
         initial[f.key] =
@@ -382,7 +392,7 @@ export function RecordForm({ config, record, open, onClose, onSaved }: Props) {
 
     const checkSchemaFields = async () => {
       const missing = new Set<string>();
-      const configuredKeys = config.fields.map((f) => f.key);
+      const configuredKeys = config.fields.filter((f) => !f.virtual).map((f) => f.key);
 
       for (let i = 0; i < configuredKeys.length; i += 1) {
         const keysToProbe = configuredKeys.filter((key) => !missing.has(key));
@@ -534,9 +544,14 @@ export function RecordForm({ config, record, open, onClose, onSaved }: Props) {
         return;
       }
 
+      if (config.table === "shop_products") {
+        payload.features = withProductOrder(payload.features, payload.sort_order ?? null);
+        delete payload.sort_order;
+      }
+
       let error;
       // Resolve sort_order conflicts: shift existing rows with >= new value by +1
-      if (config.hasSortOrder && payload.sort_order !== null && payload.sort_order !== undefined) {
+      if (config.hasSortOrder && config.table !== "shop_products" && payload.sort_order !== null && payload.sort_order !== undefined) {
         const newOrder = Number(payload.sort_order);
         const prevOrder = record?.sort_order ?? null;
         if (prevOrder !== newOrder) {
@@ -568,7 +583,19 @@ export function RecordForm({ config, record, open, onClose, onSaved }: Props) {
       }
 
       if (record?.id) {
-        ({ error } = await (supabase as any).from(config.table).update(payload).eq("id", record.id));
+        let query = (supabase as any).from(config.table).update(payload).eq("id", record.id);
+        if (config.table === "shop_products") {
+          query = record.features == null
+            ? query.is("features", null)
+            : query.eq("features", JSON.stringify(record.features));
+          const result = await query.select("id").maybeSingle();
+          error = result.error;
+          if (!error && !result.data) {
+            throw new Error("Товар изменился в другой вкладке. Откройте его заново и повторите изменения.");
+          }
+        } else {
+          ({ error } = await query);
+        }
       } else {
         ({ error } = await (supabase as any).from(config.table).insert(payload));
       }
@@ -601,7 +628,9 @@ export function RecordForm({ config, record, open, onClose, onSaved }: Props) {
           <Input
             type={isMoneyField(f.key) ? "text" : "number"}
             inputMode={isMoneyField(f.key) ? "decimal" : undefined}
-            step={isMoneyField(f.key) ? undefined : "any"}
+            step={config.table === "shop_products" && f.key === "sort_order" ? 1 : isMoneyField(f.key) ? undefined : "any"}
+            min={config.table === "shop_products" && f.key === "sort_order" ? 1 : undefined}
+            aria-label={f.label}
             value={v ?? ""}
             onChange={(e) => setVal(f.key, e.target.value)}
           />
@@ -700,6 +729,11 @@ export function RecordForm({ config, record, open, onClose, onSaved }: Props) {
                 </Label>
               )}
               {renderField(f)}
+              {config.table === "shop_products" && f.key === "sort_order" && (
+                <p className="text-sm text-muted-foreground">
+                  Меньше число — выше товар внутри категории. Оставьте пустым для обычного порядка после товаров с заданным номером.
+                </p>
+              )}
               {config.table === "hikes" && f.key === "price" && (
                 <p className="text-xs text-muted-foreground">
                   0 — стоимость по запросу. Для фиксированной цены укажите сумму в лари.

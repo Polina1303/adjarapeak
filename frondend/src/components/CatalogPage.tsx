@@ -24,6 +24,7 @@ import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/co
 import { useCatalogTranslations } from "@/lib/catalog-translations";
 import { CATALOG_UI_TEXT } from "@/lib/catalog-ui-text";
 import { getDisplayPrice } from "@/lib/discount";
+import { compareProductsNewestFirst } from "@/lib/product-order";
 import {
   searchRentalItems,
   searchShopProducts,
@@ -272,6 +273,8 @@ export function CatalogPage(props: ShopProps | RentalProps) {
       arr.sort((a, b) => getDisplayPrice(a.price, a.sale_price) - getDisplayPrice(b.price, b.sale_price));
     else if (sort === "price-desc")
       arr.sort((a, b) => getDisplayPrice(b.price, b.sale_price) - getDisplayPrice(a.price, a.sale_price));
+    else if (sort === "newest")
+      arr.sort(compareProductsNewestFirst);
     return arr;
   }, [globalSearchProducts, isShop, isWholeCatalogSearchActive, kidsOfferActive, onlyAvailable, props, sort]);
 

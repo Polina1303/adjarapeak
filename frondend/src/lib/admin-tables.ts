@@ -23,6 +23,7 @@ export type FieldConfig = {
   type: FieldType;
   required?: boolean;
   defaultValue?: string | number | boolean;
+  virtual?: boolean;
   options?: ReadonlyArray<{ value: string; label: string }>;
   // for fk
   fkTable?: AdminTableKey;
@@ -109,12 +110,17 @@ export const ADMIN_TABLES: Record<AdminTableKey, AdminTableConfig> = {
     label: "Магазин · Товары",
     section: "shop",
     hasHidden: true,
-    listColumns: ["title", "slug", "price", "sale_price", "featured", "featured_priority", "in_stock", "hidden"],
+    hasSortOrder: true,
+    sortScopeField: "category_id",
+    defaultOrderColumn: "created_at",
+    defaultOrderAscending: false,
+    listColumns: ["sort_order", "title", "category_id", "subcategory_id", "price", "sale_price", "featured", "featured_priority", "in_stock", "hidden"],
     fields: [
       { key: "category_id", label: "Категория", type: "fk", fkTable: "shop_categories", required: true },
       { key: "subcategory_id", label: "Подкатегория", type: "fk", fkTable: "shop_subcategories", fkParentField: "category_id", fkParentSource: "category_id" },
       { key: "title", label: "Название", type: "text", required: true },
       { key: "slug", label: "Слаг", type: "text", required: true },
+      { key: "sort_order", label: "Порядок сортировки", type: "number", virtual: true },
       { key: "price", label: "Цена", type: "number", required: true },
       { key: "sale_price", label: "Цена со скидкой", type: "number" },
       { key: "description", label: "Описание", type: "textarea" },

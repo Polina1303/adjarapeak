@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { getShopGroupOrderIndex, sortShopGroups } from "@/lib/shop-group-order";
+import { sortProductsByCatalogOrder } from "@/lib/product-order";
 
 type Row = Record<string, any>;
 
@@ -21,6 +22,7 @@ type AdminCategoryRow = {
 type AdminSortRefs = {
   shopGroups?: AdminGroupRow[];
   shopCategories?: AdminCategoryRow[];
+  shopSubcategories?: Array<{ id: string; category_id: string; sort_order?: number | null; title?: string | null }>;
   rentalGroups?: AdminGroupRow[];
   rentalCategories?: AdminCategoryRow[];
 };
@@ -103,7 +105,15 @@ function compareBySubcategory(a: Row, b: Row, refs: AdminSortRefs, kind: "shop" 
   return byText(a.title, b.title);
 }
 
-export function sortAdminRows(table: string, rows: Row[], refs: AdminSortRefs = {}) {
+export function sortAdminRows(table: string, rows: Row[], refs: AdminSortRefs = {}): Row[] {
+  if (table === "shop_products") {
+    const categories = sortAdminRows("shop_categories", refs.shopCategories ?? [], refs);
+    return sortProductsByCatalogOrder(
+      rows as Array<Row & { category_id: string }>,
+      categories as Array<AdminCategoryRow>,
+      refs.shopSubcategories ?? [],
+    );
+  }
   if (table === "shop_groups") return sortShopGroups(rows);
   if (table === "shop_categories") {
     return [...rows].sort((a, b) => compareByCategory(a, b, refs, "shop"));
@@ -121,16 +131,20 @@ export function sortAdminRows(table: string, rows: Row[], refs: AdminSortRefs = 
 }
 
 export async function loadAdminSortRefs(table: string, client: any): Promise<AdminSortRefs> {
-  if (table === "shop_categories" || table === "shop_subcategories") {
-    const [groups, categories] = await Promise.all([
+  if (table === "shop_categories" || table === "shop_subcategories" || table === "shop_products") {
+    const [groups, categories, subcategories] = await Promise.all([
       client.from("shop_groups").select("id,slug,title,sort_order"),
-      table === "shop_subcategories"
+      table === "shop_subcategories" || table === "shop_products"
         ? client.from("shop_categories").select("id,group_id,slug,title,sort_order")
+        : Promise.resolve({ data: [] }),
+      table === "shop_products"
+        ? client.from("shop_subcategories").select("id,category_id,title,sort_order")
         : Promise.resolve({ data: [] }),
     ]);
     return {
       shopGroups: groups.data ?? [],
       shopCategories: categories.data ?? [],
+      shopSubcategories: subcategories.data ?? [],
     };
   }
 

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -31,10 +31,14 @@ import {
   EyeOff,
   GripVertical,
   Loader2,
+  ChevronUp,
+  ChevronDown,
 } from "lucide-react";
 import type { AdminTableConfig, AdminTableKey } from "@/lib/admin-tables";
 import { ADMIN_TABLES } from "@/lib/admin-tables";
 import { loadAdminSortRefs, sortAdminRows } from "@/lib/admin-sort";
+import { readProductOrder, withProductOrder } from "@/lib/product-order-metadata";
+import { saveProductOrder } from "@/lib/admin-product-order";
 import { RecordForm } from "./RecordForm";
 import { QuickProductForm } from "./QuickProductForm";
 import { toCSV, downloadBlob } from "@/lib/csv";
@@ -62,6 +66,10 @@ const COLUMN_LABELS: Record<string, string> = {
   category: "Категория",
   start_date: "Дата",
   end_date: "Дата окончания",
+  featured: "Рекомендуемый",
+  featured_priority: "Приоритет рекомендации",
+  category_id: "Категория",
+  subcategory_id: "Подкатегория",
 };
 
 function normalizeSearchValue(value: unknown) {
@@ -142,7 +150,9 @@ async function fetchAllAdminRows(config: AdminTableConfig) {
     const { data, error } = await query.range(from, to);
     if (error) throw error;
     const chunk = (data as Row[]) ?? [];
-    all.push(...chunk);
+    all.push(...(config.table === "shop_products"
+      ? chunk.map((row) => ({ ...row, sort_order: readProductOrder(row.features) }))
+      : chunk));
     if (chunk.length < FETCH_PAGE_SIZE) break;
   }
   return all;
@@ -206,6 +216,7 @@ export function DataTable({ config }: { config: AdminTableConfig }) {
   const [rows, setRows] = useState<Row[]>([]);
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
+  const [categoryFilter, setCategoryFilter] = useState("");
   const [page, setPage] = useState(0);
   const [editing, setEditing] = useState<Row | null>(null);
   const [creating, setCreating] = useState(false);
@@ -214,6 +225,9 @@ export function DataTable({ config }: { config: AdminTableConfig }) {
   const [fkLabels, setFkLabels] = useState<Record<string, Record<string, string>>>({});
   const [dragIndex, setDragIndex] = useState<number | null>(null);
   const [overIndex, setOverIndex] = useState<number | null>(null);
+  const [savingOrder, setSavingOrder] = useState(false);
+  const orderSaveLock = useRef(false);
+  const isShopProducts = config.table === "shop_products";
   const canSyncDateOrder = config.defaultOrderColumn === "start_date";
 
   const PAGE_SIZE = 50;
@@ -238,6 +252,7 @@ export function DataTable({ config }: { config: AdminTableConfig }) {
     load();
     setPage(0);
     setSearch("");
+    setCategoryFilter("");
   }, [config.table]);
 
   // load FK label maps for list display
@@ -259,9 +274,11 @@ export function DataTable({ config }: { config: AdminTableConfig }) {
 
   const filtered = useMemo(() => {
     const tokens = normalizeSearchValue(search).split(/\s+/).filter(Boolean);
-    if (!tokens.length) return rows;
-    return rows.filter((r) => matchesSearch(r, tokens, fkLabels));
-  }, [rows, search, fkLabels]);
+    return rows.filter((r) =>
+      (!isShopProducts || !categoryFilter || r.category_id === categoryFilter) &&
+      (!tokens.length || matchesSearch(r, tokens, fkLabels)),
+    );
+  }, [rows, search, fkLabels, categoryFilter, isShopProducts]);
 
   const pageRows = filtered.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
@@ -295,7 +312,10 @@ export function DataTable({ config }: { config: AdminTableConfig }) {
 
     if ("slug" in payload) payload.slug = createCopySlug(payload.slug, rows);
     if (config.hasHidden && "hidden" in payload) payload.hidden = true;
-    if (config.hasSortOrder && "sort_order" in payload) {
+    if (isShopProducts) {
+      payload.features = withProductOrder(payload.features, null);
+      delete payload.sort_order;
+    } else if (config.hasSortOrder && "sort_order" in payload) {
       const scopeField = config.sortScopeField;
       const scopedRows = scopeField
         ? rows.filter((row) => row[scopeField] === r[scopeField])
@@ -321,6 +341,7 @@ export function DataTable({ config }: { config: AdminTableConfig }) {
   };
 
   const reorder = async (from: number, to: number) => {
+    if (orderSaveLock.current) return;
     if (from === to || from < 0 || to < 0 || from >= rows.length || to >= rows.length) return;
     const scopeField = config.sortScopeField;
     if (scopeField && rows[from]?.[scopeField] !== rows[to]?.[scopeField]) {
@@ -330,30 +351,33 @@ export function DataTable({ config }: { config: AdminTableConfig }) {
     const next = [...rows];
     const [moved] = next.splice(from, 1);
     next.splice(to, 0, moved);
-    // optimistic UI
-    setRows(next);
     const orderedScopeRows = scopeField
       ? next.filter((row) => row[scopeField] === moved[scopeField])
       : next;
-    const updates = [];
-    for (let k = 0; k < orderedScopeRows.length; k++) {
-      const newOrder = k + 1;
-      if ((orderedScopeRows[k].sort_order ?? null) !== newOrder) {
-        updates.push(
-          (supabase as any)
-            .from(config.table)
-            .update({ sort_order: newOrder })
-            .eq("id", orderedScopeRows[k].id)
+    orderSaveLock.current = true;
+    setSavingOrder(true);
+    setRows(next);
+    try {
+      if (isShopProducts) {
+        await saveProductOrder(supabase, orderedScopeRows as Array<Row & { id: string; category_id: string; features: unknown }>);
+      } else {
+        const updates = orderedScopeRows.flatMap((row, index) =>
+          row.sort_order === index + 1 ? [] : [
+            (supabase as any).from(config.table).update({ sort_order: index + 1 }).eq("id", row.id),
+          ],
         );
+        const results = await Promise.all(updates);
+        const failed = results.find((result: any) => result.error);
+        if (failed) throw failed.error;
       }
-    }
-    const results = await Promise.all(updates);
-    const err = results.find((r: any) => r.error);
-    if (err) {
-      toast.error(err.error.message);
-      load();
-    } else {
-      load();
+      toast.success("Порядок сохранён");
+    } catch (error: any) {
+      setRows(rows);
+      toast.error(error?.message || "Не удалось сохранить порядок");
+    } finally {
+      await load();
+      orderSaveLock.current = false;
+      setSavingOrder(false);
     }
   };
 
@@ -431,6 +455,22 @@ export function DataTable({ config }: { config: AdminTableConfig }) {
           }}
           className="max-w-sm"
         />
+        {isShopProducts && (
+          <select
+            aria-label="Категория товаров"
+            value={categoryFilter}
+            onChange={(event) => {
+              setCategoryFilter(event.target.value);
+              setPage(0);
+            }}
+            className="h-10 max-w-full rounded-md border border-input bg-background px-3 text-sm md:max-w-sm"
+          >
+            <option value="">Все категории</option>
+            {Object.entries(fkLabels.category_id ?? {}).map(([id, label]) => (
+              <option key={id} value={id}>{label}</option>
+            ))}
+          </select>
+        )}
         <div className="ml-auto flex gap-2">
           {canSyncDateOrder && (
             <Button variant="outline" size="sm" onClick={syncDateSortOrder}>
@@ -451,7 +491,13 @@ export function DataTable({ config }: { config: AdminTableConfig }) {
         </div>
       </div>
 
-      <div className="rounded border bg-card">
+      {isShopProducts && (
+        <p className="text-sm text-muted-foreground" role="status">
+          {savingOrder ? "Сохранение порядка…" : "Перетаскивайте товары за значок слева или используйте кнопки вверх и вниз. Порядок сохраняется автоматически внутри категории. При активном поиске используйте поле «Порядок сортировки» в карточке товара."}
+        </p>
+      )}
+
+      <div className="rounded border bg-card" aria-busy={savingOrder}>
         <Table>
           <TableHeader>
             <TableRow>
@@ -479,20 +525,19 @@ export function DataTable({ config }: { config: AdminTableConfig }) {
                 </TableCell>
               </TableRow>
             ) : (
-              pageRows.map((r, i) => {
-                const globalIdx = page * PAGE_SIZE + i;
+              pageRows.map((r) => {
                 const rowsIdx = rows.findIndex((x) => x.id === r.id);
-                const draggable = config.hasSortOrder && !search.trim();
+                const draggable = !!config.hasSortOrder && !search.trim() && !savingOrder;
                 return (
                   <TableRow
                     key={r.id}
                     onDragOver={(e) => {
-                      if (dragIndex === null) return;
+                      if (dragIndex === null || !draggable) return;
                       e.preventDefault();
                       if (overIndex !== rowsIdx) setOverIndex(rowsIdx);
                     }}
                     onDrop={(e) => {
-                      if (dragIndex === null) return;
+                      if (dragIndex === null || !draggable) return;
                       e.preventDefault();
                       const from = dragIndex;
                       const to = rowsIdx;
@@ -516,6 +561,7 @@ export function DataTable({ config }: { config: AdminTableConfig }) {
                   >
                     {config.hasSortOrder && (
                       <TableCell>
+                        <div className="flex items-center gap-1">
                         <button
                           type="button"
                           draggable={draggable}
@@ -523,17 +569,42 @@ export function DataTable({ config }: { config: AdminTableConfig }) {
                             if (!draggable) return;
                             setDragIndex(rowsIdx);
                             e.dataTransfer.effectAllowed = "move";
+                            e.dataTransfer.setData("text/plain", String(r.id));
                           }}
                           onDragEnd={() => {
                             setDragIndex(null);
                             setOverIndex(null);
                           }}
                           title={draggable ? "Перетащите для изменения порядка" : "Отключите поиск для сортировки"}
+                          aria-label={`Изменить порядок: ${r.title}`}
                           className="flex items-center justify-center text-muted-foreground hover:text-ember cursor-grab active:cursor-grabbing disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
                           disabled={!draggable}
                         >
                           <GripVertical className="h-4 w-4" />
                         </button>
+                        {isShopProducts && (
+                          <div className="flex flex-col">
+                            <button
+                              type="button"
+                              aria-label={`Поднять: ${r.title}`}
+                              disabled={!draggable || rowsIdx === 0 || rows[rowsIdx - 1]?.category_id !== r.category_id}
+                              onClick={() => reorder(rowsIdx, rowsIdx - 1)}
+                              className="rounded p-1 text-muted-foreground hover:text-ember disabled:opacity-30"
+                            >
+                              <ChevronUp className="h-4 w-4" />
+                            </button>
+                            <button
+                              type="button"
+                              aria-label={`Опустить: ${r.title}`}
+                              disabled={!draggable || rowsIdx === rows.length - 1 || rows[rowsIdx + 1]?.category_id !== r.category_id}
+                              onClick={() => reorder(rowsIdx, rowsIdx + 1)}
+                              className="rounded p-1 text-muted-foreground hover:text-ember disabled:opacity-30"
+                            >
+                              <ChevronDown className="h-4 w-4" />
+                            </button>
+                          </div>
+                        )}
+                        </div>
                       </TableCell>
                     )}
                     {config.listColumns.map((c) => (
@@ -559,13 +630,14 @@ export function DataTable({ config }: { config: AdminTableConfig }) {
                         >
                           <Copy className="h-4 w-4" />
                         </Button>
-                        <Button variant="ghost" size="icon" onClick={() => setEditing(r)} className="hover:bg-muted hover:text-foreground transition-colors">
+                        <Button variant="ghost" size="icon" onClick={() => setEditing(r)} aria-label={`Редактировать: ${r.title}`} className="hover:bg-muted hover:text-foreground transition-colors">
                           <Pencil className="h-4 w-4" />
                         </Button>
                         <Button
                           variant="ghost"
                           size="icon"
                           onClick={() => setDeleteTarget(r)}
+                          aria-label={`Удалить: ${r.title}`}
                         >
                           <Trash2 className="h-4 w-4 text-destructive" />
                         </Button>

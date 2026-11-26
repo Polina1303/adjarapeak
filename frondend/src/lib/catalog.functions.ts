@@ -8,6 +8,8 @@ import { sortShopGroups } from "@/lib/shop-group-order";
 import { getDisplayPrice, hasManualDiscount } from "@/lib/discount";
 import { SHOP_COMPLEMENT_MAP } from "./recommendations";
 import { SHOP_CARD_COLUMNS, RENTAL_CARD_COLUMNS } from "./catalog-columns";
+import { sortProductsByCatalogOrder } from "./product-order";
+import { productFeatureStrings, readProductOrder } from "./product-order-metadata";
 
 const EMPTY_CATEGORY_ID = "00000000-0000-0000-0000-000000000000";
 const BOARDS_GROUP_SLUG = "boards";
@@ -141,12 +143,14 @@ export type ShopProduct = {
   featured_label?: string | null;
   featured_tags?: string[];
   created_at?: string | null;
+  sort_order?: number | null;
 };
 
-type ShopProductRow = Omit<ShopProduct, "sizes" | "colors" | "featured_tags"> & {
+type ShopProductRow = Omit<ShopProduct, "sizes" | "colors" | "featured_tags" | "features"> & {
   sizes?: unknown;
   colors?: unknown;
   featured_tags?: unknown;
+  features?: unknown;
 };
 
 export type RentalGroup = ShopGroup;
@@ -175,6 +179,7 @@ type ShopProductSummaryRow = Pick<
   | "subcategory_id"
   | "in_stock"
   | "created_at"
+  | "features"
 >;
 
 type RentalItemSummaryRow = Pick<
@@ -233,6 +238,8 @@ function normalizeShopProductSizes(value: unknown): ShopProduct["sizes"] {
 function normalizeShopProduct(product: ShopProductRow): ShopProduct {
   return {
     ...product,
+    sort_order: readProductOrder(product.features),
+    features: productFeatureStrings(product.features),
     colors: normalizeShopProductColors(product.colors),
     sizes: normalizeShopProductSizes(product.sizes),
     featured_tags: normalizeShopProductSizes(product.featured_tags),
@@ -587,11 +594,15 @@ async function getBoardProducts() {
     .limit(500);
   if (error) throw new Error(error.message);
 
-  return ((rows ?? []) as ShopProductSummaryRow[]).map((row) => ({
+  return sortProductsByCatalogOrder(
+    (rows ?? []) as ShopProductSummaryRow[],
+    [sourceCategory],
+  ).map((row) => ({
     ...row,
     description: null,
     legacy_id: null,
     features: [],
+    sort_order: readProductOrder(row.features),
     colors: normalizeShopProductColors(row.colors),
     sizes: normalizeShopProductSizes(row.sizes),
   })) as ShopProduct[];
@@ -755,7 +766,11 @@ export const getShopCategoryBySlug = createServerFn({ method: "GET" })
       category: category as ShopCategory,
       subcategories: (subcategories ?? []) as ShopSubcategory[],
       activeSubcategory: activeSub,
-      products: normalizeShopProducts(products),
+      products: sortProductsByCatalogOrder(
+        normalizeShopProducts(products),
+        [category as ShopCategory],
+        (subcategories ?? []) as ShopSubcategory[],
+      ),
     };
   });
 
@@ -937,7 +952,11 @@ export const getShopCategoryView = createServerFn({ method: "GET" })
       category: normalizeShopCategory(category as ShopCategory),
       subcategories: (subcategories ?? []) as ShopSubcategory[],
       activeSubcategory: activeSub,
-      products,
+      products: sortProductsByCatalogOrder(
+        products,
+        [category as ShopCategory],
+        (subcategories ?? []) as ShopSubcategory[],
+      ),
     };
   });
 
@@ -1399,8 +1418,8 @@ export const searchShopProducts = createServerFn({ method: "GET" })
     const { searchCatalog } = await import("./catalog-search.server");
     const rows = await searchCatalog("shop", data.q, data.limit ?? 60);
     return normalizeShopProducts(rows.map((row) => ({
-      ...(row as ShopProductSummaryRow), description: null, legacy_id: null, features: [],
-    })));
+      ...(row as ShopProductSummaryRow), description: null, legacy_id: null,
+    }))).map((product) => ({ ...product, features: [] }));
   });
 
 export const searchRentalItems = createServerFn({ method: "GET" })
@@ -1920,7 +1939,7 @@ export const getShopGroupView = createServerFn({ method: "GET" })
     else q = q.eq("category_id", EMPTY_CATEGORY_ID);
     const { data: rows, error: pe } = await q;
     if (pe) throw new Error(pe.message);
-    products = sortByCatalogHierarchyThenNewest(
+    products = sortProductsByCatalogOrder(
       (rows ?? []) as unknown as ShopProductSummaryRow[],
       catList,
       (subs ?? []) as ShopSubcategory[],
@@ -1929,6 +1948,7 @@ export const getShopGroupView = createServerFn({ method: "GET" })
       description: null,
       legacy_id: null,
       features: [],
+      sort_order: readProductOrder(r.features),
       colors: normalizeShopProductColors((r as { colors?: unknown }).colors),
       sizes: normalizeShopProductSizes((r as { sizes?: unknown }).sizes),
     })) as ShopProduct[];
@@ -2093,23 +2113,32 @@ export const getRentalGroupView = createServerFn({ method: "GET" })
 
 // ---------- Sale ----------
 export const getSaleProducts = createServerFn({ method: "GET" }).handler(async () => {
-  const { data: rows, error } = await supabase
-    .from("shop_products")
-    .select(SHOP_CARD_COLUMNS)
-    .not("image", "is", null)
-    .eq("in_stock", true)
-    .not("sale_price", "is", null)
-    .gt("sale_price", 0);
+  const [productResult, categoryResult, subcategoryResult] = await Promise.all([
+    supabase
+      .from("shop_products")
+      .select(SHOP_CARD_COLUMNS)
+      .not("image", "is", null)
+      .eq("in_stock", true)
+      .not("sale_price", "is", null)
+      .gt("sale_price", 0)
+      .order("created_at", { ascending: false }),
+    supabase.from("shop_categories").select("id,sort_order").order("sort_order").order("title"),
+    supabase.from("shop_subcategories").select("id,category_id,sort_order").order("sort_order").order("title"),
+  ]);
+  const { data: rows, error } = productResult;
   if (error) {
     if (isMissingSaleColumnError(error)) return { products: [] as ShopProduct[] };
     throw new Error(error.message);
   }
+  if (categoryResult.error) throw new Error(categoryResult.error.message);
+  if (subcategoryResult.error) throw new Error(subcategoryResult.error.message);
 
   const all = ((rows ?? []) as ShopProductSummaryRow[]).map((r) => ({
     ...r,
     description: null,
     legacy_id: null,
     features: [],
+    sort_order: readProductOrder(r.features),
     colors: normalizeShopProductColors(r.colors),
     sizes: normalizeShopProductSizes(r.sizes),
   })) as ShopProduct[];
@@ -2117,7 +2146,13 @@ export const getSaleProducts = createServerFn({ method: "GET" }).handler(async (
   const products = all.filter((product) =>
     hasManualDiscount(product.price, product.sale_price),
   );
-  return { products };
+  return {
+    products: sortProductsByCatalogOrder(
+      products,
+      categoryResult.data ?? [],
+      subcategoryResult.data ?? [],
+    ),
+  };
 });
 
 export const getSaleRentals = createServerFn({ method: "GET" }).handler(async () => {
