@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import { getTentCapacity, getTentLayer } from "../src/lib/tent-filters.ts";
+import { productFeatureStrings, withProductOrder } from "../src/lib/product-order-metadata.ts";
 
 test("layer filter recognizes numeric and word forms", () => {
   assert.equal(
@@ -33,4 +34,15 @@ test("layer and capacity can be combined independently", () => {
   };
   assert.equal(getTentLayer(tent), "double");
   assert.equal(getTentCapacity(tent), 2);
+});
+
+test("admin order metadata is hidden while nested legacy tent characteristics still filter", () => {
+  const rawFeatures = ["Количество слоев: 2", ["Палатка на 3 человека"]];
+  const rankedFeatures = withProductOrder(rawFeatures, 1);
+  const tent = { title: "Палатка", features: productFeatureStrings(rankedFeatures) };
+  assert.deepEqual(tent.features, ["Количество слоев: 2", "Палатка на 3 человека"]);
+  assert.equal(getTentLayer(tent), "double");
+  assert.equal(getTentCapacity(tent), 3);
+  assert.equal(JSON.stringify(tent).includes("__adjarapeak_admin"), false);
+  assert.deepEqual(rawFeatures, ["Количество слоев: 2", ["Палатка на 3 человека"]]);
 });

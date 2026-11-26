@@ -300,6 +300,8 @@ export function CatalogPage(props: ShopProps | RentalProps) {
           getDisplayPrice(b.price_per_day, b.sale_price_per_day) -
           getDisplayPrice(a.price_per_day, a.sale_price_per_day),
       );
+    else if (sort === "newest")
+      arr.sort(compareProductsNewestFirst);
     return arr;
   }, [
     globalSearchItems,

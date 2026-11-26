@@ -18,8 +18,10 @@ type UpdateQuery = {
   select(columns: string): { maybeSingle(): PromiseLike<UpdateResult> };
 };
 
+export type ProductOrderTable = "shop_products" | "rental_items";
+
 type OrderClient = {
-  from(table: "shop_products"): {
+  from(table: ProductOrderTable): {
     update(values: { features: unknown }): UpdateQuery;
   };
 };
@@ -33,11 +35,12 @@ const SAVE_BATCH_SIZE = 5;
 
 async function updateFeatures(
   client: OrderClient,
+  table: ProductOrderTable,
   row: ProductOrderRow,
   expectedFeatures: unknown,
   features: unknown,
 ) {
-  let query = client.from("shop_products")
+  let query = client.from(table)
     .update({ features })
     .eq("id", row.id)
     .eq("category_id", row.category_id);
@@ -52,9 +55,16 @@ async function updateFeatures(
 }
 
 /** Save only ordering metadata, preserving concurrent edits to characteristics. */
-export async function saveProductOrder(client: unknown, orderedRows: readonly ProductOrderRow[]) {
+export async function saveProductOrder(
+  client: unknown,
+  orderedRows: readonly ProductOrderRow[],
+  table: ProductOrderTable = "shop_products",
+) {
   // Keep Supabase's generated generic query types outside this small persistence boundary.
   const db = client as OrderClient;
+  if (table !== "shop_products" && table !== "rental_items") {
+    throw new Error("Сортировка для этой таблицы недоступна");
+  }
   if (!orderedRows.length) return;
   const categoryId = orderedRows[0].category_id;
   if (!categoryId || orderedRows.some((row) => row.category_id !== categoryId)) {
@@ -74,7 +84,7 @@ export async function saveProductOrder(client: unknown, orderedRows: readonly Pr
   for (let offset = 0; offset < changes.length; offset += SAVE_BATCH_SIZE) {
     const batch = changes.slice(offset, offset + SAVE_BATCH_SIZE);
     const results = await Promise.allSettled(batch.map((change) =>
-      updateFeatures(db, change.row, change.row.features, change.features),
+      updateFeatures(db, table, change.row, change.row.features, change.features),
     ));
     let failure: PromiseRejectedResult | undefined;
     results.forEach((result, index) => {
@@ -87,7 +97,7 @@ export async function saveProductOrder(client: unknown, orderedRows: readonly Pr
     for (let rollbackOffset = 0; rollbackOffset < saved.length; rollbackOffset += SAVE_BATCH_SIZE) {
       const rollback = saved.slice(rollbackOffset, rollbackOffset + SAVE_BATCH_SIZE);
       const rollbackResults = await Promise.allSettled(rollback.map((change) =>
-        updateFeatures(db, change.row, change.features, change.row.features),
+        updateFeatures(db, table, change.row, change.features, change.row.features),
       ));
       if (rollbackResults.some((result) => result.status === "rejected")) rollbackFailed = true;
     }

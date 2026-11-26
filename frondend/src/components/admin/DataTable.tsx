@@ -150,7 +150,7 @@ async function fetchAllAdminRows(config: AdminTableConfig) {
     const { data, error } = await query.range(from, to);
     if (error) throw error;
     const chunk = (data as Row[]) ?? [];
-    all.push(...(config.table === "shop_products"
+    all.push(...((config.table === "shop_products" || config.table === "rental_items")
       ? chunk.map((row) => ({ ...row, sort_order: readProductOrder(row.features) }))
       : chunk));
     if (chunk.length < FETCH_PAGE_SIZE) break;
@@ -227,7 +227,7 @@ export function DataTable({ config }: { config: AdminTableConfig }) {
   const [overIndex, setOverIndex] = useState<number | null>(null);
   const [savingOrder, setSavingOrder] = useState(false);
   const orderSaveLock = useRef(false);
-  const isShopProducts = config.table === "shop_products";
+  const hasManualItemOrder = config.table === "shop_products" || config.table === "rental_items";
   const canSyncDateOrder = config.defaultOrderColumn === "start_date";
 
   const PAGE_SIZE = 50;
@@ -275,10 +275,10 @@ export function DataTable({ config }: { config: AdminTableConfig }) {
   const filtered = useMemo(() => {
     const tokens = normalizeSearchValue(search).split(/\s+/).filter(Boolean);
     return rows.filter((r) =>
-      (!isShopProducts || !categoryFilter || r.category_id === categoryFilter) &&
+      (!hasManualItemOrder || !categoryFilter || r.category_id === categoryFilter) &&
       (!tokens.length || matchesSearch(r, tokens, fkLabels)),
     );
-  }, [rows, search, fkLabels, categoryFilter, isShopProducts]);
+  }, [rows, search, fkLabels, categoryFilter, hasManualItemOrder]);
 
   const pageRows = filtered.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
@@ -312,7 +312,7 @@ export function DataTable({ config }: { config: AdminTableConfig }) {
 
     if ("slug" in payload) payload.slug = createCopySlug(payload.slug, rows);
     if (config.hasHidden && "hidden" in payload) payload.hidden = true;
-    if (isShopProducts) {
+    if (hasManualItemOrder) {
       payload.features = withProductOrder(payload.features, null);
       delete payload.sort_order;
     } else if (config.hasSortOrder && "sort_order" in payload) {
@@ -358,8 +358,8 @@ export function DataTable({ config }: { config: AdminTableConfig }) {
     setSavingOrder(true);
     setRows(next);
     try {
-      if (isShopProducts) {
-        await saveProductOrder(supabase, orderedScopeRows as Array<Row & { id: string; category_id: string; features: unknown }>);
+      if (hasManualItemOrder) {
+        await saveProductOrder(supabase, orderedScopeRows as Array<Row & { id: string; category_id: string; features: unknown }>, config.table === "rental_items" ? "rental_items" : "shop_products");
       } else {
         const updates = orderedScopeRows.flatMap((row, index) =>
           row.sort_order === index + 1 ? [] : [
@@ -455,9 +455,9 @@ export function DataTable({ config }: { config: AdminTableConfig }) {
           }}
           className="max-w-sm"
         />
-        {isShopProducts && (
+        {hasManualItemOrder && (
           <select
-            aria-label="Категория товаров"
+            aria-label={config.table === "rental_items" ? "Категория снаряжения" : "Категория товаров"}
             value={categoryFilter}
             onChange={(event) => {
               setCategoryFilter(event.target.value);
@@ -491,9 +491,9 @@ export function DataTable({ config }: { config: AdminTableConfig }) {
         </div>
       </div>
 
-      {isShopProducts && (
+      {hasManualItemOrder && (
         <p className="text-sm text-muted-foreground" role="status">
-          {savingOrder ? "Сохранение порядка…" : "Перетаскивайте товары за значок слева или используйте кнопки вверх и вниз. Порядок сохраняется автоматически внутри категории. При активном поиске используйте поле «Порядок сортировки» в карточке товара."}
+          {savingOrder ? "Сохранение порядка…" : "Перетаскивайте позиции за значок слева или используйте кнопки вверх и вниз. Порядок сохраняется автоматически внутри категории. При активном поиске используйте поле «Порядок сортировки» в карточке."}
         </p>
       )}
 
@@ -582,7 +582,7 @@ export function DataTable({ config }: { config: AdminTableConfig }) {
                         >
                           <GripVertical className="h-4 w-4" />
                         </button>
-                        {isShopProducts && (
+                        {hasManualItemOrder && (
                           <div className="flex flex-col">
                             <button
                               type="button"

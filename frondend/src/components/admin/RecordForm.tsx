@@ -153,10 +153,12 @@ function validateManualSalePrice(
 }
 
 function validatePayload(config: AdminTableConfig, payload: Record<string, any>) {
-  if (config.table === "shop_products") {
+  if (config.table === "shop_products" || config.table === "rental_items") {
     if (payload.sort_order != null && (!Number.isInteger(payload.sort_order) || payload.sort_order < 1 || payload.sort_order >= 2147483647)) {
       return "Порядок сортировки должен быть целым числом от 1 до 2147483646";
     }
+  }
+  if (config.table === "shop_products") {
     return validateManualSalePrice(payload.price, payload.sale_price, "Цена со скидкой", "Цена");
   }
   if (config.table === "rental_items") {
@@ -336,6 +338,7 @@ function FkCombobox({
 }
 
 export function RecordForm({ config, record, open, onClose, onSaved }: Props) {
+  const hasManualItemOrder = config.table === "shop_products" || config.table === "rental_items";
   const [form, setForm] = useState<Record<string, any>>({});
   const [fkOptions, setFkOptions] = useState<Record<string, FkOption[]>>({});
   const [missingDbFields, setMissingDbFields] = useState<string[]>([]);
@@ -355,12 +358,12 @@ export function RecordForm({ config, record, open, onClose, onSaved }: Props) {
           initial[f.key] = Array.isArray(record[f.key]) ? record[f.key] : [];
         }
         if (f.type === "json") {
-          const value = config.table === "shop_products" && f.key === "features"
+          const value = hasManualItemOrder && f.key === "features"
             ? stripProductOrderMetadata(record.features)
             : record[f.key];
           initial[f.key] = JSON.stringify(value ?? [], null, 2);
         }
-        if (config.table === "shop_products" && f.key === "sort_order") {
+        if (hasManualItemOrder && f.key === "sort_order") {
           initial[f.key] = readProductOrder(record.features) ?? "";
         }
       } else {
@@ -544,14 +547,14 @@ export function RecordForm({ config, record, open, onClose, onSaved }: Props) {
         return;
       }
 
-      if (config.table === "shop_products") {
+      if (hasManualItemOrder) {
         payload.features = withProductOrder(payload.features, payload.sort_order ?? null);
         delete payload.sort_order;
       }
 
       let error;
       // Resolve sort_order conflicts: shift existing rows with >= new value by +1
-      if (config.hasSortOrder && config.table !== "shop_products" && payload.sort_order !== null && payload.sort_order !== undefined) {
+      if (config.hasSortOrder && !hasManualItemOrder && payload.sort_order !== null && payload.sort_order !== undefined) {
         const newOrder = Number(payload.sort_order);
         const prevOrder = record?.sort_order ?? null;
         if (prevOrder !== newOrder) {
@@ -584,14 +587,14 @@ export function RecordForm({ config, record, open, onClose, onSaved }: Props) {
 
       if (record?.id) {
         let query = (supabase as any).from(config.table).update(payload).eq("id", record.id);
-        if (config.table === "shop_products") {
+        if (hasManualItemOrder) {
           query = record.features == null
             ? query.is("features", null)
             : query.eq("features", JSON.stringify(record.features));
           const result = await query.select("id").maybeSingle();
           error = result.error;
           if (!error && !result.data) {
-            throw new Error("Товар изменился в другой вкладке. Откройте его заново и повторите изменения.");
+            throw new Error("Позиция изменилась в другой вкладке. Откройте его заново и повторите изменения.");
           }
         } else {
           ({ error } = await query);
@@ -628,8 +631,8 @@ export function RecordForm({ config, record, open, onClose, onSaved }: Props) {
           <Input
             type={isMoneyField(f.key) ? "text" : "number"}
             inputMode={isMoneyField(f.key) ? "decimal" : undefined}
-            step={config.table === "shop_products" && f.key === "sort_order" ? 1 : isMoneyField(f.key) ? undefined : "any"}
-            min={config.table === "shop_products" && f.key === "sort_order" ? 1 : undefined}
+            step={hasManualItemOrder && f.key === "sort_order" ? 1 : isMoneyField(f.key) ? undefined : "any"}
+            min={hasManualItemOrder && f.key === "sort_order" ? 1 : undefined}
             aria-label={f.label}
             value={v ?? ""}
             onChange={(e) => setVal(f.key, e.target.value)}
@@ -729,9 +732,9 @@ export function RecordForm({ config, record, open, onClose, onSaved }: Props) {
                 </Label>
               )}
               {renderField(f)}
-              {config.table === "shop_products" && f.key === "sort_order" && (
+              {hasManualItemOrder && f.key === "sort_order" && (
                 <p className="text-sm text-muted-foreground">
-                  Меньше число — выше товар внутри категории. Оставьте пустым для обычного порядка после товаров с заданным номером.
+                  Меньше число — выше позиция внутри категории. Оставьте пустым для обычного порядка после позиций с заданным номером.
                 </p>
               )}
               {config.table === "hikes" && f.key === "price" && (

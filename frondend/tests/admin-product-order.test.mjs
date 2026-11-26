@@ -6,14 +6,14 @@ import { readProductOrder, stripProductOrderMetadata, withProductOrder } from ".
 const product = (id, features = [`Характеристика ${id}`], category_id = "category") => ({ id, category_id, features });
 const copy = (value) => structuredClone(value);
 
-function fakeClient(initialRows, beforeUpdate = () => {}) {
+function fakeClient(initialRows, beforeUpdate = () => {}, expectedTable = "shop_products") {
   const rows = new Map(initialRows.map((row) => [row.id, copy(row)]));
   const calls = [];
   let active = 0;
   let maxActive = 0;
   const client = {
     from(table) {
-      assert.equal(table, "shop_products");
+      assert.equal(table, expectedTable);
       return {
         update(payload) {
           assert.deepEqual(Object.keys(payload), ["features"]);
@@ -25,7 +25,7 @@ function fakeClient(initialRows, beforeUpdate = () => {}) {
               assert.equal(columns, "id");
               return {
                 async maybeSingle() {
-                  const call = { id: filters.get("id"), payload: copy(payload), filters };
+                  const call = { table, id: filters.get("id"), payload: copy(payload), filters };
                   calls.push(call);
                   active++;
                   maxActive = Math.max(maxActive, active);
@@ -69,6 +69,38 @@ test("persists category order without changing characteristics or its source row
     assert.deepEqual(stripProductOrderMetadata(stored), row.features);
   });
   assert.equal(db.calls.length, 2);
+});
+
+test("persists rental order only in rental_items while preserving rental characteristics", async () => {
+  const items = [
+    product("tent", ["Двухслойная", ["Вместимость: 2 человека"], { legacy: "rental detail" }]),
+    product("backpack", { material: "Нейлон", capacity: "60 л" }),
+  ];
+  const original = copy(items);
+  const db = fakeClient(items, undefined, "rental_items");
+  await saveProductOrder(db.client, items, "rental_items");
+  assert.deepEqual(items, original);
+  assert.deepEqual(db.calls.map((call) => call.table), ["rental_items", "rental_items"]);
+  items.forEach((row, index) => {
+    const stored = db.rows.get(row.id).features;
+    assert.equal(readProductOrder(stored), index + 1);
+    assert.deepEqual(stripProductOrderMetadata(stored), row.features);
+  });
+});
+
+test("rental failures compensate in the same table and leave no partial positions", async () => {
+  const items = [product("tent"), product("backpack")];
+  const db = fakeClient(items, (call) => call.id === "backpack" ? "offline" : undefined, "rental_items");
+  await assert.rejects(saveProductOrder(db.client, items, "rental_items"), /изменения отменены/);
+  assert.equal(db.calls.length, 3);
+  assert.ok(db.calls.every((call) => call.table === "rental_items"));
+  items.forEach((row) => assert.deepEqual(db.rows.get(row.id).features, row.features));
+});
+
+test("rejects unsupported persistence tables without writes", async () => {
+  const db = fakeClient([product("a")]);
+  await assert.rejects(saveProductOrder(db.client, [product("a")], "user_roles"), /этой таблицы недоступна/);
+  assert.equal(db.calls.length, 0);
 });
 
 test("skips unchanged positions and rejects mixed categories or duplicate IDs before writes", async () => {

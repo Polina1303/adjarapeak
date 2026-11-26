@@ -25,6 +25,7 @@ type AdminSortRefs = {
   shopSubcategories?: Array<{ id: string; category_id: string; sort_order?: number | null; title?: string | null }>;
   rentalGroups?: AdminGroupRow[];
   rentalCategories?: AdminCategoryRow[];
+  rentalSubcategories?: Array<{ id: string; category_id: string; sort_order?: number | null; title?: string | null }>;
 };
 
 const VIRTUAL_BOARDS_CATEGORY_SLUG = "balance_board";
@@ -106,12 +107,17 @@ function compareBySubcategory(a: Row, b: Row, refs: AdminSortRefs, kind: "shop" 
 }
 
 export function sortAdminRows(table: string, rows: Row[], refs: AdminSortRefs = {}): Row[] {
-  if (table === "shop_products") {
-    const categories = sortAdminRows("shop_categories", refs.shopCategories ?? [], refs);
+  if (table === "shop_products" || table === "rental_items") {
+    const isShop = table === "shop_products";
+    const categories = sortAdminRows(
+      isShop ? "shop_categories" : "rental_categories",
+      (isShop ? refs.shopCategories : refs.rentalCategories) ?? [],
+      refs,
+    );
     return sortProductsByCatalogOrder(
       rows as Array<Row & { category_id: string }>,
       categories as Array<AdminCategoryRow>,
-      refs.shopSubcategories ?? [],
+      (isShop ? refs.shopSubcategories : refs.rentalSubcategories) ?? [],
     );
   }
   if (table === "shop_groups") return sortShopGroups(rows);
@@ -148,16 +154,20 @@ export async function loadAdminSortRefs(table: string, client: any): Promise<Adm
     };
   }
 
-  if (table === "rental_categories" || table === "rental_subcategories") {
-    const [groups, categories] = await Promise.all([
+  if (table === "rental_categories" || table === "rental_subcategories" || table === "rental_items") {
+    const [groups, categories, subcategories] = await Promise.all([
       client.from("rental_groups").select("id,slug,title,sort_order"),
-      table === "rental_subcategories"
+      table === "rental_subcategories" || table === "rental_items"
         ? client.from("rental_categories").select("id,group_id,slug,title,sort_order")
+        : Promise.resolve({ data: [] }),
+      table === "rental_items"
+        ? client.from("rental_subcategories").select("id,category_id,title,sort_order")
         : Promise.resolve({ data: [] }),
     ]);
     return {
       rentalGroups: groups.data ?? [],
       rentalCategories: categories.data ?? [],
+      rentalSubcategories: subcategories.data ?? [],
     };
   }
 

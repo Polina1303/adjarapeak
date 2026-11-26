@@ -163,7 +163,10 @@ export type RentalItem = Omit<ShopProduct, "in_stock" | "price" | "sale_price" |
   colors?: ShopProduct["colors"];
 };
 
-type RentalItemRow = Omit<RentalItem, "colors"> & { colors?: unknown };
+type RentalItemRow = Omit<RentalItem, "colors" | "features"> & {
+  colors?: unknown;
+  features?: unknown;
+};
 
 type ShopProductSummaryRow = Pick<
   ShopProductRow,
@@ -183,7 +186,7 @@ type ShopProductSummaryRow = Pick<
 >;
 
 type RentalItemSummaryRow = Pick<
-  RentalItem,
+  RentalItemRow,
   | "id"
   | "slug"
   | "title"
@@ -195,6 +198,7 @@ type RentalItemSummaryRow = Pick<
   | "subcategory_id"
   | "available"
   | "created_at"
+  | "features"
 >;
 
 type CartShopRow = Pick<
@@ -254,13 +258,15 @@ function normalizeRentalItem(item: RentalItemRow): RentalItem {
   const image = RENTAL_ITEM_IMAGE_OVERRIDES[item.slug] ?? item.image?.trim() ?? null;
   return {
     ...item,
+    sort_order: readProductOrder(item.features) ?? item.sort_order ?? null,
+    features: productFeatureStrings(item.features),
     image: image || null,
     colors: normalizeShopProductColors(item.colors),
   };
 }
 
 function normalizeRentalItems(rows: unknown[] | null | undefined): RentalItem[] {
-  return ((rows ?? []) as RentalItem[]).map(normalizeRentalItem);
+  return ((rows ?? []) as RentalItemRow[]).map(normalizeRentalItem);
 }
 
 const SHOP_GROUP_TITLE_OVERRIDES: Record<string, string> = {
@@ -508,68 +514,6 @@ async function hasShopSaleProducts() {
 
 function filterShopSaleGroup(groups: ShopGroup[], showSaleGroup: boolean) {
   return groups.filter((group) => group.slug !== "sale" || showSaleGroup);
-}
-
-function sortByCatalogHierarchyThenNewest<
-  T extends Pick<ShopProduct, "category_id" | "subcategory_id" | "title" | "created_at">,
->(
-  rows: T[],
-  categories: Array<Pick<ShopCategory, "id" | "sort_order" | "title">>,
-  subcategories: Array<Pick<ShopSubcategory, "id" | "category_id" | "sort_order" | "title">> = [],
-) {
-  const categoryRank = new Map(
-    categories.map((category, index) => [
-      category.id,
-      {
-        index,
-        sortOrder: Number(category.sort_order ?? Number.MAX_SAFE_INTEGER),
-        title: category.title ?? "",
-      },
-    ]),
-  );
-  const subcategoryRank = new Map(
-    subcategories.map((subcategory, index) => [
-      subcategory.id,
-      {
-        categoryId: subcategory.category_id,
-        index,
-        sortOrder: Number(subcategory.sort_order ?? Number.MAX_SAFE_INTEGER),
-        title: subcategory.title ?? "",
-      },
-    ]),
-  );
-
-  return [...rows].sort((a, b) => {
-    const aCategory = categoryRank.get(a.category_id);
-    const bCategory = categoryRank.get(b.category_id);
-    const byCategorySort =
-      (aCategory?.sortOrder ?? Number.MAX_SAFE_INTEGER) -
-      (bCategory?.sortOrder ?? Number.MAX_SAFE_INTEGER);
-    if (byCategorySort !== 0) return byCategorySort;
-
-    const byCategoryIndex =
-      (aCategory?.index ?? Number.MAX_SAFE_INTEGER) -
-      (bCategory?.index ?? Number.MAX_SAFE_INTEGER);
-    if (byCategoryIndex !== 0) return byCategoryIndex;
-
-    const aSubcategory = a.subcategory_id ? subcategoryRank.get(a.subcategory_id) : undefined;
-    const bSubcategory = b.subcategory_id ? subcategoryRank.get(b.subcategory_id) : undefined;
-    const bySubcategorySort =
-      (aSubcategory?.sortOrder ?? Number.MAX_SAFE_INTEGER) -
-      (bSubcategory?.sortOrder ?? Number.MAX_SAFE_INTEGER);
-    if (bySubcategorySort !== 0) return bySubcategorySort;
-
-    const bySubcategoryIndex =
-      (aSubcategory?.index ?? Number.MAX_SAFE_INTEGER) -
-      (bSubcategory?.index ?? Number.MAX_SAFE_INTEGER);
-    if (bySubcategoryIndex !== 0) return bySubcategoryIndex;
-
-    const byNewest =
-      Date.parse(b.created_at ?? "") - Date.parse(a.created_at ?? "");
-    if (!Number.isNaN(byNewest) && byNewest !== 0) return byNewest;
-
-    return String(a.title ?? "").localeCompare(String(b.title ?? ""), "ru");
-  });
 }
 
 async function getBalanceBoardSourceCategory() {
@@ -829,7 +773,11 @@ export const getRentalCategoryBySlugWithSub = createServerFn({ method: "GET" })
       category: category as RentalCategory,
       subcategories: (subcategories ?? []) as ShopSubcategory[],
       activeSubcategory: activeSub,
-      items: normalizeRentalItems(items),
+      items: sortProductsByCatalogOrder(
+        normalizeRentalItems(items),
+        [category as RentalCategory],
+        (subcategories ?? []) as ShopSubcategory[],
+      ),
     };
   });
 
@@ -1428,9 +1376,9 @@ export const searchRentalItems = createServerFn({ method: "GET" })
     const { searchCatalog } = await import("./catalog-search.server");
     const rows = await searchCatalog("rental", data.q, data.limit ?? 60);
     return normalizeRentalItems(rows.map((row) => ({
-      ...(row as RentalItemSummaryRow), legacy_id: null, features: [],
+      ...(row as RentalItemSummaryRow), legacy_id: null,
       description: (row as RentalItem).description?.slice(0, 240) ?? null,
-    })));
+    }))).map((item) => ({ ...item, features: [] }));
   });
 
 export const listOneProductPerCategorySlug = createServerFn({ method: "GET" })
@@ -1566,7 +1514,11 @@ export const getRentalCategoryBySlug = createServerFn({ method: "GET" })
       group: (group ?? null) as RentalGroup | null,
       category: category as RentalCategory,
       subcategories: (subcategories ?? []) as ShopSubcategory[],
-      items: normalizeRentalItems(items),
+      items: sortProductsByCatalogOrder(
+        normalizeRentalItems(items),
+        [category as RentalCategory],
+        (subcategories ?? []) as ShopSubcategory[],
+      ),
     };
   });
 
@@ -1623,17 +1575,30 @@ export const getRentalCategoryView = createServerFn({ method: "GET" })
     if (ce) throw new Error(ce.message);
     if (!category) return null;
 
-    const { data: items, error: ie } = await supabase
-      .from("rental_items")
-      .select("*")
-      .eq("category_id", category.id)
-      .order("created_at", { ascending: false });
+    const [itemsResult, subcategoriesResult] = await Promise.all([
+      supabase
+        .from("rental_items")
+        .select("*")
+        .eq("category_id", category.id)
+        .order("created_at", { ascending: false }),
+      supabase
+        .from("rental_subcategories")
+        .select("id,category_id,sort_order")
+        .eq("category_id", category.id)
+        .order("sort_order"),
+    ]);
+    const { data: items, error: ie } = itemsResult;
     if (ie) throw new Error(ie.message);
+    if (subcategoriesResult.error) throw new Error(subcategoriesResult.error.message);
 
     return {
       group: group as RentalGroup,
       category: category as RentalCategory,
-      items: normalizeRentalItems(items),
+      items: sortProductsByCatalogOrder(
+        normalizeRentalItems(items),
+        [category as RentalCategory],
+        subcategoriesResult.data ?? [],
+      ),
     };
   });
 
@@ -2068,7 +2033,7 @@ export const getRentalGroupView = createServerFn({ method: "GET" })
         )
       : ((rows ?? []) as RentalItemSummaryRow[]);
     const cleanRows = filterRentalItemsForGroup(scopedRows, group.slug, catList);
-    const items = sortByCatalogHierarchyThenNewest(
+    const items = normalizeRentalItems(sortProductsByCatalogOrder(
       cleanRows,
       catList,
       (subs ?? []) as ShopSubcategory[],
@@ -2076,8 +2041,7 @@ export const getRentalGroupView = createServerFn({ method: "GET" })
       ...r,
       description: (r as { description?: string | null }).description ?? null,
       legacy_id: null,
-      features: [],
-    })).map((item) => normalizeRentalItem(item as RentalItem));
+    })));
 
     // Attach a representative item image to each category (for tile picker)
     if (catIds.length) {
@@ -2156,26 +2120,38 @@ export const getSaleProducts = createServerFn({ method: "GET" }).handler(async (
 });
 
 export const getSaleRentals = createServerFn({ method: "GET" }).handler(async () => {
-  const { data: rows, error } = await supabase
-    .from("rental_items")
-    .select(RENTAL_CARD_COLUMNS)
-    .not("image", "is", null)
-    .eq("available", true)
-    .limit(400);
+  const [itemsResult, categoryResult, subcategoryResult] = await Promise.all([
+    supabase
+      .from("rental_items")
+      .select(RENTAL_CARD_COLUMNS)
+      .not("image", "is", null)
+      .eq("available", true)
+      .not("sale_price_per_day", "is", null)
+      .gt("sale_price_per_day", 0)
+      .order("created_at", { ascending: false })
+      .limit(400),
+    supabase.from("rental_categories").select("id,sort_order").order("sort_order").order("title"),
+    supabase.from("rental_subcategories").select("id,category_id,sort_order").order("sort_order").order("title"),
+  ]);
+  const { data: rows, error } = itemsResult;
   if (error) {
     if (isMissingSaleColumnError(error)) return { items: [] as RentalItem[] };
     throw new Error(error.message);
   }
+  if (categoryResult.error) throw new Error(categoryResult.error.message);
+  if (subcategoryResult.error) throw new Error(subcategoryResult.error.message);
 
-  const all = ((rows ?? []) as RentalItemSummaryRow[]).map((r) => ({
+  const all = normalizeRentalItems(((rows ?? []) as RentalItemSummaryRow[]).map((r) => ({
     ...r,
     description: null,
     legacy_id: null,
-    features: [],
-  })).map((item) => normalizeRentalItem(item as RentalItem));
+  }))).map((item) => ({ ...item, features: [] }));
 
-  const items = all
-    .filter((item) => hasManualDiscount(item.price_per_day, item.sale_price_per_day))
+  const items = sortProductsByCatalogOrder(
+    all.filter((item) => hasManualDiscount(item.price_per_day, item.sale_price_per_day)),
+    categoryResult.data ?? [],
+    subcategoryResult.data ?? [],
+  )
     .slice(0, 36);
   return { items };
 });
