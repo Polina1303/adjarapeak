@@ -140,11 +140,7 @@ function Index() {
                   kind="fitness"
                 />
                 <RentalSection groups={rentalGroups} />
-                <NewArrivals
-                  excludeSlugs={[...selections.ski, ...selections.fitness].map(
-                    (p) => p.slug,
-                  )}
-                />
+                <NewArrivals />
                 <BikeServicePromo />
                 <ClimbingPromo />
                 <GiftCardSection />

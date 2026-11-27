@@ -6,19 +6,26 @@ import { getSiteText } from "@/lib/site-translations";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 
-export function NewArrivals({ excludeSlugs = [] }: {excludeSlugs?:string[]}) {
+export function NewArrivals() {
   const [products, setProducts] = useState<ShopProduct[]>([]);
   const { lang } = useLanguage();
   const text = getSiteText(lang).home;
 
   useEffect(() => {
+    let active = true;
     listLatestProducts({ data: { limit: 16 } })
-      .then(setProducts)
-      .catch(() => setProducts([]));
+      .then((latest) => {
+        if (active) setProducts(latest);
+      })
+      .catch(() => {
+        if (active) setProducts([]);
+      });
+    return () => {
+      active = false;
+    };
   }, []);
 
-  const visible=products.filter(p=>!excludeSlugs.includes(p.slug));
-  if (visible.length === 0) return null;
+  if (products.length === 0) return null;
 
   return (
     <section className="section-padding section-alt-bg py-8 md:py-11">
@@ -31,12 +38,12 @@ export function NewArrivals({ excludeSlugs = [] }: {excludeSlugs?:string[]}) {
             to="/sale"
             className="group inline-flex shrink-0 items-center gap-1.5 font-display text-xs font-bold uppercase tracking-wide text-ember transition-colors hover:text-foreground sm:text-sm"
           >
-            {text.actions.newArrivals}
+            {text.actions.shop}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
           </Link>
         </div>
 
-        <ProductCarousel products={visible} />
+        <ProductCarousel products={products} />
       </div>
     </section>
   );

@@ -29,7 +29,7 @@ const ALWAYS_RECOMMENDED_PRODUCT_SLUGS = new Set([
   "lodka-hello-plus-235-yellow",
   "34444231",
 ]);
-const ALWAYS_NEW_PRODUCT_SLUGS = ["3131990098841", "6754122232332"] as const;
+const NEW_ARRIVAL_AGE_MS = 7 * 24 * 60 * 60 * 1000;
 const ALWAYS_SEASONAL_CATEGORY_SLUGS = new Set([
   "backpack",
   "bottle",
@@ -1060,36 +1060,6 @@ export const getShopProductBySlug = createServerFn({ method: "GET" })
     };
   });
 
-async function getFeaturedProductsByCategorySlugs(slugs: string[], limit: number) {
-  const { data: categories, error: categoryError } = await supabase
-    .from("shop_categories")
-    .select("id,slug")
-    .in("slug", slugs);
-  if (categoryError) throw new Error(categoryError.message);
-  const categoryIds = ((categories ?? []) as Pick<ShopCategory, "id" | "slug">[]).map(
-    (category) => category.id,
-  );
-  if (categoryIds.length === 0) return [] as ShopProduct[];
-
-  const { data: products, error } = await supabase
-    .from("shop_products")
-    .select("*")
-    .in("category_id", categoryIds)
-    .eq("in_stock", true)
-    .eq("hidden", false)
-    .order("created_at", { ascending: false })
-    .limit(Math.max(limit * 4, 20));
-  if (error) throw new Error(error.message);
-
-  return normalizeShopProducts(products)
-    .filter(
-      (product) => product.image && (
-        CATALOG_IMAGE_FILES.has(product.image) || /^https?:\/\//i.test(product.image)
-      ),
-    )
-    .slice(0, limit);
-}
-
 function getSeasonalFeaturedCategories(now = new Date()) {
   const month = now.getMonth() + 1;
   const winter = month === 12 || month <= 3;
@@ -1261,76 +1231,21 @@ export const listRecommendedProducts = createServerFn({ method: "GET" })
 
 export const listLatestProducts = createServerFn({ method: "GET" })
   .inputValidator((input: { limit?: number }) =>
-    z.object({ limit: z.number().min(1).max(50).optional() }).parse(input ?? {}),
+    z.object({ limit: z.number().int().min(1).max(50).optional() }).parse(input ?? {}),
   )
   .handler(async ({ data }) => {
-    const limit = data.limit ?? 6;
-    const [skiProducts, { data: rawPinnedProducts, error: pinnedProductsError }] = await Promise.all([
-      getFeaturedProductsByCategorySlugs(["skis"], Math.min(8, limit)),
-      supabase
-        .from("shop_products")
-        .select("*")
-        .in("slug", [...ALWAYS_NEW_PRODUCT_SLUGS])
-        .eq("in_stock", true)
-        .eq("hidden", false),
-    ]);
-    if (pinnedProductsError) throw new Error(pinnedProductsError.message);
-
-    const pinnedOrder = new Map<string, number>(
-      ALWAYS_NEW_PRODUCT_SLUGS.map((slug, index) => [slug, index]),
-    );
-    const pinnedProducts = normalizeShopProducts(rawPinnedProducts)
-      .filter((product) => Boolean(product.image))
-      .sort(
-        (a, b) =>
-          (pinnedOrder.get(a.slug) ?? Number.MAX_SAFE_INTEGER) -
-          (pinnedOrder.get(b.slug) ?? Number.MAX_SAFE_INTEGER),
-      )
-      .slice(0, Math.max(limit - skiProducts.length, 0));
-
-    const remaining = Math.max(limit - skiProducts.length - pinnedProducts.length, 0);
-    const rollerLimit = Math.min(2, remaining);
-    const boardLimit = Math.max(remaining - rollerLimit, 0);
-    const [boardProducts, rollerProducts] = await Promise.all([
-      getFeaturedProductsByCategorySlugs(
-        [BALANCE_BOARD_CATEGORY_SLUG],
-        boardLimit + pinnedProducts.length,
-      ),
-      getFeaturedProductsByCategorySlugs(
-        ["roller", "rollers"],
-        rollerLimit + pinnedProducts.length,
-      ),
-    ]);
-
-    const seen = new Set<string>();
-    const result: ShopProduct[] = [];
-    const pushUnique = (product: ShopProduct) => {
-      if (seen.has(product.id) || result.length >= limit) return false;
-      seen.add(product.id);
-      result.push(product);
-      return true;
-    };
-
-    for (const product of skiProducts) pushUnique(product);
-    for (const product of pinnedProducts) pushUnique(product);
-
-    let addedBoards = 0;
-    for (const product of boardProducts) {
-      if (addedBoards >= boardLimit) break;
-      if (pushUnique(product)) addedBoards += 1;
-    }
-
-    let addedRollers = 0;
-    for (const product of rollerProducts) {
-      if (addedRollers >= rollerLimit) break;
-      if (pushUnique(product)) addedRollers += 1;
-    }
-
-    for (const product of [...boardProducts, ...rollerProducts]) {
-      pushUnique(product);
-      if (result.length >= limit) break;
-    }
-    return result;
+    const cutoff = new Date(Date.now() - NEW_ARRIVAL_AGE_MS).toISOString();
+    const { data: products, error } = await supabase
+      .from("shop_products")
+      .select(SHOP_CARD_COLUMNS)
+      .eq("hidden", false)
+      .eq("in_stock", true)
+      .gte("created_at", cutoff)
+      .order("created_at", { ascending: false })
+      .order("id")
+      .limit(data.limit ?? 6);
+    if (error) throw new Error(error.message);
+    return normalizeShopProducts(products).map(homeCardProduct);
   });
 
 export const listProductsBySlugs = createServerFn({ method: "GET" })
